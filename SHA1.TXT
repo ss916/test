@@ -1,4 +1,5 @@
-# //【2020-07-15 00:14:53】
+# //【2020-07-15 00:30:18】
+/SHAKE128.TXT= 05a8a486f3e3a05a741012179236e69140d70326
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60

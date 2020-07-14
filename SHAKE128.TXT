@@ -1,5 +1,4 @@
-# //【2020-07-15 00:15:28】
-/SHA1.txt= 6a0488b8cd85bbc5f485580caced81fb
+# //【2020-07-15 00:30:15】
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
