@@ -1,5 +1,5 @@
 payload:
-#🆓Line ：global_line.txt
+#🆓Line ：global_web_line.txt
 - DOMAIN-SUFFIX,line.me
 - DOMAIN-SUFFIX,line-apps.com
 - DOMAIN-SUFFIX,line-scdn.net

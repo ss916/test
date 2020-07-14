@@ -1,5 +1,5 @@
 payload:
-#🆓谷歌：global_google.txt
+#🆓google ：global_web_google.txt
 # > YouTube
 - DOMAIN-SUFFIX,googlevideo.com
 - DOMAIN-SUFFIX,youtube.com

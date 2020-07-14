@@ -1,5 +1,5 @@
 payload:
-#🆓Facebook ：global_facebook.txt
+#🆓Facebook ：global_web_facebook.txt
 - DOMAIN-KEYWORD,facebook
 - DOMAIN-SUFFIX,cdninstagram.com
 - DOMAIN-SUFFIX,fb.com

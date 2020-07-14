@@ -1,5 +1,5 @@
 payload:
-#🆓国外网站：global_web_other.txt
+#🆓other ：global_web_other.txt
 #pincong
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy

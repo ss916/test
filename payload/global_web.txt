@@ -1,5 +1,5 @@
 payload:
-#🆓Facebook ：global_facebook.txt
+#🆓Facebook ：global_web_facebook.txt
 - DOMAIN-KEYWORD,facebook
 - DOMAIN-SUFFIX,cdninstagram.com
 - DOMAIN-SUFFIX,fb.com
@@ -25,7 +25,7 @@ payload:
 - IP-CIDR,54.173.34.141/32
 - IP-CIDR,54.235.23.242/32
 - IP-CIDR,169.45.248.118/32
-#🆓谷歌：global_google.txt
+#🆓google ：global_web_google.txt
 # > YouTube
 - DOMAIN-SUFFIX,googlevideo.com
 - DOMAIN-SUFFIX,youtube.com
@@ -114,7 +114,7 @@ payload:
 - IP-CIDR,42.64.0.0/16
 - IP-CIDR,45.64.0.0/16
 - IP-CIDR,202.86.0.0/16
-#🆓Line ：global_line.txt
+#🆓Line ：global_web_line.txt
 - DOMAIN-SUFFIX,line.me
 - DOMAIN-SUFFIX,line-apps.com
 - DOMAIN-SUFFIX,line-scdn.net
@@ -134,7 +134,7 @@ payload:
 - DOMAIN-SUFFIX,sfx.ms
 - DOMAIN-SUFFIX,onedrive.live.com
 - DOMAIN-SUFFIX,xboxlive.com
-#🆓国外网站：global_web_other.txt
+#🆓other ：global_web_other.txt
 #pincong
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy
@@ -560,7 +560,7 @@ payload:
 - DOMAIN-SUFFIX,vsco.co
 - DOMAIN-SUFFIX,xfinity.com
 - DOMAIN-SUFFIX,zattoo.com
-#🆓电报：global_telegram.txt
+#🆓telegram ：global_web_telegram.txt
 - DOMAIN-SUFFIX,t.me
 - DOMAIN-SUFFIX,tdesktop.com
 - DOMAIN-SUFFIX,telegra.ph
@@ -572,7 +572,7 @@ payload:
 - IP-CIDR,91.108.16.0/22
 - IP-CIDR,91.108.56.0/22
 - IP-CIDR,149.154.160.0/20
-#🆓Twitter ：global_twitter.txt
+#🆓Twitter ：global_web_twitter.txt
 - DOMAIN-KEYWORD,twitter
 - DOMAIN-SUFFIX,pscp.tv
 - DOMAIN-SUFFIX,periscope.tv
