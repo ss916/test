@@ -1,5 +1,7 @@
-# //【2020-07-15 00:30:18】
+# //【2020-07-16 00:51:09】
 /SHAKE128.TXT= 05a8a486f3e3a05a741012179236e69140d70326
+/clash.sh= 34f62fce16b886d251f54aa8fbb77e30462b5b2d
+/config.yaml= dcd39f345aeb5e8182c024ff37995ae4e6b03d4d
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
@@ -11,16 +13,33 @@
 /hosts/f= 13b915e7176a389561cc984947c8dc23d612dd88
 /hosts/hosts= 77b13a63a7344fff686fb4b76c374fae160b6622
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
-/p= b0d72d2542b815be28ce12eaeed70b8462343937
-/s/a= 6862bab821f9745777cfffa9b9d13b6d6f16660a
-/s/c= baa38240263da73bc030d5fac2a84d646ef7722f
-/s/cla11= dab268cafb3fb7b7fbcb3d3b7e1cce64e849b492
+/p= 663cf5a829bbfe27154fce8a45b38232a414217a
+/payload/block_dnsmasq.txt= 132ad17854f5b0c4591ee1da8731a103ac5dbbe4
+/payload/block_hijack.txt= be579bd5d526f7be248624daea53c6735fa91da5
+/payload/block_hosts.txt= 4c5743d1ac53a1f0102fe965d6c5386cef6d4576
+/payload/block_malicious.txt= d467e508848473020772c681449e592bb500cf16
+/payload/cn_music_netease.txt= e18682c301c0b3656b03b49d380d4e6e092ba55a
+/payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
+/payload/cn_web.txt= 612a1e2b9d64e031d30efb4f0a3939b5150d2174
+/payload/global_apple.txt= d958a81f55135bfc3585cd5703e600590fbfafa2
+/payload/global_video.txt= ed5ee345818169f73b61704c0650b46a40cac4e2
+/payload/global_web.txt= e501272ddd0ef538ac2be1b988a75d95230280ca
+/payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
+/payload/global_web_google.txt= bec74805d2a26d960a38a61fbb56be1a3cedf327
+/payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
+/payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153
+/payload/global_web_other.txt= b46a0f65df285af71c43137cf7e4945a6b8776db
+/payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
+/payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
+/s/a= bbf43e2313b4fb24a98af63faf369415b4916087
+/s/c= f21c3c022e67005e477c9752d53af8811ef7ae65
+/s/cla11= e9a3fc0aaaef85cbfb1627a7498117c2d88378f2
 /s/cla2= 32f94e050520d04ea580963eb7c776d5ab2ad850
 /s/cla3= 17b7e62b6135556e1f8799c91cdef20cc5baee21
 /s/cla4= b02194a8a3f4307c0ac0c667013f17a692a4fee7
 /s/cla5= 86b77b13cd52423fa1794633de2547e7bfdefc82
 /s/cla9= cc363e0581354dfa3a4781f64aafcf3a6e5ed322
-/s/cla= 5ddf98850e0986cc2e8df08bd1554d8c677e605b
+/s/cla= 31a2be4416cb3eac4d687ae9e98b6b3456106338
 /s/f1= be0ffd9de253ee8f792d8f00cce2b1749209c03a
 /s/f2= a68a0d78a3523ae80d5a4aeb932e94339187ae71
 /s/f3= 6db58f06d0f37bb4fd1df5feb2369c3839191aab
@@ -34,7 +53,7 @@
 /s/sr4= 60c2570c5a1c821592bd83026b494252895f1af2
 /s/sr5= 038159b332e17b9b95d281585dd11362cd5ec5c2
 /s/troc9= a0a6c8313efbf9a2deac58f9fc7d3a67533042ab
-/s/troc= 7406497b3b673c3a33d285f7aa4309febcdd9387
+/s/troc= 735ac14ab3b8a7bc172d6a032eee51ab85616171
 /s/v= f6c0965d289519f643402e5d20f57c528a99ec7f
 /s/x= de917de3d7fbf91a8f22510f2c6f4a2e97ab1853
 /t/Country.mmdb.tgz= 24f245ae31bac65aed2db33433eff68e347d2852

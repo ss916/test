@@ -1,4 +1,7 @@
-# //【2020-07-15 00:30:15】
+# //【2020-07-16 00:51:10】
+/SHA1.TXT= 7f4e45e5d64faccf6a70437f31b02e90
+/clash.sh= abb116bf623435678c9e536dcbc5dd34
+/config.yaml= d15edec31091550929578b9943a4edbf
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -10,16 +13,33 @@
 /hosts/f= 6491956b133619fc96c4742f074ad87b
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
-/p= 5ee8a3ec91125405e3118a8dd63ad8d3
-/s/a= 6a664747374bafce98ff5f9eafc7e53c
-/s/c= 3c1eca553123b4ff7708cb9c41e6dc30
-/s/cla11= 1982ab27fd9d00599e0d8c73305acdb5
+/p= d10c56016e0343d0b05f3a35a368c828
+/payload/block_dnsmasq.txt= 5366f51878f468505c27755535cf236d
+/payload/block_hijack.txt= 6dfcaa031cf12797235ce87a546c4d50
+/payload/block_hosts.txt= c3fc5e97c4dd8279850c1d94b0c2cb3d
+/payload/block_malicious.txt= 3d42a3681f9a52d58b70742094e1a36b
+/payload/cn_music_netease.txt= d8d70679b55cf2684a246004f1a2731f
+/payload/cn_video.txt= 7796e0d54e1ade4877c63ec455be456b
+/payload/cn_web.txt= 7cbfe38a3f958e6feeaea3f924c67e74
+/payload/global_apple.txt= 13a1e7bc795c6af5327ced30d1e9aa7d
+/payload/global_video.txt= 132f316e728ce8d6da64465b0822db96
+/payload/global_web.txt= de3b9d7501764bb824441679a9299677
+/payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
+/payload/global_web_google.txt= 6ebf91357f32be41eb729d513fddfb81
+/payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
+/payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
+/payload/global_web_other.txt= d07c8bef28000e07e2775e297a7b28e2
+/payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
+/payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
+/s/a= d32bc132a90c2c78e2dbad573e2d5773
+/s/c= 18f55165db92be312f48f04f64fed9b5
+/s/cla11= 590d5d79e1b7d72d2e9efd87cc2cda3c
 /s/cla2= 5ae0681a7c0696cee262b635bac9e216
 /s/cla3= d26d767a7775574c6aeb2de83ca109fa
 /s/cla4= 94f108ce7006f9b04596bbba99450e1c
 /s/cla5= 899e4b507931f1c69f8ae2c890cdf617
 /s/cla9= b3170c9037d3796b266fc58e27dc16ec
-/s/cla= da287f5e3efc01212c0ad08ea78e0b20
+/s/cla= 52411e944f528cd9b66550f7086798cc
 /s/f1= 45c4f77aeb441e02efa0078cc43916e6
 /s/f2= 4d0de7dc9dcd676ef9adff398c74a3f8
 /s/f3= 5fa8337ca79dbc064ca30f4bdf539439
@@ -33,7 +53,7 @@
 /s/sr4= 8551cbd6c8e12ed26559bcec185fc4ef
 /s/sr5= 67a5a981e7d7658b7bcf8e6b64f662d5
 /s/troc9= 835e350b1f53d35651405aa74f5c3d3e
-/s/troc= 9f0a3282b158387abe0fbed8a3a2dc0c
+/s/troc= 4405ff29fb2386d3cbb63e7e884d6273
 /s/v= 7a8c72599821414e668c9378bd27db0c
 /s/x= b723ceca848b2f368bbba8d0d66d811e
 /t/Country.mmdb.tgz= 88e49185463200c266f7ebef29faee27

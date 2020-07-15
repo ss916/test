@@ -91,7 +91,6 @@ payload:
 - DOMAIN,mobile.api.hunantv.com
 - DOMAIN,mobilefeedback.kugou.com
 - DOMAIN,mqqplayer.3g.qq.com
-- DOMAIN,music.163.com
 - DOMAIN,music.baidu.com
 - DOMAIN,music.sina.com.cn
 - DOMAIN,my.tv.sohu.com
