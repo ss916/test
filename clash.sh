@@ -41,22 +41,22 @@ cd $dirtmp
 
 #初始化settings.txt
 settings () {
-echo -e \\n"↓↓初始化设置，請輸入订阅链接link↓↓"\\n
+echo -e \\n"\e[1;36m↓↓初始化设置，請輸入订阅链接link↓↓\e[0m"\\n
 read -p "订阅链接1:" link1
 read -p "订阅链接2(按回车可跳过):" link2
-echo -e \\n"↓↓請选择透明代理模式mode↓↓"\\n
-echo -e "1.启用透明代理（默认）\\n2.透明代理+路由自身走代理\\5.不启用透明代理\\n"
+echo -e \\n"\e[1;36m↓↓請选择透明代理模式mode↓↓\e[0m"\\n
+echo -e "\e[36m1.启用透明代理（默认）\\n2.透明代理+路由自身走代理\\n5.不启用透明代理\e[0m"\\n
 read -p "请输入:" mode
-echo -e \\n"↓↓請选择是否启用去广告功能↓↓"\\n
-echo -e "0.不启用adblock（默认）\\n1.启用adblock"
+echo -e \\n"\e[1;36m↓↓請选择是否启用去广告功能↓↓\e[0m"\\n
+echo -e "\e[36m0.不启用adblock（默认）\\n1.启用adblock\e[0m"
 read -p "请输入:" adblock
-echo -e \\n"↓↓請选择代理模式↓↓"\\n
-echo -e "0.gfwlist模式（默认）\\n1.大陆白名单模式"
+echo -e \\n"\e[1;36m↓↓請选择代理模式↓↓\e[0m"\\n
+echo -e "\e[36m0.gfwlist模式（默认）\\n1.大陆白名单模式\e[0m"
 read -p "请输入:" chinalist
-echo -e \\n"↓↓請选择网易云解锁↓↓"\\n
-echo -e "0.不启用网易云解锁（默认）\\n1.启用网易云解锁"
+echo -e \\n"\e[1;36m↓↓請选择网易云解锁↓↓\e[0m"\\n
+echo -e "\e[36m0.不启用网易云解锁（默认）\\n1.启用网易云解锁\e[0m"
 read -p "请输入:" unlocknetease
-echo -e \\n"你输入了：\\n$name订阅链接1: $link1 \\n$name订阅链接2: $link2\\n透明代理模式: $mode \\n去广告: $adblock\\n代理模式: $chinalist \\n网易云: $unlocknetease"
+echo -e \\n"\e[1;37m你输入了：\\n$name订阅链接1: $link1 \\n$name订阅链接2: $link2\\n透明代理模式: $mode \\n去广告: $adblock\\n代理模式: $chinalist \\n网易云: $unlocknetease\e[0m"
 echo "link1=$link1
 link2=$link2
 mode=$mode
