@@ -1,6 +1,14 @@
-# //【2020-07-16 00:51:10】
-/SHA1.TXT= 7f4e45e5d64faccf6a70437f31b02e90
-/clash.sh= abb116bf623435678c9e536dcbc5dd34
+# //【2020-07-16 01:26:27】
+/SHA1.TXT= c7c6156238ced096f34544950a7cd715
+/arm64/caddy= f614837b6efcfd51c383c29b29b4f509
+/arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
+/arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
+/arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
+/arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
+/arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
+/arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
+/arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
+/clash.sh= 7c78337cd67921fc2b58d0cc66eb8bdc
 /config.yaml= d15edec31091550929578b9943a4edbf
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -39,7 +47,7 @@
 /s/cla4= 94f108ce7006f9b04596bbba99450e1c
 /s/cla5= 899e4b507931f1c69f8ae2c890cdf617
 /s/cla9= b3170c9037d3796b266fc58e27dc16ec
-/s/cla= 52411e944f528cd9b66550f7086798cc
+/s/cla= 212be5529eb9f297c973c74de8854e9c
 /s/f1= 45c4f77aeb441e02efa0078cc43916e6
 /s/f2= 4d0de7dc9dcd676ef9adff398c74a3f8
 /s/f3= 5fa8337ca79dbc064ca30f4bdf539439
@@ -60,14 +68,6 @@
 /t/Country.mmdb.ver= 94087e4a73979c8612bc9a22351e338a
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
-/t/arm64/caddy= f614837b6efcfd51c383c29b29b4f509
-/t/arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
-/t/arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
-/t/arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
-/t/arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
-/t/arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
-/t/arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
-/t/arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
 /t/caddy= d91556933dd45b541d0587a957b95d99
 /t/clash-dashboard-gh-pages.tgz= 7563f290c6ebcb802f1a4c099ead8961
 /t/clash-dashboard-gh-pages.zip= 169bab384668ed6e58f88f7f9babd802
@@ -83,6 +83,6 @@
 /t/trojanver= d927b087562afd2e6856a8fd01f4bab3
 /t/v2ctl= 5b52cc6e58db07a64e82d4734b835a43
 /t/v2ray= b1e15e0cb56114b651a6096e77c64955
-/t/windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
 /t/yacd-gh-pages.tgz= 128f695165425c3ff1376249f961704c
 /t/yacd-gh-pages.zip= c82702df3aa9886273344074c2925889
+/windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
