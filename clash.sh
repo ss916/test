@@ -21,6 +21,12 @@ file_cron=$etc/cron/crontabs/admin
 #开机自启文件
 file_wan=$etc/post_wan_script.sh
 
+#iptables设置绕过UID
+#创建系统新用户
+user_name=$name
+#用户UID
+user_id=998
+
 #资源文件地址前缀
 url1="https://cdn.jsdelivr.net/gh/ss916/test"
 url2="https://raw.githubusercontent.com/ss916/test/master"
@@ -31,11 +37,12 @@ if [ ! -s $diretc/$name ] ; then
 	size=$(df $etc |awk '!/Available/{print $4}')
 	if [ "$size" -lt "5120" ] ; then
 		echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
-		diretc=$dirtmp
+		diretc=$dirtmp/etc
 	fi
 fi
 
 [ ! -d $dirtmp ] && mkdir -p $dirtmp
+[ ! -d $diretc ] && mkdir -p $diretc
 [ ! -d $dirconf ] && mkdir -p $dirconf
 cd $dirtmp
 
@@ -152,7 +159,7 @@ if [ -z "$address" ] ; then
 else
 	if [ -z "`echo $address | grep ^http`" ] ; then
 		#补全地址
-		address="$url/$address"
+		link="$url/$address"
 	fi
 fi
 #是否需要解密
@@ -181,10 +188,11 @@ if [ -s $diretc/$filetgz ] ; then
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
 	[ ! -z "`ps -w | grep -v grep | grep "curl.*$filetgz"`" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
-	curl -# $address -o ./$filetgz
+	#curl -# $address -o ./$filetgz
+	curl -# $link -o ./$filetgz
 	new=`openssl SHA1 ./$filetgz |awk '{print $2}'`
 fi
-old=`awk -F ' ' '/\/'$filetgz'=/{print $2}' $etc/SHA1.TXT`
+old=`cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}'`
 echo -e \\n"文件：$filetgz \\nnew：$new \\nold：$old"
 if [ ! -z "$new" -a ! -z "$old" ] ; then
 	if [ "$new" = "$old" ] ; then
@@ -246,6 +254,7 @@ down_clash () {
 file=$name
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	downloadfile address=t/$file filename=$file filetgz=$file
+	[ -s ./$file ] && chmod +x -R ./
 fi
 }
 #下载geoip
@@ -334,7 +343,7 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 bypasslan () {
 #局域网绕过
 if [ -s $dirconf/bypasslan.txt ] ; then
-	echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
+	logger -t "【$name】" "▶添加iptables绕过局域网IP.." && echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
 	for ip in `cat $dirconf/bypasslan.txt`
 	do
 		iptables -t nat -I clash -s $ip/32 -j RETURN
@@ -352,13 +361,14 @@ if [ "$lanip" = "0" ] ; then
 	> $dirconf/bypasslan.txt
 	echo -e \\n"\e[1;37m.已重置IP列表。\e[0m"
 else
-	echo "$lanip" >> $dirconf/bypasslan.txt
+	echo "$lanip" | grep -E -o '([0-9]+\.){3}[0-9]+' >> $dirconf/bypasslan.txt
+	sed -i '/^ *$/d' $dirconf/bypasslan.txt
 fi
 }
 
 #透明代理
 ipt1 () {
-#检查是否缺少tproxy模块
+#检查是否缺少tproxy模块modprobe 
 [ -z "$(lsmod | grep xt_TPROXY)" ] && echo "▶加載內核模塊 xt_TPROXY" && modprobe xt_TPROXY
 #从配置文件提取参数
 config=$dirtmp/config.yaml
@@ -371,17 +381,10 @@ else
 	redir_port=8002
 	dns_port=5300
 fi
-#iptables设置绕过UID
-#创建系统新用户
-user_name=$name
-#用户UID
-user_id=998
 ##########
-logger -t "【clash.sh】" "▶創建局域網透明代理" && echo -e \\n"\e[1;36m▶創建局域網透明代理\e[0m"\\n
+logger -t "【$name】" "▶创建局域网透明代理" && echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"\\n
 #tcp
-iptables -t nat -N clash >/dev/null 2>&1
-#根据用户UID绕过clash流量避免回环
-iptables -t nat -A clash -m owner --uid-owner "$user_id" -j RETURN
+iptables -t nat -N clash
 #绕过内网
 iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
@@ -395,12 +398,14 @@ iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
 #透明代理TCP流量到clash链
 iptables -t nat -A PREROUTING -p tcp -j clash
-#路由自身TCP流量走透明代理
-#iptables -t nat -A OUTPUT -p tcp -j clash
-#udp
+#DNS流量
+iptables -t nat -N CLASH_DNS
+iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-ports "$dns_port"
+iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASH_DNS
+##udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
-iptables -t mangle -N clash >/dev/null 2>&1
+iptables -t mangle -N clash
 #绕过内网
 iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
 iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
@@ -414,36 +419,84 @@ iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
 #透明代理UDP流量到clash mangle链
 iptables -t mangle -A PREROUTING -p udp -j clash
-#DNS
-iptables -t nat -N CLASH_DNS >/dev/null 2>&1
-iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-port "$dns_port"
-iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASH_DNS
-#路由自身DNS流量走透明代理
-#iptables -t nat -I OUTPUT -p udp --dport 53 -j CLASH_DNS
+#绕过局域网
 bypasslan
 }
 #透明代理+自身代理
-ipt2 () {
-ipt1
-logger -t "【clash.sh】" "▶創建路由自身透明代理" && echo -e \\n"\e[1;36m▶創建路由自身透明代理\e[0m"\\n
-#路由自身TCP流量走透明代理
-iptables -t nat -A OUTPUT -p tcp -j clash
-#路由自身DNS流量走透明代理
-iptables -t nat -I OUTPUT -p udp --dport 53 -j CLASH_DNS
+ipt12 () {
+logger -t "【$name】" "▶创建路由自身透明代理" && echo -e \\n"\e[1;36m▶创建路由自身透明代理\e[0m"\\n
+iptables -t nat -N CLASH_LOCAL
+iptables -t nat -A CLASH_LOCAL -m owner --uid-owner "$user_id" -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A CLASH_LOCAL -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A CLASH_LOCAL -p tcp -j REDIRECT --to-ports "$redir_port"
+iptables -t nat -I OUTPUT -p tcp -j CLASH_LOCAL
+#DNS流量
+iptables -t nat -N CLASH_DNS_LOCAL
+iptables -t nat -A CLASH_DNS_LOCAL -m owner --uid-owner "$user_id" -j RETURN
+iptables -t nat -A CLASH_DNS_LOCAL -p udp -j REDIRECT --to-ports "$dns_port"
+iptables -t nat -I OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
 }
 #删除透明代理
+ipt01 () {
+logger -t "【$name】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
+#UDP
+iptables -t mangle -D PREROUTING -p udp -j clash
+iptables -t mangle -F clash
+iptables -t mangle -X clash
+ip rule del fwmark 1 table 100
+ip route del local default dev lo table 100
+#TCP
+iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -F CLASH_DNS
+iptables -t nat -X CLASH_DNS
+iptables -t nat -D PREROUTING -p tcp -j clash
+iptables -t nat -F clash
+iptables -t nat -X clash
+}
+ipt02 () {
+logger -t "【$name】" "▷删除路由自身透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除路由自身透明代理iptables规则\e[0m"\\n
+#路由自身代理
+iptables -t nat -D OUTPUT -p tcp -j CLASH_LOCAL
+iptables -t nat -F CLASH_LOCAL
+iptables -t nat -X CLASH_LOCAL
+iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
+iptables -t nat -F CLASH_DNS_LOCAL
+iptables -t nat -X CLASH_DNS_LOCAL
+}
 ipt0 () {
-logger -t "【clash.sh】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
-iptables -t nat -D OUTPUT -p tcp -j clash >/dev/null 2>&1
-iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS >/dev/null 2>&1
-iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS >/dev/null 2>&1
-iptables -t mangle -D PREROUTING -p udp -j clash >/dev/null 2>&1
-iptables -t nat -D PREROUTING -p tcp -j clash >/dev/null 2>&1
-ip rule del fwmark 1 table 100 >/dev/null 2>&1
-ip route del local default dev lo table 100 >/dev/null 2>&1
-iptables -t mangle -F clash >/dev/null 2>&1
-iptables -t nat -F clash >/dev/null 2>&1
-iptables -t nat -F CLASH_DNS >/dev/null 2>&1
+ipt01
+ipt02
+}
+ipt2 () {
+ipt1
+ipt12
+}
+stop_iptables () {
+if [ "$mode" = "1" ] ; then
+	ipt01
+elif [ "$mode" = "2" ] ; then
+	ipt01
+	ipt02
+else
+	echo "...iptables透明代理模式mode不等于1或2，取消透明代理..."
+fi
+}
+start_iptables () {
+if [ "$mode" = "1" ] ; then
+	ipt1
+elif [ "$mode" = "2" ] ; then
+	ipt1
+	ipt12
+else
+	echo "...iptables透明代理模式mode不等于1或2，取消透明代理..."
+fi
 }
 
 
@@ -497,13 +550,17 @@ while true ; do
 #检查进程与端口
 server=`ps -w | grep -v grep |grep "$name.*-d"`
 port=`netstat -anp | grep $name`
-if [ -z "$server" -o -z "$port" ]; then
+ipt=`iptables -t nat -L PREROUTING --line-number | grep $name`
+if [ -z "$server" -o -z "$port" ] ; then
 	[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
 	[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
-	nohup sh $etc/$name.sh $mode & > ./clash_run.txt 2>&1 &
+	nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
 	v=0
+elif [ -z "$ipt" ] ; then
+	[ -z "$ipt" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name没透明代理，添加iptables规则！" >> ./keep.txt
+	sh $etc/$name.sh start_iptables &
 else
-	echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK" >> ./keep.txt
+	echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK，iptables OK" >> ./keep.txt
 fi
 v=`expr $v + 1`
 #日志文件大于1万条后删除1000条
@@ -513,7 +570,7 @@ done
 EOF
 chmod +x $dirtmp/clash_keep.sh
 fi
-[ -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/clash_keep.sh >> /dev/null 2>&1 &
+[ -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/clash_keep.sh >> $dirtmp/keep.txt 2>&1 &
 }
 stop_keep () {
 [ ! -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && ps -w |grep -v grep |grep clash_keep.sh | awk '{print $1}' | xargs kill -9
@@ -544,18 +601,21 @@ stop_clash () {
 #启动
 start_clash () {
 [ -f ./clash_log.txt ] && mv -f ./clash_log.txt ./old_clash_log.txt
-[ -z "$(grep "$user_name" /etc/passwd)" ] && echo "▶添加用戶$user_name，uid為$user_id" && adduser -u $user_id $user_name -D -S -H -s /bin/sh
 logger -t "【$name】" "▶启动$name主程序..." && echo -e \\n"\e[1;36m▶启动$name主程序...\e[0m"
-su $user_name -c "nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &"
-#nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &
+if [ "$mode" = "2" ] ; then
+	[ -z "$(grep "$user_name" /etc/passwd)" ] && echo "▶添加用戶$user_name，uid為$user_id" && adduser -u $user_id $user_name -D -S -H -s /bin/sh
+	su $user_name -c "nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &"
+else
+	nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &
+fi
 }
 
 #關閉
 stop_0 () {
-transocks_stop
-ipt2socks_stop
-ipt0
-dnsmasq0
+#transocks_stop
+#ipt2socks_stop
+#dnsmasq0
+stop_iptables
 stop_clash
 }
 #关闭所有
@@ -692,6 +752,11 @@ if [ ! -z "$(cat $pdcn/START_WAN.SH | grep $name.sh)" ] ; then
 else
 	echo -e "○ \e[1;36m $name 开机自启：\e[1;31m【未启用】\e[0m"
 fi
+if [ ! -z "$(iptables -t nat -L PREROUTING --line-number | grep $name)" ] ; then
+	echo -e "● \e[1;36m $name 透明代理：\e[1;32m【已启用】\e[0m"
+else
+	echo -e "○ \e[1;36m $name 透明代理：\e[1;31m【未启用】\e[0m"
+fi
 }
 #按钮
 case $1 in
@@ -704,12 +769,12 @@ case $1 in
 2)
 	start_2 &
 	;;
-3)
-	start_3 &
-	;;
-4)
-	start_4 &
-	;;
+#3)
+	#start_3 &
+	#;;
+#4)
+	#start_4 &
+	#;;
 5)
 	start_0 &
 	;;
@@ -733,6 +798,18 @@ ipt1)
 	;;
 ipt2)
 	ipt2
+	;;
+stop_keep)
+	stop_keep
+	;;
+start_keep)
+	start_keep
+	;;
+start_iptables)
+	start_iptables
+	;;
+stop_iptables)
+	stop_iptables
 	;;
 dnsmasq0)
 	dnsmasq0
@@ -760,8 +837,8 @@ ipt2socks_start)
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash + iptables透明代理\e[0m"
 	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash + iptables透明代理 + 自身走代理\e[0m"
-	echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：启动clash + ip2socks 透明代理\e[0m"
-	echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash + transocks 透明代理 \e[0m"
+	#echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：启动clash + ip2socks 透明代理\e[0m"
+	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash + transocks 透明代理 \e[0m"
 	echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"
 	echo -e "\e[1;32m【6】\e[0m\e[1;36m bypass_lan_ip：局域网IP绕过列表\e[0m"
 	echo -e "\e[1;32m【7】\e[0m\e[1;36m settings：重置初始化配置\e[0m"
@@ -774,10 +851,10 @@ ipt2socks_start)
 		start_1 &
 	elif [ "$num" = "2" ] ; then
 		start_2 &
-	elif [ "$num" = "3" ] ; then
-		start_3 &
-	elif [ "$num" = "4" ] ; then
-		start_4 &
+	#elif [ "$num" = "3" ] ; then
+		#start_3 &
+	#elif [ "$num" = "4" ] ; then
+		#start_4 &
 	elif [ "$num" = "5" ] ; then
 		start_0 &
 	elif [ "$num" = "6" ] ; then
