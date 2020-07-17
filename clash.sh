@@ -51,34 +51,47 @@ settings () {
 echo -e \\n"\e[1;36m↓↓ 初始化设置，請輸入订阅链接link ↓↓\e[0m"\\n
 read -p "订阅链接1：" link1
 read -p "订阅链接2(按回车可跳过)：" link2
+#模式
 echo -e \\n"\e[1;36m↓↓ 請选择透明代理模式mode ↓↓\e[0m"\\n
 echo -e "\e[36m1.启用透明代理（默认）\\n2.透明代理+路由自身走代理\\n5.不启用透明代理\e[0m"
 read -n 1 -p "请输入：" mode
+echo -e \\n"\e[1;36m↓↓ 請选择DNS模式 ↓↓\e[0m"\\n
+echo -e "\e[36m1.redir-host模式（默认）\\n2.fake-dns模式\e[0m"
+read -n 1 -p "请输入：" dns
+echo -e \\n"\e[1;36m↓↓ 請选择代理模式 ↓↓\e[0m"\\n
+echo -e "\e[36m1.gfwlist模式（默认）\\n2.大陆白名单模式\e[0m"
+read -n 1 -p "请输入：" chinalist
+#功能
 echo -e \\n"\e[1;36m↓↓ 請选择是否启用去广告功能 ↓↓\e[0m"\\n
 echo -e "\e[36m0.不启用adblock（默认）\\n1.启用adblock\e[0m"
 read -n 1 -p "请输入：" adblock
-echo -e \\n"\e[1;36m↓↓ 請选择代理模式 ↓↓\e[0m"\\n
-echo -e "\e[36m0.gfwlist模式（默认）\\n1.大陆白名单模式\e[0m"
-read -n 1 -p "请输入：" chinalist
 echo -e \\n"\e[1;36m↓↓ 請选择网易云解锁 ↓↓\e[0m"\\n
 echo -e "\e[36m0.不启用网易云解锁（默认）\\n1.启用网易云解锁\e[0m"
 read -n 1 -p "请输入：" unlocknetease
-echo -e \\n"\e[1;37m你输入了：	\\n$name订阅链接1: $link1 \\n$name订阅链接2: $link2\\n透明代理模式: $mode \\n去广告: $adblock\\n代理模式: $chinalist \\n网易云: $unlocknetease\e[0m"
+echo -e \\n"\e[1;37m你输入了：	\\n$name订阅链接1: $link1 \\n$name订阅链接2: $link2\\n透明代理模式: $mode \\nDNS模式: $dns \\n去广告: $adblock\\n代理模式: $chinalist \\n网易云: $unlocknetease\e[0m"
 echo "link1=$link1
 link2=$link2
 mode=$mode
-adblock=$adblock
+dns=$dns
 chinalist=$chinalist
+adblock=$adblock
 unlocknetease=$unlocknetease
 " > $dirconf/settings.txt
 }
 #读取参数
 read_settings () {
-#读取配置文件参数
-#启动模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=5 不透明代理
+#透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=5 不透明代理
 mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}')
+[ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
+#DNS模式，1.redir-host （默认），2.fake-dns
+dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}')
+[ -z "$dns" ] && dns=1 && echo "dns=1" >> $dirconf/settings.txt
+#代理模式，1.gfwlist模式（默认），2.chinalist
+chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}')
+[ -z "$chinalist" ] && chinalist=1 && echo "chinalist=1" >> $dirconf/settings.txt
 #使用自定义配置模板，留空则使用 config=config.yaml （默认）
 config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}')
+[ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
 #模板是否需要解密文件，secret=1 则进入解密模式
 secret=$(cat $dirconf/settings.txt |awk -F 'secret=' '/secret=/{print $2}')
 #密码
@@ -87,29 +100,35 @@ password=$(cat $dirconf/settings.txt |awk -F 'password=' '/password=/{print $2}'
 link1=$(cat $dirconf/settings.txt |awk -F 'link1=' '/link1=/{print $2}')
 #订阅地址2，可空
 link2=$(cat $dirconf/settings.txt |awk -F 'link2=' '/link2=/{print $2}')
-#功能选择
-#是否启用去广告，adblock=1则启用
+#功能
+#是否启用去广告，adblock=1则启用，关闭0（默认）
 adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}')
-#是否启用大陆白名单，chinalist=1则启用，否则默认gfwlist模式
-chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}')
-#是否启用网易云解锁，unlocknetease=1则启用
+[ -z "$adblock" ] && adblock=0 && echo "adblock=0" >> $dirconf/settings.txt
+#是否启用网易云解锁，1.unlocknetease启用，0.关闭（默认）
 unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}')
+[ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
-	#一键快速设置参数：./clash.sh 1 mode=1 config=config.yaml link1=https://123.com/link1.txt link2=https://123.com/link2.txt adblock=1 chinalist=1 unlocknetease=0
+	#一键快速设置参数：./clash.sh 1 mode=1 config=config.yaml link1=https://123.com/link1.txt link2=https://123.com/link2.txt adblock=1 chinalist=1 unlocknetease=0 dns=1
 	echo "$@"|sed 's/ /\n/g' > $dirconf/settings.txt
 	read_settings
 else
 	if [ -s $dirconf/settings.txt ] ; then
-		echo "已存在用戶配置settings.txt，直接讀取"
+		#echo "已存在用戶配置settings.txt，直接讀取"
 		read_settings
 	else
 		settings
 	fi
 fi
-[ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
-[ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
 
+edit_chinalist () {
+#是否启用大陆白名单功能，2启用chinalist，1则默认gfwlist
+[ "$chinalist" = "2" ] && sed -i '/#markgfwlistorchinalist/s@\[.*\]@["代理", "直连", "屏蔽"]@g' ./config.yaml
+}
+edit_dns () {
+#DNS模式，2启用fake-ip，非2则默认redir-host
+[ "$dns" = "2" ] && sed -i '/#markdns/s/redir-host/fake-ip/;/#markdns/s/ipv6: true/ipv6: false/' ./config.yaml
+}
 edit_link () {
 #检查订阅是否可用
 testlink1=$(echo $link1 | grep ^http)
@@ -124,18 +143,16 @@ if [ ! -z "$link1" ] ; then
 		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 60000\n    path: ./订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 	else
 		echo -e \\n"\e[1;31m【$name】  ✘ 订阅链接1非http链接，请初始化配置。\e[0m"
+		exit
 	fi
 else
 	echo -e \\n"\e[1;31m【$name】  ✘ 订阅链接1為空，请初始化配置。\e[0m"
+	exit
 fi
 }
 edit_adblock () {
 #是否启用去广告功能，1启用，非1则默认关闭
 [ "$adblock" != "1" ] && sed -i '/#markadblock/d' ./config.yaml
-}
-edit_chinalist () {
-#是否启用大陆白名单功能，1启用，非1则默认gfwlist
-[ "$chinalist" = "1" ] && sed -i '/#markgfwlistorchinalist/s@\[.*\]@["代理", "直连", "屏蔽"]@g' ./config.yaml
 }
 edit_unlocknetease () {
 #是否启用网易云解锁功能，1启用，非1则默认直连
@@ -446,23 +463,20 @@ iptables -t nat -I OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
 #删除透明代理
 ipt01 () {
 logger -t "【$name】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
-#UDP
-iptables -t mangle -D PREROUTING -p udp -j clash
-iptables -t mangle -F clash
-iptables -t mangle -X clash
-ip rule del fwmark 1 table 100
-ip route del local default dev lo table 100
-#TCP
-iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS
-iptables -t nat -F CLASH_DNS
-iptables -t nat -X CLASH_DNS
 iptables -t nat -D PREROUTING -p tcp -j clash
 iptables -t nat -F clash
 iptables -t nat -X clash
+iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -F CLASH_DNS
+iptables -t nat -X CLASH_DNS
+ip rule del fwmark 1 table 100
+ip route del local default dev lo table 100
+iptables -t mangle -D PREROUTING -p udp -j clash
+iptables -t mangle -F clash
+iptables -t mangle -X clash
 }
 ipt02 () {
 logger -t "【$name】" "▷删除路由自身透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除路由自身透明代理iptables规则\e[0m"\\n
-#路由自身代理
 iptables -t nat -D OUTPUT -p tcp -j CLASH_LOCAL
 iptables -t nat -F CLASH_LOCAL
 iptables -t nat -X CLASH_LOCAL
@@ -484,18 +498,25 @@ if [ "$mode" = "1" ] ; then
 elif [ "$mode" = "2" ] ; then
 	ipt01
 	ipt02
-else
-	echo "...iptables透明代理模式mode不等于1或2，取消透明代理..."
 fi
 }
 start_iptables () {
 if [ "$mode" = "1" ] ; then
-	ipt1
+	[ ! -z "$(iptables -t nat -L PREROUTING --line-number | grep $name)" ] && ipt01
+	if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+		ipt1
+	else
+		echo "start_iptables 1：$name进程没启动成功或端口没监听，取消透明代理..."
+	fi
 elif [ "$mode" = "2" ] ; then
-	ipt1
-	ipt12
-else
-	echo "...iptables透明代理模式mode不等于1或2，取消透明代理..."
+	[ ! -z "$(iptables -t nat -L PREROUTING --line-number | grep $name)" ] && ipt01
+	[ ! -z "$(iptables -t nat -L OUTPUT --line-number | grep CLASH_LOCAL)" ] && ipt02
+	if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+		ipt1
+		ipt12
+	else
+		echo "start_iptables 2：$name进程没启动成功或端口没监听，取消透明代理..."
+	fi
 fi
 }
 
@@ -524,13 +545,13 @@ start_wan () {
 }
 
 #定时任务
-stop_corn () {
-[ -f $pdcn/START_CORN.SH -a ! -z "$(cat $pdcn/START_CORN.SH | grep $name.sh)" ] && echo -e \\n"\e[1;36m▷删除定时任务crontab...\e[0m" && sed -i "/$name.sh/d" $pdcn/START_CORN.SH
+stop_cron () {
+[ -f $pdcn/START_CRON.SH -a ! -z "$(cat $pdcn/START_CRON.SH | grep $name.sh)" ] && echo -e \\n"\e[1;36m▷删除定时任务crontab...\e[0m" && sed -i "/$name.sh/d" $pdcn/START_CRON.SH
 }
-start_corn () {
-[ -z "$(cat $file_cron | grep START_CORN.SH)" ] && echo "1 5 * * * sh $pdcn/START_CORN.SH &" >> $file_cron
-[ ! -f $pdcn/START_CORN.SH ] && > $pdcn/START_CORN.SH
-[ -z "$(cat $pdcn/START_CORN.SH | grep $name.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/$name.sh $mode &" >> $pdcn/START_CORN.SH
+start_cron () {
+[ -z "$(cat $file_cron | grep START_CRON.SH)" ] && echo "1 5 * * * sh $pdcn/START_CRON.SH &" >> $file_cron
+[ ! -f $pdcn/START_CRON.SH ] && > $pdcn/START_CRON.SH
+[ -z "$(cat $pdcn/START_CRON.SH | grep $name.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/$name.sh $mode &" >> $pdcn/START_CRON.SH
 }
 
 #进程守护
@@ -545,24 +566,40 @@ etc=/etc/storage/pdcn
 mode=$(cat $etc/$name/settings.txt |awk -F 'mode=' '/mode=/{print $2}')
 cd $dir
 v=1
+w=1
 log1=1
 while true ; do
 #检查进程与端口
 server=`ps -w | grep -v grep |grep "$name.*-d"`
 port=`netstat -anp | grep $name`
 ipt=`iptables -t nat -L PREROUTING --line-number | grep $name`
-if [ -z "$server" -o -z "$port" ] ; then
-	[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
-	[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
-	nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
-	v=0
-elif [ -z "$ipt" ] ; then
-	[ -z "$ipt" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name没透明代理，添加iptables规则！" >> ./keep.txt
-	sh $etc/$name.sh start_iptables &
+if [ "$mode" = "1" -o "$mode" = "2" ] ; then
+	if [ -z "$server" -o -z "$port" -o -z "$ipt" ] ; then
+		if [ -z "$server" -o -z "$port" ] ; then
+			[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
+			[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
+			nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
+			v=0
+		elif [ -z "$ipt" ] ; then
+			echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测$name没透明代理，添加iptables规则！" >> ./keep.txt
+			sh $etc/$name.sh start_iptables &
+			w=0
+		fi
+	else
+		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK，iptables OK" >> ./keep.txt
+	fi
 else
-	echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK，iptables OK" >> ./keep.txt
+	if [ -z "$server" -o -z "$port" ] ; then
+		[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
+		[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
+		nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
+		v=0
+	else
+		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK" >> ./keep.txt
+	fi
 fi
 v=`expr $v + 1`
+w=`expr $w + 1`
 #日志文件大于1万条后删除1000条
 [ -s ./keep.txt ] && [ "`sed -n '$=' ./keep.txt`" -ge "10000" ] && echo -e "❴d:$log1❵ `sed -n '$=' ./keep.txt`—1000_[$(date "+%H:%M:%S")]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
 sleep 120
@@ -638,8 +675,9 @@ down_config &
 wait
 #编辑配置文件
 edit_link
-edit_adblock
 edit_chinalist
+edit_dns
+edit_adblock
 edit_unlocknetease
 #启动主程序
 start_clash
@@ -649,27 +687,19 @@ status_clash
 #创建开机自启
 start_wan
 #创建定时任务
-start_corn
+start_cron
 #keep进程守护
 start_keep
 }
 #启动模式1：iptables透明代理
 start_1 () {
 start_0
-if [ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
-	ipt1
-else
-	logger -t "【$name】" "✘检测到未启动clash进程或端口没监听，取消iptables透明代理" && echo -e \\n"\e[1;31m✘检测到未启动clash进程或端口没监听，取消iptables透明代理\e[0m"\\n
-fi
+start_iptables
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 start_0
-if [ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
-	ipt2
-else
-	logger -t "【$name】" "✘检测到未启动clash进程或端口没监听，取消iptables透明代理" && echo -e \\n"\e[1;31m✘检测到未启动clash进程或端口没监听，取消iptables透明代理\e[0m"\\n
-fi
+start_iptables
 }
 
 #启动模式3：重启clash + ip2socks透明代理
@@ -742,7 +772,7 @@ if [ ! -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] ; then
 else
 	echo -e "○ \e[1;36m $name 进程守护：\e[1;31m【未运行】\e[0m"
 fi
-if [ ! -z "$(cat $pdcn/START_CORN.SH | grep $name.sh)" ] ; then
+if [ ! -z "$(cat $pdcn/START_CRON.SH | grep $name.sh)" ] ; then
 	echo -e "● \e[1;36m $name 定时重启：\e[1;32m【已启用】\e[0m"
 else
 	echo -e "○ \e[1;36m $name 定时重启：\e[1;31m【未启用】\e[0m"
@@ -761,7 +791,7 @@ fi
 #按钮
 case $1 in
 0)
-	stop_0 &
+	stop_1 &
 	;;
 1)
 	start_1 &
@@ -835,10 +865,10 @@ ipt2socks_start)
 	#
 	echo -e \\n"\e[1;33m脚本管理： \e[0m"\\n
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
-	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash + iptables透明代理\e[0m"
-	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash + iptables透明代理 + 自身走代理\e[0m"
-	#echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：启动clash + ip2socks 透明代理\e[0m"
-	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash + transocks 透明代理 \e[0m"
+	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash✚iptables透明代理\e[0m"
+	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚iptables透明代理✚自身走代理\e[0m"
+	#echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：启动clash✚ip2socks 透明代理\e[0m"
+	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash✚transocks 透明代理 \e[0m"
 	echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"
 	echo -e "\e[1;32m【6】\e[0m\e[1;36m bypass_lan_ip：局域网IP绕过列表\e[0m"
 	echo -e "\e[1;32m【7】\e[0m\e[1;36m settings：重置初始化配置\e[0m"

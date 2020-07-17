@@ -13,7 +13,7 @@ payload:
 - DOMAIN-SUFFIX,cferw.com
 - DOMAIN-SUFFIX,yunanfuwuqi.com
 - DOMAIN-SUFFIX,xxguan.cn
-- DOMAIN-SUFFIX,lianmeng.360.cn
+- DOMAIN-SUFFIX,360.cn
 - DOMAIN-SUFFIX,appjiagu.com
 - DOMAIN-SUFFIX,alimama.com
 - DOMAIN-SUFFIX,ipinyou.com

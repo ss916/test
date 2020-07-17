@@ -1,5 +1,5 @@
-# //【2020-07-16 17:51:32】
-/SHA1.TXT= 1cec960919511402f6b1127da5f649a8
+# //【2020-07-17 16:57:31】
+/SHA1.TXT= a640d37cfb44b673c64c533756240bf4
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,8 +8,8 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= e19ab9c5c84e9ddf58d396398e6f95b8
-/config.yaml= ea0e6ea27205506c31bd93e2a7be8b93
+/clash.sh= 66e018aa8df91896c35a04069474e576
+/config.yaml= 2b33a5e4e6d21861cf8194846273fa77
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -22,7 +22,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /p= d10c56016e0343d0b05f3a35a368c828
-/payload/block_dnsmasq.txt= 5366f51878f468505c27755535cf236d
+/payload/block_dnsmasq.txt= 00ba1b45a979095a9b9ed20aab8139a0
 /payload/block_hijack.txt= 6dfcaa031cf12797235ce87a546c4d50
 /payload/block_hosts.txt= c3fc5e97c4dd8279850c1d94b0c2cb3d
 /payload/block_malicious.txt= 3d42a3681f9a52d58b70742094e1a36b
