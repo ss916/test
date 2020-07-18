@@ -1,4 +1,4 @@
-# //【2020-07-19 02:21:57】
+# //【2020-07-19 05:49:14】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -9,7 +9,7 @@ mixed-port: 8005
 redir-port: 8002
 allow-lan: true
 bind-address: "*"
-log-level: debug
+log-level: info
 ipv6: true
 
 
@@ -23,7 +23,7 @@ dns:
   listen: 0.0.0.0:5300
   ipv6: true #markdns
   enhanced-mode: redir-host #markdns
-  fake-ip-range: 198.18.0.1/16
+    fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
@@ -56,17 +56,27 @@ proxies:
 proxy-providers:
 #mark订阅1
 #mark订阅2
+#mark文件1
+#mark文件2
 
-  #订阅模板:
+  #在线订阅模板:
     #type: http
-    #url: http://192.168.12.1:331/link2.txt
-    #interval: 60000
-    #path: ./订阅模板.txt
+    #url: http://192.168.1.1:331/link1.txt
+    #interval: 30000
+    #path: ./在线订阅模板.txt
+    #health-check:
+      #enable: true
+      #interval: 600
+      #url: http://clients1.google.com/generate_204
+
+  #本地文件模板:
+    #type: file
+    #interval: 30000
+    #path: ./本地文件模板.txt
     #health-check:
       #enable: true
       #interval: 600
       #url: http://clients2.google.com/generate_204
-
 
 proxy-groups:
 - name: 代理

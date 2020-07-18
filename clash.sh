@@ -134,13 +134,13 @@ edit_link () {
 testlink1=$(echo $link1 | grep ^http)
 testlink2=$(echo $link2 | grep ^http)
 if [ ! -z "$link2" -a ! -z "$testlink2" ] ; then
-	sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 60000\n    path: ./订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+	sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: ./订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 else
 	sed -i '/订阅2/d' ./config.yaml
 fi
 if [ ! -z "$link1" ] ; then
 	if [ ! -z "$testlink1" ] ; then
-		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 60000\n    path: ./订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 30000\n    path: ./订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 	else
 		echo -e \\n"\e[1;31m【$name】  ✘ 订阅链接1非http链接，请初始化配置。\e[0m"
 		exit
@@ -149,6 +149,8 @@ else
 	echo -e \\n"\e[1;31m【$name】  ✘ 订阅链接1為空，请初始化配置。\e[0m"
 	exit
 fi
+#sed -i "s@#mark文件1@  文件1:\n    type: file\n    interval: 30000\n    path: ./文件1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
+#sed -i "s@#mark文件2@  文件2:\n    type: file\n    interval: 30000\n    path: ./文件2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
 }
 edit_adblock () {
 #是否启用去广告功能，1启用，非1则默认关闭
