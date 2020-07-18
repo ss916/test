@@ -418,7 +418,8 @@ iptables -t nat -A PREROUTING -p tcp -j clash
 #DNS流量
 iptables -t nat -N CLASH_DNS >/dev/null 2>&1
 iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -A OUTPUT -p udp --dport 53 -j CLASH_DNS
 ##udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
@@ -455,10 +456,11 @@ iptables -t nat -A CLASH_LOCAL -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A CLASH_LOCAL -p tcp -j REDIRECT --to-ports "$redir_port"
 iptables -t nat -A OUTPUT -p tcp -j CLASH_LOCAL
 #DNS流量
-iptables -t nat -N CLASH_DNS_LOCAL >/dev/null 2>&1
-iptables -t nat -A CLASH_DNS_LOCAL -m owner --uid-owner "$user_id" -j RETURN
-iptables -t nat -A CLASH_DNS_LOCAL -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -A OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
+#iptables -t nat -N CLASH_DNS_LOCAL >/dev/null 2>&1
+#iptables -t nat -A CLASH_DNS_LOCAL -m owner --uid-owner "$user_id" -j RETURN
+#iptables -t nat -A CLASH_DNS_LOCAL -p udp -j REDIRECT --to-ports "$dns_port"
+#iptables -t nat -A OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
+iptables -t nat -I CLASH_DNS -m owner --uid-owner "$user_id" -j RETURN
 }
 ipt01 () {
 logger -t "【$name】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
@@ -468,6 +470,7 @@ iptables -t nat -F clash >/dev/null 2>&1
 iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS >/dev/null 2>&1
 iptables -t nat -F CLASH_DNS >/dev/null 2>&1
 #iptables -t nat -X CLASH_DNS >/dev/null 2>&1
+iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS >/dev/null 2>&1
 ip rule del fwmark 1 table 100 >/dev/null 2>&1
 ip route del local default dev lo table 100 >/dev/null 2>&1
 iptables -t mangle -D PREROUTING -p udp -j clash >/dev/null 2>&1
@@ -479,7 +482,7 @@ logger -t "【$name】" "▷删除路由自身透明代理iptables规则" && ech
 iptables -t nat -D OUTPUT -p tcp -j CLASH_LOCAL >/dev/null 2>&1
 iptables -t nat -F CLASH_LOCAL >/dev/null 2>&1
 #iptables -t nat -X CLASH_LOCAL >/dev/null 2>&1
-iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL >/dev/null 2>&1
+#iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL >/dev/null 2>&1
 iptables -t nat -F CLASH_DNS_LOCAL >/dev/null 2>&1
 #iptables -t nat -X CLASH_DNS_LOCAL >/dev/null 2>&1
 }

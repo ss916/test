@@ -98,7 +98,7 @@ proxy-groups:
     #- 订阅2
 
 #直连=gfwlist，代理=chinalist，默认直连gfwlist
-- { name: "❔其他流量", type: select, proxies: ["直连", "代理", "屏蔽"] } #markgfwlistorchinalist
+- { name: "🍥其他流量", type: select, proxies: ["直连", "代理", "屏蔽"] } #markgfwlistorchinalist
 
 - { name: "🆓谷歌", type: select, proxies: ["代理", "直连", "屏蔽"] }
 - { name: "🆓电报", type: select, proxies: ["代理", "直连", "屏蔽"] }
@@ -113,7 +113,7 @@ proxy-groups:
 - { name: "🀄影音", type: select, proxies: ["直连", "代理", "屏蔽"] }
 
 - { name: "🀄IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
-- { name: "🇺🇸IP", type: select, proxies: ["代理", "直连", "屏蔽"] }
+#- { name: "🇺🇸IP", type: select, proxies: ["代理", "直连", "屏蔽"] }
 
 - { name: "❌劫持", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌hosts", type: select, proxies: ["屏蔽", "直连"] } #markadblock
@@ -241,8 +241,8 @@ rules:
 #- SRC-IP-CIDR,192.168.1.201/32,直连
 
 # cn IP走直连
-- GEOIP,US,🇺🇸IP
+#- GEOIP,US,🇺🇸IP
 - GEOIP,CN,🀄IP
 
 #其余走代理
-- MATCH,❔其他流量
+- MATCH,🍥其他流量
