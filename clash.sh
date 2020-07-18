@@ -422,6 +422,7 @@ iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASH_DNS
 iptables -t nat -A OUTPUT -p udp --dport 53 -j CLASH_DNS
 ##udp
 ip rule add fwmark 1 table 100
+#ip rule add fwmark 1 lookup 100
 ip route add local default dev lo table 100
 iptables -t mangle -N clash >/dev/null 2>&1
 #绕过内网
@@ -434,7 +435,7 @@ iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
 iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 #转发UDP流量到clash端口
-iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
+iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 0x01/0x01
 #透明代理UDP流量到clash mangle链
 iptables -t mangle -A PREROUTING -p udp -j clash
 #绕过局域网
@@ -455,6 +456,7 @@ iptables -t nat -A CLASH_LOCAL -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A CLASH_LOCAL -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A CLASH_LOCAL -p tcp -j REDIRECT --to-ports "$redir_port"
 iptables -t nat -A OUTPUT -p tcp -j CLASH_LOCAL
+#iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j CLASH_LOCAL
 #DNS流量
 #iptables -t nat -N CLASH_DNS_LOCAL >/dev/null 2>&1
 #iptables -t nat -A CLASH_DNS_LOCAL -m owner --uid-owner "$user_id" -j RETURN
