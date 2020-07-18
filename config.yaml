@@ -1,4 +1,4 @@
-# //【2020-07-19 05:49:14】
+# //【2020-07-19 06:00:50】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -108,7 +108,7 @@ proxy-groups:
     #- 订阅2
 
 #直连=gfwlist，代理=chinalist，默认直连gfwlist
-- { name: "🍥其他流量", type: select, proxies: ["直连", "代理", "屏蔽"] } #markgfwlistorchinalist
+- { name: "❓其他流量", type: select, proxies: ["直连", "代理", "屏蔽"] } #markgfwlistorchinalist
 
 - { name: "🆓谷歌", type: select, proxies: ["代理", "直连", "屏蔽"] }
 - { name: "🆓电报", type: select, proxies: ["代理", "直连", "屏蔽"] }
@@ -255,4 +255,4 @@ rules:
 - GEOIP,CN,🀄IP
 
 #其余走代理
-- MATCH,🍥其他流量
+- MATCH,❓其他流量
