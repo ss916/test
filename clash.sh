@@ -418,7 +418,7 @@ iptables -t nat -A PREROUTING -p tcp -j clash
 #DNS流量
 iptables -t nat -N CLASH_DNS >/dev/null 2>&1
 iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASH_DNS
 ##udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
