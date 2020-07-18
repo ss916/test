@@ -401,7 +401,7 @@ fi
 ##########
 logger -t "【$name】" "▶创建局域网透明代理" && echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"\\n
 #tcp
-iptables -t nat -N clash
+iptables -t nat -N clash >/dev/null 2>&1
 #绕过内网
 iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
@@ -416,13 +416,13 @@ iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
 #透明代理TCP流量到clash链
 iptables -t nat -A PREROUTING -p tcp -j clash
 #DNS流量
-iptables -t nat -N CLASH_DNS
+iptables -t nat -N CLASH_DNS >/dev/null 2>&1
 iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASH_DNS
+iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASH_DNS
 ##udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
-iptables -t mangle -N clash
+iptables -t mangle -N clash >/dev/null 2>&1
 #绕过内网
 iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
 iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
@@ -442,7 +442,7 @@ bypasslan
 #透明代理+自身代理
 ipt12 () {
 logger -t "【$name】" "▶创建路由自身透明代理" && echo -e \\n"\e[1;36m▶创建路由自身透明代理\e[0m"\\n
-iptables -t nat -N CLASH_LOCAL
+iptables -t nat -N CLASH_LOCAL >/dev/null 2>&1
 iptables -t nat -A CLASH_LOCAL -m owner --uid-owner "$user_id" -j RETURN
 iptables -t nat -A CLASH_LOCAL -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A CLASH_LOCAL -d 127.0.0.0/8 -j RETURN
@@ -453,36 +453,35 @@ iptables -t nat -A CLASH_LOCAL -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A CLASH_LOCAL -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A CLASH_LOCAL -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A CLASH_LOCAL -p tcp -j REDIRECT --to-ports "$redir_port"
-iptables -t nat -I OUTPUT -p tcp -j CLASH_LOCAL
+iptables -t nat -A OUTPUT -p tcp -j CLASH_LOCAL
 #DNS流量
-iptables -t nat -N CLASH_DNS_LOCAL
+iptables -t nat -N CLASH_DNS_LOCAL >/dev/null 2>&1
 iptables -t nat -A CLASH_DNS_LOCAL -m owner --uid-owner "$user_id" -j RETURN
 iptables -t nat -A CLASH_DNS_LOCAL -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -I OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
+iptables -t nat -A OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
 }
-#删除透明代理
 ipt01 () {
 logger -t "【$name】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
-iptables -t nat -D PREROUTING -p tcp -j clash
-iptables -t nat -F clash
-iptables -t nat -X clash
-iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS
-iptables -t nat -F CLASH_DNS
-iptables -t nat -X CLASH_DNS
-ip rule del fwmark 1 table 100
-ip route del local default dev lo table 100
-iptables -t mangle -D PREROUTING -p udp -j clash
-iptables -t mangle -F clash
-iptables -t mangle -X clash
+iptables -t nat -D PREROUTING -p tcp -j clash >/dev/null 2>&1
+iptables -t nat -F clash >/dev/null 2>&1
+#iptables -t nat -X clash >/dev/null 2>&1
+iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASH_DNS >/dev/null 2>&1
+iptables -t nat -F CLASH_DNS >/dev/null 2>&1
+#iptables -t nat -X CLASH_DNS >/dev/null 2>&1
+ip rule del fwmark 1 table 100 >/dev/null 2>&1
+ip route del local default dev lo table 100 >/dev/null 2>&1
+iptables -t mangle -D PREROUTING -p udp -j clash >/dev/null 2>&1
+iptables -t mangle -F clash >/dev/null 2>&1
+#iptables -t mangle -X clash >/dev/null 2>&1
 }
 ipt02 () {
 logger -t "【$name】" "▷删除路由自身透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除路由自身透明代理iptables规则\e[0m"\\n
-iptables -t nat -D OUTPUT -p tcp -j CLASH_LOCAL
-iptables -t nat -F CLASH_LOCAL
-iptables -t nat -X CLASH_LOCAL
-iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL
-iptables -t nat -F CLASH_DNS_LOCAL
-iptables -t nat -X CLASH_DNS_LOCAL
+iptables -t nat -D OUTPUT -p tcp -j CLASH_LOCAL >/dev/null 2>&1
+iptables -t nat -F CLASH_LOCAL >/dev/null 2>&1
+#iptables -t nat -X CLASH_LOCAL >/dev/null 2>&1
+iptables -t nat -D OUTPUT -p udp --dport 53 -j CLASH_DNS_LOCAL >/dev/null 2>&1
+iptables -t nat -F CLASH_DNS_LOCAL >/dev/null 2>&1
+#iptables -t nat -X CLASH_DNS_LOCAL >/dev/null 2>&1
 }
 ipt0 () {
 ipt01
@@ -502,20 +501,33 @@ fi
 }
 start_iptables () {
 if [ "$mode" = "1" ] ; then
-	[ ! -z "$(iptables -t nat -L PREROUTING --line-number | grep $name)" ] && ipt01
+	pre1=$(iptables -t nat -L PREROUTING | grep clash | wc -l)
+	pre2=$(iptables -t nat -L PREROUTING | grep CLASH_DNS | wc -l)
+	pre3=$(iptables -t mangle -L PREROUTING | grep clash | wc -l)
+	[ "$pre1" != "0" ] && ipt01
+	[ "$pre2" != "0" ] && ipt01
+	[ "$pre3" != "0" ] && ipt01
 	if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 		ipt1
 	else
-		echo "start_iptables 1：$name进程没启动成功或端口没监听，取消透明代理..."
+		echo "start_iptables 1：$name进程没启动成功或端口没监听，不启动透明代理..."
 	fi
 elif [ "$mode" = "2" ] ; then
-	[ ! -z "$(iptables -t nat -L PREROUTING --line-number | grep $name)" ] && ipt01
-	[ ! -z "$(iptables -t nat -L OUTPUT --line-number | grep CLASH_LOCAL)" ] && ipt02
+	pre1=$(iptables -t nat -L PREROUTING | grep clash | wc -l)
+	pre2=$(iptables -t nat -L PREROUTING | grep CLASH_DNS | wc -l)
+	pre3=$(iptables -t mangle -L PREROUTING | grep clash | wc -l)
+	out1=$(iptables -t nat -L OUTPUT | grep CLASH_LOCAL |wc -l)
+	out2=$(iptables -t nat -L OUTPUT | grep CLASH_DNS_LOCAL |wc -l)
+	[ "$pre1" != "0" ] && ipt01
+	[ "$pre2" != "0" ] && ipt01
+	[ "$pre3" != "0" ] && ipt01
+	[ "$out1" != "0" ] && ipt02
+	[ "$out2" != "0" ] && ipt02
 	if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 		ipt1
 		ipt12
 	else
-		echo "start_iptables 2：$name进程没启动成功或端口没监听，取消透明代理..."
+		echo "start_iptables 2：$name进程没启动成功或端口没监听，不启动	透明代理..."
 	fi
 fi
 }
@@ -572,16 +584,19 @@ while true ; do
 #检查进程与端口
 server=`ps -w | grep -v grep |grep "$name.*-d"`
 port=`netstat -anp | grep $name`
+pre1=$(iptables -t nat -L PREROUTING | grep clash | wc -l)
+pre2=$(iptables -t nat -L PREROUTING | grep CLASH_DNS | wc -l)
+pre3=$(iptables -t mangle -L PREROUTING | grep clash | wc -l)
 ipt=`iptables -t nat -L PREROUTING --line-number | grep $name`
 if [ "$mode" = "1" -o "$mode" = "2" ] ; then
-	if [ -z "$server" -o -z "$port" -o -z "$ipt" ] ; then
+	if [ -z "$server" -o -z "$port" -o "$pre1" != "1" -o "$pre2" != "1" -o "$pre3" != "1" ] ; then
 		if [ -z "$server" -o -z "$port" ] ; then
 			[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
 			[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
 			nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
 			v=0
-		elif [ -z "$ipt" ] ; then
-			echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测$name没透明代理，添加iptables规则！" >> ./keep.txt
+		elif [ "$pre1" != "1" -o "$pre2" != "1" -o "$pre3" != "1" ] ; then
+			echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测$name需要重置iptables规则！" >> ./keep.txt
 			sh $etc/$name.sh start_iptables &
 			w=0
 		fi

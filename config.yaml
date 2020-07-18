@@ -111,7 +111,9 @@ proxy-groups:
 
 - { name: "🀄网站", type: select, proxies: ["直连", "代理", "屏蔽"] }
 - { name: "🀄影音", type: select, proxies: ["直连", "代理", "屏蔽"] }
+
 - { name: "🀄IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
+- { name: "🇺🇸IP", type: select, proxies: ["代理", "直连", "屏蔽"] }
 
 - { name: "❌劫持", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌hosts", type: select, proxies: ["屏蔽", "直连"] } #markadblock
@@ -238,6 +240,7 @@ rules:
 #- SRC-IP-CIDR,192.168.1.201/32,直连
 
 # cn IP走直连
+- GEOIP,US,🇺🇸IP
 - GEOIP,CN,🀄IP
 
 #其余走代理

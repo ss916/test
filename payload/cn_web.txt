@@ -356,3 +356,6 @@ payload:
 - DOMAIN-SUFFIX,zhuihd.com
 - DOMAIN,download.jetbrains.com
 - DOMAIN,images-cn.ssl-images-amazon.com
+# > cibn
+- DOMAIN-SUFFIX,cibn.cc
+- DOMAIN-SUFFIX,cibntv.net
