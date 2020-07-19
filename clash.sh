@@ -437,7 +437,7 @@ iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
 iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
 #转发UDP流量到clash端口
-iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 0x01/0x01
+iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
 #透明代理UDP流量到clash mangle链
 iptables -t mangle -A PREROUTING -p udp -j clash
 #绕过局域网
