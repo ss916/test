@@ -1,4 +1,4 @@
-# //【2020-07-19 06:00:50】
+# //【2020-07-19 12:58:43】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -23,7 +23,7 @@ dns:
   listen: 0.0.0.0:5300
   ipv6: true #markdns
   enhanced-mode: redir-host #markdns
-    fake-ip-range: 198.18.0.1/16
+  fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
     - localhost.ptlogin2.qq.com
