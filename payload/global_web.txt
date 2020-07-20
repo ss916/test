@@ -25,6 +25,13 @@ payload:
 - IP-CIDR,54.173.34.141/32
 - IP-CIDR,54.235.23.242/32
 - IP-CIDR,169.45.248.118/32
+#🆓github ：global_web_github.txt
+- DOMAIN-SUFFIX,gitbook.io
+- DOMAIN-SUFFIX,gitbook.com
+- DOMAIN-SUFFIX,github.com
+- DOMAIN-SUFFIX,githubusercontent.com
+- DOMAIN-SUFFIX,githubassets.com
+- DOMAIN-SUFFIX,githubapp.com
 #🆓google ：global_web_google.txt
 # > YouTube
 - DOMAIN-SUFFIX,googlevideo.com
@@ -150,10 +157,6 @@ payload:
 - DOMAIN-SUFFIX,appledaily.com
 #v2fly
 - DOMAIN-SUFFIX,v2fly.org
-#github
-- DOMAIN-KEYWORD,github
-- DOMAIN-KEYWORD,githubusercontent
-- DOMAIN-KEYWORD,githubusercontent
 - DOMAIN-KEYWORD,jav
 - DOMAIN-KEYWORD,pinterest
 - DOMAIN-KEYWORD,porn

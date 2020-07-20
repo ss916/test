@@ -15,10 +15,6 @@ payload:
 - DOMAIN-SUFFIX,appledaily.com
 #v2fly
 - DOMAIN-SUFFIX,v2fly.org
-#github
-- DOMAIN-KEYWORD,github
-- DOMAIN-KEYWORD,githubusercontent
-- DOMAIN-KEYWORD,githubusercontent
 - DOMAIN-KEYWORD,jav
 - DOMAIN-KEYWORD,pinterest
 - DOMAIN-KEYWORD,porn
