@@ -1,5 +1,7 @@
 payload:
 #🆓other ：global_web_other.txt
+#ptt
+- DOMAIN-SUFFIX,disp.cc
 #pincong
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy

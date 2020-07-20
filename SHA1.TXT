@@ -1,5 +1,5 @@
-# //【2020-07-20 14:12:48】
-/SHAKE128.TXT= d60457ec60d90a7f17c96dacc525a86a9fb0ca62
+# //【2020-07-20 18:50:04】
+/SHAKE128.TXT= 91c66975d8148466d52742b059220edbfa70f3af
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -21,6 +21,7 @@
 /hosts/f= 13b915e7176a389561cc984947c8dc23d612dd88
 /hosts/hosts= 77b13a63a7344fff686fb4b76c374fae160b6622
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
+/netease.sh= ab0024e865d6e99bf26817b926915ae1ae12dad6
 /p= 663cf5a829bbfe27154fce8a45b38232a414217a
 /payload/block_dnsmasq.txt= 1b8bd43ff63bdfccf9e74f46b7300c3df3548c8b
 /payload/block_hijack.txt= be579bd5d526f7be248624daea53c6735fa91da5
@@ -28,16 +29,16 @@
 /payload/block_malicious.txt= d467e508848473020772c681449e592bb500cf16
 /payload/cn_music_netease.txt= e18682c301c0b3656b03b49d380d4e6e092ba55a
 /payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
-/payload/cn_web.txt= 21f191d768d7d8fda460d4e6e89c6942d7e74cdd
+/payload/cn_web.txt= b9829c894568643ed3b7cdd0f907e956af0194ee
 /payload/global_apple.txt= d958a81f55135bfc3585cd5703e600590fbfafa2
 /payload/global_video.txt= ed5ee345818169f73b61704c0650b46a40cac4e2
-/payload/global_web.txt= 8c67ddaab5203c84cd8aad4254c042903badc498
+/payload/global_web.txt= 23fa52545b4b0b8ada96a5463fdff3f3f9c2cdf9
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
 /payload/global_web_google.txt= 5f8df96dd2658aebc3b5495a5ab78caf06e16650
 /payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
 /payload/global_web_mega.txt= e5942b3cb4f21c81cbdc4c74a19f71e7604ba93f
 /payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153
-/payload/global_web_other.txt= fac5303905e249e025f329009adcea566e97d749
+/payload/global_web_other.txt= f8df8687b722616224d76a8818f5b9a37f6a7a82
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /t/Country.mmdb.tgz= 7ee0bb315587ec5b410495e1b21f4a302c332707

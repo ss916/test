@@ -1,5 +1,12 @@
 payload:
 #🀄网站：cn_web.txt
+# > solidot
+- DOMAIN-SUFFIX,solidot.org
+# > cibn
+- DOMAIN-SUFFIX,cibn.cc
+- DOMAIN-SUFFIX,cibntv.net
+# > v2ex
+- DOMAIN-SUFFIX,v2ex.com
 # > 360
 - DOMAIN-SUFFIX,qhres.com
 - DOMAIN-SUFFIX,qhimg.com
@@ -356,6 +363,3 @@ payload:
 - DOMAIN-SUFFIX,zhuihd.com
 - DOMAIN,download.jetbrains.com
 - DOMAIN,images-cn.ssl-images-amazon.com
-# > cibn
-- DOMAIN-SUFFIX,cibn.cc
-- DOMAIN-SUFFIX,cibntv.net

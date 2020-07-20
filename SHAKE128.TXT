@@ -1,5 +1,5 @@
-# //【2020-07-20 14:12:48】
-/SHA1.TXT= 37baa778ee1e0209cda0eb4b9bb31896
+# //【2020-07-20 18:50:05】
+/SHA1.TXT= 8293e17a87b8afbf32ae00256330de30
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -21,6 +21,7 @@
 /hosts/f= 6491956b133619fc96c4742f074ad87b
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
+/netease.sh= eee9bbd6ae36d0df484221bdee28cfbc
 /p= d10c56016e0343d0b05f3a35a368c828
 /payload/block_dnsmasq.txt= 00ba1b45a979095a9b9ed20aab8139a0
 /payload/block_hijack.txt= 6dfcaa031cf12797235ce87a546c4d50
@@ -28,16 +29,16 @@
 /payload/block_malicious.txt= 3d42a3681f9a52d58b70742094e1a36b
 /payload/cn_music_netease.txt= d8d70679b55cf2684a246004f1a2731f
 /payload/cn_video.txt= 7796e0d54e1ade4877c63ec455be456b
-/payload/cn_web.txt= 33fd52bbb07b0726ee433859e30024de
+/payload/cn_web.txt= e427b03442ef4234cc22e7c2bad0e892
 /payload/global_apple.txt= 13a1e7bc795c6af5327ced30d1e9aa7d
 /payload/global_video.txt= 132f316e728ce8d6da64465b0822db96
-/payload/global_web.txt= e1144a8a3c995e5fba72f3f81f131f64
+/payload/global_web.txt= e8d00e6e6f3ac358508a9230d3db189b
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_google.txt= 7936e7d7c739ca3d9a86a4760da1ddf4
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
 /payload/global_web_mega.txt= e768e2127cda74b649a4b36446e302ed
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
-/payload/global_web_other.txt= 031d1980195f494369d0329a24d3cbbd
+/payload/global_web_other.txt= 31389bd1370ec356e4fca0a7ee66c8ed
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /t/Country.mmdb.tgz= 3296fd0d73b85764676ebd97f66fcc3c
