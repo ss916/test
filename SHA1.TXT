@@ -1,5 +1,5 @@
-# //【2020-07-19 13:17:12】
-/SHAKE128.TXT= d4fd766ee6f93f653da0c199af50fd4e2451395e
+# //【2020-07-20 14:12:48】
+/SHAKE128.TXT= d60457ec60d90a7f17c96dacc525a86a9fb0ca62
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
 /arm64/v2ctl= f458fc2b76716cc835538af267acd1c8760d2c17
 /arm64/v2ray= b7bf9c0e687fb8e8d283247c3c8effd9c5d64563
-/clash.sh= 48b6619a35a90d8359f6176a572e9e93cfec1284
+/clash.sh= 87e641d0559ffa35dfd04da76bc7157d16c629d5
 /config.yaml= 88686e14a16b6a7b4a35d30e691e4120aec36ec2
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
@@ -31,9 +31,9 @@
 /payload/cn_web.txt= 21f191d768d7d8fda460d4e6e89c6942d7e74cdd
 /payload/global_apple.txt= d958a81f55135bfc3585cd5703e600590fbfafa2
 /payload/global_video.txt= ed5ee345818169f73b61704c0650b46a40cac4e2
-/payload/global_web.txt= 2de74590a7da2a5dd08f714cdf19644c41630109
+/payload/global_web.txt= 8c67ddaab5203c84cd8aad4254c042903badc498
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
-/payload/global_web_google.txt= bec74805d2a26d960a38a61fbb56be1a3cedf327
+/payload/global_web_google.txt= 5f8df96dd2658aebc3b5495a5ab78caf06e16650
 /payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
 /payload/global_web_mega.txt= e5942b3cb4f21c81cbdc4c74a19f71e7604ba93f
 /payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153

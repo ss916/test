@@ -40,7 +40,6 @@ payload:
 - DOMAIN-SUFFIX,gvt0.com
 - DOMAIN-SUFFIX,gvt1.com
 - DOMAIN-SUFFIX,gvt3.com
-- DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 - DOMAIN-SUFFIX,googleapis.com
 - DOMAIN-SUFFIX,googleapis.cn
 - DOMAIN-SUFFIX,abc.xyz
@@ -71,8 +70,7 @@ payload:
 - DOMAIN-SUFFIX,madewithcode.com
 - DOMAIN-SUFFIX,material.io
 - DOMAIN-SUFFIX,polymer-project.org
-- DOMAIN-SUFFIX,admin.recaptcha.net
-- DOMAIN-SUFFIX,recaptcha.net
+#- DOMAIN-SUFFIX,recaptcha.net
 - DOMAIN-SUFFIX,shattered.io
 - DOMAIN-SUFFIX,synergyse.com
 - DOMAIN-SUFFIX,tensorflow.org
