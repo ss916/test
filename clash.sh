@@ -176,7 +176,7 @@ address=$(echo "$@"|sed 's/ /\n/g'| awk -F 'address=' '/address=/{print $2}')
 if [ -z "$address" ] ; then
 	echo "download file错误，文件地址address参数为空" && exit
 else
-	if [ -z "`echo $address | grep ^http`" ] ; then
+	if [ -z "$(echo $address | grep ^http)" ] ; then
 		#补全地址
 		link="$url/$address"
 	fi
@@ -203,15 +203,15 @@ if [ "$n" = "1" ] ; then
 fi
 logger -t "【$filename】" "▶開始第[$n]次下载$filetgz......" && echo -e \\n"\e[1;36m▶『$filename』開始第[$n]次下载$filetgz......\e[0m"
 if [ -s $diretc/$filetgz ] ; then
-	new=`openssl SHA1 $diretc/$filetgz |awk '{print $2}'`
+	new=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
-	[ ! -z "`ps -w | grep -v grep | grep "curl.*$filetgz"`" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
+	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
 	#curl -# $address -o ./$filetgz
 	curl -# $link -o ./$filetgz
-	new=`openssl SHA1 ./$filetgz |awk '{print $2}'`
+	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
 fi
-old=`cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}'`
+old=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
 echo -e \\n"文件：$filetgz \\nnew：$new \\nold：$old"
 if [ ! -z "$new" -a ! -z "$old" ] ; then
 	if [ "$new" = "$old" ] ; then
@@ -255,7 +255,7 @@ if [ "$download_ok" = "1" ] ; then
 	#跳出循环
 	break
 fi
-n=`expr $n + 1`
+n=$(expr $n + 1)
 done
 [ "$n" -gt "$m" ] && logger -t "【$filename】" "✖下载[$m]次都失败！！！" && echo -e \\n"\e[1;31m✖『$filename』下载[$m]次都失败！！！\e[0m"\\n
 }
@@ -280,7 +280,7 @@ fi
 down_geoip () {
 file=Country.mmdb
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
-	[ -s ./clash_log.txt ] && [ ! -z "`grep -o "Can't load mmdb" ./clash_log.txt`" -o ! -z "`grep -o "Can't find MMDB" ./clash_log.txt`" ] && logger -t "【$name】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
+	[ -s ./clash_log.txt ] && [ ! -z "$(grep -o "Can't load mmdb" ./clash_log.txt)" -o ! -z "$(grep -o "Can't find MMDB" ./clash_log.txt)" ] && logger -t "【$name】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
 	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=$tmp
 	ln -s $tmp/$file $dirtmp/$file
 fi
@@ -297,7 +297,7 @@ down_config () {
 file=$config
 if [ -s $tmp/config.yaml ] ; then
 	cp -f $tmp/$file ./config.yaml
-	ver=`cat ./config.yaml | awk -F// '/【/{print $2}'`
+	ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
 	logger -t "【$name】" "▶进入测试模式，使用本地配置文件$file，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件。\\n    $file\e[0m\e[1;32m$ver\e[0m"
 else
 	#if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
@@ -308,8 +308,8 @@ fi
 
 #transocks
 transocks_stop () {
-[ ! -z "`ps -w | grep -v grep | grep tran`" ] && logger -t "【clash.sh】" "▷检测到transocks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到transocks正在运行，先stop...\e[0m" && nvram set app_27=0 && /etc/storage/script/Sh58_tran_socks.sh stop
-[ ! -z "`ps -w | grep -v grep | grep chinadns`" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep tran)" ] && logger -t "【clash.sh】" "▷检测到transocks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到transocks正在运行，先stop...\e[0m" && nvram set app_27=0 && /etc/storage/script/Sh58_tran_socks.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep chinadns)" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
 }
 transocks_start () {
 logger -t "【clash.sh】" "▶启动transocks透明代理..." && echo -e \\n"\e[1;33m▶启动transocks透明代理......\e[0m"
@@ -319,7 +319,7 @@ nvram set app_27=1
 nvram set transocks_proxy_mode_x=socks5
 #路由模式 0 为chnroute, 1 为 gfwlist, 2 为全局
 nvram set app_28=1
-lan_ipaddr=`nvram get lan_ipaddr`
+lan_ipaddr=$(nvram get lan_ipaddr)
 #透明重定向的代理服务器IP
 nvram set app_30=$lan_ipaddr
 #透明重定向的代理端口
@@ -334,8 +334,8 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 }
 #ipt2socks
 ipt2socks_stop () {
-[ ! -z "`ps -w | grep -v grep | grep ipt2socks`" ] && logger -t "【clash.sh】" "▷检测到ipt2socks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到ipt2socks正在运行，先stop...\e[0m" && nvram set app_104=0 && /etc/storage/script/Sh39_ipt2socks.sh stop
-[ ! -z "`ps -w | grep -v grep | grep chinadns`" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep ipt2socks)" ] && logger -t "【clash.sh】" "▷检测到ipt2socks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到ipt2socks正在运行，先stop...\e[0m" && nvram set app_104=0 && /etc/storage/script/Sh39_ipt2socks.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep chinadns)" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
 }
 ipt2socks_start () {
 logger -t "【clash.sh】" "▶启动ipt2socks透明代理..." && echo -e \\n"\e[1;33m▶启动ipt2socks透明代理......\e[0m"
@@ -345,7 +345,7 @@ nvram set app_104=1
 nvram set transocks_proxy_mode_x=socks5
 #路由模式 0 为chnroute, 1 为 gfwlist, 2 为全局
 nvram set app_28=1
-lan_ipaddr=`nvram get lan_ipaddr`
+lan_ipaddr=$(nvram get lan_ipaddr)
 #透明重定向的代理服务器IP
 nvram set app_30=$lan_ipaddr
 #透明重定向的代理端口
@@ -363,7 +363,7 @@ bypasslan () {
 #局域网绕过
 if [ -s $dirconf/bypasslan.txt ] ; then
 	logger -t "【$name】" "▶添加iptables绕过局域网IP.." && echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
-	for ip in `cat $dirconf/bypasslan.txt`
+	for ip in $(cat $dirconf/bypasslan.txt)
 	do
 		iptables -t nat -I clash -s $ip/32 -j RETURN
 		iptables -t mangle -I clash -s $ip/32 -j RETURN
@@ -393,9 +393,9 @@ ipt1 () {
 config=$dirtmp/config.yaml
 if [ -s $config ] ; then
 	#提取redir-port透明代理端口
-	redir_port=`cat $config | awk '/redir-port:/{print $2}' | sed 's/"//g'`
+	redir_port=$(cat $config | awk '/redir-port:/{print $2}' | sed 's/"//g')
 	#提取DNS监听端口
-	dns_port=`cat $config | awk -F: '/listen:/{print $NF}'`
+	dns_port=$(cat $config | awk -F: '/listen:/{print $NF}')
 else
 	redir_port=8002
 	dns_port=5300
@@ -479,7 +479,7 @@ fi
 
 
 dnsmasq1 () {
-if [ -z "`grep "#clashDNS" /etc/storage/dnsmasq/dnsmasq.conf`" ] ; then
+if [ -z "$(grep "#clashDNS" /etc/storage/dnsmasq/dnsmasq.conf)" ] ; then
 echo "▶添加dnsmasq clash規則"
 echo "server=127.0.0.1#5300 #clashDNS
 no-resolv #clashDNS" >> /etc/storage/dnsmasq/dnsmasq.conf
@@ -487,7 +487,7 @@ restart_dhcpd
 fi
 }
 dnsmasq0 () {
-[ ! -z "`grep "#clashDNS" /etc/storage/dnsmasq/dnsmasq.conf`" ] && sed -i '/#clashDNS/d' /etc/storage/dnsmasq/dnsmasq.conf && echo "▷刪除dnsmasq clash規則" && restart_dhcpd
+[ ! -z "$(grep "#clashDNS" /etc/storage/dnsmasq/dnsmasq.conf)" ] && sed -i '/#clashDNS/d' /etc/storage/dnsmasq/dnsmasq.conf && echo "▷刪除dnsmasq clash規則" && restart_dhcpd
 }
 
 
@@ -563,19 +563,19 @@ else
 		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK" >> ./keep.txt
 	fi
 fi
-v=`expr $v + 1`
-w=`expr $w + 1`
+v=$(expr $v + 1)
+w=$(expr $w + 1)
 #日志文件大于1万条后删除1000条
-[ -s ./keep.txt ] && [ "`sed -n '$=' ./keep.txt`" -ge "10000" ] && echo -e "❴d:$log1❵ `sed -n '$=' ./keep.txt`—1000_[$(date "+%H:%M:%S")]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
+[ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(date "+%H:%M:%S")]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
 sleep 120
 done
 EOF
 chmod +x $dirtmp/clash_keep.sh
 fi
-[ -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/clash_keep.sh >> $dirtmp/keep.txt 2>&1 &
+[ -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/clash_keep.sh >> $dirtmp/keep.txt 2>&1 &
 }
 stop_keep () {
-[ ! -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && ps -w |grep -v grep |grep clash_keep.sh | awk '{print $1}' | xargs kill -9
+[ ! -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && ps -w |grep -v grep |grep clash_keep.sh | awk '{print $1}' | xargs kill -9
 }
 
 #状态
@@ -585,8 +585,8 @@ ps -w |grep -v grep| grep "clash.*-d"
 echo -e \\n"\e[36m■查看$name网络监听端口：\e[0m"
 netstat -anp | grep clash
 #判断是否启动
-if [ ! -z "`ps -w |grep -v grep| grep "clash.*-d"`" ] ; then
-	if [ ! -z "`netstat -anp|grep clash`" ] ; then
+if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
+	if [ ! -z "$(netstat -anp|grep clash)" ] ; then
 		logger -t "【$name】" "✔ $name已启动！！" && echo -e \\n"\e[1;36m✔ $name已启动！！\e[0m"\\n
 	else
 		logger -t "【$name】" "✦ $name进程已启动，但没监听端口..." && echo -e \\n"\e[1;36m✦ $name进程已启动，但没监听端口...\e[0m"
@@ -598,7 +598,7 @@ fi
 
 #关闭
 stop_clash () {
-[ ! -z "`ps -w |grep -v grep| grep "clash.*-d"`" ] && logger -t "【$name】" "▷关闭clash..." && echo -e \\n"\e[1;36m▷关闭clash...\e[0m" && ps -w |grep -v grep| grep "clash.*-d" | awk '{print $1}' | xargs kill -9
+[ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] && logger -t "【$name】" "▷关闭clash..." && echo -e \\n"\e[1;36m▷关闭clash...\e[0m" && ps -w |grep -v grep| grep "clash.*-d" | awk '{print $1}' | xargs kill -9
 }
 #启动
 start_clash () {
@@ -712,27 +712,27 @@ rm -rf $dirconf
 zhuangtai () {
 echo -e \\n"\e[1;33m当前状态：\e[0m"\\n
 if [ -s ./$name ] ; then
-	echo -e "★ \e[1;36m $name 版本：\e[1;32m【`./clash -v|awk '/Clash/{print $2}'|sed 's/v//'`】\e[0m"
+	echo -e "★ \e[1;36m $name 版本：\e[1;32m【$(./clash -v|awk '/Clash/{print $2}'|sed 's/v//')】\e[0m"
 else
 	echo -e "☆ \e[1;36m $name 版本：\e[1;31m【不存在】\e[0m"
 fi
 if [ -s ./$config ] ; then
-	echo -e "★ \e[1;36m $name 配置：\e[1;32m`cat ./config.yaml | awk -F// '/【/{print $2}'`\e[0m"
+	echo -e "★ \e[1;36m $name 配置：\e[1;32m$(cat ./config.yaml | awk -F// '/【/{print $2}')\e[0m"
 else
 	echo -e "☆ \e[1;36m $name 配置：\e[1;31m【不存在】\e[0m"
 fi
-if [ ! -z "`ps -w |grep -v grep| grep "clash.*-d"`" ] ; then
+if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
 	echo -e \\n"● \e[1;36m $name 进程：\e[1;32m【已运行】\e[0m"
 else
 	echo -e \\n"○ \e[1;36m $name 进程：\e[1;31m【未运行】\e[0m"
 fi
-if [ ! -z "`netstat -anp | grep clash`" ] ; then
+if [ ! -z "$(netstat -anp | grep clash)" ] ; then
 	echo -e "● \e[1;36m $name 端口：\e[1;32m【已监听】\e[0m"
 else
 	echo -e "○ \e[1;36m $name 端口：\e[1;31m【未监听】\e[0m"
 fi
 #
-if [ ! -z "`ps -w |grep -v grep |grep clash_keep.sh`" ] ; then
+if [ ! -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] ; then
 	echo -e "● \e[1;36m $name 进程守护：\e[1;32m【已运行】\e[0m"
 else
 	echo -e "○ \e[1;36m $name 进程守护：\e[1;31m【未运行】\e[0m"

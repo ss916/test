@@ -1,5 +1,5 @@
-# //【2020-07-20 23:52:02】
-/SHA1.TXT= 3008437308866750b63dcee838df24f3
+# //【2020-07-21 01:52:29】
+/SHA1.TXT= 350976fc4bf3b652ab3fc07b29672209
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= 98e0fd314ffb58516733587898670e3b
+/clash.sh= bc5b9f298f96d7663bffe4473b930a6c
 /config.yaml= 465a706df81e31f2f6b148ae54cf9f9e
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -42,8 +42,8 @@
 /payload/global_web_other.txt= e14a99af7bedd8d7259bcd10b2db0c28
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
-/t/Country.mmdb.tgz= 3296fd0d73b85764676ebd97f66fcc3c
-/t/Country.mmdb.ver= f9ece4a2463dba2b18f0735478e4e5b2
+/t/Country.mmdb.tgz= fa29967d1c35f379dea4e7e80e424bac
+/t/Country.mmdb.ver= 570d87ada64157823af1a015448a27a4
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
@@ -57,8 +57,6 @@
 /t/kcptunc= 2b4019418189343760b95903239745a5
 /t/kcptuns= 83db4f238d3d953a557426a68ca9b39f
 /t/kcptuns_old= 31bb10fafe7b7bb69d070c8b4cbdb0e4
-/t/trojan= 6ceda2b4fd01e9d3cc3be710c344d5e3
-/t/trojanver= d927b087562afd2e6856a8fd01f4bab3
 /t/v2ctl= 5b52cc6e58db07a64e82d4734b835a43
 /t/v2ray= b1e15e0cb56114b651a6096e77c64955
 /t/yacd-gh-pages.tgz= c1f51f8c9cbaa5393b8556cafe600e8a
