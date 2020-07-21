@@ -534,9 +534,15 @@ pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
 pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
 out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
 out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
-[ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] && iptables_mode=1
-[ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] && iptables_mode=2
+if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
+	iptables_mode=1
+elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
+	iptables_mode=2
+else
+	iptables_mode=0
+fi
 if [ "$mode" = "1" -o "$mode" = "2" ] ; then
+	#echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 	if [ -z "$server" -o -z "$port" ] ; then
 		[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
 		[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
@@ -659,12 +665,12 @@ start_keep
 #启动模式1：iptables透明代理
 start_1 () {
 start_0
-#start_iptables
+start_iptables
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 start_0
-#start_iptables
+start_iptables
 }
 
 #启动模式3：重启clash + ip2socks透明代理
@@ -752,14 +758,20 @@ pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
 pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
 out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
 out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
-[ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] && iptables_mode=1
-[ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] && iptables_mode=2
+if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
+	iptables_mode=1
+elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
+	iptables_mode=2
+else
+	iptables_mode=0
+fi
 if [ "$mode" = "1" -a "$iptables_mode" = "1" ] ; then
 	echo -e "● \e[1;36m $name 透明代理1：\e[1;32m【已启用】\e[0m"
 elif [ "$mode" = "2" -a "$iptables_mode" = "2" ] ; then
 	echo -e "● \e[1;36m $name 透明代理2：\e[1;32m【已启用】\e[0m"
 else
 	echo -e "○ \e[1;36m $name 透明代理：\e[1;31m【未启用】\e[0m"
+	echo "   $pre1 $pre2 $pre3 $out1 $out2"
 fi
 }
 #按钮

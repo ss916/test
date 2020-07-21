@@ -1,5 +1,5 @@
-# //【2020-07-21 01:52:29】
-/SHA1.TXT= 350976fc4bf3b652ab3fc07b29672209
+# //【2020-07-21 15:16:08】
+/SHA1.TXT= be01d888e461a382d93ad74c82ce2857
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= bc5b9f298f96d7663bffe4473b930a6c
+/clash.sh= 6f30713768271dcbfd426c60c8589388
 /config.yaml= 465a706df81e31f2f6b148ae54cf9f9e
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -29,7 +29,7 @@
 /payload/block_malicious.txt= 3d42a3681f9a52d58b70742094e1a36b
 /payload/cn_music_netease.txt= d8d70679b55cf2684a246004f1a2731f
 /payload/cn_video.txt= 7796e0d54e1ade4877c63ec455be456b
-/payload/cn_web.txt= e427b03442ef4234cc22e7c2bad0e892
+/payload/cn_web.txt= d1d1ae06896225e1718bc58f660c0ab9
 /payload/global_apple.txt= 13a1e7bc795c6af5327ced30d1e9aa7d
 /payload/global_video.txt= 132f316e728ce8d6da64465b0822db96
 /payload/global_web.txt= 9e82fd554e87b3e835484d46f02f16b5

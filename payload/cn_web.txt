@@ -7,6 +7,7 @@ payload:
 - DOMAIN-SUFFIX,cibntv.net
 # > v2ex
 - DOMAIN-SUFFIX,v2ex.com
+- DOMAIN-SUFFIX,v2ex.co
 # > 360
 - DOMAIN-SUFFIX,qhres.com
 - DOMAIN-SUFFIX,qhimg.com
