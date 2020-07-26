@@ -196,8 +196,11 @@ if [ "$n" = "1" ] ; then
 	curl -# $url/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
+		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
+		echo -e "\e[1;37m ◆SHA1.TXT版本：$ver\e[0m"
 	else
-		logger -t "【$filename】" "✘ $tmp/SHA1.TXT為空，直接使用旧文件$etc/SHA1.TXT校验" && echo -e \\n"\e[1;31m【$filename】  ✘ $tmp/SHA1.TXT為空，直接使用旧文件$etc/SHA1.TXT校验！\e[0m"
+		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
+		logger -t "【$filename】" "✘ $tmp/SHA1.TXT為空，直接使用旧文件$etc/SHA1.TXT校验，版本$ver" && echo -e \\n"\e[1;31m【$filename】  ✘ $tmp/SHA1.TXT為空，直接使用旧文件$etc/SHA1.TXT校验，版本$ver\e[0m"
 		[ ! -s $etc/SHA1.TXT ] && logger -t "【$filename】" "✘ 下载$tmp/SHA1.TXT為空，且$etc/SHA1.TXT不存在，无法校验，结束脚本。" && echo -e \\n"\e[1;31m【$filename】  ✘ 下载$tmp/SHA1.TXT為空，且$etc/SHA1.TXT不存在，无法校验，结束脚本。\e[0m" && exit
 	fi
 fi
@@ -372,7 +375,7 @@ port=$(cat $config | awk -F: '/external-controller/{print $3}')
 curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > $dirtmp/mark/mark_new.txt
 if [ ! -s $dirtmp/mark/mark_old.txt ] ; then
 	if [ ! -s $dirconf/mark.txt ] ; then
-		echo -e \\n"\e[36m  ▶直接保存[节点位置记录]到$dirconf/mark.txt ...\e[0m"
+		echo -e \\n"\e[1;36m▶直接保存[节点位置记录]到$dirconf/mark.txt ...\e[0m"
 		cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
 		cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
 		[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
@@ -385,7 +388,7 @@ fi
 new=$(openssl SHA1 $dirtmp/mark/mark_new.txt |awk '{print $2}')
 old=$(openssl SHA1 $dirtmp/mark/mark_old.txt |awk '{print $2}')
 if [ "$new" != "$old" ] ; then
-	echo -e \\n"\e[36m  ▶保存新[节点位置记录]到$dirconf/mark.txt ...\e[0m"
+	echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/mark.txt ...\e[0m"
 	cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
 	cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
 	[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
@@ -397,13 +400,24 @@ else
 fi
 }
 
-remark () {
-[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
-config=$dirtmp/config.yaml
-secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
-port=$(cat $config | awk -F: '/external-controller/{print $3}')
-if [ -s $dirconf/mark.txt ] ; then
-echo -e \\n"\e[36m  ▶还原节点位置记录...\e[0m"
+remark_while () {
+while read a
+do
+	names=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
+	now=$(echo $a|grep -Eo "now.*"|awk -F\" '{print $3}')
+	if [ -z "$(echo "$names"  | grep -E '^[A-Za-z0-9]+$')" ] ; then
+		nameencode=$(curl -sv -G --data-urlencode "$names" -X GET "http://127.0.0.1:$port" 2>&1 |awk '/GET/{print $3}'|sed 's@/?@@')
+	else
+		nameencode=$names
+	fi
+	echo -e \\n"★$a"
+	echo -e "●策略组：$names → 上次选中：$now"
+	echo -e "■encode编码：$nameencode"
+	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
+done < $dirconf/mark.txt
+}
+remark_for () {
+IFS=$'\n'
 for a in $(cat $dirconf/mark.txt)
 do
 	names=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
@@ -414,15 +428,25 @@ do
 		nameencode=$names
 	fi
 	echo -e \\n"★$a"
-	echo -e "●代理集：$names → 上次位置：$now"
+	echo -e "●策略组：$names → 上次选中：$now"
 	echo -e "■encode编码：$nameencode"
 	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
-done > $dirtmp/mark/mark_status.txt
+done
+}
+remark () {
+[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
+config=$dirtmp/config.yaml
+secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
+port=$(cat $config | awk -F: '/external-controller/{print $3}')
+if [ -s $dirconf/mark.txt ] ; then
+echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
+remark_for > $dirtmp/mark/mark_status.txt
 sed -i "1i\######$(date "+%Y-%m-%d %H:%M:%S") #######" $dirtmp/mark/mark_status.txt
 else
-echo -e \\n"\e[1;37m ▶节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
+echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
 fi
 }
+
 start_remark () {
 if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 	remark
@@ -435,6 +459,7 @@ bypasslan () {
 #局域网绕过
 if [ -s $dirconf/bypasslan.txt ] ; then
 	logger -t "【$name】" "▶添加iptables绕过局域网IP.." && echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
+	IFS=$'\n'
 	for ip in $(cat $dirconf/bypasslan.txt)
 	do
 		iptables -t nat -I clash -s $ip/32 -j RETURN
@@ -740,7 +765,7 @@ start_cron
 #keep进程守护
 start_keep
 #还原节点记录
-start_remark
+start_remark &
 }
 #启动模式1：iptables透明代理
 start_1 () {
