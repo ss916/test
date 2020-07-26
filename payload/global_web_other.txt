@@ -1,5 +1,7 @@
 payload:
 #🆓other ：global_web_other.txt
+#rfa
+- DOMAIN-SUFFIX,rfa.org
 #ptt
 - DOMAIN-SUFFIX,disp.cc
 #pincong
@@ -353,6 +355,7 @@ payload:
 - DOMAIN-SUFFIX,whoer.net
 - DOMAIN-SUFFIX,wikimapia.org
 - DOMAIN-SUFFIX,wikipedia.org
+- DOMAIN-SUFFIX,wikimedia.org
 - DOMAIN-SUFFIX,wikiquote.org
 - DOMAIN-SUFFIX,wikiwand.com
 - DOMAIN-SUFFIX,winudf.com

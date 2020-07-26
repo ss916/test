@@ -134,13 +134,13 @@ edit_link () {
 testlink1=$(echo $link1 | grep ^http)
 testlink2=$(echo $link2 | grep ^http)
 if [ ! -z "$link2" -a ! -z "$testlink2" ] ; then
-	sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: ./订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+	sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: $dirconf/订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 else
 	sed -i '/订阅2/d' ./config.yaml
 fi
 if [ ! -z "$link1" ] ; then
 	if [ ! -z "$testlink1" ] ; then
-		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 30000\n    path: ./订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 30000\n    path: $dirconf/订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 	else
 		echo -e \\n"\e[1;31m【$name】  ✘ 订阅链接1非http链接，请初始化配置。\e[0m"
 		exit
@@ -359,6 +359,73 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 /etc/storage/script/Sh19_chinadns.sh start &
 }
 
+setmark () {
+[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
+config=$dirtmp/config.yaml
+secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
+port=$(cat $config | awk -F: '/external-controller/{print $3}')
+curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > $dirtmp/mark/mark_new.txt
+if [ ! -s $dirtmp/mark/mark_old.txt ] ; then
+	if [ ! -s $dirconf/mark.txt ] ; then
+		echo -e \\n"\e[36m  ▶直接保存[节点位置记录]到$dirconf/mark.txt ...\e[0m"
+		cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
+		cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
+		[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
+		> $dirtmp/mark/mark_ok_0
+		exit
+	else
+		cp -f $dirconf/mark.txt $dirtmp/mark/mark_old.txt
+	fi
+fi
+new=$(openssl SHA1 $dirtmp/mark/mark_new.txt |awk '{print $2}')
+old=$(openssl SHA1 $dirtmp/mark/mark_old.txt |awk '{print $2}')
+if [ "$new" != "$old" ] ; then
+	echo -e \\n"\e[36m  ▶保存新[节点位置记录]到$dirconf/mark.txt ...\e[0m"
+	cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
+	cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
+	[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
+	> $dirtmp/mark/mark_ok_0
+else
+	#echo "节点位置记录文件无需更新"
+	[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
+	> $dirtmp/mark/mark_ok_1
+fi
+}
+
+remark () {
+[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
+config=$dirtmp/config.yaml
+secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
+port=$(cat $config | awk -F: '/external-controller/{print $3}')
+if [ -s $dirconf/mark.txt ] ; then
+echo -e \\n"\e[36m  ▶还原节点位置记录...\e[0m"
+for a in $(cat $dirconf/mark.txt)
+do
+	names=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
+	now=$(echo $a|grep -Eo "now.*"|awk -F\" '{print $3}')
+	if [ -z "$(echo "$names"  | grep -E '^[A-Za-z0-9]+$')" ] ; then
+		nameencode=$(curl -sv -G --data-urlencode "$names" -X GET "http://127.0.0.1:$port" 2>&1 |awk '/GET/{print $3}'|sed 's@/?@@')
+	else
+		nameencode=$names
+	fi
+	echo -e \\n"★$a"
+	echo -e "●代理集：$names → 上次位置：$now"
+	echo -e "■encode编码：$nameencode"
+	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
+done > $dirtmp/mark/mark_status.txt
+sed -i "1i\######$(date "+%Y-%m-%d %H:%M:%S") #######" $dirtmp/mark/mark_status.txt
+else
+echo -e \\n"\e[1;37m ▶节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
+fi
+}
+start_remark () {
+if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+	remark
+else
+	echo "remark：$name进程没启动成功或端口没监听，跳过还原节点记录。"
+fi
+}
+
 bypasslan () {
 #局域网绕过
 if [ -s $dirconf/bypasslan.txt ] ; then
@@ -380,7 +447,7 @@ if [ "$lanip" = "0" ] ; then
 	> $dirconf/bypasslan.txt
 	echo -e \\n"\e[1;37m.已重置IP列表。\e[0m"
 else
-	echo "$lanip" | grep -E -o '([0-9]+\.){3}[0-9]+' >> $dirconf/bypasslan.txt
+	echo "$lanip" | grep -Eo '([0-9]+\.){3}[0-9]+' >> $dirconf/bypasslan.txt
 	sed -i '/^ *$/d' $dirconf/bypasslan.txt
 fi
 }
@@ -524,6 +591,7 @@ mode=$(cat $etc/$name/settings.txt |awk -F 'mode=' '/mode=/{print $2}')
 cd $dir
 v=1
 w=1
+a=1
 log1=1
 while true ; do
 #检查进程与端口
@@ -557,7 +625,9 @@ if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 		sh $etc/$name.sh start_iptables &
 		w=0
 	else
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK，iptables OK" >> ./keep.txt
+		sh $etc/$name.sh setmark
+		[ -f $dir/mark/mark_ok_0 ] && a=0
+		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") $name [$v] 进程OK，端口OK，[$w] iptables OK，[$a] setmark OK" >> ./keep.txt
 	fi
 else
 	if [ -z "$server" -o -z "$port" ] ; then
@@ -566,11 +636,14 @@ else
 		nohup sh $etc/$name.sh $mode & > ./keep.txt 2>&1 &
 		v=0
 	else
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v] $name 进程OK，端口OK" >> ./keep.txt
+		sh $etc/$name.sh setmark
+		[ -f $dir/mark/mark_ok_0 ] && a=1
+		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") $name [$v] 进程OK，端口OK，[$a] setmark OK" >> ./keep.txt
 	fi
 fi
 v=$(expr $v + 1)
 w=$(expr $w + 1)
+a=$(expr $a + 1)
 #日志文件大于1万条后删除1000条
 [ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(date "+%H:%M:%S")]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
 sleep 120
@@ -661,6 +734,8 @@ start_wan
 start_cron
 #keep进程守护
 start_keep
+#还原节点记录
+start_remark
 }
 #启动模式1：iptables透明代理
 start_1 () {
@@ -712,6 +787,121 @@ stop_1
 rm -rf $dirtmp
 rm -rf $diretc
 rm -rf $dirconf
+}
+
+
+update_web () {
+#蓝色主题
+filename="clash-dashboard-gh-pages.zip"
+filedir="clash-dashboard-gh-pages"
+address="https://codeload.github.com/Dreamacro/clash-dashboard/zip/gh-pages"
+$curl -sL $address -o $filename
+new=$(openssl SHA1 ./$filename |awk '{print $2}')
+old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
+if [ ! -z "$new" -a ! -z "$old" -a "$new" = "$old" ]; then
+	echo -e "    ● \e[1;36m clash Web1蓝色主题\e[1;32m✔ \e[0m"
+	rm -rf $filename
+else
+	[ ! -s /opt/bin/unzip ] && opkg install unzip
+	[ -d ./$filedir ] && rm -rf ./$filedir
+	unzip -o $filename
+	tar czvf $filedir.tgz $filedir
+	echo -e "    ○ \e[1;36m clash Web1蓝色主题\e[1;31m【需要更新】\e[1;33m文件已下载$filedir.tgz\e[0m"
+fi
+#暗黑主题
+filename="yacd-gh-pages.zip"
+filedir="yacd-gh-pages"
+address="https://github.com/haishanh/yacd/archive/gh-pages.zip"
+$curl -sL $address -o $filename
+new=$(openssl sha1 ./$filename |awk '{print $2}')
+old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
+if [ "$new" = "$old" ]; then
+	echo -e "    ● \e[1;36m clash Web2暗黑主题\e[1;32m✔ \e[0m"
+	rm -rf $filename
+else
+	[ ! -s /opt/bin/unzip ] && opkg install unzip
+	[ -d ./$filedir ] && rm -rf ./$filedir
+	unzip -o $filename
+	tar czvf $filedir.tgz $filedir
+	echo -e "    ○ \e[1;36m clash Web2暗黑主题\e[1;31m【需要更新】\e[1;33m已下载文件$filedir.tgz \e[0m"
+fi
+}
+update_geoip () {
+filename="Country.mmdb"
+address="https://cdn.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb"
+echo -e \\n"\e[1;4;36m▶正在检查geoip是否需要更新～\e[0m"
+new=$($curl -sL https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/version)
+old=$(curl -sL https://cdn.jsdelivr.net/gh/ss916/test/t/Country.mmdb.ver)
+if [ "$old" = "$new" ]; then
+	echo -e " \e[1;32m✔$filename版本一致，无需更新！\e[0m"
+else
+	echo "$new" > ./$filename.ver
+	echo -e " \e[1;33m>> $filename版本不一致，需要更新[$new]...\e[0m"
+	curl -# -L $address -o ./$filename
+	echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
+	tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
+fi
+}
+update_clash () {
+filename="clash"
+os="linux-mipsle-softfloat"
+echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
+new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
+old=$(curl -sL https://cdn.jsdelivr.net/gh/ss916/test/t/clash.ver)
+address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
+if [ "$new" = "$old" ]; then
+	echo -e "  ✔ $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"
+else
+	echo -e "   $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;33m【$old】\e[0m，正在更新～"
+	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
+	$curl -# -L $address -o ./clash-$os-v$new.gz
+	echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
+	gzip -kfd ./clash-$os-v$new.gz
+	chmod 777 ./clash-$os-v$new
+	echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
+	ver=$(./clash-$os-v$new -v|awk '/Clash/{print $2}'|sed 's/v//')
+	if [ ! -z "$ver" ] ; then
+		if [ "$ver" = "$old" ]; then
+			echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
+			rm -rf ./clash-$os-*
+		else
+			echo "$new" > ./$filename.ver
+			echo -e "\e[32m  >> $filename文件校验通过，版本不一致～\e[0m"
+			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
+		fi
+	else
+		gzsize=$(ls -lh ./clash-$os-v$new.gz | awk -F ' ' '{print $5}')
+		size=$(ls -lh ./clash-$os-v$new | awk -F ' ' '{print $5}')
+		if [ ! -s ./clash-$os-v$new ] ; then
+			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
+		else
+			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"
+		fi
+		rm -rf ./clash-$os-*
+	fi
+fi
+}
+upgrade () {
+[ ! -d $dirtmp/update ] && mkdir -p $dirtmp/update
+cd $dirtmp/update
+if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
+	curl="curl -x 127.0.0.1:8005"
+else
+	curl="curl"
+fi
+echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
+echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
+echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
+echo -e "\e[1;32m【9】\e[0m\e[1;36m 检查更新以上\e[0m"\\n
+read -n 1 -p "请输入数字检查更新:" numx
+[ "$numx" = "1" ] && update_web &
+[ "$numx" = "2" ] && update_geoip &
+[ "$numx" = "3" ] && update_clash &
+if [ "$numx" = "9" ] ; then
+update_web
+update_geoip
+update_clash 
+fi
 }
 
 #状态
@@ -841,6 +1031,27 @@ ipt2socks_stop)
 	;;
 ipt2socks_start)
 	ipt2socks_start
+	;;
+start_remark)
+	start_remark
+	;;
+remark)
+	remark
+	;;
+setmark)
+	setmark
+	;;
+upgrade)
+	upgrade
+	;;
+update_web)
+	update_web
+	;;
+update_geoip)
+	update_geoip
+	;;
+update_clash)
+	update_clash
 	;;
 *)
 	#状态
