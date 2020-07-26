@@ -282,7 +282,12 @@ file=Country.mmdb
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	[ -s ./clash_log.txt ] && [ ! -z "$(grep -o "Can't load mmdb" ./clash_log.txt)" -o ! -z "$(grep -o "Can't find MMDB" ./clash_log.txt)" ] && logger -t "【$name】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
 	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=$tmp
-	ln -s $tmp/$file $dirtmp/$file
+	[ -h $dirtmp/$file ] && rm $dirtmp/$file
+	if [ -s $tmp/$file ] ; then
+		ln -s $tmp/$file $dirtmp/$file
+	else
+		echo "$tmp/$file文件为空，跳过创建软链接。"
+	fi
 fi
 }
 #下载主題Web文件
