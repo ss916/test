@@ -400,23 +400,23 @@ else
 fi
 }
 
-remark_while () {
+remark_w () {
 while read a
 do
 	names=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
 	now=$(echo $a|grep -Eo "now.*"|awk -F\" '{print $3}')
-	if [ -z "$(echo "$names"  | grep -E '^[A-Za-z0-9]+$')" ] ; then
-		nameencode=$(curl -sv -G --data-urlencode "$names" -X GET "http://127.0.0.1:$port" 2>&1 |awk '/GET/{print $3}'|sed 's@/?@@')
-	else
-		nameencode=$names
-	fi
 	echo -e \\n"★$a"
-	echo -e "●策略组：$names → 上次选中：$now"
-	echo -e "■encode编码：$nameencode"
-	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
+	echo -e "●策略组：\e[1;4;37m$names\e[0m → 上次选中：\e[1;4;37m$now\e[0m"
 done < $dirconf/mark.txt
 }
-remark_for () {
+
+remark () {
+[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
+config=$dirtmp/config.yaml
+secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
+port=$(cat $config | awk -F: '/external-controller/{print $3}')
+if [ -s $dirconf/mark.txt ] ; then
+echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
 IFS=$'\n'
 for a in $(cat $dirconf/mark.txt)
 do
@@ -431,22 +431,12 @@ do
 	echo -e "●策略组：$names → 上次选中：$now"
 	echo -e "■encode编码：$nameencode"
 	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
-done
-}
-remark () {
-[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
-config=$dirtmp/config.yaml
-secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
-port=$(cat $config | awk -F: '/external-controller/{print $3}')
-if [ -s $dirconf/mark.txt ] ; then
-echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
-remark_for > $dirtmp/mark/mark_status.txt
+done > $dirtmp/mark/mark_status.txt
 sed -i "1i\######$(date "+%Y-%m-%d %H:%M:%S") #######" $dirtmp/mark/mark_status.txt
 else
 echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
 fi
 }
-
 start_remark () {
 if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 	remark
@@ -1070,6 +1060,9 @@ remark)
 	;;
 setmark)
 	setmark
+	;;
+remark_w)
+	remark_w
 	;;
 upgrade)
 	upgrade
