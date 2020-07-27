@@ -123,7 +123,9 @@ fi
 
 edit_chinalist () {
 #是否启用大陆白名单功能，2启用chinalist，1则默认gfwlist
-[ "$chinalist" = "2" ] && sed -i '/#markgfwlistorchinalist/s@\[.*\]@["代理", "直连", "屏蔽"]@g' ./config.yaml
+if [ "$chinalist" = "2" ] ; then
+sed -i '/#markgfwlistorchinalist1/s@- 直连 #@- 代理 #@g;/#markgfwlistorchinalist2/s@- 代理 #@- 直连 #@g' ./config.yaml
+fi
 }
 edit_dns () {
 #DNS模式，2启用fake-ip，非2则默认redir-host
@@ -158,7 +160,9 @@ edit_adblock () {
 }
 edit_unlocknetease () {
 #是否启用网易云解锁功能，1启用，非1则默认直连
-[ "$unlocknetease" = "1" ] && sed -i '/#markunlocknetease/s@\[.*\]@["網易云解鎖", "直连", "代理", "屏蔽"]@g' ./config.yaml
+if [ "$unlocknetease" = "1" ] ; then
+sed -i '/#markunlocknetease1/s@- 直连 #@- 解锁 #@g;/#markunlocknetease2/s@- 解锁 #@- 直连 #@g' ./config.yaml
+fi
 }
 
 function downloadfile () {
@@ -400,23 +404,23 @@ else
 fi
 }
 
-remark_w () {
+remark_while () {
 while read a
 do
 	names=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
 	now=$(echo $a|grep -Eo "now.*"|awk -F\" '{print $3}')
+	if [ -z "$(echo "$names"  | grep -E '^[A-Za-z0-9]+$')" ] ; then
+		nameencode=$(curl -sv -G --data-urlencode "$names" -X GET "http://127.0.0.1:$port" 2>&1 |awk '/GET/{print $3}'|sed 's@/?@@')
+	else
+		nameencode=$names
+	fi
 	echo -e \\n"★$a"
-	echo -e "●策略组：\e[1;4;37m$names\e[0m → 上次选中：\e[1;4;37m$now\e[0m"
+	echo -e "●策略组：$names → 上次选中：$now"
+	echo -e "■encode编码：$nameencode"
+	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d "{\"name\": \"$now\"}" 2>&1
 done < $dirconf/mark.txt
 }
-
-remark () {
-[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
-config=$dirtmp/config.yaml
-secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
-port=$(cat $config | awk -F: '/external-controller/{print $3}')
-if [ -s $dirconf/mark.txt ] ; then
-echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
+remark_for () {
 IFS=$'\n'
 for a in $(cat $dirconf/mark.txt)
 do
@@ -430,8 +434,18 @@ do
 	echo -e \\n"★$a"
 	echo -e "●策略组：$names → 上次选中：$now"
 	echo -e "■encode编码：$nameencode"
-	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d '{"name": "'$now'"}' 2>&1
-done > $dirtmp/mark/mark_status.txt
+	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$nameencode" -H "Authorization: Bearer $secret" -d "{\"name\": \"$now\"}" 2>&1
+done
+}
+remark () {
+[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
+config=$dirtmp/config.yaml
+secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
+port=$(cat $config | awk -F: '/external-controller/{print $3}')
+if [ -s $dirconf/mark.txt ] ; then
+echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
+#remark_for > $dirtmp/mark/mark_status.txt
+remark_while > $dirtmp/mark/mark_status.txt
 sed -i "1i\######$(date "+%Y-%m-%d %H:%M:%S") #######" $dirtmp/mark/mark_status.txt
 else
 echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
@@ -441,7 +455,7 @@ start_remark () {
 if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 	remark
 else
-	echo "remark：$name进程没启动成功或端口没监听，跳过还原节点记录。"
+	echo "    ✖ start_remark：$name进程或端口没启动成功，跳过还原节点记录。"
 fi
 }
 
@@ -560,7 +574,7 @@ out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
 if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 	ipt1
 else
-	echo "start_iptables：$name进程没启动成功或端口没监听，不启动透明代理..."
+	echo "    ✖ start_iptables：$name进程或端口没启动成功，不启动透明代理。"
 fi
 }
 
@@ -810,7 +824,7 @@ rm -rf $dirconf
 }
 
 
-update_web () {
+upweb () {
 #蓝色主题
 filename="clash-dashboard-gh-pages.zip"
 filedir="clash-dashboard-gh-pages"
@@ -846,14 +860,14 @@ else
 	echo -e "    ○ \e[1;36m clash Web2暗黑主题\e[1;31m【需要更新】\e[1;33m已下载文件$filedir.tgz \e[0m"
 fi
 }
-update_geoip () {
+upgeoip () {
 filename="Country.mmdb"
 address="https://cdn.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb"
 echo -e \\n"\e[1;4;36m▶正在检查geoip是否需要更新～\e[0m"
 new=$($curl -sL https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/version)
 old=$(curl -sL https://cdn.jsdelivr.net/gh/ss916/test/t/Country.mmdb.ver)
 if [ "$old" = "$new" ]; then
-	echo -e " \e[1;32m✔$filename版本一致，无需更新！\e[0m"
+	echo -e " \e[1;32m✔$filename版本一致，无需更新[$new]！\e[0m"
 else
 	echo "$new" > ./$filename.ver
 	echo -e " \e[1;33m>> $filename版本不一致，需要更新[$new]...\e[0m"
@@ -862,7 +876,7 @@ else
 	tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
 fi
 }
-update_clash () {
+upclash () {
 filename="clash"
 os="linux-mipsle-softfloat"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
@@ -901,7 +915,7 @@ else
 	fi
 fi
 }
-upgrade () {
+up () {
 [ ! -d $dirtmp/update ] && mkdir -p $dirtmp/update
 cd $dirtmp/update
 if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
@@ -914,13 +928,13 @@ echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
 echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
 echo -e "\e[1;32m【9】\e[0m\e[1;36m 检查更新以上\e[0m"\\n
 read -n 1 -p "请输入数字检查更新:" numx
-[ "$numx" = "1" ] && update_web &
-[ "$numx" = "2" ] && update_geoip &
-[ "$numx" = "3" ] && update_clash &
+[ "$numx" = "1" ] && upweb &
+[ "$numx" = "2" ] && upgeoip &
+[ "$numx" = "3" ] && upclash &
 if [ "$numx" = "9" ] ; then
-update_web
-update_geoip
-update_clash 
+upweb
+upgeoip
+upclash 
 fi
 }
 
@@ -1061,20 +1075,17 @@ remark)
 setmark)
 	setmark
 	;;
-remark_w)
-	remark_w
+up)
+	up
 	;;
-upgrade)
-	upgrade
+upweb)
+	upweb
 	;;
-update_web)
-	update_web
+upgeoip)
+	upgeoip
 	;;
-update_geoip)
-	update_geoip
-	;;
-update_clash)
-	update_clash
+upclash)
+	upclash
 	;;
 *)
 	#状态

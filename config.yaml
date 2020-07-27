@@ -1,4 +1,4 @@
-# //【2020-07-20 23:52:02】
+# //【2020-07-28 06:58:19】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -88,42 +88,156 @@ proxy-groups:
   use:
     - 订阅1
     - 订阅2
+    #- 文件1
+    #- 文件2
 
 - name: 故障切换
   type: fallback
   use:
     - 订阅1
     - 订阅2
+    #- 文件1
+    #- 文件2
 
 - name: 延迟最低
   type: url-test
   use:
     - 订阅1
     - 订阅2
+    #- 文件1
+    #- 文件2
 
 #- name: 负载
   #type: load-balance
   #use:
     #- 订阅1
     #- 订阅2
+    #- 文件1
+    #- 文件2
 
 #直连=gfwlist，代理=chinalist，默认直连gfwlist
-- { name: "❓其他流量", type: select, proxies: ["直连", "代理", "屏蔽"] } #markgfwlistorchinalist
+- name: ❓其他流量
+  type: select
+  proxies:
+    - 直连 #markgfwlistorchinalist1
+    - 代理 #markgfwlistorchinalist2
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
 
-- { name: "🆓谷歌", type: select, proxies: ["代理", "直连", "屏蔽"] }
-- { name: "🆓电报", type: select, proxies: ["代理", "直连", "屏蔽"] }
-- { name: "🆓全球影音", type: select, proxies: ["代理", "直连", "屏蔽"] }
-- { name: "🆓国外网站", type: select, proxies: ["代理", "直连", "屏蔽"] }
 
-- { name: "🍏苹果", type: select, proxies: ["直连", "代理", "屏蔽"] }
+- name: 🆓谷歌
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
 
-- { name: "🎵网易云", type: select, proxies: ["直连", "網易云解鎖", "代理", "屏蔽"] } #markunlocknetease
+- name: 🆓电报
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
 
-- { name: "🀄网站", type: select, proxies: ["直连", "代理", "屏蔽"] }
-- { name: "🀄影音", type: select, proxies: ["直连", "代理", "屏蔽"] }
+- name: 🆓全球影音
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
 
-- { name: "🀄IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
-#- { name: "🇺🇸IP", type: select, proxies: ["代理", "直连", "屏蔽"] }
+- name: 🆓国外网站
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+
+- name: 🍏苹果
+  type: select
+  proxies:
+    - 直连
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+- name: 🎵网易云
+  type: select
+  proxies:
+    - 直连 #markunlocknetease1
+    - 解锁 #markunlocknetease2
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+- name: 🀄网站
+  type: select
+  proxies:
+    - 直连
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+- name: 🀄影音
+  type: select
+  proxies:
+    - 直连
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+- name: 🀄IP
+  type: select
+  proxies:
+    - 直连
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
 
 - { name: "❌劫持", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌hosts", type: select, proxies: ["屏蔽", "直连"] } #markadblock
@@ -132,8 +246,8 @@ proxy-groups:
 
 - { name: "♻️内网IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
 
-- { name: "屏蔽", type: select, proxies: ["REJECT", "DIRECT", "代理"] }
-- { name: "直连", type: select, proxies: ["DIRECT", "REJECT", "代理"] }
+- { name: "屏蔽", type: select, proxies: ["REJECT"] }
+- { name: "直连", type: select, proxies: ["DIRECT"] }
 
 
 rule-providers:
@@ -251,7 +365,6 @@ rules:
 #- SRC-IP-CIDR,192.168.1.201/32,直连
 
 # cn IP走直连
-#- GEOIP,US,🇺🇸IP
 - GEOIP,CN,🀄IP
 
 #其余走代理
