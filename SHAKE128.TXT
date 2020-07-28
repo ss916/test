@@ -1,5 +1,5 @@
-# //【2020-07-28 06:58:19】
-/SHA1.TXT= ad2ba644732991e6b7924fcd7c4da07b
+# //【2020-07-28 09:31:00】
+/SHA1.TXT= b5c9b6f7964a2879819df6bada9ca8c0
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,8 +8,8 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= bebd2ae7b6a05e32661f415f4c4d4429
-/config.yaml= d6c18151ac308715f9fb8136134b62db
+/clash.sh= 9fed84d48ed8b86af67d24d8a568363f
+/config.yaml= ac1ecee1713cac4e22fd3aafbd28f3c7
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a

@@ -1,4 +1,4 @@
-# //【2020-07-28 06:58:19】
+# //【2020-07-28 09:30:59】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -194,7 +194,7 @@ proxy-groups:
   type: select
   proxies:
     - 直连 #markunlocknetease1
-    - 解锁 #markunlocknetease2
+    - 網易云解鎖 #markunlocknetease2
     - 代理
     - 屏蔽
   use:

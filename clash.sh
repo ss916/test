@@ -161,7 +161,7 @@ edit_adblock () {
 edit_unlocknetease () {
 #是否启用网易云解锁功能，1启用，非1则默认直连
 if [ "$unlocknetease" = "1" ] ; then
-sed -i '/#markunlocknetease1/s@- 直连 #@- 解锁 #@g;/#markunlocknetease2/s@- 解锁 #@- 直连 #@g' ./config.yaml
+sed -i '/#markunlocknetease1/s@- 直连 #@- 網易云解鎖 #@g;/#markunlocknetease2/s@- 網易云解鎖 #@- 直连 #@g' ./config.yaml
 fi
 }
 
@@ -197,7 +197,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
-	curl -# $url/SHA1.TXT -o $tmp/SHA1.TXT
+	curl -# $url2/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -289,8 +289,8 @@ file=Country.mmdb
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	[ -s ./clash_log.txt ] && [ ! -z "$(grep -o "Can't load mmdb" ./clash_log.txt)" -o ! -z "$(grep -o "Can't find MMDB" ./clash_log.txt)" ] && logger -t "【$name】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
 	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=$tmp
-	[ -h $dirtmp/$file ] && rm $dirtmp/$file
 	if [ -s $tmp/$file ] ; then
+		[ -f $dirtmp/$file ] && rm $dirtmp/$file
 		ln -s $tmp/$file $dirtmp/$file
 	else
 		echo "$tmp/$file文件为空，跳过创建软链接。"
@@ -564,13 +564,11 @@ ipt0
 }
 
 start_iptables () {
-pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
-pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
-pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
-out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
-out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
-[ "$mode" = "1" ] && [ "$pre1" != "0" -o "$pre2" != "0" -o "$pre3" != "0" -o "$out1" != "0" ] && ipt0
-[ "$mode" = "2" ] && [ "$pre1" != "0" -o "$pre2" != "0" -o "$pre3" != "0" -o "$out1" != "0" -o "$out2" != "0" ] && ipt0
+pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l) && [ "$pre1" != "0" ] && ipt0
+pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l) && [ "$pre2" != "0" ] && ipt0
+pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l) && [ "$pre3" != "0" ] && ipt0
+out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l) && [ "$out1" != "0" ] && ipt0
+out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l) && [ "$out2" != "0" ] && ipt0
 if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
 	ipt1
 else
@@ -661,7 +659,7 @@ if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 	else
 		sh $etc/$name.sh setmark
 		[ -f $dir/mark/mark_ok_0 ] && a=0
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") $name [$v] 进程OK，端口OK，[$w] iptables OK，[$a] setmark OK" >> ./keep.txt
+		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") $name [$v] 进程OK，端口OK，[$w] iptables $iptables_mode OK，[$a] setmark OK" >> ./keep.txt
 	fi
 else
 	if [ -z "$server" -o -z "$port" ] ; then
