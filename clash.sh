@@ -31,7 +31,14 @@ user_id=998
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
 url3="https://raw.fastgit.org/ss916/test/master"
-url=$url3
+
+if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
+	curl="curl -x 127.0.0.1:8005"
+	url=$url1
+else
+	curl="curl"
+	url=$url3
+fi
 
 #检查闪存空间
 if [ ! -s $diretc/$name ] ; then
@@ -198,7 +205,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
-	curl -# $url1/SHA1.TXT -o $tmp/SHA1.TXT
+	$curl -# $url/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -215,8 +222,7 @@ if [ -s $diretc/$filetgz ] ; then
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
 	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
-	#curl -# $address -o ./$filetgz
-	curl -# $link -o ./$filetgz
+	$curl -# $link -o ./$filetgz
 	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
 fi
 old=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
@@ -848,15 +854,20 @@ address="https://github.com/haishanh/yacd/archive/gh-pages.zip"
 $curl -sL $address -o $filename
 new=$(openssl sha1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
-if [ "$new" = "$old" ]; then
-	echo -e "    ● \e[1;36m clash Web2暗黑主题\e[1;32m✔ \e[0m"
-	rm -rf $filename
+if [ ! -z "$old" -a ! -z "$new" ]; then
+	if [ "$new" = "$old" ]; then
+		echo -e "    ● \e[1;36m clash Web2暗黑主题\e[1;32m✔ \e[0m"
+		rm -rf $filename
+	else
+		[ ! -s /opt/bin/unzip ] && opkg install unzip
+		[ -d ./$filedir ] && rm -rf ./$filedir
+		unzip -o $filename
+		tar czvf $filedir.tgz $filedir
+		echo -e "    ○ \e[1;36m clash Web2暗黑主题\e[1;31m【需要更新】\e[1;33m已下载文件$filedir.tgz \e[0m"
+	fi
 else
-	[ ! -s /opt/bin/unzip ] && opkg install unzip
-	[ -d ./$filedir ] && rm -rf ./$filedir
-	unzip -o $filename
-	tar czvf $filedir.tgz $filedir
-	echo -e "    ○ \e[1;36m clash Web2暗黑主题\e[1;31m【需要更新】\e[1;33m已下载文件$filedir.tgz \e[0m"
+	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本sha1为空。\e[0m"\\n
+	[ -z "$new" ] && echo -e \\n"\e[1;31m   ✘ $filename新版本sha1为空。\e[0m"\\n
 fi
 }
 upgeoip () {
@@ -865,15 +876,20 @@ address="https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Co
 address2="https://cdn.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb"
 echo -e \\n"\e[1;4;36m▶正在检查geoip是否需要更新～\e[0m"
 new=$($curl -sL https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/version)
-old=$(curl -sL $url1/t/Country.mmdb.ver)
-if [ "$old" = "$new" ]; then
-	echo -e " \e[1;32m✔$filename版本一致，无需更新[$new]！\e[0m"
+old=$($curl -sL $url/t/Country.mmdb.ver)
+if [ ! -z "$old" -a ! -z "$new" ]; then
+	if [ "$old" = "$new" ]; then
+		echo -e " \e[1;32m✔$filename版本一致，无需更新[$new]！\e[0m"
+	else
+		echo "$new" > ./$filename.ver
+		echo -e " \e[1;33m>> $filename版本不一致，需要更新。new：$new ，old：$old...\e[0m"
+		$curl -# -L $address -o ./$filename
+		echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
+		tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
+	fi
 else
-	echo "$new" > ./$filename.ver
-	echo -e " \e[1;33m>> $filename版本不一致，需要更新[$new]...\e[0m"
-	$curl -# -L $address -o ./$filename
-	echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
-	tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
+	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本ver为空。\e[0m"\\n
+	[ -z "$new" ] && echo -e \\n"\e[1;31m   ✘ $filename新版本ver为空。\e[0m"\\n
 fi
 }
 upclash () {
@@ -881,7 +897,7 @@ filename="clash"
 os="linux-mipsle-softfloat"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
-old=$(curl -sL $url1/t/clash.ver)
+old=$($curl -sL $url/t/clash.ver)
 address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
 if [ "$new" = "$old" ]; then
 	echo -e "  ✔ $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"
@@ -918,11 +934,6 @@ fi
 up () {
 [ ! -d $dirtmp/update ] && mkdir -p $dirtmp/update
 cd $dirtmp/update
-if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
-	curl="curl -x 127.0.0.1:8005"
-else
-	curl="curl"
-fi
 echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
 echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
 echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"

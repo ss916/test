@@ -1,5 +1,5 @@
-# //【2020-07-30 11:04:34】
-/SHA1.TXT= 973158c86ae28a834638a4e0dbb5aea8
+# //【2020-07-30 15:53:59】
+/SHA1.TXT= fe140512ccb0bace9d400ea35b7bec3d
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= 5c84ed1b4758d853505167d28556721b
+/clash.sh= c77abe15776a34fa2c18ed3ba68a0150
 /config.yaml= 639848825d40b9631d54f302a213ef48
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -47,8 +47,8 @@
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= f723da92d8a808f158cca4760f5af8ed
-/t/clash-dashboard-gh-pages.zip= c03910b1b56a0bf26d3039d51bd143b2
+/t/clash-dashboard-gh-pages.tgz= 462572605b1d37c7f3e11181da9acf8d
+/t/clash-dashboard-gh-pages.zip= 7f8e21370a8baaec801a2c6cc0d35735
 /t/clash.ver= 90cc97644505f68401d72dcd25fc8fb0
 /t/clash= a999cc9dc5d460c46ee6694e28b07b26
 /t/clash_armv5= 30d5f8597aba90d7ea31b28f54725e64
