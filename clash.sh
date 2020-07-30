@@ -28,9 +28,10 @@ user_name=$name
 user_id=998
 
 #资源文件地址前缀
-url1="https://cdn.jsdelivr.net/gh/ss916/test"
-url2="https://raw.githubusercontent.com/ss916/test/master"
-url=$url1
+url1="https://raw.githubusercontent.com/ss916/test/master"
+url2="https://cdn.jsdelivr.net/gh/ss916/test"
+url3="https://raw.fastgit.org/ss916/test/master"
+url=$url3
 
 #检查闪存空间
 if [ ! -s $diretc/$name ] ; then
@@ -197,7 +198,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
-	curl -# $url2/SHA1.TXT -o $tmp/SHA1.TXT
+	curl -# $url1/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -860,16 +861,17 @@ fi
 }
 upgeoip () {
 filename="Country.mmdb"
-address="https://cdn.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb"
+address="https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb"
+address2="https://cdn.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb"
 echo -e \\n"\e[1;4;36m▶正在检查geoip是否需要更新～\e[0m"
 new=$($curl -sL https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/version)
-old=$(curl -sL https://cdn.jsdelivr.net/gh/ss916/test/t/Country.mmdb.ver)
+old=$(curl -sL $url1/t/Country.mmdb.ver)
 if [ "$old" = "$new" ]; then
 	echo -e " \e[1;32m✔$filename版本一致，无需更新[$new]！\e[0m"
 else
 	echo "$new" > ./$filename.ver
 	echo -e " \e[1;33m>> $filename版本不一致，需要更新[$new]...\e[0m"
-	curl -# -L $address -o ./$filename
+	$curl -# -L $address -o ./$filename
 	echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
 	tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
 fi
@@ -879,7 +881,7 @@ filename="clash"
 os="linux-mipsle-softfloat"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
-old=$(curl -sL https://cdn.jsdelivr.net/gh/ss916/test/t/clash.ver)
+old=$(curl -sL $url1/t/clash.ver)
 address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
 if [ "$new" = "$old" ]; then
 	echo -e "  ✔ $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"

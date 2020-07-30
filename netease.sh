@@ -7,16 +7,21 @@ filetgz=$filename-$os.zip
 http_port=1235
 https_port=1236
 
+if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
+	curl="curl -x 127.0.0.1:8005"
+else
+	curl="curl"
+fi
 dir=/tmp/netease
 [ ! -d $dir ] && mkdir -p $dir
 cd $dir
 jincheng="ps -w"
 
 download_file () {
-url=`curl -sL $address | awk -F\" '/releases.*'$os'/{print "https://github.com" $2}' | head -n 1`
+url=$($curl -sL $address | awk -F\" '/releases.*'$os'/{print "https://github.com" $2}' | head -n 1)
 new=`echo $url|grep -Eo "releases.*$os"|awk -F\/ '{print $3}'|sed 's/^v//'`
 echo -e \\n"\e[1;36m▶下載主程序$filetgz，最新版【$new】...\e[0m"\\n
-curl -# -L $url -o $filetgz
+$curl -# -L $url -o $filetgz
 [ ! -s /opt/bin/unzip ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 unzip $filetgz
 chmod +x -R ./
@@ -46,7 +51,7 @@ start_1 () {
 check_file
 stop
 echo -e \\n"\e[1;36m▶啟動$filename...\e[0m"\\n
-nohup $dir/$filename -p $http_port -sp $https_port >/dev/null 2>&1 &
+nohup $dir/$filename -p $http_port -sp $https_port -b >/dev/null 2>&1 &
 status
 }
 start_2 () {
@@ -61,7 +66,7 @@ else
 	echo -e "☆ \e[1;36m $filename 版本：\e[1;31m【不存在】\e[0m"
 fi
 echo " "
-jc=`$jincheng |grep -v grep |grep $filename`
+jc=$($jincheng |grep -v grep |grep ${filename}.*-p)
 if [ ! -z "$jc" ] ; then
 	echo -e "● \e[1;36m $filename 进程：\e[1;32m【已运行】\e[0m"
 else

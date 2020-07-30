@@ -1,5 +1,5 @@
-# //【2020-07-29 04:53:53】
-/SHA1.TXT= 2afa4e16937863fc2caa6d3d0bd914d1
+# //【2020-07-30 11:00:26】
+/SHA1.TXT= 8d232573205863f1ceadb0d890c805a7
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= 9fed84d48ed8b86af67d24d8a568363f
+/clash.sh= 5c84ed1b4758d853505167d28556721b
 /config.yaml= ac1ecee1713cac4e22fd3aafbd28f3c7
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -21,7 +21,7 @@
 /hosts/f= 6491956b133619fc96c4742f074ad87b
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
-/netease.sh= eee9bbd6ae36d0df484221bdee28cfbc
+/netease.sh= bae3e26592033ee5bc3f69c41d9d345b
 /payload/block_dnsmasq.txt= 00ba1b45a979095a9b9ed20aab8139a0
 /payload/block_hijack.txt= 6dfcaa031cf12797235ce87a546c4d50
 /payload/block_hosts.txt= c3fc5e97c4dd8279850c1d94b0c2cb3d
@@ -41,8 +41,9 @@
 /payload/global_web_other.txt= 6898466362032b47e17e1f02f54f6e29
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
-/t/Country.mmdb.tgz= 844cb3ea6f6dede471c84c72fefeb6e5
-/t/Country.mmdb.ver= b6cf61936969b4f30bca0c0bd43018cb
+/t/Country.mmdb.tgz= 87e9aea9c8aa4021447a9e2c45dddf62
+/t/Country.mmdb.ver= 923d94ebcbfa9b6c340f79fa6822ef44
+/t/UnblockNeteaseMusic= d84876c144ca4429e87ac236bea11109
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
@@ -53,6 +54,7 @@
 /t/clash_armv5= 30d5f8597aba90d7ea31b28f54725e64
 /t/clash_armv6= 27f7739d88bebd78e7bfe6f9f06b9416
 /t/clash_armv7= 9735a67f278cdd238782576cf73c7aa8
+/t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= 08c2da6260fbd7272b39138ca121e874
 /t/kcptunc= 2b4019418189343760b95903239745a5
 /t/kcptuns= 83db4f238d3d953a557426a68ca9b39f
