@@ -1,5 +1,5 @@
-# //【2020-07-30 15:53:58】
-/SHAKE128.TXT= 3f9d970dddbf287f3ee4d60a8be13aa460b67fe2
+# //【2020-07-30 22:28:06】
+/SHAKE128.TXT= 73963fe78d22d28a052ab9d97d98b372e3abf099
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -24,7 +24,7 @@
 /netease.sh= 38cf4b8e4bd363ef0d4c741a89b639c45b6fb1c7
 /payload/block_dnsmasq.txt= 1b8bd43ff63bdfccf9e74f46b7300c3df3548c8b
 /payload/block_hijack.txt= be579bd5d526f7be248624daea53c6735fa91da5
-/payload/block_hosts.txt= 4c5743d1ac53a1f0102fe965d6c5386cef6d4576
+/payload/block_hosts.txt= e345d4cef42be0150265187ff1cbe08a8473d024
 /payload/block_malicious.txt= d467e508848473020772c681449e592bb500cf16
 /payload/cn_music_netease.txt= e18682c301c0b3656b03b49d380d4e6e092ba55a
 /payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
@@ -47,8 +47,8 @@
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= e5ff0fbb112b7dd1c104a8399409d48f2dab8e86
-/t/clash-dashboard-gh-pages.zip= 325e6b5aa9ae5462f6db7721177892411d41a7f3
+/t/clash-dashboard-gh-pages.tgz= 915b568dfa76207e7e7f054481063542ff67cf96
+/t/clash-dashboard-gh-pages.zip= c05d3587668ae915c1e10e74e7013e221b7346c4
 /t/clash.ver= 5a57d03433087d61c9a343d7c361a280943f5547
 /t/clash= eb0f7a04531f5ac0d6fff2fd5901443face49f7b
 /t/clash_armv5= 265d4b4dae303bc63a876f40a514cb11bc82600a

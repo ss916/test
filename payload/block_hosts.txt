@@ -1,5 +1,9 @@
 payload:
 #❌AD hosts ：block_hosts.txt
+- DOMAIN,api.iclknet.com
+- DOMAIN,api.windmilljoy.com
+- DOMAIN,api.windmillplay.com
+- DOMAIN,api.bwan001.com
 - DOMAIN,ad.wretch.cc
 - DOMAIN,ad.hefei.cc
 - DOMAIN,ad.jamster.co.uk
