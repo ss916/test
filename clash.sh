@@ -18,7 +18,7 @@ dirconf=$pdcn/$name
 #diretc=/etc/storage/pdcn/clash
 #diretc=/tmp/clash/etc
 if [ -s $dirconf/settings.txt ] ; then
-	diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}')
+	diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
 	if [ ! -z "$diretc" ] ; then
 		size=$(df $etc |awk '!/Available/{print $4}')
 		if [ "$size" -lt "5120" ] ; then
@@ -98,34 +98,34 @@ unlocknetease=$unlocknetease
 #读取参数
 read_settings () {
 #透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=5 不透明代理
-mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}')
+mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1)
 [ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
 #DNS模式，1.redir-host （默认），2.fake-dns
-dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}')
+dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}' | head -n 1)
 [ -z "$dns" ] && dns=1 && echo "dns=1" >> $dirconf/settings.txt
 #代理模式，1.gfwlist模式（默认），2.chinalist
-chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}')
+chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}' | head -n 1)
 [ -z "$chinalist" ] && chinalist=1 && echo "chinalist=1" >> $dirconf/settings.txt
 #使用自定义配置模板，留空则使用 config=config.yaml （默认）
-config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}')
+config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}' | head -n 1)
 [ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
 #模板是否需要解密文件，secret=1 则进入解密模式
-secret=$(cat $dirconf/settings.txt |awk -F 'secret=' '/secret=/{print $2}')
+secret=$(cat $dirconf/settings.txt |awk -F 'secret=' '/secret=/{print $2}' | head -n 1)
 #密码
-password=$(cat $dirconf/settings.txt |awk -F 'password=' '/password=/{print $2}')
+password=$(cat $dirconf/settings.txt |awk -F 'password=' '/password=/{print $2}' | head -n 1)
 #订阅地址1，不可为空
-link1=$(cat $dirconf/settings.txt |awk -F 'link1=' '/link1=/{print $2}')
+link1=$(cat $dirconf/settings.txt |awk -F 'link1=' '/link1=/{print $2}' | head -n 1)
 #订阅地址2，可空
-link2=$(cat $dirconf/settings.txt |awk -F 'link2=' '/link2=/{print $2}')
+link2=$(cat $dirconf/settings.txt |awk -F 'link2=' '/link2=/{print $2}' | head -n 1)
 #功能
 #是否启用去广告，adblock=1则启用，关闭0（默认）
-adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}')
+adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}' | head -n 1)
 [ -z "$adblock" ] && adblock=0 && echo "adblock=0" >> $dirconf/settings.txt
 #是否启用网易云解锁，1.unlocknetease启用，0.关闭（默认）
-unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}')
+unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}' | head -n 1)
 [ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
 #自定义闪存目录
-diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}')
+diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
 [ -z "$diretc" ] && diretc=/tmp/clash/etc && echo "diretc=/tmp/clash/etc" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
@@ -135,6 +135,7 @@ if [ ! -z "$2" -a ! -z "$3" ] ; then
 else
 	if [ -s $dirconf/settings.txt ] ; then
 		#echo "已存在用戶配置settings.txt，直接讀取"
+		#sort -u $dirconf/settings.txt -o $dirconf/settings.txt
 		read_settings
 	else
 		settings
@@ -1036,12 +1037,12 @@ else
 	iptables_mode=0
 fi
 if [ "$mode" = "1" -a "$iptables_mode" = "1" ] ; then
-	echo -e "● \e[1;36m $name 透明代理1：\e[1;32m【已启用】\e[0m"
+	echo -e "● \e[1;36m $name 透明代理①：\e[1;32m【已启用】\e[0m"
 elif [ "$mode" = "2" -a "$iptables_mode" = "2" ] ; then
-	echo -e "● \e[1;36m $name 透明代理2：\e[1;32m【已启用】\e[0m"
+	echo -e "● \e[1;36m $name 透明代理②：\e[1;32m【已启用】\e[0m"
 else
 	echo -e "○ \e[1;36m $name 透明代理：\e[1;31m【未启用】\e[0m"
-	echo "   $pre1 $pre2 $pre3 $out1 $out2"
+	echo "    mode：$mode，iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2"
 fi
 }
 #按钮
