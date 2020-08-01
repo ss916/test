@@ -7,14 +7,31 @@ tmp=/tmp
 #闪存根目录
 etc=/etc/storage
 
-#脚本目录
-pdcn=$etc/pdcn
-#闪存资源文件夹
-diretc=$pdcn/$name
-#闪存配置文件夹
-dirconf=$pdcn/$name
 #内存目录文件夹
 dirtmp=$tmp/$name
+#脚本目录
+pdcn=$etc/pdcn
+#闪存配置文件夹
+dirconf=$pdcn/$name
+
+#闪存资源文件夹
+#diretc=/etc/storage/pdcn/clash
+#diretc=/tmp/clash/etc
+if [ -s $dirconf/settings.txt ] ; then
+	diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}')
+	if [ ! -z "$diretc" ] ; then
+		size=$(df $etc |awk '!/Available/{print $4}')
+		if [ "$size" -lt "5120" ] ; then
+			echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
+			diretc=/tmp/clash/etc
+		fi
+	else
+		diretc=/tmp/clash/etc
+		echo "diretc=/tmp/clash/etc" >> $dirconf/settings.txt
+	fi
+else
+	diretc=/tmp/clash/etc
+fi
 
 #系统定时任务文件
 file_cron=$etc/cron/crontabs/admin
@@ -27,6 +44,7 @@ user_name=$name
 #用户UID
 user_id=998
 
+
 #资源文件地址前缀
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
@@ -38,15 +56,6 @@ if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" -a ! -z "$(netstat -anp | g
 else
 	curl="curl"
 	url=$url3
-fi
-
-#检查闪存空间
-if [ ! -s $diretc/$name ] ; then
-	size=$(df $etc |awk '!/Available/{print $4}')
-	if [ "$size" -lt "5120" ] ; then
-		echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
-		diretc=$dirtmp/etc
-	fi
 fi
 
 [ ! -d $dirtmp ] && mkdir -p $dirtmp
@@ -115,6 +124,9 @@ adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}')
 #是否启用网易云解锁，1.unlocknetease启用，0.关闭（默认）
 unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}')
 [ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
+#自定义闪存目录
+diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}')
+[ -z "$diretc" ] && diretc=/tmp/clash/etc && echo "diretc=/tmp/clash/etc" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
 	#一键快速设置参数：./clash.sh 1 mode=1 config=config.yaml link1=https://123.com/link1.txt link2=https://123.com/link2.txt adblock=1 chinalist=1 unlocknetease=0 dns=1
@@ -571,15 +583,34 @@ ipt0
 }
 
 start_iptables () {
-pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l) && [ "$pre1" != "0" ] && ipt0
-pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l) && [ "$pre2" != "0" ] && ipt0
-pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l) && [ "$pre3" != "0" ] && ipt0
-out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l) && [ "$out1" != "0" ] && ipt0
-out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l) && [ "$out2" != "0" ] && ipt0
-if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
-	ipt1
+pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
+pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
+pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
+out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
+out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
+if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
+	iptables_mode=1
+elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
+	iptables_mode=2
 else
-	echo "    ✖ start_iptables：$name进程或端口没启动成功，不启动透明代理。"
+	iptables_mode=0
+fi
+if [ "$mode" = "1" -a "$iptables_mode" = "1" ] ; then
+	echo "    ✓ start_iptables：$name当前模式mode 1，iptables mode 1，iptables规则正常，跳过设置。"
+elif [ "$mode" = "2" -a "$iptables_mode" = "2" ] ; then
+	echo "    ✓ start_iptables：$name当前模式mode 2，iptables mode 2，iptables规则正常，跳过设置。"
+else
+	#删除iptables规则
+	[ "$pre1" != "0" ] && ipt0
+	[ "$pre2" != "0" ] && ipt0
+	[ "$pre3" != "0" ] && ipt0
+	[ "$out1" != "0" ] && ipt0
+	[ "$out2" != "0" ] && ipt0
+	if [ ! -z "$(ps -w |grep -v grep| grep "$name.*-d")" -a ! -z "$(netstat -anp | grep $name)" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+		ipt1
+	else
+		echo "    ✖ start_iptables：$name进程或端口没启动成功，跳过设置透明代理。"
+	fi
 fi
 }
 
@@ -649,7 +680,6 @@ else
 	iptables_mode=0
 fi
 if [ "$mode" = "1" -o "$mode" = "2" ] ; then
-	#echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 	if [ -z "$server" -o -z "$port" ] ; then
 		[ -z "$server" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name进程不存在，重启程序！" >> ./keep.txt
 		[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测$name端口没监听，重启程序！" >> ./keep.txt
@@ -657,10 +687,12 @@ if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 		v=0
 	elif [ "$mode" = "1" -a "$iptables_mode" != "1" ] ; then
 		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测$name需要重置iptables规则1！" >> ./keep.txt
+		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 		sh $etc/$name.sh start_iptables &
 		w=0
 	elif [ "$mode" = "2" -a "$iptables_mode" != "2" ] ; then
 		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测$name需要重置iptables规则2！" >> ./keep.txt
+		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 		sh $etc/$name.sh start_iptables &
 		w=0
 	else
@@ -779,12 +811,12 @@ start_remark &
 #启动模式1：iptables透明代理
 start_1 () {
 start_0
-start_iptables
+start_iptables && sleep 10 && start_iptables && sleep 10 && start_iptables
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 start_0
-start_iptables
+start_iptables && sleep 10 && start_iptables && sleep 10 && start_iptables
 }
 
 #启动模式3：重启clash + ip2socks透明代理
@@ -808,7 +840,6 @@ fi
 
 #8更新文件
 renew () {
-#[ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] && echo "走clash本地http代理http://127.0.0.1:8001" && export http_proxy=http://127.0.0.1:8001 && export https_proxy=http://127.0.0.1:8001
 startrenew=1
 echo -e \\n"\e[1;33m檢查更新文件：\e[0m"\\n
 down_clash &
@@ -896,38 +927,42 @@ upclash () {
 filename="clash"
 os="linux-mipsle-softfloat"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
+clashp_url=$(curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
+clashp_ver=$(echo $clashp_url | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
 address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
-if [ "$new" = "$old" ]; then
-	echo -e "  ✔ $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"
+if [ "$clashp_ver" = "$old" ]; then
+	echo -e "  ✔ $filename github版本：\e[1;37m【$new】\e[0m。clashp版本：\e[1;32m【$clashp_ver】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"
 else
-	echo -e "   $filename最新版本：\e[1;32m【$new】\e[0m，旧版本：\e[1;33m【$old】\e[0m，正在更新～"
+	echo -e "   $filename github版本：\e[1;37m【$new】\e[0m。clashp版本：\e[1;32m【$clashp_ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m，正在更新～"
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
-	$curl -# -L $address -o ./clash-$os-v$new.gz
+	#$curl -# -L $address -o ./clash-$os-v$new.gz
+	$curl -# -L $clashp_url -O
 	echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
-	gzip -kfd ./clash-$os-v$new.gz
-	chmod 777 ./clash-$os-v$new
+	gzip -kfd *gz
+	chmod +x -R ./
 	echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
-	ver=$(./clash-$os-v$new -v|awk '/Clash/{print $2}'|sed 's/v//')
+	#ver=$(./clash-$os-v$new -v | awk '/Clash/{print $2}'|sed 's/v//')
+	ver=$(./*$clashp_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
 	if [ ! -z "$ver" ] ; then
 		if [ "$ver" = "$old" ]; then
 			echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
-			rm -rf ./clash-$os-*
+			rm -rf ./clash*
 		else
-			echo "$new" > ./$filename.ver
+			echo "$ver" > ./$filename.ver
 			echo -e "\e[32m  >> $filename文件校验通过，版本不一致～\e[0m"
 			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
 		fi
 	else
-		gzsize=$(ls -lh ./clash-$os-v$new.gz | awk -F ' ' '{print $5}')
-		size=$(ls -lh ./clash-$os-v$new | awk -F ' ' '{print $5}')
-		if [ ! -s ./clash-$os-v$new ] ; then
+		gzsize=$(ls -lh *.gz | awk -F ' ' '{print $5}')
+		size=$(ls -lh *$clashp_ver | awk -F ' ' '{print $5}')
+		if [ ! -s ./*$clashp_ver ] ; then
 			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
 		else
 			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"
 		fi
-		rm -rf ./clash-$os-*
+		rm -rf ./clash*
 	fi
 fi
 }
