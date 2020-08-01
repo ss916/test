@@ -1,5 +1,5 @@
-# //【2020-08-01 21:00:18】
-/SHAKE128.TXT= a0a748d07e5d4cec7ba1c56c4d1660e51c99d561
+# //【2020-08-01 21:16:05】
+/SHAKE128.TXT= 1347a86ea42bbf597bd4caf1401352bd2d58660d
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -62,6 +62,6 @@
 /t/kcptuns_old= c8cbbc6fed927e8e56ff7888f48b6c07e9722d1e
 /t/v2ctl= a3b19e12b45c71742766f6e79bebddfd49605d16
 /t/v2ray= 0836fb584bdd185adfed7ce5d37d412d317d6f67
-/t/yacd-gh-pages.tgz= c40c9e058f6c290e6716881ac51181671c590365
-/t/yacd-gh-pages.zip= 1fc7d6953e8650074beffcc3ded9f9ed9da68c79
+/t/yacd-gh-pages.tgz= e9ba516f251502325d0dc8a6b4412687e8ccfb29
+/t/yacd-gh-pages.zip= 094b9f64fc006ff77ee6ffd6aa419bc9bf20a43c
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
