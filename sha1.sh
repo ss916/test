@@ -1,6 +1,7 @@
 #!/bin/sh
+dir9=$(dirname $0)
+cd $dir9
 
-dir9=/tmp/test
 
 cat $dir9/payload/global_web_* | sed '/payload:/d' | sed "1 i\payload:" > $dir9/payload/global_web.txt
 
