@@ -280,6 +280,8 @@ payload:
 - DOMAIN-SUFFIX,picacomic.com
 - DOMAIN-SUFFIX,pinimg.com
 - DOMAIN-SUFFIX,pixiv.net
+- DOMAIN-SUFFIX,pixiv.org
+- DOMAIN-SUFFIX,pximg.net
 - DOMAIN-SUFFIX,player.fm
 - DOMAIN-SUFFIX,plurk.com
 - DOMAIN-SUFFIX,po18.tw

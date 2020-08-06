@@ -1,5 +1,5 @@
 #!/bin/sh
-# 1
+# 4
 
 #程序名字
 name=clash
@@ -45,14 +45,21 @@ user_name=${name}
 #用户UID
 user_id=998
 
-
 #资源文件地址前缀
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
 url3="https://raw.fastgit.org/ss916/test/master"
 
+
+#alias
+run="$dirtmp/${name} -d $dirtmp"
+alias pss='ps -w |grep -v grep| grep "$run"'
+alias port='netstat -anp | grep "${name}"'
+alias psskeep='ps -w | grep -v grep |grep "${name}_keep.sh"'
+alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
+
 curl_proxy () {
-if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
+if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	curl="curl -x 127.0.0.1:8005"
 	url=$url1
 else
@@ -313,7 +320,7 @@ if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	[ -s ./clash_log.txt ] && [ ! -z "$(grep -o "Can't load mmdb" ./clash_log.txt)" -o ! -z "$(grep -o "Can't find MMDB" ./clash_log.txt)" ] && logger -t "【${name}】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
 	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=$tmp
 	if [ -s $tmp/$file ] ; then
-		[ -f $dirtmp/$file ] && rm $dirtmp/$file
+		[ -f ./$file ] && rm ./$file
 		ln -s $tmp/$file $dirtmp/$file
 	else
 		echo "$tmp/$file文件为空，跳过创建软链接。"
@@ -343,11 +350,11 @@ fi
 
 #transocks
 transocks_stop () {
-[ ! -z "$(ps -w | grep -v grep | grep tran)" ] && logger -t "【clash.sh】" "▷检测到transocks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到transocks正在运行，先stop...\e[0m" && nvram set app_27=0 && /etc/storage/script/Sh58_tran_socks.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep tran)" ] && logger -t "【${name}】" "▷检测到transocks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到transocks正在运行，先stop...\e[0m" && nvram set app_27=0 && /etc/storage/script/Sh58_tran_socks.sh stop
 [ ! -z "$(ps -w | grep -v grep | grep chinadns)" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
 }
 transocks_start () {
-logger -t "【clash.sh】" "▶启动transocks透明代理..." && echo -e \\n"\e[1;33m▶启动transocks透明代理......\e[0m"
+logger -t "【${name}】" "▶启动transocks透明代理..." && echo -e \\n"\e[1;33m▶启动transocks透明代理......\e[0m"
 #啟動1
 nvram set app_27=1
 #代理模式
@@ -369,11 +376,11 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 }
 #ipt2socks
 ipt2socks_stop () {
-[ ! -z "$(ps -w | grep -v grep | grep ipt2socks)" ] && logger -t "【clash.sh】" "▷检测到ipt2socks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到ipt2socks正在运行，先stop...\e[0m" && nvram set app_104=0 && /etc/storage/script/Sh39_ipt2socks.sh stop
+[ ! -z "$(ps -w | grep -v grep | grep ipt2socks)" ] && logger -t "【${name}】" "▷检测到ipt2socks正在运行，先stop..." && echo -e \\n"\e[1;33m▷检测到ipt2socks正在运行，先stop...\e[0m" && nvram set app_104=0 && /etc/storage/script/Sh39_ipt2socks.sh stop
 [ ! -z "$(ps -w | grep -v grep | grep chinadns)" ] && nvram set app_1=0 && /etc/storage/script/Sh19_chinadns.sh stop
 }
 ipt2socks_start () {
-logger -t "【clash.sh】" "▶启动ipt2socks透明代理..." && echo -e \\n"\e[1;33m▶启动ipt2socks透明代理......\e[0m"
+logger -t "【${name}】" "▶启动ipt2socks透明代理..." && echo -e \\n"\e[1;33m▶启动ipt2socks透明代理......\e[0m"
 #啟動1
 nvram set app_104=1
 #代理模式
@@ -395,35 +402,35 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 }
 
 setmark () {
-[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
-config=$dirtmp/config.yaml
+[ ! -d ./mark ] && mkdir -p ./mark
+config=./config.yaml
 secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
 port=$(cat $config | awk -F: '/external-controller/{print $3}')
-curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > $dirtmp/mark/mark_new.txt
-if [ ! -s $dirtmp/mark/mark_old.txt ] ; then
+curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > ./mark/mark_new.txt
+if [ ! -s ./mark/mark_old.txt ] ; then
 	if [ ! -s $dirconf/mark.txt ] ; then
 		echo -e \\n"\e[1;36m▶直接保存[节点位置记录]到$dirconf/mark.txt ...\e[0m"
-		cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
-		cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
-		[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
-		> $dirtmp/mark/mark_ok_0
+		cp -f ./mark/mark_new.txt ./mark/mark_old.txt
+		cp -f ./mark/mark_new.txt $dirconf/mark.txt
+		[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
+		> ./mark/mark_ok_0
 		exit
 	else
-		cp -f $dirconf/mark.txt $dirtmp/mark/mark_old.txt
+		cp -f $dirconf/mark.txt ./mark/mark_old.txt
 	fi
 fi
-new=$(openssl SHA1 $dirtmp/mark/mark_new.txt |awk '{print $2}')
-old=$(openssl SHA1 $dirtmp/mark/mark_old.txt |awk '{print $2}')
+new=$(openssl SHA1 ./mark/mark_new.txt |awk '{print $2}')
+old=$(openssl SHA1 ./mark/mark_old.txt |awk '{print $2}')
 if [ "$new" != "$old" ] ; then
 	echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/mark.txt ...\e[0m"
-	cp -f $dirtmp/mark/mark_new.txt $dirtmp/mark/mark_old.txt
-	cp -f $dirtmp/mark/mark_new.txt $dirconf/mark.txt
-	[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
-	> $dirtmp/mark/mark_ok_0
+	cp -f ./mark/mark_new.txt ./mark/mark_old.txt
+	cp -f ./mark/mark_new.txt $dirconf/mark.txt
+	[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
+	> ./mark/mark_ok_0
 else
 	#echo "节点位置记录文件无需更新"
-	[ -f $dirtmp/mark/mark_ok_* ] && rm $dirtmp/mark/mark_ok_*
-	> $dirtmp/mark/mark_ok_1
+	[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
+	> ./mark/mark_ok_1
 fi
 }
 
@@ -461,21 +468,21 @@ do
 done
 }
 remark () {
-[ ! -d $dirtmp/mark ] && mkdir -p $dirtmp/mark
-config=$dirtmp/config.yaml
+[ ! -d ./mark ] && mkdir -p ./mark
+config=./config.yaml
 secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
 port=$(cat $config | awk -F: '/external-controller/{print $3}')
 if [ -s $dirconf/mark.txt ] ; then
 echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
-#remark_for > $dirtmp/mark/mark_status.txt
-remark_while > $dirtmp/mark/mark_status.txt
-sed -i "1i\######$(date "+%Y-%m-%d %H:%M:%S") #######" $dirtmp/mark/mark_status.txt
+#remark_for > ./mark/mark_status.txt
+remark_while > ./mark/mark_status.txt
+sed -i "1i\######$(timenow) #######" ./mark/mark_status.txt
 else
 echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
 fi
 }
 start_remark () {
-if [ ! -z "$(ps -w |grep -v grep| grep "${name}.*-d")" -a ! -z "$(netstat -anp | grep ${name})" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+if [ ! -z "$(pss)" -a ! -z "$(port)" -a ! -z "$(grep "RESTful API listening at" ./clash_log.txt)" ] ; then
 	remark
 else
 	echo "    ✖ start_remark：${name}进程或端口没启动成功，跳过还原节点记录。"
@@ -514,7 +521,7 @@ ipt1 () {
 #检查是否缺少tproxy模块modprobe 
 [ -z "$(lsmod | grep xt_TPROXY)" ] && echo "▶加載內核模塊 xt_TPROXY" && modprobe xt_TPROXY
 #从配置文件提取参数
-config=$dirtmp/config.yaml
+config=./config.yaml
 if [ -s $config ] ; then
 	#提取redir-port透明代理端口
 	redir_port=$(cat $config | awk '/redir-port:/{print $2}' | sed 's/"//g')
@@ -610,7 +617,7 @@ else
 	[ "$pre3" != "0" ] && ipt0
 	[ "$out1" != "0" ] && ipt0
 	[ "$out2" != "0" ] && ipt0
-	if [ ! -z "$(ps -w |grep -v grep| grep "${name}.*-d")" -a ! -z "$(netstat -anp | grep ${name})" -a ! -z "$(grep "RESTful API listening at" $dirtmp/clash_log.txt)" ] ; then
+	if [ ! -z "$(pss)" -a ! -z "$(port)" -a ! -z "$(grep "RESTful API listening at" ./clash_log.txt)" ] ; then
 		ipt1
 	else
 		echo "    ✖ start_iptables：${name}进程或端口没启动成功，跳过设置透明代理。"
@@ -655,33 +662,32 @@ start_cron () {
 }
 
 restart () {
-ps_server=$(ps -w | grep -v grep |grep "${name}.*-d" |wc -l)
-ps_keep=$(ps -w | grep -v grep |grep "${name}_keep.sh" |wc -l)
-if [ "$ps_server" != "1" -o "$ps_keep" != "1" ] ; then
+if [ "$(pss | wc -l)" != "1" -o "$(psskeep | wc -l)" != "1" ] ; then
 	sh $pdcn/${name}.sh $mode &
 else
-	echo -e \\n"$(date "+%Y-%m-%d_%H:%M:%S") ✓ restart：${name}进程与clash_keep.sh进程守护已运行，无需重启。"\\n
+	echo -e \\n"$(timenow) ✓ restart：${name}进程与${name}_keep.sh进程守护已运行，无需重启。"\\n
 fi
 }
 
 #进程守护
 start_keep () {
-if [ ! -s $dirtmp/clash_keep.sh ] ; then
+if [ ! -s ./${name}_keep.sh ] ; then
 echo "▶生成进程守护脚本."
-cat > $dirtmp/clash_keep.sh << \EOF
+cat > ./${name}_keep.sh << \EOF
 #!/bin/sh
 name=clash
-dir=/tmp/clash
+dirtmp=/tmp/clash
 etc=/etc/storage/pdcn
 mode=$(cat $etc/${name}/settings.txt |awk -F 'mode=' '/mode=/{print $2}' |head -n 1)
-cd $dir
+alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
+cd $dirtmp
 v=1
 w=1
 a=1
 log1=1
 while true ; do
 #检查进程与端口
-server=$(ps -w | grep -v grep |grep "${name}.*-d" |wc -l)
+server=$(ps -w | grep -v grep |grep "${name} -d $dirtmp" |wc -l)
 port=$(netstat -anp | grep ${name})
 pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
 pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
@@ -697,62 +703,76 @@ else
 fi
 if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 	if [ "$server" != "1" -o -z "$port" ] ; then
-		[ "$server" != "1" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测${name}进程不存在或重复，重启程序！" >> ./keep.txt
-		[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
+		if [ "$server" = "0" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程不存在，重启程序！" >> ./keep.txt
+		elif [ "$server" -gt "1" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
+		fi
+		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
 		nohup sh $etc/${name}.sh $mode & >> ./keep.txt 2>&1 &
 		v=0
 	elif [ "$mode" = "1" -a "$iptables_mode" != "1" ] ; then
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测${name}需要重置iptables规则1！" >> ./keep.txt
+		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则1！" >> ./keep.txt
 		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 		sh $etc/${name}.sh start_iptables &
 		w=0
 	elif [ "$mode" = "2" -a "$iptables_mode" != "2" ] ; then
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$w]检测${name}需要重置iptables规则2！" >> ./keep.txt
+		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则2！" >> ./keep.txt
 		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out1 $out2" >> ./keep.txt
 		sh $etc/${name}.sh start_iptables &
 		w=0
 	else
 		sh $etc/${name}.sh setmark
-		[ -f $dir/mark/mark_ok_0 ] && a=0
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") ${name} [$v] 进程OK，端口OK，[$w] iptables $iptables_mode OK，[$a] setmark OK" >> ./keep.txt
+		[ -f ./mark/mark_ok_0 ] && a=0
+		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$w] iptables $iptables_mode OK，[$a] setmark OK" >> ./keep.txt
 	fi
 else
 	if [ "$server" != "1" -o -z "$port" ] ; then
-		[ "$server" != "1" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测${name}进程不存在或重复，重启程序！" >> ./keep.txt
-		[ -z "$port" ] && echo -e "$(date "+%Y-%m-%d_%H:%M:%S") [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
+		if [ "$server" = "0" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程不存在，重启程序！" >> ./keep.txt
+		elif [ "$server" -gt "1" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
+		fi
+		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
 		nohup sh $etc/${name}.sh $mode & >> ./keep.txt 2>&1 &
 		v=0
 	else
 		sh $etc/${name}.sh setmark
-		[ -f $dir/mark/mark_ok_0 ] && a=1
-		echo -e "$(date "+%Y-%m-%d_%H:%M:%S") ${name} [$v] 进程OK，端口OK，[$a] setmark OK" >> ./keep.txt
+		[ -f ./mark/mark_ok_0 ] && a=1
+		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$a] setmark OK" >> ./keep.txt
 	fi
 fi
 v=$(expr $v + 1)
 w=$(expr $w + 1)
 a=$(expr $a + 1)
 #日志文件大于1万条后删除1000条
-[ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(date "+%H:%M:%S")]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
+[ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(timenow)]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
 sleep 120
 done
 EOF
-chmod +x $dirtmp/clash_keep.sh
+chmod +x ./${name}_keep.sh
 fi
-[ -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/clash_keep.sh >> $dirtmp/keep.txt 2>&1 &
+[ -z "$(psskeep)" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/${name}_keep.sh >> $dirtmp/keep.txt 2>&1 &
 }
 stop_keep () {
-[ ! -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && ps -w |grep -v grep |grep clash_keep.sh | awk '{print $1}' | xargs kill -9
+[ ! -z "$(psskeep)" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && psskeep | awk '{print $1}' | xargs kill -9
+}
+restart_keep () {
+stop_keep
+[ -s ./${name}_keep.sh ] && rm ./${name}_keep.sh
+[ -s ./keep.txt ] && rm ./keep.txt
+start_keep
 }
 
 #状态
 status_clash () {
 echo -e \\n"\e[36m■查看${name}进程：\e[0m"
-ps -w |grep -v grep| grep "clash.*-d"
+pss
 echo -e \\n"\e[36m■查看${name}网络监听端口：\e[0m"
-netstat -anp | grep clash
+port
 #判断是否启动
-if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
-	if [ ! -z "$(netstat -anp|grep clash)" ] ; then
+if [ ! -z "$(pss)" ] ; then
+	if [ ! -z "$(port)" ] ; then
 		logger -t "【${name}】" "✔ ${name}已启动！！" && echo -e \\n"\e[1;36m✔ ${name}已启动！！\e[0m"\\n
 	else
 		logger -t "【${name}】" "✦ ${name}进程已启动，但没监听端口..." && echo -e \\n"\e[1;36m✦ ${name}进程已启动，但没监听端口...\e[0m"
@@ -764,17 +784,17 @@ fi
 
 #关闭
 stop_clash () {
-[ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] && logger -t "【${name}】" "▷关闭clash..." && echo -e \\n"\e[1;36m▷关闭clash...\e[0m" && ps -w |grep -v grep| grep "clash.*-d" | awk '{print $1}' | xargs kill -9 && curl_proxy
+[ ! -z "$(pss)" ] && logger -t "【${name}】" "▷关闭${name}..." && echo -e \\n"\e[1;36m▷关闭${name}...\e[0m" && pss | awk '{print $1}' | xargs kill -9 && curl_proxy
 }
 #启动
 start_clash () {
-[ -f ./clash_log.txt ] && mv -f ./clash_log.txt ./old_clash_log.txt
+[ -f ./${name}_log.txt ] && mv -f ./${name}_log.txt ./old_${name}_log.txt
 logger -t "【${name}】" "▶启动${name}主程序..." && echo -e \\n"\e[1;36m▶启动${name}主程序...\e[0m"
 if [ "$mode" = "2" ] ; then
 	[ -z "$(grep "$user_name" /etc/passwd)" ] && echo "▶添加用戶$user_name，uid為$user_id" && adduser -u $user_id $user_name -D -S -H -s /bin/sh
-	su $user_name -c "nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &"
+	su $user_name -c "nohup $run > $dirtmp/${name}_log.txt 2>&1 &"
 else
-	nohup $dirtmp/clash -d $dirtmp > $dirtmp/clash_log.txt 2>&1 &
+	nohup $run > $dirtmp/${name}_log.txt 2>&1 &
 fi
 }
 
@@ -838,19 +858,19 @@ start_iptables && sleep 10 && start_iptables && sleep 10 && start_iptables
 #启动模式3：重启clash + ip2socks透明代理
 start_3 () {
 start_0
-if [ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
+if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	ipt2socks_start
 else
-	logger -t "【${name}】" "✘检测到未启动clash进程或端口没监听，取消ipt2socks透明代理" && echo -e \\n"\e[1;31m✘检测到未启动clash进程或端口没监听，取消ipt2socks透明代理\e[0m"\\n
+	logger -t "【${name}】" "✘检测到未启动${name}进程或端口没监听，取消ipt2socks透明代理" && echo -e \\n"\e[1;31m✘检测到未启动${name}进程或端口没监听，取消ipt2socks透明代理\e[0m"\\n
 fi
 }
 #启动模式4：重启clash + transocks透明代理
 start_4 () {
 start_0
-if [ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
+if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	transocks_start
 else
-	logger -t "【${name}】" "✘检测到未启动clash进程或端口没监听，取消transocks透明代理" && echo -e \\n"\e[1;31m✘检测到未启动clash进程或端口没监听，取消transocks透明代理\e[0m"\\n
+	logger -t "【${name}】" "✘检测到未启动${name}进程或端口没监听，取消transocks透明代理" && echo -e \\n"\e[1;31m✘检测到未启动${name}进程或端口没监听，取消transocks透明代理\e[0m"\\n
 fi
 }
 
@@ -885,14 +905,14 @@ $curl -sL $address -o $filename
 new=$(openssl SHA1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
 if [ ! -z "$new" -a ! -z "$old" -a "$new" = "$old" ]; then
-	echo -e "    ● \e[1;36m clash Web1蓝色主题\e[1;32m✔ \e[0m"
+	echo -e \\n"    ● \e[1;36m ${name} Web1蓝色主题\e[1;32m✔ \e[0m"
 	rm -rf $filename
 else
 	[ ! -s /opt/bin/unzip ] && opkg install unzip
 	[ -d ./$filedir ] && rm -rf ./$filedir
 	unzip -o $filename
 	tar czvf $filedir.tgz $filedir
-	echo -e "    ○ \e[1;36m clash Web1蓝色主题\e[1;31m【需要更新】\e[1;33m文件已下载$filedir.tgz\e[0m"
+	echo -e \\n"    ○ \e[1;36m ${name} Web1蓝色主题\e[1;31m【需要更新】 \\n  \e[1;33m文件已下载$filedir.tgz\e[0m"
 fi
 #暗黑主题
 filename="yacd-gh-pages.zip"
@@ -903,14 +923,14 @@ new=$(openssl sha1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
 if [ ! -z "$old" -a ! -z "$new" ]; then
 	if [ "$new" = "$old" ]; then
-		echo -e "    ● \e[1;36m clash Web2暗黑主题\e[1;32m✔ \e[0m"
+		echo -e \\n"    ● \e[1;36m ${name} Web2暗黑主题\e[1;32m✔ \e[0m"
 		rm -rf $filename
 	else
 		[ ! -s /opt/bin/unzip ] && opkg install unzip
 		[ -d ./$filedir ] && rm -rf ./$filedir
 		unzip -o $filename
 		tar czvf $filedir.tgz $filedir
-		echo -e "    ○ \e[1;36m clash Web2暗黑主题\e[1;31m【需要更新】\e[1;33m已下载文件$filedir.tgz \e[0m"
+		echo -e \\n"    ○ \e[1;36m ${name} Web2暗黑主题\e[1;31m【需要更新】 \\n  \e[1;33m已下载文件$filedir.tgz \e[0m"
 	fi
 else
 	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本sha1为空。\e[0m"\\n
@@ -926,10 +946,10 @@ new=$($curl -sL https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/rel
 old=$($curl -sL $url/t/Country.mmdb.ver)
 if [ ! -z "$old" -a ! -z "$new" ]; then
 	if [ "$old" = "$new" ]; then
-		echo -e " \e[1;32m✔$filename版本一致，无需更新[$new]！\e[0m"
+		echo -e \\n" \e[1;32m✔$filename版本一致，无需更新[$new]\e[0m"
 	else
 		echo "$new" > ./$filename.ver
-		echo -e " \e[1;33m>> $filename版本不一致，需要更新。new：$new ，old：$old...\e[0m"
+		echo -e \\n" \e[1;33m>> $filename版本不一致，需要更新... \\n  new：$new  \\n  old：$old\e[0m"
 		$curl -# -L $address -o ./$filename
 		echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
 		tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
@@ -943,15 +963,15 @@ upclash () {
 filename="clash"
 os="linux-mipsle-softfloat"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
-clashp_url=$(curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
+clashp_url=$($curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
 clashp_ver=$(echo $clashp_url | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
 address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
 if [ "$clashp_ver" = "$old" ]; then
-	echo -e "  ✔ $filename github版本：\e[1;37m【$new】\e[0m。clashp版本：\e[1;32m【$clashp_ver】\e[0m，旧版本：\e[1;32m【$old】\e[0m，版本一致，无需更新！"
+	echo -e \\n"  ✔ $filename 版本一致，无需更新！\\n  github版本：\e[1;37m【$new】\e[0m \\n  clashp版本：\e[1;32m【$clashp_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
 else
-	echo -e "   $filename github版本：\e[1;37m【$new】\e[0m。clashp版本：\e[1;32m【$clashp_ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m，正在更新～"
+	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$new】\e[0m \\n  clashp版本：\e[1;32m【$clashp_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
 	#$curl -# -L $address -o ./clash-$os-v$new.gz
 	$curl -# -L $clashp_url -O
@@ -983,8 +1003,8 @@ else
 fi
 }
 up () {
-[ ! -d $dirtmp/update ] && mkdir -p $dirtmp/update
-cd $dirtmp/update
+[ ! -d ./update ] && mkdir -p ./update
+cd ./update
 echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
 echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
 echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
@@ -1004,7 +1024,7 @@ fi
 zhuangtai () {
 echo -e \\n"\e[1;33m当前状态：\e[0m"\\n
 if [ -s ./${name} ] ; then
-	echo -e "★ \e[1;36m ${name} 版本：\e[1;32m【$(./clash -v|awk '/Clash/{print $2}'|sed 's/v//')】\e[0m"
+	echo -e "★ \e[1;36m ${name} 版本：\e[1;32m【$(./${name} -v|awk '/Clash/{print $2}'|sed 's/v//')】\e[0m"
 else
 	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在】\e[0m"
 fi
@@ -1013,18 +1033,18 @@ if [ -s ./$config ] ; then
 else
 	echo -e "☆ \e[1;36m ${name} 配置：\e[1;31m【不存在】\e[0m"
 fi
-if [ ! -z "$(ps -w |grep -v grep| grep "clash.*-d")" ] ; then
+if [ ! -z "$(pss)" ] ; then
 	echo -e \\n"● \e[1;36m ${name} 进程：\e[1;32m【已运行】\e[0m"
 else
 	echo -e \\n"○ \e[1;36m ${name} 进程：\e[1;31m【未运行】\e[0m"
 fi
-if [ ! -z "$(netstat -anp | grep clash)" ] ; then
+if [ ! -z "$(port)" ] ; then
 	echo -e "● \e[1;36m ${name} 端口：\e[1;32m【已监听】\e[0m"
 else
 	echo -e "○ \e[1;36m ${name} 端口：\e[1;31m【未监听】\e[0m"
 fi
 #
-if [ ! -z "$(ps -w |grep -v grep |grep clash_keep.sh)" ] ; then
+if [ ! -z "$(psskeep)" ] ; then
 	echo -e "● \e[1;36m ${name} 进程守护：\e[1;32m【已运行】\e[0m"
 else
 	echo -e "○ \e[1;36m ${name} 进程守护：\e[1;31m【未运行】\e[0m"
@@ -1103,6 +1123,9 @@ stop_keep)
 	;;
 start_keep)
 	start_keep
+	;;
+restart_keep)
+	restart_keep
 	;;
 start_iptables)
 	start_iptables
