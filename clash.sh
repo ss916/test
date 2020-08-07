@@ -1,5 +1,5 @@
 #!/bin/sh
-# 4
+# 5
 
 #程序名字
 name=clash
@@ -662,11 +662,14 @@ start_cron () {
 }
 
 restart () {
+#检查进程端口
 if [ "$(pss | wc -l)" != "1" -o "$(psskeep | wc -l)" != "1" ] ; then
 	sh $pdcn/${name}.sh $mode &
 else
 	echo -e \\n"$(timenow) ✓ restart：${name}进程与${name}_keep.sh进程守护已运行，无需重启。"\\n
 fi
+#检查iptables
+start_iptables
 }
 
 #进程守护
