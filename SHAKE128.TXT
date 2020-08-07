@@ -1,5 +1,5 @@
-# //【2020-08-07 12:04:09】
-/SHA1.TXT= 5de85dc8ea3f0f6b2354b94ddc470b48
+# //【2020-08-07 16:30:47】
+/SHA1.TXT= 2c943c18bbb39bad2bc43dea033b829e
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -42,8 +42,8 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /sha1.sh= 0cfc15580dfd9e479506dd17e8450990
-/t/Country.mmdb.tgz= ccfea16b85e31a18f99c9bf3834cc41a
-/t/Country.mmdb.ver= 4dfe3641a2dc3f6361a509a6631436ad
+/t/Country.mmdb.tgz= 450a3706e927e22dffcefe06d018a9e2
+/t/Country.mmdb.ver= 9d6140e19ff3d38cdc65657f27835bea
 /t/UnblockNeteaseMusic= d84876c144ca4429e87ac236bea11109
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
