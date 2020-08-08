@@ -1,5 +1,5 @@
-# //【2020-08-07 23:43:05】
-/SHAKE128.TXT= 1dfd9827cfe40e2a2dc1932a6e24fe0db5b27113
+# //【2020-08-09 06:19:46】
+/SHAKE128.TXT= 3e8ffc018c7ca79580bbc6d5cb516d0f5949a877
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
 /arm64/v2ctl= f458fc2b76716cc835538af267acd1c8760d2c17
 /arm64/v2ray= b7bf9c0e687fb8e8d283247c3c8effd9c5d64563
-/clash.sh= b9d5dbcba429305d1f7ac98d57670a6f3fad58ff
+/clash.sh= ac07b0490e0ee5230bc34123b1fdf43d62d4dca7
 /config.yaml= 0daebe1f7a361391e1232c901c2f3b6324c69a0d
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
@@ -21,7 +21,7 @@
 /hosts/f= 13b915e7176a389561cc984947c8dc23d612dd88
 /hosts/hosts= 77b13a63a7344fff686fb4b76c374fae160b6622
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
-/netease.sh= 38cf4b8e4bd363ef0d4c741a89b639c45b6fb1c7
+/netease.sh= 94927325e1439b2bd8aa48b1625a5814e661f17b
 /payload/block_dnsmasq.txt= 1b8bd43ff63bdfccf9e74f46b7300c3df3548c8b
 /payload/block_hijack.txt= be579bd5d526f7be248624daea53c6735fa91da5
 /payload/block_hosts.txt= e345d4cef42be0150265187ff1cbe08a8473d024
@@ -42,8 +42,9 @@
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /sha1.sh= 1ab392081cf42120de8415ef79a32696c8244a00
-/t/Country.mmdb.tgz= 0380ffcea19fc09a8d4285372c6dbf95bcc71a22
-/t/Country.mmdb.ver= 4f75cdd7047c57549ebe37d91452d59e36e51928
+/t/Country.mmdb.tgz= a0f9292280d11f057db2de166ec5e79101a89c45
+/t/Country.mmdb.ver= b0b36effb949f57b0de467f3b87fb2d9e69c233e
+/t/UnblockNeteaseMusic.tgz= 01c7347236b09515563f5f1c39e9f09e443f3b3a
 /t/UnblockNeteaseMusic= ab1c0719d3ae3226a0e34321a94a8cf96a72816f
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6

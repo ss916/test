@@ -1,5 +1,5 @@
 #!/bin/sh
-# 5
+# 7
 
 #程序名字
 name=clash
@@ -402,35 +402,42 @@ nvram set app_5="223.5.5.5,127.0.0.1:5300"
 }
 
 setmark () {
-[ ! -d ./mark ] && mkdir -p ./mark
 config=./config.yaml
 secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
 port=$(cat $config | awk -F: '/external-controller/{print $3}')
-curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > ./mark/mark_new.txt
-if [ ! -s ./mark/mark_old.txt ] ; then
-	if [ ! -s $dirconf/mark.txt ] ; then
-		echo -e \\n"\e[1;36m▶直接保存[节点位置记录]到$dirconf/mark.txt ...\e[0m"
-		cp -f ./mark/mark_new.txt ./mark/mark_old.txt
-		cp -f ./mark/mark_new.txt $dirconf/mark.txt
-		[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
-		> ./mark/mark_ok_0
+curl -s -X GET "http://127.0.0.1:$port/proxies" -H "Authorization: Bearer $secret" | sed 's/\},/\},\n/g'  | grep "Selector" | grep "now" |grep -Eo "name.*" > ./mark/setmark_new.txt
+if [ ! -s ./mark/setmark_old.txt ] ; then
+	if [ ! -s $dirconf/setmark.txt ] ; then
+		echo -e \\n"\e[1;36m▶直接保存[节点位置记录]到$dirconf/setmark.txt ...\e[0m"
+		cp -f ./mark/setmark_new.txt ./mark/setmark_old.txt
+		cp -f ./mark/setmark_new.txt $dirconf/setmark.txt
+		[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
+		> ./mark/setmark_ok_0
 		exit
 	else
-		cp -f $dirconf/mark.txt ./mark/mark_old.txt
+		cp -f $dirconf/setmark.txt ./mark/setmark_old.txt
 	fi
 fi
-new=$(openssl SHA1 ./mark/mark_new.txt |awk '{print $2}')
-old=$(openssl SHA1 ./mark/mark_old.txt |awk '{print $2}')
+new=$(openssl SHA1 ./mark/setmark_new.txt |awk '{print $2}')
+old=$(openssl SHA1 ./mark/setmark_old.txt |awk '{print $2}')
 if [ "$new" != "$old" ] ; then
-	echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/mark.txt ...\e[0m"
-	cp -f ./mark/mark_new.txt ./mark/mark_old.txt
-	cp -f ./mark/mark_new.txt $dirconf/mark.txt
-	[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
-	> ./mark/mark_ok_0
+	echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/setmark.txt ...\e[0m"
+	cp -f ./mark/setmark_new.txt ./mark/setmark_old.txt
+	cp -f ./mark/setmark_new.txt $dirconf/setmark.txt
+	[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
+	> ./mark/setmark_ok_0
 else
 	#echo "节点位置记录文件无需更新"
-	[ -f ./mark/mark_ok_* ] && rm ./mark/mark_ok_*
-	> ./mark/mark_ok_1
+	[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
+	> ./mark/setmark_ok_1
+fi
+}
+start_setmark () {
+[ ! -d ./mark ] && mkdir -p ./mark
+if [ -f ./mark/start_remark_ok_0 ] ; then
+	start_remark
+else
+	setmark
 fi
 }
 
@@ -448,11 +455,11 @@ do
 	echo -e "●策略组：$group → 上次选中：$now"
 	echo -e "■encode编码：$encode"
 	curl -sv -X PUT "http://127.0.0.1:$port/proxies/$encode" -H "Authorization: Bearer $secret" -d "{\"name\": \"$now\"}" 2>&1
-done < $dirconf/mark.txt
+done < $dirconf/setmark.txt
 }
 remark_for () {
 IFS=$'\n'
-for a in $(cat $dirconf/mark.txt)
+for a in $(cat $dirconf/setmark.txt)
 do
 	group=$(echo $a|grep -Eo "name.*"|awk -F\" '{print $3}')
 	now=$(echo $a|grep -Eo "now.*"|awk -F\" '{print $3}')
@@ -472,20 +479,24 @@ remark () {
 config=./config.yaml
 secret=$(cat $config | awk '/secret:/{print $2}' | sed 's/"//g')
 port=$(cat $config | awk -F: '/external-controller/{print $3}')
-if [ -s $dirconf/mark.txt ] ; then
+if [ -s $dirconf/setmark.txt ] ; then
 echo -e \\n"\e[1;36m▶还原节点位置记录...\e[0m"
-#remark_for > ./mark/mark_status.txt
-remark_while > ./mark/mark_status.txt
-sed -i "1i\######$(timenow) #######" ./mark/mark_status.txt
+#remark_for > ./mark/remark_status.txt
+remark_while > ./mark/remark_status.txt
+sed -i "1i\######$(timenow) #######" ./mark/remark_status.txt
 else
-echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/mark.txt，跳过还原。\e[0m"
+echo -e \\n"\e[1;37m▷节点位置记录文件不存在$dirconf/setmark.txt，跳过还原。\e[0m"
 fi
 }
 start_remark () {
 if [ ! -z "$(pss)" -a ! -z "$(port)" -a ! -z "$(grep "RESTful API listening at" ./clash_log.txt)" ] ; then
 	remark
+	[ -f ./mark/start_remark_ok_* ] && rm ./mark/start_remark_ok_*
+	> ./mark/start_remark_ok_1
 else
 	echo "    ✖ start_remark：${name}进程或端口没启动成功，跳过还原节点记录。"
+	[ -f ./mark/start_remark_ok_* ] && rm ./mark/start_remark_ok_*
+	> ./mark/start_remark_ok_0
 fi
 }
 
@@ -516,6 +527,39 @@ else
 fi
 }
 
+iptables_tcp () {
+#TCP
+iptables -t nat -N clash >/dev/null 2>&1
+iptables -t nat -F clash
+iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
+iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
+iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
+iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
+iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
+iptables -t nat -A PREROUTING -p tcp -j clash
+}
+iptables_udp () {
+##udp
+ip rule add fwmark 1 table 100
+ip route add local default dev lo table 100
+iptables -t mangle -N clash >/dev/null 2>&1
+iptables -t mangle -F clash
+iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
+iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
+iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
+iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
+iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
+iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
+}
+
 #透明代理
 ipt1 () {
 #检查是否缺少tproxy模块modprobe 
@@ -533,34 +577,8 @@ else
 fi
 ##########
 logger -t "【${name}】" "▶创建局域网透明代理" && echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"\\n
-#TCP
-iptables -t nat -N clash >/dev/null 2>&1
-iptables -t nat -F clash
-iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
-iptables -t nat -A PREROUTING -p tcp -j clash
-##udp
-ip rule add fwmark 1 table 100
-ip route add local default dev lo table 100
-iptables -t mangle -N clash >/dev/null 2>&1
-iptables -t mangle -F clash
-iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
-iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
+iptables_tcp
+iptables_udp
 #DNS流量
 iptables -t nat -N CLASHDNS >/dev/null 2>&1
 iptables -t nat -F CLASHDNS
@@ -619,8 +637,12 @@ else
 	[ "$out2" != "0" ] && ipt0
 	if [ ! -z "$(pss)" -a ! -z "$(port)" -a ! -z "$(grep "RESTful API listening at" ./clash_log.txt)" ] ; then
 		ipt1
+		[ -f ./start_iptables_* ] && rm ./start_iptables_*
+		> ./start_iptables_1
 	else
 		echo "    ✖ start_iptables：${name}进程或端口没启动成功，跳过设置透明代理。"
+		[ -f ./start_iptables_* ] && rm ./start_iptables_*
+		> ./start_iptables_0
 	fi
 fi
 }
@@ -646,8 +668,8 @@ stop_wan () {
 start_wan () {
 [ -z "$(cat $file_wan | grep START_WAN.SH)" ] && echo "sh $pdcn/START_WAN.SH &" >> $file_wan
 [ ! -f $pdcn/START_WAN.SH ] && > $pdcn/START_WAN.SH
-#[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh $mode &" >> $pdcn/START_WAN.SH
-[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh restart >> $dirtmp/keep.txt &" >> $pdcn/START_WAN.SH
+#[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
+[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
 }
 
 #定时任务
@@ -657,8 +679,8 @@ stop_cron () {
 start_cron () {
 [ -z "$(cat $file_cron | grep START_CRON.SH)" ] && echo "1 5 * * * sh $pdcn/START_CRON.SH &" >> $file_cron
 [ ! -f $pdcn/START_CRON.SH ] && > $pdcn/START_CRON.SH
-[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh $mode &" >> $pdcn/START_CRON.SH
-#[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh restart >> $dirtmp/keep.txt &" >> $pdcn/START_CRON.SH
+[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
+#[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
 }
 
 restart () {
@@ -725,8 +747,8 @@ if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 		sh $etc/${name}.sh start_iptables &
 		w=0
 	else
-		sh $etc/${name}.sh setmark
-		[ -f ./mark/mark_ok_0 ] && a=0
+		sh $etc/${name}.sh start_setmark
+		[ -f ./mark/setmark_ok_0 ] && a=0
 		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$w] iptables $iptables_mode OK，[$a] setmark OK" >> ./keep.txt
 	fi
 else
@@ -740,8 +762,8 @@ else
 		nohup sh $etc/${name}.sh $mode & >> ./keep.txt 2>&1 &
 		v=0
 	else
-		sh $etc/${name}.sh setmark
-		[ -f ./mark/mark_ok_0 ] && a=1
+		sh $etc/${name}.sh start_setmark
+		[ -f ./mark/setmark_ok_0 ] && a=0
 		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$a] setmark OK" >> ./keep.txt
 	fi
 fi
@@ -845,17 +867,19 @@ start_cron
 #keep进程守护
 start_keep
 #还原节点记录
-start_remark &
+start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark &
 }
 #启动模式1：iptables透明代理
 start_1 () {
+mode=1 && sed -i 's/mode=.*/mode=1/g' $dirconf/settings.txt
 start_0
-start_iptables && sleep 10 && start_iptables && sleep 10 && start_iptables
+start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
+mode=2 && sed -i 's/mode=.*/mode=2/g' $dirconf/settings.txt
 start_0
-start_iptables && sleep 10 && start_iptables && sleep 10 && start_iptables
+start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
 }
 
 #启动模式3：重启clash + ip2socks透明代理
@@ -1159,6 +1183,9 @@ start_remark)
 	;;
 remark)
 	remark
+	;;
+start_setmark)
+	start_setmark
 	;;
 setmark)
 	setmark

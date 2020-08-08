@@ -26,24 +26,26 @@ $curl -# -L $url -o $filetgz
 unzip $filetgz
 chmod +x -R ./
 }
+download_file2 () {
+url2=https://raw.fastgit.org/ss916/test/master/t/UnblockNeteaseMusic.tgz
+echo -e \\n"\e[1;36m▶下載主程序$filetgz，最新版【$new】...\e[0m"\\n
+$curl -# -L $url2 -O
+tar xzvf UnblockNeteaseMusic.tgz
+chmod +x -R ./
+}
 check_file () {
-[ ! -s ./$filename ] && download_file && [ ! -s ./$filename ] && download_file
+[ ! -s ./$filename ] && download_file2 && [ ! -s ./$filename ] && download_file2
 if [ ! -s ./server.crt ] ; then
 	if [ ! -s ./createCertificate.sh ] ; then
 		echo -e \\n"\e[1;31m！！證書腳本文件createCertificate.sh不存在，重新下載$filetgz \e[0m"\\n
-		download_file
+		download_file2
 	else
 		echo -e \\n"\e[1;36m▶生成證書文件server.crt...\e[0m"\\n
 		./createCertificate.sh
 	fi
 fi
 }
-wan_0 () {
-[ ! -z "`cat /etc/storage/post_wan_script.sh |grep netease.sh`" ] && echo -e \\n"\e[1;36m▷删除自啟任务netease.sh...\e[0m"\\n && sed -i '/netease.sh/d' /etc/storage/post_wan_script.sh
-}
-wan_1 () {
-[ -z "`cat /etc/storage/post_wan_script.sh |grep netease.sh`" ] && echo -e \\n"\e[1;36m▶添加自啟任务netease.sh...\e[0m"\\n && echo "/etc/storage/dnsmasq/dns/netease.sh 1 &" >> /etc/storage/post_wan_script.sh
-}
+
 stop () {
 [ ! -z "`$jincheng | grep -v grep | grep $filename`" ] && echo -e \\n"\e[1;36m▷結束$filename...\e[0m"\\n && killall $filename
 }
@@ -54,10 +56,7 @@ echo -e \\n"\e[1;36m▶啟動$filename...\e[0m"\\n
 nohup $dir/$filename -p $http_port -sp $https_port -b >/dev/null 2>&1 &
 status
 }
-start_2 () {
-wan_1
-start_1
-}
+
 status () {
 echo -e \\n"\e[1;33m当前状态：\e[1;37m $shname \e[0m"\\n
 if [ -s ./$filename ] ; then
@@ -84,7 +83,6 @@ fi
 remove () {
 echo -e \\n"\e[1;33m▷刪除所有...\e[0m"\\n
 stop
-wan_0
 rm -rf $dir
 }
 case $1 in
@@ -94,9 +92,6 @@ case $1 in
 1)
 	start_1 &
 	;;
-2)
-	start_2 &
-	;;
 9)
 	remove &
 	;;
@@ -105,7 +100,6 @@ case $1 in
 	echo -e \\n"\e[1;33m脚本管理：\e[0m"\\n
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop ：結束程序 \e[0m"
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1 ：啟動程序 \e[0m"
-	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2 ：啟動程序 + 開機自啟\e[0m"
 	echo -e "\e[1;32m【9】\e[0m\e[1;36m remove ：卸載 \e[0m"
 	echo " "
 	read -n 1 -p "请输入数字：" num
@@ -113,12 +107,10 @@ case $1 in
 		stop &
 	elif [ "$num" = "1" ] ; then
 		start_1 &
-	elif [ "$num" = "2" ] ; then
-		start_2 &
 	elif [ "$num" = "9" ] ; then
 		remove &
 	else
-		echo -e \\n"\e[1;31m输入错误，目前功能只有\e[1;32m 0、1、2、9 \e[1;31m功能\e[0m "\\n
+		echo -e \\n"\e[1;31m输入错误，目前功能只有\e[1;32m 0、1、9 \e[1;31m功能\e[0m "\\n
 	fi
 	;;
 esac
