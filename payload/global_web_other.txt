@@ -1,5 +1,11 @@
 payload:
 #🆓other ：global_web_other.txt
+#protonmail
+- DOMAIN-SUFFIX,protonmail.ch
+- DOMAIN-SUFFIX,protonmail.com
+- DOMAIN-SUFFIX,recruitee.com
+- DOMAIN-SUFFIX,protonstatus.com
+- DOMAIN-SUFFIX,w.org
 #rfa
 - DOMAIN-SUFFIX,rfa.org
 #ptt
@@ -63,7 +69,6 @@ payload:
 - DOMAIN-SUFFIX,now.im
 - DOMAIN-SUFFIX,nowe.com
 - DOMAIN-SUFFIX,redditlist.com
-- DOMAIN-SUFFIX,s3.amazonaws.com
 - DOMAIN-SUFFIX,signal.org
 - DOMAIN-SUFFIX,smartmailcloud.com
 - DOMAIN-SUFFIX,sparknotes.com
@@ -89,13 +94,13 @@ payload:
 - DOMAIN-SUFFIX,abc.com
 - DOMAIN-SUFFIX,abc.net.au
 - DOMAIN-SUFFIX,abebooks.com
-- DOMAIN-SUFFIX,amazon.co.jp
 - DOMAIN-SUFFIX,apigee.com
 - DOMAIN-SUFFIX,apk-dl.com
 - DOMAIN-SUFFIX,apkfind.com
 - DOMAIN-SUFFIX,apkmirror.com
 - DOMAIN-SUFFIX,apkmonk.com
 - DOMAIN-SUFFIX,apkpure.com
+- DOMAIN-SUFFIX,cdnpure.com
 - DOMAIN-SUFFIX,aptoide.com
 - DOMAIN-SUFFIX,archive.is
 - DOMAIN-SUFFIX,archive.org
