@@ -1,0 +1,8 @@
+payload:
+#📺Netflix ：global_video_youtube.txt
+- DOMAIN-SUFFIX,youtu.be
+- DOMAIN-SUFFIX,yt.be
+- DOMAIN-SUFFIX,ytimg.com
+- DOMAIN-SUFFIX,googlevideo.com
+- DOMAIN-SUFFIX,youtube.com
+- DOMAIN,youtubei.googleapis.com

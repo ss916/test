@@ -66,11 +66,6 @@ payload:
 - DOMAIN-SUFFIX,githubassets.com
 - DOMAIN-SUFFIX,githubapp.com
 #🆓google ：global_web_google.txt
-# > YouTube
-- DOMAIN-SUFFIX,googlevideo.com
-- DOMAIN-SUFFIX,youtube.com
-- DOMAIN,youtubei.googleapis.com
-# > Google
 - DOMAIN-KEYWORD,google
 - DOMAIN-KEYWORD,blogspot
 - DOMAIN-SUFFIX,ampproject.org
@@ -123,9 +118,6 @@ payload:
 - DOMAIN-SUFFIX,whatbrowser.org
 - DOMAIN-SUFFIX,widevine.com
 - DOMAIN-SUFFIX,x.company
-- DOMAIN-SUFFIX,youtu.be
-- DOMAIN-SUFFIX,yt.be
-- DOMAIN-SUFFIX,ytimg.com
 - IP-CIDR,35.190.247.0/24
 - IP-CIDR,35.191.0.0/16
 - IP-CIDR,64.233.160.0/19
@@ -174,7 +166,7 @@ payload:
 - DOMAIN-SUFFIX,sfx.ms
 - DOMAIN-SUFFIX,onedrive.live.com
 - DOMAIN-SUFFIX,xboxlive.com
-#🆓other ：global_web_other.txt
+#🆓国外网站 ：global_web_other.txt
 #protonmail
 - DOMAIN-SUFFIX,protonmail.ch
 - DOMAIN-SUFFIX,protonmail.com
@@ -185,6 +177,8 @@ payload:
 - DOMAIN-SUFFIX,rfa.org
 #ptt
 - DOMAIN-SUFFIX,disp.cc
+- DOMAIN-SUFFIX,logly.co.jp
+- DOMAIN-SUFFIX,compass-fit.jp
 #pincong
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy

@@ -1,10 +1,5 @@
 payload:
 #🆓google ：global_web_google.txt
-# > YouTube
-- DOMAIN-SUFFIX,googlevideo.com
-- DOMAIN-SUFFIX,youtube.com
-- DOMAIN,youtubei.googleapis.com
-# > Google
 - DOMAIN-KEYWORD,google
 - DOMAIN-KEYWORD,blogspot
 - DOMAIN-SUFFIX,ampproject.org
@@ -57,9 +52,6 @@ payload:
 - DOMAIN-SUFFIX,whatbrowser.org
 - DOMAIN-SUFFIX,widevine.com
 - DOMAIN-SUFFIX,x.company
-- DOMAIN-SUFFIX,youtu.be
-- DOMAIN-SUFFIX,yt.be
-- DOMAIN-SUFFIX,ytimg.com
 - IP-CIDR,35.190.247.0/24
 - IP-CIDR,35.191.0.0/16
 - IP-CIDR,64.233.160.0/19

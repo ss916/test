@@ -1,5 +1,5 @@
 #!/bin/sh
-# 7
+# 9
 
 #程序名字
 name=clash
@@ -80,7 +80,7 @@ read -p "订阅链接1：" link1
 read -p "订阅链接2(按回车可跳过)：" link2
 #模式
 echo -e \\n"\e[1;36m↓↓ 請选择透明代理模式mode ↓↓\e[0m"\\n
-echo -e "\e[36m1.启用透明代理（默认）\\n2.透明代理+路由自身走代理\\n5.不启用透明代理\e[0m"
+echo -e "\e[36m1.启用透明代理（默认）\\n2.透明代理+路由自身走代理\\n3.不启用透明代理\e[0m"
 read -n 1 -p "请输入：" mode
 echo -e \\n"\e[1;36m↓↓ 請选择DNS模式 ↓↓\e[0m"\\n
 echo -e "\e[36m1.redir-host模式（默认）\\n2.fake-dns模式\e[0m"
@@ -107,7 +107,7 @@ unlocknetease=$unlocknetease
 }
 #读取参数
 read_settings () {
-#透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=5 不透明代理
+#透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=3 不透明代理
 mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1)
 [ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
 #DNS模式，1.redir-host （默认），2.fake-dns
@@ -583,12 +583,18 @@ iptables_udp
 iptables -t nat -N CLASHDNS >/dev/null 2>&1
 iptables -t nat -F CLASHDNS
 iptables -t nat -A CLASHDNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASHDNS
+iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASHDNS
 #路由自身UDP53走代理
-iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
+iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
+#fake-dns
+if [ "$dns" = "2" ] ; then
+logger -t "【${name}】" "▶透明代理DNS模式：fake-dns" && echo -e \\n"\e[1;36m▶透明代理DNS模式：fake-dns\e[0m"\\n
+iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --to-port "$redir_port"
+#iptables -t mangle -A OUTPUT -p udp -d 198.18.0.0/16 -j MARK --set-mark 1
+fi
 if [ "$mode" = "2" ] ; then
-	logger -t "【${name}】" "▶创建路由自身走透明代理" && echo -e \\n"\e[1;36m▶创建路由自身走透明代理\e[0m"\\n
-	iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
+logger -t "【${name}】" "▶创建路由自身走透明代理" && echo -e \\n"\e[1;36m▶创建路由自身走透明代理\e[0m"\\n
+iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
 fi
 #绕过局域网
 bypasslan
@@ -606,6 +612,8 @@ iptables -t mangle -F clash >/dev/null 2>&1
 [ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash)" ] && iptables -t mangle -D PREROUTING -p udp ! --dport 53 -j clash
 [ ! -z "$(iptables -t nat -nL OUTPUT | grep clash)" ] && iptables -t nat -D OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
 [ ! -z "$(iptables -t nat -nL OUTPUT | grep CLASHDNS)" ] && iptables -t nat -D OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
+[ ! -z "$(iptables -t nat -nL OUTPUT | grep 8002)" ] && iptables -t nat -D OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --to-port 8002
+#iptables -t mangle -D OUTPUT -p udp -d 198.18.0.0/16 -s 127.0.0.1/32 -j MARK --set-mark 1
 }
 stop_iptables () {
 ipt0
@@ -871,19 +879,23 @@ start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && s
 }
 #启动模式1：iptables透明代理
 start_1 () {
-mode=1 && sed -i 's/mode=.*/mode=1/g' $dirconf/settings.txt
+[ "$mode" != "1" ] && mode=1 && sed -i 's/mode=.*/mode=1/g' $dirconf/settings.txt
 start_0
 start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
-mode=2 && sed -i 's/mode=.*/mode=2/g' $dirconf/settings.txt
+[ "$mode" != "2" ] && mode=2 && sed -i 's/mode=.*/mode=2/g' $dirconf/settings.txt
 start_0
 start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
 }
-
-#启动模式3：重启clash + ip2socks透明代理
+#启动模式3：不启用iptables透明代理
 start_3 () {
+[ "$mode" != "3" ] && mode=3 && sed -i 's/mode=.*/mode=3/g' $dirconf/settings.txt
+start_0
+}
+
+start_11 () {
 start_0
 if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	ipt2socks_start
@@ -891,8 +903,7 @@ else
 	logger -t "【${name}】" "✘检测到未启动${name}进程或端口没监听，取消ipt2socks透明代理" && echo -e \\n"\e[1;31m✘检测到未启动${name}进程或端口没监听，取消ipt2socks透明代理\e[0m"\\n
 fi
 }
-#启动模式4：重启clash + transocks透明代理
-start_4 () {
+start_12 () {
 start_0
 if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	transocks_start
@@ -1118,15 +1129,15 @@ case $1 in
 2)
 	start_2 &
 	;;
-#3)
-	#start_3 &
-	#;;
+3)
+	start_3 &
+	;;
 #4)
 	#start_4 &
 	#;;
-5)
-	start_0 &
-	;;
+#5)
+	#start_0 &
+	#;;
 6)
 	bypass_lan_ip
 	;;
@@ -1213,9 +1224,9 @@ restart)
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash✚iptables透明代理\e[0m"
 	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚iptables透明代理✚自身走代理\e[0m"
-	#echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：启动clash✚ip2socks 透明代理\e[0m"
+	echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：仅启动clash\e[0m"
 	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash✚transocks 透明代理 \e[0m"
-	echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"
+	#echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"
 	echo -e "\e[1;32m【6】\e[0m\e[1;36m bypass_lan_ip：局域网IP绕过列表\e[0m"
 	echo -e "\e[1;32m【7】\e[0m\e[1;36m settings：重置初始化配置\e[0m"
 	echo -e "\e[1;32m【8】\e[0m\e[1;36m renew：更新所有文件 \e[0m"
@@ -1227,12 +1238,12 @@ restart)
 		start_1 &
 	elif [ "$num" = "2" ] ; then
 		start_2 &
-	#elif [ "$num" = "3" ] ; then
-		#start_3 &
+	elif [ "$num" = "3" ] ; then
+		start_3 &
 	#elif [ "$num" = "4" ] ; then
 		#start_4 &
-	elif [ "$num" = "5" ] ; then
-		start_0 &
+	#elif [ "$num" = "5" ] ; then
+		#start_0 &
 	elif [ "$num" = "6" ] ; then
 		bypass_lan_ip
 	elif [ "$num" = "7" ] ; then

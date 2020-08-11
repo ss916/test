@@ -1,4 +1,4 @@
-# //【2020-07-30 11:04:34】
+# //【2020-08-11 23:48:45】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -12,11 +12,16 @@ bind-address: "*"
 log-level: info
 ipv6: true
 
+#tun:
+  #enable: true
+  #stack: gvisor # system or gvisor，system：x86 & x64
+
+#experimental:
+  #interface-name: en0
 
 hosts:
   '+.crashlytics.com':  127.0.0.1
   '+.flurry.com': 127.0.0.1
-
 
 dns:
   enable: true
@@ -129,6 +134,41 @@ proxy-groups:
     #- 文件2
 
 
+- name: 📺YouTube
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+- name: 📺Netflix
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+- name: 📺全球影音
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+
 - name: 🆓谷歌
   type: select
   proxies:
@@ -142,18 +182,6 @@ proxy-groups:
     #- 文件2
 
 - name: 🆓电报
-  type: select
-  proxies:
-    - 代理
-    - 直连
-    - 屏蔽
-  use:
-    - 订阅1
-    - 订阅2
-    #- 文件1
-    #- 文件2
-
-- name: 🆓全球影音
   type: select
   proxies:
     - 代理
@@ -276,6 +304,26 @@ rule-providers:
     path: ./rule/global_apple.txt
     url: https://raw.fastgit.org/ss916/test/master/payload/global_apple.txt
     interval: 30000
+
+  global_video_youtube:
+    type: http
+    behavior: classical
+    path: ./rule/global_video_youtube.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_youtube.txt
+    interval: 30000
+  global_video_netflix:
+    type: http
+    behavior: classical
+    path: ./rule/global_video_netflix.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_netflix.txt
+    interval: 30000
+  global_video_other:
+    type: http
+    behavior: classical
+    path: ./rule/global_video_other.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_other.txt
+    interval: 30000
+
   global_web_google:
     type: http
     behavior: classical
@@ -294,12 +342,7 @@ rule-providers:
     path: ./rule/global_web.txt
     url: https://raw.fastgit.org/ss916/test/master/payload/global_web.txt
     interval: 30000
-  global_video:
-    type: http
-    behavior: classical
-    path: ./rule/global_video.txt
-    url: https://raw.fastgit.org/ss916/test/master/payload/global_video.txt
-    interval: 30000
+
   
   block_hosts: #markadblock
     type: http #markadblock
@@ -339,9 +382,14 @@ rules:
 - RULE-SET,cn_web,🀄网站
 
 - RULE-SET,global_apple,🍏苹果
+
+- RULE-SET,global_video_youtube,📺YouTube
+- RULE-SET,global_video_netflix,📺Netflix
+- RULE-SET,global_video_other,📺全球影音
+
 - RULE-SET,global_web_google,🆓谷歌
 - RULE-SET,global_web_telegram,🆓电报
-- RULE-SET,global_video,🆓全球影音
+#- RULE-SET,global_web_other,🆓国外网站
 - RULE-SET,global_web,🆓国外网站
 
 
