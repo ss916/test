@@ -1,5 +1,5 @@
 #!/bin/sh
-# 11
+# 12
 
 #程序名字
 name=clash
@@ -540,7 +540,7 @@ iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
-iptables -t nat -A PREROUTING -p tcp -j clash
+iptables -t nat -I PREROUTING -p tcp -j clash
 }
 iptables_udp () {
 ##udp
@@ -583,9 +583,9 @@ iptables_udp
 iptables -t nat -N CLASHDNS >/dev/null 2>&1
 iptables -t nat -F CLASHDNS
 iptables -t nat -A CLASHDNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASHDNS
+iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASHDNS
 #路由自身UDP53走代理
-iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
+iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
 #fake-dns
 if [ "$dns" = "2" ] ; then
 logger -t "【${name}】" "▶透明代理DNS模式：fake-dns" && echo -e \\n"\e[1;36m▶透明代理DNS模式：fake-dns\e[0m"\\n
@@ -594,7 +594,7 @@ iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --
 fi
 if [ "$mode" = "2" ] ; then
 logger -t "【${name}】" "▶创建路由自身走透明代理" && echo -e \\n"\e[1;36m▶创建路由自身走透明代理\e[0m"\\n
-iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
+iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
 fi
 #绕过局域网
 bypasslan
