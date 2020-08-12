@@ -1,5 +1,5 @@
 #!/bin/sh
-# 9
+# 11
 
 #程序名字
 name=clash
@@ -583,7 +583,7 @@ iptables_udp
 iptables -t nat -N CLASHDNS >/dev/null 2>&1
 iptables -t nat -F CLASHDNS
 iptables -t nat -A CLASHDNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASHDNS
+iptables -t nat -A PREROUTING -p udp --dport 53 -j CLASHDNS
 #路由自身UDP53走代理
 iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
 #fake-dns
@@ -1029,9 +1029,9 @@ else
 			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
 		fi
 	else
-		gzsize=$(ls -lh *.gz | awk -F ' ' '{print $5}')
-		size=$(ls -lh *$clashp_ver | awk -F ' ' '{print $5}')
-		if [ ! -s ./*$clashp_ver ] ; then
+		gzsize=$(ls -lh clash-linux*.gz | awk -F ' ' '{print $5}')
+		size=$(ls -lh clash-linux*$clashp_ver | awk -F ' ' '{print $5}')
+		if [ ! -s ./clash-linux*$clashp_ver ] ; then
 			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
 		else
 			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"
