@@ -1,15 +1,15 @@
-# //【2020-08-13 01:10:31】
-/SHAKE128.TXT= b13809a0b5c6b29ffe88eb0e2393530c6f8a3b4a
+# //【2020-08-14 15:27:47】
+/SHAKE128.TXT= a6341c7e5571d0e9d220396f2a0312866457046e
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/clash= 0bb674d2f9d9a85ee62bcf6947c4d97ec7670259
+/arm64/clash= 59f04a8fc6b826e1cf8ec9b3612e7962a8e8f441
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
 /arm64/v2ctl= f458fc2b76716cc835538af267acd1c8760d2c17
 /arm64/v2ray= b7bf9c0e687fb8e8d283247c3c8effd9c5d64563
-/clash.sh= 73f9c1da59c13a257990408763dd785d7174bfbf
-/config.yaml= 7866df1cd6bbbe2019da3a69d2365f3602366ab5
+/clash.sh= 43d8ed6efdf61f6985a23f5b535cf29cdc7b536d
+/config.yaml= 9ac8b7f6bf961a0c7fefb127447619cf24279bdb
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
@@ -46,8 +46,8 @@
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
-/t/Country.mmdb.tgz= dcbb6a4a119a3b258caa93870861feed923cc0ec
-/t/Country.mmdb.ver= c56ad218e7a84b468880a017f5a04189ce71cc65
+/t/Country.mmdb.tgz= 84a1174eff893976a056d35d33f70696f598a116
+/t/Country.mmdb.ver= 22f56dafddb864c70b075e7626dfaabba05dc870
 /t/UnblockNeteaseMusic.tgz= 01c7347236b09515563f5f1c39e9f09e443f3b3a
 /t/UnblockNeteaseMusic= ab1c0719d3ae3226a0e34321a94a8cf96a72816f
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd

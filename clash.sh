@@ -1,5 +1,5 @@
 #!/bin/sh
-# 12
+# 13
 
 #程序名字
 name=clash
@@ -1000,8 +1000,10 @@ fi
 upclash () {
 filename="clash"
 os="linux-mipsle-softfloat"
+os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 clashp_url=$($curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
+clashp_url2=$($curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os2'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
 clashp_ver=$(echo $clashp_url | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
@@ -1011,14 +1013,15 @@ if [ "$clashp_ver" = "$old" ]; then
 else
 	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$new】\e[0m \\n  clashp版本：\e[1;32m【$clashp_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
-	#$curl -# -L $address -o ./clash-$os-v$new.gz
+	$curl -# -L $clashp_url2 -O &
 	$curl -# -L $clashp_url -O
 	echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
-	gzip -kfd *gz
+	gzip -kfd *$os2*gz &
+	gzip -kfd *$os*gz
 	chmod +x -R ./
 	echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
 	#ver=$(./clash-$os-v$new -v | awk '/Clash/{print $2}'|sed 's/v//')
-	ver=$(./*$clashp_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
+	ver=$(./*$os*$clashp_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
 	if [ ! -z "$ver" ] ; then
 		if [ "$ver" = "$old" ]; then
 			echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
@@ -1029,9 +1032,9 @@ else
 			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
 		fi
 	else
-		gzsize=$(ls -lh clash-linux*.gz | awk -F ' ' '{print $5}')
-		size=$(ls -lh clash-linux*$clashp_ver | awk -F ' ' '{print $5}')
-		if [ ! -s ./clash-linux*$clashp_ver ] ; then
+		gzsize=$(ls -lh *$os*$clashp_ver.gz | awk -F ' ' '{print $5}')
+		size=$(ls -lh *$os*$clashp_ver | awk -F ' ' '{print $5}')
+		if [ ! -s ./*$os*$clashp_ver ] ; then
 			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
 		else
 			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"

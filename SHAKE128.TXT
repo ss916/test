@@ -1,15 +1,15 @@
-# //【2020-08-13 01:10:32】
-/SHA1.TXT= c7415fc94834b5b3a836625e741f8a8f
+# //【2020-08-14 15:27:48】
+/SHA1.TXT= 44d502b633899ce92ce2678a5217d7f1
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
-/arm64/clash= 4a667166c03c818f46ca9a132d3e9f66
+/arm64/clash= a105232e6ee4a85abbfb7c17c0510237
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
 /arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
 /arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= c6cb4fed802d1759d28eefa445deed97
-/config.yaml= 59032656ff3f805faef5927b5357dd5b
+/clash.sh= 8b9e8265cac7f80455a57a400359191d
+/config.yaml= 8de6bc00def9fe46a468b02b0f4245d5
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -46,8 +46,8 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/t/Country.mmdb.tgz= b4b225811f9d41f1453b6ca86ccd4f7e
-/t/Country.mmdb.ver= a333e182032760c4b4a2dbeb1229a9b1
+/t/Country.mmdb.tgz= 7cf861635807b46df59650b47d91b92b
+/t/Country.mmdb.ver= 415091bc7d5ac7c2150113dade9d9be4
 /t/UnblockNeteaseMusic.tgz= 62c82fa711d0be1a477212273b99acd0
 /t/UnblockNeteaseMusic= d84876c144ca4429e87ac236bea11109
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
