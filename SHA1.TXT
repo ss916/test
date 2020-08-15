@@ -1,5 +1,5 @@
-# //【2020-08-15 19:08:23】
-/SHAKE128.TXT= 77ab3f0f080deeadf682b4f00d3725464c588fc8
+# //【2020-08-16 01:53:23】
+/SHAKE128.TXT= 4bea3dd4eda5f46d116c70519d69a3f05e431ca5
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 59f04a8fc6b826e1cf8ec9b3612e7962a8e8f441
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -53,8 +53,8 @@
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= 96e087c9ccdf43b996068814c2cc0bd96342375b
-/t/clash-dashboard-gh-pages.zip= a6dac93450ac1f0ff6333ae9258b252a5a38e1a7
+/t/clash-dashboard-gh-pages.tgz= a9afa1e6dfdb9a9ede8945535f434e88b7dd203d
+/t/clash-dashboard-gh-pages.zip= e7a8f15c5ced09b36f29ecb8d5d978ef61cd3fcc
 /t/clash.ver= 440aa26e0941a176917e91678c36d6b0eb25567b
 /t/clash= 5ef6d0b6e9bb859af122c5f047a6fdf2ca64f823
 /t/clash_armv5= 265d4b4dae303bc63a876f40a514cb11bc82600a
