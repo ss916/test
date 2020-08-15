@@ -1,4 +1,4 @@
 payload:
 #🎵网易云：cn_music_netease.txt
 - DOMAIN-SUFFIX,music.163.com
-- DOMAIN-SUFFIX,netease.com
+#- DOMAIN-SUFFIX,netease.com

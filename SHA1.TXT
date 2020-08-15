@@ -1,5 +1,5 @@
-# //【2020-08-16 01:53:23】
-/SHAKE128.TXT= 4bea3dd4eda5f46d116c70519d69a3f05e431ca5
+# //【2020-08-16 03:48:07】
+/SHAKE128.TXT= 58be446e9cc1a278222c838bc2709607d5c90a47
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 59f04a8fc6b826e1cf8ec9b3612e7962a8e8f441
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -26,7 +26,7 @@
 /payload/block_hijack.txt= be579bd5d526f7be248624daea53c6735fa91da5
 /payload/block_hosts.txt= e345d4cef42be0150265187ff1cbe08a8473d024
 /payload/block_malicious.txt= d467e508848473020772c681449e592bb500cf16
-/payload/cn_music_netease.txt= e18682c301c0b3656b03b49d380d4e6e092ba55a
+/payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
 /payload/cn_web.txt= 62166a794675532a13d34a9e54f367d575c08e80
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
