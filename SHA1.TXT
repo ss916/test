@@ -1,5 +1,5 @@
-# //【2020-08-16 05:09:43】
-/SHAKE128.TXT= 580d542bc29663fcdf4cd5fabaf32b64d8e7985f
+# //【2020-08-16 05:14:53】
+/SHAKE128.TXT= f4a2587436460f7106b8ebf44cdec3e381d02964
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 59f04a8fc6b826e1cf8ec9b3612e7962a8e8f441
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -30,9 +30,9 @@
 /payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
 /payload/cn_web.txt= 62166a794675532a13d34a9e54f367d575c08e80
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
-/payload/global_video.txt= 67afbace5c9f391dacf0d88be92c411e298d3df0
+/payload/global_video.txt= 74136c03c862f80f94b19236868a381ee53ce8d2
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
-/payload/global_video_other.txt= 52521e54ddc8314f4a7ba1bb09d81eaf92f0070b
+/payload/global_video_other.txt= f863e08e055be6a65c0a513fab9106753903ce15
 /payload/global_video_youtube.txt= 5d50d29fd6298ed7de55e8b5160ad29683d2ac0a
 /payload/global_web.txt= 388f74db0bee3a97458a18114a9dcc1e4b3f2efa
 /payload/global_web_amazon.txt= 85a3c56a9b75e27da4a4499f8f43d9f66f76519f

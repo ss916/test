@@ -137,7 +137,6 @@ payload:
 - DOMAIN-SUFFIX,pornhub.com
 - DOMAIN-SUFFIX,pornhubpremium.com
 - DOMAIN-SUFFIX,pronstore.com
-
 # > 台湾好
 - DOMAIN-SUFFIX,skyking.com.tw
 - DOMAIN,hamifans.emome.net
