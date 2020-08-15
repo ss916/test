@@ -1,4 +1,4 @@
-# //【2020-08-14 15:27:47】
+# //【2020-08-15 18:33:52】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
@@ -26,7 +26,7 @@ hosts:
 dns:
   enable: true
   listen: 0.0.0.0:5300
-  ipv6: true #markdns
+  #ipv6: true #markdns
   enhanced-mode: redir-host #markdns
   #fake-ip-range: 198.18.0.1/16 #markfakeip
   #fake-ip-filter: #markfakeip

@@ -167,6 +167,12 @@ payload:
 - DOMAIN-SUFFIX,onedrive.live.com
 - DOMAIN-SUFFIX,xboxlive.com
 #🆓国外网站 ：global_web_other.txt
+#rfi
+- DOMAIN-SUFFIX,rfi.fr
+- DOMAIN-SUFFIX,aod-rfi.akamaized.net
+- DOMAIN-SUFFIX,r66net.com
+- DOMAIN-SUFFIX,parsely.com
+- DOMAIN-SUFFIX,videostep.com
 #protonmail
 - DOMAIN-SUFFIX,protonmail.ch
 - DOMAIN-SUFFIX,protonmail.com
@@ -479,7 +485,6 @@ payload:
 - DOMAIN-SUFFIX,resilio.com
 - DOMAIN-SUFFIX,reuters.com
 - DOMAIN-SUFFIX,reutersmedia.net
-- DOMAIN-SUFFIX,rfi.fr
 - DOMAIN-SUFFIX,rixcloud.com
 - DOMAIN-SUFFIX,roadshow.hk
 - DOMAIN-SUFFIX,scmp.com
