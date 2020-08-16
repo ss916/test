@@ -1,7 +1,7 @@
-# //【2020-08-16 05:14:53】
-/SHAKE128.TXT= f4a2587436460f7106b8ebf44cdec3e381d02964
+# //【2020-08-16 14:19:16】
+/SHAKE128.TXT= 1739d8f30ffdac4ad65a1262381c2a85c6b8bcae
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/clash= 59f04a8fc6b826e1cf8ec9b3612e7962a8e8f441
+/arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
@@ -55,8 +55,8 @@
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
 /t/clash-dashboard-gh-pages.tgz= a9afa1e6dfdb9a9ede8945535f434e88b7dd203d
 /t/clash-dashboard-gh-pages.zip= e7a8f15c5ced09b36f29ecb8d5d978ef61cd3fcc
-/t/clash.ver= 440aa26e0941a176917e91678c36d6b0eb25567b
-/t/clash= 5ef6d0b6e9bb859af122c5f047a6fdf2ca64f823
+/t/clash.ver= 0fb6bc8d929d232493257fa6693195c143d28ac7
+/t/clash= 05cb19674ac45ea2ebbd8cee3634c8d88ea1aa4d
 /t/clash_armv5= 265d4b4dae303bc63a876f40a514cb11bc82600a
 /t/clash_armv6= 3eb667687f887f1187740e9949d0d4f7b88162d5
 /t/clash_armv7= d4e73f2baf79c84e311391fda13f725ba2ae6516
