@@ -1,5 +1,5 @@
-# //【2020-08-17 18:45:08】
-/SHAKE128.TXT= 1294a975b78f4a03da5f4e6381c5e91ebdc7bf5b
+# //【2020-08-18 06:17:28】
+/SHAKE128.TXT= 0bcb929e495e0aaa035a337550209d5eb1027368
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -28,7 +28,7 @@
 /payload/block_malicious.txt= d467e508848473020772c681449e592bb500cf16
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 8c3e8e4df9c1ff735da2f83c934a5f6b7d23b885
-/payload/cn_web.txt= 62166a794675532a13d34a9e54f367d575c08e80
+/payload/cn_web.txt= 2e28f52a3fee2f5bc2d6f62fe96747a5de024c24
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
 /payload/global_video.txt= 74136c03c862f80f94b19236868a381ee53ce8d2
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
@@ -46,8 +46,8 @@
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
-/t/Country.mmdb.tgz= c0919cdca2d9f009a72e812dd1493835c9c2494d
-/t/Country.mmdb.ver= 4cbddf492417e7dbaec1125e5b15874a25030550
+/t/Country.mmdb.tgz= 5afdb8b11307a94aea5429cb0939ad3bc773f568
+/t/Country.mmdb.ver= 37252887b32ba28e8190a82fbf4e543c78915d8e
 /t/UnblockNeteaseMusic.tgz= 01c7347236b09515563f5f1c39e9f09e443f3b3a
 /t/UnblockNeteaseMusic= ab1c0719d3ae3226a0e34321a94a8cf96a72816f
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd

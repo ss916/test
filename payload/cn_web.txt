@@ -1,5 +1,28 @@
 payload:
 #🀄网站：cn_web.txt
+#bili
+- DOMAIN-SUFFIX,bilivideo.com
+#douyin
+- DOMAIN-SUFFIX,douyin.com
+- DOMAIN-SUFFIX,ixigua.com
+- DOMAIN-SUFFIX,byteimg.com
+#kuaishou
+- DOMAIN-SUFFIX,bytedance.com
+- DOMAIN-SUFFIX,etoote.com
+- DOMAIN-SUFFIX,bcelive.com
+- DOMAIN-SUFFIX,kspkg.com
+- DOMAIN-SUFFIX,kwaixiaodian.com
+- DOMAIN-SUFFIX,p2cdn.com
+- DOMAIN-SUFFIX,kwaicdn.com
+- DOMAIN-SUFFIX,chinanetcenter.com
+- DOMAIN-SUFFIX,onethingpcs.com
+- DOMAIN-SUFFIX,yximgs.com
+- DOMAIN-SUFFIX,kwaizt.com
+- DOMAIN-SUFFIX,kuaishouzt.com
+- DOMAIN-SUFFIX,kuaishou.com
+- DOMAIN-SUFFIX,viviv.com
+- DOMAIN-SUFFIX,ksapisrv.com
+- DOMAIN-SUFFIX,gifshow.com
 # > solidot
 - DOMAIN-SUFFIX,solidot.org
 # > cibn
