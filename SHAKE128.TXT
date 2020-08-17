@@ -1,5 +1,5 @@
-# //【2020-08-16 14:19:16】
-/SHA1.TXT= b6518c0873c787d63ca367dea1d38458
+# //【2020-08-17 18:45:09】
+/SHA1.TXT= e8ec5e3c739968d2bad3b5431a01b5de
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -24,7 +24,7 @@
 /netease.sh= 5cb7704e81a8b3b61537716c47d3a8d2
 /payload/block_dnsmasq.txt= 00ba1b45a979095a9b9ed20aab8139a0
 /payload/block_hijack.txt= 6dfcaa031cf12797235ce87a546c4d50
-/payload/block_hosts.txt= 4776b69e093e5d072568add980d3cae7
+/payload/block_hosts.txt= 7e00bf01e1243263a0217cc6b4530a6a
 /payload/block_malicious.txt= 3d42a3681f9a52d58b70742094e1a36b
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 7796e0d54e1ade4877c63ec455be456b
@@ -34,8 +34,8 @@
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
 /payload/global_video_other.txt= 76d21bd3f9a3721f562211cfe476611d
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= 594cd68cb7104fc64cf03dc8479e68ba
-/payload/global_web_amazon.txt= fcf601ea654a010c20fddf149fe07f54
+/payload/global_web.txt= 9c1491ee7bb8c938b68fbab584d71fe7
+/payload/global_web_amazon.txt= 057457265e0688f8331691b33199006a
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= f691b6b5d02b2c8afb26b27cb2878711
 /payload/global_web_google.txt= 4303c79fca45b9fb41e471286d79a643
@@ -46,15 +46,15 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/t/Country.mmdb.tgz= 6d27d6143ca43a6d423f9e387469890f
-/t/Country.mmdb.ver= b1071212c784acb1180f765f1e08d5d2
+/t/Country.mmdb.tgz= a4294a1aeaa642ade712818a9ba25aa0
+/t/Country.mmdb.ver= abf8aee5f20ac4d653a4c3097686ea12
 /t/UnblockNeteaseMusic.tgz= 62c82fa711d0be1a477212273b99acd0
 /t/UnblockNeteaseMusic= d84876c144ca4429e87ac236bea11109
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 716cea5c5efe30b797e5f2487c9fb4d4
-/t/clash-dashboard-gh-pages.zip= 8cf7dfbbee03be67591aac34728636d8
+/t/clash-dashboard-gh-pages.tgz= 699449b41ea04cbbe80607b03eb68bd8
+/t/clash-dashboard-gh-pages.zip= abf8c0c51dfacf12ab9542d3bd0bb3c2
 /t/clash.ver= 84bc4e039ecb337837124021ad71e928
 /t/clash= 311fd1a132e30f45ebc572f53822b1e9
 /t/clash_armv5= 30d5f8597aba90d7ea31b28f54725e64

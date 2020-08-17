@@ -1,5 +1,11 @@
 payload:
 #❌AD hosts ：block_hosts.txt
+#es
+- DOMAIN-SUFFIX,doglobal.net
+- DOMAIN,www.estrongs.com
+- DOMAIN,crab.baidu.com
+- DOMAIN,conf.international.baidu.com
+#other
 - DOMAIN,api.iclknet.com
 - DOMAIN,api.windmilljoy.com
 - DOMAIN,api.windmillplay.com
@@ -1990,7 +1996,6 @@ payload:
 - DOMAIN,trustaffs.com
 - DOMAIN,zxl.qzbxfs.com
 - DOMAIN,m.gexings.com
-- DOMAIN,www.estrongs.com
 - DOMAIN,madskis.com
 - DOMAIN,activation.acronis.com
 - DOMAIN,www.cm-analysis.com
@@ -2193,7 +2198,6 @@ payload:
 - DOMAIN,sclick.baidu.com
 - DOMAIN,nsclick.baidu.com
 - DOMAIN,fexclick.baidu.com
-- DOMAIN,conf.international.baidu.com
 - DOMAIN,cm.baidu.com
 - DOMAIN,em.baidu.com
 - DOMAIN,hm.baidu.com
