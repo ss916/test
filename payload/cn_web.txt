@@ -1,7 +1,5 @@
 payload:
 #🀄网站：cn_web.txt
-#bili
-- DOMAIN-SUFFIX,bilivideo.com
 #douyin
 - DOMAIN-SUFFIX,douyin.com
 - DOMAIN-SUFFIX,ixigua.com
@@ -14,6 +12,7 @@ payload:
 - DOMAIN-SUFFIX,kwaixiaodian.com
 - DOMAIN-SUFFIX,p2cdn.com
 - DOMAIN-SUFFIX,kwaicdn.com
+- DOMAIN-SUFFIX,kwaishop.com
 - DOMAIN-SUFFIX,chinanetcenter.com
 - DOMAIN-SUFFIX,onethingpcs.com
 - DOMAIN-SUFFIX,yximgs.com
@@ -57,6 +56,7 @@ payload:
 - DOMAIN-SUFFIX,bdstatic.com
 - DOMAIN-SUFFIX,yunjiasu-cdn.net
 # > bilibili
+- DOMAIN-SUFFIX,bilivideo.com
 - DOMAIN-SUFFIX,acgvideo.com
 - DOMAIN-SUFFIX,biliapi.com
 - DOMAIN-SUFFIX,biliapi.net

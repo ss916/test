@@ -1,3 +1,4 @@
 payload:
 #🆓Line ：global_web_mega.txt
 - DOMAIN-SUFFIX,mega.co.nz
+- DOMAIN-SUFFIX,mega.nz

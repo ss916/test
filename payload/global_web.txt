@@ -158,6 +158,7 @@ payload:
 - IP-CIDR,203.104.144.0/21
 #🆓Line ：global_web_mega.txt
 - DOMAIN-SUFFIX,mega.co.nz
+- DOMAIN-SUFFIX,mega.nz
 #🆓Microsoft ：global_web_microsoft.txt
 - DOMAIN-SUFFIX,1drv.com
 - DOMAIN-SUFFIX,1drv.ms
