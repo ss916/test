@@ -1,7 +1,24 @@
 payload:
 #🀄网站：cn_web.txt
+#CU
+- DOMAIN-SUFFIX,10010.com
+#CM
+- DOMAIN-SUFFIX,miguvideo.com
+#jsdelivr
+- DOMAIN-KEYWORD,.jsdelivr.
+#pinduoduo
+- DOMAIN-SUFFIX,pinduoduo.com
+- DOMAIN-SUFFIX,yangkeduo.com
+- DOMAIN-SUFFIX,pddpic.com
+#bubugao
+- DOMAIN-SUFFIX,oppomobile.com
+- DOMAIN-SUFFIX,coloros.com
+- DOMAIN-SUFFIX,heytapmobi.com
+- DOMAIN-SUFFIX,heytapimage.com
+- DOMAIN-SUFFIX,heytapdownload.com
 #douyin
 - DOMAIN-SUFFIX,douyin.com
+- DOMAIN-SUFFIX,douyincdn.com
 - DOMAIN-SUFFIX,ixigua.com
 - DOMAIN-SUFFIX,byteimg.com
 #kuaishou
@@ -22,18 +39,20 @@ payload:
 - DOMAIN-SUFFIX,viviv.com
 - DOMAIN-SUFFIX,ksapisrv.com
 - DOMAIN-SUFFIX,gifshow.com
-# > solidot
+- DOMAIN-SUFFIX,kuaishoupay.com
+#solidot
 - DOMAIN-SUFFIX,solidot.org
-# > cibn
+#cibn
 - DOMAIN-SUFFIX,cibn.cc
 - DOMAIN-SUFFIX,cibntv.net
-# > v2ex
+#v2ex
 - DOMAIN-SUFFIX,v2ex.com
 - DOMAIN-SUFFIX,v2ex.co
 # > 360
 - DOMAIN-SUFFIX,qhres.com
 - DOMAIN-SUFFIX,qhimg.com
 # > Alibaba
+- DOMAIN-SUFFIX,aliapp.org
 - DOMAIN-SUFFIX,alibaba.com
 - DOMAIN-SUFFIX,alicdn.com
 - DOMAIN-SUFFIX,alikunlun.com
@@ -81,14 +100,6 @@ payload:
 - DOMAIN-SUFFIX,didialift.com
 - DOMAIN-SUFFIX,didiglobal.com
 - DOMAIN-SUFFIX,udache.com
-# > 蛋蛋赞
-- DOMAIN-SUFFIX,343480.com
-- DOMAIN-SUFFIX,baduziyuan.com
-- DOMAIN-SUFFIX,com-hs-hkdy.com
-- DOMAIN-SUFFIX,czybjz.com
-- DOMAIN-SUFFIX,dandanzan.com
-- DOMAIN-SUFFIX,fjhps.com
-- DOMAIN-SUFFIX,kuyunbo.club
 # > ChinaNet
 - DOMAIN-SUFFIX,21cn.com
 # > HunanTV
@@ -97,11 +108,16 @@ payload:
 # > iQiyi
 - DOMAIN-SUFFIX,iqiyi.com
 - DOMAIN-SUFFIX,iqiyipic.com
+- DOMAIN-SUFFIX,qiyi.com
+- DOMAIN-SUFFIX,qiyipic.com
+- DOMAIN-SUFFIX,qy.net
 - DOMAIN-SUFFIX,71.am.com
 # > JD
+- DOMAIN-SUFFIX,jingxi.com
 - DOMAIN-SUFFIX,jd.com
 - DOMAIN-SUFFIX,jd.hk
 - DOMAIN-SUFFIX,jdpay.com
+- DOMAIN-SUFFIX,300hu.com
 - DOMAIN-SUFFIX,360buyimg.com
 # > Kingsoft
 - DOMAIN-SUFFIX,iciba.com
@@ -117,6 +133,7 @@ payload:
 - DOMAIN-SUFFIX,miui.com
 - DOMAIN-SUFFIX,miwifi.com
 - DOMAIN-SUFFIX,xiaomi.com
+- DOMAIN-SUFFIX,xiaomi.net
 # > Microsoft
 - DOMAIN-SUFFIX,microsoft.com
 - DOMAIN-SUFFIX,msecnd.net
@@ -175,7 +192,6 @@ payload:
 # > Content Delivery Network
 - DOMAIN-SUFFIX,ccgslb.com
 - DOMAIN-SUFFIX,ccgslb.net
-- DOMAIN-SUFFIX,chinanetcenter.com
 - DOMAIN-SUFFIX,meixincdn.com
 - DOMAIN-SUFFIX,ourdvs.com
 - DOMAIN-SUFFIX,staticdn.net
@@ -242,7 +258,6 @@ payload:
 - DOMAIN-SUFFIX,jstor.org
 - DOMAIN-SUFFIX,karger.com
 - DOMAIN-SUFFIX,libguides.com
-- DOMAIN-SUFFIX,madsrevolution.net
 - DOMAIN-SUFFIX,mpg.de
 - DOMAIN-SUFFIX,myilibrary.com
 - DOMAIN-SUFFIX,nature.com
@@ -319,7 +334,6 @@ payload:
 - DOMAIN-SUFFIX,gandi.net
 - DOMAIN-SUFFIX,geilicdn.com
 - DOMAIN-SUFFIX,getpricetag.com
-- DOMAIN-SUFFIX,gifshow.com
 - DOMAIN-SUFFIX,godic.net
 - DOMAIN-SUFFIX,hicloud.com
 - DOMAIN-SUFFIX,hongxiu.com
@@ -380,7 +394,6 @@ payload:
 - DOMAIN-SUFFIX,ximalaya.com
 - DOMAIN-SUFFIX,xinhuanet.com
 - DOMAIN-SUFFIX,xmcdn.com
-- DOMAIN-SUFFIX,yangkeduo.com
 - DOMAIN-SUFFIX,zhangzishi.cc
 - DOMAIN-SUFFIX,zhihu.com
 - DOMAIN-SUFFIX,zhimg.com

@@ -1,5 +1,5 @@
 #!/bin/sh
-# 13
+# 14
 
 #程序名字
 name=clash
@@ -23,8 +23,9 @@ if [ -s $dirconf/settings.txt ] ; then
 	if [ ! -z "$diretc" ] ; then
 		size=$(df $etc |awk '!/Available/{print $4}')
 		if [ "$size" -lt "5120" ] ; then
-			echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
 			diretc=/tmp/clash/etc
+			#echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
+			[ ! -f $dirtmp/*clash# ] && > $dirtmp/'#检测到闪存剩余空间'$size'KB小于5MB，资源文件將下载保存到內存中／tmp／clash#'
 		fi
 	else
 		diretc=/tmp/clash/etc
@@ -163,27 +164,64 @@ edit_dns () {
 [ "$dns" = "2" ] && sed -i '/#markdns/s/redir-host/fake-ip/;/#markdns/s/ipv6: true/ipv6: false/' ./config.yaml
 }
 edit_link () {
-#检查订阅是否可用
-testlink1=$(echo $link1 | grep ^http)
-testlink2=$(echo $link2 | grep ^http)
-if [ ! -z "$link2" -a ! -z "$testlink2" ] ; then
-	sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: $dirconf/订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+#檢查本地訂閱文件
+file1=$dirconf/file1.txt
+file2=$dirconf/file2.txt
+if [ -f $file1 ] ; then
+	testfile1=$(cat $file1|grep "^proxies:$")
+	if [ ! -z "$testfile1" ] ; then
+		sed -i "s@#mark文件1@  文件1:\n    type: file\n    interval: 30000\n    path: $file1\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
+		sed -i 's/#- 文件1/- 文件1/g' ./config.yaml
+	else
+		[ -z "$testfile1" ] && echo "✗ 本地訂閱文件$file1不合法，缺少字符串【proxies:】"
+		sed -i '/文件1/d' ./config.yaml
+	fi
+else
+	sed -i '/文件1/d' ./config.yaml
+fi
+if [ -f $file2 ] ; then
+	testfile2=$(cat $file2|grep "^proxies:$")
+	if [ ! -z "$testfile2" ] ; then
+		sed -i "s@#mark文件2@  文件2:\n    type: file\n    interval: 30000\n    path: $file2\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
+		sed -i 's/#- 文件2/- 文件2/g' ./config.yaml
+	else
+		[ -z "$testfile2" ] && echo "✗ 本地訂閱文件$file2不合法，缺少字符串【proxies:】"
+		sed -i '/文件2/d' ./config.yaml
+	fi
+else
+	sed -i '/文件2/d' ./config.yaml
+fi
+#检查订阅鏈接
+if [ ! -z "$link2" ] ; then
+	testlink2=$(echo $link2 | grep ^http)
+	if [ ! -z "$testlink2" ] ; then
+		sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: $dirconf/订阅2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+	else
+		[ -z "$testlink2" ] && echo "✗ 订阅链接link2非http链接。"
+		sed -i '/订阅2/d' ./config.yaml
+	fi
 else
 	sed -i '/订阅2/d' ./config.yaml
 fi
 if [ ! -z "$link1" ] ; then
+	testlink1=$(echo $link1 | grep ^http)
 	if [ ! -z "$testlink1" ] ; then
 		sed -i "s@#mark订阅1@  订阅1:\n    type: http\n    url: $link1\n    interval: 30000\n    path: $dirconf/订阅1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 	else
-		echo -e \\n"\e[1;31m【${name}】  ✘ 订阅链接1非http链接，请初始化配置。\e[0m"
-		exit
+		[ -z "$testlink1" ] && echo "✗ 订阅链接link1非http链接。"
+		sed -i '/订阅1/d' ./config.yaml
 	fi
 else
-	echo -e \\n"\e[1;31m【${name}】  ✘ 订阅链接1為空，请初始化配置。\e[0m"
+	sed -i '/订阅1/d' ./config.yaml
+fi
+#检验
+if [ -z "$link1" -a -z "$link2" -a ! -s $file1 -a ! -s $file2 ] ; then
+	echo -e \\n"\e[1;31m【${name}】  ✘ 订阅链接link1与link2為空，本地訂閱文件file1.txt与file2.txt不存在，请初始化配置，結束腳本。\e[0m"
+	exit
+elif [ -z "$testlink1" -a -z "$testlink2" -a -z "$testfile1" -a -z "$testfile2" ] ; then
+	echo -e \\n"\e[1;31m【${name}】  ✘ 订阅链接link1与link2非http鏈接，本地訂閱文件file1.txt与file2.txt不合法，请初始化配置，結束腳本。\e[0m"
 	exit
 fi
-#sed -i "s@#mark文件1@  文件1:\n    type: file\n    interval: 30000\n    path: ./文件1.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
-#sed -i "s@#mark文件2@  文件2:\n    type: file\n    interval: 30000\n    path: ./文件2.txt\n    health-check:\n      enable: true\n      interval: 600\n      url: http://clients2.google.com/generate_204@" ./config.yaml
 }
 edit_adblock () {
 #是否启用去广告功能，1启用，非1则默认关闭
@@ -420,16 +458,22 @@ if [ ! -s ./mark/setmark_old.txt ] ; then
 fi
 new=$(openssl SHA1 ./mark/setmark_new.txt |awk '{print $2}')
 old=$(openssl SHA1 ./mark/setmark_old.txt |awk '{print $2}')
-if [ "$new" != "$old" ] ; then
-	echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/setmark.txt ...\e[0m"
-	cp -f ./mark/setmark_new.txt ./mark/setmark_old.txt
-	cp -f ./mark/setmark_new.txt $dirconf/setmark.txt
-	[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
-	> ./mark/setmark_ok_0
+if [ ! -z "$new" ] ; then
+	if [ "$new" != "$old" ] ; then
+		echo -e \\n"\e[1;36m▶保存新[节点位置记录]到$dirconf/setmark.txt ...\e[0m"
+		cp -f ./mark/setmark_new.txt ./mark/setmark_old.txt
+		cp -f ./mark/setmark_new.txt $dirconf/setmark.txt
+		[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
+		> ./mark/setmark_ok_0
+	else
+		#echo "节点位置记录文件无需更新"
+		[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
+		> ./mark/setmark_ok_1
+	fi
 else
-	#echo "节点位置记录文件无需更新"
+	echo "✗導出新[节点位置记录]為空，跳過是setmark。"
 	[ -f ./mark/setmark_ok_* ] && rm ./mark/setmark_ok_*
-	> ./mark/setmark_ok_1
+	> ./mark/setmark_ok_none
 fi
 }
 start_setmark () {
@@ -942,15 +986,20 @@ address="https://codeload.github.com/Dreamacro/clash-dashboard/zip/gh-pages"
 $curl -sL $address -o $filename
 new=$(openssl SHA1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
-if [ ! -z "$new" -a ! -z "$old" -a "$new" = "$old" ]; then
-	echo -e \\n"    ● \e[1;36m ${name} Web1蓝色主题\e[1;32m✔ \e[0m"
-	rm -rf $filename
+if [ ! -z "$old" -a ! -z "$new" ]; then
+	if [ "$new" = "$old" ]; then
+		echo -e \\n"    ● \e[1;36m ${name} Web1蓝色主题\e[1;32m✔ \e[0m"
+		rm -rf $filename
+	else
+		[ ! -s /opt/bin/unzip ] && opkg install unzip
+		[ -d ./$filedir ] && rm -rf ./$filedir
+		unzip -o $filename
+		tar czvf $filedir.tgz $filedir
+		echo -e \\n"    ○ \e[1;36m ${name} Web1蓝色主题\e[1;31m【需要更新】 \\n  \e[1;33m文件已下载$filedir.tgz\e[0m"
+	fi
 else
-	[ ! -s /opt/bin/unzip ] && opkg install unzip
-	[ -d ./$filedir ] && rm -rf ./$filedir
-	unzip -o $filename
-	tar czvf $filedir.tgz $filedir
-	echo -e \\n"    ○ \e[1;36m ${name} Web1蓝色主题\e[1;31m【需要更新】 \\n  \e[1;33m文件已下载$filedir.tgz\e[0m"
+	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本sha1为空。\e[0m"\\n
+	[ -z "$new" ] && echo -e \\n"\e[1;31m   ✘ $filename新版本sha1为空。\e[0m"\\n
 fi
 #暗黑主题
 filename="yacd-gh-pages.zip"

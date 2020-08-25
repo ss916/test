@@ -1,10 +1,11 @@
-# //【2020-08-15 18:33:52】
+# //【2020-08-25 07:00:02】
 
 external-controller: 0.0.0.0:8000
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
 mode: rule
-port: 8001  
+port: 8003
+socks-port: 8004
 mixed-port: 8005
 redir-port: 8002
 allow-lan: true
@@ -20,8 +21,10 @@ ipv6: true
   #interface-name: en0
 
 hosts:
+  '+.googleapis.cn': 216.58.221.227
   '+.crashlytics.com':  127.0.0.1
   '+.flurry.com': 127.0.0.1
+  
 
 dns:
   enable: true
@@ -118,8 +121,8 @@ proxy-groups:
   #use:
     #- 订阅1
     #- 订阅2
-    #- 文件1
-    #- 文件2
+    ##- 文件1
+    ##- 文件2
 
 #直连=gfwlist，代理=chinalist，默认直连gfwlist
 - name: ❓其他流量
@@ -298,7 +301,7 @@ rule-providers:
     path: ./rule/cn_music_netease.txt
     url: https://raw.fastgit.org/ss916/test/master/payload/cn_music_netease.txt
     interval: 30000
-  
+
   global_apple:
     type: http
     behavior: classical
@@ -344,7 +347,7 @@ rule-providers:
     url: https://raw.fastgit.org/ss916/test/master/payload/global_web.txt
     interval: 30000
 
-  
+
   block_hosts: #markadblock
     type: http #markadblock
     behavior: classical #markadblock
@@ -372,6 +375,10 @@ rule-providers:
 
 
 rules:
+
+#- DOMAIN-KEYWORD,360,屏蔽
+#- DOMAIN-SUFFIX,360.com,屏蔽
+#- DOMAIN,m.360.cn,屏蔽
 
 - RULE-SET,block_hosts,❌hosts #markadblock
 - RULE-SET,block_dnsmasq,❌dnsmasq #markadblock

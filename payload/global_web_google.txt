@@ -8,6 +8,7 @@ payload:
 - DOMAIN-SUFFIX,getoutline.org
 - DOMAIN-SUFFIX,gvt0.com
 - DOMAIN-SUFFIX,gvt1.com
+- DOMAIN-SUFFIX,gvt2.com
 - DOMAIN-SUFFIX,gvt3.com
 - DOMAIN-SUFFIX,googleapis.com
 - DOMAIN-SUFFIX,googleapis.cn
@@ -39,7 +40,7 @@ payload:
 - DOMAIN-SUFFIX,madewithcode.com
 - DOMAIN-SUFFIX,material.io
 - DOMAIN-SUFFIX,polymer-project.org
-#- DOMAIN-SUFFIX,recaptcha.net
+- DOMAIN-SUFFIX,recaptcha.net
 - DOMAIN-SUFFIX,shattered.io
 - DOMAIN-SUFFIX,synergyse.com
 - DOMAIN-SUFFIX,tensorflow.org

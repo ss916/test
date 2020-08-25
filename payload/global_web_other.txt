@@ -1,5 +1,18 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#nbc
+- DOMAIN-SUFFIX,nbcnews.com
+- DOMAIN-SUFFIX,nbcuni.com
+- DOMAIN-SUFFIX,s-nbcnews.com
+#abc
+- DOMAIN-SUFFIX,abc.com
+- DOMAIN-SUFFIX,abc.net.au
+- DOMAIN-SUFFIX,gigya.com
+- DOMAIN-SUFFIX,jwpcdn.com
+- DOMAIN-SUFFIX,abcmedia.akamaized.net
+- DOMAIN-SUFFIX,abcnews.akamaized.net
+- DOMAIN-SUFFIX,edgedatg.com
+- DOMAIN-SUFFIX,go.com
 #rfi
 - DOMAIN-SUFFIX,rfi.fr
 - DOMAIN-SUFFIX,aod-rfi.akamaized.net
@@ -99,8 +112,6 @@ payload:
 - DOMAIN-SUFFIX,881903.com
 - DOMAIN-SUFFIX,9cache.com
 - DOMAIN-SUFFIX,9gag.com
-- DOMAIN-SUFFIX,abc.com
-- DOMAIN-SUFFIX,abc.net.au
 - DOMAIN-SUFFIX,abebooks.com
 - DOMAIN-SUFFIX,apigee.com
 - DOMAIN-SUFFIX,apk-dl.com
@@ -254,7 +265,6 @@ payload:
 - DOMAIN-SUFFIX,matters.news
 - DOMAIN-SUFFIX,maying.co
 - DOMAIN-SUFFIX,medium.com
-- DOMAIN-SUFFIX,mega.nz
 - DOMAIN-SUFFIX,mingpao.com
 - DOMAIN-SUFFIX,mobile01.com
 - DOMAIN-SUFFIX,myspace.com
@@ -418,7 +428,6 @@ payload:
 - DOMAIN-SUFFIX,funkyimg.com
 - DOMAIN-SUFFIX,fxnetworks.com
 - DOMAIN-SUFFIX,gettyimages.com
-- DOMAIN-SUFFIX,go.com
 - DOMAIN-SUFFIX,here.com
 - DOMAIN-SUFFIX,jcpenney.com
 - DOMAIN-SUFFIX,jiehua.tv

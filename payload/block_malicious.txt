@@ -1,10 +1,10 @@
 payload:
 #❌恶意网站：block_malicious.txt
+- DOMAIN,geo2.adobe.com
 - DOMAIN-SUFFIX,kuaizip.com
 - DOMAIN-SUFFIX,mackeeper.com
 - DOMAIN-SUFFIX,zryydi.com
 - DOMAIN-SUFFIX,flash.cn
-- DOMAIN,geo2.adobe.com
 - DOMAIN-SUFFIX,4009997658.com
 - DOMAIN-SUFFIX,abbyychina.com
 - DOMAIN-SUFFIX,bartender.cc

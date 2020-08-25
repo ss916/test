@@ -1,5 +1,6 @@
 payload:
 #🀄影音：cn_video.txt
+#FakeInChina：https://github.com/gaocuo/fic/blob/master/r.tocn.conf
 - DOMAIN,3g.music.qq.com
 - DOMAIN,a.play.api.3g.youku.com
 - DOMAIN,ac.qq.com
@@ -69,7 +70,6 @@ payload:
 - DOMAIN,ip2.kugou.com
 - DOMAIN,ipcheck.kuwo.cn
 - DOMAIN,ipinfo.io
-- DOMAIN,ipip.net
 - DOMAIN,i-play.mobile.youku.com
 - DOMAIN,iplocation.geo.iqiyi.com
 - DOMAIN,iplocation.geo.qiyi.com

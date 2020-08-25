@@ -356,7 +356,6 @@ payload:
 - DOMAIN-SUFFIX,exoclick.com
 - DOMAIN-SUFFIX,fastclick.com
 - DOMAIN-SUFFIX,fastclick.net
-- DOMAIN-SUFFIX,flurry.com
 - DOMAIN-SUFFIX,google-analytics.com
 - DOMAIN-SUFFIX,googlesyndication.com
 - DOMAIN-SUFFIX,gosquared.com
