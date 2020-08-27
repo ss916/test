@@ -8,7 +8,7 @@ payload:
 - DOMAIN,crab.baidu.com
 - DOMAIN,conf.international.baidu.com
 #other
-#- DOMAIN,ads.aralego.com
+- DOMAIN,ads.aralego.com
 - DOMAIN,api.iclknet.com
 - DOMAIN,api.windmilljoy.com
 - DOMAIN,api.windmillplay.com
