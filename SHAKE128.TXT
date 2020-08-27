@@ -1,5 +1,5 @@
-# //【2020-08-27 19:02:38】
-/SHA1.TXT= 0b79ce6fba998abbea68e43c3bae4069
+# //【2020-08-27 22:20:13】
+/SHA1.TXT= 5bfa56d4d88094911fa5a703b4288028
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -22,9 +22,9 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 5cb7704e81a8b3b61537716c47d3a8d2
-/payload/block_dnsmasq.txt= df5d5ab22ef04c0abb554bcadcd4a3f6
+/payload/block_dnsmasq.txt= aacbcb1236fc73ec8f28ac1720100adb
 /payload/block_hijack.txt= 9ae354c7b7d3846f96068245844f4d23
-/payload/block_hosts.txt= f3fd27ef193ab38a8dfa3a8093d5ae18
+/payload/block_hosts.txt= 93254022100c179926a49bb0f5900f98
 /payload/block_malicious.txt= 1ddc7e5fe2f676f1b0513f35c23a9dbb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8

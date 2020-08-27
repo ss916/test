@@ -1,6 +1,6 @@
 payload:
 #❌AD dnsmasq ：block_dnsmasq.txt
-- DOMAIN-KEYWORD,.ads.
+- DOMAIN-KEYWORD,+.ads.
 - DOMAIN-KEYWORD,.ad.
 - DOMAIN-KEYWORD,cnzz.
 - DOMAIN-KEYWORD,analytics.
