@@ -1,5 +1,5 @@
-# //【2020-08-27 17:25:43】
-/SHA1.TXT= 411a19839d1766c5d92d056f87c8a131
+# //【2020-08-27 19:02:38】
+/SHA1.TXT= 0b79ce6fba998abbea68e43c3bae4069
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -28,21 +28,21 @@
 /payload/block_malicious.txt= 1ddc7e5fe2f676f1b0513f35c23a9dbb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= acfb921d3dcb56b233d4fb0f2ed88552
+/payload/cn_web.txt= cffaca2787612f94519a4f30a61d2254
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 664cb9ad8cf4b3c7553c3b23145cee23
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
 /payload/global_video_other.txt= d669b1f8dd73604cd7dcd4f76f26b22f
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= 88470de407fc50791fa571f8befa2093
-/payload/global_web_amazon.txt= 057457265e0688f8331691b33199006a
+/payload/global_web.txt= 7ebfea79341d719b38c24ac5f089cda2
+/payload/global_web_amazon.txt= 2bd15fa75cfa5e499fefc0f6444e7bfb
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= f691b6b5d02b2c8afb26b27cb2878711
 /payload/global_web_google.txt= a368d847781d1358b4651d01be6dec84
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
 /payload/global_web_mega.txt= 0be1448db8c164f16d562c34510bb7a0
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
-/payload/global_web_other.txt= 405b94c3958353def548fbb419f01be7
+/payload/global_web_other.txt= bee267805f3854c7c69cf0d6fbd16ea6
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded

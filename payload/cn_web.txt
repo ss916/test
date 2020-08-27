@@ -1,5 +1,7 @@
 payload:
 #🀄网站：cn_web.txt
+#ntp
+- DOMAIN-SUFFIX,ntp.org
 #xunlei
 - DOMAIN-SUFFIX,sandai.net
 - DOMAIN-SUFFIX,xunlei.com
@@ -12,6 +14,7 @@ payload:
 - DOMAIN-SUFFIX,lanzous.com
 #zte
 - DOMAIN-SUFFIX,nubia.com
+- DOMAIN-SUFFIX,weathercn.com
 #CU
 - DOMAIN-SUFFIX,10010.com
 #CM
@@ -105,6 +108,7 @@ payload:
 - DOMAIN-SUFFIX,snssdk.com
 - DOMAIN-SUFFIX,iesdouyin.com
 - DOMAIN-SUFFIX,toutiao.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
 # > CCTV
 - DOMAIN-SUFFIX,cctv.com
 - DOMAIN-SUFFIX,cctvpic.com

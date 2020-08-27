@@ -1,5 +1,11 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#spark
+- DOMAIN-SUFFIX,amplitude.com
+- DOMAIN-SUFFIX,smartmailcloud.com
+- DOMAIN-SUFFIX,readdle.com
+- DOMAIN-SUFFIX,firebaseio.com
+- DOMAIN-SUFFIX,hockeyapp.net
 #hk
 - DOMAIN-SUFFIX,lih.kg
 - DOMAIN-SUFFIX,lihkg.com
