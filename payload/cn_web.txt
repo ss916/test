@@ -1,5 +1,17 @@
 payload:
 #🀄网站：cn_web.txt
+#xunlei
+- DOMAIN-SUFFIX,sandai.net
+- DOMAIN-SUFFIX,xunlei.com
+- DOMAIN-SUFFIX,88cdn.com
+#xhzb
+- DOMAIN-SUFFIX,zhuoyuerenmai.net
+- DOMAIN-SUFFIX,binstream.live
+- DOMAIN-SUFFIX,speedws.com
+#lanzouyun
+- DOMAIN-SUFFIX,lanzous.com
+#zte
+- DOMAIN-SUFFIX,nubia.com
 #CU
 - DOMAIN-SUFFIX,10010.com
 #CM
@@ -70,6 +82,7 @@ payload:
 - DOMAIN-SUFFIX,xiami.com
 - DOMAIN-SUFFIX,xiami.net
 # > Baidu
+- DOMAIN-SUFFIX,baidupan.com
 - DOMAIN-SUFFIX,baidu.com
 - DOMAIN-SUFFIX,baidubcr.com
 - DOMAIN-SUFFIX,bdstatic.com
@@ -113,6 +126,7 @@ payload:
 - DOMAIN-SUFFIX,qy.net
 - DOMAIN-SUFFIX,71.am.com
 # > JD
+- DOMAIN-SUFFIX,joybuy.com
 - DOMAIN-SUFFIX,jingxi.com
 - DOMAIN-SUFFIX,jd.com
 - DOMAIN-SUFFIX,jd.hk
@@ -128,6 +142,7 @@ payload:
 - DOMAIN-SUFFIX,meitustat.com
 - DOMAIN-SUFFIX,meipai.com
 # > MI
+- DOMAIN-SUFFIX,mi.com
 - DOMAIN-SUFFIX,duokan.com
 - DOMAIN-SUFFIX,mi-img.com
 - DOMAIN-SUFFIX,miui.com
@@ -178,8 +193,12 @@ payload:
 - DOMAIN-SUFFIX,igamecj.com
 - DOMAIN-SUFFIX,myapp.com
 - DOMAIN-SUFFIX,myqcloud.com
+- DOMAIN-SUFFIX,qcloud.com
+- DOMAIN-SUFFIX,qcloudimg.com
 - DOMAIN-SUFFIX,qq.com
 - DOMAIN-SUFFIX,tencent.com
+- DOMAIN-SUFFIX,tencentcs.com
+- DOMAIN-SUFFIX,tencent-cloud.com
 - DOMAIN-SUFFIX,tencent-cloud.net
 # > YYeTs
 - DOMAIN-SUFFIX,jstucdn.com

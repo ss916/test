@@ -1,5 +1,24 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#hk
+- DOMAIN-SUFFIX,lih.kg
+- DOMAIN-SUFFIX,lihkg.com
+#wiki
+- DOMAIN-KEYWORD,wikileaks
+- DOMAIN-SUFFIX,wikimapia.org
+- DOMAIN-SUFFIX,wikipedia.org
+- DOMAIN-SUFFIX,wikimedia.org
+- DOMAIN-SUFFIX,wikiquote.org
+- DOMAIN-SUFFIX,wikiwand.com
+#whoer
+- DOMAIN-SUFFIX,whoer.net
+- DOMAIN-SUFFIX,whrq.net
+#dropbox
+- DOMAIN-SUFFIX,dropbox.com
+- DOMAIN-SUFFIX,dropboxapi.com
+- DOMAIN-SUFFIX,dropboxcaptcha.com
+- DOMAIN-SUFFIX,dropboxstatic.com
+- DOMAIN-SUFFIX,dropboxusercontent.com
 #nbc
 - DOMAIN-SUFFIX,nbcnews.com
 - DOMAIN-SUFFIX,nbcuni.com
@@ -44,10 +63,11 @@ payload:
 - DOMAIN-SUFFIX,appledaily.com
 #v2fly
 - DOMAIN-SUFFIX,v2fly.org
+- DOMAIN-SUFFIX,v2ray.com
+#other
 - DOMAIN-KEYWORD,jav
 - DOMAIN-KEYWORD,pinterest
 - DOMAIN-KEYWORD,porn
-- DOMAIN-KEYWORD,wikileaks
 - DOMAIN-SUFFIX,0rz.tw
 - DOMAIN-SUFFIX,4bluestones.biz
 - DOMAIN-SUFFIX,9bis.net
@@ -69,7 +89,6 @@ payload:
 - DOMAIN-SUFFIX,cusu.hk
 - DOMAIN-SUFFIX,discord.gg
 - DOMAIN-SUFFIX,discuss.com.hk
-- DOMAIN-SUFFIX,dropboxapi.com
 - DOMAIN-SUFFIX,duolingo.cn
 - DOMAIN-SUFFIX,edditstatic.com
 - DOMAIN-SUFFIX,flickriver.com
@@ -181,8 +200,6 @@ payload:
 - DOMAIN-SUFFIX,dlercloud.com
 - DOMAIN-SUFFIX,dns2go.com
 - DOMAIN-SUFFIX,dowjones.com
-- DOMAIN-SUFFIX,dropbox.com
-- DOMAIN-SUFFIX,dropboxusercontent.com
 - DOMAIN-SUFFIX,duckduckgo.com
 - DOMAIN-SUFFIX,dw.com
 - DOMAIN-SUFFIX,dynu.com
@@ -365,7 +382,6 @@ payload:
 - DOMAIN-SUFFIX,urbandictionary.com
 - DOMAIN-SUFFIX,ustream.tv
 - DOMAIN-SUFFIX,uwants.com
-- DOMAIN-SUFFIX,v2ray.com
 - DOMAIN-SUFFIX,viber.com
 - DOMAIN-SUFFIX,videopress.com
 - DOMAIN-SUFFIX,vimeo.com
@@ -376,12 +392,6 @@ payload:
 - DOMAIN-SUFFIX,w3schools.com
 - DOMAIN-SUFFIX,washingtonpost.com
 - DOMAIN-SUFFIX,wattpad.com
-- DOMAIN-SUFFIX,whoer.net
-- DOMAIN-SUFFIX,wikimapia.org
-- DOMAIN-SUFFIX,wikipedia.org
-- DOMAIN-SUFFIX,wikimedia.org
-- DOMAIN-SUFFIX,wikiquote.org
-- DOMAIN-SUFFIX,wikiwand.com
 - DOMAIN-SUFFIX,winudf.com
 - DOMAIN-SUFFIX,wire.com
 - DOMAIN-SUFFIX,wordpress.com

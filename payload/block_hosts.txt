@@ -1,5 +1,7 @@
 payload:
 #❌AD hosts ：block_hosts.txt
+#yahoo
+- DOMAIN,ads.yap.yahoo.com
 #es
 - DOMAIN-SUFFIX,doglobal.net
 - DOMAIN,www.estrongs.com
