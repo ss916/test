@@ -2104,6 +2104,7 @@ payload:
 - DOMAIN-SUFFIX,napi.ucweb.com
 - DOMAIN-SUFFIX,insight.ucweb.com
 - DOMAIN-SUFFIX,u3.ucweb.com
+- DOMAIN-SUFFIX,uc123.com
 - DOMAIN-SUFFIX,mi-idc.com
 - DOMAIN-SUFFIX,resolver.msg.xiaomi.net
 - DOMAIN-SUFFIX,cedexis-radar.net
