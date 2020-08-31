@@ -56,6 +56,8 @@ payload:
 - DOMAIN-SUFFIX,disp.cc
 - DOMAIN-SUFFIX,logly.co.jp
 - DOMAIN-SUFFIX,compass-fit.jp
+#setn
+- DOMAIN-SUFFIX,setn.com
 #pincong
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy
