@@ -1,5 +1,5 @@
 #!/bin/sh
-# 15
+# 16
 
 #程序名字
 name=clash
@@ -270,7 +270,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
-	$curl -# $url/SHA1.TXT -o $tmp/SHA1.TXT
+	$curl -# -L $url/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -287,7 +287,7 @@ if [ -s $diretc/$filetgz ] ; then
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
 	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
-	$curl -# $link -o ./$filetgz
+	$curl -# -L $link -o ./$filetgz
 	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
 fi
 old=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
@@ -1055,8 +1055,8 @@ filename="clash"
 os="linux-mipsle-softfloat"
 os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
-clashp_url=$($curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
-clashp_url2=$($curl -s https://tmpclashpremiumbindary.cf | awk -F\" '/'$os2'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
+clashp_url=$($curl -sL https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
+clashp_url2=$($curl -sL https://tmpclashpremiumbindary.cf | awk -F\" '/'$os2'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
 clashp_ver=$(echo $clashp_url | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)

@@ -1,5 +1,5 @@
-# //【2020-09-07 02:45:36】
-/SHA1.TXT= f50ff9a0f765ba38c9e1c1dcb6837ccb
+# //【2020-09-07 05:55:09】
+/SHA1.TXT= 50d6acf084271376b6953282123796ab
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -8,7 +8,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= ba7ffe1cb61bec03978cf34155f38572
 /arm64/v2ray= d403aa16f1fc5a1e473c4803e843947c
-/clash.sh= 8d63e00dae7c518873b406645b7075f8
+/clash.sh= a4a463dca64226f585826dd12bec308d
 /config.yaml= 8034cfb9add33a5e20b206a3acffee81
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -45,6 +45,7 @@
 /payload/global_web_other.txt= 8cc92b152b0085059dee9fb8c488ece3
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
+/pf.sh= e1cdbdd394bfc567b41acba18c58f378
 /s/c1.pb= 99a0642610c32b2cb34f01ea15df2a09
 /s/c10.pb= 5b6987e2bcbad692d01801cc1efe956c
 /s/c2.pb= cd3453597a85fb62ab842a44c47a4711
