@@ -1,5 +1,5 @@
 #!/bin/sh
-# 14
+# 15
 
 #程序名字
 name=clash
@@ -21,18 +21,22 @@ dirconf=$pdcn/${name}
 if [ -s $dirconf/settings.txt ] ; then
 	diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
 	if [ ! -z "$diretc" ] ; then
-		size=$(df $etc |awk '!/Available/{print $4}')
-		if [ "$size" -lt "5120" ] ; then
-			diretc=/tmp/clash/etc
-			#echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
-			[ ! -f $dirtmp/*clash# ] && > $dirtmp/'#检测到闪存剩余空间'$size'KB小于5MB，资源文件將下载保存到內存中／tmp／clash#'
+		if [ "$diretc" != "/tmp/${name}/etc" ] ; then
+			size=$(df $etc |awk '!/Available/{print $4}')
+			if [ "$size" -lt "5120" ] ; then
+				diretc=/tmp/${name}/etc
+				sed -i '/diretc=/d' $dirconf/settings.txt
+				echo "diretc=/tmp/${name}/etc" >> $dirconf/settings.txt
+				#echo "检测到闪存$etc剩余空间$size KB小于5MB，资源文件將下载保存到內存中$dirtmp"
+				[ ! -f $dirtmp/*${name}# ] && > $dirtmp/'#检测到闪存剩余空间'$size'KB小于5MB，资源文件將下载保存到內存中／tmp／${name}#'
+			fi
 		fi
 	else
-		diretc=/tmp/clash/etc
-		echo "diretc=/tmp/clash/etc" >> $dirconf/settings.txt
+		diretc=/tmp/${name}/etc
+		echo "diretc=/tmp/${name}/etc" >> $dirconf/settings.txt
 	fi
 else
-	diretc=/tmp/clash/etc
+	diretc=/tmp/${name}/etc
 fi
 
 #系统定时任务文件
@@ -137,7 +141,7 @@ unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetea
 [ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
 #自定义闪存目录
 diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
-[ -z "$diretc" ] && diretc=/tmp/clash/etc && echo "diretc=/tmp/clash/etc" >> $dirconf/settings.txt
+[ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
 	#一键快速设置参数：./clash.sh 1 mode=1 config=config.yaml link1=https://123.com/link1.txt link2=https://123.com/link2.txt adblock=1 chinalist=1 unlocknetease=0 dns=1
@@ -786,7 +790,7 @@ if [ "$mode" = "1" -o "$mode" = "2" ] ; then
 			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
 		fi
 		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
-		nohup sh $etc/${name}.sh $mode & >> ./keep.txt 2>&1 &
+		nohup sh $etc/${name}.sh $mode >> ./keep.txt 2>&1 &
 		v=0
 	elif [ "$mode" = "1" -a "$iptables_mode" != "1" ] ; then
 		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则1！" >> ./keep.txt
@@ -811,7 +815,7 @@ else
 			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
 		fi
 		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
-		nohup sh $etc/${name}.sh $mode & >> ./keep.txt 2>&1 &
+		nohup sh $etc/${name}.sh $mode >> ./keep.txt 2>&1 &
 		v=0
 	else
 		sh $etc/${name}.sh start_setmark

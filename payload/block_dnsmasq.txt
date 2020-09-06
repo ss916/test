@@ -5,6 +5,15 @@ payload:
 - DOMAIN-KEYWORD,cnzz.
 - DOMAIN-KEYWORD,analytics.
 - DOMAIN-KEYWORD,.jads.
+#jav
+- DOMAIN-SUFFIX,inpagepush.com
+- DOMAIN-SUFFIX,cdn4ads.com
+- DOMAIN-SUFFIX,streamtape.com
+#rfi
+- DOMAIN-SUFFIX,teads.tv
+- DOMAIN-SUFFIX,pixel.parsely.com
+- DOMAIN-SUFFIX,xiti.com
+#other
 - DOMAIN-SUFFIX,flurry.com
 - DOMAIN-SUFFIX,quanliyouxi.cn
 - DOMAIN-SUFFIX,popupad.cn

@@ -1,5 +1,9 @@
 payload:
 #❌AD hosts ：block_hosts.txt
+#jav
+- DOMAIN,lcdn.tsyndicate.com
+- DOMAIN,vcdn.tsyndicate.com
+- DOMAIN,pxl.tsyndicate.com
 #yahoo
 - DOMAIN,ads.yap.yahoo.com
 #es

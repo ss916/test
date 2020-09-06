@@ -1,8 +1,9 @@
-# //【2020-08-27 22:47:31】
+# //【2020-09-07 02:40:41】
 
-external-controller: 0.0.0.0:8000
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
+
+external-controller: 0.0.0.0:8000
 mode: rule
 port: 8003
 socks-port: 8004
@@ -61,6 +62,7 @@ hosts:
 dns:
   enable: true
   listen: 0.0.0.0:5300
+  use-hosts: true
   #ipv6: true #markdns
   enhanced-mode: redir-host #markdns
   #fake-ip-range: 198.18.0.1/16 #markfakeip
@@ -308,6 +310,7 @@ proxy-groups:
 - { name: "❌dnsmasq", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌恶意网站", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 
+- { name: "♻️局域网IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
 - { name: "♻️内网IP", type: select, proxies: ["直连", "代理", "屏蔽"] }
 
 - { name: "屏蔽", type: select, proxies: ["REJECT"] }
@@ -432,10 +435,11 @@ rules:
 #- RULE-SET,global_web_other,🆓国外网站
 - RULE-SET,global_web,🆓国外网站
 
+#♻️局域网IP
+- IP-CIDR,192.168.0.0/16,♻️局域网IP
 
 # ♻️内网IP段
 - DOMAIN-SUFFIX,local,♻️内网IP
-- IP-CIDR,192.168.0.0/16,♻️内网IP
 - IP-CIDR,10.0.0.0/8,♻️内网IP
 - IP-CIDR,172.16.0.0/12,♻️内网IP
 - IP-CIDR,127.0.0.0/8,♻️内网IP
