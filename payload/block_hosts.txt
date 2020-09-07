@@ -1,6 +1,7 @@
 payload:
 #❌AD hosts ：block_hosts.txt
 #jav
+- DOMAIN,tsyndicate.com
 - DOMAIN,lcdn.tsyndicate.com
 - DOMAIN,vcdn.tsyndicate.com
 - DOMAIN,pxl.tsyndicate.com
