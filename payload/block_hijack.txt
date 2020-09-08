@@ -1,5 +1,6 @@
 payload:
 #❌劫持：block_hijack.txt
+#https://github.com/vokins/yhosts
 - DOMAIN-SUFFIX,17gouwuba.com
 - DOMAIN-SUFFIX,186078.com
 - DOMAIN-SUFFIX,189zj.cn

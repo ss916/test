@@ -1,5 +1,6 @@
 payload:
 #❌恶意网站：block_malicious.txt
+#https://github.com/vokins/yhosts
 - DOMAIN,geo2.adobe.com
 - DOMAIN-SUFFIX,kuaizip.com
 - DOMAIN-SUFFIX,mackeeper.com
