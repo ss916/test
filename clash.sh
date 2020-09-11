@@ -1,5 +1,5 @@
 #!/bin/sh
-# 16
+# 1
 
 #程序名字
 name=clash
@@ -1276,7 +1276,7 @@ restart)
 	#状态
 	zhuangtai
 	#
-	echo -e \\n"\e[1;33m脚本管理： \e[0m"\\n
+	echo -e \\n"\e[1;33m脚本管理：\e[0m\e[37m『 \e[0m\e[1;37m$sh_ver\e[0m\e[37m 』\e[0m"\\n
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash✚iptables透明代理\e[0m"
 	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚iptables透明代理✚自身走代理\e[0m"

@@ -3,5 +3,3 @@ payload:
 - DOMAIN-KEYWORD,.amazon.
 - DOMAIN-KEYWORD,-amazon.
 - DOMAIN-KEYWORD,.amazonaws.
-- DOMAIN-SUFFIX,aiv-cdn.net
-- DOMAIN-SUFFIX,primevideo.com

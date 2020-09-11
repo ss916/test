@@ -27,18 +27,19 @@ unzip $filetgz
 chmod +x -R ./
 }
 download_file2 () {
-url2=https://raw.fastgit.org/ss916/test/master/t/UnblockNeteaseMusic.tgz
+url2=https://raw.fastgit.org/ss916/test/master/t/UnblockNeteaseMusic
+url3=https://raw.fastgit.org/ss916/test/master/t/createCertificate.sh
 echo -e \\n"\e[1;36m▶下載主程序$filetgz，最新版【$new】...\e[0m"\\n
 $curl -# -L $url2 -O
-tar xzvf UnblockNeteaseMusic.tgz
+$curl -# -L $url3 -O
 chmod +x -R ./
 }
 check_file () {
-[ ! -s ./$filename ] && download_file2 && [ ! -s ./$filename ] && download_file2
+[ ! -s ./$filename ] && download_file && [ ! -s ./$filename ] && download_file
 if [ ! -s ./server.crt ] ; then
 	if [ ! -s ./createCertificate.sh ] ; then
 		echo -e \\n"\e[1;31m！！證書腳本文件createCertificate.sh不存在，重新下載$filetgz \e[0m"\\n
-		download_file2
+		download_file
 	else
 		echo -e \\n"\e[1;36m▶生成證書文件server.crt...\e[0m"\\n
 		./createCertificate.sh

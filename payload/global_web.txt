@@ -3,8 +3,6 @@ payload:
 - DOMAIN-KEYWORD,.amazon.
 - DOMAIN-KEYWORD,-amazon.
 - DOMAIN-KEYWORD,.amazonaws.
-- DOMAIN-SUFFIX,aiv-cdn.net
-- DOMAIN-SUFFIX,primevideo.com
 #🆓Facebook ：global_web_facebook.txt
 - DOMAIN-KEYWORD,facebook
 - DOMAIN-SUFFIX,cdninstagram.com
