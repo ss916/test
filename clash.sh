@@ -1,5 +1,5 @@
 #!/bin/sh
-# 1
+sh_ver=17
 
 #程序名字
 name=clash
