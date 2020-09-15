@@ -1,5 +1,5 @@
-# //【2020-09-15 21:42:25】
-/SHA1.TXT= 10e8e4fef35247373dad80c205f8e000
+# //【2020-09-15 21:48:04】
+/SHA1.TXT= e54bd995e791d7dc3d7b17e570882645
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -46,16 +46,16 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.pb= 51e095564e0a8ab3829ede7a4320b114
-/s/c10.pb= 7968ec0ba8a765c56a9ec50393779862
-/s/c2.pb= 6911aca10a5599c90b0af1ce37f28cea
-/s/c3.pb= 70efbf09db0dbae461ec04a4e2f2951d
-/s/c4.pb= c3fa7af8ef5309b8e42535be55a781ac
-/s/c5.pb= 08ed8331f4e9545157fdaf5a746f94e2
-/s/c6.pb= f514aa14fab622d70b75d32fb7013264
-/s/c7.pb= dd66d29cd1c27af14b80566fceb889ca
-/s/c8.pb= 5fbb32f824b81cb0b8f247849774d455
-/s/c9.pb= 7bcae886410c336db64e61a2d876afc2
+/s/c1.pb= 7433752e2d9a0d93794cb59e8f5eef8a
+/s/c10.pb= 73b9f835c115771070306369b1392529
+/s/c2.pb= 200e306baf9150cd8043c5aa7de36084
+/s/c3.pb= d90f73017207dc502752e56ae485e3a8
+/s/c4.pb= 1eba48b06c166fbc58b75e2bcea80620
+/s/c5.pb= 95021a959187f42daad9073ccd92caab
+/s/c6.pb= 6bace5561e8ecc1b67a3021153b5fad8
+/s/c7.pb= 08bb0891ed1c2b912f6f50b3b17be197
+/s/c8.pb= 81cf87ac6787c477aa43604f703dde6f
+/s/c9.pb= 14f1fe2c0a9c66a79d480a84844a310f
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
 /t/Country.mmdb.tgz= cd9de57989d2a29edc8eb93a21491639
