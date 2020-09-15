@@ -1,5 +1,5 @@
-# //【2020-09-14 18:11:28】
-/SHAKE128.TXT= cafecffeac31236244b74e26e485f0e5efa272ff
+# //【2020-09-15 21:42:24】
+/SHAKE128.TXT= dca91d89d5b65bb14f64a1f0575ab7f0b1db2e4e
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -76,8 +76,10 @@
 /t/kcptunc= 37d4d1215d840ecc020071dcedd22ad39320f595
 /t/kcptuns= 4568f6b32a97ef7847f3c7852d13abd2d8ab4f25
 /t/kcptuns_old= c8cbbc6fed927e8e56ff7888f48b6c07e9722d1e
-/t/v2ctl= a7f4adf88bb7aa42fd0d1d1a5ab964f2d5a7a3bb
-/t/v2ray= 41c31006192ce9d35f8ed5bc7f480b08b3861ff0
+/t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
+/t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
+/t/v2ctl= 50f58f7f80ff20e77387eb66106c38147c8f9d5c
+/t/v2ray= 7cf02816d894010a2152bc64bb754847c52a60ef
 /t/yacd-gh-pages.tgz= 9b6ea8872a9e9717e84ae64adec23cb7b68ded7b
 /t/yacd-gh-pages.zip= 62cae18cfc2cf2c40ca825ba551ba07d2004460c
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
