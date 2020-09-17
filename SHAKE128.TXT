@@ -1,13 +1,13 @@
-# //【2020-09-15 23:51:55】
-/SHA1.TXT= 5c08ef6591d5d1a8b5bcdee725957dd6
+# //【2020-09-18 00:27:34】
+/SHA1.TXT= 714622eeaebc32cacb2d33a1c022b2bd
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
 /arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
 /arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
-/arm64/v2ctl= c27387a6083563ffa66e61cc3f4fb4c1
-/arm64/v2ray= a04a8ce97f41887102e40c8dce62c856
+/arm64/v2ctl= e43475179aba995ab186cc2c86baaa74
+/arm64/v2ray= 0120d16234b2c118135e8fbdb520923c
 /clash.sh= 17fc1c2741125934a6da7650611c25b2
 /config.yaml= 8034cfb9add33a5e20b206a3acffee81
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
@@ -28,7 +28,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 5f758dfb043deb6c3d6d801b8ffe432c
+/payload/cn_web.txt= 04119d668873cad315501a0a1e77129b
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 1aed5591443447faf3698b344840704b
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
@@ -78,8 +78,8 @@
 /t/kcptuns_old= 31bb10fafe7b7bb69d070c8b4cbdb0e4
 /t/trojan-go.ver= 6a98478d220d88cf0cd0cc9fd4acafe8
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
-/t/v2ctl= dbee641d3d65fdadb92c54754bf7fb6b
-/t/v2ray= c52d3cb3442c4e74433ec984f0f4a210
+/t/v2ctl= effe8f47a266a0cc8e36fbc830e0dd52
+/t/v2ray= bf53d2e1416ad1a0e172f7ffac22386e
 /t/yacd-gh-pages.tgz= 7da6cc72283353930f2ae50fc6be6282
 /t/yacd-gh-pages.zip= 9628515498dc9b8892b0b19a51cbec8c
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4

@@ -1,13 +1,13 @@
-# //【2020-09-15 23:51:54】
-/SHAKE128.TXT= ac8b763d7f740615cfc9a666219208189585dd92
+# //【2020-09-18 00:27:34】
+/SHAKE128.TXT= 82f9b2a5322d0aae719188c6b96ac4c7ab66a732
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
-/arm64/v2ctl= 7e4d1caf69be8d995c55e56bbce3b2eaaa26aed6
-/arm64/v2ray= 36fdf47a827e04dabd83e717de3ecc3581a9e92b
+/arm64/v2ctl= d4f885463994675219311c581117de9068849340
+/arm64/v2ray= a05e1498f0d19658bf3261be2d564712b36424e0
 /clash.sh= ce9c553f18eec01a6c5a142e67e297919f8b0b64
 /config.yaml= c107ad3c0d4bf6a32c3ff4085aa6fbefd361c92f
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
@@ -28,7 +28,7 @@
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
-/payload/cn_web.txt= 683048f156296a8671f442657036b0786a74cb8b
+/payload/cn_web.txt= 97c230eb85ffb0b0061a61c732619812ba9a2011
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
 /payload/global_video.txt= bfc4a03789f7ed0628c2b78c7aa2a08dfd349bd9
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
@@ -78,8 +78,8 @@
 /t/kcptuns_old= c8cbbc6fed927e8e56ff7888f48b6c07e9722d1e
 /t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
 /t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
-/t/v2ctl= 50f58f7f80ff20e77387eb66106c38147c8f9d5c
-/t/v2ray= 7cf02816d894010a2152bc64bb754847c52a60ef
+/t/v2ctl= a57595f480a20264d6b900fc2ca6a4c36e1570b1
+/t/v2ray= 5ae101a1bbf1620290b87a8a244e0a614199dbbc
 /t/yacd-gh-pages.tgz= 9b6ea8872a9e9717e84ae64adec23cb7b68ded7b
 /t/yacd-gh-pages.zip= 62cae18cfc2cf2c40ca825ba551ba07d2004460c
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c

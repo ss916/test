@@ -107,12 +107,16 @@ payload:
 - DOMAIN-SUFFIX,battle.net
 - DOMAIN,blzddist1-a.akamaihd.net
 # > ByteDance
+- DOMAIN-SUFFIX,adhimalayandi.com
+- DOMAIN-SUFFIX,amemv.com
 - DOMAIN-SUFFIX,feiliao.com
 - DOMAIN-SUFFIX,pstatp.com
 - DOMAIN-SUFFIX,snssdk.com
 - DOMAIN-SUFFIX,iesdouyin.com
 - DOMAIN-SUFFIX,toutiao.com
+- DOMAIN-SUFFIX,toutiaocloud.com
 - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+- DOMAIN-SUFFIX,vvpncdn.com
 # > CCTV
 - DOMAIN-SUFFIX,cctv.com
 - DOMAIN-SUFFIX,cctvpic.com
