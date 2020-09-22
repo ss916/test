@@ -1,5 +1,5 @@
-# //【2020-09-18 00:27:34】
-/SHA1.TXT= 714622eeaebc32cacb2d33a1c022b2bd
+# //【2020-09-23 06:21:32】
+/SHA1.TXT= 2fa83cc1d8edec0aca84012974fb28a1
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= af6417cacd759da1fc810fc56ab0a62f
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
@@ -28,7 +28,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 04119d668873cad315501a0a1e77129b
+/payload/cn_web.txt= 4de63e95f61c7d10403026410a82c390
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 1aed5591443447faf3698b344840704b
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
@@ -46,20 +46,20 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.pb= 2f98d0979af512b9dfea6f3fc196b39d
-/s/c10.pb= cbfb566b5821ae3379a37e3325177c9f
-/s/c2.pb= c62ff7e074b1fb22066632cc92f41baa
-/s/c3.pb= 064a75eab15ea8e669135152dd63becb
-/s/c4.pb= ca635fbc5e37e57d7a85040ebc90a7bf
-/s/c5.pb= 933567b52dd9ea5fe0d40dd532bef57a
-/s/c6.pb= d4f4148b5c706cceed3a45aa5bdb52e6
-/s/c7.pb= 763981fa89e32584542bba82e0e96da0
-/s/c8.pb= ef5434bcdcb8779b803a1fd6ab493ed2
-/s/c9.pb= 648b4c8b819d2de631d690472b5c7fcb
+/s/c1.pb= 053f97f6d86e44ec1adf36a4780a9b90
+/s/c10.pb= ddd1ef9d9a56ecd3f678089ea10d5096
+/s/c2.pb= 61963e8d4539512084ae265c4d371daf
+/s/c3.pb= 1026c548bd44745375bb2f88b5eba727
+/s/c4.pb= 591c93e7e4cb9c30eacf3a971305d942
+/s/c5.pb= aadfcf6b740cbf1c23ae769c19fbdda9
+/s/c6.pb= 0f791579efbcfa6555e8aa61ee1281a3
+/s/c7.pb= 4fa6f34820306f9d1f5b98c7d309a410
+/s/c8.pb= 145e7771368b2a8a535d5e577d89def0
+/s/c9.pb= a95691be38b34b1fd77503c69eee2f95
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= cd9de57989d2a29edc8eb93a21491639
-/t/Country.mmdb.ver= 9d568e8e7095ff60e98b98ac9f05011a
+/t/Country.mmdb.tgz= ef1c33947339c4211295fdf29d4a18f7
+/t/Country.mmdb.ver= fbfff1e04b22e4c23fa502cee69da181
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116

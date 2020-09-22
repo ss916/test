@@ -1,15 +1,21 @@
 payload:
 #🀄网站：cn_web.txt
+#huawei
+- DOMAIN-SUFFIX,dbank.com
+- DOMAIN-SUFFIX,dbankcdn.com
+- DOMAIN-SUFFIX,dbankcloud.com
+- DOMAIN-SUFFIX,hicloud.com
+- DOMAIN-SUFFIX,vmall.com
 #ntp
 - DOMAIN-SUFFIX,ntp.org
 #xunlei
 - DOMAIN-SUFFIX,sandai.net
 - DOMAIN-SUFFIX,xunlei.com
 - DOMAIN-SUFFIX,88cdn.com
-#xhzb
-- DOMAIN-SUFFIX,zhuoyuerenmai.net
+#xinghuozhibo
 - DOMAIN-SUFFIX,binstream.live
 - DOMAIN-SUFFIX,speedws.com
+- DOMAIN-SUFFIX,zhuoyuerenmai.net
 #lanzouyun
 - DOMAIN-SUFFIX,lanzous.com
 #zte
@@ -366,7 +372,6 @@ payload:
 - DOMAIN-SUFFIX,geilicdn.com
 - DOMAIN-SUFFIX,getpricetag.com
 - DOMAIN-SUFFIX,godic.net
-- DOMAIN-SUFFIX,hicloud.com
 - DOMAIN-SUFFIX,hongxiu.com
 - DOMAIN-SUFFIX,hostbuf.com
 - DOMAIN-SUFFIX,huxiucdn.com

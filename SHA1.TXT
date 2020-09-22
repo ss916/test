@@ -1,5 +1,5 @@
-# //【2020-09-18 00:27:34】
-/SHAKE128.TXT= 82f9b2a5322d0aae719188c6b96ac4c7ab66a732
+# //【2020-09-23 06:21:31】
+/SHAKE128.TXT= 43b781deec4bccc288205460a148637f169fb726
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
@@ -28,7 +28,7 @@
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
-/payload/cn_web.txt= 97c230eb85ffb0b0061a61c732619812ba9a2011
+/payload/cn_web.txt= b10afff113ae2a46a2be3aae0fa9c18a4f5d2430
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
 /payload/global_video.txt= bfc4a03789f7ed0628c2b78c7aa2a08dfd349bd9
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
@@ -46,20 +46,20 @@
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /pf.sh= 06c8ef68ac762207e0c1480263e3b77d2d553b0c
-/s/c1.pb= e1411cb81838edb4327ad3d23c155059efff755f
-/s/c10.pb= 86181c32f9724fa6868c1e543d9c010522e4df35
-/s/c2.pb= af2d6b55bac95567cd5c27c98d5ea20871af4fb1
-/s/c3.pb= e9afb0229ff707da517a6301c1d385eb00789f35
-/s/c4.pb= c366b9790f82008ed7072fd1751ee00df43e9460
-/s/c5.pb= 2a8051ee5260bdf6fe24177a9705b177c45d5b62
-/s/c6.pb= 059bbbed062746f00e89ebcb6b61171e28b8f92a
-/s/c7.pb= 1333837dcce70dee410e859c9b38d661d3225890
-/s/c8.pb= 3186c31fbec231555d5bace510b23a42c25f6459
-/s/c9.pb= a48a9f9c1fc1e713d0e6bd187e4d68a92700d1ce
+/s/c1.pb= b92b9ea2629d8421b6517742b92ebf8aa0bf5974
+/s/c10.pb= 933571882319e674e43d22c8d67a87df5039cf65
+/s/c2.pb= 39621b852e5542c4669f50f71af34be8d483f714
+/s/c3.pb= a5d2cdba5d6d5c34551ddcf9e94ff22b7febafce
+/s/c4.pb= a0bdf96ac2a1ebdc29db090b30f2ac6abe834a89
+/s/c5.pb= 1a61d4f02040b403ff42434d7d3062035ef64bf7
+/s/c6.pb= 67b0ea1af7d4117a01c03fed1d055f41ebd94001
+/s/c7.pb= 6de91fbfab1412888bd7868194577453db7daba9
+/s/c8.pb= 0b48814c4456c442de63d61e037af499da28b9d4
+/s/c9.pb= 108bf2b5b8624b7853f166e7b23bda20b232fe9b
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= 7469701ec114c55e808f21ce2449ded301193e72
-/t/Country.mmdb.ver= dfc0d53bd07f613a65e64d0e0e7a4d66629d778c
+/t/Country.mmdb.tgz= ef69d276d3ce4aff2b7e67282ec21510c09c14f2
+/t/Country.mmdb.ver= 5293b15ba4b18a62a9deae72c7bfb94131a6a407
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
