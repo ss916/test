@@ -28,39 +28,40 @@ payload:
 #jsdelivr
 - DOMAIN-KEYWORD,.jsdelivr.
 #pinduoduo
+- DOMAIN-SUFFIX,pddpic.com
+- DOMAIN-SUFFIX,pddugc.com
 - DOMAIN-SUFFIX,pinduoduo.com
 - DOMAIN-SUFFIX,yangkeduo.com
-- DOMAIN-SUFFIX,pddpic.com
 #bubugao
-- DOMAIN-SUFFIX,oppomobile.com
 - DOMAIN-SUFFIX,coloros.com
+- DOMAIN-SUFFIX,heytapdownload.com
 - DOMAIN-SUFFIX,heytapmobi.com
 - DOMAIN-SUFFIX,heytapimage.com
-- DOMAIN-SUFFIX,heytapdownload.com
+- DOMAIN-SUFFIX,oppomobile.com
 #douyin
+- DOMAIN-SUFFIX,byteimg.com
 - DOMAIN-SUFFIX,douyin.com
 - DOMAIN-SUFFIX,douyincdn.com
 - DOMAIN-SUFFIX,ixigua.com
-- DOMAIN-SUFFIX,byteimg.com
 #kuaishou
-- DOMAIN-SUFFIX,bytedance.com
-- DOMAIN-SUFFIX,etoote.com
 - DOMAIN-SUFFIX,bcelive.com
+- DOMAIN-SUFFIX,bytedance.com
+- DOMAIN-SUFFIX,chinanetcenter.com
+- DOMAIN-SUFFIX,etoote.com
+- DOMAIN-SUFFIX,gifshow.com
+- DOMAIN-SUFFIX,ksapisrv.com
 - DOMAIN-SUFFIX,kspkg.com
-- DOMAIN-SUFFIX,kwaixiaodian.com
-- DOMAIN-SUFFIX,p2cdn.com
+- DOMAIN-SUFFIX,kuaishou.com
+- DOMAIN-SUFFIX,kuaishoupay.com
+- DOMAIN-SUFFIX,kuaishouzt.com
 - DOMAIN-SUFFIX,kwaicdn.com
 - DOMAIN-SUFFIX,kwaishop.com
-- DOMAIN-SUFFIX,chinanetcenter.com
-- DOMAIN-SUFFIX,onethingpcs.com
-- DOMAIN-SUFFIX,yximgs.com
+- DOMAIN-SUFFIX,kwaixiaodian.com
 - DOMAIN-SUFFIX,kwaizt.com
-- DOMAIN-SUFFIX,kuaishouzt.com
-- DOMAIN-SUFFIX,kuaishou.com
+- DOMAIN-SUFFIX,onethingpcs.com
+- DOMAIN-SUFFIX,p2cdn.com
 - DOMAIN-SUFFIX,viviv.com
-- DOMAIN-SUFFIX,ksapisrv.com
-- DOMAIN-SUFFIX,gifshow.com
-- DOMAIN-SUFFIX,kuaishoupay.com
+- DOMAIN-SUFFIX,yximgs.com
 #solidot
 - DOMAIN-SUFFIX,solidot.org
 #cibn
@@ -95,9 +96,10 @@ payload:
 - DOMAIN-SUFFIX,xiami.com
 - DOMAIN-SUFFIX,xiami.net
 # > Baidu
-- DOMAIN-SUFFIX,baidupan.com
 - DOMAIN-SUFFIX,baidu.com
 - DOMAIN-SUFFIX,baidubcr.com
+- DOMAIN-SUFFIX,baidupan.com
+- DOMAIN-SUFFIX,bdimg.com
 - DOMAIN-SUFFIX,bdstatic.com
 - DOMAIN-SUFFIX,yunjiasu-cdn.net
 # > bilibili
@@ -185,6 +187,7 @@ payload:
 - DOMAIN-SUFFIX,ydstatic.com
 # > Sina
 - DOMAIN-SUFFIX,sina.com
+- DOMAIN-SUFFIX,sinaimg.com
 - DOMAIN-SUFFIX,weibo.com
 - DOMAIN-SUFFIX,weibocdn.com
 # > Sohu
