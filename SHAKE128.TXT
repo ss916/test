@@ -1,5 +1,5 @@
-# //【2020-09-26 05:00:37】
-/SHA1.TXT= 9ad8bf357dc223330fd02506024c6695
+# //【2020-09-26 19:05:20】
+/SHA1.TXT= 98878caf04e73d27e7b6105bde7d6b55
 /amd64/v2ctl= fa7a251fb4bd244ef3e4239c3671672b
 /amd64/v2ray= 4442c44924aaf28ca9d289a7ad355cb9
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -12,7 +12,7 @@
 /arm64/v2ctl= e7dbe3b60451ba414e06a187e83e4b0f
 /arm64/v2ray= 09dcb6a4b80d5476638297c558229156
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= 17fc1c2741125934a6da7650611c25b2
+/clash.sh= 3f8a2327cd4a1b936e96106bd1e739e1
 /config.yaml= 8034cfb9add33a5e20b206a3acffee81
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -32,7 +32,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= cbe86b033b6e66abc87533fb225a2546
+/payload/cn_web.txt= 9e4039eb830660eb0bd8f98f99f6a8a3
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 1aed5591443447faf3698b344840704b
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1

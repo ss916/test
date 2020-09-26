@@ -1,5 +1,7 @@
 payload:
 #🀄网站：cn_web.txt
+#AD white list
+- DOMAIN,cdn.tsyndicate.com
 #huawei
 - DOMAIN-SUFFIX,dbank.com
 - DOMAIN-SUFFIX,dbankcdn.com
