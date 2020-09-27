@@ -1,5 +1,5 @@
-# //【2020-09-26 19:05:20】
-/SHA1.TXT= 98878caf04e73d27e7b6105bde7d6b55
+# //【2020-09-27 23:13:51】
+/SHA1.TXT= c0c00a83cf084cc9a3d8588cdafa93f5
 /amd64/v2ctl= fa7a251fb4bd244ef3e4239c3671672b
 /amd64/v2ray= 4442c44924aaf28ca9d289a7ad355cb9
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -76,7 +76,7 @@
 /t/clash_armv6= 27f7739d88bebd78e7bfe6f9f06b9416
 /t/clash_armv7= 9735a67f278cdd238782576cf73c7aa8
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
-/t/geo.tgz= a5aace6d6b4317bdebc577a15b2394ae
+/t/geo.tgz= 5b3870eb19f4d64875c2b30cbc0ef66a
 /t/kcptunc= 2b4019418189343760b95903239745a5
 /t/kcptuns= 83db4f238d3d953a557426a68ca9b39f
 /t/kcptuns_old= 31bb10fafe7b7bb69d070c8b4cbdb0e4
