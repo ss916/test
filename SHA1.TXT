@@ -1,5 +1,5 @@
-# //【2020-09-28 02:47:49】
-/SHAKE128.TXT= e9b56e2600f95301ba7b270cff583ce52e633bc2
+# //【2020-09-28 04:42:49】
+/SHAKE128.TXT= 502fed3cb7be4bdde21847edbaf3225811446563
 /amd64/v2ctl= 085feb1e9c75ed95ccd0522132bae9fc9f8321a6
 /amd64/v2ray= 63842c1ea013d41e81e256cc319f74c5fe026167
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -62,19 +62,16 @@
 /s/c9.pb= f171dac92e5f9e59174d6ac44ed33894b9530591
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= eb678e918450208ba40bab4b73d84a5f86301a5a
-/t/Country.mmdb.ver= 7e66b4d6076e8573b5501d3477215fcf6b4d09fb
+/t/Country.mmdb.tgz= 19f4fbc042e62bfdaedfa61fbc43fcf5c65d6fc8
+/t/Country.mmdb.ver= 422eb7f1899906af9abfd03832784a464e94dc88
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= e6fb74686c77e025d218bd2e98f89921d8d7a128
-/t/clash-dashboard-gh-pages.zip= a154f8adeacd3190657663e94eacdddb568a8dd0
-/t/clash.ver= 0fb6bc8d929d232493257fa6693195c143d28ac7
-/t/clash= 05cb19674ac45ea2ebbd8cee3634c8d88ea1aa4d
-/t/clash_armv5= 265d4b4dae303bc63a876f40a514cb11bc82600a
-/t/clash_armv6= 3eb667687f887f1187740e9949d0d4f7b88162d5
-/t/clash_armv7= d4e73f2baf79c84e311391fda13f725ba2ae6516
+/t/clash-dashboard-gh-pages.tgz= 1e3d270191237ebb67695b5212c721f23e5282a8
+/t/clash-dashboard-gh-pages.zip= 35f62f4c7d3d7d91713e856022b0a2941c3f227d
+/t/clash.ver= 573e844e6433ca17ee46e201742c14fd8d4e6159
+/t/clash= 6227ceb8c2911c5a3baf9497e17b859e04ad3e7d
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 2276cd601d3841ec02ceac616c47e81451093cb9
 /t/kcptunc= 37d4d1215d840ecc020071dcedd22ad39320f595
