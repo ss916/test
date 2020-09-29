@@ -27,7 +27,7 @@ payload:
 - DOMAIN-SUFFIX,alimama.com
 - DOMAIN-SUFFIX,ipinyou.com
 - DOMAIN-SUFFIX,mct01.com
-- DOMAIN-SUFFIX,simba.taobao.com
+#- DOMAIN-SUFFIX,simba.taobao.com#tb Web search
 - DOMAIN-SUFFIX,tanx.com
 - DOMAIN-SUFFIX,wrating.com
 - DOMAIN-SUFFIX,cpro.baidu.com

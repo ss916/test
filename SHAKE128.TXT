@@ -1,5 +1,5 @@
-# //【2020-09-29 14:58:00】
-/SHA1.TXT= 1bd6a0a3c8810b173fb928a58f1aa221
+# //【2020-09-30 06:49:54】
+/SHA1.TXT= 36f73c75b3ce1bc8e38d4742bc3b2c5d
 /amd64/v2ctl= ce4650f2fc280664816a0947eaece81c
 /amd64/v2ray= 38bcd31b7fbe6cc76d301c1ec80be287
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -26,7 +26,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/payload/block_dnsmasq.txt= 10a3a85234d191e6920a128722fec43c
+/payload/block_dnsmasq.txt= 0e8819521ec07e858cb22d07dee83a1c
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= 74d96150b14d034f8a266480cbc145ce
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
@@ -62,8 +62,8 @@
 /s/c9.pb= 03b458c2cd30eabb14440e8cdccc90cf
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= ce7ff5b49c25041fe55df62c7e9fd6d6
-/t/Country.mmdb.ver= 94f4567c33b33836142f73005f460a34
+/t/Country.mmdb.tgz= 81f07261026cdbcad5f3b8f954e05cd0
+/t/Country.mmdb.ver= 6157142def832a40830609fd7ed73c8e
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
