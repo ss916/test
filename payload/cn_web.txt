@@ -7,6 +7,7 @@ payload:
 - DOMAIN-SUFFIX,dbankcdn.com
 - DOMAIN-SUFFIX,dbankcloud.com
 - DOMAIN-SUFFIX,hicloud.com
+- DOMAIN-SUFFIX,huawei.com
 - DOMAIN-SUFFIX,vmall.com
 #ntp
 - DOMAIN-SUFFIX,ntp.org

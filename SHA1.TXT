@@ -1,7 +1,7 @@
-# //【2020-09-30 19:45:45】
-/SHAKE128.TXT= fc1efa1bbb552e4d5198a7f2ead29052c4b68d61
-/amd64/v2ctl= 2b65109f4d6d5abf1365b13f36a8403b04bae12a
-/amd64/v2ray= 9ccd38bebb4e5c39a56ba43776338fb3c51ec12d
+# //【2020-10-02 11:45:48】
+/SHAKE128.TXT= 6ff8d0f20a566be800556b2019df275481c2a58e
+/amd64/v2ctl= 636a9b2aabe96fe66b65c033df2f9ce1728de808
+/amd64/v2ray= 032e297c93bc550ef0c6941ba798e3eb6d4957e3
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= ea97c32edacc7564a8955711ba8257026413bec9
 /arm64/filebrowser= 1a7bac3418806a066c0259dcf7561ff048824a17
@@ -9,8 +9,8 @@
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
-/arm64/v2ctl= 5861433e7c466e4907bbf3ef6a926877c3b60cc0
-/arm64/v2ray= bbaf3eb35170b37175af14dae8c2fb1593c5f042
+/arm64/v2ctl= 448eecc6ae2dd1b2890fb25f5798f011e24ecb32
+/arm64/v2ray= ba86041123f924e101b84e3c308b2b8d9fdb3471
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
 /clash.sh= 97200099f4f150b64ee1c558578c845136a558e4
 /config.yaml= c107ad3c0d4bf6a32c3ff4085aa6fbefd361c92f
@@ -32,7 +32,7 @@
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
-/payload/cn_web.txt= 2ca01274adf3e2df348473ff90f0861b84ae90ac
+/payload/cn_web.txt= d6ff36ad5099c372678f3c51e4404bd649191774
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
 /payload/global_video.txt= bfc4a03789f7ed0628c2b78c7aa2a08dfd349bd9
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
@@ -62,8 +62,8 @@
 /s/c9.pb= f63e9a63ffc4ec69dd7dddd805f4baa048fd8963
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= 032b1b6b1aa6c1739ec000f6e3bcaf4db4daf007
-/t/Country.mmdb.ver= 4222445297b9523ff6f7fe900fc50d72d6e4c77e
+/t/Country.mmdb.tgz= 55081a440fe90db68c5b61f38064d3702b22cb3c
+/t/Country.mmdb.ver= 138b8d1bf154ad4b3a6d68d5909bca85d72edf88
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -73,15 +73,15 @@
 /t/clash.ver= 573e844e6433ca17ee46e201742c14fd8d4e6159
 /t/clash= 6227ceb8c2911c5a3baf9497e17b859e04ad3e7d
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
-/t/geo.tgz= 8feb396dc7fb55cfe46d45180af4347282bdfd30
+/t/geo.tgz= 2276cd601d3841ec02ceac616c47e81451093cb9
 /t/kcptunc= 37d4d1215d840ecc020071dcedd22ad39320f595
 /t/kcptuns= 4568f6b32a97ef7847f3c7852d13abd2d8ab4f25
 /t/kcptuns_old= c8cbbc6fed927e8e56ff7888f48b6c07e9722d1e
 /t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
 /t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
-/t/v2ctl= 47d10cb596ec27cec64c7be7c45a4fe1834c138a
-/t/v2ray.ver= 510042a8fc32a1706bfc8e9545d47c909ad0db59
-/t/v2ray= 18a5774b7e3514dad8d3bf3b10ada50c2eac744a
+/t/v2ctl= cf5cc237ac2f1503e4bd92156d1228238500b9fa
+/t/v2ray.ver= e5f8f9589750273662f8b8555b9fa34bd223f53c
+/t/v2ray= 743cd343a3b1ac830376956c355b90d3b183a44b
 /t/yacd-gh-pages.tgz= 9b6ea8872a9e9717e84ae64adec23cb7b68ded7b
 /t/yacd-gh-pages.zip= 62cae18cfc2cf2c40ca825ba551ba07d2004460c
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
