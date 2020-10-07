@@ -1,4 +1,4 @@
-# //【2020-10-07 20:32:07】
+# //【2020-10-08 01:54:09】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -127,7 +127,6 @@ proxy-groups:
   proxies:
     - 故障切换
     - 延迟最低
-    - 延迟最低-文件1
     #- 负载
   use:
     - 订阅1
@@ -150,11 +149,6 @@ proxy-groups:
     - 订阅2
     #- 文件1
     #- 文件2
-
-- name: 延迟最低-文件1
-  type: url-test
-  use:
-    - 文件1
 
 #- name: 负载
   #type: load-balance
