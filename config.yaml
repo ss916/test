@@ -1,4 +1,4 @@
-# //【2020-10-08 01:54:09】
+# //【2020-10-09 05:39:03】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -87,7 +87,43 @@ dns:
     geoip: true
     ipcidr:
       - 240.0.0.0/4
-
+    domain:
+      - '+.appspot.com'
+      - '+.blogger.com'
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.gvt1.com'
+      - '+.googleapis.com'
+      - '+.googleapis.cn'
+      - '+.gstatic.com'
+      - '+.ggpht.com'
+      - '+.gmail.com'
+      - '+.youtu.be'
+      - '+.yt.be'
+      - '+.ytimg.com'
+      - '+.googlevideo.com'
+      - '+.youtube.com'
+      - '+.gitbook.io'
+      - '+.gitbook.com'
+      - '+.github.io'
+      - '+.github.com'
+      - '+.githubusercontent.com'
+      - '+.githubassets.com'
+      - '+.githubapp.com'
+      - '+.twitter.com'
+      - '+.pscp.tv'
+      - '+.periscope.tv'
+      - '+.t.co'
+      - '+.twimg.co'
+      - '+.twimg.com'
+      - '+.twitpic.com'
+      - '+.vine.co'
+      - '+.whoer.net'
+      - '+.whrq.net'
+      - '+.astrill.com'
+      - '+.asn247.net'
+      - '+.astrill.org'
+      
 
 proxies:
 - name: 網易云解鎖
