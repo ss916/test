@@ -153,6 +153,8 @@ payload:
 - DOMAIN-SUFFIX,onedrive.live.com
 - DOMAIN-SUFFIX,xboxlive.com
 #🆓国外网站 ：global_web_other.txt
+#The Liberty Times
+- DOMAIN-SUFFIX,ltn.com.tw
 #spark
 - DOMAIN-SUFFIX,amplitude.com
 - DOMAIN-SUFFIX,firebaseio.com

@@ -1,4 +1,4 @@
-# //【2020-10-09 05:39:03】
+# //【2020-10-11 12:23:52】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -22,7 +22,6 @@ ipv6: true
   #interface-name: en0
 
 hosts:
-  '+.googleapis.cn': 216.58.221.227
   '+.crashlytics.com':  127.0.0.1
   '+.flurry.com': 127.0.0.1
   '+.ads.*.com': 127.0.0.1
