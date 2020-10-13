@@ -1,5 +1,5 @@
-# //【2020-10-13 16:03:36】
-/SHA1.TXT= 6e0eef214ccccfffbdbb6758919d0c30
+# //【2020-10-13 19:57:23】
+/SHA1.TXT= f63599a86b18894f7fd76d8d87bd75f0
 /amd64/v2ctl= 8c03f5e3617e8fe6a111fd9574c04172
 /amd64/v2ray= bf2930fff8fb09ad83d88d2456ec9737
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -13,7 +13,7 @@
 /arm64/v2ray= 75eefe656b1314c154ae301699315232
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 3f8a2327cd4a1b936e96106bd1e739e1
-/config.yaml= bcdd76147a7dbc861f5f66c8dd20db0f
+/config.yaml= 674fb4bd674799598bbe1ffb54bdbe92
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
