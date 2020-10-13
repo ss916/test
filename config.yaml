@@ -1,4 +1,4 @@
-# //【2020-10-11 12:23:52】
+# //【2020-10-13 16:03:35】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -87,21 +87,34 @@ dns:
     ipcidr:
       - 240.0.0.0/4
     domain:
-      - '+.appspot.com'
-      - '+.blogger.com'
-      - '+.google.com'
+      #akamaized
+      - '+.akamaized.net'
+      - '+.akamaihd.net'
+      #amazon
+      - '+.amazonaws.com'
+      - '+.amazon'
+      #astrill
+      - '+.astrill.com'
+      - '+.asn247.net'
+      - '+.astrill.org'
+      #fb
       - '+.facebook.com'
-      - '+.gvt1.com'
-      - '+.googleapis.com'
-      - '+.googleapis.cn'
-      - '+.gstatic.com'
-      - '+.ggpht.com'
-      - '+.gmail.com'
-      - '+.youtu.be'
-      - '+.yt.be'
-      - '+.ytimg.com'
-      - '+.googlevideo.com'
-      - '+.youtube.com'
+      - '+.cdninstagram.com'
+      - '+.fb.com'
+      - '+.fb.me'
+      - '+.fbaddins.com'
+      - '+.fbcdn.net'
+      - '+.fbsbx.com'
+      - '+.fbworkmail.com'
+      - '+.instagram.com'
+      - '+.m.me'
+      - '+.messenger.com'
+      - '+.oculus.com'
+      - '+.oculuscdn.com'
+      - '+.rocksdb.org'
+      - '+.whatsapp.com'
+      - '+.whatsapp.net'
+      #github
       - '+.gitbook.io'
       - '+.gitbook.com'
       - '+.github.io'
@@ -109,6 +122,38 @@ dns:
       - '+.githubusercontent.com'
       - '+.githubassets.com'
       - '+.githubapp.com'
+    #google
+      - '+.ampproject.org'
+      - '+.appspot.com'
+      - '+.blogger.com'
+      - '+.google.com'
+      - '+.googleusercontent.com'
+      - '+.googleapis.com'
+      - '+.googleapis.cn'
+      - '+.gstatic.com'
+      - '+.ggpht.com'
+      - '+.gmail.com'
+      - '+.gvt1.com'
+      - '+.gvt2.com'
+      - '+.youtu.be'
+      - '+.yt.be'
+      - '+.ytimg.com'
+      - '+.googlevideo.com'
+      - '+.youtube.com'
+      #mega
+      - '+.mega.co.nz'
+      - '+.mega.nz'
+      #pincong
+      - '+.pincong.rocks'
+      #protonmail
+      - '+.protonmail.ch'
+      - '+.protonmail.com'
+      - '+.protonstatus.com'
+      - '+.recruitee.com'
+      - '+.w.org'
+      #rfa
+      - '+.rfa.org'
+      #twitter
       - '+.twitter.com'
       - '+.pscp.tv'
       - '+.periscope.tv'
@@ -117,12 +162,17 @@ dns:
       - '+.twimg.com'
       - '+.twitpic.com'
       - '+.vine.co'
+      #whoer
       - '+.whoer.net'
       - '+.whrq.net'
-      - '+.astrill.com'
-      - '+.asn247.net'
-      - '+.astrill.org'
+      #wiki
+      - '+.wikimapia.org'
+      - '+.wikimedia.org'
+      - '+.wikipedia.org'
+      - '+.wikiquote.org'
+      - '+.wikiwand.com'
       
+
 
 proxies:
 - name: 網易云解鎖

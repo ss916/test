@@ -1,7 +1,7 @@
-# //【2020-10-11 12:24:26】
-/SHAKE128.TXT= 87c925c7e70549eb114529d1e782ae32ad12d563
-/amd64/v2ctl= b636ad7f6ed15808b5d645a5048c172ad02eb4e0
-/amd64/v2ray= 24d1b0059fd14c4b9ebb362ac52e0253a5b46bdb
+# //【2020-10-13 16:03:35】
+/SHAKE128.TXT= 294581920db2b660b6cd4a8c5c32a0e3864157a5
+/amd64/v2ctl= 95c878cb302597f4b0e4bac47d15b8353f52fda5
+/amd64/v2ray= aaf9774660d201e960816e120e7c526120c51a45
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 8831a9d9b36967e89b128a3930be2ef90bd6181a
 /arm64/filebrowser= 1a7bac3418806a066c0259dcf7561ff048824a17
@@ -9,11 +9,11 @@
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
-/arm64/v2ctl= 0f674d9e8c62a3e18bd1ad71379e9f37d4b8530f
-/arm64/v2ray= 030c233d8639a5a1d32071ba7b393fbd550a5aef
+/arm64/v2ctl= 3ea695cad04ac0dd587be865378c7c3bf879aff6
+/arm64/v2ray= a837eb1af8be3248c1fd4dcc71d978f04b5dfedb
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
 /clash.sh= 97200099f4f150b64ee1c558578c845136a558e4
-/config.yaml= 93be1af5e20c25544f400a404bb9dbdbd5c89706
+/config.yaml= 43709a4577ffb2efe263860f9809589d29578816
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
@@ -62,8 +62,8 @@
 /s/c9.pb= 531071750a5fa7e5219d3c889147d8ef8ae41dac
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= a9a412b48a5dce8c1f4965b61aa87ffa47ce54f4
-/t/Country.mmdb.ver= f4bf385e03cfabdf160abcdb09dc5bc2d4205b8a
+/t/Country.mmdb.tgz= 21f0c45c75ad711d1f23e7e498313d5f123a9330
+/t/Country.mmdb.ver= 4bc1579a9fa84d4e29e36d6979cd7fdaa0536dce
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -79,9 +79,9 @@
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
 /t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
 /t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
-/t/v2ctl= 38a76f0278d6a1040730a85738478f2412ed0dd4
+/t/v2ctl= 32462da3a55593c1bdbcde3c62344067808a3125
 /t/v2ray.ver= ea4846d8f18cdfb4635c6b92fc291efdf57ea3c3
-/t/v2ray= 7f1204a99bbe26df97e9990f935a054e5b11be6d
-/t/yacd-gh-pages.tgz= 9b6ea8872a9e9717e84ae64adec23cb7b68ded7b
-/t/yacd-gh-pages.zip= 62cae18cfc2cf2c40ca825ba551ba07d2004460c
+/t/v2ray= 6d70596b9e023476174695757a83ca5381e7c9fe
+/t/yacd-gh-pages.tgz= a6d2507b585ac229f0c455b8e6f0c8fddf58a04d
+/t/yacd-gh-pages.zip= ba5bef038c7292689e43fdf8bf1136d59a063faa
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
