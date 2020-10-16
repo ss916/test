@@ -1,6 +1,8 @@
 payload:
 #❌AD hosts ：block_hosts.txt
 #https://github.com/vokins/yhosts
+#mx
+- DOMAIN,evt.mxplay.com
 #jav
 - DOMAIN,tsyndicate.com
 - DOMAIN,lcdn.tsyndicate.com
@@ -1195,6 +1197,10 @@ payload:
 - DOMAIN,1.aili.com
 - DOMAIN,2.aili.com
 - DOMAIN,mivideo.g.mi.com
+- DOMAIN,ad.mi.com
+- DOMAIN,ad.xiaomi.com
+- DOMAIN,ad1.xiaomi.com
+- DOMAIN,o2o.api.xiaomi.com
 - DOMAIN,dvb.pandora.xiaomi.com
 - DOMAIN,de.pandora.xiaomi.com
 - DOMAIN,starfish.pandora.xiaomi.com
