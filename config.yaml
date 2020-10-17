@@ -1,4 +1,4 @@
-# //【2020-10-13 19:57:22】
+# //【2020-10-17 19:54:36】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -506,6 +506,9 @@ rules:
 - RULE-SET,block_hijack,❌劫持 #markadblock
 - RULE-SET,block_malicious,❌恶意网站 #markadblock
 
+- RULE-SET,global_web_google,🆓谷歌
+- RULE-SET,global_web_telegram,🆓电报
+
 - RULE-SET,cn_music_netease,🎵网易云
 - RULE-SET,cn_video,🀄影音
 - RULE-SET,cn_web,🀄网站
@@ -516,9 +519,6 @@ rules:
 - RULE-SET,global_video_netflix,📺Netflix
 - RULE-SET,global_video_other,📺全球影音
 
-- RULE-SET,global_web_google,🆓谷歌
-- RULE-SET,global_web_telegram,🆓电报
-#- RULE-SET,global_web_other,🆓国外网站
 - RULE-SET,global_web,🆓国外网站
 
 #♻️局域网IP

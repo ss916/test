@@ -1,5 +1,5 @@
-# //【2020-10-16 22:43:20】
-/SHAKE128.TXT= 744b17527d3f17e707df134e7d2bbff715cfcebf
+# //【2020-10-17 19:54:36】
+/SHAKE128.TXT= 31b63c14c412f2e96afcbfc9830fc976e7fe4293
 /amd64/v2ctl= f8f1850b5d217dc4585eb82c4d31fce1b6f536c0
 /amd64/v2ray= 25043f3c3258b3cd40a5fa0d0aff972a60a44022
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -13,7 +13,7 @@
 /arm64/v2ray= b8e535c21fb55173b5d40398528985fe575b9d76
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
 /clash.sh= 97200099f4f150b64ee1c558578c845136a558e4
-/config.yaml= 82760849b335bd8d5f549e7f7dfaa4478ab555fd
+/config.yaml= 25c9701221aae5419b6fc29bc35ed41b6cf0bd98
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
@@ -62,8 +62,8 @@
 /s/c9.pb= 531071750a5fa7e5219d3c889147d8ef8ae41dac
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= 5a0bd1251bdcc9878724458000ea14f094045c14
-/t/Country.mmdb.ver= 84fa8d33a85c02cf6f9fdaadaf42e4b3556551b0
+/t/Country.mmdb.tgz= af5690f41809099524ec984cfae6e06420410668
+/t/Country.mmdb.ver= 5ba563813a9c7459efb174ea78da41b0a497a114
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
