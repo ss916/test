@@ -1,4 +1,4 @@
-# //【2020-10-17 19:54:36】
+# //【2020-10-30 17:49:51】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -14,9 +14,9 @@ bind-address: "*"
 log-level: info
 ipv6: true
 
-#tun:
-  #enable: true
-  #stack: gvisor # system or gvisor，system：x86 & x64
+tun:
+  enable: true
+  stack: system
 
 #experimental:
   #interface-name: en0
@@ -88,8 +88,8 @@ dns:
       - 240.0.0.0/4
     domain:
       #akamaized
-      - '+.akamaized.net'
-      - '+.akamaihd.net'
+      #- '+.akamaized.net'
+      #- '+.akamaihd.net'
       #amazon
       - '+.amazonaws.com'
       - '+.amazon'
@@ -238,6 +238,7 @@ proxy-groups:
 
 #- name: 负载
   #type: load-balance
+  #strategy: round-robin #轮询
   #use:
     #- 订阅1
     #- 订阅2
@@ -539,7 +540,7 @@ rules:
 
 #源端口匹配
 #- SRC-PORT,7777,直连
-#重命名源IP段，并在發布后删除
+#源IP段
 #- SRC-IP-CIDR,192.168.1.201/32,直连
 
 # cn IP走直连
