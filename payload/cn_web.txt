@@ -26,6 +26,7 @@ payload:
 - DOMAIN-SUFFIX,weathercn.com
 #CU
 - DOMAIN-SUFFIX,10010.com
+- DOMAIN-SUFFIX,10155.com
 - DOMAIN-SUFFIX,boip.net
 #CM
 - DOMAIN-SUFFIX,miguvideo.com

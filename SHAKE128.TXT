@@ -1,5 +1,5 @@
-# //【2020-10-30 17:49:52】
-/SHA1.TXT= 62067edb6e23cc6826ea194251ae6521
+# //【2020-11-05 22:49:42】
+/SHA1.TXT= 478ed86aabe44319fe2380843f3b139b
 /amd64/v2ctl= 5fb9dd08d3ef8ffafb185bc1cabb6d9c
 /amd64/v2ray= 85be6f053e26af1a15a200007c0e4f8c
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -32,7 +32,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 4609646c6bfc2fa8bb670fa65926dcf1
+/payload/cn_web.txt= 63e98e8c5878c92e314e04f0171ffb18
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 1aed5591443447faf3698b344840704b
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
@@ -81,7 +81,7 @@
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= ca6ce56b5c555d9a18279b1d097366c0
 /t/v2ray.ver= 065aa4a970db4784eddf50e78301976c
-/t/v2ray= caedd909612d89f5cca5abd75c20cd6f
+/t/v2ray= bdcd0338c6b8fe131415a179e8fc3002
 /t/yacd-gh-pages.tgz= 402b8dcacd15b17189369c7e1c364d2c
 /t/yacd-gh-pages.zip= acf91b5593e2e64251b6f736a3bb26e0
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
