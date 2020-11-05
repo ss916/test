@@ -1,5 +1,5 @@
-# //【2020-11-05 22:49:42】
-/SHA1.TXT= 478ed86aabe44319fe2380843f3b139b
+# //【2020-11-06 00:13:45】
+/SHA1.TXT= 0bc4f12eff6a139eb82243507b3a0f05
 /amd64/v2ctl= 5fb9dd08d3ef8ffafb185bc1cabb6d9c
 /amd64/v2ray= 85be6f053e26af1a15a200007c0e4f8c
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -62,14 +62,14 @@
 /s/c9.pb= e1f906b1b1ef675cd4c67301a435dbbf
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= f1f75cbee6f6fc79fa5e68565b6d1608
-/t/Country.mmdb.ver= 7c7f8fa20a273ac7d1ea5f042419be9e
+/t/Country.mmdb.tgz= 60aeff344ed49d1ee6eff7f745800ebf
+/t/Country.mmdb.ver= 7db2cd47fb9e88922788edcd5f936b09
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= fecdffede4aad3419ecc676c9048743f
-/t/clash-dashboard-gh-pages.zip= 0f4791854b7b532c0f3f0efd1d7d6301
+/t/clash-dashboard-gh-pages.tgz= 502d4d50d7ac36f070a07c5ba782a1ca
+/t/clash-dashboard-gh-pages.zip= e2e59e6b878ced69d7a45be6e8916f45
 /t/clash.ver= 016d3578c26e7cbf7e6c039fbfd07103
 /t/clash= 5aa158363a5ad031951b45f29177f486
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
@@ -82,6 +82,6 @@
 /t/v2ctl= ca6ce56b5c555d9a18279b1d097366c0
 /t/v2ray.ver= 065aa4a970db4784eddf50e78301976c
 /t/v2ray= bdcd0338c6b8fe131415a179e8fc3002
-/t/yacd-gh-pages.tgz= 402b8dcacd15b17189369c7e1c364d2c
-/t/yacd-gh-pages.zip= acf91b5593e2e64251b6f736a3bb26e0
+/t/yacd-gh-pages.tgz= c6d1e6a5bc5019f5f215c2d40d113317
+/t/yacd-gh-pages.zip= 0fe7b2fedc4b04da4fa78bffb1b9a22a
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
