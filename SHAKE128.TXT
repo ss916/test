@@ -1,5 +1,5 @@
-# //【2020-11-06 23:33:28】
-/SHA1.TXT= c2626b05834c870efa1e33a2503431c8
+# //【2020-11-10 00:02:22】
+/SHA1.TXT= b677485a2dd5dad23c31c5529fab76b5
 /amd64/v2ctl= 490258dd01bf0f230854b1dd575db2c2
 /amd64/v2ray= cb90ab2dc24340cacd353a7dec148ffe
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -32,13 +32,13 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 63e98e8c5878c92e314e04f0171ffb18
+/payload/cn_web.txt= ac4c1bfc48e1e7b1b7b11ee0c891eb8d
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 1aed5591443447faf3698b344840704b
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
 /payload/global_video_other.txt= 1ffdd7d37fe449c163610d5a0aac3101
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= d1445634b0b4e42f4b226816910ce60c
+/payload/global_web.txt= 22b19598f55409969bb47e80b40c6e24
 /payload/global_web_amazon.txt= fb66163b734105ec06f76b36ed29bac1
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= 016cc467e132e25eccfa15ab57a73192
@@ -46,7 +46,7 @@
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
 /payload/global_web_mega.txt= 0be1448db8c164f16d562c34510bb7a0
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
-/payload/global_web_other.txt= 0d02d5c21b3c1636da84eb54268e755a
+/payload/global_web_other.txt= 5ded2feabb9fa20b2f2eeddc1f477aa8
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
@@ -62,8 +62,8 @@
 /s/c9.pb= e1f906b1b1ef675cd4c67301a435dbbf
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= b762d5839809cfe218cafc69f91bfb4b
-/t/Country.mmdb.ver= baca84e2f798e0b551927f52cfbccf12
+/t/Country.mmdb.tgz= d9a8878c7161e24bdedce21bea9aa5ae
+/t/Country.mmdb.ver= 94f1c0b7c71901c78848e31adc386a9f
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -82,6 +82,6 @@
 /t/v2ctl= 82b6f415e7de24ebad76c0d695381426
 /t/v2ray.ver= b92ed870b0bccbf98d70cd8a654ce12d
 /t/v2ray= 155718c1121d221c74674b9a05a960df
-/t/yacd-gh-pages.tgz= 46b0e2a1e9ead0bd47d2833281e66729
-/t/yacd-gh-pages.zip= 6153aa953dba48866d2d7238e2b11baf
+/t/yacd-gh-pages.tgz= 80d521b13181a0ee597c5f2266361d70
+/t/yacd-gh-pages.zip= 429d97403f76bccdb07af9eda7d47fe6
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4

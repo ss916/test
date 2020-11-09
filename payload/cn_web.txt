@@ -2,6 +2,10 @@ payload:
 #🀄网站：cn_web.txt
 #AD white list
 - DOMAIN,cdn.tsyndicate.com
+#shenmezhidemai
+- DOMAIN-SUFFIX,smzdm.com
+- DOMAIN-SUFFIX,zdmimg.com
+- DOMAIN-SUFFIX,qiyukf.com
 #huawei
 - DOMAIN-SUFFIX,dbank.com
 - DOMAIN-SUFFIX,dbankcdn.com
@@ -63,6 +67,7 @@ payload:
 - DOMAIN-SUFFIX,kwaishop.com
 - DOMAIN-SUFFIX,kwaixiaodian.com
 - DOMAIN-SUFFIX,kwaizt.com
+- DOMAIN-SUFFIX,kwimgs.com
 - DOMAIN-SUFFIX,onethingpcs.com
 - DOMAIN-SUFFIX,p2cdn.com
 - DOMAIN-SUFFIX,viviv.com
@@ -189,6 +194,7 @@ payload:
 - DOMAIN-SUFFIX,127.net
 - DOMAIN-SUFFIX,163yun.com
 - DOMAIN-SUFFIX,lofter.com
+- DOMAIN-SUFFIX,netease.im
 - DOMAIN-SUFFIX,ydstatic.com
 # > Sina
 - DOMAIN-SUFFIX,sina.com
@@ -421,7 +427,6 @@ payload:
 - DOMAIN-SUFFIX,scomper.me
 - DOMAIN-SUFFIX,seafile.com
 - DOMAIN-SUFFIX,sm.ms
-- DOMAIN-SUFFIX,smzdm.com
 - DOMAIN-SUFFIX,snapdrop.net
 - DOMAIN-SUFFIX,snwx.com
 - DOMAIN-SUFFIX,sspai.com

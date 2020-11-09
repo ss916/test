@@ -1,5 +1,8 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#parler
+- DOMAIN-SUFFIX,licdn.com
+- DOMAIN-SUFFIX,parler.com
 #The Liberty Times
 - DOMAIN-SUFFIX,ltn.com.tw
 #spark

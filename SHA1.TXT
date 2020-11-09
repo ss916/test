@@ -1,5 +1,5 @@
-# //【2020-11-06 23:33:27】
-/SHAKE128.TXT= 0fe793245079e34e729537514cda61651cd28f81
+# //【2020-11-10 00:02:22】
+/SHAKE128.TXT= 2e397bb2a2b4f1ce03ce7d4cad99fc74b9fb7647
 /amd64/v2ctl= 43229991aaf27b1bd3512ab59c211c96189dd382
 /amd64/v2ray= 78b5819f2ce8e83e043162828db89b202c1c7ce7
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -32,13 +32,13 @@
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
-/payload/cn_web.txt= a3652e2372516859934fb49da0d32989a141e676
+/payload/cn_web.txt= 0002ae3044441c36453d7d055e9d6859b532ce0d
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
 /payload/global_video.txt= bfc4a03789f7ed0628c2b78c7aa2a08dfd349bd9
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
 /payload/global_video_other.txt= 73a64001c8f8509de3c661070b9c2f22d2f60e50
 /payload/global_video_youtube.txt= 5d50d29fd6298ed7de55e8b5160ad29683d2ac0a
-/payload/global_web.txt= 70b344088641fd8464e81d4d9f296b5a2025d39a
+/payload/global_web.txt= 0db8ee3830a8f383d88a6165fff78b1a4068c6d3
 /payload/global_web_amazon.txt= d3739b2d31f70f13bed95155e705e01400e03e0f
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
 /payload/global_web_github.txt= 6bcc2babcb2b05b71ec862cf803adce390949074
@@ -46,7 +46,7 @@
 /payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
 /payload/global_web_mega.txt= 8fe2d91c611c3ec4ac1c3124e9ce4b89b816c460
 /payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153
-/payload/global_web_other.txt= 3b769430e19d65fca8675a5a943384b1ab439d56
+/payload/global_web_other.txt= 24aae5404b28b5785824166ca94007f42426fb5e
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /pf.sh= 06c8ef68ac762207e0c1480263e3b77d2d553b0c
@@ -62,8 +62,8 @@
 /s/c9.pb= 531071750a5fa7e5219d3c889147d8ef8ae41dac
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= 1554fffe07bc2dea862929df87fdb64dc4f3477e
-/t/Country.mmdb.ver= 17ea687f3e298564b1a311db28af8f65133fa2ed
+/t/Country.mmdb.tgz= b5f463df367458c9516fd14fed4e270863f0d77f
+/t/Country.mmdb.ver= a36b5b4b51a536ba87c5e8854d3bc4799381ae85
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -82,6 +82,6 @@
 /t/v2ctl= f275d079e94103c83ceee4402207973eb11ac3fa
 /t/v2ray.ver= 2ce7d5a992bf7371d4b31a7ced32d767c50b9344
 /t/v2ray= 26f5c3399f5c8c71837bfc44b96668d6ad7cfbd3
-/t/yacd-gh-pages.tgz= d2aa82a7fd1600450f724e62d17804ea5249ec11
-/t/yacd-gh-pages.zip= 1f6d8207d9b237b1ce894c6785753e543294dc8c
+/t/yacd-gh-pages.tgz= 9d0aaf02341a8fcd31daf4f3d733bdf37813497d
+/t/yacd-gh-pages.zip= 9cb22d6d5d0477f248613372c91e84890ed97e4f
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
