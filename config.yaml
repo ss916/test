@@ -1,4 +1,4 @@
-# //【2020-11-15 17:11:54】
+# //【2020-11-17 01:03:03】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -9,6 +9,7 @@ port: 8003
 socks-port: 8004
 mixed-port: 8005
 redir-port: 8002
+#tproxy-port: 8001
 allow-lan: true
 bind-address: "*"
 log-level: info
@@ -234,6 +235,19 @@ proxy-groups:
     #- 文件1
     #- 文件2
 
+#直连=gfwlist，代理=chinalist，默认直连gfwlist
+- name: ❓其他流量
+  type: select
+  proxies:
+    - 直连 #markgfwlistorchinalist1
+    - 代理 #markgfwlistorchinalist2
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
 - name: 故障切换
   type: fallback
   use:
@@ -258,19 +272,6 @@ proxy-groups:
     #- 订阅2
     ##- 文件1
     ##- 文件2
-
-#直连=gfwlist，代理=chinalist，默认直连gfwlist
-- name: ❓其他流量
-  type: select
-  proxies:
-    - 直连 #markgfwlistorchinalist1
-    - 代理 #markgfwlistorchinalist2
-    - 屏蔽
-  use:
-    - 订阅1
-    - 订阅2
-    #- 文件1
-    #- 文件2
 
 
 - name: 📺YouTube
@@ -521,6 +522,10 @@ rules:
 - RULE-SET,block_hijack,❌劫持 #markadblock
 - RULE-SET,block_malicious,❌恶意网站 #markadblock
 
+- RULE-SET,global_video_youtube,📺YouTube
+- RULE-SET,global_video_netflix,📺Netflix
+- RULE-SET,global_video_other,📺全球影音
+
 - RULE-SET,global_web_google,🆓谷歌
 - RULE-SET,global_web_telegram,🆓电报
 
@@ -529,10 +534,6 @@ rules:
 - RULE-SET,cn_web,🀄网站
 
 - RULE-SET,global_apple,🍏苹果
-
-- RULE-SET,global_video_youtube,📺YouTube
-- RULE-SET,global_video_netflix,📺Netflix
-- RULE-SET,global_video_other,📺全球影音
 
 - RULE-SET,global_web,🆓国外网站
 

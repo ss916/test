@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=18
+sh_ver=20
 
 #程序名字
 name=clash
@@ -575,8 +575,9 @@ else
 fi
 }
 
+
 iptables_tcp () {
-#TCP
+#redir TCP
 iptables -t nat -N clash >/dev/null 2>&1
 iptables -t nat -F clash
 iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
@@ -591,7 +592,7 @@ iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
 iptables -t nat -I PREROUTING -p tcp -j clash
 }
 iptables_udp () {
-##udp
+#tproxy udp
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
 iptables -t mangle -N clash >/dev/null 2>&1
@@ -608,6 +609,50 @@ iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-ma
 iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
 }
 
+iptables_tproxy () {
+#tproxy tcp+udp
+ip rule add fwmark 1 table 100
+ip route add local default dev lo table 100
+iptables -t mangle -N clash >/dev/null 2>&1
+iptables -t mangle -F clash
+iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
+iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
+iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
+iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
+iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
+iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t mangle -I clash -m mark --mark 0xff -j RETURN
+iptables -t mangle -A clash -p tcp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
+iptables -t mangle -A clash -p udp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
+iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
+iptables -t mangle -A PREROUTING -p tcp -j clash
+}
+iptables_tproxy_output () {
+#tproxy代理自身clash_mark
+iptables -t mangle -N clash_mark >/dev/null 2>&1
+iptables -t mangle -F clash_mark
+iptables -t mangle -A clash_mark -d 224.0.0.0/4 -j RETURN 
+iptables -t mangle -A clash_mark -d 255.255.255.255/32 -j RETURN 
+iptables -t mangle -A clash_mark -d 192.168.0.0/16 -p tcp -j RETURN # 直连局域网
+iptables -t mangle -A clash_mark -d 192.168.0.0/16 -p udp ! --dport 53 -j RETURN # 直连局域网，53 端口除外（因为要使用 V2Ray 的 DNS）
+iptables -t mangle -I clash_mark -m mark --mark 0xff -j RETURN    # 直连 SO_MARK 为 0xff 的流量(0xff 是 16 进制数，数值上等同与上面V2Ray 配置的 255)，此规则目的是避免代理本机(网关)流量出现回环问题
+iptables -t mangle -A clash_mark -p udp -j MARK --set-mark 1   # 给 UDP 打标记,重路由
+iptables -t mangle -A clash_mark -p tcp -j MARK --set-mark 1   # 给 TCP 打标记，重路由
+iptables -t mangle -A OUTPUT -j clash_mark # 应用规则
+}
+
+iptables_dns () {
+#DNS流量
+iptables -t nat -N CLASHDNS >/dev/null 2>&1
+iptables -t nat -F CLASHDNS
+iptables -t nat -A CLASHDNS -p udp -j REDIRECT --to-ports "$dns_port"
+iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASHDNS
+#路由自身UDP53走代理
+iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
+}
+
 #透明代理
 ipt1 () {
 #检查是否缺少tproxy模块modprobe 
@@ -617,62 +662,77 @@ config=./config.yaml
 if [ -s $config ] ; then
 	#提取redir-port透明代理端口
 	redir_port=$(cat $config | awk '/redir-port:/{print $2}' | sed 's/"//g')
+	#提取tproxy-port透明代理端口
+	tproxy_port=$(cat $config | awk '/tproxy-port:/{print $2}' | sed 's/"//g')
 	#提取DNS监听端口
 	dns_port=$(cat $config | awk -F: '/listen:/{print $NF}')
 else
 	redir_port=8002
+	tproxy_port=8001
 	dns_port=5300
 fi
 ##########
 logger -t "【${name}】" "▶创建局域网透明代理" && echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"\\n
-iptables_tcp
-iptables_udp
-#DNS流量
-iptables -t nat -N CLASHDNS >/dev/null 2>&1
-iptables -t nat -F CLASHDNS
-iptables -t nat -A CLASHDNS -p udp -j REDIRECT --to-ports "$dns_port"
-iptables -t nat -I PREROUTING -p udp --dport 53 -j CLASHDNS
-#路由自身UDP53走代理
-iptables -t nat -A OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
-#fake-dns
+##redir tcp + tproxy udp
+#iptables_tcp
+#iptables_udp
+##tproxy tcp+udp
+iptables_tproxy
+##redir dns
+iptables_dns
+##fake-dns
 if [ "$dns" = "2" ] ; then
 logger -t "【${name}】" "▶透明代理DNS模式：fake-dns" && echo -e \\n"\e[1;36m▶透明代理DNS模式：fake-dns\e[0m"\\n
 iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --to-port "$redir_port"
-#iptables -t mangle -A OUTPUT -p udp -d 198.18.0.0/16 -j MARK --set-mark 1
 fi
 if [ "$mode" = "2" ] ; then
 logger -t "【${name}】" "▶创建路由自身走透明代理" && echo -e \\n"\e[1;36m▶创建路由自身走透明代理\e[0m"\\n
 iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
+#iptables_tproxy_output
 fi
 #绕过局域网
 bypasslan
 }
 
-ipt0 () {
-logger -t "【${name}】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
-iptables -t nat -F clash >/dev/null 2>&1
+ipt0_redir () {
 [ ! -z "$(iptables -t nat -nL PREROUTING | grep clash)" ] && iptables -t nat -D PREROUTING -p tcp -j clash
-iptables -t nat -F CLASHDNS >/dev/null 2>&1
-[ ! -z "$(iptables -t nat -nL PREROUTING | grep CLASHDNS)" ] && iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASHDNS
 ip rule del fwmark 1 table 100 >/dev/null 2>&1
 ip route del local default dev lo table 100 >/dev/null 2>&1
-iptables -t mangle -F clash >/dev/null 2>&1
 [ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash)" ] && iptables -t mangle -D PREROUTING -p udp ! --dport 53 -j clash
 [ ! -z "$(iptables -t nat -nL OUTPUT | grep clash)" ] && iptables -t nat -D OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
+}
+ipt0_tproxy () {
+ip rule del fwmark 1 table 100 >/dev/null 2>&1
+ip route del local default dev lo table 100 >/dev/null 2>&1
+[ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep udp)" ] && iptables -t mangle -D PREROUTING -p udp ! --dport 53 -j clash
+[ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp)" ] && iptables -t mangle -D PREROUTING -p tcp -j clash
+[ ! -z "$(iptables -t mangle -nL OUTPUT | grep clash_mark)" ] && iptables -t mangle -D OUTPUT -j clash_mark
+}
+ipt0_dns () {
+[ ! -z "$(iptables -t nat -nL PREROUTING | grep CLASHDNS)" ] && iptables -t nat -D PREROUTING -p udp --dport 53 -j CLASHDNS
 [ ! -z "$(iptables -t nat -nL OUTPUT | grep CLASHDNS)" ] && iptables -t nat -D OUTPUT -m owner ! --uid-owner "$user_id" -p udp --dport 53 -j CLASHDNS
-[ ! -z "$(iptables -t nat -nL OUTPUT | grep 8002)" ] && iptables -t nat -D OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --to-port 8002
-#iptables -t mangle -D OUTPUT -p udp -d 198.18.0.0/16 -s 127.0.0.1/32 -j MARK --set-mark 1
+}
+
+ipt0 () {
+logger -t "【${name}】" "▷删除透明代理iptables规则" && echo -e \\n"\e[1;36m▷删除透明代理iptables规则\e[0m"\\n
+#ipt0_redir
+ipt0_tproxy
+ipt0_dns
 }
 stop_iptables () {
 ipt0
 }
 
 start_iptables () {
-pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
-pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
-pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
+#tproxy tcp+udp
+pre1=$(iptables -t mangle -nL PREROUTING | grep clash | grep udp | wc -l)
+pre2=$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp | wc -l)
+#redir dns
+pre3=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
+#output dns
 out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
-out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
+#output clash_mark
+out2=$(iptables -t nat -nL OUTPUT | grep clash_mark | wc -l)
 if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
 	iptables_mode=1
 elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
@@ -770,11 +830,11 @@ while true ; do
 #检查进程与端口
 server=$(ps -w | grep -v grep |grep "${name} -d $dirtmp" |wc -l)
 port=$(netstat -anp | grep ${name})
-pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
-pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
-pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
+pre1=$(iptables -t mangle -nL PREROUTING | grep clash | grep udp | wc -l)
+pre2=$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp | wc -l)
+pre3=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
 out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
-out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
+out2=$(iptables -t nat -nL OUTPUT | grep clash_mark | wc -l)
 if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
 	iptables_mode=1
 elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
@@ -1153,11 +1213,11 @@ if [ ! -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] ; then
 else
 	echo -e "○ \e[1;36m ${name} 开机自启：\e[1;31m【未启用】\e[0m"
 fi
-pre1=$(iptables -t nat -nL PREROUTING | grep clash | wc -l)
-pre2=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
-pre3=$(iptables -t mangle -nL PREROUTING | grep clash | wc -l)
+pre1=$(iptables -t mangle -nL PREROUTING | grep clash | grep udp | wc -l)
+pre2=$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp | wc -l)
+pre3=$(iptables -t nat -nL PREROUTING | grep CLASHDNS | wc -l)
 out1=$(iptables -t nat -nL OUTPUT | grep CLASHDNS | wc -l)
-out2=$(iptables -t nat -nL OUTPUT | grep clash | wc -l)
+out2=$(iptables -t nat -nL OUTPUT | grep clash_mark | wc -l)
 if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "0" ] ; then
 	iptables_mode=1
 elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
@@ -1278,8 +1338,8 @@ restart)
 	#
 	echo -e \\n"\e[1;33m脚本管理：\e[0m\e[37m『 \e[0m\e[1;37m$sh_ver\e[0m\e[37m 』\e[0m"\\n
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
-	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash✚iptables透明代理\e[0m"
-	echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚iptables透明代理✚自身走代理\e[0m"
+	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动clash✚tproxy透明代理\e[0m"
+	#echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚tproxy透明代理✚自身走代理\e[0m"
 	echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：仅启动clash\e[0m"
 	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash✚transocks 透明代理 \e[0m"
 	#echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"

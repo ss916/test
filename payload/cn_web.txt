@@ -2,6 +2,13 @@ payload:
 #🀄网站：cn_web.txt
 #AD white list
 - DOMAIN,cdn.tsyndicate.com
+#huashu
+- DOMAIN-SUFFIX,myalicdn.com
+- DOMAIN-SUFFIX,wasu.tv
+#- DOMAIN-SUFFIX,wasu.cn
+#kugou
+- DOMAIN-SUFFIX,kgimg.com
+- DOMAIN-SUFFIX,kugou.com
 #shenmezhidemai
 - DOMAIN-SUFFIX,smzdm.com
 - DOMAIN-SUFFIX,zdmimg.com
@@ -13,6 +20,7 @@ payload:
 - DOMAIN-SUFFIX,hicloud.com
 - DOMAIN-SUFFIX,huawei.com
 - DOMAIN-SUFFIX,vmall.com
+- DOMAIN-SUFFIX,zuimeitianqi.com
 #ntp
 - DOMAIN-SUFFIX,ntp.org
 #xunlei
@@ -40,6 +48,7 @@ payload:
 - DOMAIN-SUFFIX,pddpic.com
 - DOMAIN-SUFFIX,pddugc.com
 - DOMAIN-SUFFIX,pinduoduo.com
+- DOMAIN-SUFFIX,pinduoduo.net
 - DOMAIN-SUFFIX,yangkeduo.com
 #bubugao
 - DOMAIN-SUFFIX,coloros.com
@@ -47,6 +56,7 @@ payload:
 - DOMAIN-SUFFIX,heytapmobi.com
 - DOMAIN-SUFFIX,heytapimage.com
 - DOMAIN-SUFFIX,oppomobile.com
+- DOMAIN-SUFFIX,vivo.com
 #douyin
 - DOMAIN-SUFFIX,byteimg.com
 - DOMAIN-SUFFIX,douyin.com
