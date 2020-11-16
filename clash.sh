@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=20
+sh_ver=21
 
 #程序名字
 name=clash
@@ -379,10 +379,16 @@ fi
 #下载config.yaml
 down_config () {
 file=$config
-if [ -s $tmp/config.yaml ] ; then
-	cp -f $tmp/$file ./config.yaml
-	ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
-	logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$file，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件。\\n    $file\e[0m\e[1;32m$ver\e[0m"
+if [ -s $tmp/config.yaml -o -s $dirconf/config.yaml ] ; then
+	if [ -s $tmp/config.yaml ] ; then
+		cp -f $tmp/config.yaml ./config.yaml
+		ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$file，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件。\\n    $file\e[0m\e[1;32m$ver\e[0m"
+	elif [ -s $dirconf/config.yaml ] ; then
+		cp -f $dirconf/config.yaml ./config.yaml
+		ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶使用闪存配置文件$dirconf/config.yaml，版本$ver" && echo -e \\n"\e[36m▶使用本地配置文件$dirconf/config.yaml，版本$ver \e[0m"
+	fi
 else
 	#if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	downloadfile address=$file filename=$file filetgz=$file
@@ -1182,7 +1188,11 @@ if [ -s ./${name} ] ; then
 else
 	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在】\e[0m"
 fi
-if [ -s ./$config ] ; then
+if [ -s $tmp/$config ] ; then
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $tmp/$config | awk -F// '/【/{print $2}')\e[0m临时yaml"
+elif [ -s $dirconf/$config ] ; then
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $dirconf/$config | awk -F// '/【/{print $2}')\e[0m闪存yaml"
+elif [ -s ./$config ] ; then
 	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat ./config.yaml | awk -F// '/【/{print $2}')\e[0m"
 else
 	echo -e "☆ \e[1;36m ${name} 配置：\e[1;31m【不存在】\e[0m"

@@ -1,4 +1,4 @@
-# //【2020-11-17 01:03:03】
+# //【2020-11-17 01:33:04】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -9,7 +9,7 @@ port: 8003
 socks-port: 8004
 mixed-port: 8005
 redir-port: 8002
-#tproxy-port: 8001
+tproxy-port: 8001
 allow-lan: true
 bind-address: "*"
 log-level: info
