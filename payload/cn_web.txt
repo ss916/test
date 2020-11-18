@@ -2,6 +2,10 @@ payload:
 #🀄网站：cn_web.txt
 #AD white list
 - DOMAIN,cdn.tsyndicate.com
+#zuoyebang
+- DOMAIN-SUFFIX,zuoyebang.cc
+- DOMAIN-SUFFIX,zuoyebang.com
+- DOMAIN-SUFFIX,zybang.com
 #huashu
 - DOMAIN-SUFFIX,myalicdn.com
 - DOMAIN-SUFFIX,wasu.tv
@@ -55,6 +59,7 @@ payload:
 - DOMAIN-SUFFIX,heytapdownload.com
 - DOMAIN-SUFFIX,heytapmobi.com
 - DOMAIN-SUFFIX,heytapimage.com
+- DOMAIN-SUFFIX,ksmobile.com
 - DOMAIN-SUFFIX,oppomobile.com
 - DOMAIN-SUFFIX,vivo.com
 #douyin
@@ -242,6 +247,7 @@ payload:
 - DOMAIN-SUFFIX,tencentcs.com
 - DOMAIN-SUFFIX,tencent-cloud.com
 - DOMAIN-SUFFIX,tencent-cloud.net
+- DOMAIN-SUFFIX,weiyun.com
 # > YYeTs
 - DOMAIN-SUFFIX,jstucdn.com
 - DOMAIN-SUFFIX,zimuzu.io

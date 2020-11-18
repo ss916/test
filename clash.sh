@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=21
+sh_ver=22
 
 #程序名字
 name=clash
@@ -988,20 +988,21 @@ start_wan
 start_cron
 #keep进程守护
 start_keep
-#还原节点记录
-start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark &
 }
 #启动模式1：iptables透明代理
 start_1 () {
 [ "$mode" != "1" ] && mode=1 && sed -i 's/mode=.*/mode=1/g' $dirconf/settings.txt
 start_0
-start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
+start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
+#还原节点记录
+start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark &
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 [ "$mode" != "2" ] && mode=2 && sed -i 's/mode=.*/mode=2/g' $dirconf/settings.txt
 start_0
-start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
+start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables && sleep 10 && [ -f ./start_iptables_0 ] && start_iptables &
+start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark && sleep 10 && [ -f ./mark/start_remark_ok_0 ] && start_remark &
 }
 #启动模式3：不启用iptables透明代理
 start_3 () {
