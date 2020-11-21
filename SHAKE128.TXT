@@ -1,5 +1,5 @@
-# //【2020-11-22 03:59:57】
-/SHA1.TXT= d7e60a3c2c255763a0c07fbfa9c6db0f
+# //【2020-11-22 05:05:19】
+/SHA1.TXT= 6dc9aaf4049692fd294acf68cfb050e7
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 6df11686cb9e0c36267c550d4f42120b
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -12,7 +12,7 @@
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
 /arm64/v2ray= ccc1c1ae4f232530fd874e6197981dfa
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= 959590fbaa19dc22bd1ac8dda366e088
+/clash.sh= b8ddc093ab73d6370aaf5f7289b5e21c
 /config.yaml= 2dd859902a8fd4bddb57f42df2516872
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -72,20 +72,20 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 19bfe6fb2b6902d3316774fb4d92c15b
-/t/Country.mmdb.ver= aa3613b0bac48f98ee2ee330fd47560c
+/t/Country.mmdb.tgz= 3e8ce867088e2093f7669615589d0081
+/t/Country.mmdb.ver= 7362cbc8ec05b9a90fc53851a2d71cd9
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 7f670d165c9dc0636d2c184ddbdcde39
-/t/clash-dashboard-gh-pages.zip= 8cd36fbb278ad8202e7f8275912c71a9
+/t/clash-dashboard-gh-pages.tgz= 511192531eb76a6ebbb427fa640cf587
+/t/clash-dashboard-gh-pages.zip= cfe067524d9c61903b62e611c2c2f46c
 /t/clash.ver= 7e3b433d8caeb57378b3e160e65c095f
 /t/clash= 0bc167f32a26af41821b93bc552ba7e0
-/t/cnip.txt= 60b6f6bcaa4d6bb142303e10b9ab56ee
+/t/cnip.txt= de96cd6e2b710d0e95050d91bddde9fc
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= 465635f318ee4ae3bb51441fb102dd62
-/t/ipset.cnip.txt= b6fd213e3443757a18924a718dd93dc1
+/t/ipset.cnip.txt= 611c944839a52efc6500f7126b18b74e
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5

@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=24
+sh_ver=26
 
 #程序名字
 name=clash
@@ -1273,10 +1273,11 @@ upcnip () {
 #生成ipset cnip 
 filename="cnip.txt"
 address="http://ftp.apnic.net/stats/apnic/delegated-apnic-latest"
+echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 $curl -sL $address -o cnip_delegated-apnic-latest
-cat cnip_delegated-apnic-latest | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > $filename
+cat cnip_delegated-apnic-latest | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' | sort -n > $filename
 new=$(openssl sha1 ./$filename |awk '{print $2}')
-old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
+old=$(awk -F ' ' '/\/'$filename'/{print $2}' /tmp/SHA1.TXT)
 if [ ! -z "$old" -a ! -z "$new" ]; then
 	if [ "$new" = "$old" ]; then
 		echo -e \\n"    ● \e[1;36m ${filename} 文件对比一致，无需更新\e[1;32m✔ \e[0m"
@@ -1286,10 +1287,10 @@ if [ ! -z "$old" -a ! -z "$new" ]; then
 		#创建ipset表
 		ipset -N cnip hash:net
 		#添加cn IP到cnip表
-		for ip in $(cat './$filename') ; do ipset add cnip $ip ; done
+		for ip in $(cat $filename) ; do ipset add cnip $ip ; done
 		#保存ipset表cnip
 		ipset save cnip -f ipset.cnip.txt
-		echo -e \\n"    ○ \e[1;36m ${filename} \e[1;31m【需要更新】 \\n  \e[1;33m已生成文件ipset.cnip.txt \e[0m"
+		echo -e \\n"    ○ \e[1;36m ${filename} \e[1;31m【需要更新】 \\n  \e[1;33m已生成文件ipset.cnip.txt ，行数$(sed -n '$=' ipset.cnip.txt)\e[0m"
 	fi
 else
 	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本sha1为空。\e[0m"\\n
