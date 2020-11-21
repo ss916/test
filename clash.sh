@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=22
+sh_ver=24
 
 #程序名字
 name=clash
@@ -94,6 +94,9 @@ echo -e \\n"\e[1;36m↓↓ 請选择代理模式 ↓↓\e[0m"\\n
 echo -e "\e[36m1.gfwlist模式（默认）\\n2.大陆白名单模式\e[0m"
 read -n 1 -p "请输入：" chinalist
 #功能
+echo -e \\n"\e[1;36m↓↓ 請选择是否绕过大陆IP， 大陆IP将不进入clash↓↓\e[0m"\\n
+echo -e "\e[36m0.不启用bypasscnip\\n1.启用bypasscnip\e[0m（默认）"
+read -n 1 -p "请输入：" bypasscnip
 echo -e \\n"\e[1;36m↓↓ 請选择是否启用去广告功能 ↓↓\e[0m"\\n
 echo -e "\e[36m0.不启用adblock（默认）\\n1.启用adblock\e[0m"
 read -n 1 -p "请输入：" adblock
@@ -106,6 +109,7 @@ link2=$link2
 mode=$mode
 dns=$dns
 chinalist=$chinalist
+bypasscnip=$bypasscnip
 adblock=$adblock
 unlocknetease=$unlocknetease
 " > $dirconf/settings.txt
@@ -121,6 +125,8 @@ dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}' | head -n 1)
 #代理模式，1.gfwlist模式（默认），2.chinalist
 chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}' | head -n 1)
 [ -z "$chinalist" ] && chinalist=1 && echo "chinalist=1" >> $dirconf/settings.txt
+bypasscnip=$(cat $dirconf/settings.txt |awk -F 'bypasscnip=' '/bypasscnip=/{print $2}' | head -n 1)
+[ -z "$bypasscnip" ] && bypasscnip=1 && echo "bypasscnip=1" >> $dirconf/settings.txt
 #使用自定义配置模板，留空则使用 config=config.yaml （默认）
 config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}' | head -n 1)
 [ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
@@ -395,6 +401,13 @@ else
 	#fi
 fi
 }
+#download ipset.cnip.txt
+down_ipset_cnip () {
+file="ipset.cnip.txt"
+if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
+	downloadfile address=t/$file filename=$file filetgz=$file fileout=./
+fi
+}
 
 #transocks
 transocks_stop () {
@@ -554,18 +567,7 @@ else
 fi
 }
 
-bypasslan () {
-#局域网绕过
-if [ -s $dirconf/bypasslan.txt ] ; then
-	logger -t "【${name}】" "▶添加iptables绕过局域网IP.." && echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
-	IFS=$'\n'
-	for ip in $(cat $dirconf/bypasslan.txt)
-	do
-		iptables -t nat -I clash -s $ip/32 -j RETURN
-		iptables -t mangle -I clash -s $ip/32 -j RETURN
-	done 
-fi
-}
+
 bypass_lan_ip () {
 [ ! -f $dirconf/bypasslan.txt ] && > $dirconf/bypasslan.txt
 echo -e \\n"\e[1;37m...局域网绕过IP列表$dirconf/bypasslan.txt..\e[0m"
@@ -574,10 +576,101 @@ echo -e \\n"\e[1;37m.↓↓输入IP地址则添加IP，输入0将重置列表↓
 read -p "请输入：" lanip
 if [ "$lanip" = "0" ] ; then
 	> $dirconf/bypasslan.txt
-	echo -e \\n"\e[1;37m.已重置IP列表。\e[0m"
+	echo -e \\n"\e[1;37m.已重置IP列表bypasslan.txt。\e[0m"
 else
 	echo "$lanip" | grep -Eo '([0-9]+\.){3}[0-9]+' >> $dirconf/bypasslan.txt
 	sed -i '/^ *$/d' $dirconf/bypasslan.txt
+fi
+}
+onlyallow_lan_ip () {
+[ ! -f $dirconf/onlyallowlan.txt ] && > $dirconf/onlyallowlan.txt
+echo -e \\n"\e[1;37m...局域网只允许通过代理的IP列表$dirconf/onlyallowlan.txt..\e[0m"
+cat $dirconf/onlyallowlan.txt
+echo -e \\n"\e[1;37m.↓↓输入IP地址则添加IP，输入0将重置列表↓↓\e[0m"
+read -p "请输入：" lanip
+if [ "$lanip" = "0" ] ; then
+	> $dirconf/onlyallowlan.txt
+	echo -e \\n"\e[1;37m.已重置IP列表onlyallowlan.txt。\e[0m"
+else
+	echo "$lanip" | grep -Eo '([0-9]+\.){3}[0-9]+' >> $dirconf/onlyallowlan.txt
+	sed -i '/^ *$/d' $dirconf/onlyallowlan.txt
+fi
+}
+
+bypasslan () {
+#局域网绕过
+if [ -s $dirconf/bypasslan.txt ] ; then
+	logger -t "【${name}】" "▶添加iptables绕过局域网IP.." && echo -e \\n"\e[1;36m▶添加iptables绕过局域网IP...\e[0m"
+	[ ! -z "$(ipset list | grep bypass_lan_ip)" ] && ipset -X bypass_lan_ip
+	ipset -N bypass_lan_ip hash:net
+	IFS=$'\n'
+	for ip in $(cat $dirconf/bypasslan.txt)
+	do
+		ipset add bypass_lan_ip $ip/32
+	done
+	iptables -t mangle -I clash -m set --match-set bypass_lan_ip src -j RETURN
+fi
+}
+onlyallowlan () {
+#仅局域网IP通过
+if [ -s $dirconf/onlyallowlan.txt ] ; then
+	logger -t "【${name}】" "▶添加iptables只允许局域网IP通过代理.." && echo -e \\n"\e[1;36m▶添加iptables只允许局域网IP通过代理..\e[0m"
+	[ ! -z "$(ipset list | grep onlyallow_lan_ip)" ] && ipset -X onlyallow_lan_ip
+	ipset -N onlyallow_lan_ip hash:net
+	IFS=$'\n'
+	for ip in $(cat $dirconf/onlyallowlan.txt)
+	do
+		ipset add onlyallow_lan_ip $ip/32
+	done
+	iptables -t mangle -A PREROUTING -p udp ! --dport 53 -m set --match-set onlyallow_lan_ip src -j clash
+	iptables -t mangle -A PREROUTING -p tcp -m set --match-set onlyallow_lan_ip src -j clash
+fi
+}
+
+ipset_local_ipv4 () {
+ipset -N localipv4 hash:net family inet
+ipset add localipv4 0.0.0.0/8
+ipset add localipv4 0.0.0.0/8
+ipset add localipv4 10.0.0.0/8
+ipset add localipv4 100.64.0.0/10
+ipset add localipv4 127.0.0.0/8
+ipset add localipv4 169.254.0.0/16
+ipset add localipv4 172.16.0.0/12
+ipset add localipv4 192.0.0.0/24
+ipset add localipv4 192.0.2.0/24
+ipset add localipv4 192.88.99.0/24
+ipset add localipv4 192.168.0.0/16
+ipset add localipv4 198.18.0.0/15
+ipset add localipv4 198.51.100.0/24
+ipset add localipv4 203.0.113.0/24
+ipset add localipv4 224.0.0.0/4
+ipset add localipv4 240.0.0.0/4
+ipset add localipv4 255.255.255.255/32
+}
+ipset_local_ipv6 () {
+ipset -N localipv6 hash:net family inet6
+ipset add localipv6 ::/128
+ipset add localipv6 ::1/128
+ipset add localipv6 ::ffff:0:0/96
+ipset add localipv6 ::ffff:0:0:0/96
+ipset add localipv6 64:ff9b::/96
+ipset add localipv6 100::/64
+ipset add localipv6 2001::/32
+ipset add localipv6 2001:20::/28
+ipset add localipv6 2001:db8::/32
+ipset add localipv6 2002::/16
+ipset add localipv6 fc00::/7
+ipset add localipv6 fe80::/10
+ipset add localipv6 ff00::/8
+}
+ipset_cnip () {
+[ ! -s ./ipset.cnip.txt ] && down_ipset_cnip
+if [ -s ./ipset.cnip.txt ] ; then
+	ipset restore -f ipset.cnip.txt
+	ipset_cnip_ok=1
+else
+	logger -t "【${name}】" "✖ ipset.cnip.txt文件为空，无法创建cn IP ipset表。跳过。" && echo -e \\n"\e[1;31m✖ ✖ ipset.cnip.txt文件为空，无法创建cn IP ipset表。跳过。\e[0m"
+	ipset_cnip_ok=0
 fi
 }
 
@@ -586,14 +679,15 @@ iptables_tcp () {
 #redir TCP
 iptables -t nat -N clash >/dev/null 2>&1
 iptables -t nat -F clash
-iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t nat -A clash -m set --match-set localipv4 dst -j RETURN
+#iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
+#iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
+#iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
+#iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
+#iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
+#iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
+#iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
+#iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A clash -p tcp -j REDIRECT --to-port "$redir_port"
 iptables -t nat -I PREROUTING -p tcp -j clash
 }
@@ -603,14 +697,7 @@ ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
 iptables -t mangle -N clash >/dev/null 2>&1
 iptables -t mangle -F clash
-iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t mangle -A clash -m set --match-set localipv4 dst -j RETURN
 iptables -t mangle -A clash -p udp -j TPROXY --on-port "$redir_port" --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
 }
@@ -621,19 +708,17 @@ ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
 iptables -t mangle -N clash >/dev/null 2>&1
 iptables -t mangle -F clash
-iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
+iptables -t mangle -A clash -m set --match-set localipv4 dst -j RETURN
 iptables -t mangle -I clash -m mark --mark 0xff -j RETURN
 iptables -t mangle -A clash -p tcp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
 iptables -t mangle -A clash -p udp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
-iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
-iptables -t mangle -A PREROUTING -p tcp -j clash
+#判断是否仅允许代理的局域网IP
+if [ ! -s $dirconf/onlyallowlan.txt ] ; then
+	iptables -t mangle -A PREROUTING -p udp ! --dport 53 -j clash
+	iptables -t mangle -A PREROUTING -p tcp -j clash
+else
+	onlyallowlan
+fi
 }
 iptables_tproxy_output () {
 #tproxy代理自身clash_mark
@@ -679,6 +764,8 @@ else
 fi
 ##########
 logger -t "【${name}】" "▶创建局域网透明代理" && echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"\\n
+[ -z "$(ipset list | grep localipv4)" ] && ipset_local_ipv4
+[ -z "$(ipset list | grep localipv6)" ] && ipset_local_ipv6
 ##redir tcp + tproxy udp
 #iptables_tcp
 #iptables_udp
@@ -687,6 +774,19 @@ iptables_tproxy
 ##redir dns
 iptables_dns
 ##fake-dns
+#判断是否绕过cn IP
+if [ "$bypasscnip" = "1" ] ; then
+	#检查是否存在 ipset cnip表
+	if [ -z "$(ipset list | grep cnip)" ] ; then
+		ipset_cnip
+	else
+		ipset_cnip_ok=1
+	fi
+	if [ "$ipset_cnip_ok" = "1" ] ; then
+		logger -t "【${name}】" "▶绕过大陆IP ipset模式：大陆IP不走clash。" && echo -e \\n"\e[1;36m▶绕过大陆IP ipset模式：大陆IP不走clash。\e[0m"\\n
+		iptables -t mangle -I clash -m set --match-set cnip dst -j RETURN
+	fi
+fi
 if [ "$dns" = "2" ] ; then
 logger -t "【${name}】" "▶透明代理DNS模式：fake-dns" && echo -e \\n"\e[1;36m▶透明代理DNS模式：fake-dns\e[0m"\\n
 iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -s 127.0.0.1/32 -j REDIRECT --to-port "$redir_port"
@@ -696,7 +796,7 @@ logger -t "【${name}】" "▶创建路由自身走透明代理" && echo -e \\n"
 iptables -t nat -I OUTPUT -m owner ! --uid-owner "$user_id" -p tcp -j clash
 #iptables_tproxy_output
 fi
-#绕过局域网
+#判断是否绕过局域网ip
 bypasslan
 }
 
@@ -710,8 +810,14 @@ ip route del local default dev lo table 100 >/dev/null 2>&1
 ipt0_tproxy () {
 ip rule del fwmark 1 table 100 >/dev/null 2>&1
 ip route del local default dev lo table 100 >/dev/null 2>&1
-[ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep udp)" ] && iptables -t mangle -D PREROUTING -p udp ! --dport 53 -j clash
-[ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp)" ] && iptables -t mangle -D PREROUTING -p tcp -j clash
+if [ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep udp)" ] ; then
+	iptables -t mangle -D PREROUTING -p udp ! --dport 53 -j clash >/dev/null 2>&1
+	iptables -t mangle -D PREROUTING -p udp ! --dport 53 -m set --match-set allow_lan_ip src -j clash >/dev/null 2>&1
+fi
+if [ ! -z "$(iptables -t mangle -nL PREROUTING | grep clash | grep tcp)" ] ; then
+	iptables -t mangle -D PREROUTING -p tcp -j clash >/dev/null 2>&1
+	iptables -t mangle -D PREROUTING -p tcp -m set --match-set allow_lan_ip src -j clash >/dev/null 2>&1
+fi
 [ ! -z "$(iptables -t mangle -nL OUTPUT | grep clash_mark)" ] && iptables -t mangle -D OUTPUT -j clash_mark
 }
 ipt0_dns () {
@@ -1163,21 +1269,52 @@ else
 	fi
 fi
 }
+upcnip () {
+#生成ipset cnip 
+filename="cnip.txt"
+address="http://ftp.apnic.net/stats/apnic/delegated-apnic-latest"
+$curl -sL $address -o cnip_delegated-apnic-latest
+cat cnip_delegated-apnic-latest | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > $filename
+new=$(openssl sha1 ./$filename |awk '{print $2}')
+old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
+if [ ! -z "$old" -a ! -z "$new" ]; then
+	if [ "$new" = "$old" ]; then
+		echo -e \\n"    ● \e[1;36m ${filename} 文件对比一致，无需更新\e[1;32m✔ \e[0m"
+		rm -rf $filename cnip_delegated-apnic-latest
+	else
+		[ ! -z "$(ipset list | grep cnip)" ] && ipset -X cnip
+		#创建ipset表
+		ipset -N cnip hash:net
+		#添加cn IP到cnip表
+		for ip in $(cat './$filename') ; do ipset add cnip $ip ; done
+		#保存ipset表cnip
+		ipset save cnip -f ipset.cnip.txt
+		echo -e \\n"    ○ \e[1;36m ${filename} \e[1;31m【需要更新】 \\n  \e[1;33m已生成文件ipset.cnip.txt \e[0m"
+	fi
+else
+	[ -z "$old" ] && echo -e \\n"\e[1;31m   ✘ $filename旧版本sha1为空。\e[0m"\\n
+	[ -z "$new" ] && echo -e \\n"\e[1;31m   ✘ $filename新版本sha1为空。\e[0m"\\n
+fi
+}
+
 up () {
 [ ! -d ./update ] && mkdir -p ./update
 cd ./update
 echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
 echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
 echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
+echo -e "\e[1;32m【4】\e[0m\e[1;36m 更新ipset cnip\e[0m"
 echo -e "\e[1;32m【9】\e[0m\e[1;36m 检查更新以上\e[0m"\\n
 read -n 1 -p "请输入数字检查更新:" numx
 [ "$numx" = "1" ] && upweb &
 [ "$numx" = "2" ] && upgeoip &
 [ "$numx" = "3" ] && upclash &
+[ "$numx" = "4" ] && upcnip &
 if [ "$numx" = "9" ] ; then
 upweb
 upgeoip
 upclash 
+upcnip
 fi
 }
 
@@ -1262,9 +1399,9 @@ case $1 in
 #4)
 	#start_4 &
 	#;;
-#5)
-	#start_0 &
-	#;;
+5)
+	onlyallow_lan_ip
+	;;
 6)
 	bypass_lan_ip
 	;;
@@ -1340,6 +1477,9 @@ upgeoip)
 upclash)
 	upclash
 	;;
+upcnip)
+	upcnip
+	;;
 restart)
 	restart
 	;;
@@ -1353,8 +1493,8 @@ restart)
 	#echo -e "\e[1;32m【2】\e[0m\e[1;36m start_2：启动clash✚tproxy透明代理✚自身走代理\e[0m"
 	echo -e "\e[1;32m【3】\e[0m\e[1;36m start_3：仅启动clash\e[0m"
 	#echo -e "\e[1;32m【4】\e[0m\e[1;36m start_4：启动clash✚transocks 透明代理 \e[0m"
-	#echo -e "\e[1;32m【5】\e[0m\e[1;36m start_5：只重启clash\e[0m"
-	echo -e "\e[1;32m【6】\e[0m\e[1;36m bypass_lan_ip：局域网IP绕过列表\e[0m"
+	echo -e "\e[1;32m【5】\e[0m\e[1;36m onlyallow_lan_ip：仅允许通过代理的局域网IP列表\e[0m"
+	echo -e "\e[1;32m【6】\e[0m\e[1;36m bypass_lan_ip：局域网绕过代理IP列表\e[0m"
 	echo -e "\e[1;32m【7】\e[0m\e[1;36m settings：重置初始化配置\e[0m"
 	echo -e "\e[1;32m【8】\e[0m\e[1;36m renew：更新所有文件 \e[0m"
 	echo -e "\e[1;32m【9】\e[0m\e[1;36m remove：卸载 \e[0m"\\n
@@ -1369,8 +1509,8 @@ restart)
 		start_3 &
 	#elif [ "$num" = "4" ] ; then
 		#start_4 &
-	#elif [ "$num" = "5" ] ; then
-		#start_0 &
+	elif [ "$num" = "5" ] ; then
+		onlyallow_lan_ip
 	elif [ "$num" = "6" ] ; then
 		bypass_lan_ip
 	elif [ "$num" = "7" ] ; then
