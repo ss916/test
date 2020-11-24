@@ -1,5 +1,5 @@
-# //【2020-11-24 09:19:55】
-/SHA1.TXT= 86635da4c66f8c237e8e691cf0fc45e3
+# //【2020-11-25 00:10:24】
+/SHA1.TXT= 34f15edbd1066bb1aa214680700b35fd
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 6df11686cb9e0c36267c550d4f42120b
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -72,8 +72,8 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 3e8ce867088e2093f7669615589d0081
-/t/Country.mmdb.ver= 7362cbc8ec05b9a90fc53851a2d71cd9
+/t/Country.mmdb.tgz= 00cda717a9cb49bc01abb24bb149ef11
+/t/Country.mmdb.ver= c5c36f92d47ff4c27d4065408faa165c
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -94,6 +94,6 @@
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
 /t/v2ray.ver= b92ed870b0bccbf98d70cd8a654ce12d
 /t/v2ray= f9c1ef02a58205a764ce771db4d54735
-/t/yacd-gh-pages.tgz= 80d521b13181a0ee597c5f2266361d70
-/t/yacd-gh-pages.zip= 429d97403f76bccdb07af9eda7d47fe6
+/t/yacd-gh-pages.tgz= 4c5e6ecc504af82e5e760b1e1e9e8070
+/t/yacd-gh-pages.zip= d524dfe65ee6e9b7e88c225de642270f
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
