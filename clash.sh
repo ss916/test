@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=26
+sh_ver=27
 
 #程序名字
 name=clash
@@ -1141,17 +1141,22 @@ down_clash &
 down_geoip &
 down_web &
 down_config &
+down_ipset_cnip &
 wait
 echo -e \\n"\e[1;33m...更新完成...\e[0m"\\n
 exit
 }
 
 remove () {
-echo -e \\n"\e[1;33m卸载全部～\e[0m"\\n
+echo -e \\n"\e[1;33m⚠️\\n即将卸载全部，确认卸载请按1，按其他任意键则取消卸载。\e[0m"\\n
+read -n 1 -p "请输入:" num
+if [ "$num" = "1" ] ; then
 stop_1
 rm -rf $dirtmp
 rm -rf $diretc
 rm -rf $dirconf
+echo -e \\n" \e[1;32m✔clash卸载完成！\e[0m"
+fi
 }
 
 
@@ -1272,7 +1277,7 @@ fi
 upcnip () {
 #生成ipset cnip 
 filename="cnip.txt"
-address="http://ftp.apnic.net/stats/apnic/delegated-apnic-latest"
+address="https://ftp.apnic.net/stats/apnic/delegated-apnic-latest"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 $curl -sL $address -o cnip_delegated-apnic-latest
 cat cnip_delegated-apnic-latest | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' | sort -n > $filename
