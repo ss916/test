@@ -1,5 +1,5 @@
-# //【2020-11-25 21:35:04】
-/SHA1.TXT= bc9ae3dbab8b8bc30ee8ffcbe7ebc9bb
+# //【2020-11-27 20:23:18】
+/SHA1.TXT= 34e5e4b3509afcf4cc2d98c4f7a4bbc4
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 7accb8e2546c05b13af8fe67047acbb2
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -72,8 +72,8 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 11205b454d2f7ceae402c405d532f3ae
-/t/Country.mmdb.ver= a27fdad9915d5fe347a0fbe52dc6684f
+/t/Country.mmdb.tgz= 61140f3bca69435bdcf811cac5d1d270
+/t/Country.mmdb.ver= c735e77a5f81450cf998849b6327beaf
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -82,10 +82,10 @@
 /t/clash-dashboard-gh-pages.zip= cfe067524d9c61903b62e611c2c2f46c
 /t/clash.ver= 7e3b433d8caeb57378b3e160e65c095f
 /t/clash= 0bc167f32a26af41821b93bc552ba7e0
-/t/cnip.txt= 1a49f4c577b27a73e1fa3e7eae38e4dd
+/t/cnip.txt= eb1bc0796808d5500c0e35593bf4122b
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= 81598bd21150037a7e3785c628b79fb8
-/t/ipset.cnip.txt= de19dcf999119632ebe2db1e0b72a1c5
+/t/ipset.cnip.txt= 7926b21f4368a4b00c6ea0785bbfd57a
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
