@@ -1,5 +1,5 @@
-# //【2020-11-28 15:29:47】
-/SHA1.TXT= af443a957a420d010848724db04034ec
+# //【2020-11-28 15:38:49】
+/SHA1.TXT= 045f82f1ec1c2e5cc3b54230b0ca1321
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 7accb8e2546c05b13af8fe67047acbb2
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -85,7 +85,7 @@
 /t/cnip.txt= eb1bc0796808d5500c0e35593bf4122b
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= 81598bd21150037a7e3785c628b79fb8
-/t/ipset.cnip.txt= 72a1136999b9d0313e460b7eb284bb2c
+/t/ipset.cnip.txt= 7b03f7ab6f044592f934841e504b93a9
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5

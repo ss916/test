@@ -1295,6 +1295,7 @@ if [ ! -z "$old" -a ! -z "$new" ]; then
 		for ip in $(cat $filename) ; do ipset add cnip $ip ; done
 		#保存ipset表cnip
 		ipset save cnip -f ipset.cnip.txt
+		sort -nr ipset.cnip.txt -o ipset.cnip.txt
 		echo -e \\n"    ○ \e[1;36m ${filename} \e[1;31m【需要更新】 \\n  \e[1;33m已生成文件ipset.cnip.txt ，行数$(sed -n '$=' ipset.cnip.txt)\e[0m"
 	fi
 else
