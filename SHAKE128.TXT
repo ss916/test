@@ -1,5 +1,5 @@
-# //【2020-11-28 15:38:49】
-/SHA1.TXT= 045f82f1ec1c2e5cc3b54230b0ca1321
+# //【2020-11-30 23:45:17】
+/SHA1.TXT= 6933bb920dc58c7e00c43a4094daaf39
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 7accb8e2546c05b13af8fe67047acbb2
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -12,7 +12,7 @@
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
 /arm64/v2ray= 80646ebc6daa968ea164dc8ac4352c33
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= d70496c41e97e4c30a66c1a4c5a58241
+/clash.sh= 8fa4ec90174b7dcde3a95d383946493b
 /config.yaml= 2dd859902a8fd4bddb57f42df2516872
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -93,7 +93,7 @@
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
 /t/v2ray.ver= a57097ce529f067f63ade2995e3bddb5
-/t/v2ray= 42ea5f324ecd84ceafbedcb4c53557a3
+/t/v2ray= 2329d707d43447537ffeeff59a63224b
 /t/yacd-gh-pages.tgz= 4c5e6ecc504af82e5e760b1e1e9e8070
 /t/yacd-gh-pages.zip= d524dfe65ee6e9b7e88c225de642270f
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
