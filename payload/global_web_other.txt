@@ -1,5 +1,7 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#ontv
+- DOMAIN-SUFFIX,on.cc
 #parler
 - DOMAIN-SUFFIX,licdn.com
 - DOMAIN-SUFFIX,parler.com

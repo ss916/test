@@ -1,5 +1,5 @@
-# //【2020-11-30 23:45:16】
-/SHAKE128.TXT= ad67c4b0406e6c17b2e69ab82e4e80d6d9e4eb4e
+# //【2020-12-01 21:44:25】
+/SHAKE128.TXT= bb812edf4a84aa0b8198746d39778838d3ab1196
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 52c1ec2b197aef368cd1c06b31028a35c550fbbb
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -38,7 +38,7 @@
 /payload/global_video_netflix.txt= dd87b6aca2b42a36141878e2a76aa469d1bcb58e
 /payload/global_video_other.txt= 73a64001c8f8509de3c661070b9c2f22d2f60e50
 /payload/global_video_youtube.txt= 5d50d29fd6298ed7de55e8b5160ad29683d2ac0a
-/payload/global_web.txt= 0db8ee3830a8f383d88a6165fff78b1a4068c6d3
+/payload/global_web.txt= 29c06dfb61fb8953323075973fc763e938d3e58b
 /payload/global_web_amazon.txt= d3739b2d31f70f13bed95155e705e01400e03e0f
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
 /payload/global_web_github.txt= 6bcc2babcb2b05b71ec862cf803adce390949074
@@ -46,7 +46,7 @@
 /payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
 /payload/global_web_mega.txt= 8fe2d91c611c3ec4ac1c3124e9ce4b89b816c460
 /payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153
-/payload/global_web_other.txt= 24aae5404b28b5785824166ca94007f42426fb5e
+/payload/global_web_other.txt= 5e70f026565d1f82651ba21884ea1a0120e2d7cd
 /payload/global_web_telegram.txt= 67148a9f394cffecb1c4f4603ee9d12f6812526e
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
 /pf.sh= 06c8ef68ac762207e0c1480263e3b77d2d553b0c
@@ -72,8 +72,8 @@
 /s/c9.pb= cddb6ca9d87398c6f4977f8a20f5324a91013a71
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= cd058833857b97e5db463b2a7246f1ef890375c2
-/t/Country.mmdb.ver= 5db20870db0d663c2d22418ce308e49d476be00f
+/t/Country.mmdb.tgz= 3ab11dcb857e970b54e43fc22228be5a28d2add3
+/t/Country.mmdb.ver= b08d93e583edc16ab84bed6b93e8ba3a8df965fd
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -82,10 +82,10 @@
 /t/clash-dashboard-gh-pages.zip= 47d02a8ce0a55eb853c1cfa370b1a3c641485177
 /t/clash.ver= e6245fdbb1fa1f64594884efbd9047a2ba0c888a
 /t/clash= aa43d67b2531aaa46a12e3b1e3d7238fcc3f0670
-/t/cnip.txt= 853aff4c1d7c6434e736ee00bbeb7b3f219201b5
+/t/cnip.txt= 7ebcc0a40487830bdfe4335fbc45b27c5982f65e
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 3fe667919af693cf9d961747d7c19a5e45291e37
-/t/ipset.cnip.txt= ecb3ecf4be8d972a0f0a0a239ea8bf8500ed2785
+/t/ipset.cnip.txt= cf028c63c833baf6d520b3e4f399d09045f59ec8
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
