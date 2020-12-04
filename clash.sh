@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=27
+sh_ver=28
 
 #程序名字
 name=clash
@@ -1230,29 +1230,34 @@ fi
 }
 upclash () {
 filename="clash"
-os="linux-mipsle-softfloat"
-os2="linux-armv8"
+os1="linux-mipsle-softfloat"
+#os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
-clashp_url=$($curl -sL https://tmpclashpremiumbindary.cf | awk -F\" '/'$os'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
-clashp_url2=$($curl -sL https://tmpclashpremiumbindary.cf | awk -F\" '/'$os2'/{print $2}' | sed 's@^@https://tmpclashpremiumbindary.cf/@')
-clashp_ver=$(echo $clashp_url | awk -F '-' '{print $NF}' | sed 's/\.gz//')
-new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
+#tmpclash
+tmpclash_address="https://tmpclashpremiumbindary.cf"
+tmpclash_url1=$($curl -sL $tmpclash_address | awk -F\" '/'$os1'/{print $2}' | sed 's@^@$tmpclash_address/@')
+tmpclash_url2=$(echo $tmpclash_url1 | sed "s/$os1/$os2/")
+tmpclash_ver=$(echo $tmpclash_url1 | awk -F '-' '{print $NF}' | sed 's/\.gz//')
+#github
+github_address="https://github.com/Dreamacro/clash"
+github_url1=$($curl -sL $github_address/releases | awk -F\" '/releases.*premium.*'$os1'/{print "https://github.com" $2}' | head -n 1)
+#github_url2=$(echo $github_url1 | sed "s/$os1/$os2/")
+github_ver=$(echo $github_url1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed 's/.gz//')
+#new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
-address="https://github.com/Dreamacro/clash/releases/download/v$new/clash-$os-v$new.gz"
-if [ "$clashp_ver" = "$old" ]; then
-	echo -e \\n"  ✔ $filename 版本一致，无需更新！\\n  github版本：\e[1;37m【$new】\e[0m \\n  clashp版本：\e[1;32m【$clashp_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
+if [ "$github_ver" = "$old" ]; then
+	echo -e \\n"  ✔ $filename 版本一致，无需更新！\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  tmpclash版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
 else
-	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$new】\e[0m \\n  clashp版本：\e[1;32m【$clashp_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
+	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  clashp版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
-	$curl -# -L $clashp_url2 -O &
-	$curl -# -L $clashp_url -O
+	#$curl -# -LO $github_url2 &
+	$curl -# -LO $github_url1
 	echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
-	gzip -kfd *$os2*gz &
-	gzip -kfd *$os*gz
+	#gzip -kfd *$os2*gz &
+	gzip -kfd *$os1*gz
 	chmod +x -R ./
 	echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
-	#ver=$(./clash-$os-v$new -v | awk '/Clash/{print $2}'|sed 's/v//')
-	ver=$(./*$os*$clashp_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
+	ver=$(./*$os1*$github_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
 	if [ ! -z "$ver" ] ; then
 		if [ "$ver" = "$old" ]; then
 			echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
@@ -1261,11 +1266,20 @@ else
 			echo "$ver" > ./$filename.ver
 			echo -e "\e[32m  >> $filename文件校验通过，版本不一致～\e[0m"
 			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
+			echo "$ver" >  ./clash.ver
+			echo -e " \e[1;33m>>upx压缩$filename...\e[0m"
+			if [ -z "`upx -V`" ] ; then
+				echo -e "  >> 检测到opt需要安装upx～"
+				[ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] && echo "走clash本地http代理更新opt upx" && export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
+				opkg update && opkg install upx
+			fi
+			[ -s ./$filename ] && rm ./$filename
+			upx --brute *$os1*$github_ver -o $filename && echo -e \\n"\e[32m   ✓ $filename upx压缩完成！！\e[0m"\\n &
 		fi
 	else
-		gzsize=$(ls -lh *$os*$clashp_ver.gz | awk -F ' ' '{print $5}')
-		size=$(ls -lh *$os*$clashp_ver | awk -F ' ' '{print $5}')
-		if [ ! -s ./*$os*$clashp_ver ] ; then
+		gzsize=$(ls -lh *$os1*$github_ver.gz | awk -F ' ' '{print $5}')
+		size=$(ls -lh *$os1*$github_ver | awk -F ' ' '{print $5}')
+		if [ ! -s ./*$os1*$github_ver ] ; then
 			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
 		else
 			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"

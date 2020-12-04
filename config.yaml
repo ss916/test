@@ -1,4 +1,4 @@
-# //【2020-11-17 01:36:47】
+# //【2020-12-04 13:47:22】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -57,7 +57,7 @@ hosts:
   '+.ad.*.ru': 127.0.0.1
   '+.ad.*.xyz': 127.0.0.1
   '+.ad.*.au': 127.0.0.1
-
+  '+.onion': 1.1.1.200
 
 dns:
   enable: true
@@ -156,6 +156,10 @@ dns:
       - '+.ytimg.com'
       - '+.googlevideo.com'
       - '+.youtube.com'
+      #medium
+      - '+.datadoghq.com'
+      - '+.medium.com'
+      - '+.medium.systems'
       #mega
       - '+.mega.co.nz'
       - '+.mega.nz'
@@ -407,6 +411,18 @@ proxy-groups:
     #- 文件1
     #- 文件2
 
+- name: 🌰Tor
+  type: select
+  proxies:
+    - 代理
+    - 直连
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
 - { name: "❌劫持", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌hosts", type: select, proxies: ["屏蔽", "直连"] } #markadblock
 - { name: "❌dnsmasq", type: select, proxies: ["屏蔽", "直连"] } #markadblock
@@ -536,6 +552,9 @@ rules:
 - RULE-SET,global_apple,🍏苹果
 
 - RULE-SET,global_web,🆓国外网站
+
+- IP-CIDR,1.1.1.200/32,🌰Tor,no-resolve
+- DOMAIN-SUFFIX,onion,🌰Tor
 
 #♻️局域网IP
 - IP-CIDR,192.168.0.0/16,♻️局域网IP
