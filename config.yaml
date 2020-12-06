@@ -1,4 +1,4 @@
-# //【2020-12-04 13:47:22】
+# //【2020-12-06 19:35:00】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -173,6 +173,8 @@ dns:
       - '+.w.org'
       #rfa
       - '+.rfa.org'
+      #tor
+      - '+.torproject.org'
       #twitter
       - '+.twitter.com'
       - '+.pscp.tv'

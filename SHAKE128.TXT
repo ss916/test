@@ -1,7 +1,7 @@
-# //【2020-12-04 13:50:45】
-/SHA1.TXT= 1bb0c842d5f7d9e32734a6f80606242f
+# //【2020-12-06 19:35:00】
+/SHA1.TXT= 6300ab9b4ff35d3274edbfc56175a53e
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
-/amd64/v2ray= c4da94084ab3da73eb5bad1c200ed0b5
+/amd64/v2ray= 72b73fe963af755aa06fea8f11fa0b2a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 8845aadade89fb1c5649050436a55630
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
@@ -10,10 +10,10 @@
 /arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
-/arm64/v2ray= 5baee9ba295f7274916d63c84c129de3
+/arm64/v2ray= 0947061656ae4f4d6f4c5b595f603268
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 69f5f031f9e694feb1cef0831d62d529
-/config.yaml= 5945ed5a407fa71455636ff846406feb
+/config.yaml= 009d4c3f6ebd165761b001c476a7115e
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -50,8 +50,8 @@
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.json= 536266cfc3e7ad07b1b5d5730a63575c
-/s/c1.pb= 80e8c96d48aa00f9c6e1836ac93ac85a
+/s/c1.json= 7d99b3323094ff37f4b9d56fb154df09
+/s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
 /s/c10.json= 0fb08319879c2564b393f43aa95c3e81
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
 /s/c2.json= 7f5a9727aa7caf9929c1dd6372279655
@@ -92,8 +92,8 @@
 /t/trojan-go.ver= 6a98478d220d88cf0cd0cc9fd4acafe8
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
-/t/v2ray.ver= c64e0e997dd9d6568d367363eefc42f2
-/t/v2ray= 4d208124dc82f58a82aed0f2a4558f87
+/t/v2ray.ver= 75c02d91153636201293c1cb8fb855f5
+/t/v2ray= 5b6b6ceaa247701bfee78a17a6bdcc13
 /t/yacd-gh-pages.tgz= 4c5e6ecc504af82e5e760b1e1e9e8070
 /t/yacd-gh-pages.zip= d524dfe65ee6e9b7e88c225de642270f
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
