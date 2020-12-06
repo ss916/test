@@ -1,5 +1,5 @@
-# //【2020-12-06 19:35:00】
-/SHA1.TXT= 6300ab9b4ff35d3274edbfc56175a53e
+# //【2020-12-06 23:15:41】
+/SHA1.TXT= 0456a819ff03ca8ffe0de0fb83253822
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 72b73fe963af755aa06fea8f11fa0b2a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -94,6 +94,6 @@
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
 /t/v2ray.ver= 75c02d91153636201293c1cb8fb855f5
 /t/v2ray= 5b6b6ceaa247701bfee78a17a6bdcc13
-/t/yacd-gh-pages.tgz= 4c5e6ecc504af82e5e760b1e1e9e8070
-/t/yacd-gh-pages.zip= d524dfe65ee6e9b7e88c225de642270f
+/t/yacd-gh-pages.tgz= 02902fc3393cee018a300cc7d840e1b5
+/t/yacd-gh-pages.zip= f1d0a66c38b18053f7a03cdf7145e1a9
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
