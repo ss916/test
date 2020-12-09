@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=28
+sh_ver=29
 
 #程序名字
 name=clash
@@ -1332,10 +1332,13 @@ read -n 1 -p "请输入数字检查更新:" numx
 [ "$numx" = "3" ] && upclash &
 [ "$numx" = "4" ] && upcnip &
 if [ "$numx" = "9" ] ; then
-upweb
-upgeoip
-upclash 
-upcnip
+echo -e \\n"\e[1;36m......▼开始检查更新所有▼......\e[0m "\\n
+upweb &
+upgeoip &
+upclash &
+upcnip &
+wait
+echo -e \\n"\e[1;32m......▲完成检查更新所有▲......\e[0m "\\n
 fi
 }
 
