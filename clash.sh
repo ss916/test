@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=29
+sh_ver=30
 
 #程序名字
 name=clash
@@ -1246,7 +1246,7 @@ github_ver=$(echo $github_url1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed
 #new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
 if [ "$github_ver" = "$old" ]; then
-	echo -e \\n"  ✔ $filename 版本一致，无需更新！\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  tmpclash版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
+	echo -e \\n"  \e[1;32m✔ $filename 版本一致，无需更新！\e[0m\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  tmpclash版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
 else
 	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  clashp版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
@@ -1317,21 +1317,7 @@ else
 	[ -z "$new" ] && echo -e \\n"\e[1;31m   ✘ $filename新版本sha1为空。\e[0m"\\n
 fi
 }
-
-up () {
-[ ! -d ./update ] && mkdir -p ./update
-cd ./update
-echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
-echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
-echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
-echo -e "\e[1;32m【4】\e[0m\e[1;36m 更新ipset cnip\e[0m"
-echo -e "\e[1;32m【9】\e[0m\e[1;36m 检查更新以上\e[0m"\\n
-read -n 1 -p "请输入数字检查更新:" numx
-[ "$numx" = "1" ] && upweb &
-[ "$numx" = "2" ] && upgeoip &
-[ "$numx" = "3" ] && upclash &
-[ "$numx" = "4" ] && upcnip &
-if [ "$numx" = "9" ] ; then
+up_all () {
 echo -e \\n"\e[1;36m......▼开始检查更新所有▼......\e[0m "\\n
 upweb &
 upgeoip &
@@ -1339,7 +1325,21 @@ upclash &
 upcnip &
 wait
 echo -e \\n"\e[1;32m......▲完成检查更新所有▲......\e[0m "\\n
-fi
+}
+up () {
+[ ! -d ./update ] && mkdir -p ./update
+cd ./update
+echo -e \\n"\e[1;32m【1】\e[0m\e[1;36m 更新Web \e[0m"
+echo -e "\e[1;32m【2】\e[0m\e[1;36m 更新geoip\e[0m"
+echo -e "\e[1;32m【3】\e[0m\e[1;36m 更新clash\e[0m"
+echo -e "\e[1;32m【4】\e[0m\e[1;36m 更新ipset cnip\e[0m"
+echo -e "\e[1;33m【9】 检查更新所有\e[0m"\\n
+read -n 1 -p "请输入数字检查更新:" numx
+[ "$numx" = "1" ] && upweb &
+[ "$numx" = "2" ] && upgeoip &
+[ "$numx" = "3" ] && upclash &
+[ "$numx" = "4" ] && upcnip &
+[ "$numx" = "9" ] && up_all &
 }
 
 #状态

@@ -27,6 +27,9 @@ payload:
 - IP-CIDR,198.38.96.0/19
 - IP-CIDR,198.45.48.0/20
 #📺全球影音：global_video_other.txt
+#rumble
+- DOMAIN-SUFFIX,rumble.com
+- DOMAIN-SUFFIX,rmbl.ws
 # > Deezer
 - DOMAIN-SUFFIX,deezer.com
 - DOMAIN-SUFFIX,dzcdn.net
