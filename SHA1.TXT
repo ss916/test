@@ -1,5 +1,5 @@
-# //【2020-12-11 19:37:03】
-/SHAKE128.TXT= 9df4813624d929950549b95149ef7fba6b76e283
+# //【2020-12-13 00:52:43】
+/SHAKE128.TXT= 6f89df0b3e70f150a3d746760fb716014edb3499
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 8b91a3f7298003830bf52d7a47f0fb56efe3a091
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -78,14 +78,14 @@
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= f95de8205c204bbbe7a8f08a608f3c27faab5bb4
-/t/clash-dashboard-gh-pages.zip= c5d73d21a916521915cbc1a05831ddd0a56db20b
+/t/clash-dashboard-gh-pages.tgz= b28cff125bd0f348582ec76645a74afc7e59eca1
+/t/clash-dashboard-gh-pages.zip= 6247b4c944ce1ad35b0c76a9551e3c1056b9e39a
 /t/clash.ver= 1da47e4bedabab1be9dedff683fd213f71a91086
 /t/clash= aa43d67b2531aaa46a12e3b1e3d7238fcc3f0670
-/t/cnip.txt= 93cae1ee1172cec1245089d1d09bd7f35174ba21
+/t/cnip.txt= 28324fa36721e76eadff397b4cb858143cc24ba7
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 27c8498c1e4f5ff7fe40ab1d31d7c817e298625d
-/t/ipset.cnip.txt= 5809c9c2ca367e033401cb2111b01aa464e05cbc
+/t/ipset.cnip.txt= d57eaed67bdd61c1ca6a81f15ef4e66a3b2794a6
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
