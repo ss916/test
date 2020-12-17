@@ -1,5 +1,7 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#cnip
+- DOMAIN-SUFFIX,apnic.net
 #ontv
 - DOMAIN-SUFFIX,on.cc
 #parler

@@ -66,6 +66,7 @@ payload:
 - DOMAIN-SUFFIX,byteimg.com
 - DOMAIN-SUFFIX,douyin.com
 - DOMAIN-SUFFIX,douyincdn.com
+- DOMAIN-SUFFIX,douyinvod.com
 - DOMAIN-SUFFIX,ixigua.com
 #kuaishou
 - DOMAIN-SUFFIX,bcelive.com
