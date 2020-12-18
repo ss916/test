@@ -1,7 +1,7 @@
-# //【2020-12-17 22:17:47】
-/SHAKE128.TXT= 8bfebf4f77c632c93bcd7d569c95968a6eacd5db
+# //【2020-12-18 22:56:23】
+/SHAKE128.TXT= b06f155cb996f6f04d94728e2e271c970a82ec8a
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
-/amd64/v2ray= 8b91a3f7298003830bf52d7a47f0fb56efe3a091
+/amd64/v2ray= 66c7182ef1af44fddcfbf9bc8b02e665337f1a90
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/clash= 4c1985f12e8abdc985dc8cc556076543586ee59c
 /arm64/filebrowser= 1a7bac3418806a066c0259dcf7561ff048824a17
@@ -10,7 +10,7 @@
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
 /arm64/v2ctl= 8456bb07a54f63bd913277ae2807edf141510ee2
-/arm64/v2ray= ee1e3a05434ca7985b8f859963434a04fd8fe3dd
+/arm64/v2ray= 43d614ae2a231d8e81e92bb22b9f9b15fd07e33d
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
 /clash.sh= 6c578d09fdeb094747d86169806bfae11c19e677
 /config.yaml= 0ec8867655c6d09428603e0d4d75ece520e8ce0e
@@ -84,7 +84,7 @@
 /t/clash= aa43d67b2531aaa46a12e3b1e3d7238fcc3f0670
 /t/cnip.txt= 57fe5162a2f89c398e04a20c562fb31a4331ed09
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
-/t/geo.tgz= 27c8498c1e4f5ff7fe40ab1d31d7c817e298625d
+/t/geo.tgz= c2aec53f8a8392688729b50f76bd01819539829b
 /t/ipset.cnip.txt= 7efd2fb8d30073d7d67e4cca77ea7ce82f07fcfc
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
@@ -92,8 +92,8 @@
 /t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
 /t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
 /t/v2ctl= 2f6a1e68629fd11239bc03afa32a930e14f0281a
-/t/v2ray.ver= 057d96ec79c2f08b7dd0e7f01c4ee1990d91ed9d
-/t/v2ray= 2277ae94b427991eacca56e4a715493badb7c931
+/t/v2ray.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
+/t/v2ray= 4f5d5642cebc4822b5d18bd3942e04c31c9d888d
 /t/yacd-gh-pages.tgz= 4efa7d235da8e724c5fbdc57f9e1831dabd9b7e6
 /t/yacd-gh-pages.zip= 96d3c0de24575eacaebdc86616bbdbceb6f69261
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c

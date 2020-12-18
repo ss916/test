@@ -1,7 +1,7 @@
-# //【2020-12-17 22:17:47】
-/SHA1.TXT= 92a06ebf396084f38a0a6a4f59b9577d
+# //【2020-12-18 22:56:23】
+/SHA1.TXT= 66d9d8dbe2f0854aeaea23fb351e4e02
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
-/amd64/v2ray= b99f2fc38e439f2e45457136b77cc94c
+/amd64/v2ray= dc387f452ae8915f920b625c95968e6a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 8845aadade89fb1c5649050436a55630
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
@@ -10,7 +10,7 @@
 /arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
-/arm64/v2ray= 68cdb320ca6b42e53dbcb08cfae4d56f
+/arm64/v2ray= 476b99e70c1afa716854144048964035
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 93a8acde961bd4633a547005f22d5acb
 /config.yaml= 009d4c3f6ebd165761b001c476a7115e
@@ -84,7 +84,7 @@
 /t/clash= 0bc167f32a26af41821b93bc552ba7e0
 /t/cnip.txt= f2c5f009cbd3396ad79bd4499751e1d8
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
-/t/geo.tgz= aed5b93d58a07fce6065a2bd5c8ca15d
+/t/geo.tgz= a02a0abae9cc56f607f3a6cf5cc0fafc
 /t/ipset.cnip.txt= 9ec3104d7f22c6b4324f2f2d1382f9d1
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
@@ -92,8 +92,8 @@
 /t/trojan-go.ver= 6a98478d220d88cf0cd0cc9fd4acafe8
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
-/t/v2ray.ver= 99634c96a1d4be0b2b92c00c313759c6
-/t/v2ray= 365f42b387db7c3a3c9d2b474a5a189d
+/t/v2ray.ver= 0d10d4503b2972e89384d04dc71f6699
+/t/v2ray= 3efafe3ec8b1500d6bac74f28416f000
 /t/yacd-gh-pages.tgz= 02902fc3393cee018a300cc7d840e1b5
 /t/yacd-gh-pages.zip= f1d0a66c38b18053f7a03cdf7145e1a9
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
