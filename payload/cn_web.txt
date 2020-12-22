@@ -63,6 +63,7 @@ payload:
 - DOMAIN-SUFFIX,oppomobile.com
 - DOMAIN-SUFFIX,vivo.com
 #douyin
+- DOMAIN-SUFFIX,bdurl.net
 - DOMAIN-SUFFIX,byteimg.com
 - DOMAIN-SUFFIX,douyin.com
 - DOMAIN-SUFFIX,douyincdn.com

@@ -1,4 +1,4 @@
-# //【2020-12-06 19:35:00】
+# //【2020-12-23 00:12:44】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -163,6 +163,8 @@ dns:
       #mega
       - '+.mega.co.nz'
       - '+.mega.nz'
+      #letsencrypt
+      - '+.letsencrypt.org'
       #pincong
       - '+.pincong.rocks'
       #protonmail
