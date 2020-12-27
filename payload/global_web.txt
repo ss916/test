@@ -205,12 +205,6 @@ payload:
 - DOMAIN-SUFFIX,r66net.com
 - DOMAIN-SUFFIX,rfi.fr
 - DOMAIN-SUFFIX,videostep.com
-#protonmail
-- DOMAIN-SUFFIX,protonmail.ch
-- DOMAIN-SUFFIX,protonmail.com
-- DOMAIN-SUFFIX,protonstatus.com
-- DOMAIN-SUFFIX,recruitee.com
-- DOMAIN-SUFFIX,w.org
 #rfa
 - DOMAIN-SUFFIX,rfa.org
 #ptt
@@ -629,6 +623,12 @@ payload:
 - DOMAIN-SUFFIX,zello.com
 - DOMAIN-SUFFIX,zeronet.io
 - DOMAIN-SUFFIX,zoom.us
+#🆓protonmail ：global_web_protonmail.txt
+- DOMAIN-SUFFIX,protonmail.ch
+- DOMAIN-SUFFIX,protonmail.com
+- DOMAIN-SUFFIX,protonstatus.com
+- DOMAIN-SUFFIX,recruitee.com
+- DOMAIN-SUFFIX,w.org
 #🆓telegram ：global_web_telegram.txt
 - DOMAIN-SUFFIX,t.me
 - DOMAIN-SUFFIX,tdesktop.com

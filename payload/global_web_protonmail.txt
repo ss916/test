@@ -1,0 +1,7 @@
+payload:
+#🆓protonmail ：global_web_protonmail.txt
+- DOMAIN-SUFFIX,protonmail.ch
+- DOMAIN-SUFFIX,protonmail.com
+- DOMAIN-SUFFIX,protonstatus.com
+- DOMAIN-SUFFIX,recruitee.com
+- DOMAIN-SUFFIX,w.org

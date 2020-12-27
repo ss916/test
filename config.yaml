@@ -1,4 +1,4 @@
-# //【2020-12-23 00:12:44】
+# //【2020-12-27 20:08:39】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -497,6 +497,12 @@ rule-providers:
     path: ./rule/global_web_telegram.txt
     url: https://raw.fastgit.org/ss916/test/master/payload/global_web_telegram.txt
     interval: 30000
+  global_web_protonmail:
+    type: http
+    behavior: classical
+    path: ./rule/global_web_protonmail.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_web_protonmail.txt
+    interval: 30000
   global_web:
     type: http
     behavior: classical
@@ -548,6 +554,7 @@ rules:
 
 - RULE-SET,global_web_google,🆓谷歌
 - RULE-SET,global_web_telegram,🆓电报
+- RULE-SET,global_web_protonmail,🆓protonmail
 
 - RULE-SET,cn_music_netease,🎵网易云
 - RULE-SET,cn_video,🀄影音
