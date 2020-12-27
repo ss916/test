@@ -1,5 +1,5 @@
-# //【2020-12-27 20:08:40】
-/SHAKE128.TXT= 4caf5ed3f794f73543e4b1c0b62ebb7fdcdced8a
+# //【2020-12-27 20:15:28】
+/SHAKE128.TXT= ca32289d626eaa3e3b53a4acb60bb57b1fd16673
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 83382bfdeb9a7ee76b391fe659494a6cefcf138c
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -13,7 +13,7 @@
 /arm64/v2ray= 8f51f50f47897a7f097bcf32b68711b34156f452
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
 /clash.sh= 6c578d09fdeb094747d86169806bfae11c19e677
-/config.yaml= 1ffc2b9e13c14b807bc79171849b6dd5ae438f49
+/config.yaml= 19a209a89c259dc0a8392fcc55ccc19b80f0bcc7
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
