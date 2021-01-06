@@ -1,5 +1,5 @@
-# //【2021-01-03 20:24:31】
-/SHA1.TXT= 17b933ed5c2b29d463bbdbd24a489ef7
+# //【2021-01-06 20:31:43】
+/SHA1.TXT= 27190a1fdc6eec4d9b4c023f34dd4475
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 8b9ffc82c4f963e8fce63730413579d0
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -32,13 +32,13 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= ba17e6fce8bd3d319a61a325d61fcafa
+/payload/cn_web.txt= 2062be5b6a4a4431270824e802efb555
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= a894e0a47b84761c5ce544ed789452d3
 /payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
 /payload/global_video_other.txt= e3c3870d8727132edc28ab566b7f3e64
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= f4aa32678ee6858eee6f95b7c9360827
+/payload/global_web.txt= 5eac0b8ab1384f0834209721df4e8e5a
 /payload/global_web_amazon.txt= fb66163b734105ec06f76b36ed29bac1
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= 5f082f40364f4861e867990233a70fc3
@@ -46,7 +46,7 @@
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
 /payload/global_web_mega.txt= 0be1448db8c164f16d562c34510bb7a0
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
-/payload/global_web_other.txt= 133f2f53cee982d2a3a0beaf37b976b6
+/payload/global_web_other.txt= cf785fc1498991a4574a5839d80278db
 /payload/global_web_protonmail.txt= 23686e09868b4304c86b9f5042980c66
 /payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
@@ -61,7 +61,7 @@
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
 /s/c4.json= e217169335498ca4188ed3f83b0b94a9
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= fc6e817467218d18aba36de87593d395
+/s/c5.json= 2a170c4d1bb6018842ca30c77a0b1a21
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
 /s/c6.json= 7d1c49b0e748c51fb664bf3749447b6d
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
@@ -95,6 +95,6 @@
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
 /t/v2ray.ver= c7220ffbe1207e9f4c245ceb3ee00c02
 /t/v2ray= bffae20de26ab04d125683e587039206
-/t/yacd-gh-pages.tgz= 02902fc3393cee018a300cc7d840e1b5
-/t/yacd-gh-pages.zip= f1d0a66c38b18053f7a03cdf7145e1a9
+/t/yacd-gh-pages.tgz= 53f84645e872988145db7c8afbf98a6b
+/t/yacd-gh-pages.zip= dc715c519a1cb59f406a6b89d6563ecd
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4

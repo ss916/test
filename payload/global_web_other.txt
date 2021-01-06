@@ -1,5 +1,12 @@
 payload:
 #🆓国外网站 ：global_web_other.txt
+#discord
+- DOMAIN-SUFFIX,discord.com
+- DOMAIN-SUFFIX,discord.gg
+- DOMAIN-SUFFIX,discord.media
+- DOMAIN-SUFFIX,discordapp.com
+- DOMAIN-SUFFIX,discordapp.net
+- DOMAIN-SUFFIX,disquscdn.com
 #cnip
 - DOMAIN-SUFFIX,apnic.net
 #ontv
@@ -178,9 +185,6 @@ payload:
 - DOMAIN-SUFFIX,depositphotos.com
 - DOMAIN-SUFFIX,deviantart.com
 - DOMAIN-SUFFIX,disconnect.me
-- DOMAIN-SUFFIX,discord.gg
-- DOMAIN-SUFFIX,discordapp.com
-- DOMAIN-SUFFIX,discordapp.net
 - DOMAIN-SUFFIX,discuss.com.hk
 - DOMAIN-SUFFIX,dish.com
 - DOMAIN-SUFFIX,disqus.com

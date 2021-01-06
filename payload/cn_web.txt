@@ -166,6 +166,7 @@ payload:
 - DOMAIN-SUFFIX,hitv.com
 - DOMAIN-SUFFIX,mgtv.com
 # > iQiyi
+- DOMAIN-SUFFIX,iq.com
 - DOMAIN-SUFFIX,iqiyi.com
 - DOMAIN-SUFFIX,iqiyipic.com
 - DOMAIN-SUFFIX,qiyi.com
