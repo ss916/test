@@ -1,7 +1,7 @@
-# //【2021-01-15 00:59:33】
-/SHA1.TXT= 2b7c3909b3097f7623b33a7b2e5f60d4
+# //【2021-01-16 00:51:23】
+/SHA1.TXT= ac5d206b2e347f71d41ec5f392318f82
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
-/amd64/v2ray= feaad47ddeb238da59e173aa41c1a8ce
+/amd64/v2ray= ed1290427adaff6bfb473c91f46189e5
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= 1b6a913b743679e5e8dc0bdaa3535316
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
@@ -10,7 +10,7 @@
 /arm64/kcptuns= 8a8e0f30fa36db926808d519952207dc
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
-/arm64/v2ray= c71354448b3488b210e5d03241415e7e
+/arm64/v2ray= 8aadb0f515b2d8bcd519003f9a3761a6
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 93a8acde961bd4633a547005f22d5acb
 /config.yaml= 9cabf4e2e3f758e703b7007c14109b82
@@ -73,8 +73,8 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 7a2e0ff7b0e2059160aeb5f56965b9b1
-/t/Country.mmdb.ver= bfb004793eb522183d61060edf922012
+/t/Country.mmdb.tgz= fd0d91c00f6096216cff27c84df28412
+/t/Country.mmdb.ver= 726d2a895f9ce241f68d8c6dd5cb9668
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -85,7 +85,7 @@
 /t/clash= 1d62808e82e9f1611b7f87c6ee531387
 /t/cnip.txt= 550ccde089f797e56bcaddeb616afaa9
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
-/t/geo.tgz= 7b0c4bc4160b6682c8a45088f3f66ba8
+/t/geo.tgz= 60f37066e64e0792b2b6f094174365cf
 /t/ipset.cnip.txt= 518fdf9d4bb8d9bcfbc3090cbacf36e9
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
@@ -93,8 +93,8 @@
 /t/trojan-go.ver= 6a98478d220d88cf0cd0cc9fd4acafe8
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
-/t/v2ray.ver= d4c66090979ef923d440a41bac06a197
-/t/v2ray= db402c286dda54f7a6b5b60db6232182
+/t/v2ray.ver= 8f3f8574f3b8f0b70aa940f9b70d30e6
+/t/v2ray= b83f117dce361bd1ba59da226e61bc51
 /t/yacd-gh-pages.tgz= 53f84645e872988145db7c8afbf98a6b
 /t/yacd-gh-pages.zip= dc715c519a1cb59f406a6b89d6563ecd
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
