@@ -1,4 +1,4 @@
-# //【2020-12-27 20:15:27】
+# //【2021-01-16 11:59:57】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -15,9 +15,9 @@ bind-address: "*"
 log-level: info
 ipv6: true
 
-tun:
-  enable: true
-  stack: system
+#tun:
+  #enable: true
+  #stack: system
 
 #experimental:
   #interface-name: en0

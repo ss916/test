@@ -1,5 +1,5 @@
-# //【2021-01-16 00:51:23】
-/SHA1.TXT= ac5d206b2e347f71d41ec5f392318f82
+# //【2021-01-16 11:59:58】
+/SHA1.TXT= ffe5e8b147eacddc1ecdaf3386389be8
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= ed1290427adaff6bfb473c91f46189e5
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -13,7 +13,7 @@
 /arm64/v2ray= 8aadb0f515b2d8bcd519003f9a3761a6
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 93a8acde961bd4633a547005f22d5acb
-/config.yaml= 9cabf4e2e3f758e703b7007c14109b82
+/config.yaml= a8575380bcb52bda7aa02fba99a8a07f
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -34,21 +34,21 @@
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
 /payload/cn_web.txt= 2062be5b6a4a4431270824e802efb555
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
-/payload/global_video.txt= a894e0a47b84761c5ce544ed789452d3
-/payload/global_video_netflix.txt= 7bc345b5cb835e949f9fb01658d06ad1
+/payload/global_video.txt= 116734e92b6fc09aea701c9b2a645e46
+/payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
 /payload/global_video_other.txt= e3c3870d8727132edc28ab566b7f3e64
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= 5eac0b8ab1384f0834209721df4e8e5a
-/payload/global_web_amazon.txt= fb66163b734105ec06f76b36ed29bac1
+/payload/global_web.txt= 53d9bffa36cf5a737fb06f20b405c2ab
+/payload/global_web_amazon.txt= abe0af59d793f4bae41f555dffb91da7
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
-/payload/global_web_github.txt= 5f082f40364f4861e867990233a70fc3
-/payload/global_web_google.txt= 8cd0aa6272eac2deb6651dcb63175b3a
+/payload/global_web_github.txt= 81eebf14b9075a61fde558c627212cb0
+/payload/global_web_google.txt= 5e570e98b8bb9986312d59bdaf8401da
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
-/payload/global_web_mega.txt= 0be1448db8c164f16d562c34510bb7a0
+/payload/global_web_mega.txt= a53772e4f91b9660ac3a8406bbf4b00f
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
 /payload/global_web_other.txt= cf785fc1498991a4574a5839d80278db
-/payload/global_web_protonmail.txt= 23686e09868b4304c86b9f5042980c66
-/payload/global_web_telegram.txt= 6c6f332015e5707a2fe8662443e1bbbc
+/payload/global_web_protonmail.txt= 06eaa3b34895786a5d3a9dd1dda7adff
+/payload/global_web_telegram.txt= 7ba1c154cdbd8fa23fde38e4651244cf
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
 /s/c1.json= 348d6b242e1f63cf05c784e6067b451a

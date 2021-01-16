@@ -1,5 +1,6 @@
 payload:
 #📺Netflix ：global_video_netflix.txt
+#https://bgp.he.net/AS2906#_prefixes
 - DOMAIN-SUFFIX,netflix.com
 - DOMAIN-SUFFIX,netflix.net
 - DOMAIN-SUFFIX,nflxext.com
@@ -22,10 +23,18 @@ payload:
 - IP-CIDR,45.57.0.0/17
 - IP-CIDR,64.120.128.0/17
 - IP-CIDR,66.197.128.0/17
+- IP-CIDR,69.53.224.0/19
 - IP-CIDR,108.175.32.0/20
+- IP-CIDR,185.2.220.0/22
+- IP-CIDR,185.9.188.0/22
 - IP-CIDR,192.173.64.0/18
 - IP-CIDR,198.38.96.0/19
 - IP-CIDR,198.45.48.0/20
+- IP-CIDR,208.75.76.0/22
+- IP-CIDR,2607:fb10::/32
+- IP-CIDR,2620:10c:7000::/44
+- IP-CIDR,2a00:86c0::/32
+- IP-CIDR,2a03:5640::/32
 #📺全球影音：global_video_other.txt
 #rumble
 - DOMAIN-SUFFIX,rumble.com

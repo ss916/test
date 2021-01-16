@@ -1,5 +1,6 @@
 payload:
 #🆓github ：global_web_github.txt
+#https://api.github.com/meta
 - DOMAIN-SUFFIX,dependabot.com
 - DOMAIN-SUFFIX,git.io
 - DOMAIN-SUFFIX,gitbook.com
