@@ -23,6 +23,7 @@ payload:
 - DOMAIN-SUFFIX,dbankcloud.com
 - DOMAIN-SUFFIX,hicloud.com
 - DOMAIN-SUFFIX,huawei.com
+- DOMAIN-SUFFIX,myhuaweicloud.com
 - DOMAIN-SUFFIX,vmall.com
 - DOMAIN-SUFFIX,zuimeitianqi.com
 #ntp

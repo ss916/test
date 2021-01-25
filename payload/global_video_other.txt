@@ -1,5 +1,11 @@
 payload:
 #📺全球影音：global_video_other.txt
+#odysee
+- DOMAIN-SUFFIX,lbry.com
+- DOMAIN-SUFFIX,lbry.tv
+- DOMAIN-SUFFIX,lbryplayer.xyz
+- DOMAIN-SUFFIX,odysee.com
+- DOMAIN-SUFFIX,vanwanet.com
 #rumble
 - DOMAIN-SUFFIX,rumble.com
 - DOMAIN-SUFFIX,rmbl.ws

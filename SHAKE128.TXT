@@ -1,5 +1,5 @@
-# //【2021-01-22 23:59:21】
-/SHA1.TXT= d0a9e9d44d224d153751fa4c24b32e63
+# //【2021-01-25 19:53:17】
+/SHA1.TXT= c4b6e82b74c6cdc80819a2414d2a50d3
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= afb7a0556fff40d43f10f05b7c012846
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -32,11 +32,11 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 2062be5b6a4a4431270824e802efb555
+/payload/cn_web.txt= f235a8b75d3f91576f5612f80a2242a1
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
-/payload/global_video.txt= 116734e92b6fc09aea701c9b2a645e46
+/payload/global_video.txt= 33dbf76a2cea6ef9dd07cbcb147f2f68
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
-/payload/global_video_other.txt= e3c3870d8727132edc28ab566b7f3e64
+/payload/global_video_other.txt= 8451697b225751b334f2565e5e461048
 /payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
 /payload/global_web.txt= 53d9bffa36cf5a737fb06f20b405c2ab
 /payload/global_web_amazon.txt= abe0af59d793f4bae41f555dffb91da7
@@ -73,14 +73,14 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 3ffd6216f36514ff230b6bd2e2b9c26a
-/t/Country.mmdb.ver= 4f03e9eb1a515d22cd3f6d0cd2911695
+/t/Country.mmdb.tgz= c60ca49eff7f0cc05e9a9a56361c1938
+/t/Country.mmdb.ver= cbad690928d7452ecb91fa2484f46bbc
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 06f77e90ebcab20f8e5a47b7e83ee569
-/t/clash-dashboard-gh-pages.zip= 31eabf57d33c35f333178bb0918407d3
+/t/clash-dashboard-gh-pages.tgz= 4294fff1beec481ddb84220e790b6dee
+/t/clash-dashboard-gh-pages.zip= 8224254779c1bfa0eb69935c256076fb
 /t/clash.ver= b8534845243bee9be59db7ac1481648c
 /t/clash= 1d62808e82e9f1611b7f87c6ee531387
 /t/cnip.txt= becddfed2249be8865de6d1b89ac61bb
