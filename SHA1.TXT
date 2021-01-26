@@ -1,5 +1,5 @@
-# //【2021-01-25 19:53:16】
-/SHAKE128.TXT= 29166c4dd920d455cc3c8490eff3d8a37c2d0015
+# //【2021-01-27 01:00:56】
+/SHAKE128.TXT= 2d97c6129ebc278a7d93e06df27a922a7af1c709
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 2847fd308ab1471df9c60fb583d9e3f1221ea591
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -83,11 +83,11 @@
 /t/clash-dashboard-gh-pages.zip= 5d30402a79bb9e7b7a9c2a6daf5cae23f8a6fd3e
 /t/clash.ver= ee1279c235a542c32435215905268c90fa1f1f44
 /t/clash= 20824725f1f6f6f7145a85c5fd64df9624245248
-/t/cnip.txt= dcb490e70f9a3cbec64d8d54b08726c5152ee89b
-/t/cnip_delegated-apnic-latest= 03b8617c6b0c8b33fe555dff67a4b291ffaf0db6
+/t/cnip.txt= 470addfd8f989ec84c003051ce6714559e9125e8
+/t/cnip_delegated-apnic-latest= dee086772a1cb78e127ddd2894babf762a66dd24
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 7f81c034c1a5ad81cdd8302d9ca99abf2c1c2f25
-/t/ipset.cnip.txt= 70f28f83ab9c5623dcda1ec23894fc32f6f940a1
+/t/ipset.cnip.txt= 5cb70faa7e1195e463bbfb3133163d5bd158503d
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
