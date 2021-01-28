@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=32
+sh_ver=33
 
 #程序名字
 name=clash
@@ -826,7 +826,7 @@ ip6tables -t mangle -F OUTPUT
 ip6tables -t mangle -F PREROUTING
 iptables -t nat -F OUTPUT
 #iptables -t nat -F PREROUTING
-[ ! -z "$(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53")" ] && IFS=$'\n' && for m in $(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53" |awk '{print $1}') ; do iptables -t nat -D PREROUTING $m ;done
+[ ! -z "$(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53")" ] && IFS=$'\n' && for m in $(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53" | awk '{print $1}' | sed '1!G;h;$!d' ) ; do iptables -t nat -D PREROUTING $m ;done
 }
 stop_iptables () {
 ipt0
