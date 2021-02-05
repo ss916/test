@@ -1,4 +1,4 @@
-# //【2021-01-16 11:59:57】
+# //【2021-02-05 16:52:36】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -63,7 +63,7 @@ dns:
   enable: true
   listen: 0.0.0.0:5300
   use-hosts: true
-  #ipv6: true #markdns
+  ipv6: true
   enhanced-mode: redir-host #markdns
   #fake-ip-range: 198.18.0.1/16 #markfakeip
   #fake-ip-filter: #markfakeip
