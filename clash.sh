@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=33
+sh_ver=34
 
 #程序名字
 name=clash
@@ -1097,6 +1097,7 @@ stop_keep
 
 #启动模式0，只启动clash主程序
 start_0 () {
+echo -e \\n"$(timenow)"\\n
 #关闭所有
 stop_0
 #下载文件

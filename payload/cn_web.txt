@@ -268,10 +268,12 @@ payload:
 - DOMAIN-SUFFIX,staticdn.net
 - DOMAIN-SUFFIX,wangsu.com
 # > IP Query
+- DOMAIN-SUFFIX,chinaz.com
 - DOMAIN-SUFFIX,ipip.net
 - DOMAIN-SUFFIX,ip.la
 - DOMAIN-SUFFIX,ip-cdn.com
 - DOMAIN-SUFFIX,ipv6-test.com
+- DOMAIN-SUFFIX,myip.la
 - DOMAIN-SUFFIX,test-ipv6.com
 - DOMAIN-SUFFIX,whatismyip.com
 # > Speed Test

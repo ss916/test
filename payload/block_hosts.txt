@@ -2607,7 +2607,7 @@ payload:
 - DOMAIN,dpvc2.qqyy.com
 - DOMAIN,dpvcimg.qqyy.com
 - DOMAIN,dpvchos.qqyy.com
-- DOMAIN,stats.chinaz.com
+#@- DOMAIN,stats.chinaz.com
 - DOMAIN,zjj.xhdccz.com
 - DOMAIN,www.0551zgz.com
 - DOMAIN,asd.yhzbjz.com

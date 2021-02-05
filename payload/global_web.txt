@@ -88,6 +88,7 @@ payload:
 - DOMAIN-SUFFIX,itasoftware.com
 - DOMAIN-SUFFIX,madewithcode.com
 - DOMAIN-SUFFIX,material.io
+- DOMAIN-SUFFIX,measurement-lab.org
 - DOMAIN-SUFFIX,polymer-project.org
 - DOMAIN-SUFFIX,recaptcha.net
 - DOMAIN-SUFFIX,shattered.io
