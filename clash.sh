@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=34
+sh_ver=35
 
 #程序名字
 name=clash
@@ -183,7 +183,7 @@ file2=$dirconf/file2.txt
 if [ -f $file1 ] ; then
 	testfile1=$(cat $file1|grep "^proxies:$")
 	if [ ! -z "$testfile1" ] ; then
-		sed -i "s@#mark文件1@  文件1:\n    type: file\n    interval: 30000\n    path: $file1\n    health-check:\n      enable: true\n      interval: 300\n      url: http://clients2.google.com/generate_204@" ./config.yaml
+		sed -i "s@#mark文件1@  文件1:\n    type: file\n    interval: 30000\n    path: $file1\n    health-check:\n      enable: true\n      interval: 310\n      url: http://clients2.google.com/generate_204@" ./config.yaml
 		sed -i 's/#- 文件1/- 文件1/g' ./config.yaml
 	else
 		[ -z "$testfile1" ] && echo "✗ 本地訂閱文件$file1不合法，缺少字符串【proxies:】"
@@ -195,7 +195,7 @@ fi
 if [ -f $file2 ] ; then
 	testfile2=$(cat $file2|grep "^proxies:$")
 	if [ ! -z "$testfile2" ] ; then
-		sed -i "s@#mark文件2@  文件2:\n    type: file\n    interval: 30000\n    path: $file2\n    health-check:\n      enable: true\n      interval: 300\n      url: http://clients2.google.com/generate_204@" ./config.yaml
+		sed -i "s@#mark文件2@  文件2:\n    type: file\n    interval: 30000\n    path: $file2\n    health-check:\n      enable: true\n      interval: 315\n      url: http://clients2.google.com/generate_204@" ./config.yaml
 		sed -i 's/#- 文件2/- 文件2/g' ./config.yaml
 	else
 		[ -z "$testfile2" ] && echo "✗ 本地訂閱文件$file2不合法，缺少字符串【proxies:】"
@@ -208,7 +208,7 @@ fi
 if [ ! -z "$link2" ] ; then
 	testlink2=$(echo $link2 | grep ^http)
 	if [ ! -z "$testlink2" ] ; then
-		sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: $dirconf/订阅2.txt\n    health-check:\n      enable: true\n      interval: 300\n      url: http://clients1.google.com/generate_204@" ./config.yaml
+		sed -i "s@#mark订阅2@  订阅2:\n    type: http\n    url: $link2\n    interval: 30000\n    path: $dirconf/订阅2.txt\n    health-check:\n      enable: true\n      interval: 305\n      url: http://clients1.google.com/generate_204@" ./config.yaml
 	else
 		[ -z "$testlink2" ] && echo "✗ 订阅链接link2非http链接。"
 		sed -i '/订阅2/d' ./config.yaml

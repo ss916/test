@@ -1,5 +1,5 @@
-# //【2021-02-05 22:57:11】
-/SHA1.TXT= 72c0c6c94a7c0fbc06058914dc239dd0
+# //【2021-02-09 13:54:10】
+/SHA1.TXT= 5e43fd234a1dbb8d3aab85b106719355
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 265baf319d1e24ef5ef51cf0c4c0b705
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -12,7 +12,7 @@
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
 /arm64/v2ray= 7f4922236991ddd0e5824432a6e2c107
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= da4940e820a5959a0deee27c7c1bd83f
+/clash.sh= 44b8f017dfb394780d2a6a60b3e2fdd6
 /config.yaml= 72259c38000aca00e94a4fd34b381d60
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -73,14 +73,14 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= faf22793dd50fe67922b88908becc3e9
-/t/Country.mmdb.ver= 9cde6afdb474d89fb28e22d34effece0
+/t/Country.mmdb.tgz= cb69ad9c57000c4d12d93e10d28374fe
+/t/Country.mmdb.ver= b861b4b6491c24b66ca4f3b39e2c52f0
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 1bc87ff95f292c8aca6192b31a89e841
-/t/clash-dashboard-gh-pages.zip= d0f51d899a3d179f4351f7a744960cbb
+/t/clash-dashboard-gh-pages.tgz= 928642e4234c5d958e434cad3717c85d
+/t/clash-dashboard-gh-pages.zip= f94503fd50f329bfc609878d0dabce4f
 /t/clash.ver= b8534845243bee9be59db7ac1481648c
 /t/clash= 1d62808e82e9f1611b7f87c6ee531387
 /t/cnip.txt= a28a1b1336e99785cc76526a4128c75c

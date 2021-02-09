@@ -1,5 +1,5 @@
-# //【2021-02-05 22:57:10】
-/SHAKE128.TXT= 87330a040a48d1fea8fe57f9101ba0d0d77986cc
+# //【2021-02-09 13:54:09】
+/SHAKE128.TXT= 6cd654e580ad6bf8b90de50a2e0d4ae91a29425f
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 8c4fc9bbe8c3d8c235750a99ee7eb998c47a1257
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -12,7 +12,7 @@
 /arm64/v2ctl= 8456bb07a54f63bd913277ae2807edf141510ee2
 /arm64/v2ray= f3d187cf97649a06d4fd16af46e8822496d0f29d
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
-/clash.sh= 179f4a98a22ec33572629d7d8ac02ccaa9b561d1
+/clash.sh= dc90cef242786ab8b87451fc733776aa32fbc249
 /config.yaml= 437b75eaac720750c01a958287d562e1c0f55012
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
@@ -73,14 +73,14 @@
 /s/c9.pb= cddb6ca9d87398c6f4977f8a20f5324a91013a71
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= e7cb0a0041ece59905a17fbb7ce2a3f455ef010e
-/t/Country.mmdb.ver= 59b4bed31d6a27c38274bde4952a509d675c8c70
+/t/Country.mmdb.tgz= 21d65baa379a3110be76c6481f23be80f47a0a97
+/t/Country.mmdb.ver= 3dc12ff9d33952afb64524dd95b483961a0e6313
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= 32ffb921a5aaad44e8a32c9a50dda1a70e6dd6d5
-/t/clash-dashboard-gh-pages.zip= c622f56487dc1ff7eaaeb5e39434aed141d2f86a
+/t/clash-dashboard-gh-pages.tgz= a79e425613023fb8c22f46212c54aec37bee7020
+/t/clash-dashboard-gh-pages.zip= 5d2cd290a5ac92af1dfdbb97152daed0b7d4af40
 /t/clash.ver= ee1279c235a542c32435215905268c90fa1f1f44
 /t/clash= 20824725f1f6f6f7145a85c5fd64df9624245248
 /t/cnip.txt= ec6f508deab338fdb5bf1c62949008d7b24543aa
