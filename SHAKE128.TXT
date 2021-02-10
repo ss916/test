@@ -1,5 +1,5 @@
-# //【2021-02-09 13:54:10】
-/SHA1.TXT= 5e43fd234a1dbb8d3aab85b106719355
+# //【2021-02-10 19:46:16】
+/SHA1.TXT= 1f8a72bf9c0dc6f8b90334aeb1940694
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 265baf319d1e24ef5ef51cf0c4c0b705
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -13,7 +13,7 @@
 /arm64/v2ray= 7f4922236991ddd0e5824432a6e2c107
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 44b8f017dfb394780d2a6a60b3e2fdd6
-/config.yaml= 72259c38000aca00e94a4fd34b381d60
+/config.yaml= 5b1545b369cdbf64894c7bdb76a734f5
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -34,17 +34,17 @@
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
 /payload/cn_web.txt= 91421c709880dbd14c04198e5bfa1da9
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
-/payload/global_video.txt= 33dbf76a2cea6ef9dd07cbcb147f2f68
+/payload/global_video.txt= 88a794ba1beb8694c033ad2a2701cad9
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
 /payload/global_video_other.txt= 8451697b225751b334f2565e5e461048
-/payload/global_video_youtube.txt= 3d01e2077b55ddcbbfda6a64aae065df
-/payload/global_web.txt= 3b1266cf817560cd2d6a84e3d8a0c3bf
-/payload/global_web_amazon.txt= abe0af59d793f4bae41f555dffb91da7
+/payload/global_video_youtube.txt= 003dc58dc3ffeae620ccb031e3dd800a
+/payload/global_web.txt= 5366f48fb2287f41757aacd9749d3e83
+/payload/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= 81eebf14b9075a61fde558c627212cb0
 /payload/global_web_google.txt= 704a1cc7f0a287b12ae10618fe4a9807
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
-/payload/global_web_mega.txt= a53772e4f91b9660ac3a8406bbf4b00f
+/payload/global_web_mega.txt= 5763009ec1f138d17146c57c45c2b484
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
 /payload/global_web_other.txt= cf785fc1498991a4574a5839d80278db
 /payload/global_web_protonmail.txt= 06eaa3b34895786a5d3a9dd1dda7adff
@@ -73,8 +73,8 @@
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= cb69ad9c57000c4d12d93e10d28374fe
-/t/Country.mmdb.ver= b861b4b6491c24b66ca4f3b39e2c52f0
+/t/Country.mmdb.tgz= 7fe1f21544c1baa3fe9b8b31276a69dc
+/t/Country.mmdb.ver= 378847247bda5863f8b244e1838ad84d
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116

@@ -1,5 +1,5 @@
 payload:
-#🆓Line ：global_web_amazon.txt
+#🆓amazon ：global_web_amazon.txt
 #https://ip-ranges.amazonaws.com/ip-ranges.json
 - DOMAIN-KEYWORD,.amazon.
 - DOMAIN-KEYWORD,-amazon.

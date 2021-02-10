@@ -1,5 +1,5 @@
 payload:
-#🆓Line ：global_web_amazon.txt
+#🆓amazon ：global_web_amazon.txt
 #https://ip-ranges.amazonaws.com/ip-ranges.json
 - DOMAIN-KEYWORD,.amazon.
 - DOMAIN-KEYWORD,-amazon.
@@ -186,7 +186,7 @@ payload:
 - IP-CIDR,125.209.208.0/20
 - IP-CIDR,147.92.128.0/17
 - IP-CIDR,203.104.144.0/21
-#🆓Line ：global_web_mega.txt
+#🆓mega ：global_web_mega.txt
 #https://ipinfo.io/AS205809
 - DOMAIN-SUFFIX,mega.co.nz
 - DOMAIN-SUFFIX,mega.nz

@@ -1,4 +1,4 @@
-# //【2021-02-05 16:52:36】
+# //【2021-02-10 19:43:09】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -102,6 +102,53 @@ dns:
     ipcidr:
       - 240.0.0.0/4
     domain:
+      #COUNTRY
+      - '+.au'
+      - '+.be'
+      - '+.biz'
+      - '+.blog'
+      - '+.br'
+      - '+.ca'
+      - '+.cc'
+      - '+.cf'
+      - '+.ch'
+      - '+.co'
+      - '+.community'
+      - '+.de'
+      - '+.dev'
+      - '+.fi'
+      - '+.fm'
+      - '+.fr'
+      - '+.ga'
+      - '+.gg'
+      - '+.hk'
+      - '+.info'
+      - '+.io'
+      - '+.is'
+      - '+.it'
+      - '+.jp'
+      - '+.kg'
+      - '+.kr'
+      - '+.ly'
+      - '+.me'
+      - '+.media'
+      - '+.ml'
+      - '+.ms'
+      - '+.my'
+      - '+.nico'
+      - '+.no'
+      - '+.nu'
+      - '+.nz'
+      - '+.ph'
+      - '+.pl'
+      - '+.rocks'
+      - '+.ru'
+      - '+.tv'
+      - '+.tw'
+      - '+.uk'
+      - '+.us'
+      - '+.ws'
+      - '+.xyz'
       #akamaized
       #- '+.akamaized.net'
       #- '+.akamaihd.net'
@@ -163,6 +210,15 @@ dns:
       #mega
       - '+.mega.co.nz'
       - '+.mega.nz'
+      #netflix
+      - '+.fast.com'
+      - '+.netflix.com'
+      - '+.netflix.net'
+      - '+.nflxext.com'
+      - '+.nflximg.com'
+      - '+.nflximg.net'
+      - '+.nflxso.net'
+      - '+.nflxvideo.net'
       #letsencrypt
       - '+.letsencrypt.org'
       #pincong

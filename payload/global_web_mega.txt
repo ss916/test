@@ -1,5 +1,5 @@
 payload:
-#🆓Line ：global_web_mega.txt
+#🆓mega ：global_web_mega.txt
 #https://ipinfo.io/AS205809
 - DOMAIN-SUFFIX,mega.co.nz
 - DOMAIN-SUFFIX,mega.nz
