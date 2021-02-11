@@ -1,5 +1,5 @@
-# //【2021-02-10 19:46:16】
-/SHA1.TXT= 1f8a72bf9c0dc6f8b90334aeb1940694
+# //【2021-02-11 16:02:28】
+/SHA1.TXT= 37e04d088a2a837cdc5d5fd1770df331
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 265baf319d1e24ef5ef51cf0c4c0b705
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -12,8 +12,8 @@
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
 /arm64/v2ray= 7f4922236991ddd0e5824432a6e2c107
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= 44b8f017dfb394780d2a6a60b3e2fdd6
-/config.yaml= 5b1545b369cdbf64894c7bdb76a734f5
+/clash.sh= c0430d09e2fa35d0766892ac0e975fb7
+/config.yaml= 6349633d94675944dc40897dfd8d1fc5
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -51,25 +51,25 @@
 /payload/global_web_telegram.txt= 7ba1c154cdbd8fa23fde38e4651244cf
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.json= 8075c264d55c0e4fc5a812a20127e4a6
+/s/c1.json= deab2707c5cbff61d87f6a42a49eff83
 /s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
-/s/c10.json= 77bc790505f12900d912e418507046f2
+/s/c10.json= 05f19380db24ba444ad9a710a1cc672a
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
-/s/c2.json= 67a8c0cfd08f0cf9011dbb8190c975e7
+/s/c2.json= af1c89ec67e27509dc623b5588c65b5c
 /s/c2.pb= 220479f74baf08b7625ce895336e220e
-/s/c3.json= 135ec9889c0185313715f6398b13c644
+/s/c3.json= be1a64213397849234a6a0ff45c57ce5
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
-/s/c4.json= 6c173042d39bb1607d85a0f79a9948ec
+/s/c4.json= 690f1a04f61de128fe8079665b01de97
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= 5a16631de894ab0379f75b35f2792b43
+/s/c5.json= b14c85515f0a0fb33b1448153a37be40
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
-/s/c6.json= 55f7a76c63b6dcf266dfed399fba854c
+/s/c6.json= 12d8068dca4408c96f7b1fb3471c65e7
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
-/s/c7.json= dab03205f03e1388e50434127ddcca43
+/s/c7.json= 5b2099283e9e58024417726a7b9b16f5
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= 970a4f8a4987ebaab111697777dd1499
+/s/c8.json= d6fd9ee0d03d3ff8d961defe5b12d2c5
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
-/s/c9.json= ef4489fa33a0044191eb019b84623521
+/s/c9.json= a814a9cbffb785eadaf9559f0204011e
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
@@ -95,7 +95,7 @@
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
 /t/v2ray.ver= c74f971d7af55c530455f27fe81a1430
-/t/v2ray= 38cf07f098bb109379ea9f55afbd5b8b
+/t/v2ray= 444d8e6209e0eadd87947a91a157c0cf
 /t/yacd-gh-pages.tgz= 53f84645e872988145db7c8afbf98a6b
 /t/yacd-gh-pages.zip= dc715c519a1cb59f406a6b89d6563ecd
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4

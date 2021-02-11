@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=35
+sh_ver=36
 
 #程序名字
 name=clash
@@ -691,7 +691,7 @@ ip6tables -t mangle -A $name -d fc00::/7 -j RETURN
 ip6tables -t mangle -A $name -d fe80::/10 -j RETURN
 ip6tables -t mangle -A $name -d ff00::/8 -j RETURN
 for a in $(ip addr | grep -w inet6 | grep -v fe80 | awk '{print $2}' | sort -u) ; do ip6tables -t mangle -A $name -d $a -j RETURN ; done
-#ip6tables -t mangle -A $name -p udp --dport 53 -j TPROXY --on-ip :: --on-port "$dns_port" --tproxy-mark 1
+ip6tables -t mangle -I $name -p udp --dport 53 -j TPROXY --on-port "$dns_port" --tproxy-mark 1
 ip6tables -t mangle -A $name -p udp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
 ip6tables -t mangle -A $name -p tcp -j TPROXY --on-port "$tproxy_port" --tproxy-mark 1
 ip6tables -t mangle -A PREROUTING -j $name
@@ -713,7 +713,7 @@ ip6tables -t mangle -A ${name}_mask -d fc00::/7 -j RETURN
 ip6tables -t mangle -A ${name}_mask -d fe80::/10 -j RETURN
 ip6tables -t mangle -A ${name}_mask -d ff00::/8 -j RETURN
 for a in $(ip addr | grep -w inet6 | grep -v fe80 | awk '{print $2}' | sort -u) ; do ip6tables -t mangle -A ${name}_mask -d $a -j RETURN ; done
-#ip6tables -t mangle -I ${name}_mask -p udp --dport 53 -j MARK --set-mark 1
+ip6tables -t mangle -I ${name}_mask -p udp --dport 53 -j MARK --set-mark 1
 ip6tables -t mangle -A ${name}_mask -p tcp -j MARK --set-mark 1
 ip6tables -t mangle -A ${name}_mask -p udp -j MARK --set-mark 1
 ip6tables -t mangle -A OUTPUT -m owner ! --gid-owner $gid -j ${name}_mask

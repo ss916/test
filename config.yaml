@@ -1,4 +1,4 @@
-# //【2021-02-10 19:43:09】
+# //【2021-02-11 16:02:27】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -25,6 +25,10 @@ ipv6: true
 hosts:
   '+.crashlytics.com':  127.0.0.1
   '+.flurry.com': 127.0.0.1
+  '+.realsrv.com': 127.0.0.1
+  '+.googleadservices.com': 127.0.0.1
+  '+.googlesyndication.com': 127.0.0.1
+  '+.doubleclick.net': 127.0.0.1
   '+.ads.*.com': 127.0.0.1
   '+.ads.*.net': 127.0.0.1
   '+.ads.*.de': 127.0.0.1
@@ -221,6 +225,12 @@ dns:
       - '+.nflxvideo.net'
       #letsencrypt
       - '+.letsencrypt.org'
+      #odysee
+      - '+.lbry.com'
+      - '+.lbry.tv'
+      - '+.lbryplayer.xyz'
+      - '+.odysee.com'
+      - '+.vanwanet.com'
       #pincong
       - '+.pincong.rocks'
       #protonmail
@@ -231,6 +241,9 @@ dns:
       - '+.w.org'
       #rfa
       - '+.rfa.org'
+      #rumble
+      - '+.rumble.com'
+      - '+.rmbl.ws'
       #tor
       - '+.torproject.org'
       #twitter
