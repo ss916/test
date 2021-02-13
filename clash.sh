@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=36
+sh_ver=37
 
 #程序名字
 name=clash
@@ -1084,7 +1084,7 @@ su $user_name -c "nohup $run > $dirtmp/${name}_log.txt 2>&1 &"
 
 #關閉
 stop_0 () {
-stop_iptables
+[ "$mode" = "1" -o "$mode" = "2" ] && stop_iptables
 stop_clash
 }
 #关闭所有

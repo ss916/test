@@ -1,4 +1,4 @@
-# //【2021-02-11 16:02:27】
+# //【2021-02-13 15:29:09】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -180,6 +180,8 @@ dns:
       - '+.rocksdb.org'
       - '+.whatsapp.com'
       - '+.whatsapp.net'
+      #gab
+      - '+.gab.com'
       #github
       - '+.gitbook.io'
       - '+.gitbook.com'
