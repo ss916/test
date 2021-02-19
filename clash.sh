@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=37
+sh_ver=38
 
 #程序名字
 name=clash
@@ -786,34 +786,6 @@ echo -e \\n"\e[1;36m暂不提供透明代理DNS模式fake-dns\e[0m"\\n
 fi
 }
 
-ipt0_tproxy4 () {
-echo -e \\n"\e[1;36m▷删除ipv4透明代理iptables规则\e[0m"\\n
-ip rule del fwmark 1 table 100 >/dev/null 2>&1
-ip route del local default dev lo table 100 >/dev/null 2>&1
-if [ ! -z "$(iptables -t mangle -nL PREROUTING | grep -i $name)" ] ; then
-iptables -t mangle -D PREROUTING -j $name >/dev/null 2>&1
-iptables -t mangle -D PREROUTING -m set --match-set onlyallow_lan_ip src -j $name >/dev/null 2>&1
-fi
-[ ! -z "$(iptables -t mangle -nL OUTPUT | grep -i $name)" ] && iptables -t mangle -D OUTPUT -m owner ! --gid-owner $gid -j ${name}_mask
-}
-ipt0_tproxy6 () {
-echo -e \\n"\e[1;36m▷删除ipv6透明代理iptables规则\e[0m"\\n
-ip -6 rule del fwmark 1 table 106 >/dev/null 2>&1
-ip -6 route del local ::/0 dev lo table 106 >/dev/null 2>&1
-[ ! -z "$(ip6tables -t mangle -nL PREROUTING | grep -i $name)" ] && ip6tables -t mangle -D PREROUTING -j $name
-[ ! -z "$(ip6tables -t mangle -nL OUTPUT | grep -i $name)" ] && ip6tables -t mangle -D OUTPUT -m owner ! --gid-owner $gid -j ${name}_mask
-}
-ipt0_dns () {
-if [ ! -z "$(iptables -t nat -nL PREROUTING | grep -Ei "udp.*$dns_port")" ] ; then
-iptables -t nat -D PREROUTING -p udp --dport 53 -j REDIRECT --to-ports "$dns_port" >/dev/null 2>&1
-iptables -t nat -D PREROUTING -p udp --dport 53 -j DNAT --to-destination "127.0.0.1:$dns_port" >/dev/null 2>&1
-fi
-if [ ! -z "$(iptables -t nat -nL OUTPUT | grep -Ei "udp.*$dns_port")" ] ; then
-iptables -t nat -D OUTPUT -m owner ! --gid-owner $gid -p udp --dport 53 -j REDIRECT --to-ports "$dns_port" >/dev/null 2>&1
-iptables -t nat -D OUTPUT -m owner ! --gid-owner $gid -p udp --dport 53 -j DNAT --to-destination "127.0.0.1:$dns_port" >/dev/null 2>&1
-fi
-}
-
 ipt0 () {
 echo -e \\n"\e[1;36m▷清空透明代理iptables规则\e[0m"\\n && logger -t "【${name}】" "▷清空透明代理iptables规则"
 ip rule del fwmark 1 table 100 >/dev/null 2>&1
@@ -828,6 +800,7 @@ iptables -t nat -F OUTPUT
 #iptables -t nat -F PREROUTING
 [ ! -z "$(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53")" ] && IFS=$'\n' && for m in $(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53" | awk '{print $1}' | sed '1!G;h;$!d' ) ; do iptables -t nat -D PREROUTING $m ;done
 }
+
 stop_iptables () {
 ipt0
 }
@@ -856,13 +829,8 @@ if [ "$mode" = "1" -a "$iptables_mode" = "1" ] ; then
 elif [ "$mode" = "2" -a "$iptables_mode" = "2" ] ; then
 	echo "    ✓ start_iptables：${name}当前模式mode 2，iptables mode 2，iptables规则正常，跳过设置。"
 else
-	#删除iptables规则
-	[ "$pre1" != "0" ] && ipt0
-	[ "$pre2" != "0" ] && ipt0
-	[ "$pre3" != "0" ] && ipt0
-	[ "$out3" != "0" ] && ipt0
-	[ "$out1" != "0" ] && ipt0
-	[ "$out2" != "0" ] && ipt0
+	#清空iptables规则
+	[ "$pre1" != "0" -o "$pre2" != "0" -o "$pre3" != "0" -o "$out3" != "0" -o "$out1" != "0" -o "$out2" != "0" ] && ipt0
 	if [ ! -z "$(pss)" -a ! -z "$(port)" -a ! -z "$(grep "RESTful API listening at" ./clash_log.txt)" ] ; then
 		ipt1
 		work_ok=1
@@ -908,7 +876,7 @@ else
 	echo -e \\n"$(timenow) ✓ restart：${name}进程与${name}_keep.sh进程守护已运行，无需重启。"\\n
 fi
 #检查iptables
-start_iptables
+[ "$mode" = "1" -o "$mode" = "2" ] && start_iptables
 }
 
 #进程守护
@@ -918,69 +886,80 @@ echo "▶生成进程守护脚本."
 cat > ./${name}_keep.sh << \EOF
 #!/bin/sh
 name=clash
-dirtmp=/tmp/clash
-etc=/etc/storage/pdcn
-mode=$(cat $etc/${name}/settings.txt |awk -F 'mode=' '/mode=/{print $2}' |head -n 1)
+tmp=/tmp
+etc=/etc/storage
+dirtmp=$tmp/${name}
+pdcn=$etc/pdcn
+dirconf=$pdcn/${name}
+run="$dirtmp/${name} -d $dirtmp"
+alias pss='ps -w |grep -v grep| grep "$run"'
+alias pid='pidof ${name}'
+alias port='netstat -anp | grep "${name}"'
+alias psskeep='ps -w | grep -v grep |grep "${name}_keep.sh"'
 alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
+alias log_ok='grep "RESTful API listening at" ./clash_log.txt'
+mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' |head -n 1)
 cd $dirtmp
 v=1
 w=1
 a=1
 log1=1
 while true ; do
-#检查进程与端口
-server=$(ps -w | grep -v grep |grep "${name} -d $dirtmp" |wc -l)
-port=$(netstat -anp | grep ${name})
-pre1=$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)
-pre2=$(ip6tables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)
-pre3=$(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53" | wc -l)
-out3=$(iptables -t nat -vnL OUTPUT --line-numbers | grep -Ei "udp.*dpt:53" | wc -l)
-out1=$(iptables -t mangle -vnL OUTPUT --line-numbers | grep -i $name | wc -l)
-out2=$(ip6tables -t mangle -vnL OUTPUT --line-numbers | grep -i $name | wc -l)
-if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out3" = "1" -a "$out1" = "0" -a "$out2" = "0" ] ; then
-	iptables_mode=1
-elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
-	iptables_mode=2
-else
-	iptables_mode=0
-fi
+pss_status=$(pss|wc -l)
+port_status=$(port|wc -l)
 if [ "$mode" = "1" -o "$mode" = "2" ] ; then
-	if [ "$server" != "1" -o -z "$port" ] ; then
-		if [ "$server" = "0" ] ; then
+	#检查透明代理模式
+	pre1=$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)
+	pre2=$(ip6tables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)
+	pre3=$(iptables -t nat -vnL PREROUTING --line-numbers | grep -Ei "udp.*dpt:53" | wc -l)
+	out3=$(iptables -t nat -vnL OUTPUT --line-numbers | grep -Ei "udp.*dpt:53" | wc -l)
+	out1=$(iptables -t mangle -vnL OUTPUT --line-numbers | grep -i $name | wc -l)
+	out2=$(ip6tables -t mangle -vnL OUTPUT --line-numbers | grep -i $name | wc -l)
+	if [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out3" = "1" -a "$out1" = "0" -a "$out2" = "0" ] ; then
+		iptables_mode=1
+	elif [ "$pre1" = "1" -a "$pre2" = "1" -a "$pre3" = "1" -a "$out3" = "1" -a "$out1" = "1" -a "$out2" = "1" ] ; then
+		iptables_mode=2
+	else
+		iptables_mode=0
+	fi
+	#检查进程/端口
+	if [ "$pss_status" != "1" -o -z "$port_status" ] ; then
+		if [ "$pss_status" = "0" ] ; then
 			echo -e "$(timenow) [$v]检测${name}进程不存在，重启程序！" >> ./keep.txt
-		elif [ "$server" -gt "1" ] ; then
-			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
+		elif [ "$pss_status" -gt "1" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程重复 x $pss_status，重启程序！" >> ./keep.txt
 		fi
-		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
-		nohup sh $etc/${name}.sh $mode >> ./keep.txt 2>&1 &
+		[ -z "$port_status" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
+		nohup sh $pdcn/${name}.sh $mode >> ./keep.txt 2>&1 &
 		v=0
+	#检查透明代理
 	elif [ "$mode" = "1" -a "$iptables_mode" != "1" ] ; then
-		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则1！" >> ./keep.txt
+		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则①！" >> ./keep.txt
 		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out3 $out1 $out2" >> ./keep.txt
-		sh $etc/${name}.sh start_iptables &
+		sh $pdcn/${name}.sh start_iptables &
 		w=0
 	elif [ "$mode" = "2" -a "$iptables_mode" != "2" ] ; then
-		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则2！" >> ./keep.txt
+		echo -e "$(timenow) [$w]检测${name}需要重置iptables规则②！" >> ./keep.txt
 		echo "mode：$mode ， iptables_mode：$iptables_mode，$pre1 $pre2 $pre3 $out3 $out1 $out2" >> ./keep.txt
-		sh $etc/${name}.sh start_iptables &
+		sh $pdcn/${name}.sh start_iptables &
 		w=0
 	else
-		sh $etc/${name}.sh start_setmark
+		sh $pdcn/${name}.sh start_setmark
 		[ -f ./mark/setmark_ok_0 ] && a=0
 		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$w] iptables $iptables_mode OK，[$a] setmark OK" >> ./keep.txt
 	fi
 else
-	if [ "$server" != "1" -o -z "$port" ] ; then
-		if [ "$server" = "0" ] ; then
+	if [ "$pss_status" != "1" -o -z "$port_status" ] ; then
+		if [ "$pss_status" = "0" ] ; then
 			echo -e "$(timenow) [$v]检测${name}进程不存在，重启程序！" >> ./keep.txt
-		elif [ "$server" -gt "1" ] ; then
-			echo -e "$(timenow) [$v]检测${name}进程重复 x $server，重启程序！" >> ./keep.txt
+		elif [ "$pss_status" -gt "1" ] ; then
+			echo -e "$(timenow) [$v]检测${name}进程重复 x $pss_status，重启程序！" >> ./keep.txt
 		fi
-		[ -z "$port" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
-		nohup sh $etc/${name}.sh $mode >> ./keep.txt 2>&1 &
+		[ -z "$port_status" ] && echo -e "$(timenow) [$v]检测${name}端口没监听，重启程序！" >> ./keep.txt
+		nohup sh $pdcn/${name}.sh $mode >> ./keep.txt 2>&1 &
 		v=0
 	else
-		sh $etc/${name}.sh start_setmark
+		sh $pdcn/${name}.sh start_setmark
 		[ -f ./mark/setmark_ok_0 ] && a=0
 		echo -e "$(timenow) ${name} [$v] 进程OK，端口OK，[$a] setmark OK" >> ./keep.txt
 	fi
