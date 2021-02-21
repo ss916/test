@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=38
+sh_ver=39
 
 #程序名字
 name=clash
@@ -14,6 +14,7 @@ dirtmp=$tmp/${name}
 pdcn=$etc/pdcn
 #闪存配置文件夹
 dirconf=$pdcn/${name}
+#export HOME="/etc/storage/pdcn/clash" 
 
 #闪存资源文件夹
 #diretc=/etc/storage/pdcn/clash

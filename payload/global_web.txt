@@ -246,8 +246,10 @@ payload:
 - DOMAIN-SUFFIX,lihkg.com
 #wiki
 - DOMAIN-KEYWORD,wikileaks
+- DOMAIN-SUFFIX,w.wiki
 - DOMAIN-SUFFIX,wikimapia.org
 - DOMAIN-SUFFIX,wikimedia.org
+- DOMAIN-SUFFIX,wikinews.org
 - DOMAIN-SUFFIX,wikipedia.org
 - DOMAIN-SUFFIX,wikiquote.org
 - DOMAIN-SUFFIX,wikiwand.com

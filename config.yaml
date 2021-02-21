@@ -1,4 +1,4 @@
-# //【2021-02-19 23:40:26】
+# //【2021-02-21 14:43:11】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -110,6 +110,7 @@ dns:
       - 240.0.0.0/4
     domain:
       #COUNTRY
+      - '+.app'
       - '+.au'
       - '+.be'
       - '+.biz'
@@ -126,6 +127,7 @@ dns:
       - '+.fi'
       - '+.fm'
       - '+.fr'
+      - '+.fun'
       - '+.ga'
       - '+.gg'
       - '+.hk'
@@ -154,6 +156,7 @@ dns:
       - '+.tw'
       - '+.uk'
       - '+.us'
+      - '+.wiki'
       - '+.ws'
       - '+.xyz'
       #akamaized
@@ -266,11 +269,11 @@ dns:
       #wiki
       - '+.wikimapia.org'
       - '+.wikimedia.org'
+      - '+.wikinews.org'
       - '+.wikipedia.org'
       - '+.wikiquote.org'
       - '+.wikiwand.com'
       
-
 
 proxies:
 - name: 網易云解鎖
