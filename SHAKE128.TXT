@@ -1,5 +1,5 @@
-# //【2021-02-21 14:43:12】
-/SHA1.TXT= 9559c392b958120f7fd96392cc3c9939
+# //【2021-02-23 15:19:22】
+/SHA1.TXT= fa617068a8599017db28c21ddcd7a785
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 248a8b5b1beb8c548b1c4ef0fe918967
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -32,7 +32,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 7652d63fed09016bd8b9f2127bd8e647
+/payload/cn_web.txt= 81557ee4b025bcac1cb724f98141f9fc
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 88a794ba1beb8694c033ad2a2701cad9
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29

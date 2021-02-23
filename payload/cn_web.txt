@@ -1,7 +1,7 @@
 payload:
 #🀄网站：cn_web.txt
 #AD white list
-- DOMAIN,cdn.tsyndicate.com
+#- DOMAIN,cdn.tsyndicate.com
 #zuoyebang
 - DOMAIN-SUFFIX,zuoyebang.cc
 - DOMAIN-SUFFIX,zuoyebang.com
