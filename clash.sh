@@ -1,5 +1,5 @@
 #!/bin/sh
-sh_ver=39
+sh_ver=40
 
 #程序名字
 name=clash
@@ -73,7 +73,7 @@ if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	url=$url1
 else
 	curl="curl"
-	url=$url3
+	url=$url2
 fi
 }
 curl_proxy

@@ -1,5 +1,5 @@
-# //【2021-02-23 15:19:22】
-/SHAKE128.TXT= 248565f7f043fcbd5ecad3f99c8f1f6ca1f1c919
+# //【2021-02-26 04:00:08】
+/SHAKE128.TXT= 5964fae885e1db681f48f3076ef47ece249e103c
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 20600c847da079ba8a4be28e584e0bfccd02e064
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -9,11 +9,12 @@
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
 /arm64/kcptuns= d071f2e9d5e6618e9df390e384465ee37ed90107
 /arm64/kcptuns_old= 16daac31c6a0e75268e4ff81e59b0e9ae626f6fd
+/arm64/speederv2= 688bf60417bc801600c82f25c2c9d567bfae1233
 /arm64/v2ctl= 8456bb07a54f63bd913277ae2807edf141510ee2
 /arm64/v2ray= 4ec4aa6fa034667f3e3a6fbb7338c647fe76ad34
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
-/clash.sh= dc871aebd21359c6ae136bfd41b52ec0aabf0fae
-/config.yaml= 44c0e2d8c487f2361c9d23cd3398176ba684e688
+/clash.sh= eb7214f414dd9a54cc82d774269f35c16da75c95
+/config.yaml= f8ebe35f2d480994e51065b39b24aa2b08d9144d
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
 /dnsmasq/dnsfq1.conf= 51767b1d70d0038085551cdee17a049ee12aae60
@@ -72,9 +73,10 @@
 /s/c9.json= 31163bd5faef23065ad9da44cce026b997dd1b38
 /s/c9.pb= cddb6ca9d87398c6f4977f8a20f5324a91013a71
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
+/speeder.sh= 37eb4440cfb3ecd58edee0df02aeb1a6687987d6
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= b728a91c26fa0c6a8e94baa8b10d63ab1d461e7c
-/t/Country.mmdb.ver= 46172a4b21c7d767855f7b4d91f82990e203468b
+/t/Country.mmdb.tgz= 6b15206e2a887e4ee2f7869451deb8289a57c570
+/t/Country.mmdb.ver= ea1ca90637987ec80b5d1bfa9250243fe190fcac
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -83,16 +85,18 @@
 /t/clash-dashboard-gh-pages.zip= 3927a4efb750f2d4d919be49b8104e02e1a9986d
 /t/clash.ver= 122d77ae757224f072dc1887df1a9b46b7c08765
 /t/clash= 104bc74b5d6e71653421f9333ecdfa3d710f2503
-/t/cnip.txt= 103ae83c178e868fd3f969a07e03fbf2755bdeab
-/t/cnip_delegated-apnic-latest= 77a8f4dbfb5c24ca39af3c3fc58362fcc743060f
+/t/cnip.txt= 27ba448a7ee667d0bc73fd3026d08f688d1bda3e
+/t/cnip_delegated-apnic-latest= e29faae28cc732882b0b665914071a460d840c30
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 25a407415e6b140e29b2cbaddfff50f06a959586
-/t/ipset.cnip.txt= eb547fd96ff10a50134cc66b67d20e3c50390d72
+/t/ipset.cnip.txt= 3cb4f10d47b19a54a00ea945ad63501979f431f2
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
+/t/speederv2= 79046d53db6bacad86f6c448cf8c2a327716cdd2
 /t/trojan-go.ver= d195b61caef74dab647d06101869c0863fff7a69
 /t/trojan-go= d08bee76593758c3256758fbf6e872df64836ce8
+/t/udpspeeder.ver= 50a8047abc6e33f4c2c1e313074956f57270d99a
 /t/v2ctl= 2f6a1e68629fd11239bc03afa32a930e14f0281a
 /t/v2ray.ver= 2fdf7d04f0372055c9d77ca43d9a3c08798905f3
 /t/v2ray= 6d75f2e27d5874aad7908c49233a2191785420c3
