@@ -1,5 +1,5 @@
-# //【2021-02-26 04:00:08】
-/SHA1.TXT= 2f8da271b048e941053145e3b240906b
+# //【2021-02-26 04:19:09】
+/SHA1.TXT= 90735c540696057e8fb0cd137732455f
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 248a8b5b1beb8c548b1c4ef0fe918967
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -73,7 +73,7 @@
 /s/c9.json= a814a9cbffb785eadaf9559f0204011e
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/speeder.sh= 93ee604b12b8647ed46ed560cb2b957a
+/speederv2.sh= 4c161c75c5b10c288f9152b6768ba444
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
 /t/Country.mmdb.tgz= 23ecd0cb7bb66730dd1989c26d137482
 /t/Country.mmdb.ver= c972960a895de64087743bc27994b488
