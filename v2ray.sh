@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=34
+sh_ver=35
 
 #程序名字
 name=v2ray
@@ -810,7 +810,7 @@ start_iptables && waitwork start_iptables 60 &
 start_3 () {
 [ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt
 [ "$tproxy" != "0" ] && tproxy=0 && sed -i '/tproxy=/d' $dirconf/settings.txt && echo "tproxy=0" >> $dirconf/settings.txt
-[ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)" ] && ipt0
+[ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name)" ] && ipt0
 start_0
 }
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=42
+sh_ver=43
 
 #程序名字
 name=clash
@@ -1137,6 +1137,7 @@ start_remark && waitwork start_remark 60
 #启动模式3：不启用iptables透明代理
 start_3 () {
 [ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt
+[ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name)" ] && ipt0
 start_0
 }
 
