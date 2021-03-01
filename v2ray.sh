@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=36
+sh_ver=37
 
 #程序名字
 name=v2ray
@@ -742,18 +742,21 @@ else
 fi
 }
 
-get_json_file () {
-if [ -s $tmp/config.json -o -s $dirconf/config.json ] ; then
-	if [ -s $tmp/config.json ] ; then
-		logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$tmp/config.json" && echo -e \\n"\e[36m▶进入测试模式，使用本地配置文件$tmp/config.json \e[0m"
-		cp -f $tmp/config.json ./config.json
-	elif [ -s $dirconf/config.json ] ; then
-		logger -t "【${name}】" "▶使用闪存配置文件$dirconf/config.json" && echo -e \\n"\e[36m▶使用本地配置文件$dirconf/config.json \e[0m"
-		cp -f $dirconf/config.json ./config.json
+get_config_file () {
+config=config.json
+if [ -s $tmp/$config -o -s $dirconf/$config ] ; then
+	if [ -s $tmp/$config ] ; then
+		cp -f $tmp/$config ./$config
+		ver=$(cat ./$config | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$tmp/$config，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件$tmp/$config，版本：\e[0m\e[1;32m$ver\e[0m"
+	elif [ -s $dirconf/$config ] ; then
+		cp -f $dirconf/$config ./$config
+		ver=$(cat ./$config | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶使用闪存配置文件$dirconf/$config，版本$ver" && echo -e \\n"\e[36m▶使用本地配置文件$dirconf/$config，版本：\e[0m\e[1;32m$ver\e[0m"
 	fi
 else
 	[ -z "$link1" -o "$link1" = "0"  ] && logger -t "【${name}】" "✖ 配置文件下载链接为空或等于0，结束脚本。" && echo -e \\n"\e[36m✖ 配置文件下载链接为空或等于0，结束脚本。\e[0m" && exit
-	logger -t "【${name}】" "▶直接github下载配置文件config.json：$link1" && echo -e \\n"\e[36m▶直接github下载配置文件config.json：$link1 \e[0m"
+	logger -t "【${name}】" "▶直接github下载配置文件$config：$link1" && echo -e \\n"\e[36m▶直接github下载配置文件$config：$link1 \e[0m"
 	down_config
 fi
 }
@@ -775,8 +778,8 @@ start_0 () {
 echo -e \\n"$(timenow)"\\n
 stop_0
 #下载文件
+get_config_file &
 down_program &
-get_json_file &
 down_geoip &
 wait
 #防火墙
@@ -851,11 +854,11 @@ else
 	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在】\e[0m"
 fi
 if [ -s $tmp/config.json ] ; then
-	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $tmp/config.json | awk -F// '/【/{print $2}')\e[0m临时json"
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $tmp/config.json | awk -F// '/【/{print $2}')\e[0m临时"
 elif [ -s $dirconf/config.json ] ; then
-	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $dirconf/config.json | awk -F// '/【/{print $2}')\e[0m闪存json"
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $dirconf/config.json | awk -F// '/【/{print $2}')\e[0m闪存"
 elif [ -s ./config.json ] ; then
-	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat ./config.json | awk -F// '/【/{print $2}')\e[0m在线json:$link1】\e[0m"
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat ./config.json | awk -F// '/【/{print $2}')\e[0m在线:$link1】\e[0m"
 else
 	echo -e "☆ \e[1;36m ${name} 配置：\e[1;31m【不存在】\e[0m"
 fi

@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=45
+sh_ver=46
 
 #程序名字
 name=clash
@@ -391,20 +391,10 @@ fi
 #下载config.yaml
 down_config () {
 file=$config
-if [ -s $tmp/config.yaml -o -s $dirconf/config.yaml ] ; then
-	if [ -s $tmp/config.yaml ] ; then
-		cp -f $tmp/config.yaml ./config.yaml
-		ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
-		logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$file，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件。\\n    $file\e[0m\e[1;32m$ver\e[0m"
-	elif [ -s $dirconf/config.yaml ] ; then
-		cp -f $dirconf/config.yaml ./config.yaml
-		ver=$(cat ./config.yaml | awk -F// '/【/{print $2}')
-		logger -t "【${name}】" "▶使用闪存配置文件$dirconf/config.yaml，版本$ver" && echo -e \\n"\e[36m▶使用本地配置文件$dirconf/config.yaml，版本$ver \e[0m"
-	fi
+if [ "$secret" = "1" ] ; then
+	downloadfile address=s/$file filename=$file filetgz=$file secret=1 password=$password
 else
-	#if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	downloadfile address=$file filename=$file filetgz=$file
-	#fi
 fi
 }
 #download ipset.cnip.txt
@@ -1077,6 +1067,25 @@ su $user_name -c "nohup $run > $dirtmp/${name}_log.txt 2>&1 &"
 #fi
 }
 
+get_config_file () {
+config=$config
+if [ -s $tmp/$config -o -s $dirconf/$config ] ; then
+	if [ -s $tmp/$config ] ; then
+		cp -f $tmp/$config ./$config
+		ver=$(cat ./$config | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶进入测试模式，使用本地配置文件$tmp/$config，版本$ver" && echo -e \\n"\e[1;36m▶进入测试模式，使用本地配置文件$tmp/$config，版本：\e[0m\e[1;32m$ver\e[0m"
+	elif [ -s $dirconf/$config ] ; then
+		cp -f $dirconf/$config ./$config
+		ver=$(cat ./$config | awk -F// '/【/{print $2}')
+		logger -t "【${name}】" "▶使用闪存配置文件$dirconf/$config，版本$ver" && echo -e \\n"\e[36m▶使用本地配置文件$dirconf/$config，版本：\e[0m\e[1;32m$ver\e[0m"
+	fi
+else
+	[ -z "$link1" -o "$link1" = "0"  ] && logger -t "【${name}】" "✖ 配置文件下载链接为空或等于0，结束脚本。" && echo -e \\n"\e[36m✖ 配置文件下载链接为空或等于0，结束脚本。\e[0m" && exit
+	logger -t "【${name}】" "▶直接github下载配置文件$config：$link1" && echo -e \\n"\e[36m▶直接github下载配置文件$config：$link1 \e[0m"
+	down_config
+fi
+}
+
 #關閉
 stop_0 () {
 [ "$mode" = "1" -o "$mode" = "2" ] && stop_iptables
@@ -1096,10 +1105,10 @@ echo -e \\n"$(timenow)"\\n
 #关闭所有
 stop_0
 #下载文件
+get_config_file &
 down_program &
 down_geoip &
 down_web &
-down_config &
 wait
 #编辑配置文件
 edit_link
@@ -1360,9 +1369,9 @@ else
 	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在】\e[0m"
 fi
 if [ -s $tmp/$config ] ; then
-	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $tmp/$config | awk -F// '/【/{print $2}')\e[0m临时yaml"
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $tmp/$config | awk -F// '/【/{print $2}')\e[0m临时"
 elif [ -s $dirconf/$config ] ; then
-	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $dirconf/$config | awk -F// '/【/{print $2}')\e[0m闪存yaml"
+	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat $dirconf/$config | awk -F// '/【/{print $2}')\e[0m闪存"
 elif [ -s ./$config ] ; then
 	echo -e "★ \e[1;36m ${name} 配置：\e[1;32m$(cat ./config.yaml | awk -F// '/【/{print $2}')\e[0m"
 else
