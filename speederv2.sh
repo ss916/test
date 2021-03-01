@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=1
+sh_ver=2
 
 #程序名字
 name=speederv2
@@ -60,7 +60,7 @@ if [ ! -z "$(ps -w |grep -v grep| grep "clash -d")" -a ! -z "$(netstat -anp | gr
 	url=$url1
 else
 	curl="curl"
-	url=$url3
+	url=$url2
 fi
 }
 curl_proxy
@@ -367,7 +367,7 @@ server_port=$(cat $dirconf/settings.txt |awk -F 'server_port=' '/server_port=/{p
 server_key=$(cat $dirconf/settings.txt |awk -F 'server_key=' '/server_key=/{print $2}' | head -n 1)
 server_ip=$(nslookup $server_domain 8.8.4.4 | sed -n '/Name/,$p' | grep -E -o '([0-9]+\.){3}[0-9]+')
 [ -z "$server_ip" ] && echo -e "\e[1;31m✖服务器$server_domain解析DNS为空，取消启动。\e[0m" && exit
-nohup $dirtmp/${name} -c -l 0.0.0.0:44420 -r $server_ip:$server_port -k "$server_key" -f 2:2 --timeout 0 --fifo $dirtmp/fec  > $dirtmp/${name}_log.txt 2>&1 &
+nohup $dirtmp/${name} -c -l 0.0.0.0:44420 -r $server_ip:$server_port -k "$server_key" -f 2:4 --timeout 1 --fifo $dirtmp/fec  > $dirtmp/${name}_log.txt 2>&1 &
 }
 
 #關閉
@@ -408,6 +408,25 @@ start_1 () {
 start_0
 }
 
+set_fec () {
+echo "发包倍率格式： 【原发包数字:多发包数字】，如两倍发包 2:2"
+read -p "请输入数字 ：" new_fec
+if [ -z "$(echo $new_fec| grep -Eo '[0-9]{1,2}:[0-9]{1,2}')" ] ; then
+	echo " ✖ 输入的格式不正确，请重新输入。"
+else
+	x=$(echo $new_fec| awk -F: '{print $1}')
+	y=$(echo $new_fec| awk -F: '{print $2}')
+	z=$((x+y))
+	if [ "$z" -gt "50" ] ; then
+		echo " ✖ 输入的[原发包数+多发包数]大于50，请重新输入。"
+	else
+		echo "fec $new_fec" > $dirtmp/fec
+		tail -n 5 $dirtmp/${name}_log.txt
+		echo "✔ fec设置完成。"
+	fi
+fi
+}
+
 #8更新文件
 renew () {
 startrenew=1
@@ -436,6 +455,21 @@ if [ -s ./${name} ] ; then
 	echo -e "★ \e[1;36m ${name} 版本：\e[1;32m【$(./${name} -h |grep -o "version.*")】\e[0m"
 else
 	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在】\e[0m"
+fi
+if [ ! -z "$server_domain" ] ; then
+	echo -e "★ \e[1;36m 服务器域名：\e[1;32m $server_domain\e[0m"
+else
+	echo -e "☆ \e[1;36m 服务器域名：\e[1;31m【不存在】\e[0m"
+fi
+if [ ! -z "$server_port" ] ; then
+	echo -e "★ \e[1;36m 服务器端口：\e[1;32m $server_port\e[0m"
+else
+	echo -e "☆ \e[1;36m 服务器端口：\e[1;31m【不存在】\e[0m"
+fi
+if [ ! -z "$server_key" ] ; then
+	echo -e "★ \e[1;36m 服务器 key：\e[1;32m $server_key\e[0m"
+else
+	echo -e "☆ \e[1;36m 服务器 key：\e[1;31m【不存在】\e[0m"
 fi
 if [ ! -z "$(pss)" ] ; then
 	echo -e \\n"● \e[1;36m ${name} 进程：\e[1;32m【已运行】\e[0m"
@@ -472,6 +506,9 @@ case $1 in
 1)
 	start_1 &
 	;;
+2)
+	set_fec
+	;;
 7)
 	settings
 	;;
@@ -500,6 +537,7 @@ restart)
 	echo -e \\n"\e[1;33m脚本管理：\e[0m\e[37m『 \e[0m\e[1;37m$sh_ver\e[0m\e[37m 』\e[0m"\\n
 	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop：关闭所有 \e[0m "
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m start_1：启动$name\e[0m"
+	echo -e "\e[1;32m【2】\e[0m\e[1;36m set_fec：动态调节发包倍率，如 fec 2:2\e[0m"
 	echo -e "\e[1;32m【7】\e[0m\e[1;36m settings：重置初始化配置\e[0m"
 	echo -e "\e[1;32m【8】\e[0m\e[1;36m renew：更新所有文件 \e[0m"
 	echo -e "\e[1;32m【9】\e[0m\e[1;36m remove：卸载 \e[0m"\\n
@@ -508,6 +546,8 @@ restart)
 		stop_1 &
 	elif [ "$num" = "1" ] ; then
 		start_1 &
+	elif [ "$num" = "2" ] ; then
+		set_fec
 	elif [ "$num" = "7" ] ; then
 		settings
 	elif [ "$num" = "8" ] ; then
