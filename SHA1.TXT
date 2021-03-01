@@ -1,5 +1,5 @@
-# //【2021-03-01 19:54:21】
-/SHAKE128.TXT= 2ac395fe534737ac6f8776493873d61b0cd58915
+# //【2021-03-01 20:09:48】
+/SHAKE128.TXT= ea1e564af2320909dd0e66147339b49f408b629a
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 20600c847da079ba8a4be28e584e0bfccd02e064
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -27,6 +27,7 @@
 /hosts/hosts= 77b13a63a7344fff686fb4b76c374fae160b6622
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
 /netease.sh= 90879a5c93382d00ddec1444cc5a9cbf1d62c994
+/opt.sh= 3dbc3b89fdf3363851bb7955bfd973c3557f1013
 /payload/block_dnsmasq.txt= 10b675207ad0af1a0deee2fd56901c9e818f04bb
 /payload/block_hijack.txt= dfd73b8fb5887a318e0b2223325329fd8e1d538d
 /payload/block_hosts.txt= 70571de714f492a0626010010f2cbdc1e336984a
@@ -85,11 +86,11 @@
 /t/clash-dashboard-gh-pages.zip= 3927a4efb750f2d4d919be49b8104e02e1a9986d
 /t/clash.ver= 122d77ae757224f072dc1887df1a9b46b7c08765
 /t/clash= 104bc74b5d6e71653421f9333ecdfa3d710f2503
-/t/cnip.txt= 27ba448a7ee667d0bc73fd3026d08f688d1bda3e
-/t/cnip_delegated-apnic-latest= e29faae28cc732882b0b665914071a460d840c30
+/t/cnip.txt= 7cf39abe32a16e91239a72ef9e3c03ea47547956
+/t/cnip_delegated-apnic-latest= ea675767938ef97c5421036abdb2f49e6abb5c3b
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 25a407415e6b140e29b2cbaddfff50f06a959586
-/t/ipset.cnip.txt= 3cb4f10d47b19a54a00ea945ad63501979f431f2
+/t/ipset.cnip.txt= cb36095ba8aa19f2734ccc67e370d49b1dc24ecf
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
@@ -102,4 +103,6 @@
 /t/v2ray= 6d75f2e27d5874aad7908c49233a2191785420c3
 /t/yacd-gh-pages.tgz= baeda0bad23a3097f684f45b5c799909ccd4a7bd
 /t/yacd-gh-pages.zip= 7fdf90c8718841648f0b4e5c1a149258ab2bb539
+/u2.sh= 255878675ad8debf5ac64d12187101e0e88d9ba3
+/v2ray.sh= f30559682048b5febaa9c018fa9fb420bf84fa0a
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
