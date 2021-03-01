@@ -1,5 +1,5 @@
-# //【2021-03-01 23:17:05】
-/SHAKE128.TXT= f0187cde0dcbe2b4b18aae1b1f39b54220af7890
+# //【2021-03-02 05:10:19】
+/SHAKE128.TXT= 1652c751115c79fdc1b83a61488fe25c1acb4017
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 20600c847da079ba8a4be28e584e0bfccd02e064
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -13,7 +13,7 @@
 /arm64/v2ctl= 8456bb07a54f63bd913277ae2807edf141510ee2
 /arm64/v2ray= 4ec4aa6fa034667f3e3a6fbb7338c647fe76ad34
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
-/clash.sh= c7f8e1d5a7c899ffab614bca362bdb913d20e5b7
+/clash.sh= 5e5d7272350e9c3f0539022215183bbe6cb7fab9
 /config.yaml= f8ebe35f2d480994e51065b39b24aa2b08d9144d
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
@@ -104,5 +104,5 @@
 /t/yacd-gh-pages.tgz= baeda0bad23a3097f684f45b5c799909ccd4a7bd
 /t/yacd-gh-pages.zip= 7fdf90c8718841648f0b4e5c1a149258ab2bb539
 /u2.sh= 255878675ad8debf5ac64d12187101e0e88d9ba3
-/v2ray.sh= 8ad60a2d8e3221ae732ff126514216304df5ca2f
+/v2ray.sh= 024d4f02708aa021a62f7a5cdb8fcc73057a2889
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c

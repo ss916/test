@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=43
+sh_ver=45
 
 #程序名字
 name=clash
@@ -980,7 +980,7 @@ elif [ "$server_port_ok" = "1" -a "$mark_ok" = "close" -a "$tproxy_ok" = "close"
 	echo -e "$(timenow) ${name} [$v] 进程OK，端口OK" >> ./keep.txt
 fi
 #+1
-t=$(($f+1))
+t=$(($t+1))
 m=$(($m+1))
 v=$(($v+1))
 #日志文件大于1万条后删除1000条
@@ -1109,8 +1109,8 @@ edit_adblock
 edit_unlocknetease
 #启动主程序
 start_program
-#等待15秒
-check_work_all && waitwork check_work_all 15
+#等待30秒
+check_work_all && waitwork check_work_all 30
 #查看状态
 status_program
 #创建开机自启

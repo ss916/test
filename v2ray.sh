@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=35
+sh_ver=36
 
 #程序名字
 name=v2ray
@@ -783,8 +783,8 @@ wait
 [ "$firewall" = "1" ] && start_firewall
 #启动主程序
 start_program
-#等待15秒
-check_work && waitwork check_work 15
+#等待30秒
+check_work && waitwork check_work 30
 #查看状态
 status_program
 #创建开机自启
