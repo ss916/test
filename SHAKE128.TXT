@@ -1,7 +1,7 @@
-# //【2021-03-03 17:49:09】
-/SHA1.TXT= bbfccd10ac2386c46b0fa444e6198888
+# //【2021-03-03 18:25:40】
+/SHA1.TXT= 24b20e28352a9dca65b6b762c20d490d
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
-/amd64/v2ray= 248a8b5b1beb8c548b1c4ef0fe918967
+/amd64/v2ray= 5d9989ff067f9ace4de7136374968f7a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= ebb643f91f383e431a66a08be95ad063
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
@@ -11,7 +11,7 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/speederv2= e683ddd3ab4fbcef63d05cd1761dd0ac
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
-/arm64/v2ray= b51571ef9e4bb1ad5239c6cb7317b602
+/arm64/v2ray= 2aa90125a305ad6a55f912f8ba22f9b0
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= e654856b986e57852af2137908649051
 /config.yaml= 34ca1fa679e38d57c2d865749dc03441
@@ -89,7 +89,7 @@
 /t/cnip.txt= 09ac5a4c7418d0014067fac442227d2c
 /t/cnip_delegated-apnic-latest= 8c48617d54c5cd3c01242de49faa38a2
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
-/t/geo.tgz= 65c17ab13a74febe0ab2307961c4795b
+/t/geo.tgz= cf43465a75e83717f6687007f1fab719
 /t/ipset.cnip.txt= dca1d6490864f7909b1f04a0835afdff
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
@@ -99,8 +99,8 @@
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/udpspeeder.ver= 1e0fa11b74e775d3498a44808dbd9e7b
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
-/t/v2ray.ver= 308d44f5c24a40da9805dc272072b144
-/t/v2ray= dd507699c44fc9cb397f8e56eab81634
+/t/v2ray.ver= 81134b4a6356d2e64ff893c90f19558c
+/t/v2ray= 7d76e1677575cee6b512d47137cb29e9
 /t/yacd-gh-pages.tgz= 2b7ad4b8d3bfa5612fd8d51038208363
 /t/yacd-gh-pages.zip= bc3966d9795b395d2e8d40dfc03bf409
 /u2.sh= c1f67734b88bf0599bffa47901d256e4
