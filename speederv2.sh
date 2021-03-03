@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=2
+sh_ver=3
 
 #程序名字
 name=speederv2
@@ -41,6 +41,11 @@ fi
 file_cron=$etc/cron/crontabs/admin
 #开机自启文件
 file_wan=$etc/post_wan_script.sh
+
+user_name=${name}
+#用户uid/gid
+uid=0
+gid=20003
 
 #资源文件地址前缀
 url1="https://raw.githubusercontent.com/ss916/test/master"
@@ -360,14 +365,15 @@ stop_program () {
 }
 #启动
 start_program () {
-[ -f ./${name}_log.txt ] && mv -f ./${name}_log.txt ./old_${name}_log.txt
-logger -t "【${name}】" "▶启动${name}主程序..." && echo -e \\n"\e[1;36m▶启动${name}主程序...\e[0m"
 server_domain=$(cat $dirconf/settings.txt |awk -F 'server_domain=' '/server_domain=/{print $2}' | head -n 1)
 server_port=$(cat $dirconf/settings.txt |awk -F 'server_port=' '/server_port=/{print $2}' | head -n 1)
 server_key=$(cat $dirconf/settings.txt |awk -F 'server_key=' '/server_key=/{print $2}' | head -n 1)
 server_ip=$(nslookup $server_domain 8.8.4.4 | sed -n '/Name/,$p' | grep -E -o '([0-9]+\.){3}[0-9]+')
 [ -z "$server_ip" ] && echo -e "\e[1;31m✖服务器$server_domain解析DNS为空，取消启动。\e[0m" && exit
-nohup $dirtmp/${name} -c -l 0.0.0.0:44420 -r $server_ip:$server_port -k "$server_key" -f 2:4 --timeout 1 --fifo $dirtmp/fec  > $dirtmp/${name}_log.txt 2>&1 &
+[ -f ./${name}_log.txt ] && mv -f ./${name}_log.txt ./old_${name}_log.txt
+logger -t "【${name}】" "▶启动${name}主程序..." && echo -e \\n"\e[1;36m▶启动${name}主程序...\e[0m"
+[ -z "$(grep "$user_name" /etc/passwd)" ] && echo "▶添加用戶$user_name，uid为$uid，gid为$gid" && echo "$user_name:x:$uid:$gid:::" >> /etc/passwd
+su $user_name -c "nohup $dirtmp/${name} -c -l 0.0.0.0:44420 -r $server_ip:$server_port -k "$server_key" -f 2:4 --timeout 1 --fifo $dirtmp/fec  > $dirtmp/${name}_log.txt 2>&1 &"
 }
 
 #關閉

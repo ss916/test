@@ -1,5 +1,5 @@
-# //【2021-03-02 07:56:31】
-/SHA1.TXT= 395be4a0628999c1767e255991659d49
+# //【2021-03-03 17:49:09】
+/SHA1.TXT= bbfccd10ac2386c46b0fa444e6198888
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 248a8b5b1beb8c548b1c4ef0fe918967
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -27,7 +27,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= a36e3e6c490378d8b14acbeee6a77baa
+/opt.sh= f35a47c9568114ae01515d8775e8d917
 /payload/block_dnsmasq.txt= 0e8819521ec07e858cb22d07dee83a1c
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= b9ee0de89254683867c7ad7b6e464c37
@@ -74,10 +74,10 @@
 /s/c9.json= 0d747b111db96cf56c4706150fb8eca2
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/speederv2.sh= 5945da807b816fd310026102ea791cbd
+/speederv2.sh= 28335a26e07c17dbacdf65d6e2f0ee91
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 0889c91ccaead50a0b6be5f7f017c50e
-/t/Country.mmdb.ver= 99ff2c6a4d47d06a8b9365e6fecd65ee
+/t/Country.mmdb.tgz= 14482c4aafb7e1e674872e6e8577c332
+/t/Country.mmdb.ver= 516212f01454f403be28005c516024f9
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
