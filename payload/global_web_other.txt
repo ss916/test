@@ -88,7 +88,6 @@ payload:
 #other
 - DOMAIN-KEYWORD,jav
 - DOMAIN-KEYWORD,pinterest
-- DOMAIN-KEYWORD,porn
 - DOMAIN,api.steampowered.com
 - DOMAIN,store.steampowered.com
 - DOMAIN-SUFFIX,0rz.tw
@@ -461,9 +460,6 @@ payload:
 - DOMAIN-SUFFIX,wsj.net
 - DOMAIN-SUFFIX,x-art.com
 - DOMAIN-SUFFIX,xfinity.com
-- DOMAIN-SUFFIX,xhamster.com
-- DOMAIN-SUFFIX,xnxx.com
-- DOMAIN-SUFFIX,xvideos.com
 - DOMAIN-SUFFIX,yahoo.com
 - DOMAIN-SUFFIX,yandex.ru
 - DOMAIN-SUFFIX,ycombinator.com
@@ -472,7 +468,6 @@ payload:
 - DOMAIN-SUFFIX,yimg.com
 - DOMAIN-SUFFIX,yomiuri.co.jp
 - DOMAIN-SUFFIX,you-get.org
-- DOMAIN-SUFFIX,zaobao.com
 - DOMAIN-SUFFIX,zattoo.com
 - DOMAIN-SUFFIX,zb.com
 - DOMAIN-SUFFIX,zello.com

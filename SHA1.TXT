@@ -1,5 +1,5 @@
-# //【2021-03-03 18:25:39】
-/SHAKE128.TXT= dc557ace492ad84674098325d10874fc7a029eef
+# //【2021-03-04 04:20:56】
+/SHAKE128.TXT= 38770453fa7b9528f9838daf9b4a649b64d12b2c
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= df1ba1d82dd4309252a6f6f6d797f0e43ac94492
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -36,11 +36,11 @@
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
 /payload/cn_web.txt= 6bd5e9744f78f60072218638aba30118326c5013
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
-/payload/global_video.txt= 2a11c0072b8d2fa6ee4e0d797f9b5cc7a236dc0f
+/payload/global_video.txt= 87e0f47bce791db67d10953987eb04e32b2d5ef6
 /payload/global_video_netflix.txt= ccb1798e0aeac223bef52e4644df4f412c1ca50c
-/payload/global_video_other.txt= b8ba4e76a8ccc380de6a64570c033c862f631bb8
+/payload/global_video_other.txt= 2a3015222953c309bcb5c3cd3e75716f65b4b1d9
 /payload/global_video_youtube.txt= 04eb3118ba30d9bcd024dbf37078bb7cacedc7d0
-/payload/global_web.txt= d8eac39395467bd281b5d6dfdca19369fe9d261d
+/payload/global_web.txt= c9f3e911179d45a0a3896dae6af15098a030a347
 /payload/global_web_amazon.txt= a7eb47c5fa8357404041b74c5e45e18285cde954
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
 /payload/global_web_github.txt= df4a43bb4c3a9c58060fd1aedf199c9774e808d6
@@ -48,7 +48,7 @@
 /payload/global_web_line.txt= 4e8d9506f7878d1be7a5412aa14ea7f765e93e40
 /payload/global_web_mega.txt= f3a9010dc26eb5592c09ecb13b20b8d1796fc44b
 /payload/global_web_microsoft.txt= 9d88df0110f9c2c2f82ade2acd6b35c17be36153
-/payload/global_web_other.txt= 0acef5af90ce2fa8cd5335e8397307c2db4919d9
+/payload/global_web_other.txt= fcf2530708d7ce5be0ca793c75dee7713383f66a
 /payload/global_web_protonmail.txt= 7211ad2e8d0a6114ef7e1b4b3abb3536cc58d045
 /payload/global_web_telegram.txt= 401ce1c1d9771feda6e95a84502c0729e35c2bf6
 /payload/global_web_twitter.txt= 3fb0ef64b8d94081ad332babb1d036991df3c088
