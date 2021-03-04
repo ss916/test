@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=3
+sh_ver=4
 
 #程序名字
 name=speederv2
@@ -143,7 +143,7 @@ n=1
 while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
-	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
+	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT：$url/SHA1.TXT......\e[0m"
 	$curl -# -L $url/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
@@ -159,7 +159,7 @@ logger -t "【$filename】" "▶開始第[$n]次下载$filetgz......" && echo -e
 if [ -s $diretc/$filetgz ] ; then
 	new=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
 else
-	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
+	logger -t "【$filename】" "▷github下载文件$filetgz：$link..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz：$link...\e[0m"
 	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
 	$curl -# -L $link -o ./$filetgz
 	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')

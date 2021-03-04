@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=37
+sh_ver=38
 
 #程序名字
 name=v2ray
@@ -51,9 +51,6 @@ gid=20001
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
 url3="https://raw.fastgit.org/ss916/test/master"
-#url1="https://raw.githubusercontent.com/testiknn/sh/master"
-#url2="https://cdn.jsdelivr.net/gh/testiknn/sh"
-#url3="https://raw.fastgit.org/testiknn/sh/master"
 
 
 #alias
@@ -194,7 +191,7 @@ n=1
 while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
-	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT......\e[0m"
+	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT：$url/SHA1.TXT......\e[0m"
 	$curl -# -L $url/SHA1.TXT -o $tmp/SHA1.TXT
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
@@ -210,7 +207,7 @@ logger -t "【$filename】" "▶開始第[$n]次下载$filetgz......" && echo -e
 if [ -s $diretc/$filetgz ] ; then
 	new=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
 else
-	logger -t "【$filename】" "▷github下载文件$filetgz..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz...\e[0m"
+	logger -t "【$filename】" "▷github下载文件$filetgz：$link..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz：$link...\e[0m"
 	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
 	$curl -# -L $link -o ./$filetgz
 	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
@@ -756,7 +753,7 @@ if [ -s $tmp/$config -o -s $dirconf/$config ] ; then
 	fi
 else
 	[ -z "$link1" -o "$link1" = "0"  ] && logger -t "【${name}】" "✖ 配置文件下载链接为空或等于0，结束脚本。" && echo -e \\n"\e[36m✖ 配置文件下载链接为空或等于0，结束脚本。\e[0m" && exit
-	logger -t "【${name}】" "▶直接github下载配置文件$config：$link1" && echo -e \\n"\e[36m▶直接github下载配置文件$config：$link1 \e[0m"
+	logger -t "【${name}】" "▶直接github下载配置文件$config" && echo -e \\n"\e[36m▶直接github下载配置文件$config \e[0m"
 	down_config
 fi
 }
