@@ -1,4 +1,4 @@
-# //【2021-02-26 03:59:34】
+# //【2021-03-05 13:53:10】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -88,22 +88,28 @@ dns:
     #- tls://dns.pub:853
   fallback:
     #@google
+    #- https://dns.google/dns-query #🚫block ipv4#
+    #- tls://8.8.8.8:853
     - tls://8.8.4.4:853
-    #- https://dns.google/dns-query
     #@cloudflare
-    #- tls://1.0.0.1:853
+    #- tls://1.0.0.1:853 #🚫block#
+    #- tls://1.1.1.1:853 #🚫block#
     #- https://1.0.0.1/dns-query
+    #- https://1.1.1.1/dns-query
     - https://cloudflare-dns.com/dns-query
     #@twnic
-    - tls://101.101.101.101:853
-    #- https://dns.twnic.tw/dns-query
+    #- tls://101.101.101.101:853 #🚫block#
+    - https://dns.twnic.tw/dns-query
     #@opendns
-    #- https://doh.opendns.com/dns-query
+    #- https://doh.opendns.com/dns-query #🚫block#
     #@IBM
-    #- tls://149.112.112.112:853
-    #- tls://9.9.9.9:853
+    #- tls://149.112.112.112:853 #🚫block#
+    #- tls://9.9.9.9:853 #🚫block#
+    #- tls://dns.quad9.net:853 #🚫block ipv4#
+    #- https://dns.quad9.net/dns-query #🚫block#
     #- https://149.112.112.112:5053/dns-query
     #- https://9.9.9.9:5053/dns-query
+    - https://dns.quad9.net:5053/dns-query
   fallback-filter:
     geoip: true
     ipcidr:

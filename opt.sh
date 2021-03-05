@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=2
+sh_ver=3
 
 #程序名字
 name=opt
@@ -15,14 +15,27 @@ pdcn=$etc/pdcn
 #闪存配置文件夹
 dirconf=$pdcn/${name}
 
+#系统定时任务文件
 file_cron=$etc/cron/crontabs/admin
 #开机自启文件
 file_wan=$etc/post_wan_script.sh
 
-[ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] && echo "走clash本地http代理" && export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
+#alias
+alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
+
+curl_proxy () {
+if [ ! -z "$(ps -w |grep -v grep| grep "clash -d")" -a ! -z "$(netstat -anp | grep clash)" ] ; then
+	echo "* 走clash本地http代理 *"
+	export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
+else
+	echo "* 走直连 *"
+fi
+}
 
 
 update () {
+echo -e \\n"$(timenow)"\\n
+curl_proxy
 echo -e \\n"\e[1;32m ▶更新opkg列表...\e[0m "
 /opt/bin/opkg update && /opt/bin/opkg install wget
 echo -e "\e[1;32m ...更新opkg列表結束...\e[0m "\\n

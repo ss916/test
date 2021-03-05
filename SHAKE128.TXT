@@ -1,5 +1,5 @@
-# //【2021-03-04 13:11:42】
-/SHA1.TXT= c352a6e438bcc93d3185cfee5a722b74
+# //【2021-03-05 13:53:11】
+/SHA1.TXT= 6f9dd3bb2e3ebe3494ab9a47658547dd
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 5d9989ff067f9ace4de7136374968f7a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -14,7 +14,7 @@
 /arm64/v2ray= 2aa90125a305ad6a55f912f8ba22f9b0
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= c4612db6a89767097b6c5ff75cec9c10
-/config.yaml= 34ca1fa679e38d57c2d865749dc03441
+/config.yaml= 9857259cabceae92eba2f4be38fd9ed5
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -27,7 +27,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= f35a47c9568114ae01515d8775e8d917
+/opt.sh= cf9ef27a8e01cef93d0be7ff6606e675
 /payload/block_dnsmasq.txt= 0e8819521ec07e858cb22d07dee83a1c
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= b9ee0de89254683867c7ad7b6e464c37
@@ -53,25 +53,25 @@
 /payload/global_web_telegram.txt= 7ba1c154cdbd8fa23fde38e4651244cf
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.json= 43c34ea6f59ee5de00852562108a6612
+/s/c1.json= 162e10ee476b63a06d5dfae295da7d2f
 /s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
-/s/c10.json= 05f19380db24ba444ad9a710a1cc672a
+/s/c10.json= 4ad080e4595f5945fa1312d330198f61
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
-/s/c2.json= e534d93da58d3aad57585bc7f84e7097
+/s/c2.json= 212ea687187aaefef1214ca9dde28bfa
 /s/c2.pb= 220479f74baf08b7625ce895336e220e
-/s/c3.json= 8c62291b1e587972cb63fc3bafdd2df4
+/s/c3.json= 952bdf140cad3db78547e4744b9a68f4
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
-/s/c4.json= 56a3ef1a711e132c8f302da2551ed1bc
+/s/c4.json= 28ab513500538ef4ccd74d9f17fbc683
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= 6444dd04f8aa17b4029c3ebb43d9b599
+/s/c5.json= 3c49af9e6bba10bcfe3a4fb86997820c
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
-/s/c6.json= 439c8e68fef9d31df348d2e1e6d94230
+/s/c6.json= c624006e53ee21dbf4d397c7866d750b
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
-/s/c7.json= 52cfdbee7516b0263f043ca3569f886a
+/s/c7.json= 4c747cc9cbadce71a886bd3174dfd307
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= b67aae485c5d7aad256ce7346cf3cf47
+/s/c8.json= 6c479b2c9fc379dc958257361948d3d9
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
-/s/c9.json= 0d747b111db96cf56c4706150fb8eca2
+/s/c9.json= 2aa29a6e3ff686f7bccf333af1d478dd
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 9069b3acbfaa567f330e144776aa35ba
@@ -86,11 +86,11 @@
 /t/clash-dashboard-gh-pages.zip= 5d3b82fdb40d9b4c4d3a7380011a01cd
 /t/clash.ver= 7c64ad1a271e3330c14b67300a358c29
 /t/clash= 98c3929c138511feb719e65786489ada
-/t/cnip.txt= 09ac5a4c7418d0014067fac442227d2c
-/t/cnip_delegated-apnic-latest= 8c48617d54c5cd3c01242de49faa38a2
+/t/cnip.txt= fb8de7a7181e97cbfc759b4fa89de2fe
+/t/cnip_delegated-apnic-latest= 07caffaa49d057e828109a591c5f3cd0
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= cf43465a75e83717f6687007f1fab719
-/t/ipset.cnip.txt= dca1d6490864f7909b1f04a0835afdff
+/t/ipset.cnip.txt= 90481d9bcbdcb72c7542e6659917c1fc
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
