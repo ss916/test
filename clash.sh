@@ -618,9 +618,9 @@ fi
 }
 
 tproxy4 () {
+echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"
 ip rule add fwmark 1 table 100
 ip route add local default dev lo table 100
-echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"
 iptables -t mangle -N $name >/dev/null 2>&1
 iptables -t mangle -F $name
 iptables -t mangle -A $name -d 0.0.0.0/8 -j RETURN
@@ -666,9 +666,9 @@ iptables -t mangle -A OUTPUT -m owner ! --gid-owner $gid -j ${name}_mask
 }
 
 tproxy6 () {
+echo -e "\e[1;36m▶创建ipv6局域网透明代理\e[0m"
 ip -6 rule add fwmark 1 table 106
 ip -6 route add local ::/0 dev lo table 106
-echo -e "\e[1;36m▶创建ipv6局域网透明代理\e[0m"
 ip6tables -t mangle -N $name >/dev/null 2>&1
 ip6tables -t mangle -F $name
 ip6tables -t mangle -A $name -d ::/128 -j RETURN

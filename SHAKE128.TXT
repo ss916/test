@@ -1,5 +1,5 @@
-# //【2021-03-07 17:53:13】
-/SHA1.TXT= 112d1f1b2c473b409aed23d4c17808b8
+# //【2021-03-07 18:00:54】
+/SHA1.TXT= d5518d0af42f3d64d561c14d2ba8888e
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 5d9989ff067f9ace4de7136374968f7a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -13,7 +13,7 @@
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
 /arm64/v2ray= 2aa90125a305ad6a55f912f8ba22f9b0
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= 9f1776e2509494719c99c000fe7fbe7e
+/clash.sh= c721ded15ccebf385a6da14f4dce4a1f
 /config.yaml= c4ab2c7044869c73665292c92355cab3
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -104,5 +104,5 @@
 /t/yacd-gh-pages.tgz= 2b7ad4b8d3bfa5612fd8d51038208363
 /t/yacd-gh-pages.zip= bc3966d9795b395d2e8d40dfc03bf409
 /u2.sh= c1f67734b88bf0599bffa47901d256e4
-/v2ray.sh= ab1ca8402635d5a1be8395c52053b883
+/v2ray.sh= 7a2b78b2a7cb43f5ed5a63dc0c715f48
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
