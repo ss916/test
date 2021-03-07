@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=38
+sh_ver=39
 
 #程序名字
 name=v2ray
@@ -792,23 +792,27 @@ start_wan
 #创建定时任务
 start_cron
 #keep进程守护
-start_keep
+if [ "$run_restart_keep" = "1" ] ; then
+	restart_keep
+else
+	start_keep
+fi
 }
 
 start_1 () {
-[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt
+[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 [ "$tproxy" != "1" ] && tproxy=1 && sed -i '/tproxy=/d' $dirconf/settings.txt && echo "tproxy=1" >> $dirconf/settings.txt
 start_0
 start_iptables && waitwork start_iptables 60 &
 }
 start_2 () {
-[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt
+[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 [ "$tproxy" != "1" ] && tproxy=1 && sed -i '/tproxy=/d' $dirconf/settings.txt && echo "tproxy=1" >> $dirconf/settings.txt
 start_0
 start_iptables && waitwork start_iptables 60 &
 }
 start_3 () {
-[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt
+[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 [ "$tproxy" != "0" ] && tproxy=0 && sed -i '/tproxy=/d' $dirconf/settings.txt && echo "tproxy=0" >> $dirconf/settings.txt
 [ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name)" ] && ipt0
 start_0

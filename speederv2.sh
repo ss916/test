@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=4
+sh_ver=5
 
 #程序名字
 name=speederv2
@@ -406,11 +406,15 @@ start_wan
 #创建定时任务
 start_cron
 #keep进程守护
-start_keep
+if [ "$run_restart_keep" = "1" ] ; then
+	restart_keep
+else
+	start_keep
+fi
 }
 #启动模式1：iptables透明代理
 start_1 () {
-[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt
+[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
 }
 

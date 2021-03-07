@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=48
+sh_ver=49
 
 #程序名字
 name=clash
@@ -1127,25 +1127,29 @@ start_wan
 #创建定时任务
 start_cron
 #keep进程守护
-start_keep
+if [ "$run_restart_keep" = "1" ] ; then
+	restart_keep
+else
+	start_keep
+fi
 }
 #启动模式1：iptables透明代理
 start_1 () {
-[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt
+[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
 start_iptables && waitwork start_iptables 60 &
 start_remark && waitwork start_remark 60
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
-[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt
+[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
 start_iptables && waitwork start_iptables 60 &
 start_remark && waitwork start_remark 60
 }
 #启动模式3：不启用iptables透明代理
 start_3 () {
-[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt
+[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=3" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 [ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name)" ] && ipt0
 start_0
 }
