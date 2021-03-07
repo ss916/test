@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=5
+sh_ver=6
 
 #程序名字
 name=speederv2
@@ -189,16 +189,16 @@ fi
 if [ "$download_ok" = "1" ] ; then
 	type=$(echo $filetgz | awk -F. '{print $NF}')
 	if [ "$type" = "tgz" ] ; then
-		echo -e \\n"\e[36m▷解压文件$filetgz...\e[0m"
+		echo -e \\n"\e[36m▷解压文件$filetgz到$fileout...\e[0m"
 		tar xzvf $diretc/$filetgz -C $fileout
 		echo -e \\n"\e[32m✔文件$filetgz解压完成...\e[0m"\\n
 	elif [ "$type" = "zip" ] ; then
-		echo -e \\n"\e[36m▷解压文件$filetgz...\e[0m"
+		echo -e \\n"\e[36m▷解压文件$filetgz到$fileout...\e[0m"
 		[ ! -s /opt/bin/unzip ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		unzip -o $diretc/$filetgz -d $fileout
 		echo -e \\n"\e[32m✔文件$filetgz解压完成...\e[0m"\\n
 	elif [ "$secret" = "1" ] ; then
-		echo -e \\n"\e[36m▷解密文件$filetgz到...\e[0m"
+		echo -e \\n"\e[36m▷解密文件$filetgz到$fileout/$filename...\e[0m"
 		cat $diretc/$filetgz | openssl enc -aes-256-ctr -d -a -md md5 -k $password > $fileout/$filename
 		echo -e \\n"\e[32m✔ $filetgz文件解密$filename完成...\e[0m"\\n
 	else
