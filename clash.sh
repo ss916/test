@@ -307,7 +307,7 @@ echo -e \\n"文件：$filetgz \\nnew：$new \\nold：$old"
 if [ ! -z "$new" -a ! -z "$old" ] ; then
 	if [ "$new" = "$old" ] ; then
 		if [ -s ./$filetgz ] ; then
-			echo -e \\n"\e[36m▷新下载文件$filetgz校验成功，复制到$diretc/$filetgz...\e[0m"
+			echo -e \\n"\e[36m▷新下载文件$filetgz校验成功，复制到[ $diretc/$filetgz ]...\e[0m"
 			mv -f ./$filetgz $diretc/$filetgz
 		else
 			echo -e \\n"\e[36m▷旧文件$filetgz校验成功...\e[0m"
@@ -327,21 +327,21 @@ fi
 if [ "$download_ok" = "1" ] ; then
 	type=$(echo $filetgz | awk -F. '{print $NF}')
 	if [ "$type" = "tgz" ] ; then
-		echo -e \\n"\e[36m▷解压文件$filetgz到$fileout...\e[0m"
+		echo -e \\n"\e[36m▷解压文件$filetgz到[ $fileout ]...\e[0m"
 		tar xzvf $diretc/$filetgz -C $fileout
-		echo -e \\n"\e[32m✔文件$filetgz解压完成...\e[0m"\\n
+		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$type" = "zip" ] ; then
-		echo -e \\n"\e[36m▷解压文件$filetgz到$fileout...\e[0m"
+		echo -e \\n"\e[36m▷解压文件$filetgz到[ $fileout ]...\e[0m"
 		[ ! -s /opt/bin/unzip ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		unzip -o $diretc/$filetgz -d $fileout
-		echo -e \\n"\e[32m✔文件$filetgz解压完成...\e[0m"\\n
+		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$secret" = "1" ] ; then
-		echo -e \\n"\e[36m▷解密文件$filetgz到$fileout/$filename...\e[0m"
+		echo -e \\n"\e[36m▷解密文件$filetgz到[ $fileout/$filename ]...\e[0m"
 		cat $diretc/$filetgz | openssl enc -aes-256-ctr -d -a -md md5 -k $password > $fileout/$filename
-		echo -e \\n"\e[32m✔ $filetgz文件解密$filename完成...\e[0m"\\n
+		echo -e \\n"\e[32m✔ $filetgz文件解密$filename完成！\e[0m"\\n
 	else
 		cp -f $diretc/$filetgz ./$filetgz
-		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到./$filetgz...\e[0m"\\n
+		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到[ ./$filetgz ] ！\e[0m"\\n
 	fi
 	#跳出循环
 	break
