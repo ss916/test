@@ -1,5 +1,5 @@
-# //【2021-03-07 18:00:53】
-/SHAKE128.TXT= 9ad811b4d90c354e05d13704f31cc9944fd0da9b
+# //【2021-03-08 16:00:14】
+/SHAKE128.TXT= 537e0057c267dd0140b6eae2416e56b97a251fb3
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= df1ba1d82dd4309252a6f6f6d797f0e43ac94492
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -36,10 +36,10 @@
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
 /payload/cn_web.txt= 6bd5e9744f78f60072218638aba30118326c5013
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
-/payload/global_video.txt= 87e0f47bce791db67d10953987eb04e32b2d5ef6
+/payload/global_video.txt= 016e19d118f63cf718a3f2a18763e6c88ff583c8
 /payload/global_video_netflix.txt= ccb1798e0aeac223bef52e4644df4f412c1ca50c
 /payload/global_video_other.txt= 2a3015222953c309bcb5c3cd3e75716f65b4b1d9
-/payload/global_video_youtube.txt= 04eb3118ba30d9bcd024dbf37078bb7cacedc7d0
+/payload/global_video_youtube.txt= 943e6ca5603a53983b8d5a53929b2bca7abc4d1c
 /payload/global_web.txt= c9f3e911179d45a0a3896dae6af15098a030a347
 /payload/global_web_amazon.txt= a7eb47c5fa8357404041b74c5e45e18285cde954
 /payload/global_web_facebook.txt= 7b5496a58206aec4f4f630ed97d19973ea024b30
@@ -76,8 +76,8 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= fc94b377d1b29d2a72e2d94c4ff95843b3dcf3a0
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= d1f7bcfa1c14b8d92e029c9c354cb93f0be62e3e
-/t/Country.mmdb.ver= cc412e77ec429f4d8472adb1fc4b8791b116421b
+/t/Country.mmdb.tgz= fac12e0af797a828ba6cc88a8b6fa64419e32d2e
+/t/Country.mmdb.ver= 58dd74d2f3a2650374fa8f4fcd640e15d857447a
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -103,6 +103,6 @@
 /t/v2ray= 2b8790c92ad53b10ba992c7d37e3a09014b476cf
 /t/yacd-gh-pages.tgz= baeda0bad23a3097f684f45b5c799909ccd4a7bd
 /t/yacd-gh-pages.zip= 7fdf90c8718841648f0b4e5c1a149258ab2bb539
-/u2.sh= 255878675ad8debf5ac64d12187101e0e88d9ba3
+/u2.sh= 6a89e7c159218ce4499b81a46bfd9b63b39ec42d
 /v2ray.sh= 8e3471124178b3239689a624d7efe028e63134a1
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c

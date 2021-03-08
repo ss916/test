@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=3
+sh_ver=4
 
 #YouTube视频下载
 ###示例：
@@ -11,6 +11,11 @@ sh_ver=3
 #6：0=直接下载，1=调用aria下载
 #u=https://youtu.be/kenYPzfi-SU
 #u2.sh 1 $u 0 0 0 0
+
+
+name=youtube-dl
+mydir=$(dirname $0)
+[ ! -d ${mydir}/${name} ] && mkdir -p ${mydir}/${name} && > ${mydir}/${name}/settings.txt
 
 s1=$1
 s2=$2
@@ -57,7 +62,9 @@ echo -e \\n"   \e[1;33m   $package安装/更新 python3-pip、youtube-dl、ffmpe
 $package update
 $package install python3-pip ffmpeg
 pip3 install --upgrade pip youtube-dl
-echo -e \\n"\e[1;33m当前版本：\e[1;32m【$(youtube-dl --version)】\e[0m"\\n
+ver=$(youtube-dl --version)
+echo -e \\n"\e[1;33m当前版本：\e[1;32m【$ver】\e[0m"\\n
+sed -i '/ver=/d' ${mydir}/${name}/settings.txt && echo "ver=$ver" >> ${mydir}/${name}/settings.txt
 }
 
 youtube () {
@@ -158,6 +165,21 @@ fi
 echo -e \\n"\e[1;36m 查看日志....\e[0m "
 tail -f /tmp/u2b.log &
 }
+
+zhuangtai () {
+echo -e \\n"\e[1;33m当前状态：\e[0m"\\n
+if [ -s ${mydir}/${name} ] ; then
+	ver=$(cat ${mydir}/${name}/settings.txt |awk -F 'ver=' '/ver=/{print $2}' | head -n 1)
+	if [ ! -z "$ver" ] ; then
+		echo -e "★ \e[1;36m ${name} 版本：\e[1;32m【$ver】\e[0m"
+	else
+		echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【未检查】\e[0m"
+	fi
+else
+	echo -e "☆ \e[1;36m ${name} 版本：\e[1;31m【不存在settings.txt文件】\e[0m"
+fi
+}
+
 case $1 in
 1)
 	youtube
@@ -166,6 +188,7 @@ case $1 in
 	install &
 	;;
 *)
+	zhuangtai
 	echo -e \\n"\e[1;33m脚本管理：\e[0m\e[37m『 \e[0m\e[1;37m$sh_ver\e[0m\e[37m 』\e[0m"\\n
 	echo -e "\e[1;32m【1】\e[1;36m 下载YouTube视频 \e[0m "
 	echo -e "\e[1;32m【2】\e[1;36m 更新pip、youtube-dl、ffmpeg \e[0m "\\n
