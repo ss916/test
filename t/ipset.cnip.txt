@@ -1,4 +1,4 @@
-create cnip hash:net family inet hashsize 2048 maxelem 65536
+create cnip hash:net family inet hashsize 4096 maxelem 65536
 add cnip 94.191.0.0/17
 add cnip 82.156.0.0/15
 add cnip 81.68.0.0/14
@@ -171,7 +171,6 @@ add cnip 59.42.0.0/16
 add cnip 59.40.0.0/15
 add cnip 59.32.0.0/13
 add cnip 59.192.0.0/10
-add cnip 59.191.240.0/20
 add cnip 59.191.0.0/17
 add cnip 59.174.0.0/15
 add cnip 59.172.0.0/15

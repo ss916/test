@@ -1,5 +1,5 @@
-# //【2021-03-08 16:00:15】
-/SHA1.TXT= 6ebec747b9a10164cb5183fac2540558
+# //【2021-03-10 18:25:24】
+/SHA1.TXT= ef532e87e383e7e640225aa2c901bd13
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 5d9989ff067f9ace4de7136374968f7a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
@@ -36,9 +36,9 @@
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
 /payload/cn_web.txt= 81557ee4b025bcac1cb724f98141f9fc
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
-/payload/global_video.txt= 466a27ffa2afd9561e9db8641756b666
+/payload/global_video.txt= 9ba5beb9761894a895a64cb573ad2646
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
-/payload/global_video_other.txt= 9a5407e710513e65600278e97171164c
+/payload/global_video_other.txt= 2515f1e8f813a82cb4af2c12b84365f6
 /payload/global_video_youtube.txt= c9fa4f97912bef45193dba4ca53f40bf
 /payload/global_web.txt= caecd7cb09d6780ed287c46fbe2f8d41
 /payload/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
@@ -76,8 +76,8 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 4f332e95d00461d5e4de09f2d11211d8
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= f08750485324bf8bffccd3b732ce7ba6
-/t/Country.mmdb.ver= 68a5a1972d3ca2b43f6259ab2a92e2c6
+/t/Country.mmdb.tgz= f9e8ca372dafb840e080a85f2496edac
+/t/Country.mmdb.ver= 1a0d35a8a81ac3fe9f51fdd26c70bd0d
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -86,11 +86,11 @@
 /t/clash-dashboard-gh-pages.zip= f12946dd8a933f7b5b35d39f813f4401
 /t/clash.ver= 7c64ad1a271e3330c14b67300a358c29
 /t/clash= 98c3929c138511feb719e65786489ada
-/t/cnip.txt= fb8de7a7181e97cbfc759b4fa89de2fe
-/t/cnip_delegated-apnic-latest= 1af77f874a2fb33ea1a3fe7ea48f3092
+/t/cnip.txt= a0812de9e8fd37f6efe9d60bc067fdeb
+/t/cnip_delegated-apnic-latest= 8ffe25b17268757e3c035d1757f833dd
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= cf43465a75e83717f6687007f1fab719
-/t/ipset.cnip.txt= 1e7177f2be9b51dcd8076788bcf07f3b
+/t/ipset.cnip.txt= 0837b17e571d6da7fdd63182e58fba6f
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5

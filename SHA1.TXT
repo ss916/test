@@ -1,5 +1,5 @@
-# //【2021-03-08 16:00:14】
-/SHAKE128.TXT= 537e0057c267dd0140b6eae2416e56b97a251fb3
+# //【2021-03-10 18:25:23】
+/SHAKE128.TXT= 6909ee0ac83b716d229726dff4adf3fa84448574
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= df1ba1d82dd4309252a6f6f6d797f0e43ac94492
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
@@ -36,9 +36,9 @@
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
 /payload/cn_web.txt= 6bd5e9744f78f60072218638aba30118326c5013
 /payload/global_apple.txt= 4b054c8acd5db5c2f969e99d9dab45035f7a7afa
-/payload/global_video.txt= 016e19d118f63cf718a3f2a18763e6c88ff583c8
+/payload/global_video.txt= 6c98b2b56f0d7982fbd90adc15c330c6c5e12a01
 /payload/global_video_netflix.txt= ccb1798e0aeac223bef52e4644df4f412c1ca50c
-/payload/global_video_other.txt= 2a3015222953c309bcb5c3cd3e75716f65b4b1d9
+/payload/global_video_other.txt= 182e30e2f1fc6302dbe602c7b23dbb06ba0a8e7c
 /payload/global_video_youtube.txt= 943e6ca5603a53983b8d5a53929b2bca7abc4d1c
 /payload/global_web.txt= c9f3e911179d45a0a3896dae6af15098a030a347
 /payload/global_web_amazon.txt= a7eb47c5fa8357404041b74c5e45e18285cde954
@@ -76,8 +76,8 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= fc94b377d1b29d2a72e2d94c4ff95843b3dcf3a0
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= fac12e0af797a828ba6cc88a8b6fa64419e32d2e
-/t/Country.mmdb.ver= 58dd74d2f3a2650374fa8f4fcd640e15d857447a
+/t/Country.mmdb.tgz= d2dff631f4e6002266861a33da95e1b50c5ec942
+/t/Country.mmdb.ver= bc4ce8431e6923bea6b0daa83a5e0b7aea991d54
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
@@ -86,11 +86,11 @@
 /t/clash-dashboard-gh-pages.zip= e5790051a6cc799bb9d9b2b4dc15527dd3e3c7b8
 /t/clash.ver= 122d77ae757224f072dc1887df1a9b46b7c08765
 /t/clash= 104bc74b5d6e71653421f9333ecdfa3d710f2503
-/t/cnip.txt= b267e1219335c24e226074b1410efed7c962bcdc
-/t/cnip_delegated-apnic-latest= e0eb3de2862dcebab970fdc801fe7770619018be
+/t/cnip.txt= 8ac623014bafee2c499de1d21aed509fa2d3f99b
+/t/cnip_delegated-apnic-latest= 929713b31398d30a9daee881d93a3bb62aa075ea
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 99a02c664034fb165e5be8795e69faae4db778d6
-/t/ipset.cnip.txt= e614d36a775e882c97a375289e03f737f39ff766
+/t/ipset.cnip.txt= 20555569862fa766c58d643a8fe0de850b9c571e
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
