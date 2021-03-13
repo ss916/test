@@ -183,6 +183,7 @@ payload:
 - DOMAIN-SUFFIX,trafficjunky.net
 #porntrex
 - DOMAIN-SUFFIX,cdntrex.com
+- DOMAIN-SUFFIX,h-cdn.com
 - DOMAIN-SUFFIX,porntrex.com
 #redtube
 - DOMAIN-SUFFIX,redtube.com
