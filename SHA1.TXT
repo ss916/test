@@ -1,5 +1,5 @@
-# //【2021-03-15 01:07:23】
-/SHAKE128.TXT= 441f22f9dd53775147e046f07c579d4b8146a5d5
+# //【2021-03-15 12:50:07】
+/SHAKE128.TXT= 1bd65ea88c9b06f749818c6c5d5066ff822163d3
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= 0e517feeee7692bec402699d8afaa5796c55c39c
 /amd64/xray= 0e517feeee7692bec402699d8afaa5796c55c39c
@@ -69,23 +69,23 @@
 /s/c5.pb= 63063abf797823c12226e3345e0e1cdc1913673f
 /s/c6.json= fb8c98a0a611706487304654ae4b3e657bbc2bdc
 /s/c6.pb= 2680f11245d9eccb3e92323c0840bfd33b20b8d4
-/s/c7.json= 1c1fa17c380d0b77c81ac023bcdb75015aed20ce
+/s/c7.json= 31b688a1e2b5c231d79037948982fc8caabe1c9f
 /s/c7.pb= 5ffc91c55b67ed945789cc12f67b4d1bd0bb6215
-/s/c8.json= 5b3e872c91e4abd6a78636efc8e0a891c07f5bac
+/s/c8.json= 9176f03de6ed67be8ed8538fa39cea6f4a5f28c0
 /s/c8.pb= 61eb5604ca19249349ad209e0050da8f72738878
 /s/c9.json= f607cd91d936d9b19c8845eea2807a5759c404ff
 /s/c9.pb= cddb6ca9d87398c6f4977f8a20f5324a91013a71
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= fc94b377d1b29d2a72e2d94c4ff95843b3dcf3a0
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= f7ab4770b4fef803e0079fe4dde29be978462afa
-/t/Country.mmdb.ver= 36ba1056ff20778359583c577bfa3877ad447ade
+/t/Country.mmdb.tgz= ef0fb612e8d19f4b98ffae116d9308734af75ab2
+/t/Country.mmdb.ver= 3f2f299629e766ea74f20294b9966d2576d5668c
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= ebf1e053095a48892619e432fb84fe352b8322d6
-/t/clash-dashboard-gh-pages.zip= e5790051a6cc799bb9d9b2b4dc15527dd3e3c7b8
+/t/clash-dashboard-gh-pages.tgz= ede5594126b3da208c0a479eeddeb84f12f0e9d5
+/t/clash-dashboard-gh-pages.zip= 8bf3192195dbdc6d0548c815e1c259ed6ba73ba1
 /t/clash.ver= fd80e2d3637590ed9ac65febd035d7193d0187a8
 /t/clash= 25b16aee9f1a001bc0b0d0ff456e213574c92bc0
 /t/cnip.txt= 6789dcb3d60f3a82c126d0d775f2686b4f664088
