@@ -215,6 +215,7 @@ payload:
 # > NetEase
 - DOMAIN-SUFFIX,126.net
 - DOMAIN-SUFFIX,127.net
+- DOMAIN-SUFFIX,163.com
 - DOMAIN-SUFFIX,163yun.com
 - DOMAIN-SUFFIX,lofter.com
 - DOMAIN-SUFFIX,netease.im

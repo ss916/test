@@ -1,5 +1,5 @@
-# //【2021-03-15 12:50:08】
-/SHA1.TXT= 12158febf6f83f11f7ff04b34ef9bfb1
+# //【2021-03-20 10:03:24】
+/SHA1.TXT= 23d760c1429b6490e83cc85ad098a3f9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= f6cf1d00e24ad662e48c35e9d6df621b
 /amd64/xray= f6cf1d00e24ad662e48c35e9d6df621b
@@ -16,7 +16,7 @@
 /arm64/xray= fe2b610d5b6ac0e807b81afd0be75676
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= c721ded15ccebf385a6da14f4dce4a1f
-/config.yaml= f6bf76902ce694cf4c699eb556375e55
+/config.yaml= 7aebb5e4c1744b13e372be95249007c2
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -36,7 +36,7 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 81557ee4b025bcac1cb724f98141f9fc
+/payload/cn_web.txt= 3594667038f66011061f6d3cdd6f2f42
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 29c3141d07b96b9c62797be82421e886
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
@@ -55,25 +55,25 @@
 /payload/global_web_telegram.txt= 7ba1c154cdbd8fa23fde38e4651244cf
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.json= edb31670f5d2d3790081bf298aac0315
+/s/c1.json= 9ac28f5bb3736058a925fc58fb51ead9
 /s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
-/s/c10.json= d6def6703a27cbbb3cb004055ef6d4b7
+/s/c10.json= 27da7115dd65e135617d7eae60fbd8a3
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
-/s/c2.json= a26c80c7027b8b11da63ff1ee8077a03
+/s/c2.json= a09f8e608a0eb1076f899df7c17b915b
 /s/c2.pb= 220479f74baf08b7625ce895336e220e
-/s/c3.json= 6e51361f9238561ab8496ae1b551d632
+/s/c3.json= f70b61879ca1390a979a4d35c59ec2ce
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
-/s/c4.json= 7b3f7b3b3ba9700b3972f5d0672815c9
+/s/c4.json= 8c1ea72de72143129b35874e1dd18e13
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= b2d9867c1ba4d53846c2bc9a1a8bb399
+/s/c5.json= 0976cd3becd01b82d9e82c293bea875c
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
-/s/c6.json= d0d51dc24f0a585b45f7b1b3b75e456e
+/s/c6.json= 02294c77694b5e80581b5265d070e499
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
-/s/c7.json= bb50368e81c7af9bd9e9b7f28c1600c0
+/s/c7.json= 8046ba020e14df1ab4cd5aa249f0182a
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= f20dbac03be029a232893cb1bed911e8
+/s/c8.json= e9259ea9febc9ef057ae77f0304d35fe
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
-/s/c9.json= 921396b5866c63fe5b219881c913e5ba
+/s/c9.json= 3d5c79f064131e921023e7cefd9619f2
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 4f332e95d00461d5e4de09f2d11211d8
