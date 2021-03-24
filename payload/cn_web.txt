@@ -35,6 +35,9 @@ payload:
 #xinghuozhibo
 - DOMAIN-SUFFIX,binstream.live
 - DOMAIN-SUFFIX,speedws.com
+- DOMAIN-SUFFIX,tuboshu.com
+- DOMAIN-SUFFIX,xhzb.tw
+- DOMAIN-SUFFIX,xinghuozhibo.net
 - DOMAIN-SUFFIX,zhuoyuerenmai.net
 #lanzouyun
 - DOMAIN-SUFFIX,lanzous.com

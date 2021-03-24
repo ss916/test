@@ -1,4 +1,4 @@
-# //【2021-03-20 10:03:23】
+# //【2021-03-23 19:33:45】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -31,6 +31,8 @@ hosts:
   '+.realsrv.com': 127.0.0.1
   '+.googleadservices.com': 127.0.0.1
   '+.googlesyndication.com': 127.0.0.1
+  '+.googletagmanager.com': 127.0.0.1
+  '+.google-analytics.com': 127.0.0.1
   '+.doubleclick.net': 127.0.0.1
   '+.ads.*.com': 127.0.0.1
   '+.ads.*.net': 127.0.0.1

@@ -1,6 +1,8 @@
 payload:
 #❌AD hosts ：block_hosts.txt
 #https://github.com/vokins/yhosts
+#cumtuber
+- DOMAIN,consent-form.ogury.co
 #mx
 - DOMAIN,evt.mxplay.com
 #jav
