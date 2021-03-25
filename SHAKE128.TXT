@@ -1,5 +1,5 @@
-# //【2021-03-24 23:26:13】
-/SHA1.TXT= 2ebe49bc56437dcec08847d52d3b1d42
+# //【2021-03-25 22:36:59】
+/SHA1.TXT= d134d63e8969e2ebe739c7cd922c2a7f
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= f6cf1d00e24ad662e48c35e9d6df621b
 /amd64/xray= f6cf1d00e24ad662e48c35e9d6df621b
@@ -55,25 +55,25 @@
 /payload/global_web_telegram.txt= 7ba1c154cdbd8fa23fde38e4651244cf
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= e1cdbdd394bfc567b41acba18c58f378
-/s/c1.json= 9ac28f5bb3736058a925fc58fb51ead9
+/s/c1.json= 976e4419040717580cf88718ef228623
 /s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
-/s/c10.json= 27da7115dd65e135617d7eae60fbd8a3
+/s/c10.json= 9d72a2c8eb12ece2ee90323e8ff27610
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
-/s/c2.json= a09f8e608a0eb1076f899df7c17b915b
+/s/c2.json= 4da485a42ea778e3f62ea662103f22d8
 /s/c2.pb= 220479f74baf08b7625ce895336e220e
-/s/c3.json= f70b61879ca1390a979a4d35c59ec2ce
+/s/c3.json= a0fc7177a0037caa77bf1ec0fb1c17a4
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
-/s/c4.json= 8c1ea72de72143129b35874e1dd18e13
+/s/c4.json= 2d25c6ecfd920ba3fc89e815a8b93d37
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= 0976cd3becd01b82d9e82c293bea875c
+/s/c5.json= d2a7c088bd9732d272bfd41c2f4e5133
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
-/s/c6.json= 56476779bc0735bf3150e8cfb807a4a4
+/s/c6.json= d1bc6b40d501a3dfbd7af9da20639e18
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
-/s/c7.json= e1ade33e2a409be8f6f9b97a9c4e0a13
+/s/c7.json= 1abf093fd6217ef4c6dce56b5f511df0
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= e9259ea9febc9ef057ae77f0304d35fe
+/s/c8.json= 0305b6ff3d08b45c9f103c635ffc04f0
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
-/s/c9.json= 3d5c79f064131e921023e7cefd9619f2
+/s/c9.json= 2ecbc354c8cd232899dd2ad0b81711ea
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 4f332e95d00461d5e4de09f2d11211d8
