@@ -1,5 +1,8 @@
 #!/bin/bash
-sh_ver=40
+sh_ver=41
+
+path=${0%/*}
+bashname=${0##*/}
 
 #程序名字
 name=v2ray

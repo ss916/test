@@ -1,6 +1,9 @@
 #!/bin/bash
 sh_ver=3
 
+path=${0%/*}
+bashname=${0##*/}
+
 #程序名字
 name=opt
 #内存根目录

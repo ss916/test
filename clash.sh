@@ -1,5 +1,8 @@
 #!/bin/bash
-sh_ver=50
+sh_ver=52
+
+path=${0%/*}
+bashname=${0##*/}
 
 #程序名字
 name=clash
@@ -148,9 +151,9 @@ adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}' | 
 #是否启用网易云解锁，1.unlocknetease启用，0.关闭（默认）
 unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}' | head -n 1)
 [ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
-#是否启用节点记忆与恢复mark，1.启用（默认），0.关闭
+#是否启用脚本节点记忆与恢复mark，0.关闭（默认，直接使用自带.cache），1.打开
 mark=$(cat $dirconf/settings.txt |awk -F 'mark=' '/mark=/{print $2}' | head -n 1)
-[ -z "$mark" ] && mark=1 && echo "mark=1" >> $dirconf/settings.txt
+[ -z "$mark" ] && mark=0 && echo "mark=0" >> $dirconf/settings.txt
 #自定义闪存目录
 diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
 [ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
@@ -509,6 +512,42 @@ else
 	work_ok=0
 	[ -f ./mark/start_remark_ok_* ] && rm ./mark/start_remark_ok_*
 	> ./mark/start_remark_ok_0
+fi
+}
+
+check_cache_file () {
+filename=.cache
+#内存文件存在、闪存文件存在
+if [ -f $dirtmp/$filename -a -f $dirconf/$filename ] ; then
+	#若非软链接
+	if [ ! -h $dirtmp/$filename ] ; then
+		echo "▷$dirconf/$filename、$dirtmp/$filename都文件存在但$dirtmp/$filename非软连接。移动文件$dirtmp/$filename到$dirconf/$filename，重新生成软链接文件$dirtmp/$filename"
+		mv -f $dirconf/$filename $dirconf/${filename}_backup
+		mv -f $dirtmp/$filename $dirconf/$filename
+		ln -s $dirconf/$filename $dirtmp/$filename
+	fi
+#内存文件存在、闪存文件不存在
+elif [ -f $dirtmp/$filename -a ! -f $dirconf/$filename ] ; then
+	#若非软链接
+	if [ ! -h $dirtmp/$filename ] ; then
+		echo "▷$dirconf/$filename文件不存在但$dirtmp/$filename文件存在。移动文件$dirtmp/$filename到$dirconf/$filename，重新生成软链接文件$dirtmp/$filename"
+		mv -f $dirtmp/$filename $dirconf/$filename
+		ln -s $dirconf/$filename $dirtmp/$filename
+	else
+		echo "▷$dirconf/$filename文件不存在且$dirtmp/$filename为软链接。删除无效软链接，创建空白文件$dirconf/$filename并生成软链接文件$dirtmp/$filename"
+		rm $dirtmp/$filename
+		> $dirconf/$filename
+		ln -s $dirconf/$filename $dirtmp/$filename
+	fi
+#内存文件不存在、闪存文件存在，直接创建软链接
+elif [ ! -f $dirtmp/$filename -a -f $dirconf/$filename ] ; then
+	echo "▷$dirconf/$filename文件存在但$dirtmp/$filename不存在。生成软链接文件$dirtmp/$filename"
+	ln -s $dirconf/$filename $dirtmp/$filename
+#内存文件不存在、闪存文件不存在，直接创建软链接
+elif [ ! -f $dirtmp/$filename -a ! -f $dirconf/$filename ] ; then
+	echo "▷$dirconf/$filename、$dirtmp/$filename文件都不存在。创建空白文件$dirconf/$filename并生成软链接文件$dirtmp/$filename"
+	> $dirconf/$filename
+	ln -s $dirconf/$filename $dirtmp/$filename
 fi
 }
 
@@ -1116,6 +1155,8 @@ edit_chinalist
 edit_dns
 edit_adblock
 edit_unlocknetease
+#检查是否存在cache文件
+check_cache_file
 #启动主程序
 start_program
 #等待30秒
@@ -1138,14 +1179,14 @@ start_1 () {
 [ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
 start_iptables && waitwork start_iptables 60 &
-start_remark && waitwork start_remark 60
+[ "$mark" = "1" ] && start_remark && waitwork start_remark 60
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 [ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
 start_iptables && waitwork start_iptables 60 &
-start_remark && waitwork start_remark 60
+[ "$mark" = "1" ] && start_remark && waitwork start_remark 60
 }
 #启动模式3：不启用iptables透明代理
 start_3 () {

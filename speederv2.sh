@@ -1,6 +1,9 @@
 #!/bin/bash
 sh_ver=5
 
+path=${0%/*}
+bashname=${0##*/}
+
 #程序名字
 name=speederv2
 #内存根目录

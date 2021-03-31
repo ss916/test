@@ -1,6 +1,11 @@
 #!/bin/sh
-dir=/etc/storage/pdcn
-[ ! -d $dir ] && mkdir -p $dir
+#1
+
+path=${0%/*}
+bashname=${0##*/}
+
+name=pdcn
+[ ! -d $path/$name ] && mkdir -p $path/$name
 
 if [ ! -s /etc/storage/profile -o -z "`grep "storage/pdcn" /etc_ro/profile`" ] ; then
 	[ ! -z "`grep "storage/pdcn" /etc_ro/profile`" ] && umount /etc_ro/profile
