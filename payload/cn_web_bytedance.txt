@@ -1,0 +1,46 @@
+payload:
+#🀄字节跳动：cn_web_bytedance.txt
+#bytedance
+- DOMAIN-SUFFIX,adhimalayandi.com
+- DOMAIN-SUFFIX,amemv.com
+- DOMAIN-SUFFIX,bytedns.net
+- DOMAIN-SUFFIX,ctobsnssdk.com
+- DOMAIN-SUFFIX,feiliao.com
+- DOMAIN-SUFFIX,pstatp.com
+- DOMAIN-SUFFIX,snssdk.com
+- DOMAIN-SUFFIX,vvpncdn.com
+#douyin
+- DOMAIN-SUFFIX,bdurl.net
+- DOMAIN-SUFFIX,byteimg.com
+- DOMAIN-SUFFIX,douyin.com
+- DOMAIN-SUFFIX,douyincdn.com
+- DOMAIN-SUFFIX,douyinpic.com
+- DOMAIN-SUFFIX,douyinvod.com
+- DOMAIN-SUFFIX,iesdouyin.com
+#kuaishou
+- DOMAIN-SUFFIX,bcelive.com
+- DOMAIN-SUFFIX,bytedance.com
+- DOMAIN-SUFFIX,chinanetcenter.com
+- DOMAIN-SUFFIX,etoote.com
+- DOMAIN-SUFFIX,gifshow.com
+- DOMAIN-SUFFIX,ksapisrv.com
+- DOMAIN-SUFFIX,kspkg.com
+- DOMAIN-SUFFIX,kuaishou.com
+- DOMAIN-SUFFIX,kuaishoupay.com
+- DOMAIN-SUFFIX,kuaishouzt.com
+- DOMAIN-SUFFIX,kwaicdn.com
+- DOMAIN-SUFFIX,kwaishop.com
+- DOMAIN-SUFFIX,kwaixiaodian.com
+- DOMAIN-SUFFIX,kwaizt.com
+- DOMAIN-SUFFIX,kwimgs.com
+- DOMAIN-SUFFIX,onethingpcs.com
+- DOMAIN-SUFFIX,p2cdn.com
+- DOMAIN-SUFFIX,viviv.com
+- DOMAIN-SUFFIX,yximgs.com
+#toutiao
+- DOMAIN-SUFFIX,toutiao.com
+- DOMAIN-SUFFIX,toutiaocloud.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+- DOMAIN-SUFFIX,pglstatp-toutiao.com
+#xigua
+- DOMAIN-SUFFIX,ixigua.com
