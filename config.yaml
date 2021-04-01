@@ -1,4 +1,4 @@
-# //【2021-04-01 23:21:05】
+# //【2021-04-02 01:17:00】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -565,13 +565,13 @@ rule-providers:
   cn_web_bytedance:
     type: http
     behavior: classical
-    path: ./rule/cn_web.txt
+    path: ./rule/cn_web_bytedance.txt
     url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_bytedance.txt
     interval: 30000
   cn_web_other:
     type: http
     behavior: classical
-    path: ./rule/cn_web.txt
+    path: ./rule/cn_web_other.txt
     url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_other.txt
     interval: 30000
 
