@@ -1,8 +1,8 @@
-# //【2021-04-01 23:21:06】
-/SHA1.TXT= c343c080f960bc7e085fde54d5e890e7
+# //【2021-04-02 00:36:29】
+/SHA1.TXT= 9d95680ea204385d433cfd65ef5fc1c4
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
-/amd64/v2ray= 09a650192077250e967d1fe24433acbd
-/amd64/xray= 09a650192077250e967d1fe24433acbd
+/amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
+/amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
 /arm64/clash= bb640a8aedd4b246a3cc24d9087f8f25
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
@@ -12,8 +12,8 @@
 /arm64/kcptuns_old= 79ec3f6bd85c892b9e50c3e595ed4a66
 /arm64/speederv2= e683ddd3ab4fbcef63d05cd1761dd0ac
 /arm64/v2ctl= a447353b7df43a18b7d3b7b05b05d6af
-/arm64/v2ray= 796ad4c45c892856e3ddc9566fe612b8
-/arm64/xray= 796ad4c45c892856e3ddc9566fe612b8
+/arm64/v2ray= f9900a5096653ace03861f23f1cc3926
+/arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 27b7d3e8af31d1122758c7bead142a61
 /config.yaml= fe729aa405c1b5d723e21c5ec9ad58f0
@@ -93,7 +93,7 @@
 /t/cnip.txt= c09278f9958a46552b001e238d751caa
 /t/cnip_delegated-apnic-latest= e5ba90f880d5b6697dff41f0c7a3355b
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
-/t/geo.tgz= ca65e2f69f5f18e90f9e4beabd3d7d30
+/t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
 /t/ipset.cnip.txt= b77eeb1a2daa93f41d8bb25058b7d589
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
@@ -103,9 +103,9 @@
 /t/trojan-go= 6e1b5bc67f97a7df61d69658efd434fc
 /t/udpspeeder.ver= 1e0fa11b74e775d3498a44808dbd9e7b
 /t/v2ctl= 11964cacd232ac373d382ce4a706060b
-/t/v2ray.ver= 0417d37f933cb7a5df81403ee2337b06
-/t/v2ray= 285cf1c9a184a895e40b4695638bd747
-/t/xray= 285cf1c9a184a895e40b4695638bd747
+/t/v2ray.ver= 27175ba78ea63d71b3c9e881d6ddb286
+/t/v2ray= 5f344c177fb837918a8cde35e1805e28
+/t/xray= 5f344c177fb837918a8cde35e1805e28
 /t/yacd-gh-pages.tgz= 2b7ad4b8d3bfa5612fd8d51038208363
 /t/yacd-gh-pages.zip= bc3966d9795b395d2e8d40dfc03bf409
 /u2.sh= b48fb691746b12ad4b384dcf88e666e2
