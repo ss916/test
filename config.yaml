@@ -1,4 +1,4 @@
-# //【2021-03-23 19:33:45】
+# //【2021-04-01 23:21:05】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -512,6 +512,19 @@ proxy-groups:
     #- 文件1
     #- 文件2
 
+- name: 🀄字节跳动
+  type: select
+  proxies:
+    - 直连
+    - 代理
+    - 屏蔽
+  use:
+    - 订阅1
+    - 订阅2
+    #- 文件1
+    #- 文件2
+
+
 - name: 🌰Tor
   type: select
   proxies:
@@ -543,17 +556,23 @@ rule-providers:
     path: ./rule/cn_video.txt
     url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_video.txt
     interval: 30000
-  cn_web:
-    type: http
-    behavior: classical
-    path: ./rule/cn_web.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web.txt
-    interval: 30000
   cn_music_netease:
     type: http
     behavior: classical
     path: ./rule/cn_music_netease.txt
     url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_music_netease.txt
+    interval: 30000
+  cn_web_bytedance:
+    type: http
+    behavior: classical
+    path: ./rule/cn_web.txt
+    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_bytedance.txt
+    interval: 30000
+  cn_web_other:
+    type: http
+    behavior: classical
+    path: ./rule/cn_web.txt
+    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_other.txt
     interval: 30000
 
   global_apple:
@@ -654,8 +673,9 @@ rules:
 - RULE-SET,global_web_protonmail,🆓protonmail
 
 - RULE-SET,cn_music_netease,🎵网易云
+- RULE-SET,cn_web_bytedance,🀄字节跳动
 - RULE-SET,cn_video,🀄影音
-- RULE-SET,cn_web,🀄网站
+- RULE-SET,cn_web_other,🀄网站
 
 - RULE-SET,global_apple,🍏苹果
 
