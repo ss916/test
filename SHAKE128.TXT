@@ -1,5 +1,5 @@
-# //【2021-04-02 01:17:01】
-/SHA1.TXT= e2bbb5a0695f6131e5ba7c1526cefacb
+# //【2021-04-02 11:57:17】
+/SHA1.TXT= 2b0150ca7e32aec649ae088a431e558f
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -16,7 +16,7 @@
 /arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= 27b7d3e8af31d1122758c7bead142a61
-/config.yaml= 17fd2f835bf69216126b00a8477398b4
+/config.yaml= 0fcf668429e7a640cbb270feaf73c24f
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
