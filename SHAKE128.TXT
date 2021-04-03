@@ -1,5 +1,5 @@
-# //【2021-04-04 04:55:15】
-/SHA1.TXT= 4d3cdd0d4f899b8b0c0b073d00eb0682
+# //【2021-04-04 05:51:09】
+/SHA1.TXT= 0f412172196e57578bdc3e3784e7255b
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -29,7 +29,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= 630209c710fbb594e5e5ba08b077f734
+/opt.sh= 3f879ed2f12c9f230cdf85e375929833
 /payload/block_dnsmasq.txt= 0e8819521ec07e858cb22d07dee83a1c
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= a9995b0fab3ac6278a743407dd50f7cd
@@ -57,25 +57,25 @@
 /payload/global_web_telegram.txt= 7d279bb5f04a46d658c1ff4fc752be55
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44
 /pf.sh= 52bba661b313a7b3c84327d2036c2399
-/s/c1.json= c521e97fd591186a36129631881628d6
+/s/c1.json= 316981846b254eb3db9a2e0a0911f881
 /s/c1.pb= 6f78a4ae791c6756a7f44ab25749f099
-/s/c10.json= acebe22b56caaf11a3fc47a020979bb6
+/s/c10.json= a7bfc2644204ba3edbcf0fb5600e6ee2
 /s/c10.pb= ce686f6e480c12765ec71b79a9b2e113
-/s/c2.json= cd7b306d9c7bc74b8fe65927096b7d73
+/s/c2.json= baa453d69ffea013d537ee746fd95b41
 /s/c2.pb= 220479f74baf08b7625ce895336e220e
-/s/c3.json= 74ef45aeb13fbf6cd00d9cabd9d2fdd7
+/s/c3.json= 5d2413da97ed717a4b863403514ecef4
 /s/c3.pb= 2d12bc66384d9e737a99264f077f3fe4
-/s/c4.json= 193b2321053d481cd08af483efdf831d
+/s/c4.json= 9bfd8c6e3418dad0730647e2f5d03fd6
 /s/c4.pb= 6e53e6021d2fb20c457b46ce9f73fdfd
-/s/c5.json= 79cb908fa55bc616e2e13690a2b215dd
+/s/c5.json= a2c96f7bd536472f9f51451d573e2cb5
 /s/c5.pb= 7cddaee1b28da4975ca8cc129751c68f
-/s/c6.json= 06f5218c0e391ea6d10157d4201231e2
+/s/c6.json= 3e344f0b61518290449f0620ca85cdc8
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
-/s/c7.json= b13255e3761ec221f2baaa5e7a918af4
+/s/c7.json= 49a3d3f6fcada85ed2340cfc7686e9d9
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= f4c4200dfa305240333d3e97b405f30e
+/s/c8.json= 6ff7434ab6c23d315c6722565a9a263c
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
-/s/c9.json= 810aca84b892874e24f72f1d5ba8b5bc
+/s/c9.json= 17a72b268c745bdf577ef671a50ce548
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 0f5ebf1b044939ce2296306891deed36

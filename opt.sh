@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=3
+sh_ver=4
 
 path=${0%/*}
 bashname=${0##*/}
@@ -40,26 +40,27 @@ update () {
 echo -e \\n"$(timenow)"\\n
 curl_proxy
 echo -e \\n"\e[1;32m ▶更新opkg列表...\e[0m "
-/opt/bin/opkg update && /opt/bin/opkg install wget
+opkg update && opkg install wget
 echo -e "\e[1;32m ...更新opkg列表結束...\e[0m "\\n
 }
 upgrade () {
 echo -e \\n"\e[1;32m ▶升級opkg upgrade...\e[0m "
-/opt/bin/opkg upgrade
+opkg upgrade
 echo -e "\e[1;32m ...升級opkg upgrade結束...\e[0m "\\n
 }
 install () {
 echo -e \\n"\e[1;7;36m ▶批量安装...\e[0m "
-echo -e \\n"\e[1;33m★安装mtr \e[0m" && /opt/bin/opkg install mtr && echo -e "\e[1;33m✔安装mtr \e[0m"
-echo -e \\n"\e[1;33m★安装nmap \e[0m" && /opt/bin/opkg install nmap && echo -e "\e[1;33m✔安装nmap \e[0m"
-echo -e \\n"\e[1;33m★安装iperf3 \e[0m" && /opt/bin/opkg install iperf3 && echo -e "\e[1;33m✔安装iperf3 \e[0m"
-echo -e \\n"\e[1;33m★安装openssh-server \e[0m" && /opt/bin/opkg install openssh-server && echo -e "\e[1;33m✔安装openssh-server \e[0m"
-echo -e \\n"\e[1;33m★安装iftop \e[0m" && /opt/bin/opkg install iftop && echo -e "\e[1;33m✔安装iftop \e[0m"
-echo -e \\n"\e[1;33m★安装curl \e[0m" && /opt/bin/opkg install curl && echo -e "\e[1;33m✔安装curl \e[0m"
-echo -e \\n"\e[1;33m★更新openssl \e[0m" && /opt/bin/opkg install openssl-util libopenssl && echo -e "\e[1;33m✔更新openssl \e[0m"
-echo -e \\n"\e[1;33m★安装coreutils split \e[0m" && /opt/bin/opkg install coreutils-split && echo -e "\e[1;33m✔安装coreutils split \e[0m"
-echo -e \\n"\e[1;33m★安装coreutils sort \e[0m" && /opt/bin/opkg install coreutils-sort && echo -e "\e[1;33m✔安装coreutils sort \e[0m"
-echo -e \\n"\e[1;33m★安装unzip \e[0m" && /opt/bin/opkg install unzip && echo -e "\e[1;33m✔安装unzip \e[0m"
+echo -e \\n"\e[1;33m★安装mtr \e[0m" && opkg install mtr && echo -e "\e[1;33m✔安装mtr \e[0m"
+echo -e \\n"\e[1;33m★安装nmap \e[0m" && opkg install nmap && echo -e "\e[1;33m✔安装nmap \e[0m"
+echo -e \\n"\e[1;33m★安装iperf3 \e[0m" && opkg install iperf3 && echo -e "\e[1;33m✔安装iperf3 \e[0m"
+echo -e \\n"\e[1;33m★安装openssh-server \e[0m" && opkg install openssh-server && echo -e "\e[1;33m✔安装openssh-server \e[0m"
+echo -e \\n"\e[1;33m★安装iftop \e[0m" && opkg install iftop && echo -e "\e[1;33m✔安装iftop \e[0m"
+echo -e \\n"\e[1;33m★安装curl \e[0m" && opkg install curl && echo -e "\e[1;33m✔安装curl \e[0m"
+echo -e \\n"\e[1;33m★更新openssl \e[0m" && opkg install openssl-util libopenssl && echo -e "\e[1;33m✔更新openssl \e[0m"
+echo -e \\n"\e[1;33m★安装coreutils split \e[0m" && opkg install coreutils-split && echo -e "\e[1;33m✔安装coreutils split \e[0m"
+echo -e \\n"\e[1;33m★安装coreutils sort \e[0m" && opkg install coreutils-sort && echo -e "\e[1;33m✔安装coreutils sort \e[0m"
+echo -e \\n"\e[1;33m★安装unzip \e[0m" && opkg install unzip && echo -e "\e[1;33m✔安装unzip \e[0m"
+echo -e \\n"\e[1;33m★安装bind-dig \e[0m" && opkg install bind-dig && echo -e "\e[1;33m✔安装bind-dig \e[0m"
 #wait
 echo -e \\n"\e[1;7;36m ...批量安装結束...\e[0m "\\n
 }
