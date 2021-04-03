@@ -1,4 +1,4 @@
-# //【2021-04-02 12:19:39】
+# //【2021-04-04 04:55:14】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -96,8 +96,9 @@ dns:
     #@cloudflare
     #- tls://1.0.0.1:853 #🚫block#
     #- tls://1.1.1.1:853 #🚫block#
-    - https://1.0.0.1/dns-query
+    #- https://1.0.0.1/dns-query
     #- https://1.1.1.1/dns-query
+    - https://1.0.0.2/dns-query
     - https://cloudflare-dns.com/dns-query #🚫block ipv4#
     #@twnic
     #- tls://101.101.101.101:853 #🚫block#
