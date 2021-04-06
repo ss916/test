@@ -1,5 +1,5 @@
-# //【2021-04-04 05:51:08】
-/SHAKE128.TXT= c060930f14fcbb7d43f38bcf20b7b7f6b4e499fa
+# //【2021-04-06 18:14:07】
+/SHAKE128.TXT= f54365c2ecac8a4d56b161d08a90c836bf9c48d0
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
 /amd64/xray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -80,21 +80,21 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= 9f18ce42e959a3808bef60e4edb5027fef94a622
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= b577214db1be8a00155ca10db602dd8f4c8902fb
-/t/Country.mmdb.ver= c9c7e444bcd8c0905b036eff54eb38d2f119167d
+/t/Country.mmdb.tgz= 9077b5364dd2355ddd031ce5a198ee69f8f07144
+/t/Country.mmdb.ver= eddfc1fa044b121d84c40fbf53e7644771c55014
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= 403ce0b4f05d5cbdd832a0629c2d4097e3059a6a
-/t/clash-dashboard-gh-pages.zip= 4cf397a2ee33ba2f14a889552f047c9c29b9701c
+/t/clash-dashboard-gh-pages.tgz= 8037b248dd6b6802b2803adf9fd1d1046865a9d8
+/t/clash-dashboard-gh-pages.zip= 57622c53492c13379f9852546c8cdb5522709621
 /t/clash.ver= fd80e2d3637590ed9ac65febd035d7193d0187a8
 /t/clash= 25b16aee9f1a001bc0b0d0ff456e213574c92bc0
 /t/cnip.txt= d2bc252a865a644507e591fa5ce7feff9e21f4cf
-/t/cnip_delegated-apnic-latest= d2e5aab1154dc80b94a28e7212fec4dcca1b3993
+/t/cnip_delegated-apnic-latest= e77df63c860376f99573bd0d1bf61c299506bc18
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 9b430233c2cef05cbf253819f62928b89c656e8d
-/t/ipset.cnip.txt= a2399d9ce639b0fc98df9971e9a711b36d8c021b
+/t/ipset.cnip.txt= 3070742dc1083947849bb34b9573183bf6615de6
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
