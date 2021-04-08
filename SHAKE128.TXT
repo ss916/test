@@ -1,5 +1,5 @@
-# //【2021-04-08 23:16:59】
-/SHA1.TXT= e7b13c026e68332149dd5d49bf59a1d1
+# //【2021-04-08 23:19:55】
+/SHA1.TXT= 410bcbef38663d086a145ae141fc1425
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -80,8 +80,8 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 0f5ebf1b044939ce2296306891deed36
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= fabb9af19f625ee1f558bb5d370a9bb5
-/t/Country.mmdb.ver= f7daab7125f7f5f1376f5ed7723d9cd1
+/t/Country.mmdb.tgz= 23e9e55b1ff3104f00b575b77d24db82
+/t/Country.mmdb.ver= fe59cb5e786cdbb7c122ac3ee3ef71e4
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
