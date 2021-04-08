@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=52
+sh_ver=53
 
 path=${0%/*}
 bashname=${0##*/}
@@ -1293,7 +1293,7 @@ fi
 }
 upclash () {
 filename="clash"
-os1="linux-mipsle-softfloat"
+os1="linux-mipsle-hardfloat"
 #os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 #tmpclash
@@ -1302,8 +1302,9 @@ tmpclash_url1=$($curl -sL $tmpclash_address | awk -F\" '/'$os1'/{print $2}' | se
 tmpclash_url2=$(echo $tmpclash_url1 | sed "s/$os1/$os2/")
 tmpclash_ver=$(echo $tmpclash_url1 | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 #github
-github_address="https://github.com/Dreamacro/clash"
-github_url1=$($curl -sL $github_address/releases | awk -F\" '/releases.*premium.*'$os1'/{print "https://github.com" $2}' | head -n 1)
+#github_address="https://github.com/Dreamacro/clash"
+github_address="https://github.com/Dreamacro/clash/releases/tag/premium"
+github_url1=$($curl -sL $github_address | awk -F\" '/releases.*premium.*'$os1'/{print "https://github.com" $2}' | head -n 1)
 #github_url2=$(echo $github_url1 | sed "s/$os1/$os2/")
 github_ver=$(echo $github_url1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed 's/.gz//')
 #new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
