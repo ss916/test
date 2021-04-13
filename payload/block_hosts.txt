@@ -2428,7 +2428,7 @@ payload:
 - DOMAIN,3.iscrv.com
 - DOMAIN,7.iscrv.com
 - DOMAIN,go.oclasrv.com
-- DOMAIN,syndication.realsrv.com
+#- DOMAIN,syndication.realsrv.com
 - DOMAIN,g3.letv.com
 - DOMAIN,ark.letv.com
 - DOMAIN,test.ark.letv.com

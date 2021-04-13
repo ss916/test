@@ -1,5 +1,5 @@
-# //【2021-04-13 20:54:55】
-/SHA1.TXT= 04caf0d0d786c1eb0d7f368c7a2cbca5
+# //【2021-04-14 03:01:54】
+/SHA1.TXT= 1c31c8e872b596cc81655519ba01d122
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -30,9 +30,9 @@
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
 /opt.sh= 3f879ed2f12c9f230cdf85e375929833
-/payload/block_dnsmasq.txt= 0e8819521ec07e858cb22d07dee83a1c
+/payload/block_dnsmasq.txt= 6618af857697bf2afe502557ef0df220
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
-/payload/block_hosts.txt= a9995b0fab3ac6278a743407dd50f7cd
+/payload/block_hosts.txt= 147babaef9986b7a33aad758f8939f73
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
