@@ -278,6 +278,7 @@ payload:
 - DOMAIN-SUFFIX,haypnew.com
 - DOMAIN-SUFFIX,hellotvvod.com
 - DOMAIN-SUFFIX,hrpan.tk
+- DOMAIN-SUFFIX,tvgood.taipei
 - DOMAIN-SUFFIX,tvbox543.com
 
 #📺YouTube ：global_video_youtube.txt
