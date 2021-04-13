@@ -217,6 +217,9 @@ payload:
 - DOMAIN-SUFFIX,onedrive.live.com
 - DOMAIN-SUFFIX,xboxlive.com
 #🆓国外网站 ：global_web_other.txt
+#v2ex
+- DOMAIN-SUFFIX,v2ex.com
+- DOMAIN-SUFFIX,v2ex.co
 #gab
 - DOMAIN-SUFFIX,gab.com
 #discord

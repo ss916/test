@@ -1,5 +1,5 @@
-# //【2021-04-12 01:44:13】
-/SHA1.TXT= 3effba66d9c9fcbedc32809c0bbf094e
+# //【2021-04-13 15:00:29】
+/SHA1.TXT= 429c0ee4936ce3e0ba548cb6f9ae4b01
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -36,15 +36,15 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= e082e366e02effad2994ad3bb9d88a2b
+/payload/cn_web.txt= 8a184a91aede9493aeae4295ba417885
 /payload/cn_web_bytedance.txt= a1403e03b0409bf6e6027ce94c703a2b
-/payload/cn_web_other.txt= 82302c26917bf77ce1af44f38dc5cca0
+/payload/cn_web_other.txt= fd47a679db10cb0dab8a0e3c717257e9
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
-/payload/global_video.txt= f479b27e50250c7cfd800be9f016cdeb
+/payload/global_video.txt= b80d65f79ddb16c3f21e719ed2248c97
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
-/payload/global_video_other.txt= 57f094c1cc08af877adc52a762b1bb98
+/payload/global_video_other.txt= 22a3d2503d428d2229c09223c020e99c
 /payload/global_video_youtube.txt= c9fa4f97912bef45193dba4ca53f40bf
-/payload/global_web.txt= 6bfe3851cbd45e074f12f8057d23386f
+/payload/global_web.txt= acf689df9c8129124e72e1e7d9024258
 /payload/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
 /payload/global_web_facebook.txt= 6c56496ce616cbfd63aaa08fb0eeaaaf
 /payload/global_web_github.txt= 81eebf14b9075a61fde558c627212cb0
@@ -52,7 +52,7 @@
 /payload/global_web_line.txt= 8f533f611f8a26ff005799f7efa572af
 /payload/global_web_mega.txt= 5763009ec1f138d17146c57c45c2b484
 /payload/global_web_microsoft.txt= 43e4807f8e80c352b394613a50830894
-/payload/global_web_other.txt= e95b54f158ef87e2626125aebdf99830
+/payload/global_web_other.txt= 6d3690451ac894cb12c8e9426ffc71fc
 /payload/global_web_protonmail.txt= 06eaa3b34895786a5d3a9dd1dda7adff
 /payload/global_web_telegram.txt= 7d279bb5f04a46d658c1ff4fc752be55
 /payload/global_web_twitter.txt= fc7a8b83bdedfd23cfcd35a4812d7d44

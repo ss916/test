@@ -34,6 +34,8 @@ payload:
 - DOMAIN-SUFFIX,88cdn.com
 #xinghuozhibo
 - DOMAIN-SUFFIX,binstream.live
+- DOMAIN-SUFFIX,chaosuzhibo.com
+- DOMAIN-SUFFIX,chengbo.org
 - DOMAIN-SUFFIX,speedws.com
 - DOMAIN-SUFFIX,tuboshu.com
 - DOMAIN-SUFFIX,xhzb.tw
@@ -71,9 +73,6 @@ payload:
 #cibn
 - DOMAIN-SUFFIX,cibn.cc
 - DOMAIN-SUFFIX,cibntv.net
-#v2ex
-- DOMAIN-SUFFIX,v2ex.com
-- DOMAIN-SUFFIX,v2ex.co
 # > 360
 - DOMAIN-SUFFIX,qhres.com
 - DOMAIN-SUFFIX,qhimg.com
