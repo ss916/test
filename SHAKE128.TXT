@@ -1,5 +1,6 @@
-# //【2021-04-14 21:54:28】
-/SHA1.TXT= 7f8a1295c3a607a69fe532288d0a620c
+# //【2021-04-14 23:37:19】
+/SHA1.TXT= cdfbf4a45a785d626aa94ca9939caa9e
+/amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
