@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=53
+sh_ver=55
 
 path=${0%/*}
 bashname=${0##*/}
@@ -1019,7 +1019,13 @@ done
 EOF
 chmod +x ./${name}_keep.sh
 fi
-[ -z "$(psskeep)" ] && echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/${name}_keep.sh >> $dirtmp/keep.txt 2>&1 &
+#检查进程守护脚本是否已启动
+if [ -z "$(psskeep)" ] ; then
+	echo -e \\n"\e[1;36m▶启动进程守护脚本...\e[0m" && nohup sh $dirtmp/${name}_keep.sh >> $dirtmp/keep.txt 2>&1 &
+	keep_run_status=0
+else
+	keep_run_status=1
+fi
 }
 stop_keep () {
 [ ! -z "$(psskeep)" ] && echo -e \\n"\e[1;36m▷关闭进程守护脚本...\e[0m" && psskeep | awk '{print $1}' | xargs kill -9
@@ -1148,6 +1154,7 @@ get_config_file &
 down_program &
 down_geoip &
 down_web &
+[ "$bypasscnip" = "1" ] && down_ipset_cnip &
 wait
 #编辑配置文件
 edit_link
@@ -1178,14 +1185,24 @@ fi
 start_1 () {
 [ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=1" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
-start_iptables && waitwork start_iptables 60 &
+if [ "$keep_run_status" = "1" ] ; then
+	#keep脚本进程已存在，则立即执行透明代理
+	start_iptables && waitwork start_iptables 60 &
+else
+	echo -e \\n"\e[1;36m◆keep.sh脚本为初始化启动，透明代理只由keep.sh启动。（避免重复加载透明代理规则）\e[0m"
+fi
 [ "$mark" = "1" ] && start_remark && waitwork start_remark 60
 }
 #启动模式2：iptables透明代理+路由自身走代理
 start_2 () {
 [ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=2" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
 start_0
-start_iptables && waitwork start_iptables 60 &
+if [ "$keep_run_status" = "1" ] ; then
+	#keep脚本进程已存在，则立即执行透明代理
+	start_iptables && waitwork start_iptables 60 &
+else
+	echo -e \\n"\e[1;36m◆keep.sh脚本为初始化启动，透明代理只由keep.sh启动。（避免重复加载透明代理规则）\e[0m"
+fi
 [ "$mark" = "1" ] && start_remark && waitwork start_remark 60
 }
 #启动模式3：不启用iptables透明代理

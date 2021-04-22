@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=4
+sh_ver=5
 
 path=${0%/*}
 bashname=${0##*/}
@@ -72,7 +72,7 @@ stop_wan () {
 start_wan () {
 [ -z "$(cat $file_wan | grep START_WAN.SH)" ] && echo "sh $pdcn/START_WAN.SH &" >> $file_wan
 [ ! -f $pdcn/START_WAN.SH ] && > $pdcn/START_WAN.SH
-[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
+[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sleep 60 && sh $pdcn/${name}.sh restart > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
 }
 
 #定时任务
@@ -82,13 +82,18 @@ stop_cron () {
 start_cron () {
 [ -z "$(cat $file_cron | grep START_CRON.SH)" ] && echo "1 5 * * * sh $pdcn/START_CRON.SH &" >> $file_cron
 [ ! -f $pdcn/START_CRON.SH ] && > $pdcn/START_CRON.SH
-[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
+[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sleep 60 && sh $pdcn/${name}.sh restart > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
 }
 
 start () {
 [ -z "`ps -w|grep -v grep|grep iperf3`" ] && echo -e "\e[1;36m✦运行iperf3 \e[0m" && iperf3 -s -D
 start_wan
-#start_cron
+start_cron
+}
+
+stop () {
+stop_cron
+stop_wan
 }
 
 restart () {
@@ -97,7 +102,7 @@ update && upgrade && install && start &
 
 case $1 in
 0)
-	update && upgrade &
+	stop &
 	;;
 1)
 	update && install && start &
@@ -105,17 +110,22 @@ case $1 in
 2)
 	update && upgrade && install && start &
 	;;
+3)
+	update && upgrade &
+	;;
 restart)
 	restart
 	;;
 *)
 	echo -e \\n"\e[1;33m脚本管理：\e[0m\e[37m『 \e[0m\e[1;37m$sh_ver\e[0m\e[37m 』\e[0m"\\n
-	echo -e "\e[1;32m【0】\e[0m\e[1;36m update： opkg update upgrade \e[0m"
+	echo -e "\e[1;32m【0】\e[0m\e[1;36m stop： 取消自启\e[0m"
 	echo -e "\e[1;32m【1】\e[0m\e[1;36m all： update.批量安装opkg.. \e[0m"
-	echo -e "\e[1;32m【2】\e[0m\e[1;36m all：update upgrade.批量安装opkg\e[0m "\\n
+	echo -e "\e[1;32m【2】\e[0m\e[1;36m all：update upgrade.批量安装opkg\e[0m "
+	echo -e "\e[1;32m【3】\e[0m\e[1;36m update： opkg update upgrade \e[0m"\\n
 	read -n 1 -p "请输入数字:" num
-	[ "$num" = "0" ] && update &
+	[ "$num" = "0" ] && stop &
 	[ "$num" = "1" ] && update && install && start &
 	[ "$num" = "2" ] && update && upgrade && install && start &
+	[ "$num" = "3" ] && update && upgrade &
 	;;
 esac

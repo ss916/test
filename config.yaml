@@ -1,4 +1,4 @@
-# //【2021-04-04 04:55:14】
+# //【2021-04-20 20:15:20】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -224,6 +224,11 @@ dns:
       - '+.ytimg.com'
       - '+.googlevideo.com'
       - '+.youtube.com'
+      #jav
+      - '+.hpjav.com'
+      - '+.javbus.com'
+      - '+.javjack.com'
+      - '+.supjav.com'
       #medium
       - '+.datadoghq.com'
       - '+.medium.com'
