@@ -1,5 +1,5 @@
-# //【2021-04-22 23:59:29】
-/SHA1.TXT= 73750758a492c449d0641190a68c8707
+# //【2021-04-24 14:11:06】
+/SHA1.TXT= 14d5739124bc31429eedb3f6f5914654
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -17,7 +17,7 @@
 /arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= e707408647572c5e1f2aa0d3190db7ff
-/config.yaml= 060f4933db398306b235bcc7bfbc4006
+/config.yaml= d76f02c84cf5d529a6b4801d4a74528b
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -31,9 +31,9 @@
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
 /opt.sh= cade1ab62c9bd416856afc4baf0cdc3a
-/payload/block_dnsmasq.txt= 6618af857697bf2afe502557ef0df220
+/payload/block_dnsmasq.txt= 6fcfda5e7ef7a36d2e5cc9a6769b31db
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
-/payload/block_hosts.txt= 147babaef9986b7a33aad758f8939f73
+/payload/block_hosts.txt= d452926deb7bfe4578ff29a837205351
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
@@ -81,8 +81,8 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 0f5ebf1b044939ce2296306891deed36
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 4274d9925dcb2fd735f01d1b20ee51e5
-/t/Country.mmdb.ver= 5aeecaf74b59423d65ae8a92ef1537b8
+/t/Country.mmdb.tgz= 7738d4c039e982b3187e803b1cb049a5
+/t/Country.mmdb.ver= 663e4bda315f191b9d5325aeed7a34a1
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -91,11 +91,11 @@
 /t/clash-dashboard-gh-pages.zip= 7ea081bd9c69d55a4ad23a2a6fde4482
 /t/clash.ver= 001cd5a4dd5395a787aada1147f2710a
 /t/clash= 0ee333235b77c421e93b90e67ec1d1ea
-/t/cnip.txt= 1c7ae27f95336debd0a1a34a3006db0c
-/t/cnip_delegated-apnic-latest= 11bd0036279eed149ed6d20bd72068d2
+/t/cnip.txt= 97c4705169abb2374e1c12e9ce909443
+/t/cnip_delegated-apnic-latest= 002b981cd122f80a8d8e19dd33e80d87
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= e0aa79e13f132e9291d37675eb3bd070
+/t/ipset.cnip.txt= c3a8221fdb5401b6091a0a8c9b3a7e10
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5

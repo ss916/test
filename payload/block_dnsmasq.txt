@@ -6,6 +6,12 @@ payload:
 - DOMAIN-KEYWORD,cnzz.
 - DOMAIN-KEYWORD,analytics.
 - DOMAIN-KEYWORD,.jads.
+#xiaomi
+- DOMAIN-SUFFIX,pandora.mi.com
+#gz-data
+- DOMAIN-SUFFIX,gozendata.com
+- DOMAIN-SUFFIX,gzads.com
+- DOMAIN-SUFFIX,gz-data.com
 ##jav
 #popjav
 - DOMAIN-SUFFIX,inpagepush.com

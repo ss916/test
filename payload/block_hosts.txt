@@ -1202,6 +1202,7 @@ payload:
 - DOMAIN,ad.mi.com
 - DOMAIN,ad.xiaomi.com
 - DOMAIN,ad1.xiaomi.com
+- DOMAIN,api.ad.xiaomi.com
 - DOMAIN,o2o.api.xiaomi.com
 - DOMAIN,dvb.pandora.xiaomi.com
 - DOMAIN,de.pandora.xiaomi.com
@@ -1209,6 +1210,11 @@ payload:
 - DOMAIN,jellyfish.pandora.xiaomi.com
 - DOMAIN,bss.pandora.xiaomi.com
 - DOMAIN,stat.pandora.xiaomi.com
+- DOMAIN,mishop.pandora.xiaomi.com
+- DOMAIN,misc.pandora.xiaomi.com
+- DOMAIN,gallery.pandora.xiaomi.com
+- DOMAIN,bss.pandora.xiaomi.com
+- DOMAIN,dvb.pandora.xiaomi.com
 - DOMAIN,notice.game.xiaomi.com
 - DOMAIN,ppurifier.game.xiaomi.com
 - DOMAIN,a.stat.xiaomi.com
@@ -1634,6 +1640,7 @@ payload:
 - DOMAIN,ssp.kss.ksyun.com
 - DOMAIN,config.kuyun.com
 - DOMAIN,logonext.tv.kuyun.com
+- DOMAIN,tvapi.kuyun.com
 - DOMAIN,url.tudown.com
 - DOMAIN,ggr.yxdown.com
 - DOMAIN,a.o333o.com
@@ -3878,6 +3885,7 @@ payload:
 - DOMAIN,msg.ptqy.gitv.tv
 - DOMAIN,msg2.video.ptqy.gitv.tv
 - DOMAIN,msg.video.ptqy.gitv.tv
+- DOMAIN,auth.api.gitv.tv
 - DOMAIN,t.youhua.pw
 - DOMAIN,gotoniubiurl.pw
 - DOMAIN,cilidaquan.pw

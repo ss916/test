@@ -1,4 +1,4 @@
-# //【2021-04-20 20:15:20】
+# //【2021-04-24 14:11:05】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -27,13 +27,17 @@ ipv6: true
 
 hosts:
   '+.crashlytics.com':  127.0.0.1
+  '+.doubleclick.net': 127.0.0.1
   '+.flurry.com': 127.0.0.1
-  '+.realsrv.com': 127.0.0.1
   '+.googleadservices.com': 127.0.0.1
   '+.googlesyndication.com': 127.0.0.1
   '+.googletagmanager.com': 127.0.0.1
   '+.google-analytics.com': 127.0.0.1
-  '+.doubleclick.net': 127.0.0.1
+  '+.gozendata.com': 127.0.0.1
+  '+.gzads.com': 127.0.0.1
+  '+.gz-data.com': 127.0.0.1
+  '+.pandora.mi.com': 127.0.0.1
+  '+.realsrv.com': 127.0.0.1
   '+.ads.*.com': 127.0.0.1
   '+.ads.*.net': 127.0.0.1
   '+.ads.*.de': 127.0.0.1
@@ -51,6 +55,7 @@ hosts:
   '+.ads.*.xyz': 127.0.0.1
   '+.ads.*.au': 127.0.0.1
   '+.ad.*.com': 127.0.0.1
+  '+.ad1.*.com': 127.0.0.1
   '+.ad.*.net': 127.0.0.1
   '+.ad.*.de': 127.0.0.1
   '+.ad.*.hk': 127.0.0.1
