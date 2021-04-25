@@ -12,6 +12,7 @@ payload:
 - DOMAIN-SUFFIX,kanghuayun.com
 #xiaoweizhibo
 - DOMAIN-SUFFIX,xiaoweizhibo.com
+- IP-CIDR,172.168.10.0/24
 #zuoyebang
 - DOMAIN-SUFFIX,zuoyebang.cc
 - DOMAIN-SUFFIX,zuoyebang.com

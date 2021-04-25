@@ -6,6 +6,12 @@ payload:
 - DOMAIN-KEYWORD,cnzz.
 - DOMAIN-KEYWORD,analytics.
 - DOMAIN-KEYWORD,.jads.
+#youtube
+- DOMAIN-SUFFIX,s.youtube.com
+#sky 4k
+- DOMAIN-SUFFIX,admin.appnext.com
+- DOMAIN-SUFFIX,cdn.appnext.com
+- DOMAIN-SUFFIX,global.appnext.com
 #xiaomi
 - DOMAIN-SUFFIX,pandora.mi.com
 #gz-data
