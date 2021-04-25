@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=5
+sh_ver=6
 
 path=${0%/*}
 bashname=${0##*/}
@@ -39,6 +39,7 @@ fi
 update () {
 echo -e \\n"$(timenow)"\\n
 curl_proxy
+[ ! -z "$(ls /opt/tmp)" ] && echo ">>清空/opt/tmp..." && rm -rf /opt/tmp/*
 echo -e \\n"\e[1;32m ▶更新opkg列表...\e[0m "
 opkg update && opkg install wget
 echo -e "\e[1;32m ...更新opkg列表結束...\e[0m "\\n

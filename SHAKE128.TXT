@@ -1,5 +1,5 @@
-# //【2021-04-24 14:11:06】
-/SHA1.TXT= 14d5739124bc31429eedb3f6f5914654
+# //【2021-04-26 04:33:24】
+/SHA1.TXT= 97ae3cd1c3afdf1b50f7a12af768549b
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -30,16 +30,16 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= cade1ab62c9bd416856afc4baf0cdc3a
+/opt.sh= 5d28eccc5c23a9d027033c6aa1383728
 /payload/block_dnsmasq.txt= 6fcfda5e7ef7a36d2e5cc9a6769b31db
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= d452926deb7bfe4578ff29a837205351
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= 8a184a91aede9493aeae4295ba417885
+/payload/cn_web.txt= bd1782ef93bff8ec99f6fa0e98526402
 /payload/cn_web_bytedance.txt= a1403e03b0409bf6e6027ce94c703a2b
-/payload/cn_web_other.txt= fd47a679db10cb0dab8a0e3c717257e9
+/payload/cn_web_other.txt= 85397850a1c19ee4617c57e0bc57cfad
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 811b0dfdeef04ed385ae4ee1bf085ca6
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
@@ -74,7 +74,7 @@
 /s/c6.pb= f2f74b1d9ff673546d02331c5ff5f117
 /s/c7.json= dd9b44a380ecb866cafc5b9ed312e06a
 /s/c7.pb= 345488312cdecd4c780a38c85ad77d9c
-/s/c8.json= 92b8441f0d57b13c20ec467019f9b871
+/s/c8.json= 972032661e9ad7b4ffa93d71b52527a5
 /s/c8.pb= 730ed95dcd0a973228d0c45944d95096
 /s/c9.json= 1aecdb281782e2aea268b3b5e52c7cbf
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df

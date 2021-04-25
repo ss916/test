@@ -2,6 +2,16 @@ payload:
 #🀄网站：cn_web_other.txt
 #AD white list
 #- DOMAIN,cdn.tsyndicate.com
+#chinatv
+- DOMAIN-SUFFIX,chinasuntv.com
+- DOMAIN-SUFFIX,ggiptv.com
+- DOMAIN-SUFFIX,hkstv.tv
+- DOMAIN-SUFFIX,mastvnet.com
+- DOMAIN-SUFFIX,sopplus.tv
+#kanghuayun
+- DOMAIN-SUFFIX,kanghuayun.com
+#xiaoweizhibo
+- DOMAIN-SUFFIX,xiaoweizhibo.com
 #zuoyebang
 - DOMAIN-SUFFIX,zuoyebang.cc
 - DOMAIN-SUFFIX,zuoyebang.com
@@ -131,6 +141,7 @@ payload:
 - DOMAIN-SUFFIX,hitv.com
 - DOMAIN-SUFFIX,mgtv.com
 # > iQiyi
+- DOMAIN-SUFFIX,gitv.tv
 - DOMAIN-SUFFIX,iq.com
 - DOMAIN-SUFFIX,iqiyi.com
 - DOMAIN-SUFFIX,iqiyipic.com
