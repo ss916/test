@@ -2,6 +2,16 @@ payload:
 #🀄网站：cn_web_other.txt
 #AD white list
 #- DOMAIN,cdn.tsyndicate.com
+#ali IP
+- IP-CIDR,147.139.0.0/16
+- IP-CIDR,149.129.0.0/16
+- IP-CIDR,156.226.24.0/21
+- IP-CIDR,161.117.0.0/16
+- IP-CIDR,185.78.106.0/23
+- IP-CIDR,198.11.128.0/18
+- IP-CIDR,198.44.244.0/22
+- IP-CIDR,202.61.84.0/22
+- IP-CIDR,205.204.96.0/19
 #chinatv
 - DOMAIN-SUFFIX,chinasuntv.com
 - DOMAIN-SUFFIX,ggiptv.com
@@ -11,8 +21,9 @@ payload:
 #kanghuayun
 - DOMAIN-SUFFIX,kanghuayun.com
 #xiaoweizhibo
+- DOMAIN-SUFFIX,qeejoo.com
 - DOMAIN-SUFFIX,xiaoweizhibo.com
-- IP-CIDR,172.168.10.0/24
+- IP-CIDR,172.168.0.0/16
 #zuoyebang
 - DOMAIN-SUFFIX,zuoyebang.cc
 - DOMAIN-SUFFIX,zuoyebang.com
