@@ -1,5 +1,5 @@
-# //【2021-04-27 00:07:04】
-/SHA1.TXT= 0b318029759fc34de8a8c9976b49a4f8
+# //【2021-04-28 22:08:20】
+/SHA1.TXT= fc55ec9362097dcfef298e24c3cb292f
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -37,9 +37,9 @@
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= e34dc1333b0060510783f52bf41644ee
+/payload/cn_web.txt= f9c22e394004f214327146e1c177ca4a
 /payload/cn_web_bytedance.txt= a1403e03b0409bf6e6027ce94c703a2b
-/payload/cn_web_other.txt= a61bc746e6a0bcc2e417102df9f7f3c0
+/payload/cn_web_other.txt= b78453f440970dfbb27a48d2b2400d6f
 /payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
 /payload/global_video.txt= 811b0dfdeef04ed385ae4ee1bf085ca6
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29

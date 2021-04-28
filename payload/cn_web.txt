@@ -58,11 +58,11 @@ payload:
 - IP-CIDR,202.61.84.0/22
 - IP-CIDR,205.204.96.0/19
 #chinatv
-- DOMAIN-SUFFIX,chinasuntv.com
-- DOMAIN-SUFFIX,ggiptv.com
-- DOMAIN-SUFFIX,hkstv.tv
-- DOMAIN-SUFFIX,mastvnet.com
-- DOMAIN-SUFFIX,sopplus.tv
+#- DOMAIN-SUFFIX,chinasuntv.com
+#- DOMAIN-SUFFIX,ggiptv.com
+#- DOMAIN-SUFFIX,hkstv.tv
+#- DOMAIN-SUFFIX,mastvnet.com
+#- DOMAIN-SUFFIX,sopplus.tv
 #kanghuayun
 - DOMAIN-SUFFIX,kanghuayun.com
 #xiaoweizhibo
