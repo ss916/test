@@ -1,5 +1,5 @@
-# //【2021-04-28 22:08:19】
-/SHAKE128.TXT= 8c480dc0bcfcc1eaaa77459c1db62931f8636795
+# //【2021-04-29 23:10:11】
+/SHAKE128.TXT= af53ed78e8f92e8697ca68735d40a71da1660b5b
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -31,7 +31,7 @@
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
 /netease.sh= 90879a5c93382d00ddec1444cc5a9cbf1d62c994
 /opt.sh= 24603ff06785dd38c451e4f083bf3c9c4ce6728b
-/payload/block_dnsmasq.txt= 4b3bcc4cb5ef5fa4b6b8c7ad05119b07b8f193ca
+/payload/block_dnsmasq.txt= 4d8757ce8deaf65e99fc716551fd77ec253998ac
 /payload/block_hijack.txt= dfd73b8fb5887a318e0b2223325329fd8e1d538d
 /payload/block_hosts.txt= 8ae9606bb0814be5ce718e3f341e7af7ea355ca8
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
