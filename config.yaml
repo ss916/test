@@ -1,4 +1,4 @@
-# //【2021-04-24 14:11:05】
+# //【2021-04-29 23:44:30】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -565,76 +565,76 @@ rule-providers:
     type: http
     behavior: classical
     path: ./rule/cn_video.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_video.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/cn_video.txt
     interval: 30000
   cn_music_netease:
     type: http
     behavior: classical
     path: ./rule/cn_music_netease.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_music_netease.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/cn_music_netease.txt
     interval: 30000
   cn_web_bytedance:
     type: http
     behavior: classical
     path: ./rule/cn_web_bytedance.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_bytedance.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/cn_web_bytedance.txt
     interval: 30000
   cn_web_other:
     type: http
     behavior: classical
     path: ./rule/cn_web_other.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/cn_web_other.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/cn_web_other.txt
     interval: 30000
 
   global_apple:
     type: http
     behavior: classical
     path: ./rule/global_apple.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_apple.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_apple.txt
     interval: 30000
 
   global_video_youtube:
     type: http
     behavior: classical
     path: ./rule/global_video_youtube.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_video_youtube.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_youtube.txt
     interval: 30000
   global_video_netflix:
     type: http
     behavior: classical
     path: ./rule/global_video_netflix.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_video_netflix.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_netflix.txt
     interval: 30000
   global_video_other:
     type: http
     behavior: classical
     path: ./rule/global_video_other.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_video_other.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_video_other.txt
     interval: 30000
 
   global_web_google:
     type: http
     behavior: classical
     path: ./rule/global_web_google.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_web_google.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_web_google.txt
     interval: 30000
   global_web_telegram:
     type: http
     behavior: classical
     path: ./rule/global_web_telegram.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_web_telegram.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_web_telegram.txt
     interval: 30000
   global_web_protonmail:
     type: http
     behavior: classical
     path: ./rule/global_web_protonmail.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_web_protonmail.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_web_protonmail.txt
     interval: 30000
   global_web:
     type: http
     behavior: classical
     path: ./rule/global_web.txt
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/global_web.txt
+    url: https://raw.fastgit.org/ss916/test/master/payload/global_web.txt
     interval: 30000
 
 
@@ -642,25 +642,25 @@ rule-providers:
     type: http #markadblock
     behavior: classical #markadblock
     path: ./rule/block_hosts.txt #markadblock
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/block_hosts.txt #markadblock
+    url: https://raw.fastgit.org/ss916/test/master/payload/block_hosts.txt #markadblock
     interval: 30000 #markadblock
   block_dnsmasq: #markadblock
     type: http #markadblock
     behavior: classical #markadblock
     path: ./rule/block_dnsmasq.txt #markadblock
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/block_dnsmasq.txt #markadblock
+    url: https://raw.fastgit.org/ss916/test/master/payload/block_dnsmasq.txt #markadblock
     interval: 30000 #markadblock
   block_hijack: #markadblock
     type: http #markadblock
     behavior: classical #markadblock
     path: ./rule/block_hijack.txt #markadblock
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/block_hijack.txt #markadblock
+    url: https://raw.fastgit.org/ss916/test/master/payload/block_hijack.txt #markadblock
     interval: 30000 #markadblock
   block_malicious: #markadblock
     type: http #markadblock
     behavior: classical #markadblock
     path: ./rule/block_malicious.txt #markadblock
-    url: https://cdn.jsdelivr.net/gh/ss916/test/payload/block_malicious.txt #markadblock
+    url: https://raw.fastgit.org/ss916/test/master/payload/block_malicious.txt #markadblock
     interval: 30000 #markadblock
 
 
