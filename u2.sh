@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=4
+sh_ver=6
 
 #YouTube视频下载
 ###示例：
@@ -15,6 +15,7 @@ sh_ver=4
 path=${0%/*}
 bashname=${0##*/}
 name=youtube-dl
+network=6
 
 [ ! -d ${path}/${name} ] && mkdir -p ${path}/${name} && > ${path}/${name}/settings.txt
 
@@ -55,7 +56,6 @@ fi
 
 
 [ ! -z "$(pidof clash)" ] && echo "* use clash http_proxy *" && export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
-[ ! -z "$(pidof tail)" ] && kill -9 $(pidof tail)
 [ ! -d $filedir ] && mkdir -p $filedir
 
 install () {
@@ -87,7 +87,7 @@ fi
 if [ "$getfile" = "1" ] ; then
 echo -e \\n"\e[33m 你选择的查看视频分辨率列表：\e[1;35m查看\e[0m "\\n
 echo -e "\e[1;35m ！！正在查找视频所有分辨率，请等待视频分辨率查询完成，期间请不要任何输入！！\e[0m "
-youtube-dl -F $url
+youtube-dl --no-check-certificate -$network -F $url
 else
 echo -e \\n"\e[33m 你选择的查看视频分辨率列表：\e[1;35m跳过\e[0m "\\n
 fi
@@ -156,15 +156,14 @@ else
 aria=$s6
 fi
 if [ "$aria" = "0" ] ; then
-	nohup youtube-dl --write-sub --embed-sub --all-subs -o "$dir/%(title)s.%(ext)s" -f $f -c -i $url > /tmp/u2b.log 2>&1 &
+	youtube-dl --no-check-certificate -$network --write-sub --embed-sub --all-subs -o "$dir/%(title)s.%(ext)s" -f $f -c -i $url 2>&1 | tee /tmp/u2b.log &
 	echo -e \\n"\e[33m 你选择的下载方式：\e[1;35m直接youtube-dl单线程下载\e[0m "\\n
 else
-	nohup youtube-dl --write-sub --embed-sub --all-subs --external-downloader aria2c --external-downloader-args "-x 16 -s 16 -k 1M" -o "$dir/%(title)s.%(ext)s" -f $f -c -i $url > /tmp/u2b.log 2>&1 &
+	youtube-dl --no-check-certificate -$network --write-sub --embed-sub --all-subs --external-downloader aria2c --external-downloader-args "-x 16 -s 16 -k 1M" -o "$dir/%(title)s.%(ext)s" -f $f -c -i $url 2>&1 | tee /tmp/u2b.log &
 	echo -e \\n"\e[33m 你选择了默认下载方式：\e[1;35m调用aria多线程下载\e[0m "\\n
 fi
 
 echo -e \\n"\e[1;36m 查看日志....\e[0m "
-tail -f /tmp/u2b.log &
 }
 
 zhuangtai () {

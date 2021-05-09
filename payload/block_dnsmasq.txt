@@ -28,16 +28,15 @@ payload:
 - DOMAIN-SUFFIX,bebreloomr.com
 - DOMAIN-SUFFIX,blastcahs.com
 - DOMAIN-SUFFIX,ddmax20.xyz
+- DOMAIN-SUFFIX,fstats.xyz
 - DOMAIN-SUFFIX,greenplasticdua.com
 - DOMAIN-SUFFIX,maphuahin.com
 - DOMAIN-SUFFIX,realsrv.com
+- DOMAIN-SUFFIX,sprivilpra.biz
 - DOMAIN-SUFFIX,ulukaris.com
 - DOMAIN-SUFFIX,unreshiramor.com
-- DOMAIN-SUFFIX,fstats.xyz
 #rfi
-- DOMAIN-SUFFIX,teads.tv
-- DOMAIN-SUFFIX,pixel.parsely.com
-- DOMAIN-SUFFIX,xiti.com
+- DOMAIN-SUFFIX,go-mpulse.net
 #other
 - DOMAIN-SUFFIX,flurry.com
 - DOMAIN-SUFFIX,quanliyouxi.cn

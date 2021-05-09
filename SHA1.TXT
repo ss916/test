@@ -1,5 +1,5 @@
-# //【2021-05-08 21:55:48】
-/SHAKE128.TXT= 47ec6387dfa53fda086b14fc2cb205653f9d74d7
+# //【2021-05-10 00:18:04】
+/SHAKE128.TXT= df2798e2d60801efe88c16fde7e7af53a1d5b2fe
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -31,7 +31,7 @@
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
 /netease.sh= 90879a5c93382d00ddec1444cc5a9cbf1d62c994
 /opt.sh= 24603ff06785dd38c451e4f083bf3c9c4ce6728b
-/payload/block_dnsmasq.txt= 4d8757ce8deaf65e99fc716551fd77ec253998ac
+/payload/block_dnsmasq.txt= 6dd51ea3d20a0942f70b3057b965a1e4c0dcc0ec
 /payload/block_hijack.txt= dfd73b8fb5887a318e0b2223325329fd8e1d538d
 /payload/block_hosts.txt= 8ae9606bb0814be5ce718e3f341e7af7ea355ca8
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
@@ -109,6 +109,6 @@
 /t/xray= 6c5a883468877ab111862b4270bf58535b3646b2
 /t/yacd-gh-pages.tgz= baeda0bad23a3097f684f45b5c799909ccd4a7bd
 /t/yacd-gh-pages.zip= 7fdf90c8718841648f0b4e5c1a149258ab2bb539
-/u2.sh= 7247c6afdb23388f45b1399c8ae1189751581ab1
+/u2.sh= 44baf1cae58bbdba2122c91792334b4ef26932d3
 /v2ray.sh= 6b4c8fd9d7abdaaabfa40b1374b0c392f7a1ee37
 /windows/caddy_windows_amd64.zip= 25cc380b784103fff99a90fe825469c6c417e88c
