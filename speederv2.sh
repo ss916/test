@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=5
+sh_ver=6
 
 path=${0%/*}
 bashname=${0##*/}
@@ -54,6 +54,7 @@ gid=20003
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
 url3="https://raw.fastgit.org/ss916/test/master"
+url4="https://rrr.san99.workers.dev/ss916/test/master"
 
 #alias
 alias pss='ps -w |grep -v grep| grep "${name} -c"'
@@ -68,7 +69,7 @@ if [ ! -z "$(ps -w |grep -v grep| grep "clash -d")" -a ! -z "$(netstat -anp | gr
 	url=$url1
 else
 	curl="curl"
-	url=$url2
+	url=$url4
 fi
 }
 curl_proxy

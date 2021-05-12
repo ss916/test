@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=55
+sh_ver=56
 
 path=${0%/*}
 bashname=${0##*/}
@@ -58,6 +58,7 @@ gid=20000
 url1="https://raw.githubusercontent.com/ss916/test/master"
 url2="https://cdn.jsdelivr.net/gh/ss916/test"
 url3="https://raw.fastgit.org/ss916/test/master"
+url4="https://rrr.san99.workers.dev/ss916/test/master"
 
 
 #alias
@@ -75,7 +76,7 @@ if [ ! -z "$(pss)" -a ! -z "$(port)" ] ; then
 	url=$url1
 else
 	curl="curl"
-	url=$url2
+	url=$url4
 fi
 }
 curl_proxy
@@ -656,6 +657,7 @@ else
 fi
 }
 
+# iptables tproxy setting：https://xtls.github.io/documents/level-2/iptables_gid/
 tproxy4 () {
 echo -e \\n"\e[1;36m▶创建局域网透明代理\e[0m"
 ip rule add fwmark 1 table 100
