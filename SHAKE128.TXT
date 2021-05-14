@@ -1,5 +1,5 @@
-# //【2021-05-13 04:26:06】
-/SHA1.TXT= cff646f821a6915d6c3807503ecf2923
+# //【2021-05-15 00:19:19】
+/SHA1.TXT= 35d90fa7a1dbae9f3788ba9889ee2ff2
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -17,7 +17,7 @@
 /arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
 /clash.sh= df896687f697da20f72a828456eda460
-/config.yaml= 9e1b01703933afb9ec757c77bef82a9c
+/config.yaml= c5df26955cbe71c3a75bb63b7b4e72dd
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
 /dnsmasq/dnsfq1.conf= f7ead8e18c133cc90c9bbb3f31b8079a
@@ -31,16 +31,16 @@
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
 /opt.sh= 5d28eccc5c23a9d027033c6aa1383728
-/payload/block_dnsmasq.txt= d39c575fd6c5d7aa61a8cc9c56d2b53b
+/payload/block_dnsmasq.txt= 436154b80ba732ee612ee9b50b73b4c0
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= d452926deb7bfe4578ff29a837205351
 /payload/block_malicious.txt= 826adfef7f5f659e0a5930f5c85158eb
 /payload/cn_music_netease.txt= df1c62d9aeb2be452cb64a88ce8fa547
 /payload/cn_video.txt= 13730cf058eaa46bd9c4847a921f86d8
-/payload/cn_web.txt= f0d738a71d49b0f349211d515b26237b
-/payload/cn_web_bytedance.txt= a1403e03b0409bf6e6027ce94c703a2b
-/payload/cn_web_other.txt= 7730f6d478602810622c39665f506f77
-/payload/global_apple.txt= 757a363673e0b84129d946abb96951c8
+/payload/cn_web.txt= 71d65df030e0a2029545b005909c353f
+/payload/cn_web_bytedance.txt= 7c334cb9dadd7a411de292e94d50f905
+/payload/cn_web_other.txt= 8b71d6f27add2c73af88c11eccaf1fb5
+/payload/global_apple.txt= 7cd13691714353f95af3d9a1fb2b7dcb
 /payload/global_video.txt= 811b0dfdeef04ed385ae4ee1bf085ca6
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
 /payload/global_video_other.txt= b96b4cb129e7a9d88cf8044259551a54
@@ -81,8 +81,8 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 1e09964667b138c00cad0441715c8acc
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 2cdaf17d8861bf6cdbaa59a407aafa63
-/t/Country.mmdb.ver= ebb98c8fbce93c3bbb0234c2fb24158c
+/t/Country.mmdb.tgz= 490e3724bdb28babaa7327e1c11d1469
+/t/Country.mmdb.ver= 3242e6f3c8708cfe4962aec8fd3785cf
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -91,11 +91,11 @@
 /t/clash-dashboard-gh-pages.zip= 73816a1d99e41cd5435939e6c15ea3bc
 /t/clash.ver= 94dd7b819ecde8b17fde6d92151ba284
 /t/clash= 5892b1728506a1d67e252ea59a8b86c3
-/t/cnip.txt= 0ad7744723c2735d869574e2b969ab9b
-/t/cnip_delegated-apnic-latest= c6fd559bc371d8290eaeff8a85a68841
+/t/cnip.txt= a4a0600a7b75d35eac30f1e68fe42ff0
+/t/cnip_delegated-apnic-latest= df1e0820e352a8cabfa1323b500be190
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= ae2f1fb7406cc01687828d1741059e98
+/t/ipset.cnip.txt= ff94c180db5faa57b01edb89565db72b
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5

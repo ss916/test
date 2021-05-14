@@ -199,8 +199,10 @@ payload:
 - DOMAIN-SUFFIX,mi-img.com
 - DOMAIN-SUFFIX,miui.com
 - DOMAIN-SUFFIX,miwifi.com
+- DOMAIN-SUFFIX,onewsvod.com
 - DOMAIN-SUFFIX,xiaomi.com
 - DOMAIN-SUFFIX,xiaomi.net
+- DOMAIN-SUFFIX,xiaoyi.com
 # > Microsoft
 - DOMAIN-SUFFIX,microsoft.com
 - DOMAIN-SUFFIX,msecnd.net

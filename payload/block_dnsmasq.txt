@@ -33,6 +33,7 @@ payload:
 - DOMAIN-SUFFIX,maphuahin.com
 - DOMAIN-SUFFIX,realsrv.com
 - DOMAIN-SUFFIX,sprivilpra.biz
+- DOMAIN-SUFFIX,tlantlateria.biz
 - DOMAIN-SUFFIX,ulukaris.com
 - DOMAIN-SUFFIX,unreshiramor.com
 #rfi

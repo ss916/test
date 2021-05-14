@@ -12,30 +12,48 @@ payload:
 #douyin
 - DOMAIN-SUFFIX,bdurl.net
 - DOMAIN-SUFFIX,byteimg.com
+- DOMAIN-SUFFIX,cdngslb.com
+- DOMAIN-SUFFIX,cdnhwc3.com
 - DOMAIN-SUFFIX,douyin.com
 - DOMAIN-SUFFIX,douyincdn.com
 - DOMAIN-SUFFIX,douyinpic.com
+- DOMAIN-SUFFIX,douyinstatic.com
 - DOMAIN-SUFFIX,douyinvod.com
 - DOMAIN-SUFFIX,iesdouyin.com
 #kuaishou
+- DOMAIN-SUFFIX,adhimalayandi.com
+- DOMAIN-SUFFIX,alikunlun.com
+- DOMAIN-SUFFIX,apdcdn.com
 - DOMAIN-SUFFIX,bcelive.com
+- DOMAIN-SUFFIX,bsclink.cn
 - DOMAIN-SUFFIX,bytedance.com
+- DOMAIN-SUFFIX,cdnhwc2.com
 - DOMAIN-SUFFIX,chinanetcenter.com
+- DOMAIN-SUFFIX,dnsv1.com
 - DOMAIN-SUFFIX,etoote.com
 - DOMAIN-SUFFIX,gifshow.com
+- DOMAIN-SUFFIX,inkuai.com
+- DOMAIN-SUFFIX,jomodns.com
 - DOMAIN-SUFFIX,ksapisrv.com
+- DOMAIN-SUFFIX,ks-cdn.com
 - DOMAIN-SUFFIX,kspkg.com
+- DOMAIN-SUFFIX,ksyuncdn.com
+- DOMAIN-SUFFIX,ksyunv5.com
 - DOMAIN-SUFFIX,kuaishou.com
 - DOMAIN-SUFFIX,kuaishoupay.com
 - DOMAIN-SUFFIX,kuaishouzt.com
+- DOMAIN-SUFFIX,kunlunsl.com
 - DOMAIN-SUFFIX,kwaicdn.com
 - DOMAIN-SUFFIX,kwaishop.com
 - DOMAIN-SUFFIX,kwaixiaodian.com
 - DOMAIN-SUFFIX,kwaizt.com
 - DOMAIN-SUFFIX,kwimgs.com
+- DOMAIN-SUFFIX,myqcloud.com
 - DOMAIN-SUFFIX,onethingpcs.com
 - DOMAIN-SUFFIX,p2cdn.com
+- DOMAIN-SUFFIX,tcdnvod.com
 - DOMAIN-SUFFIX,viviv.com
+- DOMAIN-SUFFIX,wscdns.com
 - DOMAIN-SUFFIX,yximgs.com
 #toutiao
 - DOMAIN-SUFFIX,toutiao.com
@@ -44,6 +62,8 @@ payload:
 - DOMAIN-SUFFIX,pglstatp-toutiao.com
 #xigua
 - DOMAIN-SUFFIX,ixigua.com
+#other
+- DOMAIN-SUFFIX,ip-api.com
 #🀄网站：cn_web_other.txt
 #AD white list
 #- DOMAIN,cdn.tsyndicate.com
@@ -244,8 +264,10 @@ payload:
 - DOMAIN-SUFFIX,mi-img.com
 - DOMAIN-SUFFIX,miui.com
 - DOMAIN-SUFFIX,miwifi.com
+- DOMAIN-SUFFIX,onewsvod.com
 - DOMAIN-SUFFIX,xiaomi.com
 - DOMAIN-SUFFIX,xiaomi.net
+- DOMAIN-SUFFIX,xiaoyi.com
 # > Microsoft
 - DOMAIN-SUFFIX,microsoft.com
 - DOMAIN-SUFFIX,msecnd.net

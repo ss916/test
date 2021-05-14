@@ -1,4 +1,4 @@
-# //【2021-05-13 04:26:05】
+# //【2021-05-15 00:19:18】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -184,6 +184,9 @@ dns:
       - '+.astrill.com'
       - '+.asn247.net'
       - '+.astrill.org'
+      #browserleaks
+      - '+.browserleaks.com'
+      - '+.browserleaks.org'
       #fb
       - '+.facebook.com'
       - '+.cdninstagram.com'
