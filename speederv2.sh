@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=6
+sh_ver=7
 
 path=${0%/*}
 bashname=${0##*/}
@@ -233,8 +233,8 @@ stop_wan () {
 start_wan () {
 [ -z "$(cat $file_wan | grep START_WAN.SH)" ] && echo "sh $pdcn/START_WAN.SH &" >> $file_wan
 [ ! -f $pdcn/START_WAN.SH ] && > $pdcn/START_WAN.SH
-#[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
-[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_wan.txt &" >> $pdcn/START_WAN.SH
+#[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_wan.txt 2>&1 &" >> $pdcn/START_WAN.SH
+[ -z "$(cat $pdcn/START_WAN.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建开机自启任务...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_wan.txt 2>&1 &" >> $pdcn/START_WAN.SH
 }
 
 #定时任务
@@ -244,8 +244,8 @@ stop_cron () {
 start_cron () {
 [ -z "$(cat $file_cron | grep START_CRON.SH)" ] && echo "1 5 * * * sh $pdcn/START_CRON.SH &" >> $file_cron
 [ ! -f $pdcn/START_CRON.SH ] && > $pdcn/START_CRON.SH
-[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
-#[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_cron.txt &" >> $pdcn/START_CRON.SH
+[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh $mode > $tmp/${name}_start_cron.txt 2>&1 &" >> $pdcn/START_CRON.SH
+#[ -z "$(cat $pdcn/START_CRON.SH | grep ${name}.sh)" ] && echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sh $pdcn/${name}.sh restart > $tmp/${name}_start_cron.txt 2>&1 &" >> $pdcn/START_CRON.SH
 }
 
 restart () {

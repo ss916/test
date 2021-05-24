@@ -292,6 +292,7 @@ payload:
 #setn
 - DOMAIN-SUFFIX,setn.com
 #pincong
+- DOMAIN-SUFFIX,mohu.rocks
 - DOMAIN-SUFFIX,pincong.rocks
 #caddy
 - DOMAIN-SUFFIX,caddyserver.com

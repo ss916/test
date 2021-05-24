@@ -1,4 +1,4 @@
-# //【2021-05-15 00:19:18】
+# //【2021-05-24 06:53:05】
 
 secret: "123a456"
 external-ui: clash-dashboard-gh-pages
@@ -83,6 +83,9 @@ dns:
   #fake-ip-filter: #markfakeip
     #- '*.lan' #markfakeip
     #- localhost.ptlogin2.qq.com #markfakeip
+  #assign-nameserver:
+    #'+.qq.com': 114.114.114.114
+    #'+.163.com': 119.29.29.29
   default-nameserver:
     - 119.29.29.29
   nameserver:
@@ -104,12 +107,14 @@ dns:
     #- https://1.0.0.1/dns-query
     #- https://1.1.1.1/dns-query
     - https://1.1.1.2/dns-query
-    - https://cloudflare-dns.com/dns-query #🚫block ipv4#
+    #- https://cloudflare-dns.com/dns-query #🚫block ipv4#
+    #- https://class-from-dlack-oeart-hill.san99.workers.dev/dns-query
     #@twnic
     #- tls://101.101.101.101:853 #🚫block#
     #- https://dns.twnic.tw/dns-query #🚫block#
     #@opendns
     #- https://doh.opendns.com/dns-query #🚫block#
+    #- https://opd-derate-ovary-huntress.san99.workers.dev/dns-query
     #@IBM
     #- tls://149.112.112.112:853 #🚫block#
     #- tls://9.9.9.9:853 #🚫block#
@@ -117,7 +122,7 @@ dns:
     #- https://dns.quad9.net/dns-query #🚫block#
     #- https://dns.quad9.net:5053/dns-query #🚫block#
     - https://149.112.112.112:5053/dns-query
-    - https://9.9.9.9:5053/dns-query
+    #- https://9.9.9.9:5053/dns-query
   fallback-filter:
     geoip: true
     ipcidr:
@@ -138,6 +143,7 @@ dns:
       - '+.community'
       - '+.de'
       - '+.dev'
+      - '+.dog'
       - '+.fi'
       - '+.fm'
       - '+.fr'
