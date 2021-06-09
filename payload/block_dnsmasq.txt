@@ -24,16 +24,23 @@ payload:
 - DOMAIN-SUFFIX,cdn4ads.com
 #supjav
 - DOMAIN-SUFFIX,adtrackingflow.pro
+- DOMAIN-SUFFIX,adxadserv.com
 - DOMAIN-SUFFIX,amung.us
 - DOMAIN-SUFFIX,bebreloomr.com
 - DOMAIN-SUFFIX,blastcahs.com
 - DOMAIN-SUFFIX,ddmax20.xyz
 - DOMAIN-SUFFIX,fstats.xyz
 - DOMAIN-SUFFIX,greenplasticdua.com
+- DOMAIN-SUFFIX,javtvnow.xyz
 - DOMAIN-SUFFIX,maphuahin.com
+- DOMAIN-SUFFIX,netund.com
 - DOMAIN-SUFFIX,realsrv.com
+- DOMAIN-SUFFIX,tryd.pro
 - DOMAIN-SUFFIX,ulukaris.com
 - DOMAIN-SUFFIX,unreshiramor.com
+- DOMAIN-SUFFIX,visitstats.com
+- DOMAIN-SUFFIX,whos.amung.us
+- DOMAIN,d3v3bqdndm4erx.cloudfront.net
 #rfi
 - DOMAIN-SUFFIX,go-mpulse.net
 #other
