@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=8
+sh_ver=9
 
 path=${0%/*}
 bashname=${0##*/}
@@ -38,7 +38,7 @@ fi
 
 update () {
 echo -e \\n"$(timenow)"\\n
-[ "$(nvram get opt_force_enable)" != "1" ] && echo ">>启用opt环境..." && nvram set opt_force_enable=1 && nvram set opt_force_www=https://cdn.jsdelivr.net/gh/hiboyhiboy && nvram set upopt_enable=1 && nvram set upscript_enable=1 && nvram set optinstall=1 && nvram set size_tmpfs=1 && nvram commit
+[ "$(nvram get opt_force_enable)" != "1" ] && echo ">>启用opt环境..." && nvram set opt_force_enable=1 && nvram set opt_force_www=https://cdn.jsdelivr.net/gh/hiboyhiboy && nvram set upopt_enable=1 && nvram set upscript_enable=1 && nvram set optinstall=1 && nvram set size_tmpfs=1 && nvram commit && echo ">>重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
 [ -z "$(which opkg)" ] && echo "✖未检测到opkg主程序文件/opt/bin/opkg，结束脚本。" && exit
 curl_proxy
 [ ! -z "$(ls /opt/tmp)" ] && echo ">>清空/opt/tmp..." && rm -rf /opt/tmp/*
