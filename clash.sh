@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=57
+sh_ver=58
 
 path=${0%/*}
 bashname=${0##*/}
@@ -125,18 +125,18 @@ unlocknetease=$unlocknetease
 read_settings () {
 #透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=3 不透明代理
 mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1)
-[ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
+[ -z "$mode" ] && mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1) && [ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
 #DNS模式，1.redir-host （默认），2.fake-dns
 dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}' | head -n 1)
-[ -z "$dns" ] && dns=1 && echo "dns=1" >> $dirconf/settings.txt
+[ -z "$dns" ] && dns=$(cat $dirconf/settings.txt |awk -F 'dns=' '/dns=/{print $2}' | head -n 1) && [ -z "$dns" ] && dns=1 && echo "dns=1" >> $dirconf/settings.txt
 #代理模式，1.gfwlist模式（默认），2.chinalist
 chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}' | head -n 1)
-[ -z "$chinalist" ] && chinalist=1 && echo "chinalist=1" >> $dirconf/settings.txt
+[ -z "$chinalist" ] && chinalist=$(cat $dirconf/settings.txt |awk -F 'chinalist=' '/chinalist=/{print $2}' | head -n 1) && [ -z "$chinalist" ] && chinalist=1 && echo "chinalist=1" >> $dirconf/settings.txt
 bypasscnip=$(cat $dirconf/settings.txt |awk -F 'bypasscnip=' '/bypasscnip=/{print $2}' | head -n 1)
-[ -z "$bypasscnip" ] && bypasscnip=1 && echo "bypasscnip=1" >> $dirconf/settings.txt
+[ -z "$bypasscnip" ] && bypasscnip=$(cat $dirconf/settings.txt |awk -F 'bypasscnip=' '/bypasscnip=/{print $2}' | head -n 1) && [ -z "$bypasscnip" ] && bypasscnip=1 && echo "bypasscnip=1" >> $dirconf/settings.txt
 #使用自定义配置模板，留空则使用 config=config.yaml （默认）
 config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}' | head -n 1)
-[ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
+[ -z "$config" ] && config=$(cat $dirconf/settings.txt |awk -F 'config=' '/config=/{print $2}' | head -n 1) && [ -z "$config" ] && config=config.yaml && echo "config=config.yaml" >> $dirconf/settings.txt
 #模板是否需要解密文件，secret=1 则进入解密模式
 secret=$(cat $dirconf/settings.txt |awk -F 'secret=' '/secret=/{print $2}' | head -n 1)
 #密码
@@ -148,16 +148,16 @@ link2=$(cat $dirconf/settings.txt |awk -F 'link2=' '/link2=/{print $2}' | head -
 #功能
 #是否启用去广告，adblock=1则启用，关闭0（默认）
 adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}' | head -n 1)
-[ -z "$adblock" ] && adblock=0 && echo "adblock=0" >> $dirconf/settings.txt
+[ -z "$adblock" ] && adblock=$(cat $dirconf/settings.txt |awk -F 'adblock=' '/adblock=/{print $2}' | head -n 1) && [ -z "$adblock" ] && adblock=0 && echo "adblock=0" >> $dirconf/settings.txt
 #是否启用网易云解锁，1.unlocknetease启用，0.关闭（默认）
 unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}' | head -n 1)
-[ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
+[ -z "$unlocknetease" ] && unlocknetease=$(cat $dirconf/settings.txt |awk -F 'unlocknetease=' '/unlocknetease=/{print $2}' | head -n 1) && [ -z "$unlocknetease" ] && unlocknetease=0 && echo "unlocknetease=0" >> $dirconf/settings.txt
 #是否启用脚本节点记忆与恢复mark，0.关闭（默认，直接使用自带.cache），1.打开
 mark=$(cat $dirconf/settings.txt |awk -F 'mark=' '/mark=/{print $2}' | head -n 1)
-[ -z "$mark" ] && mark=0 && echo "mark=0" >> $dirconf/settings.txt
+[ -z "$mark" ] && mark=$(cat $dirconf/settings.txt |awk -F 'mark=' '/mark=/{print $2}' | head -n 1) && [ -z "$mark" ] && mark=0 && echo "mark=0" >> $dirconf/settings.txt
 #自定义闪存目录
 diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
-[ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
+[ -z "$diretc" ] && diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1) && [ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
 	#一键快速设置参数：./clash.sh 1 mode=1 config=config.yaml link1=https://123.com/link1.txt link2=https://123.com/link2.txt adblock=1 chinalist=1 unlocknetease=0 dns=1
@@ -1316,10 +1316,10 @@ os1="linux-mipsle-hardfloat"
 #os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
 #tmpclash
-tmpclash_address="https://tmpclashpremiumbindary.cf"
-tmpclash_url1=$($curl -sL $tmpclash_address | awk -F\" '/'$os1'/{print $2}' | sed 's@^@$tmpclash_address/@')
-tmpclash_url2=$(echo $tmpclash_url1 | sed "s/$os1/$os2/")
-tmpclash_ver=$(echo $tmpclash_url1 | awk -F '-' '{print $NF}' | sed 's/\.gz//')
+#tmpclash_address="https://tmpclashpremiumbindary.cf"
+#tmpclash_url1=$($curl -sL $tmpclash_address | awk -F\" '/'$os1'/{print $2}' | sed 's@^@$tmpclash_address/@')
+#tmpclash_url2=$(echo $tmpclash_url1 | sed "s/$os1/$os2/")
+#tmpclash_ver=$(echo $tmpclash_url1 | awk -F '-' '{print $NF}' | sed 's/\.gz//')
 #github
 #github_address="https://github.com/Dreamacro/clash"
 github_address="https://github.com/Dreamacro/clash/releases/tag/premium"
@@ -1329,9 +1329,9 @@ github_ver=$(echo $github_url1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed
 #new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
 if [ "$github_ver" = "$old" ]; then
-	echo -e \\n"  \e[1;32m✔ $filename 版本一致，无需更新！\e[0m\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  tmpclash版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
+	echo -e \\n"  \e[1;32m✔ $filename 版本一致，无需更新！\e[0m\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
 else
-	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  clashp版本：\e[1;32m【$tmpclash_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
+	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
 	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
 	#$curl -# -LO $github_url2 &
 	$curl -# -LO $github_url1

@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=44
+sh_ver=45
 
 path=${0%/*}
 bashname=${0##*/}
@@ -137,16 +137,16 @@ else
 fi
 #模式
 mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1)
-[ -z "$mode" ] && mode=3 && echo "mode=3" >> $dirconf/settings.txt
+[ -z "$mode" ] && mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1) && [ -z "$mode" ] && mode=3 && echo "mode=3" >> $dirconf/settings.txt
 #防火墙开关iptables
 firewall=$(cat $dirconf/settings.txt |awk -F 'firewall=' '/firewall=/{print $2}' | head -n 1)
-[ -z "$firewall" ] && firewall=0 && echo "firewall=0" >> $dirconf/settings.txt
+[ -z "$firewall" ] && firewall=$(cat $dirconf/settings.txt |awk -F 'firewall=' '/firewall=/{print $2}' | head -n 1) && [ -z "$firewall" ] && firewall=0 && echo "firewall=0" >> $dirconf/settings.txt
 #防火墙开关iptables
 tproxy=$(cat $dirconf/settings.txt |awk -F 'tproxy=' '/tproxy=/{print $2}' | head -n 1)
-[ -z "$tproxy" ] && tproxy=0 && echo "tproxy=0" >> $dirconf/settings.txt
+[ -z "$tproxy" ] && tproxy=$(cat $dirconf/settings.txt |awk -F 'tproxy=' '/tproxy=/{print $2}' | head -n 1) && [ -z "$tproxy" ] && tproxy=0 && echo "tproxy=0" >> $dirconf/settings.txt
 #自定义闪存目录
 diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
-[ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
+[ -z "$diretc" ] && diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1) && [ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
 	#一键快速设置参数：./v2ray.sh 1 mode=1 link1=https://123.com/link1.txt

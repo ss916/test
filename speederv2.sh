@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=7
+sh_ver=8
 
 path=${0%/*}
 bashname=${0##*/}
@@ -98,9 +98,9 @@ server_domain=$(cat $dirconf/settings.txt |awk -F 'server_domain=' '/server_doma
 server_port=$(cat $dirconf/settings.txt |awk -F 'server_port=' '/server_port=/{print $2}' | head -n 1)
 server_key=$(cat $dirconf/settings.txt |awk -F 'server_key=' '/server_key=/{print $2}' | head -n 1)
 diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1)
-[ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
+[ -z "$diretc" ] && diretc=$(cat $dirconf/settings.txt |awk -F 'diretc=' '/diretc=/{print $2}' | head -n 1) && [ -z "$diretc" ] && diretc=/tmp/$name/etc && echo "diretc=/tmp/$name/etc" >> $dirconf/settings.txt
 mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1)
-[ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
+[ -z "$mode" ] && mode=$(cat $dirconf/settings.txt |awk -F 'mode=' '/mode=/{print $2}' | head -n 1) && [ -z "$mode" ] && mode=1 && echo "mode=1" >> $dirconf/settings.txt
 }
 if [ ! -z "$2" -a ! -z "$3" ] ; then
 	#一键快速设置参数：./speeder.sh 1 server_domain=domain.com server_port=443 server_key=123
