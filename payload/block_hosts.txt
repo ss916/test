@@ -1,6 +1,11 @@
 payload:
 #❌AD hosts ：block_hosts.txt
 #https://github.com/vokins/yhosts
+#xinghuozhibo
+- DOMAIN,api.iclknet.com
+- DOMAIN,api.windmilljoy.com
+- DOMAIN,api.windmillplay.com
+- DOMAIN,api.bwan001.com
 #google
 - DOMAIN,imasdk.googleapis.com
 #cumtuber
@@ -21,10 +26,6 @@ payload:
 - DOMAIN,conf.international.baidu.com
 #other
 - DOMAIN,ads.aralego.com
-- DOMAIN,api.iclknet.com
-- DOMAIN,api.windmilljoy.com
-- DOMAIN,api.windmillplay.com
-- DOMAIN,api.bwan001.com
 - DOMAIN,ad.wretch.cc
 - DOMAIN,ad.hefei.cc
 - DOMAIN,ad.jamster.co.uk

@@ -1,5 +1,5 @@
-# //【2021-06-15 01:27:54】
-/SHAKE128.TXT= ceb7d4621d17176ff250f64635d21abf57ee82d3
+# //【2021-06-17 13:59:46】
+/SHAKE128.TXT= 16148824cf4b1301a26a55ac4b08bb4346c381ec
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -31,9 +31,9 @@
 /invalid.txt= 4866933760b5a11a3b4482d2d09229c87d24a63a
 /netease.sh= 90879a5c93382d00ddec1444cc5a9cbf1d62c994
 /opt.sh= cf2f7c40136cc694e98a3751e4cbc83cfb452e7c
-/payload/block_dnsmasq.txt= 4451d04ac240e1724e5b9786de33917bf19d3ab8
+/payload/block_dnsmasq.txt= 6ec5b06a4ebbbaa48273940a94f5639afeed6cba
 /payload/block_hijack.txt= dfd73b8fb5887a318e0b2223325329fd8e1d538d
-/payload/block_hosts.txt= 09dd3685459cffbe790f0c2696ff430c0f0fcd43
+/payload/block_hosts.txt= b5ee34b0ed0e6551807a73049e840ad9db1a3edb
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
@@ -63,8 +63,8 @@
 /s/c1.pb= d6768380872df0b82d8da05ab9692f5fe9bcd013
 /s/c10.json= abc7c74f165d70fb61260be320a607dd6b019958
 /s/c10.pb= fe3b20680d4192f953fbde501b6a640a3f4aa2be
-/s/c11.json= 316f0b9db6226e865dd9a29c7f79016f4f24ca44
-/s/c12.json= 194aac71b240849f172a6d7bfbe0172f36592fd2
+/s/c11.json= 4f2ea1cf3cc65ea4350ac59646a1d6b952bf5f71
+/s/c12.json= 21644b51af3cebc963093847e69376a3b28d9b21
 /s/c13.json= 738b3262bd3a7fd3c92e6660a779f96403887a2a
 /s/c14.json= e8acce2e34e75f7206bf9b102dcf77993ee1399b
 /s/c15.json= c33790af8fe1149f96b642f6f56b9173529ed6a0
