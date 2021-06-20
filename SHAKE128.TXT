@@ -1,5 +1,5 @@
-# //【2021-06-17 13:59:47】
-/SHA1.TXT= 89b05a180144dbca037dc9ba6b0993c0
+# //【2021-06-21 03:57:30】
+/SHA1.TXT= 00dd1f5b5ac13546ff95ac25a80d98af
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -42,9 +42,9 @@
 /payload/cn_web_other.txt= 8b71d6f27add2c73af88c11eccaf1fb5
 /payload/global_apple.txt= 7cd13691714353f95af3d9a1fb2b7dcb
 /payload/global_ip_cloudflare.txt= 4c2dbe1bbeeca7164932f3c2c12bb2b7
-/payload/global_video.txt= 811b0dfdeef04ed385ae4ee1bf085ca6
+/payload/global_video.txt= 00092e93c44263cd599b2dbc9ebd8ebc
 /payload/global_video_netflix.txt= 9253ec8c1e46a6bf8eef183172f92f29
-/payload/global_video_other.txt= b96b4cb129e7a9d88cf8044259551a54
+/payload/global_video_other.txt= e62b9b6099fe0382abdc2be0eed4befb
 /payload/global_video_youtube.txt= c9fa4f97912bef45193dba4ca53f40bf
 /payload/global_web.txt= 515635faba12ebde92eceaf141997cf0
 /payload/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2

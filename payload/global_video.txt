@@ -36,6 +36,8 @@ payload:
 - IP-CIDR,2a00:86c0::/32
 - IP-CIDR,2a03:5640::/32
 #📺全球影音：global_video_other.txt
+#globalTV
+- DOMAIN-SUFFIX,xiafang.tk
 #odysee
 - DOMAIN-SUFFIX,lbry.com
 - DOMAIN-SUFFIX,lbry.tv
@@ -271,15 +273,6 @@ payload:
 - DOMAIN-SUFFIX,planetpron.com
 - DOMAIN-SUFFIX,highwebmedia.com
 - DOMAIN-SUFFIX,digitaloceanspaces.com
-##tv543
-- DOMAIN-SUFFIX,00005555.cc
-- DOMAIN-SUFFIX,etvb.hk
-- DOMAIN-SUFFIX,gemini-developer.com
-- DOMAIN-SUFFIX,haypnew.com
-- DOMAIN-SUFFIX,hellotvvod.com
-- DOMAIN-SUFFIX,hrpan.tk
-- DOMAIN-SUFFIX,tvgood.taipei
-- DOMAIN-SUFFIX,tvbox543.com
 
 #📺YouTube ：global_video_youtube.txt
 - DOMAIN-SUFFIX,youtu.be
