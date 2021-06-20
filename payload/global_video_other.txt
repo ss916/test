@@ -2,6 +2,8 @@ payload:
 #📺全球影音：global_video_other.txt
 #globalTV
 - DOMAIN-SUFFIX,xiafang.tk
+- DOMAIN-SUFFIX,00005555.cc
+- DOMAIN-SUFFIX,tvgood.taipei
 #odysee
 - DOMAIN-SUFFIX,lbry.com
 - DOMAIN-SUFFIX,lbry.tv
