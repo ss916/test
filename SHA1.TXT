@@ -1,5 +1,5 @@
-# //【2021-06-21 04:23:03】
-/SHAKE128.TXT= 1dd69727cfc6af2fdd036963a15ebffd6761c689
+# //【2021-06-25 13:49:22】
+/SHAKE128.TXT= d129a528b0fb758cba73b92fbc821b7f31256890
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -92,21 +92,21 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= 69232bc879e3770160cad23273a83d995ff1dd11
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= 28b03019b667909ec9acedb114588e09096746a7
-/t/Country.mmdb.ver= 01e3ff7b3b79985db66e00958dde21dc1e3e5a11
+/t/Country.mmdb.tgz= 1f6c32582a4c1900746e975df54b7e57d81a0dab
+/t/Country.mmdb.ver= 28806ebcd450cce6c77b3c5b3b93f7903278dac4
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= 9a4e954b8603bd61e871adf3f498791e080ff96d
-/t/clash-dashboard-gh-pages.zip= 788d31c3c8dba2ea539d4ad71bfb9d209072548b
+/t/clash-dashboard-gh-pages.tgz= 4fe24a471774ff73f318aa63dac7f3253e74375b
+/t/clash-dashboard-gh-pages.zip= fed2c7f7dc31f8c27b8372e18369e8690d6d5144
 /t/clash.ver= 1d078c87aec3f78267ec4a7e99c9e39fc41b0725
 /t/clash= ae10ce88cd32023977ae1ca9f6a33b6384b99682
-/t/cnip.txt= c56b257bdf874b62af541572e3e75c8408d46048
-/t/cnip_delegated-apnic-latest= b97d118910f824511b93778489233a94ed6ddbc4
+/t/cnip.txt= 7166b6c3937dd2283c68674e0a1d9bf22689b156
+/t/cnip_delegated-apnic-latest= 34f2ac2816a9d58cc1cbb96582e0aaaacfeb2650
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 9b430233c2cef05cbf253819f62928b89c656e8d
-/t/ipset.cnip.txt= 478c71292b0ccee977b639f8e392901e2bf073f5
+/t/ipset.cnip.txt= 5da38f358f7da3fc2dbc4f602dd98e94ae7f9d6d
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595
