@@ -1,5 +1,5 @@
-# //【2021-06-27 02:10:41】
-/SHA1.TXT= ab457bfe1f9a3c2a7b4631483b9f8832
+# //【2021-06-27 23:10:48】
+/SHA1.TXT= 17c9b1bacd7761b7972b856087faceb5
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -98,8 +98,8 @@
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 4605130e42a4585bbc6bc85ed074b5f9
-/t/clash-dashboard-gh-pages.zip= 06db20f4ef9c6052208aaf206b654657
+/t/clash-dashboard-gh-pages.tgz= d547897fed15ccf801787c5c134e5239
+/t/clash-dashboard-gh-pages.zip= 415bab1e64b6854bc1a3f442d3cef76a
 /t/clash.ver= 94dd7b819ecde8b17fde6d92151ba284
 /t/clash= 5892b1728506a1d67e252ea59a8b86c3
 /t/cnip.txt= b656dcd3f19717c5e4dd48376711eabc
