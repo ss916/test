@@ -1,11 +1,11 @@
-# //【2021-06-27 23:10:48】
-/SHA1.TXT= 17c9b1bacd7761b7972b856087faceb5
+# //【2021-06-30 01:55:23】
+/SHA1.TXT= e4343d411ec8341ae4bb3dc034819e77
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
-/arm64/clash= f8cf183a32d9b11fca72985d6df19282
+/arm64/clash= 64d7680cbd697459f41cc8310e9fda21
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
 /arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
@@ -92,21 +92,22 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 1ce03e4b904690e2b28c112750c9d0c0
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= ee95cebe11268bb6ba5c396c7e417720
-/t/Country.mmdb.ver= aacbfaf280dfe1aac8ba7b7a1d4bd8c5
+/t/Country.mmdb.tgz= f54192956220d3c0f70da8882fcad761
+/t/Country.mmdb.ver= 116ec65b225847e587f9857e14b4d0bb
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
 /t/clash-dashboard-gh-pages.tgz= d547897fed15ccf801787c5c134e5239
 /t/clash-dashboard-gh-pages.zip= 415bab1e64b6854bc1a3f442d3cef76a
-/t/clash.ver= 94dd7b819ecde8b17fde6d92151ba284
-/t/clash= 5892b1728506a1d67e252ea59a8b86c3
-/t/cnip.txt= b656dcd3f19717c5e4dd48376711eabc
-/t/cnip_delegated-apnic-latest= b0299dad35ac76365e718f7a1366bd89
+/t/clash.ver2= c490ad738e9f332af3aa7a96543c4238
+/t/clash.ver= c490ad738e9f332af3aa7a96543c4238
+/t/clash= 9d30ef924854b916fc583a0f9dbe411d
+/t/cnip.txt= 309e851afe4ddbd96be4ac7d879f28e5
+/t/cnip_delegated-apnic-latest= 6a5dfe6688a94bf543637dfd55d14a06
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= 7d7f0894702f6ba70982fc93c507ed3a
+/t/ipset.cnip.txt= fafc9019fe4cbfec07412f00816a9dd1
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
