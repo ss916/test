@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=45
+sh_ver=46
 
 path=${0%/*}
 bashname=${0##*/}
@@ -246,7 +246,7 @@ if [ "$download_ok" = "1" ] ; then
 		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$type" = "zip" ] ; then
 		echo -e \\n"\e[36m▷解压文件$filetgz到[ $fileout ]...\e[0m"
-		[ ! -s /opt/bin/unzip ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
+		[ -z "$(which unzip)" ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		unzip -o $diretc/$filetgz -d $fileout
 		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$secret" = "1" ] ; then
