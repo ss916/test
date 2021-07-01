@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=58
+sh_ver=60
 
 path=${0%/*}
 bashname=${0##*/}
@@ -336,7 +336,7 @@ if [ "$download_ok" = "1" ] ; then
 		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$type" = "zip" ] ; then
 		echo -e \\n"\e[36m▷解压文件$filetgz到[ $fileout ]...\e[0m"
-		[ ! -s /opt/bin/unzip ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
+		[ -z "$(which unzip)" ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		unzip -o $diretc/$filetgz -d $fileout
 		echo -e \\n"\e[32m✔文件$filetgz解压完成！\e[0m"\\n
 	elif [ "$secret" = "1" ] ; then
@@ -1255,7 +1255,7 @@ if [ ! -z "$old" -a ! -z "$new" ]; then
 		echo -e \\n"    ● \e[1;36m ${name} Web1蓝色主题\e[1;32m✔ \e[0m"
 		rm -rf $filename
 	else
-		[ ! -s /opt/bin/unzip ] && opkg install unzip
+		[ -z "$(which unzip)" ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		[ -d ./$filedir ] && rm -rf ./$filedir
 		unzip -o $filename
 		tar czvf $filedir.tgz $filedir
@@ -1277,7 +1277,7 @@ if [ ! -z "$old" -a ! -z "$new" ]; then
 		echo -e \\n"    ● \e[1;36m ${name} Web2暗黑主题\e[1;32m✔ \e[0m"
 		rm -rf $filename
 	else
-		[ ! -s /opt/bin/unzip ] && opkg install unzip
+		[ -z "$(which unzip)" ] && echo -e "  >> 检测到opt需要安装unzip..." && opkg update && opkg install unzip
 		[ -d ./$filedir ] && rm -rf ./$filedir
 		unzip -o $filename
 		tar czvf $filedir.tgz $filedir
@@ -1315,59 +1315,63 @@ filename="clash"
 os1="linux-mipsle-hardfloat"
 #os2="linux-armv8"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
-#tmpclash
-#tmpclash_address="https://tmpclashpremiumbindary.cf"
-#tmpclash_url1=$($curl -sL $tmpclash_address | awk -F\" '/'$os1'/{print $2}' | sed 's@^@$tmpclash_address/@')
-#tmpclash_url2=$(echo $tmpclash_url1 | sed "s/$os1/$os2/")
-#tmpclash_ver=$(echo $tmpclash_url1 | awk -F '-' '{print $NF}' | sed 's/\.gz//')
-#github
-#github_address="https://github.com/Dreamacro/clash"
-github_address="https://github.com/Dreamacro/clash/releases/tag/premium"
-github_url1=$($curl -sL $github_address | awk -F\" '/releases.*premium.*'$os1'/{print "https://github.com" $2}' | head -n 1)
-#github_url2=$(echo $github_url1 | sed "s/$os1/$os2/")
-github_ver=$(echo $github_url1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed 's/.gz//')
+#github1
+#github_address1="https://github.com/Dreamacro/clash"
+#github_url1_os1=$($curl -sL $github_address | awk -F\" '/releases.*'$os1'/{print "https://github.com" $2}' | head -n 1)
+github_address1="https://github.com/Dreamacro/clash/releases/tag/premium"
+github_url1_os1=$($curl -sL $github_address1 | awk -F\" '/releases.*premium.*'$os1'/{print "https://github.com" $2}' | head -n 1)
+#github_url1_os2=$(echo $github_url1_os1 | sed "s/$os1/$os2/")
+github_ver=$(echo $github_url1_os1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed 's/.gz//')
+#github2
+github_address2="https://github.com/ClashDotNetFramework/experimental-clash/releases"
+github_url2_os1=$($curl -sL $github_address2 | awk -F\" '/releases.*'$os1'/{print "https://github.com" $2}' | head -n 1)
+#github_url2_os2=$(echo $github_url2_os1 | sed "s/$os1/$os2/")
+github_ver2=$(echo $github_url2_os1 |grep -Eo "$os1.*gz"|awk -F '-' '{print $NF}'|sed 's/.gz//;s/^v//')
 #new=$($curl -sL https://github.com/Dreamacro/clash/releases | grep -Eo "title=\"v.*\">" |head -n1 |awk -F'v' '{print $2}' |sed 's/">//')
 old=$($curl -sL $url/t/clash.ver)
 if [ "$github_ver" = "$old" ]; then
-	echo -e \\n"  \e[1;32m✔ $filename 版本一致，无需更新！\e[0m\\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  old 旧版本：\e[1;32m【$old】\e[0m"\\n
+	echo -e \\n"  \e[1;32m✔ $filename 版本一致，无需更新！\e[0m\\n  premium版本：\e[1;37m【$github_ver】\e[0m \\n  github2版本：\e[1;37m【$github_ver2】\e[0m \\n  old 旧版本 ：\e[1;32m【$old】\e[0m"\\n
 else
-	echo -e \\n"  $filename 正在更新... \\n  github版本：\e[1;37m【$github_ver】\e[0m \\n  old 旧版本：\e[1;33m【$old】\e[0m"\\n
-	echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
-	#$curl -# -LO $github_url2 &
-	$curl -# -LO $github_url1
-	echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
-	#gzip -kfd *$os2*gz &
-	gzip -kfd *$os1*gz
-	chmod +x -R ./
-	echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
-	ver=$(./*$os1*$github_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
-	if [ ! -z "$ver" ] ; then
-		if [ "$ver" = "$old" ]; then
-			echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
-			rm -rf ./clash*
-		else
-			echo "$ver" > ./$filename.ver
-			echo -e "\e[32m  >> $filename文件校验通过，版本不一致～\e[0m"
-			echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
-			echo "$ver" >  ./clash.ver
-			echo -e " \e[1;33m>>upx压缩$filename...\e[0m"
-			if [ -z "`upx -V`" ] ; then
-				echo -e "  >> 检测到opt需要安装upx～"
-				[ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] && echo "走clash本地http代理更新opt upx" && export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
-				opkg update && opkg install upx
+	echo -e \\n"  $filename 需要更新... \\n  premium版本：\e[1;37m【$github_ver】\e[0m \\n  github2版本：\e[1;37m【$github_ver2】\e[0m \\n  old 旧版本 ：\e[1;33m【$old】\e[0m"\\n
+	if [ "$update_file" = "1" ] ; then
+		echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
+		#$curl -# -LO $github_url1_os2 &
+		$curl -# -LO $github_url1_os1 &
+		wait
+		echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
+		#gzip -kfd *$os2*gz
+		gzip -kfd *$os1*gz
+		chmod +x -R ./
+		echo -e \\n"\e[36m▶校验$filename文件...\e[0m"
+		ver=$(./*$os1*$github_ver -v | awk '/Clash/{print $2}'|sed 's/v//')
+		if [ ! -z "$ver" ] ; then
+			if [ "$ver" = "$old" ]; then
+				echo -e " ✔ $filename新下载文件版本\e[1;32m【$ver】\e[0m与 旧版本\e[1;32m【$old】\e[0m一致，无需更新。"
+				rm -rf ./clash*
+			else
+				echo "$ver" > ./$filename.ver
+				echo -e "\e[32m  >> $filename文件校验通过，版本不一致～\e[0m"
+				echo -e "   clash新下载版本：\e[1;32m【$ver】\e[0m，旧版本：\e[1;33m【$old】\e[0m"
+				echo "$ver" >  ./clash.ver
+				echo -e " \e[1;33m>>upx压缩$filename...\e[0m"
+				if [ -z "$(which upx)" ] ; then
+					echo -e "  >> 检测到opt需要安装upx..."
+					[ ! -z "$(ps -w | grep -v grep | grep "clash.*-d")" -a ! -z "$(netstat -anp | grep clash)" ] && echo "走clash本地http代理更新opt upx" && export http_proxy=http://127.0.0.1:8005 && export https_proxy=http://127.0.0.1:8005
+					opkg update && opkg install upx
+				fi
+				[ -s ./$filename ] && rm ./$filename
+				upx --brute *$os1*$github_ver -o $filename && echo -e \\n"\e[32m   ✓ $filename upx压缩完成！！\e[0m"\\n &
 			fi
-			[ -s ./$filename ] && rm ./$filename
-			upx --brute *$os1*$github_ver -o $filename && echo -e \\n"\e[32m   ✓ $filename upx压缩完成！！\e[0m"\\n &
-		fi
-	else
-		gzsize=$(ls -lh *$os1*$github_ver.gz | awk -F ' ' '{print $5}')
-		size=$(ls -lh *$os1*$github_ver | awk -F ' ' '{print $5}')
-		if [ ! -s ./*$os1*$github_ver ] ; then
-			echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
 		else
-			echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"
+			gzsize=$(ls -lh *$os1*$github_ver.gz | awk -F ' ' '{print $5}')
+			size=$(ls -lh *$os1*$github_ver | awk -F ' ' '{print $5}')
+			if [ ! -s ./*$os1*$github_ver ] ; then
+				echo -e "\e[1;31m✖找不到$filename主程序，解压缩文件错误，请手动重新下载。gz压缩包大小【$gzsize】\e[0m"
+			else
+				echo -e "\e[1;31m✖解压成功，但$filename主程序无法运行，请手动重新下载。gz压缩包大小【$gzsize】，主程序大小【$size】\e[0m"
+			fi
+			rm -rf ./clash*
 		fi
-		rm -rf ./clash*
 	fi
 fi
 }
@@ -1420,7 +1424,7 @@ echo -e "\e[1;33m【9】 检查更新所有\e[0m"\\n
 read -n 1 -p "请输入数字检查更新:" numx
 [ "$numx" = "1" ] && upweb &
 [ "$numx" = "2" ] && upgeoip &
-[ "$numx" = "3" ] && upclash &
+[ "$numx" = "3" ] && update_file=1 && upclash &
 [ "$numx" = "4" ] && upcnip &
 [ "$numx" = "9" ] && up_all &
 }

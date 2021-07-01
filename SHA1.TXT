@@ -1,5 +1,5 @@
-# //【2021-07-01 15:05:24】
-/SHAKE128.TXT= d393a84f9514615c4ba346353166d4d4cda09497
+# //【2021-07-02 00:41:48】
+/SHAKE128.TXT= 299039bb936c608301d0394c1c0124e5894c8052
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
@@ -16,7 +16,7 @@
 /arm64/v2ray= fb2291f720fffe4b872619cab34ba36f92663736
 /arm64/xray= fb2291f720fffe4b872619cab34ba36f92663736
 /armv5/filebrowser= c0ed812a1ef694c0ccef59232ebd0be4607ced24
-/clash.sh= 2901ef73beddd196d2633854d4cce0017c160ffd
+/clash.sh= 51eb7d0873aa84d7fd6063e88cbca78f39a4daea
 /config.yaml= 1a55720f7662b10c6207df15970e859190a71222
 /dnsmasq/ad.conf= c0cea23f2f31a8014ab7b4aa30f935143ad6fff3
 /dnsmasq/dnsfq.conf= 0c93088972594e7f58144aed1b13ee5ffb8cfae0
@@ -98,8 +98,8 @@
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/clash-dashboard-gh-pages.tgz= 76538ce62d94bdf4726a8b1da3845110f67264ef
-/t/clash-dashboard-gh-pages.zip= c95ea7ef70bbda0918681edb6c20ab0a2f9b998f
+/t/clash-dashboard-gh-pages.tgz= ad95077883bbe5545b6e7fc1703ad8c1578098cd
+/t/clash-dashboard-gh-pages.zip= 8bd4aeca0a30564b149d0f481bc0d9bd9fcc42b9
 /t/clash.ver2= 2ad56d0e7116a4ed8c4e5dd28853705d5d73f1e4
 /t/clash.ver= 2ad56d0e7116a4ed8c4e5dd28853705d5d73f1e4
 /t/clash= b8d144fde7ed25e50c82883e8e548015c9197ce2
