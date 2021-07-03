@@ -1,5 +1,5 @@
-# //【2021-07-04 00:01:23】
-/SHA1.TXT= be91098b48bdefe485ea6472f0998208
+# //【2021-07-04 04:33:36】
+/SHA1.TXT= c8bb3df28e3adb15a85d5f8eda24311a
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -30,7 +30,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= 260676225ef4afdd1add20cde0c0c8ae
+/opt.sh= 986f22818b30ac197f9d2bb2555adbb7
 /payload/block_dnsmasq.txt= e4efde7c090ad63e48bb15a727148b9e
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= ba9c6b09d648f78deb508afd91b17c61
