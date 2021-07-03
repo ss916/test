@@ -1,11 +1,11 @@
-# //【2021-07-02 03:35:01】
-/SHAKE128.TXT= e173906d25295c3cf54778e978c3b578d9f6feb7
+# //【2021-07-04 00:01:22】
+/SHAKE128.TXT= d0c8e8b9f3b7191807b001cf38fbccc52916c6e8
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
 /amd64/xray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/clash= 5dbb32b1b32198420512f506a76c1480a95b5392
+/arm64/clash= 1a18aa00a4b4d82507a9a0a540c6c3c48f7076b4
 /arm64/filebrowser= 1a7bac3418806a066c0259dcf7561ff048824a17
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
@@ -92,22 +92,22 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= 26202a29893cf505c36cde91a83704e065d49e53
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= e3f61e7f6a08e7e60240c4a3d631fb4fe2dd785e
-/t/Country.mmdb.ver= 791ebe6f7855766e6de8db81d7c3642948d772a0
+/t/Country.mmdb.tgz= b244aece5e0b6234b686a0a50c142db3b37bbffa
+/t/Country.mmdb.ver= 92c4fe4ab1f500561bb04119ee6e806e7ed1c3fa
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
 /t/clash-dashboard-gh-pages.tgz= 3202bd012e31ff41c67d39ad77a0c49087c15308
 /t/clash-dashboard-gh-pages.zip= c860cafbc739c0fa408392ec83b5134127884b6b
-/t/clash.ver2= 2ad56d0e7116a4ed8c4e5dd28853705d5d73f1e4
-/t/clash.ver= 2ad56d0e7116a4ed8c4e5dd28853705d5d73f1e4
-/t/clash= b8d144fde7ed25e50c82883e8e548015c9197ce2
-/t/cnip.txt= 976c995803ce163ecaaecb1e9fdb08723fede5b8
-/t/cnip_delegated-apnic-latest= 215d7e769ac32d848d5a98b797f6e597db9d2bc7
+/t/clash.ver2= 90ad4a4eaf2675a2ba42bbc66144d651d26d17ea
+/t/clash.ver= 90ad4a4eaf2675a2ba42bbc66144d651d26d17ea
+/t/clash= 173ef000e990f6d19cfd7da286236ed474922037
+/t/cnip.txt= 68c0212558dc1e6e41b1bb3399b16c0182d19928
+/t/cnip_delegated-apnic-latest= 6e940bdba4410ece56bac4adbb60e22bc0994d66
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
 /t/geo.tgz= 9b430233c2cef05cbf253819f62928b89c656e8d
-/t/ipset.cnip.txt= 5f6ace1845ba0594423601a21a15db9b2e3b25ed
+/t/ipset.cnip.txt= e2f5811619537ba186705cd05fc81f7ba7c845a4
 /t/kcptun.ver= 85a9d026f43abcc0cab7130e56acc4792f8dc977
 /t/kcptunc= 4c46a6cdfffab3e851ff498dcd2b84fed334d94e
 /t/kcptunc_old_20200201= 37d4d1215d840ecc020071dcedd22ad39320f595

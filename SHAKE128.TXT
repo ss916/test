@@ -1,11 +1,11 @@
-# //【2021-07-02 03:35:02】
-/SHA1.TXT= 9613cc4e685bb1cb7b8bc40a628be833
+# //【2021-07-04 00:01:23】
+/SHA1.TXT= be91098b48bdefe485ea6472f0998208
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
-/arm64/clash= 64d7680cbd697459f41cc8310e9fda21
+/arm64/clash= 15bc3682f0d5b547a466975e93ab1958
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
 /arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
@@ -92,22 +92,22 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 3888ba257958eb47c5178208814ca60b
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 5391f92c1d3b75a75078268534681d49
-/t/Country.mmdb.ver= 136969c5c6e52a82cd8c6b0f3502603b
+/t/Country.mmdb.tgz= 840a48787c9e2c1c5e2a35bc89244ee5
+/t/Country.mmdb.ver= d52dbc4877fe271f824cf5524367e0ce
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
 /t/clash-dashboard-gh-pages.tgz= 61c6a72b639200ad6403fa05e6dfc76c
 /t/clash-dashboard-gh-pages.zip= 270f80f4b20b50b5658ef6d1a1b675a8
-/t/clash.ver2= c490ad738e9f332af3aa7a96543c4238
-/t/clash.ver= c490ad738e9f332af3aa7a96543c4238
-/t/clash= 9d30ef924854b916fc583a0f9dbe411d
-/t/cnip.txt= 309e851afe4ddbd96be4ac7d879f28e5
-/t/cnip_delegated-apnic-latest= 6a5dfe6688a94bf543637dfd55d14a06
+/t/clash.ver2= 29eb7b99855315ccc6b1a003104d1c65
+/t/clash.ver= 29eb7b99855315ccc6b1a003104d1c65
+/t/clash= d94cb08076da962e0993e124c3f731b8
+/t/cnip.txt= 02dd7ba6cc27a3758306ebdd7599dfd0
+/t/cnip_delegated-apnic-latest= b9795af8fbdc34ace0631ff16c1b373d
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= fafc9019fe4cbfec07412f00816a9dd1
+/t/ipset.cnip.txt= 185291d1272504523230670cf728f403
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
