@@ -1,11 +1,11 @@
-# //【2021-07-05 15:12:01】
-/SHA1.TXT= 20ae97e98b3fe743d5e31898cec9b576
+# //【2021-07-05 16:16:41】
+/SHA1.TXT= df7833f21f5a8bc8c9337769893b6f9d
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
 /amd64/xray= 81fba07a319dc4ed7aa6ed60cac8730a
 /arm64/caddy= f614837b6efcfd51c383c29b29b4f509
-/arm64/clash= 1a9a3bb1c4ad186d4f138e44959ee6dd
+/arm64/clash= c39cb7ddd5411fdffc615c41d30e1e95
 /arm64/filebrowser= 07dca682881cac2faa212c7898bd26fc
 /arm64/kcptunc= c8ec6244420485e78caf929c31ee9444
 /arm64/kcptunc_old= bf4f1da666d432ec0d5e32eb1d783a63
@@ -100,9 +100,9 @@
 /t/caddy= d91556933dd45b541d0587a957b95d99
 /t/clash-dashboard-gh-pages.tgz= 61c6a72b639200ad6403fa05e6dfc76c
 /t/clash-dashboard-gh-pages.zip= 270f80f4b20b50b5658ef6d1a1b675a8
-/t/clash.ver2= 81f282be8d93cc6a11bf15d8788a2db1
-/t/clash.ver= 81f282be8d93cc6a11bf15d8788a2db1
-/t/clash= 818a1ace90be4060556e55c3da428943
+/t/clash.ver2= 073b7d2b55fd7d22495501e8e533fabf
+/t/clash.ver= 073b7d2b55fd7d22495501e8e533fabf
+/t/clash= 69e74a930d971a69d02e072e43ffbde4
 /t/cnip.txt= 02dd7ba6cc27a3758306ebdd7599dfd0
 /t/cnip_delegated-apnic-latest= b9795af8fbdc34ace0631ff16c1b373d
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
