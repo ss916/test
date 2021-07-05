@@ -48,7 +48,7 @@ payload:
 - DOMAIN-SUFFIX,kwaixiaodian.com
 - DOMAIN-SUFFIX,kwaizt.com
 - DOMAIN-SUFFIX,kwimgs.com
-- DOMAIN-SUFFIX,myqcloud.com
+#- DOMAIN-SUFFIX,myqcloud.com
 - DOMAIN-SUFFIX,onethingpcs.com
 - DOMAIN-SUFFIX,p2cdn.com
 - DOMAIN-SUFFIX,tcdnvod.com

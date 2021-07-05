@@ -1,11 +1,11 @@
-# //【2021-07-04 04:33:35】
-/SHAKE128.TXT= b322b4156fe0a02c087d4975d12572f4804155fb
+# //【2021-07-05 15:12:00】
+/SHAKE128.TXT= d4a0fc3f5ff4df397b4fe44b0b6ac9d3e7477c4d
 /amd64/caddy= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/v2ctl= 5e4ed6a9a8b6832a8655c5f724da142deb35459e
 /amd64/v2ray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
 /amd64/xray= b8b618079e6bc375818a8e5d8f0eecd9b29dd769
 /arm64/caddy= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/clash= 1a18aa00a4b4d82507a9a0a540c6c3c48f7076b4
+/arm64/clash= 319cf81d8168dd571294d395290fc643fe2d7912
 /arm64/filebrowser= 1a7bac3418806a066c0259dcf7561ff048824a17
 /arm64/kcptunc= f0e4861f65f702aa34275e5738938b40c8ff269c
 /arm64/kcptunc_old= b54842cf4baea94b65ea19604db4fbe3323943b6
@@ -37,8 +37,8 @@
 /payload/block_malicious.txt= ea1d54bb5d1b5f53a0a85e69afd7b5a72360445f
 /payload/cn_music_netease.txt= 1f4cbfd3563445b79b26abb682d41059abf116c8
 /payload/cn_video.txt= 0cd0702c2eee571aabae938e5d9d484211a9fddb
-/payload/cn_web.txt= 8cf5324b795c95c501d775abd1e818b880c83b7f
-/payload/cn_web_bytedance.txt= d40c8434602974f9f30c66462aba09f4b5a58ac4
+/payload/cn_web.txt= f64576fe10f5811be8b90cba33e41acdc2cf7d85
+/payload/cn_web_bytedance.txt= 436743019b9babd74aa42aff56c03852d1b1434a
 /payload/cn_web_other.txt= cac2bae35faabc207ba268967f8dd6e2f63a844d
 /payload/global_apple.txt= 501aa14d1c3ff4adca724c484e9925d3bfc7c98b
 /payload/global_ip_cloudflare.txt= ab4b2c3748f0301fe5e847c7e0025e6f286c1211
@@ -92,17 +92,17 @@
 /sha1.sh= 7c2e312405299642652582e33a1687f350c7b2ce
 /speederv2.sh= 26202a29893cf505c36cde91a83704e065d49e53
 /t/20200830_yacd-gh-pages.tgz= d2ef5c364f56ef9d65d98d326a8784b13dd82a3a
-/t/Country.mmdb.tgz= b244aece5e0b6234b686a0a50c142db3b37bbffa
-/t/Country.mmdb.ver= 92c4fe4ab1f500561bb04119ee6e806e7ed1c3fa
+/t/Country.mmdb.tgz= 0094b9136d03e1cad6ada121430347b50cc1ceff
+/t/Country.mmdb.ver= 8c1ec466da317d016d4c9c4bb84dae13740801ca
 /t/UnblockNeteaseMusic= f4c119a01a189d9ffa4adf3e3e6cb0cd24dbd58a
 /t/aria2c.lib.tgz= 7aa53bacd6194816cecdc32a979018bb103102fd
 /t/aria2c= fb54550bfa4c8b41c7fd80e9ecbf0388948e2bb6
 /t/caddy= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
 /t/clash-dashboard-gh-pages.tgz= 3202bd012e31ff41c67d39ad77a0c49087c15308
 /t/clash-dashboard-gh-pages.zip= c860cafbc739c0fa408392ec83b5134127884b6b
-/t/clash.ver2= 90ad4a4eaf2675a2ba42bbc66144d651d26d17ea
-/t/clash.ver= 90ad4a4eaf2675a2ba42bbc66144d651d26d17ea
-/t/clash= 173ef000e990f6d19cfd7da286236ed474922037
+/t/clash.ver2= 23520bea0a0e935d96e78fe99f854aee96137d62
+/t/clash.ver= 23520bea0a0e935d96e78fe99f854aee96137d62
+/t/clash= 30ffa5e0f5a6f5a47d8381682247f0b43c2f6613
 /t/cnip.txt= 68c0212558dc1e6e41b1bb3399b16c0182d19928
 /t/cnip_delegated-apnic-latest= 6e940bdba4410ece56bac4adbb60e22bc0994d66
 /t/createCertificate.sh= 982706fff7e55adce40dac59ad553d929e80b7f1
