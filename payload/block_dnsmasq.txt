@@ -37,6 +37,7 @@ payload:
 - DOMAIN-SUFFIX,ulukaris.com
 - DOMAIN-SUFFIX,unreshiramor.com
 - DOMAIN-SUFFIX,visitstats.com
+- DOMAIN-SUFFIX,topjavstream.top
 - DOMAIN-SUFFIX,whos.amung.us
 - DOMAIN,d3v3bqdndm4erx.cloudfront.net
 #rfi
