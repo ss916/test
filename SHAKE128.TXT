@@ -1,5 +1,5 @@
-# //【2021-07-11 02:09:07】
-/SHA1.TXT= ee4289b4f0a5acc6c80a82857720d9ea
+# //【2021-07-14 15:19:01】
+/SHA1.TXT= 2de5124973ab4dbc71883f79fe53304d
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -30,7 +30,7 @@
 /hosts/hosts= 593e87e5b6ce69a61bb5eb207f7e2581
 /invalid.txt= fe87543b7ebaf685ad1634db172f2344
 /netease.sh= 084901a67890ce0464efb5066754fbec
-/opt.sh= 986f22818b30ac197f9d2bb2555adbb7
+/opt.sh= f5bbc952ae40bbe35c12ace893e503f6
 /payload/block_dnsmasq.txt= 1622ed661a0d6a9fe36aa8d9642e912a
 /payload/block_hijack.txt= e31f928d79b1a8ac5bea1d6a66d55ab9
 /payload/block_hosts.txt= ba9c6b09d648f78deb508afd91b17c61
@@ -92,22 +92,22 @@
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
 /speederv2.sh= 3888ba257958eb47c5178208814ca60b
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= a4b9dbc03ac9b8d3a976f697c870c221
-/t/Country.mmdb.ver= 0e6f91aee7923eb292f4048261c48f6e
+/t/Country.mmdb.tgz= 7eb1a307d38e994e98a12b9b0bba1ee1
+/t/Country.mmdb.ver= b17f35082dfe92d4d89532a340b1fc1d
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
 /t/caddy= d91556933dd45b541d0587a957b95d99
-/t/clash-dashboard-gh-pages.tgz= 61c6a72b639200ad6403fa05e6dfc76c
-/t/clash-dashboard-gh-pages.zip= 270f80f4b20b50b5658ef6d1a1b675a8
+/t/clash-dashboard-gh-pages.tgz= 0455a426c009c7675cbb50c4775cd51f
+/t/clash-dashboard-gh-pages.zip= 24c3c02348fea7fc19a69a340161a675
 /t/clash.ver2= 073b7d2b55fd7d22495501e8e533fabf
 /t/clash.ver= 073b7d2b55fd7d22495501e8e533fabf
 /t/clash= 69e74a930d971a69d02e072e43ffbde4
-/t/cnip.txt= b9e393077b17b9d5bdaf6c582178347a
-/t/cnip_delegated-apnic-latest= a2a4c67896d38b4d4555efbc6dc04811
+/t/cnip.txt= a3706e1481bd161f1dd72720d00d3f88
+/t/cnip_delegated-apnic-latest= 3fbe7e8e989a29ab1322acc7be2f80a9
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= c3a71e56bf63f90f698e6e5d8dc9e6bd
+/t/ipset.cnip.txt= 8902a7a461c69582fa3268fa762b1278
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
