@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=60
+sh_ver=62
 
 path=${0%/*}
 bashname=${0##*/}
@@ -286,7 +286,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT：$url/SHA1.TXT......\e[0m"
-	$curl -# -L $url/SHA1.TXT -o $tmp/SHA1.TXT
+	$curl -sL $url/SHA1.TXT -o $tmp/SHA1.TXT -w "\n⏳SHA1.TXT ↓ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -299,17 +299,17 @@ if [ "$n" = "1" ] ; then
 fi
 logger -t "【$filename】" "▶開始第[$n]次下载$filetgz......" && echo -e \\n"\e[1;36m▶『$filename』開始第[$n]次下载$filetgz......\e[0m"
 if [ -s $diretc/$filetgz ] ; then
-	new=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
+	localfile=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz：$link..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz：$link...\e[0m"
-	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
-	$curl -# -L $link -o ./$filetgz
-	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
+	[ ! -z "$(ps -w | grep -v grep | grep "curl.*-o ./$filetgz ")" ] && echo -e "\e[1;37m！已存在curl下載$filetgz進程，先kill。\\n$(ps -w | grep -v grep | grep "curl.*-o ./$filetgz ")\e[0m" && ps -w | grep -v grep | grep "curl.*-o ./$filetgz " | awk '{print $1}' | xargs kill -9
+	$curl -o ./$filetgz -sL $link -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
+	localfile=$(openssl SHA1 ./$filetgz |awk '{print $2}')
 fi
-old=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
-echo -e \\n"文件：$filetgz \\nnew：$new \\nold：$old"
-if [ ! -z "$new" -a ! -z "$old" ] ; then
-	if [ "$new" = "$old" ] ; then
+new=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
+echo -e \\n"文件：$filetgz \\n本地：$localfile \\n最新：$new"
+if [ ! -z "$localfile" -a ! -z "$new" ] ; then
+	if [ "$localfile" = "$new" ] ; then
 		if [ -s ./$filetgz ] ; then
 			echo -e \\n"\e[36m▷新下载文件$filetgz校验成功，复制到[ $diretc/$filetgz ]...\e[0m"
 			mv -f ./$filetgz $diretc/$filetgz
@@ -323,8 +323,8 @@ if [ ! -z "$new" -a ! -z "$old" ] ; then
 		download_ok=0
 	fi
 else
-	[ -z "$new" ] && logger -t "【$filename】" "✘ $filetgz文件openssl生成SHA1為空。" && echo -e \\n"\e[1;31m    ✘ $filetgz文件openssl生成SHA1為空。\e[0m"
-	[ -z "$old" ] && logger -t "【$filename】" "✘ SHA1.TXT校驗文件內沒有$filetgz文件" && echo -e \\n"\e[1;31m    ✘ SHA1.TXT校驗文件內沒有$filetgz文件。\e[0m"
+	[ -z "$localfile" ] && logger -t "【$filename】" "✘ $filetgz文件openssl生成SHA1為空。" && echo -e \\n"\e[1;31m    ✘ $filetgz文件openssl生成SHA1為空。\e[0m"
+	[ -z "$new" ] && logger -t "【$filename】" "✘ SHA1.TXT校驗文件內沒有$filetgz文件" && echo -e \\n"\e[1;31m    ✘ SHA1.TXT校驗文件內沒有$filetgz文件。\e[0m"
 	download_ok=0
 fi
 #下载完成后检查文件类型是否需要解压与解密
@@ -1247,7 +1247,7 @@ upweb () {
 filename="clash-dashboard-gh-pages.zip"
 filedir="clash-dashboard-gh-pages"
 address="https://codeload.github.com/Dreamacro/clash-dashboard/zip/gh-pages"
-$curl -sL $address -o $filename
+$curl -sL $address -o $filename -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 new=$(openssl SHA1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
 if [ ! -z "$old" -a ! -z "$new" ]; then
@@ -1269,7 +1269,7 @@ fi
 filename="yacd-gh-pages.zip"
 filedir="yacd-gh-pages"
 address="https://github.com/haishanh/yacd/archive/gh-pages.zip"
-$curl -sL $address -o $filename
+$curl -sL $address -o $filename -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 new=$(openssl sha1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/'$filename'/{print $2}' /tmp/SHA1.TXT)
 if [ ! -z "$old" -a ! -z "$new" ]; then
@@ -1301,7 +1301,7 @@ if [ ! -z "$old" -a ! -z "$new" ]; then
 	else
 		echo "$new" > ./$filename.ver
 		echo -e \\n" \e[1;33m>> $filename版本不一致，需要更新... \\n  new：$new  \\n  old：$old\e[0m"
-		$curl -# -L $address -o ./$filename
+		$curl -sL $address -o ./$filename -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 		echo -e " \e[1;33m>>创建$filename.tgz新的压缩包...\e[0m"
 		tar czvf $filename.tgz $filename && echo -e \\n"\e[32m   ✓ $filename.tgz创建新的压缩包完成！！\e[0m"\\n
 	fi
@@ -1335,8 +1335,8 @@ else
 	echo -e \\n"  $filename 需要更新... \\n  premium版本：\e[1;37m【$github_ver】\e[0m \\n  github2版本：\e[1;37m【$github_ver2】\e[0m \\n  old 旧版本 ：\e[1;33m【$old】\e[0m"\\n
 	if [ "$update_file" = "1" ] ; then
 		echo -e \\n"\e[36m▶下载新版$filename主程序压缩包...\e[0m"
-		#$curl -# -LO $github_url1_os2 &
-		$curl -# -LO $github_url1_os1 &
+		#$curl -sLO $github_url1_os2 -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n" &
+		$curl -sLO $github_url1_os1 -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 		wait
 		echo -e \\n"\e[36m▶解压$filename压缩包到临时目录...\e[0m"
 		#gzip -kfd *$os2*gz
@@ -1380,7 +1380,7 @@ upcnip () {
 filename="cnip.txt"
 address="https://ftp.apnic.net/stats/apnic/delegated-apnic-latest"
 echo -e \\n"\e[1;4;36m▶正在检查$filename是否需要更新～\e[0m"
-$curl -sL $address -o cnip_delegated-apnic-latest
+$curl -sL $address -o cnip_delegated-apnic-latest -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 cat cnip_delegated-apnic-latest | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' | sort -n > $filename
 new=$(openssl sha1 ./$filename |awk '{print $2}')
 old=$(awk -F ' ' '/\/'$filename'/{print $2}' /tmp/SHA1.TXT)

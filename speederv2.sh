@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=9
+sh_ver=10
 
 path=${0%/*}
 bashname=${0##*/}
@@ -148,7 +148,7 @@ while [ $n -le $m ]
 do
 if [ "$n" = "1" ] ; then
 	echo -e \\n"\e[36m▶下载校验文件SHA1.TXT：$url/SHA1.TXT......\e[0m"
-	$curl -# -L $url/SHA1.TXT -o $tmp/SHA1.TXT
+	$curl -sL $url/SHA1.TXT -o $tmp/SHA1.TXT -w "\n⏳SHA1.TXT ↓ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
 	if [ -s $tmp/SHA1.TXT ] ; then
 		cp -f $tmp/SHA1.TXT $etc/SHA1.TXT
 		ver=$(cat $etc/SHA1.TXT | awk -F// '/【/{print $2}')
@@ -161,17 +161,17 @@ if [ "$n" = "1" ] ; then
 fi
 logger -t "【$filename】" "▶開始第[$n]次下载$filetgz......" && echo -e \\n"\e[1;36m▶『$filename』開始第[$n]次下载$filetgz......\e[0m"
 if [ -s $diretc/$filetgz ] ; then
-	new=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
+	localfile=$(openssl SHA1 $diretc/$filetgz |awk '{print $2}')
 else
 	logger -t "【$filename】" "▷github下载文件$filetgz：$link..." && echo -e \\n"\e[1;7;37m▷『$filename』github下载文件$filetgz：$link...\e[0m"
-	[ ! -z "$(ps -w | grep -v grep | grep "curl.*$filetgz")" ] && echo "！已存在curl下載$filetgz進程，先kill。" && ps -w | grep "curl.*$filetgz" | grep -v grep | awk '{print $1}' | xargs kill -9
-	$curl -# -L $link -o ./$filetgz
-	new=$(openssl SHA1 ./$filetgz |awk '{print $2}')
+	[ ! -z "$(ps -w | grep -v grep | grep "curl.*-o ./$filetgz ")" ] && echo -e "\e[1;37m！已存在curl下載$filetgz進程，先kill。\\n$(ps -w | grep -v grep | grep "curl.*-o ./$filetgz ")\e[0m" && ps -w | grep -v grep | grep "curl.*-o ./$filetgz " | awk '{print $1}' | xargs kill -9
+	$curl -o ./$filetgz -sL $link -w "\n⬇️ $filename ⬇️ - 状态: %{http_code} - 耗时: %{time_total} s - 速度: %{speed_download} B/s\n"
+	localfile=$(openssl SHA1 ./$filetgz |awk '{print $2}')
 fi
-old=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
-echo -e \\n"文件：$filetgz \\nnew：$new \\nold：$old"
-if [ ! -z "$new" -a ! -z "$old" ] ; then
-	if [ "$new" = "$old" ] ; then
+new=$(cat $etc/SHA1.TXT | grep $address | awk -F ' ' '/\/'$filetgz'=/{print $2}')
+echo -e \\n"文件：$filetgz \\n本地：$localfile \\n最新：$new"
+if [ ! -z "$localfile" -a ! -z "$new" ] ; then
+	if [ "$localfile" = "$new" ] ; then
 		if [ -s ./$filetgz ] ; then
 			echo -e \\n"\e[36m▷新下载文件$filetgz校验成功，复制到[ $diretc/$filetgz ]...\e[0m"
 			mv -f ./$filetgz $diretc/$filetgz
@@ -185,8 +185,8 @@ if [ ! -z "$new" -a ! -z "$old" ] ; then
 		download_ok=0
 	fi
 else
-	[ -z "$new" ] && logger -t "【$filename】" "✘ $filetgz文件openssl生成SHA1為空。" && echo -e \\n"\e[1;31m    ✘ $filetgz文件openssl生成SHA1為空。\e[0m"
-	[ -z "$old" ] && logger -t "【$filename】" "✘ SHA1.TXT校驗文件內沒有$filetgz文件" && echo -e \\n"\e[1;31m    ✘ SHA1.TXT校驗文件內沒有$filetgz文件。\e[0m"
+	[ -z "$localfile" ] && logger -t "【$filename】" "✘ $filetgz文件openssl生成SHA1為空。" && echo -e \\n"\e[1;31m    ✘ $filetgz文件openssl生成SHA1為空。\e[0m"
+	[ -z "$new" ] && logger -t "【$filename】" "✘ SHA1.TXT校驗文件內沒有$filetgz文件" && echo -e \\n"\e[1;31m    ✘ SHA1.TXT校驗文件內沒有$filetgz文件。\e[0m"
 	download_ok=0
 fi
 #下载完成后检查文件类型是否需要解压与解密

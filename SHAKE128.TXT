@@ -1,5 +1,5 @@
-# //【2021-07-14 15:19:01】
-/SHA1.TXT= 2de5124973ab4dbc71883f79fe53304d
+# //【2021-07-17 23:09:17】
+/SHA1.TXT= 21df3388f46bb482bf7f10048343252c
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -16,7 +16,7 @@
 /arm64/v2ray= f9900a5096653ace03861f23f1cc3926
 /arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= c12d61227b15bd28fa3cdb8dd0a78e25
+/clash.sh= 8d61f3d9ea1b0ba92a52c2362f468cf7
 /config.yaml= 5f7bd57ef8423ef1d0a6be730edef80c
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -90,10 +90,10 @@
 /s/c9.json= 028ecd737f0c9a34be0f66c29bf1b6cc
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/speederv2.sh= 3888ba257958eb47c5178208814ca60b
+/speederv2.sh= 5516b33d0cfac85801d990e82140a158
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
-/t/Country.mmdb.tgz= 7eb1a307d38e994e98a12b9b0bba1ee1
-/t/Country.mmdb.ver= b17f35082dfe92d4d89532a340b1fc1d
+/t/Country.mmdb.tgz= 8c4ac469a2f1036fb0786cd24650ea47
+/t/Country.mmdb.ver= 8bafc5bc51f023e70e9eb789bfe2fc08
 /t/UnblockNeteaseMusic= 03d8c107ed5d4a2bb01d46fdb8b4f0fa
 /t/aria2c.lib.tgz= a1f51d23a65b7e3f81247526bf3cba3e
 /t/aria2c= 6a79020bdd3d4457ff94645079425116
@@ -103,11 +103,11 @@
 /t/clash.ver2= 073b7d2b55fd7d22495501e8e533fabf
 /t/clash.ver= 073b7d2b55fd7d22495501e8e533fabf
 /t/clash= 69e74a930d971a69d02e072e43ffbde4
-/t/cnip.txt= a3706e1481bd161f1dd72720d00d3f88
-/t/cnip_delegated-apnic-latest= 3fbe7e8e989a29ab1322acc7be2f80a9
+/t/cnip.txt= 86aa0fd66cffd23a5958dc1063bbda0f
+/t/cnip_delegated-apnic-latest= 2a2694734295240475b030d9661514ab
 /t/createCertificate.sh= f6927c3ecab4d1af87af8390dc5c52c6
 /t/geo.tgz= c973c65a532e2f4d58d826e4bc378db5
-/t/ipset.cnip.txt= 8902a7a461c69582fa3268fa762b1278
+/t/ipset.cnip.txt= 7a3d127c8e8b1d1e599d384b2d6ebf4b
 /t/kcptun.ver= 5b85227a698b45fbc26cad7c7e838331
 /t/kcptunc= 3b6cdb4cf1d8bed524d8f14d8df540ac
 /t/kcptunc_old_20200201= 2b4019418189343760b95903239745a5
@@ -122,5 +122,5 @@
 /t/yacd-gh-pages.tgz= 34a769d361a74b5787089d0ea8ab4288
 /t/yacd-gh-pages.zip= 5f573e499a15575de7d0dee8ff159c68
 /u2.sh= df8b40814b99619d52fec81c964d7a6d
-/v2ray.sh= 88d8f83eb01ac5f870810563638f7b8e
+/v2ray.sh= ce25ce30dbd7a52d300a92509b9533a7
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4
