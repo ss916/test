@@ -1,5 +1,5 @@
-# //【2021-07-17 23:09:17】
-/SHA1.TXT= 21df3388f46bb482bf7f10048343252c
+# //【2021-07-18 00:34:38】
+/SHA1.TXT= a13e4d672b707f27119bc9b4aa305e42
 /amd64/caddy= 9a2090890b2ed29b9236cd789044acc9
 /amd64/v2ctl= 8f58dedaa0f801a14d477ed6dcc04a27
 /amd64/v2ray= 81fba07a319dc4ed7aa6ed60cac8730a
@@ -16,7 +16,7 @@
 /arm64/v2ray= f9900a5096653ace03861f23f1cc3926
 /arm64/xray= f9900a5096653ace03861f23f1cc3926
 /armv5/filebrowser= 31027038ebaf8b4f1ed239b3932dc338
-/clash.sh= 8d61f3d9ea1b0ba92a52c2362f468cf7
+/clash.sh= 89d00dd7f6a43ce4b757aaa91b666cf4
 /config.yaml= 5f7bd57ef8423ef1d0a6be730edef80c
 /dnsmasq/ad.conf= 4c4fdb979c775c616d911b347f63a4de
 /dnsmasq/dnsfq.conf= 3f7db77e44e329f142684e16c28d9ae9
@@ -90,7 +90,7 @@
 /s/c9.json= 028ecd737f0c9a34be0f66c29bf1b6cc
 /s/c9.pb= 7ded4a40b7d896d49c92cf5565c010df
 /sha1.sh= 8032e77742fe4ed9bebe909ffdb3aded
-/speederv2.sh= 5516b33d0cfac85801d990e82140a158
+/speederv2.sh= 4cded60bb0a7f7af193fe9c8f383f470
 /t/20200830_yacd-gh-pages.tgz= af98e6858dcfa38517f366c66c2fc8ab
 /t/Country.mmdb.tgz= 8c4ac469a2f1036fb0786cd24650ea47
 /t/Country.mmdb.ver= 8bafc5bc51f023e70e9eb789bfe2fc08
@@ -122,5 +122,5 @@
 /t/yacd-gh-pages.tgz= 34a769d361a74b5787089d0ea8ab4288
 /t/yacd-gh-pages.zip= 5f573e499a15575de7d0dee8ff159c68
 /u2.sh= df8b40814b99619d52fec81c964d7a6d
-/v2ray.sh= ce25ce30dbd7a52d300a92509b9533a7
+/v2ray.sh= 7f813b874aaf4fea254aa28898138ca9
 /windows/caddy_windows_amd64.zip= e94a475872fadc7365e4c27eb904b1b4

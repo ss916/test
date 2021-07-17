@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=47
+sh_ver=49
 
 path=${0%/*}
 bashname=${0##*/}
@@ -254,8 +254,8 @@ if [ "$download_ok" = "1" ] ; then
 		cat $diretc/$filetgz | openssl enc -aes-256-ctr -d -a -md md5 -k $password > $fileout/$filename
 		echo -e \\n"\e[32m✔ $filetgz文件解密$filename完成！\e[0m"\\n
 	else
-		cp -f $diretc/$filetgz ./$filetgz
-		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到[ ./$filetgz ] ！\e[0m"\\n
+		cp -f $diretc/$filetgz $fileout/$filename
+		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到[ $fileout/$filename ] ！\e[0m"\\n
 	fi
 	#跳出循环
 	break
@@ -269,7 +269,7 @@ done
 down_program () {
 file=${name}
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file filename=$file filetgz=$file
+	downloadfile address=t/$file filetgz=$file fileout=./ filename=$file
 	[ -s ./$file ] && chmod +x -R ./
 fi
 }
@@ -277,7 +277,7 @@ fi
 down_geoip () {
 file=geo
 if [ ! -s ./geoip.dat -o ! -s ./geosite.dat -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=./
+	downloadfile address=t/$file.tgz filetgz=$file.tgz fileout=./ filename=$file
 fi
 }
 
@@ -285,9 +285,9 @@ fi
 down_config () {
 file=$link1
 if [ "$secret" = "1" ] ; then
-	downloadfile address=s/$file filetgz=$file filename=config.json secret=1 password=$password
+	downloadfile address=s/$file filetgz=$file secret=1 password=$password fileout=./ filename=config.json 
 else
-	downloadfile address=s/$file filetgz=$file filename=config.json
+	downloadfile address=s/$file filetgz=$file fileout=./ filename=config.json
 fi
 }
 
@@ -295,7 +295,7 @@ fi
 down_ipset_cnip () {
 file="ipset.cnip.txt"
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file filename=$file filetgz=$file fileout=./
+	downloadfile address=t/$file filetgz=$file fileout=./ filename=$file
 fi
 }
 

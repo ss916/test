@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=62
+sh_ver=64
 
 path=${0%/*}
 bashname=${0##*/}
@@ -344,8 +344,8 @@ if [ "$download_ok" = "1" ] ; then
 		cat $diretc/$filetgz | openssl enc -aes-256-ctr -d -a -md md5 -k $password > $fileout/$filename
 		echo -e \\n"\e[32m✔ $filetgz文件解密$filename完成！\e[0m"\\n
 	else
-		cp -f $diretc/$filetgz ./$filetgz
-		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到[ ./$filetgz ] ！\e[0m"\\n
+		cp -f $diretc/$filetgz $fileout/$filename
+		echo -e \\n"\e[32m✔ 直接复制$diretc/$filetgz文件到[ $fileout/$filename ] ！\e[0m"\\n
 	fi
 	#跳出循环
 	break
@@ -356,18 +356,18 @@ done
 }
 
 #下载文件并解密
-#downloadfile address=t/c filename=config.yaml filetgz=c secret=1 password=1+1=1
+#downloadfile address=t/c filetgz=c secret=1 password=1+1=1 fileout=./ filename=config.yaml
 #下载文件并解压
-#downloadfile address=t/Country.mmdb.tgz filename=Country.mmdb filetgz=Country.mmdb.tgz fileout=/tmp
+#downloadfile address=t/Country.mmdb.tgz filetgz=Country.mmdb.tgz fileout=/tmp filename=Country.mmdb
 #下载文件
-#downloadfile address=t/clash filename=clash filetgz=clash
+#downloadfile address=t/clash filetgz=clash fileout=./ filename=clash
 
 
 #下载主程序
 down_program () {
 file=${name}
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file filename=$file filetgz=$file
+	downloadfile address=t/$file filetgz=$file fileout=./ filename=$file
 	[ -s ./$file ] && chmod +x -R ./
 fi
 }
@@ -376,7 +376,7 @@ down_geoip () {
 file=Country.mmdb
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
 	[ -s ./${name}_log.txt ] && [ ! -z "$(grep -o "Can't load mmdb" ./${name}_log.txt)" -o ! -z "$(grep -o "Can't find MMDB" ./${name}_log.txt)" ] && logger -t "【${name}】"  "删除无效$file文件" && echo "  >> 删除无效$file文件 " && rm -rf ./$file && rm -rf $tmp/$file
-	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=$tmp
+	downloadfile address=t/$file.tgz filetgz=$file.tgz fileout=$tmp filename=$file
 	if [ -s $tmp/$file ] ; then
 		[ -f ./$file ] && rm ./$file
 		ln -s $tmp/$file $dirtmp/$file
@@ -389,23 +389,23 @@ fi
 down_web () {
 file="clash-dashboard-gh-pages"
 if [ ! -s ./$file/index.html -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file.tgz filename=$file filetgz=$file.tgz fileout=./
+	downloadfile address=t/$file.tgz filetgz=$file.tgz fileout=./ filename=$file
 fi
 }
 #下载config.yaml
 down_config () {
 file=$config
 if [ "$secret" = "1" ] ; then
-	downloadfile address=s/$file filename=$file filetgz=$file secret=1 password=$password
+	downloadfile address=s/$file filetgz=$file secret=1 password=$password fileout=./ filename=config.yaml 
 else
-	downloadfile address=$file filename=$file filetgz=$file
+	downloadfile address=$file filetgz=$file fileout=./ filename=config.yaml
 fi
 }
 #download ipset.cnip.txt
 down_ipset_cnip () {
 file="ipset.cnip.txt"
 if [ ! -s ./$file -o "$startrenew" = "1" ] ; then
-	downloadfile address=t/$file filename=$file filetgz=$file fileout=./
+	downloadfile address=t/$file filetgz=$file fileout=./ filename=$file 
 fi
 }
 
