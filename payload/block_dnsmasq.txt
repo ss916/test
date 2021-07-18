@@ -6,6 +6,11 @@ payload:
 - DOMAIN-KEYWORD,cnzz.
 - DOMAIN-KEYWORD,analytics.
 - DOMAIN-KEYWORD,.jads.
+#unityads
+- DOMAIN-SUFFIX,unityads.unity.cn
+- DOMAIN-SUFFIX,unityads.unitychina.cn
+- DOMAIN-SUFFIX,unityads.unity3d.com
+- DOMAIN-SUFFIX,internal.unity3d.com
 #sky 4k
 - DOMAIN-SUFFIX,admin.appnext.com
 - DOMAIN-SUFFIX,cdn.appnext.com
