@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=64
+sh_ver=65
 
 path=${0%/*}
 bashname=${0##*/}
@@ -350,7 +350,7 @@ if [ "$download_ok" = "1" ] ; then
 	#跳出循环
 	break
 fi
-n=$(expr $n + 1)
+n=$((n+1))
 done
 [ "$n" -gt "$m" ] && logger -t "【$filename】" "✖下载[$m]次都失败！！！" && echo -e \\n"\e[1;31m✖『$filename』下载[$m]次都失败！！！\e[0m"\\n
 }
@@ -1011,11 +1011,11 @@ elif [ "$server_port_ok" = "1" -a "$mark_ok" = "close" -a "$tproxy_ok" = "close"
 	echo -e "$(timenow) ${name} [$v] 进程OK，端口OK" >> ./keep.txt
 fi
 #+1
-t=$(($t+1))
-m=$(($m+1))
-v=$(($v+1))
+t=$((t+1))
+m=$((m+1))
+v=$((v+1))
 #日志文件大于1万条后删除1000条
-[ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(timenow)]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$(($log1+1))
+[ -s ./keep.txt ] && [ "$(sed -n '$=' ./keep.txt)" -ge "10000" ] && echo -e "❴d:$log1❵ $(sed -n '$=' ./keep.txt)—1000_[$(timenow)]" >> ./keep.txt && sed -i '1,1000d' ./keep.txt && log1=$((log1+1))
 sleep 120
 done
 EOF
@@ -1084,7 +1084,7 @@ do
 if [ "$work_ok" = "0" ] ; then
 	#echo "$t/$time_max，$comm ok = $work_ok"
 	$comm
-	t=$(($t+1))
+	t=$((t+1))
 	sleep 1
 else
 	echo -e "☑️ \e[1;32m$t/$time_max，$comm ok = $work_ok \e[0m"
