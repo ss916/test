@@ -1,0 +1,23 @@
+payload:
+#🆓protonmail ：global_web_protonmail.txt
+#https://ipinfo.io/AS62371
+- DOMAIN-SUFFIX,chylik.pl
+- DOMAIN-SUFFIX,chrismorrow.com
+- DOMAIN-SUFFIX,drh3.net
+- DOMAIN-SUFFIX,indefsec.com
+- DOMAIN-SUFFIX,khayatmail.com
+- DOMAIN-SUFFIX,petri.nu
+- DOMAIN-SUFFIX,pm.me
+- DOMAIN-SUFFIX,proton.me
+- DOMAIN-SUFFIX,protonmail.ch
+- DOMAIN-SUFFIX,protonmail.com
+- DOMAIN-SUFFIX,protonstatus.com
+- DOMAIN-SUFFIX,recruitee.com
+- DOMAIN-SUFFIX,roseporta.com
+- DOMAIN-SUFFIX,w.org
+- IP-CIDR,176.119.200.0/24,no-resolve
+- IP-CIDR,185.205.70.0/24,no-resolve
+- IP-CIDR,185.70.40.0/22,no-resolve
+- IP-CIDR,2a05:2701:f00::/44,no-resolve
+- IP-CIDR,2a05:2701:f10::/44,no-resolve
+- IP-CIDR,2a05:2701:f30::/44,no-resolve
