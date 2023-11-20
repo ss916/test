@@ -20,6 +20,7 @@ payload:
 - DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,mixpanel.com
 - DOMAIN-SUFFIX,oaistatic.com
+- DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,sentry.io
 - DOMAIN-SUFFIX,statsig.com
 #matrix/element
