@@ -1,5 +1,5 @@
-# //【2023-11-21 01:17:55】
-/SHAKE128.TXT= 4e22f3d48199880d4ff533a0bbd2fc518bdf1d26
+# //【2023-11-24 00:45:21】
+/SHAKE128.TXT= 41629a79114691ae39bc5e9868bcd1357df08338
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= 57bf716de0d057b3853f09c6b05632b1477a40c5
 /amd64/clash= 7b9bfa1e370ba8cb2357f5c97e26e3227cd95861
@@ -7,7 +7,7 @@
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/caddy= 46f839de6d8997ee1f4723046f1a3e1db557bf8e
 /arm64/clash= 01be5d7a6d53d462d5aca87f35e404867b6fa53e
-/arm64/hysteria= 627eaf64de13c37d27677638ab62370cf56cf22a
+/arm64/hysteria= 357bbeb16024d3fc6cfb184e5364626448defd21
 /arm64/kcptun= db415633d64ab6739a338ad5d5ab49c5b037cce5
 /arm64/speederv2= ff9d5b8f6e479fd777d9158ab45b39acda14ffdc
 /arm64/speedtest= c6b18e2beb4545a00cd8dcde44b3207ae948e02f
@@ -39,7 +39,7 @@
 /rule/chore_1.txt= 7be5163191900e5c0242ebe1e4a7778b292c7795
 /rule/chore_2.txt= b43f8a66c43f01a86a5dbc5eb57fcbe70f484e4b
 /rule/chore_3.txt= bd6b59dc73141492e1b4119e9f3f3411be0b8470
-/rule/cn_domains_china_conf.text.txt= fde7a98c35a23d434a3d05cc92c1d147a8e344e3
+/rule/cn_domains_china_conf.text.txt= 54a1903e0f818fdc2aaa66442925094d5d79bfc9
 /rule/cn_domains_china_conf.txt= 342d9cbf25eadcbff4d2bebf551a8903c27617af
 /rule/cn_video.txt= ea2dd4c88071f3dc2f27472734a48c519d27ac3d
 /rule/cn_web.txt= a015a20bd193a7aff6fc36466b9c85a283a120ac
@@ -113,13 +113,13 @@
 /s/c7.json= 06210cb6cf90686af758c84145d6b17e83714a7c
 /s/c8.json= bd77608d3af2a6fe664627493de12055614663f3
 /s/c9.json= 726ad8dbeab20736d3071283cb082252b41860b1
-/s/file1.txt= 0c235cb87ed391bd5b5399ea85593a8008d76751
+/s/file1.txt= 7efff0cf38cc177cf8a336e472c03f93948a0701
 /s/file111.txt= 6e57d7d03a14592eba99a492fd23a35ed4b7661d
 /s/file2.txt= 0fd3ba68dd2e2d20a19c6dbdd103fe64573b8515
 /s/file222.txt= e025f1d6da63f89e6d6478e991354ba3b659190b
 /s/file3.txt= 81178d3eec3c03c14725d711007db4a3e254205e
 /s/file4.txt= 8ec98c82084d01400d194dcb5df4e21729487031
-/s/file5.txt= bc1bc55ca36637d8afb2b4c7f3ce397ee53d9ad3
+/s/file5.txt= dc864aa09a748047efb1a93286305fb40639175a
 /s/file6.txt= 1c8efa1de1ac6e98642f0780ef37a69f8ac7e01a
 /s/file7.txt= 786444831e949a7ea1a7151bf5737e4a68858c0b
 /s/file999.txt= 3e43918d462e927b2b8c18e0e64540cd26e4b201
@@ -136,22 +136,22 @@
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
 /t/clash.ver= e7e68f8871a3a5b3c3013c8ea086d7d10506c24e
 /t/clash= 153f977220c6dca301b71f5aefbd23e1251cf261
-/t/cnip.txt= 897cff262b5a4edf1f52bfe478bd8a07a776184b
+/t/cnip.txt= b6110a3131bbea18a23ba4e19b11cd8902c9410d
 /t/cnipv6.txt= b2ea3b28bebc5bd90706dcab39083907528c908c
-/t/delegated-apnic-latest= b4f2a930d9b67cdcc54db77e7fe9c8c4a97489b9
+/t/delegated-apnic-latest= db0dfbd5f4e23e25d1ed866a882c3de6fa87c239
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
-/t/geoip.dat= 7de97fabdfff9955f254f5f97882e799ff0696ca
-/t/geosite-full.dat= b409a6a8dd8e645c9b8a16a9b8a3aeb1ee956f5e
-/t/geosite.dat= c36d89912327047db0bd0046701b1271db532efd
-/t/hysteria.ver= bed7b53efe56e6f916aea80ced3a62d5351b54ce
-/t/hysteria= 24923a31d3244c7354530fccd1c048acb0fc0924
-/t/ipset.cnip.txt= 3db2eddb2b5cbc9ca554cb62013f756130c1aa1c
+/t/geoip.dat= 00617b2699e2be588f17f22e8afde678015fb7fe
+/t/geosite-full.dat= 439181bfdf153fdd8480fbbf3e41309c51f6103f
+/t/geosite.dat= 9054b360ad2f8868032eb0129934aec9104f33f9
+/t/hysteria.ver= 1830ac0911725fb51c316c52073f87de428eea5e
+/t/hysteria= edbfc8aff5e585546224695c5b9c7d1304108893
+/t/ipset.cnip.txt= 8b5ceb3f32420567c8f556673b7fc3c0ea34d13b
 /t/ipset.cnipv6.txt= ae61bd77c6f9d203ce6db4213e7cf1b49b175f8c
 /t/kcptun.ver= bbc683bb6e76a914ac90dc7b5167d6e14a2fbbe9
 /t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
 /t/metacubexd-gh-pages.tgz= 28245f135232de20c94e0b7204afeeb7ca58d27a
 /t/metacubexd-gh-pages.zip= 4710a8f4621787de5a1e9a53fdfa4f5eb0d3993e
-/t/rule.tgz= 4256eedf710c0108179b84d3d3f918baff4ccd63
+/t/rule.tgz= 2071bcc58cc1f937cf5da4f9a0470531acf19f7c
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd

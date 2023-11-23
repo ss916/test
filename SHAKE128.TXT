@@ -1,5 +1,5 @@
-# //【2023-11-21 01:17:57】
-/SHA1.TXT= e6fa661637de3fb3cff841fb0afce220
+# //【2023-11-24 00:45:22】
+/SHA1.TXT= 1091cdaaad1bd2be45a16bf78f4f3942
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 82a22c7b0a68e368b2ced9d9c4b29e1e
 /amd64/clash= 3e11c3a872c4831d98f353caefc7c553
@@ -7,7 +7,7 @@
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= 6e14ef5969016d163b14e82166a18b1f
 /arm64/clash= f08dc16afbc90af766dede2420f44ffc
-/arm64/hysteria= 4ea3fe0cfbb21674b32a7d7181ee6cf4
+/arm64/hysteria= 7ee2decee1d103377a933f2520747012
 /arm64/kcptun= c97271af48a02d6d2231dc6d5e7eff7b
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
 /arm64/speedtest= ddd7fbff3a3e2a69387398d4733f9da7
@@ -39,7 +39,7 @@
 /rule/chore_1.txt= 50a282854b008208ec550adf440e315d
 /rule/chore_2.txt= 3a6e036f222823d6981d3ff250790ae3
 /rule/chore_3.txt= 715f1f85290c8be5244eed5e65dcc0e6
-/rule/cn_domains_china_conf.text.txt= c254caa1c079bab897aa9412995d82ae
+/rule/cn_domains_china_conf.text.txt= fb724b5a60e6cf1bbd0f9ef88005ffe8
 /rule/cn_domains_china_conf.txt= f4e1b421f2e09e4277fce00a6b76435f
 /rule/cn_video.txt= d3a990c160fbcfa164fc111bf152cb12
 /rule/cn_web.txt= fb1892c5ca1515dba9ec68d20eeef4aa
@@ -113,13 +113,13 @@
 /s/c7.json= 7273016f169694db950a4a05d4097ea2
 /s/c8.json= 8a34d0a6dbde8676b0884af1cdb46e71
 /s/c9.json= 120770b39dcf84a01855d85e149bdccf
-/s/file1.txt= fd758f57b625d462002a2301f46cc97d
+/s/file1.txt= fe382b7707837ec1a2645c22912d96d9
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 64f8888880a51acf5e0811da9656bb3b
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
 /s/file3.txt= 54b2fcd1a63cae7f19030886deaf904b
 /s/file4.txt= 74012b4d18c39022edd732236d351ce8
-/s/file5.txt= 11a529b597fb9128fb7260f043c1ca23
+/s/file5.txt= df5b11551a9e7c83ef7e7560a049a369
 /s/file6.txt= 2eff479997e80f1488e00e501fac1cd9
 /s/file7.txt= b3b0b5ad309d51f8dc0f915c4c9d6ad8
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
@@ -136,22 +136,22 @@
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
 /t/clash.ver= fcf1dda434fefb3cfac5fe817e7eb76e
 /t/clash= 65024a1bc0b73a1c82fd8f59914228e9
-/t/cnip.txt= 1b387de6d6805280a80a58c7aa0c15cb
+/t/cnip.txt= 269bb807c08cc4d1bc8ae4ec2a74ac56
 /t/cnipv6.txt= 68760508a551cc874e82f1bd8d6ea57f
-/t/delegated-apnic-latest= 76a298771a5a5b126280a4bf2753eb7b
+/t/delegated-apnic-latest= 0790e2b1c059d81dd70473a00a3c9122
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
-/t/geoip.dat= 2bd33fbbb43ebe0f602ea9cb3fc8d97d
-/t/geosite-full.dat= 0a1c3c7559070f6f480f7093a8d020b9
-/t/geosite.dat= a0992b6c3e5f4a6e123466dd82d8c360
-/t/hysteria.ver= 06ac8859968ec2e0fc3c6173aec70797
-/t/hysteria= 6e06faf704d7fb2448455e284d759854
-/t/ipset.cnip.txt= 37ae470558dd4abb2afb9059df107aa0
+/t/geoip.dat= e3cb3538140a4d70856bf08bed19c881
+/t/geosite-full.dat= faf4f76934fa2afba794a5432807e59c
+/t/geosite.dat= 242700cd87ba343cdc4d98823777f46b
+/t/hysteria.ver= c87f78d2d5ae61283e132e5c9d5580e8
+/t/hysteria= c5d1795d48babbea30c14ab9d46207fe
+/t/ipset.cnip.txt= df8f8fe80885dd5fe6ff452ae0e05e8e
 /t/ipset.cnipv6.txt= 203a47600fe8221cf55fa17c81f680b3
 /t/kcptun.ver= a07f589689f716ecd6509b85aca5b0d0
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 07bd43e5644e9fb2473871afdc31cb26
 /t/metacubexd-gh-pages.zip= 2cef6e3016999b1fd613b2fc1dbb60d1
-/t/rule.tgz= a688f0ca768196f1fc5b50ba15c5b0f1
+/t/rule.tgz= 08315328616536e9b7d065dd60983cf8
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
