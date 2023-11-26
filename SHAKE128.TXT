@@ -1,5 +1,5 @@
-# //【2023-11-24 00:45:22】
-/SHA1.TXT= 1091cdaaad1bd2be45a16bf78f4f3942
+# //【2023-11-27 00:02:13】
+/SHA1.TXT= a3e05ae64485c6c2d9a82fe6a4a2c184
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 82a22c7b0a68e368b2ced9d9c4b29e1e
 /amd64/clash= 3e11c3a872c4831d98f353caefc7c553
@@ -14,9 +14,9 @@
 /arm64/stun= 5061c8e34ed30f10418108363d46bcc2
 /arm64/v2ray= 9bbdee2e11b74e9f283627763a5a2bb9
 /arm64/xray= 9bbdee2e11b74e9f283627763a5a2bb9
-/caddy.sh= b0b4aae6763493329a58c9b1d106560d
+/caddy.sh= 1c4560c439fe5c682d0852b0a2293b54
 /cf.sh= a21c19f58f507cde7b13ad57ed77fbc7
-/clash.sh= acbd3065bf8ac118cb92b7d40f95c9b7
+/clash.sh= 7b9418f74e448c6f22ce02188508c264
 /config.json= 585d27aa4fba9d1110511326e03d3f2e
 /config.yaml= f5c0b1991561354ddbc0bd2813271740
 /config/209-config.yaml= 5f0f31803f8b50002b2d65d8a6004c92
@@ -24,11 +24,11 @@
 /config/230-config.yaml= a1fdca3e58a5b5428f835a3c23246e28
 /config/237-config.yaml= 4a76a8343c20ad9ff0f669495e73cb9a
 /hash.sh= 415e1dc2b35588dca56b7934be8461de
-/hysteria.sh= 366c6aaeea86b228dd2eca8296a96cd4
+/hysteria.sh= 942933c307f01977ada7ebdb04e8b2e1
 /ipv6.sh= be82f7915dd8b808945354b3d50095f4
-/kcptun.sh= 4da2761460db45e3c03e8009db7b820d
-/opt.sh= 4c5a53fc7c0469652364cf3e12fe0072
-/pf.sh= 06f2bc0c6e4d628cc6384bb3cb2be3a5
+/kcptun.sh= 20a0bc7cfd77a805198b2e880938bf24
+/opt.sh= fd0493e25db4cecf4f067961ac454f8e
+/pf.sh= da95e5020a1ae6029df46c4b956115e9
 /rule/block_dnsmasq.text.txt= 1b57a5bb3c03b2bfbe41ef7a6d26ca17
 /rule/block_dnsmasq.txt= 5d9a8bea4f4147525b1a1883c475f5d6
 /rule/block_dnsmasq_domain.txt= 543a115f3088181ea3fb8919f7831aa4
@@ -52,7 +52,7 @@
 /rule/global_video_other.txt= 69edbcc220773a72de9ec4a4e06d3b34
 /rule/global_video_porn.txt= 4b3668dbb367f1b2b5c11c9ecf811119
 /rule/global_video_youtube.txt= 246130986dff80c98674325222ee04e0
-/rule/global_web.txt= 8401c5f60cf0c664738124117a42dd9b
+/rule/global_web.txt= 5bb8da28b68956a698c275d300ccd024
 /rule/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
 /rule/global_web_facebook.txt= 542a1cc65eabb80cb596a1d4b5debec7
 /rule/global_web_github.txt= 260913314ec188e6c62751d1a11cf688
@@ -60,7 +60,7 @@
 /rule/global_web_line.txt= aa417bf43b0d37ecfc067bb8f6c10754
 /rule/global_web_mega.txt= 3c378db18898fc689fafc48e7a4a3c5f
 /rule/global_web_microsoft.txt= be9f4e2a107adfe19007f97c320adf02
-/rule/global_web_other.txt= e11d8a7bd847fcbbc918573b2ec774b7
+/rule/global_web_other.txt= cfe9c0cdb4fbfde2b999d5a77e660c40
 /rule/global_web_protonmail.txt= dbb2239f792e0a191aad29f774ca0007
 /rule/global_web_telegram.txt= 54ffae7c17dc143a101954abd8789159
 /rule/global_web_twitter.txt= 0f975ae104f8807a2593f7de17e99323
@@ -113,7 +113,7 @@
 /s/c7.json= 7273016f169694db950a4a05d4097ea2
 /s/c8.json= 8a34d0a6dbde8676b0884af1cdb46e71
 /s/c9.json= 120770b39dcf84a01855d85e149bdccf
-/s/file1.txt= fe382b7707837ec1a2645c22912d96d9
+/s/file1.txt= 0f203a0ceb312ac02fd172a7c29ac62a
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 64f8888880a51acf5e0811da9656bb3b
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
@@ -123,8 +123,8 @@
 /s/file6.txt= 2eff479997e80f1488e00e501fac1cd9
 /s/file7.txt= b3b0b5ad309d51f8dc0f915c4c9d6ad8
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
-/speederv2.sh= dc6b6a08f927e94afafbd6a0f1b2b75f
-/speedtest.sh= 0b243950fed38d5f0a720caaefafe36b
+/speederv2.sh= e69ef0ac25a04f298b3cc94b085950e6
+/speedtest.sh= e654c383fb7b5c28702c784f111f4d20
 /t/Country.mmdb.tgz= cf05dfbeb31f741b02d4144896919743
 /t/Country.mmdb.ver= 1ff108546963c911477bb182e1e02a64
 /t/Country.mmdb= ea1118982d06030a7f9686488e958fa9
@@ -151,7 +151,7 @@
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 07bd43e5644e9fb2473871afdc31cb26
 /t/metacubexd-gh-pages.zip= 2cef6e3016999b1fd613b2fc1dbb60d1
-/t/rule.tgz= 08315328616536e9b7d065dd60983cf8
+/t/rule.tgz= 5537da68ec8eabb6863ee2893061e2d1
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
@@ -171,6 +171,6 @@
 /tv/live2.txt= 4c2c878bddfa865b488b77c1823af246
 /tv/test.jar= c4a1aef56059fa3a1fc2a2017a34399a
 /u2p.sh= 15d39d3dd81cd9f1761cd1aca04155ab
-/v2ray.sh= 4d4901822598400c34a847211df60c4d
+/v2ray.sh= 0f2e8b22af86af8b53fd14838d7d597e
 /warpip.sh= 089adff2539d5b70381a95edeac9f61d
 /windows/PE_windows_password.exe= ae1928f2743b4dbea3ca47d6bce0d45d

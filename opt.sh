@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=42
+sh_ver=43
 
 path=${0%/*}
 bashname=${0##*/}
@@ -113,8 +113,7 @@ opt_url2=https://originfastly.jsdelivr.net/gh/hiboyhiboy/opt-file
 opt_url3=https://gcore.jsdelivr.net/gh/hiboyhiboy/opt-file
 opt_url4=https://testingcf.jsdelivr.net/gh/hiboyhiboy/opt-file
 opt_url5=https://raw.githubusercontents.com/hiboyhiboy/opt-file/master
-opt_url6=https://ghproxy.com/https://raw.githubusercontent.com/hiboyhiboy/opt-file/master
-opt_url7=https://rrr.ariadl.eu.org/hiboyhiboy/opt-file/master
+opt_url6=https://rrr.ariadl.eu.org/hiboyhiboy/opt-file/master
 num=$1
 if [ -z "$num" ] ; then
 echo -e \\n\\n"\e[1;36m 当前opt_force_file URL：\e[1;33m$(nvram get opt_force_file) \e[0m"

@@ -17,12 +17,16 @@ payload:
 - DOMAIN,cdn.auth0.com
 - DOMAIN,openaiapi-site.azureedge.net
 - DOMAIN-SUFFIX,ai.com
-- DOMAIN-SUFFIX,openai.com
+- DOMAIN-SUFFIX,featuregates.org
+- DOMAIN-SUFFIX,intercom.io
+- DOMAIN-SUFFIX,intercomcdn.com
 - DOMAIN-SUFFIX,mixpanel.com
 - DOMAIN-SUFFIX,oaistatic.com
 - DOMAIN-SUFFIX,oaiusercontent.com
+- DOMAIN-SUFFIX,openai.com
 - DOMAIN-SUFFIX,sentry.io
 - DOMAIN-SUFFIX,statsig.com
+- DOMAIN-SUFFIX,statsigapi.net
 #matrix/element
 - DOMAIN-SUFFIX,matrix.org
 #v2ex
