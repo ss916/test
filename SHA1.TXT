@@ -1,5 +1,5 @@
-# //【2023-11-27 00:02:12】
-/SHAKE128.TXT= 85de78ca3ae07ccf45b7566c527c89af40df5675
+# //【2023-11-30 00:23:59】
+/SHAKE128.TXT= 7ace86791f2addf0bf0cde8f4afd072666f95197
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= 57bf716de0d057b3853f09c6b05632b1477a40c5
 /amd64/clash= 7b9bfa1e370ba8cb2357f5c97e26e3227cd95861
@@ -39,7 +39,7 @@
 /rule/chore_1.txt= 7be5163191900e5c0242ebe1e4a7778b292c7795
 /rule/chore_2.txt= b43f8a66c43f01a86a5dbc5eb57fcbe70f484e4b
 /rule/chore_3.txt= bd6b59dc73141492e1b4119e9f3f3411be0b8470
-/rule/cn_domains_china_conf.text.txt= 54a1903e0f818fdc2aaa66442925094d5d79bfc9
+/rule/cn_domains_china_conf.text.txt= 38f0846039dd9fec990bf6cb34d1381265a79f74
 /rule/cn_domains_china_conf.txt= 342d9cbf25eadcbff4d2bebf551a8903c27617af
 /rule/cn_video.txt= ea2dd4c88071f3dc2f27472734a48c519d27ac3d
 /rule/cn_web.txt= a015a20bd193a7aff6fc36466b9c85a283a120ac
@@ -52,7 +52,7 @@
 /rule/global_video_other.txt= 0205eb6a15448e6ecec0c1bddebe18cb61f9ff66
 /rule/global_video_porn.txt= bb6466bba9e0cb0ddb6a169f2a991e838951247a
 /rule/global_video_youtube.txt= 5b07e5fff02a3af5576749124f7554003e300a94
-/rule/global_web.txt= ca139e91b3a1adf4788c9a19c2af72f237c5c9a4
+/rule/global_web.txt= 700bed0e3e96ff671baf31bf42ecaaa25fa51c9b
 /rule/global_web_amazon.txt= a7eb47c5fa8357404041b74c5e45e18285cde954
 /rule/global_web_facebook.txt= a229c71f3fa84210f682394397e50d66e5c32ef6
 /rule/global_web_github.txt= 933c4ad18af08872b67e65e9726beb42e9ff3623
@@ -60,7 +60,7 @@
 /rule/global_web_line.txt= 72193f486afe703e17f2e7290b344fdd7c0aadd5
 /rule/global_web_mega.txt= 467ab4ad3c901bea2e0615f378ebb42f19e85bb5
 /rule/global_web_microsoft.txt= a4643d3704a2d6d297ff884e6c4de75471917d04
-/rule/global_web_other.txt= 8e6d9d36cf4124297c593cb4235d52f1f6c9dff3
+/rule/global_web_other.txt= 42787fbdfce275d55367a6bd8cef6c1e8c8cdbc8
 /rule/global_web_protonmail.txt= abbbfb5553ea29db236fb5008c86b5e00df12c8c
 /rule/global_web_telegram.txt= 5561ebc6a8de19b75ced7a234cf0faaccd655342
 /rule/global_web_twitter.txt= 8cb9de203e4e1aee0fc71cc87dab54fc55a2b511
@@ -113,7 +113,7 @@
 /s/c7.json= 06210cb6cf90686af758c84145d6b17e83714a7c
 /s/c8.json= bd77608d3af2a6fe664627493de12055614663f3
 /s/c9.json= 726ad8dbeab20736d3071283cb082252b41860b1
-/s/file1.txt= 8fd15e14bbf809903add46d859c7a116493b0a27
+/s/file1.txt= 85c68df08ccdc01ddae1376ee4252b8bb53deda6
 /s/file111.txt= 6e57d7d03a14592eba99a492fd23a35ed4b7661d
 /s/file2.txt= 0fd3ba68dd2e2d20a19c6dbdd103fe64573b8515
 /s/file222.txt= e025f1d6da63f89e6d6478e991354ba3b659190b
@@ -136,22 +136,22 @@
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
 /t/clash.ver= e7e68f8871a3a5b3c3013c8ea086d7d10506c24e
 /t/clash= 153f977220c6dca301b71f5aefbd23e1251cf261
-/t/cnip.txt= b6110a3131bbea18a23ba4e19b11cd8902c9410d
-/t/cnipv6.txt= b2ea3b28bebc5bd90706dcab39083907528c908c
-/t/delegated-apnic-latest= db0dfbd5f4e23e25d1ed866a882c3de6fa87c239
+/t/cnip.txt= 1f831a9d51f80e240a8ec058278a67ff3b684986
+/t/cnipv6.txt= dce8a4a643dd96a5ece26dc8205bb9f08edc4fb6
+/t/delegated-apnic-latest= 1e9ca19eb2b281bc6036ad3d2280a4425c5cd458
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
 /t/geoip.dat= 00617b2699e2be588f17f22e8afde678015fb7fe
-/t/geosite-full.dat= 439181bfdf153fdd8480fbbf3e41309c51f6103f
-/t/geosite.dat= 9054b360ad2f8868032eb0129934aec9104f33f9
+/t/geosite-full.dat= 059ab68c96d8b7ce5d820fc41d1a7ab488b815f6
+/t/geosite.dat= 1081c7175690811d2dfd84dafc295e6ac3634dd0
 /t/hysteria.ver= 1830ac0911725fb51c316c52073f87de428eea5e
 /t/hysteria= edbfc8aff5e585546224695c5b9c7d1304108893
-/t/ipset.cnip.txt= 8b5ceb3f32420567c8f556673b7fc3c0ea34d13b
-/t/ipset.cnipv6.txt= ae61bd77c6f9d203ce6db4213e7cf1b49b175f8c
+/t/ipset.cnip.txt= 9d415cee04c333cdb2a06133b35e70a1c18d5c77
+/t/ipset.cnipv6.txt= c06e7317c7f3585311afaff66aad8be5bfd5a10d
 /t/kcptun.ver= bbc683bb6e76a914ac90dc7b5167d6e14a2fbbe9
 /t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
 /t/metacubexd-gh-pages.tgz= 28245f135232de20c94e0b7204afeeb7ca58d27a
 /t/metacubexd-gh-pages.zip= 4710a8f4621787de5a1e9a53fdfa4f5eb0d3993e
-/t/rule.tgz= a74991537067d2c7ba644b2ba13a0041ef4fa94f
+/t/rule.tgz= d490e76bc69f68bc746f6b946bdd4f44428568f4
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd

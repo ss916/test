@@ -12,6 +12,8 @@ payload:
 - DOMAIN-SUFFIX,claude.ai
 - DOMAIN-SUFFIX,intercom.io
 - DOMAIN-SUFFIX,intercomcdn.com
+- DOMAIN-SUFFIX,stripe.com
+- DOMAIN-SUFFIX,stripe.network
 - DOMAIN-SUFFIX,usefathom.com
 #chatgpt
 - DOMAIN,cdn.auth0.com
