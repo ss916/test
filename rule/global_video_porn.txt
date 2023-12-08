@@ -61,6 +61,7 @@ payload:
 - DOMAIN-SUFFIX,ktkjmp.com
 - DOMAIN-SUFFIX,smljmp.com
 - DOMAIN-SUFFIX,stripst.com
+- DOMAIN-SUFFIX,strpst.com
 - DOMAIN-SUFFIX,stripcdn.com
 - DOMAIN-SUFFIX,stripchat.com
 - DOMAIN-SUFFIX,cometmaster.com
@@ -105,5 +106,12 @@ payload:
 - DOMAIN-SUFFIX,online-metrix.net
 #91madou
 - DOMAIN-SUFFIX,fj-ll.com
+#onlyfans
+- DOMAIN-SUFFIX,onlyfans.com
+
+
+
+
+
 
 

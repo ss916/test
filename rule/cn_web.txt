@@ -163,6 +163,7 @@ payload:
 - DOMAIN-SUFFIX,xunlei.com
 - DOMAIN-SUFFIX,88cdn.com
 #lanzouyun
+- DOMAIN-SUFFIX,lanzouc.com
 - DOMAIN-SUFFIX,lanzous.com
 #zte
 - DOMAIN-SUFFIX,nubia.com

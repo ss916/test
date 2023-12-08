@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=239
+sh_ver=240
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -182,7 +182,7 @@ pid='pidof ${name}'
 port='netstat -anp 2>/dev/null | grep "${name}"'
 psskeep='ps -w | grep -v grep |grep "${name}_keep.sh"'
 timenow='date "+%Y-%m-%d_%H:%M:%S"'
-version="$dirtmp/${name} -v | grep -i $name | cut -f 3 -d ' '|sed 's/v//'"
+version="$dirtmp/${name} -v | head -n 1 | cut -f 3 -d ' '|sed 's/v//'"
 log_ok='grep -E "TProxy server listening at|TProxy.* proxy listening at" ./${name}_log.txt'
 log_error='grep "TProxy server error" ./${name}_log.txt'
 
