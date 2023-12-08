@@ -1,5 +1,5 @@
-# //【2023-12-08 23:56:44】
-/SHA1.TXT= 15689bc878bd8ddfaa313f0c48006e85
+# //【2023-12-09 00:07:12】
+/SHA1.TXT= ca5916ff77541885cf852c22220e8916
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 82a22c7b0a68e368b2ced9d9c4b29e1e
 /amd64/clash= 236f9c3fb9b3fab8789c992793f6bb54
@@ -136,17 +136,17 @@
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
 /t/clash.ver= fcc646690417a2c40f0aa37771800985
 /t/clash= c6af15053a0b70c4022a8fff3e6c71ac
-/t/cnip.txt= 85295b7161b690b504e6d7dd123269da
-/t/cnipv6.txt= b0975dbbe86663e37b5736594e71e240
-/t/delegated-apnic-latest= 503206f2a55253f6344c34eab4af23fb
+/t/cnip.txt= c358a63c7aa85f68676602b2f7c30a44
+/t/cnipv6.txt= 898e710e50f7c47ff3b499e873fa7558
+/t/delegated-apnic-latest= a09e36868b3a119699dd3abf2aa122da
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
 /t/geoip.dat= b27fe66c455a0a53ad7af8caff261f72
 /t/geosite-full.dat= 28f61832e192c5df5fcc1a5289e48a4b
 /t/geosite.dat= be300d3ecf0ce6fd2e7ab1f9cdaec64d
 /t/hysteria.ver= c87f78d2d5ae61283e132e5c9d5580e8
 /t/hysteria= c5d1795d48babbea30c14ab9d46207fe
-/t/ipset.cnip.txt= 0c17769a02210b4c17667e5f864ce781
-/t/ipset.cnipv6.txt= a2c4335f8bc9cf5caccf46381ba3e02d
+/t/ipset.cnip.txt= 009ec1e15f371ac02942b8a30af7c8f0
+/t/ipset.cnipv6.txt= 0b19ffbfb1ed911c33be78603b9c529e
 /t/kcptun.ver= a07f589689f716ecd6509b85aca5b0d0
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 22c3ffa8f170c141cfbe1acb9296f3db
