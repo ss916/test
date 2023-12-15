@@ -237,6 +237,10 @@ payload:
 #url
 - DOMAIN-SUFFIX,jsdelivr.net
 - DOMAIN-SUFFIX,workers.dev
+#adguard
+- DOMAIN-SUFFIX,adguard.com
+- DOMAIN-SUFFIX,adguard.info
+- DOMAIN-SUFFIX,adtidy.org
 #appinn、apphot
 - DOMAIN-SUFFIX,appinn.net
 - DOMAIN-SUFFIX,appinn.com

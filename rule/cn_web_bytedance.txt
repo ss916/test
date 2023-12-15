@@ -5,6 +5,7 @@ payload:
 - DOMAIN-SUFFIX,bytedns.net
 - DOMAIN-SUFFIX,bytedns1.com
 - DOMAIN-SUFFIX,bytednsdoc.com
+- DOMAIN-SUFFIX,bytescm.com
 - DOMAIN-SUFFIX,ctobsnssdk.com
 - DOMAIN-SUFFIX,feiliao.com
 - DOMAIN-SUFFIX,ovscdns.net
@@ -26,9 +27,12 @@ payload:
 - DOMAIN-SUFFIX,douyinpic.com
 - DOMAIN-SUFFIX,douyinstatic.com
 - DOMAIN-SUFFIX,douyinvod.com
+- DOMAIN-SUFFIX,ecombdapi.com
 - DOMAIN-SUFFIX,ecombdimg.com
+- DOMAIN-SUFFIX,fxltsbl.com
 - DOMAIN-SUFFIX,iesdouyin.com
 - DOMAIN-SUFFIX,oceanengine.com
+- DOMAIN-SUFFIX,volcsirius.com
 #kuaishou
 - DOMAIN-KEYWORD,kuaishou
 - DOMAIN-SUFFIX,adhimalayandi.com
@@ -92,6 +96,7 @@ payload:
 - DOMAIN-SUFFIX,toutiaostatic.com
 - DOMAIN-SUFFIX,toutiaovod.com
 - DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+- DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com
 - DOMAIN-SUFFIX,pglstatp-toutiao.com
 - DOMAIN-SUFFIX,zijieapi.com
 #xigua
