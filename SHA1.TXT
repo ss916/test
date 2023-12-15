@@ -1,5 +1,5 @@
-# //【2023-12-15 23:07:13】
-/SHAKE128.TXT= 65e41f55729a14c633043997e3e64626e800d3ee
+# //【2023-12-16 02:57:08】
+/SHAKE128.TXT= e604986fbbdf003131805943fe5c4ee3488601ec
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= cbe5305fdce447f4bed91224c3f220f76e2a579e
 /amd64/clash= 85a5c92e39e4194bf292b6ad69f5358ba566b8c5
@@ -135,23 +135,23 @@
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
 /t/clash.ver= 1ffe06d8942c181b699fd45393a36a3146d57503
-/t/clash= b1e10143f515b3da825765054769984506b52e04
-/t/cnip.txt= 8957c47a9ea84b98a71daa022a7e5c268fdb7866
-/t/cnipv6.txt= a68d053d32265fe6f65f38d085f9529ca7b6d207
-/t/delegated-apnic-latest= da5cbbcc85afe892b1209a47afb1484744dccea1
+/t/clash= f4001ecf0d582ec903e52a9bc1bd72a57e3e8613
+/t/cnip.txt= 4c53eaec6d62c581199775a9783a7db79c37cd19
+/t/cnipv6.txt= 9acf444a4dfb9408e724c64f538768efcdfd2950
+/t/delegated-apnic-latest= 1c5ae8676340a6d32f82320f5efaa69d2ce616ef
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
 /t/geoip.dat= 92e2fbef9816fc8bc599c9a655c53af25c4fde00
-/t/geosite-full.dat= eb2e778956560f17d6238c20a3a56732075d6663
-/t/geosite.dat= 10d6a7a96955dbae2749f9e3fb70dbb2d8a56f54
+/t/geosite-full.dat= 07e86cea95c0b27fbff6f37d2add9c3e40ac75aa
+/t/geosite.dat= e0c3b746ada0fdf83b9a7334dcbaa477c821a7c8
 /t/hysteria.ver= 1830ac0911725fb51c316c52073f87de428eea5e
 /t/hysteria= edbfc8aff5e585546224695c5b9c7d1304108893
-/t/ipset.cnip.txt= 7b12e725e672be75e97cc88b277c389b46fa4ac9
-/t/ipset.cnipv6.txt= be225bc4c8be17b63b5160c6deac1d33d04d97e9
+/t/ipset.cnip.txt= e98adef2b6bda7370a36cb99b70bd2b89fa81fd7
+/t/ipset.cnipv6.txt= b1c09465ed648fd747931dadc8e2a401923afed6
 /t/kcptun.ver= bbc683bb6e76a914ac90dc7b5167d6e14a2fbbe9
 /t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
 /t/metacubexd-gh-pages.tgz= 35322b7f83257c85676fe73caf3d8f83a56096d2
 /t/metacubexd-gh-pages.zip= 9e03f2c98dc606e911b2c04d4a3ed7509ce07e00
-/t/rule.tgz= e8574077c2cc707c637f072bbc794e91ae32466a
+/t/rule.tgz= 3dd5d378f143781cc3241f9484500efbad2b3355
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
