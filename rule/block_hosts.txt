@@ -1,6 +1,7 @@
 payload:
 #❌AD hosts ：block_hosts.txt
 #https://github.com/vokins/yhosts
+#ads test: https://d3ward.github.io/toolz/adblock.html
 #ads-Google Ads
 - DOMAIN,ads.google.com
 #ads-Media.net
@@ -10,6 +11,7 @@ payload:
 #ads-Amazon
 - DOMAIN,adtago.s3.amazonaws.com
 - DOMAIN,analyticsengine.s3.amazonaws.com
+- DOMAIN,analytics.s3.amazonaws.com
 - DOMAIN,advice-ads.s3.amazonaws.com
 - DOMAIN,affiliationjs.s3.amazonaws.com
 - DOMAIN,advertising-api-eu.amazon.com
@@ -21,13 +23,28 @@ payload:
 - DOMAIN,api-hotjar.com
 - DOMAIN,static.hotjar.com
 - DOMAIN,hotjar-analytics.com
+- DOMAIN,adm.hotjar.com
+- DOMAIN,identify.hotjar.com
+- DOMAIN,insights.hotjar.com
+- DOMAIN,script.hotjar.com
+- DOMAIN,surveys.hotjar.com
+- DOMAIN,events.hotjar.io
+#Analytics-FreshWorks
+- DOMAIN,claritybt.freshmarketer.com
+- DOMAIN,fwtracks.freshmarketer.com
 #Analytics-MouseFlow
 - DOMAIN,mouseflow.com
 - DOMAIN,a.mouseflow.com
+- DOMAIN,o2.mouseflow.com
+- DOMAIN,gtm.mouseflow.com
+- DOMAIN,tools.mouseflow.com
+- DOMAIN,cdn-test.mouseflow.com
 #Analytics-FreshMarketer
 - DOMAIN,freshmarketer.com
 #Analytics-Luckyorange
 - DOMAIN,luckyorange.com
+- DOMAIN,api.luckyorange.com
+- DOMAIN,realtime.luckyorange.com
 - DOMAIN,cdn.luckyorange.com
 - DOMAIN,w1.luckyorange.com
 - DOMAIN,upload.luckyorange.net
@@ -56,6 +73,8 @@ payload:
 #Social Trackers-LinkedIn
 - DOMAIN,ads.linkedin.com
 - DOMAIN,analytics.pointdrive.linkedin.com
+#Social Trackers-Reddit
+- DOMAIN,events.reddit.com
 #Social Trackers-Pinterest
 - DOMAIN,ads.pinterest.com
 - DOMAIN,log.pinterest.com
@@ -72,21 +91,44 @@ payload:
 - DOMAIN,ads.youtube.com
 - DOMAIN,youtube.cleverads.vn
 #Social Trackers-TikTok
+- DOMAIN,ads-api.tiktok.com
 - DOMAIN,analytics.tiktok.com
 - DOMAIN,ads.tiktok.com
 - DOMAIN,analytics-sg.tiktok.com
 - DOMAIN,ads-sg.tiktok.com
+- DOMAIN,business-api.tiktok.com
+- DOMAIN,log.byteoversea.com
 #Mix-Yahoo
 - DOMAIN,ads.yahoo.com
 - DOMAIN,global.adserver.yahoo.com
 - DOMAIN,analytics.yahoo.com
 - DOMAIN,ads.yap.yahoo.com
+- DOMAIN,udcm.yahoo.com
+- DOMAIN,advertising.yahoo.com
+- DOMAIN,analytics.query.yahoo.com
+- DOMAIN,log.fc.yahoo.com
+- DOMAIN,adtech.yahooinc.com
 #Mix-Yandex
 - DOMAIN,appmetrica.yandex.com
 - DOMAIN,yandexadexchange.net
 - DOMAIN,analytics.mobile.yandex.net
 - DOMAIN,extmaps-api.yandex.net
 - DOMAIN,adsdk.yandex.ru
+- DOMAIN,appmetrica.yandex.ru
+- DOMAIN,adfstat.yandex.ru
+- DOMAIN,metrika.yandex.ru
+- DOMAIN,advertising.yandex.ru
+- DOMAIN,offerwall.yandex.net
+- DOMAIN,adfox.yandex.ru
+#OEM-Realme
+- DOMAIN,iot-eu-logser.realme.com
+- DOMAIN,iot-logser.realme.com
+- DOMAIN,bdapi-ads.realmemobile.com
+- DOMAIN,bdapi-in-ads.realmemobile.com
+#OEM-Oppo
+- DOMAIN,adx.ads.oppomobile.com
+- DOMAIN,ck.ads.oppomobile.com
+- DOMAIN,data.ads.oppomobile.com
 #OEM-Xiaomi
 - DOMAIN,api.ad.xiaomi.com
 - DOMAIN,app.chat.xiaomi.net
@@ -114,6 +156,7 @@ payload:
 - DOMAIN,logservice1.hicloud.com
 - DOMAIN,metrics-dra.dt.hicloud.com
 - DOMAIN,logbak.hicloud.com
+- DOMAIN,grs.hicloud.com
 #OEM-OnePlus
 - DOMAIN,analytics.oneplus.cn
 - DOMAIN,click.oneplus.cn
@@ -137,6 +180,11 @@ payload:
 - DOMAIN,supportmetrics.apple.com
 - DOMAIN,metrics.icloud.com
 - DOMAIN,metrics.mzstatic.com
+- DOMAIN,advertising.apple.com
+- DOMAIN,api-adservices.apple.com
+- DOMAIN,books-analytics-events.apple.com
+- DOMAIN,weather-analytics-events.apple.com
+- DOMAIN,notes-analytics-events.apple.com
 #kuaishou-pcdn
 - DOMAIN,pcdn-proxy-crc.xxpkg.com
 - DOMAIN,pcdn-proxy-tm.xxpkg.com

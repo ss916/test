@@ -12,6 +12,7 @@ payload:
 - DOMAIN-SUFFIX,histar.tv
 - DOMAIN-SUFFIX,kuaikanzy.net
 - DOMAIN-SUFFIX,ulivetv.net
+- DOMAIN-SUFFIX,iz8qkg.com
 - DOMAIN-SUFFIX,v82u1l.com
 #tiktok
 - DOMAIN-KEYWORD,tiktokcdn

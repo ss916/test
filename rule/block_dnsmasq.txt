@@ -57,6 +57,7 @@ payload:
 - DOMAIN-SUFFIX,jwpltx.com
 - DOMAIN-SUFFIX,lalaping.com
 - DOMAIN-SUFFIX,maphuahin.com
+- DOMAIN-SUFFIX,mnaspm.com
 - DOMAIN-SUFFIX,netund.com
 - DOMAIN-SUFFIX,ngjquyzjgcrupz.com
 - DOMAIN-SUFFIX,outsliggooa.com

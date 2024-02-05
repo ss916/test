@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=104
+sh_ver=105
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -836,7 +836,7 @@ tar czf $(nvram get computer_name)_cdnip_f_$(date "+%Y-%m-%d_%H%M").tgz cdnip pi
 check_up
 }
 
-up () {
+upload () {
 up_server=$1
 up_port=$2
 up_user=$3
@@ -854,13 +854,19 @@ echo -e \\n"✖ 【$up_file】文件上传失败！[$up_status]"\\n
 fi
 }
 check_up () {
-if [ "$up" = "1" ] ; then
-	up_server=$(echo $upaccount  | awk -F ',' '{print $1}')
-	up_port=$(echo $upaccount | awk -F ',' '{print $2}')
-	up_user=$(echo $upaccount | awk -F ',' '{print $3}')
-	up_passwd=$(echo $upaccount | awk -F ',' '{print $4}')
-	up_file=$upfile
-	up $up_server $up_port $up_user $up_passwd $up_file
+if [ "$upload" = "1" ] ; then
+	if [ ! -z "$upaccount" ] ; then
+		up_server=$(echo $upaccount  | awk -F ',' '{print $1}')
+		up_port=$(echo $upaccount | awk -F ',' '{print $2}')
+		up_user=$(echo $upaccount | awk -F ',' '{print $3}')
+		up_passwd=$(echo $upaccount | awk -F ',' '{print $4}')
+		up_file=$upfile
+		upload $up_server $up_port $up_user $up_passwd $up_file
+	else
+		echo -e \\n"✖ upaccount为空，跳过上传"\\n
+	fi
+else
+	echo "upload=$upload"
 fi
 }
 
@@ -945,12 +951,12 @@ ff)
 	echo "pingip→get→speed and restore"
 	pingip > cf.sh_pingip_log.txt 2>&1 && get_server_speed_and_restore $2 $3 2>&1 | tee cf.sh_ff_log.txt &
 	;;
-up)
+upload)
 	if [ "$2" = "1" ] ; then
 		[ ! -z "$3" ] && upfile=$3
-		check_up 
+		check_up
 	else
-		up $2 $3 $4 $5 $6
+		upload $2 $3 $4 $5 $6
 	fi
 	;;
 *)

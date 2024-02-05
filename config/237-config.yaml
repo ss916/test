@@ -1,4 +1,4 @@
-# //【2023-12-23 22:58:50】
+# //【2024-02-03 01:42:53】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -23,6 +23,10 @@ bind-address: "*"
 log-level: info
 ipv6: true
 routing-mark: 20000
+
+experimental:
+  #quic-go-disable-gso: true
+  quic-go-disable-ecn: true
 
 #authentication:
   #- "user1:userpassword1"
@@ -173,7 +177,7 @@ hosts:
   '+.crashlytics.com': ['127.0.0.1', '::1']
   '+.flurry.com': ['127.0.0.1', '::1']
   '+.realsrv.com': ['127.0.0.1', '::1']
-  '+.onion': 198.18.255.254
+  '+.onion': 198.16.1.1
   #'domain.com': 'domain2.com'
   '+.pglstatp-toutiao.com': 127.0.0.1
   '+.pangolin-sdk-toutiao.com': 127.0.0.1
@@ -325,7 +329,7 @@ rules:
 - OR,((AND,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,biliapi))),(AND,((DOMAIN-KEYWORD,p2p),(DOMAIN-KEYWORD,bilibili)))),❎屏蔽
 
 - DOMAIN-SUFFIX,onion,🌰Tor
-- IP-CIDR,198.18.255.254/32,🌰Tor,no-resolve
+- IP-CIDR,198.16.1.1/32,🌰Tor,no-resolve
 
 - RULE-SET,rule1,🍊本地规则1
 - RULE-SET,rule2,🍊本地规则2

@@ -53,6 +53,7 @@ payload:
 - DOMAIN-SUFFIX,ksapisrv.com
 - DOMAIN-SUFFIX,ksc-test.com
 - DOMAIN-SUFFIX,ks-cdn.com
+- DOMAIN-SUFFIX,ks-live.com
 - DOMAIN-SUFFIX,kskwai.com
 - DOMAIN-SUFFIX,kspkg.com
 - DOMAIN-SUFFIX,ksyun.com
