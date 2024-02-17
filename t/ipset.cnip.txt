@@ -6243,10 +6243,12 @@ add cnip 157.148.0.0/16
 add cnip 157.15.100.0/23
 add cnip 157.15.102.0/23
 add cnip 157.15.104.0/23
+add cnip 157.15.200.0/23
 add cnip 157.15.74.0/23
 add cnip 157.15.94.0/23
 add cnip 157.156.0.0/16
 add cnip 157.18.0.0/16
+add cnip 157.20.33.0/24
 add cnip 157.255.0.0/16
 add cnip 157.61.0.0/16
 add cnip 158.60.0.0/16
