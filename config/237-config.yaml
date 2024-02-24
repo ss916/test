@@ -1,4 +1,4 @@
-# //【2024-02-03 01:42:53】
+# //【2024-02-24 18:10:21】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -454,6 +454,7 @@ proxy-groups:
 
 - name: 延迟最低
   type: url-test
+  #tolerance: 50
   use: #usemark
     - test
 
