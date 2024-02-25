@@ -1,12 +1,12 @@
-# //【2024-02-25 00:27:11】
-/SHA1.TXT= 5c018104e30e815a980e7f84f3866e6f
+# //【2024-02-25 21:20:39】
+/SHA1.TXT= 9a032d86a136c51a20e818f4fcb750e7
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
-/amd64/caddy= 9177108a3f2cb44cd0794ee9ce1ce2dc
-/amd64/clash= 7b5e24b29bcb998cc534ae9987a175ed
+/amd64/caddy= 496837de1c3c93e9d787ddad5d6dca9d
+/amd64/clash= 95b01a02f9404cf9fdd5a7deac61cf02
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
-/arm64/caddy= 70e158c3059291afd3e65b5da235ca55
-/arm64/clash= abfbb99babb6dd7fed04a99e467e8306
+/arm64/caddy= 683f46665ac92575ba6f5d09183710ff
+/arm64/clash= 1a066c12b744e54c86af0db2daf4f073
 /arm64/hysteria= 596a8a42a398afa4ba695955075671d5
 /arm64/kcptun= c97271af48a02d6d2231dc6d5e7eff7b
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
@@ -113,14 +113,14 @@
 /s/c7.json= 6d219897b5e41d7bd3f179bc4c2b82a4
 /s/c8.json= 0f6e5fead673791cdbe4c12e0bcb51f8
 /s/c9.json= 379c7da0bf7ef48b123560cafd51db46
-/s/file1.txt= 343fd1cc5eef66ef3a0de7e1c7368002
+/s/file1.txt= 4d35c3dd78c2b3959e467713c1321dc6
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= de199e7bfeca15bac6466607226c1372
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= 214b74dea65368445b14cdd95d3c2c12
-/s/file4.txt= c130817eca23b4441fc449e883070a7b
-/s/file5.txt= 706df8e0fd9b514ebac83a2eaef35f5d
-/s/file6.txt= e5c9aa6333b356579afbe75b3eaf630a
+/s/file3.txt= f1cdfc5399b632c127aad94c56f323d8
+/s/file4.txt= d3b2de2c183990a5a96d108577b7b2d2
+/s/file5.txt= d0f1db344725752f1043a6d0bd718171
+/s/file6.txt= 22793a759345cfb11f779615fa248021
 /s/file7.txt= 398c5b5c1e05a2868c3add0381cc625e
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
 /speederv2.sh= e69ef0ac25a04f298b3cc94b085950e6
@@ -130,12 +130,12 @@
 /t/Country.mmdb= ea1118982d06030a7f9686488e958fa9
 /t/caddy.ver= 7239697c916b20c0250d228cb169d8ad
 /t/caddy1= d91556933dd45b541d0587a957b95d99
-/t/caddy= 359e910faceb032402edc74e723a8343
+/t/caddy= 04cf25177bae7d3588cbf392e2f6d387
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= fff03a8bc8088e89c922129de074e89d
-/t/clash= bd8e80d2a125fbdf3bb0c7c182b36567
+/t/clash.ver= 7591588282c45f9fa3c4c66aad23c4ef
+/t/clash= 368c0790cf74b2e1b53d228ae9bedf46
 /t/cnip.txt= 498fab8853883ddb2220e96603b6690a
 /t/cnipv6.txt= 038e0ec8de4ca98c3f8d2ca674135548
 /t/delegated-apnic-latest= 8a2d623033959e51482056583dbef5ba
