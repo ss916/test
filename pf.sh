@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=93
+sh_ver=94
 
 path=${0%/*}
 bashname=${0##*/}
@@ -27,7 +27,7 @@ url7="https://yyellow.ariadl.eu.org/916"
 [ "${path}" = "sh" -a "${bashname}" = "sh" -o "${path}" = "bash" -a "${bashname}" = "bash" ] && echo -e \\n"❗ \e[1;37m获取不到脚本真实路径path与脚本名字bashname，其值为$path。依赖路径与名字的功能将会失效。请下载脚本到本地再运行。\e[0m❗"\\n
 
 read_settings () {
-for a in $(cat $dirconf/$name/settings.txt | grep '=' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+for a in $(cat $dirconf/$name/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 }
 [ -s $dirconf/$name/settings.txt ] && read_settings
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=118
+sh_ver=119
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -62,7 +62,7 @@ sed -i '/^.*=$/'d $dirconf/settings.txt
 #读取参数
 read_settings () {
 ##读取配置文件全部参数
-for a in $(cat $dirconf/settings.txt | grep '=' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+for a in $(cat $dirconf/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 ##缺省参数补全
 [ -z "$mode" ] && mode=1 && echo "mode=$mode" >> $dirconf/settings.txt
 [ -z "$clash_web" ] && clash_web=0 && echo "clash_web=$clash_web" >> $dirconf/settings.txt

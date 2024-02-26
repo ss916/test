@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=105
+sh_ver=106
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -12,7 +12,7 @@ dirconf=$diretc
 [ ! -d $diretc ] && mkdir -p $diretc
 
 if [ -f $diretc/settings.txt ] ; then
-	for a in $(cat $dirconf/settings.txt | grep '=' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+	for a in $(cat $dirconf/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 else
 	> $diretc/settings.txt
 fi
@@ -523,8 +523,8 @@ if [ ! -d $dir_tmp ] ; then
 else
 	[ ! -z "$(ls $dir_tmp)" ] && echo "清空$dir_tmp旧文件..." && rm $dir_tmp/*
 fi
-server=$(ls $dir_etc | grep -E "^file_server[0-9]+.txt$")
-[ -z "$server" ] && echo "$dir_etc不存在服务器配置文件file_server.txt文件，结束脚本。" && exit
+file_server_list=$(ls $dir_etc | grep -E "^file_server[0-9]+.txt$")
+[ -z "$file_server_list" ] && echo "$dir_etc不存在服务器配置文件file_server.txt文件，结束脚本。" && exit
 [ ! -s /tmp/cf/ping.txt ] && echo "/tmp/cf/ping.txt文件不存在，结束脚本。" && exit
 [ ! -z "$1" ] && goodip=$1
 [ -z "$goodip" ] && goodip=4
@@ -535,11 +535,11 @@ awk 'NR>3 && $7<'$loss' && $7>=0{print $0}' /tmp/cf/ping.txt > $dir_tmp/ping_los
 [ ! -s $dir_tmp/ping_loss_$loss.txt ] && echo "生成ping_loss_$loss.txt文件为空，结束脚本。" && exit
 ff=$(ls $dir_etc | grep -E "^file_server[0-9]+.txt$" | wc -l)
 f=1
-for filename in $server
+for filename in $file_server_list
 do
 c=1
 echo -e \\n"\e[1;4;36m[$f/$ff] 处理文件：$filename \e[0m "
-for a in $(cat $dir_etc/$filename | grep '=' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+for a in $(cat $dir_etc/$filename | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 #name，节点自定义名称
 #type，协议类型vless/vmess/trojan
 #network，网络类型ws/grpc

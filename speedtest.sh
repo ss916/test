@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=59
+sh_ver=60
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -57,7 +57,7 @@ sed -i '/^.*=$/'d $dirconf/settings.txt
 #读取参数
 read_settings () {
 ##读取配置文件全部参数
-for a in $(cat $dirconf/settings.txt | grep '=' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+for a in $(cat $dirconf/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 ##缺省参数补全
 [ -z "$listen_port" ] && listen_port=8989 && echo "listen_port=$listen_port" >> $dirconf/settings.txt
 [ -z "$mode" ] && mode=1 && echo "mode=$mode" >> $dirconf/settings.txt
