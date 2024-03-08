@@ -52,6 +52,7 @@ payload:
 - DOMAIN-SUFFIX,soundcloud.com
 # > Spotify
 - DOMAIN-KEYWORD,spotify-com
+- DOMAIN-SUFFIX,anchor.fm
 - DOMAIN-SUFFIX,pscdn.co
 - DOMAIN-SUFFIX,scdn.co
 - DOMAIN-SUFFIX,spoti.fi

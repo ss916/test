@@ -23,6 +23,8 @@ payload:
 - DOMAIN,cdn.auth0.com
 - DOMAIN,openaiapi-site.azureedge.net
 - DOMAIN-SUFFIX,ai.com
+- DOMAIN-SUFFIX,browser-intake-datadoghq.com
+- DOMAIN-SUFFIX,chatgpt.com
 - DOMAIN-SUFFIX,featuregates.org
 - DOMAIN-SUFFIX,intercom.io
 - DOMAIN-SUFFIX,intercomcdn.com
@@ -30,6 +32,7 @@ payload:
 - DOMAIN-SUFFIX,oaistatic.com
 - DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,openai.com
+- DOMAIN-SUFFIX,revenuecat.com
 - DOMAIN-SUFFIX,sentry.io
 - DOMAIN-SUFFIX,statsig.com
 - DOMAIN-SUFFIX,statsigapi.net

@@ -93,6 +93,7 @@ payload:
 - DOMAIN-SUFFIX,soundcloud.com
 # > Spotify
 - DOMAIN-KEYWORD,spotify-com
+- DOMAIN-SUFFIX,anchor.fm
 - DOMAIN-SUFFIX,pscdn.co
 - DOMAIN-SUFFIX,scdn.co
 - DOMAIN-SUFFIX,spoti.fi
@@ -343,6 +344,7 @@ payload:
 - DOMAIN-SUFFIX,youtu.be
 - DOMAIN-SUFFIX,yt.be
 - DOMAIN-SUFFIX,ytimg.com
+- DOMAIN-SUFFIX,ggpht.com
 - DOMAIN-SUFFIX,googlevideo.com
 - DOMAIN-SUFFIX,youtube.com
 - DOMAIN,youtubei.googleapis.com
