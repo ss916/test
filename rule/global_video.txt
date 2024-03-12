@@ -321,6 +321,12 @@ payload:
 - DOMAIN-SUFFIX,nivod2.tv
 - DOMAIN-SUFFIX,nivod3.tv
 - DOMAIN-SUFFIX,nivod4.tv
+- DOMAIN-SUFFIX,nivod5.tv
+- DOMAIN-SUFFIX,nivod6.tv
+- DOMAIN-SUFFIX,nivod7.tv
+- DOMAIN-SUFFIX,nivod8.tv
+- DOMAIN-SUFFIX,nivod9.tv
+- DOMAIN-SUFFIX,nivod10.tv
 - DOMAIN-SUFFIX,mudvod.tv
 - DOMAIN-SUFFIX,newpppp.com
 - DOMAIN-SUFFIX,biggggg.com
