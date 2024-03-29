@@ -1,4 +1,4 @@
-# //【2024-02-24 18:10:21】
+# //【2024-03-29 13:14:40】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -24,9 +24,9 @@ log-level: info
 ipv6: true
 routing-mark: 20000
 
-experimental:
-  #quic-go-disable-gso: true
-  quic-go-disable-ecn: true
+#experimental:
+  ##quic-go-disable-gso: true
+  #quic-go-disable-ecn: true
 
 #authentication:
   #- "user1:userpassword1"
