@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=106
+sh_ver=107
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -553,7 +553,7 @@ for a in $(cat $dir_etc/$filename | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') 
 #wss0rtt，是否启用wss0rtt，即加?ed=2048。默认开启
 [ -z "${wss0rtt}" ] && wss0rtt=1
 #http-upgrade，默认关闭0
-if [ "${httpupgrade}" = "1" -o "${httpupgrade}" = "true" ] ; then v2rayhttpupgrade=true && extraname_httpupgrade="-httpupgrade" && httpupgrade="" ; else v2rayhttpupgrade=false && extraname_httpupgrade="" ; fi
+if [ "${httpupgrade}" = "1" -o "${httpupgrade}" = "true" ] ; then wss0rtt=0 && v2rayhttpupgrade=true && extraname_httpupgrade="-httpupgrade" && httpupgrade="" ; else v2rayhttpupgrade=false && extraname_httpupgrade="" ; fi
 #brutal，默认关闭0
 if [ "${brutal}" = "1" -o "${brutal}" = "true" ] ; then tcpbrutal=true && extraname_brutal="-brutal" && brutal="" ; else tcpbrutal=false && extraname_brutal="" ; fi
 [ -z "${up}" ] && brutal_up=20 || brutal_up=$up && up=""
