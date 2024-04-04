@@ -1,5 +1,5 @@
-# //【2024-03-31 01:16:56】
-/SHA1.TXT= 4c70516576f2da3e516c2e4cff2962a4
+# //【2024-04-04 11:10:10】
+/SHA1.TXT= d6383384b31003e6c911aea41c428d7a
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 789e85982a1b43d9f0ff9574ce99486b
 /amd64/clash= cff11ef6b12fc9fb2d12cb516654bd69
@@ -16,7 +16,7 @@
 /arm64/xray= 7a6fdaf998d9bdddd1818082fdaa6902
 /caddy.sh= 7519f187da3240069aaab4dbb17f7248
 /cf.sh= 1e0fd624d81d6083abf1b077de61baab
-/clash.sh= 9679c5f9901e4df6c0cc6a4b451bbd8f
+/clash.sh= b017d166e08ba61412941c7998e28422
 /config.json= 585d27aa4fba9d1110511326e03d3f2e
 /config.yaml= f5c0b1991561354ddbc0bd2813271740
 /config/209-config.yaml= 5f0f31803f8b50002b2d65d8a6004c92
@@ -113,15 +113,15 @@
 /s/c7.json= e48d8f97d9e2c2363f226ae44378c8b4
 /s/c8.json= 3b96d9a3440d4a431903b698d161e04b
 /s/c9.json= 43d9b089642cf64357843dac3e0bcf9c
-/s/file1.txt= acc86a8a4466b28dbfcbd5c01a6714fa
+/s/file1.txt= 1f6651629ae7719db240dbcd835f402c
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= dde08693ab2f67aac7cce37a29f93a01
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= f815691012187a8321013b2f0f59a51c
-/s/file4.txt= f2c87712a261b8da58484a18dfda3874
-/s/file5.txt= f400d30e109660d2ce313c4ef4c68de7
-/s/file6.txt= 40754b15d11584155cdbbcee00b103c6
-/s/file7.txt= c311f0a4a1b26a481f23e0e72a87cb54
+/s/file3.txt= 4a6e793430fb21f2351ab08b53526f4c
+/s/file4.txt= 6906941ee16f965c5de96676ef126b6a
+/s/file5.txt= e1407f5dff4b56e20f1166709fc53049
+/s/file6.txt= fba182a94be5415b1a4b9b97cff4f958
+/s/file7.txt= 849af2d71c761bbc0da0f5c86fed0827
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
 /speederv2.sh= 99078c40b47bffef038c9bd86ea6df47
 /speedtest.sh= 98efc05e629a7d34b4466213bcb4595a
@@ -169,6 +169,6 @@
 /tv/live1.txt= d14ab9d92b1c5089e0937dee2e8da519
 /tv/test.jar= 61ba4a82031d96a189d5274334ad49c4
 /u2p.sh= 15d39d3dd81cd9f1761cd1aca04155ab
-/v2ray.sh= aa7611f4ece0ac60b35ff353d9afeb16
+/v2ray.sh= e2af175c5ad04e1b89dacb64fe6848fa
 /warpip.sh= 089adff2539d5b70381a95edeac9f61d
 /windows/PE_windows_password.exe= ae1928f2743b4dbea3ca47d6bce0d45d

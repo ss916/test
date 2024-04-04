@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=241
+sh_ver=242
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -111,7 +111,7 @@ sed -i '/^.*=$/'d $dirconf/settings.txt
 #读取参数
 read_settings () {
 ##读取配置文件全部参数
-for a in $(cat $dirconf/settings.txt | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
+for a in $(cat $dirconf/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do n=$(echo $a | awk -F= '{print $1}') ; b=$(echo $a | sed "s/${n}=//g") ; eval $n=$b ; done
 ##缺省参数补全
 #透明代理模式，mode=1 透明代理（默认），mode=2 透明代理+自身代理，mode=3 不透明代理
 [ -z "$mode" ] && mode=1 && echo "mode=$mode" >> $dirconf/settings.txt
