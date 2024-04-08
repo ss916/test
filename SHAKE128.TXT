@@ -1,5 +1,5 @@
-# //【2024-04-08 21:14:25】
-/SHA1.TXT= 6cf3af0348c9b53c16b31309caf2ec74
+# //【2024-04-09 02:30:38】
+/SHA1.TXT= f76e0698fee65fcef00eeb951d27d997
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 789e85982a1b43d9f0ff9574ce99486b
 /amd64/clash= 46b7b8db9b7c196b67fe8b66bbf7792a
@@ -113,14 +113,14 @@
 /s/c7.json= e48d8f97d9e2c2363f226ae44378c8b4
 /s/c8.json= 3b96d9a3440d4a431903b698d161e04b
 /s/c9.json= 43d9b089642cf64357843dac3e0bcf9c
-/s/file1.txt= 6167bcb00b6c4c54c8764b68a3798e41
+/s/file1.txt= efa31e9c47ef98977d3343a035ea2c46
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
-/s/file2.txt= 9d88ad865cccb44835e909d65ec04608
+/s/file2.txt= 6229d10a0b90247872691b03c5a1e817
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= 33b179e223a64d13fd20f468e3ef5544
-/s/file4.txt= 39c52386ad25bb37636931b85aad2fae
-/s/file5.txt= 64e26c2f6ad7d0e43c84cebfe4feafec
-/s/file6.txt= 07d3c60bb79d84c65749b8b368a1d853
+/s/file3.txt= 28203315f21f5c487ca29dc71b477614
+/s/file4.txt= 0f7696d15ab8246b5b88e073965edb1e
+/s/file5.txt= 845b4dcd7453391832022661a0efe10d
+/s/file6.txt= 7a060e5a21c696eba69ef30f0b11f4c7
 /s/file7.txt= c18d71f46dbe3193801a9729a1414e6b
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
 /speederv2.sh= 99078c40b47bffef038c9bd86ea6df47
@@ -151,7 +151,7 @@
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 07a8a7bbdf5dc68769d541028203b3ad
 /t/metacubexd-gh-pages.zip= acb102f88523863bcbebc9c6058528b2
-/t/rule.tgz= 6a62963b6c6115ebd9b60f55c0eb4987
+/t/rule.tgz= d758ca730fd73020151c200328ada651
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
