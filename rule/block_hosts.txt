@@ -2361,7 +2361,7 @@ payload:
 - DOMAIN,trial.alcohol-soft.com
 - DOMAIN,counter.kingsoft.com
 - DOMAIN,adm.zookingsoft.com
-- DOMAIN,settings-win.data.microsoft.com
+#@- DOMAIN,settings-win.data.microsoft.com
 - DOMAIN,us.vortex-win.data.microsoft.com
 - DOMAIN,eu.vortex-win.data.microsoft.com
 - DOMAIN,vortex-win-sandbox.data.microsoft.com

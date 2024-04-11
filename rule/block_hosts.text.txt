@@ -2361,7 +2361,7 @@ serial.alcohol-soft.com
 trial.alcohol-soft.com
 counter.kingsoft.com
 adm.zookingsoft.com
-settings-win.data.microsoft.com
+#@- DOMAIN,settings-win.data.microsoft.com
 us.vortex-win.data.microsoft.com
 eu.vortex-win.data.microsoft.com
 vortex-win-sandbox.data.microsoft.com
