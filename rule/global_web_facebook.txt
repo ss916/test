@@ -3,6 +3,8 @@ payload:
 #https://ipinfo.io/AS32934
 - DOMAIN-KEYWORD,facebook
 - DOMAIN-SUFFIX,cdninstagram.com
+- DOMAIN-SUFFIX,facebook.com
+- DOMAIN-SUFFIX,facebook.net
 - DOMAIN-SUFFIX,fb.com
 - DOMAIN-SUFFIX,fb.me
 - DOMAIN-SUFFIX,fbaddins.com
@@ -11,6 +13,8 @@ payload:
 - DOMAIN-SUFFIX,fbworkmail.com
 - DOMAIN-SUFFIX,instagram.com
 - DOMAIN-SUFFIX,m.me
+- DOMAIN-SUFFIX,meta.ai
+- DOMAIN-SUFFIX,meta.com
 - DOMAIN-SUFFIX,messenger.com
 - DOMAIN-SUFFIX,oculus.com
 - DOMAIN-SUFFIX,oculuscdn.com
