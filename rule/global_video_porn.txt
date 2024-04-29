@@ -92,6 +92,7 @@ payload:
 - DOMAIN-SUFFIX,fhjasokiwq.com
 - DOMAIN-SUFFIX,nivodz.com
 - DOMAIN-SUFFIX,nivod.tv
+- DOMAIN-SUFFIX,nivod0.tv
 - DOMAIN-SUFFIX,nivod1.tv
 - DOMAIN-SUFFIX,nivod2.tv
 - DOMAIN-SUFFIX,nivod3.tv

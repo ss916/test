@@ -22,6 +22,7 @@ payload:
 - DOMAIN-SUFFIX,stripe.network
 - DOMAIN-SUFFIX,usefathom.com
 #chatgpt
+- DOMAIN-KEYWORD,chatgpt-async-webps
 - DOMAIN,cdn.auth0.com
 - DOMAIN,openaiapi-site.azureedge.net
 - DOMAIN-SUFFIX,ai.com
@@ -34,6 +35,7 @@ payload:
 - DOMAIN-SUFFIX,oaistatic.com
 - DOMAIN-SUFFIX,oaiusercontent.com
 - DOMAIN-SUFFIX,openai.com
+- DOMAIN-SUFFIX,onetrust.io
 - DOMAIN-SUFFIX,revenuecat.com
 - DOMAIN-SUFFIX,sentry.io
 - DOMAIN-SUFFIX,statsig.com
