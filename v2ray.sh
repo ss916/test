@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=185
+sh_ver=186
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -515,21 +515,32 @@ redirect_dns () {
 echo -e "\e[1;36m▶[pre42]劫持局域网ipv4 DNS 53请求到本机端口$dns_port\e[0m"
 [ -z "$(iptables -t nat -nL | grep -i "chain dns_redir ")" ] && iptables -t nat -N dns_redir
 iptables -t nat -F dns_redir
-#[ -s ${path}/RETURN_UID_GID.TXT ] && for uidgid in $(cat ${path}/RETURN_UID_GID.TXT | sort -u) ; do n=$(echo $uidgid | awk -F ',' '{print $1}') && g=$(echo $uidgid | awk -F ',' '{print $3}') && echo ">> ipv4 dns_redir：RETURN $n gid [$g]" && iptables -t nat -I dns_redir -m owner --gid-owner $g -j RETURN ; done
 iptables -t nat -A dns_redir -p udp --dport 53 -j REDIRECT --to-ports "$dns_port"
 iptables -t nat -I PREROUTING -p udp --dport 53 -j dns_redir
-[ "$mode" = "2" ] && echo -e "\e[1;36m▶[out42]劫持本机ipv4 DNS 53请求到本机端口$dns_port\e[0m" && iptables -t nat -I OUTPUT -m owner ! --gid-owner $gid -p udp --dport 53 -j dns_redir
-if [ -z "$(ip6tables -t nat -nL 2>&1 |grep "can't.*nat")" ] ; then
+if [ "$mode" = "2" ] ; then
+echo -e "\e[1;36m▶[out42]劫持本机ipv4 DNS 53请求到本机端口$dns_port\e[0m"
+[ -z "$(iptables -t nat -nL | grep -i "chain dns_redir_mask ")" ] && iptables -t nat -N dns_redir_mask
+iptables -t nat -F dns_redir_mask
+[ -s ${path}/RETURN_UID_GID.TXT ] && for uidgid in $(cat ${path}/RETURN_UID_GID.TXT | sort -u) ; do n=$(echo $uidgid | awk -F ',' '{print $1}') && g=$(echo $uidgid | awk -F ',' '{print $3}') && echo ">> ipv4 dns_redir_mask：RETURN $n gid [$g]" && iptables -t nat -I dns_redir_mask -m owner --gid-owner $g -j RETURN ; done
+iptables -t nat -A dns_redir_mask -p udp --dport 53 -j REDIRECT --to-ports "$dns_port"
+iptables -t nat -I OUTPUT -p udp --dport 53 -j dns_redir_mask
+fi
+if [ -z "$(ip6tables -t nat -nL 2>&1 | grep "can't.*nat")" ] ; then
 echo -e "\e[1;36m▶[pre62]劫持局域网ipv6 DNS 53请求到本机端口$dns_port\e[0m"
 [ -z "$(ip6tables -t nat -nL | grep -i "chain dns_redir ")" ] && ip6tables -t nat -N dns_redir
 ip6tables -t nat -F dns_redir
-#[ -s ${path}/RETURN_UID_GID.TXT ] && for uidgid in $(cat ${path}/RETURN_UID_GID.TXT | sort -u) ; do n=$(echo $uidgid | awk -F ',' '{print $1}') && g=$(echo $uidgid | awk -F ',' '{print $3}') && echo ">> ipv6 dns_redir：RETURN $n gid [$g]" && ip6tables -t nat -I dns_redir -m owner --gid-owner $g -j RETURN ; done
 ip6tables -t nat -A dns_redir -p udp --dport 53 -j REDIRECT --to-ports "$dns_port"
 ip6tables -t nat -I PREROUTING -p udp --dport 53 -j dns_redir
-[ "$mode" = "2" ] && echo -e "\e[1;36m▶[out62]劫持本机ipv6 DNS 53请求到本机端口$dns_port\e[0m" && ip6tables -t nat -I OUTPUT -m owner ! --gid-owner $gid -p udp --dport 53 -j dns_redir
+if [ "$mode" = "2" ] ; then
+echo -e "\e[1;36m▶[out62]劫持本机ipv6 DNS 53请求到本机端口$dns_port\e[0m"
+[ -z "$(ip6tables -t nat -nL | grep -i "chain dns_redir_mask ")" ] && ip6tables -t nat -N dns_redir_mask
+ip6tables -t nat -F dns_redir_mask
+[ -s ${path}/RETURN_UID_GID.TXT ] && for uidgid in $(cat ${path}/RETURN_UID_GID.TXT | sort -u) ; do n=$(echo $uidgid | awk -F ',' '{print $1}') && g=$(echo $uidgid | awk -F ',' '{print $3}') && echo ">> ipv6 dns_redir_mask：RETURN $n gid [$g]" && ip6tables -t nat -I dns_redir_mask -m owner --gid-owner $g -j RETURN ; done
+ip6tables -t nat -A dns_redir_mask -p udp --dport 53 -j REDIRECT --to-ports "$dns_port"
+ip6tables -t nat -I OUTPUT -p udp --dport 53 -j dns_redir_mask
+fi
 else
 echo -e "\e[1;36m▶ipv6 DNS：ip6tables不支持nat，直接丢弃/屏蔽所有ipv6 DNS 53请求\e[0m"
-#ip6tables -t mangle -I $name -p udp --dport 53 -j DROP
 [ -z "$(ip6tables -vnL INPUT --line-numbers | grep -Ei "udp *dpt:53 *reject")" ] && ip6tables -I INPUT -p udp --dport 53 -j REJECT
 fi
 }
@@ -997,21 +1008,21 @@ fi
 }
 
 start_1 () {
-[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
+[ "$mode" != "1" ] && mode=1 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && stop_wan && stop_cron && run_restart_keep=1
 echo "🔒keep_lock" && > skip_keep_check_start_1
 start_0
 start_iptables && waitwork start_iptables 6 &
 wait && [ ! -z "$(ls skip_keep_check_* 2>/dev/null)" ] && echo "🔓keep_unlock" && rm skip_keep_check_*
 }
 start_2 () {
-[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
+[ "$mode" != "2" ] && mode=2 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && stop_wan && stop_cron && run_restart_keep=1
 echo "🔒keep_lock" && > skip_keep_check_start_2
 start_0
 start_iptables && waitwork start_iptables 6 &
 wait && [ ! -z "$(ls skip_keep_check_* 2>/dev/null)" ] && echo "🔓keep_unlock" && rm skip_keep_check_*
 }
 start_3 () {
-[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && run_restart_keep=1
+[ "$mode" != "3" ] && mode=3 && sed -i '/mode=/d' $dirconf/settings.txt && echo "mode=$mode" >> $dirconf/settings.txt && echo -e \\n"◆启动模式mode已改变为【$mode】 ◆ "\\n && stop_wan && stop_cron && run_restart_keep=1
 [ ! -z "$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name)" ] && ipt0
 echo "🔒keep_lock" && > skip_keep_check_start_3
 start_0

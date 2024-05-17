@@ -360,9 +360,9 @@ payload:
 #- DOMAIN-SUFFIX,test-ipv6.com
 #- DOMAIN-SUFFIX,whatismyip.com
 # > Speed Test
-- DOMAIN-SUFFIX,speedtest.net
-- DOMAIN-SUFFIX,netspeedtestmaster.com
-- DOMAIN,speedtest.macpaw.com
+#- DOMAIN-SUFFIX,speedtest.net
+#- DOMAIN-SUFFIX,netspeedtestmaster.com
+#- DOMAIN,speedtest.macpaw.com
 # > Private Tracker
 - DOMAIN-SUFFIX,awesome-hd.me
 - DOMAIN-SUFFIX,broadcasthe.net
