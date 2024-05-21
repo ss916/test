@@ -1,12 +1,12 @@
-# //【2024-05-21 18:15:27】
-/SHA1.TXT= c2c172b4b8796e1875f66bbc3c9d8e3b
+# //【2024-05-22 02:12:50】
+/SHA1.TXT= ec9ff3266ed4ee2e7c87f16480c1a939
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= d49ab2b0f983aa143b7f0493a5380e18
-/amd64/clash= a0800f28489c2787f0e87a80bb3fc534
+/amd64/clash= b5674c419d4af5a9dfb7deeac2decebf
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= e3ddd73d735abafc1682b47298d30378
-/arm64/clash= 3f688024902c076642079dc601c379ed
+/arm64/clash= 7f1836cb206990dd20350bc71d437290
 /arm64/hysteria= 596a8a42a398afa4ba695955075671d5
 /arm64/kcptun= c97271af48a02d6d2231dc6d5e7eff7b
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
@@ -134,8 +134,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 6eb96253e5c3252975bfeb782331fff5
-/t/clash= e0f7c6e3ac7547ad7cd78bfa11044ede
+/t/clash.ver= 111b70d412c5d3ce57ddd32da44d2fb6
+/t/clash= 42a8c7513e8528ccf9520b864aaab145
 /t/cnip.txt= 1eb231c33211c22fc21b207d92e1b85f
 /t/cnipv6.txt= be35ab0bf2a88fb66bd07cbec1cc5328
 /t/delegated-apnic-latest= 7e59a68ce48eea6162a8f58d5f0df5c9
@@ -151,7 +151,7 @@
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 36955a787725439622a1f6ada2ed26de
 /t/metacubexd-gh-pages.zip= 1333fc0faa97f9e4626c37b06127a8dd
-/t/rule.tgz= d2fbd270f72c577b640846cd0fd6787a
+/t/rule.tgz= 8218b1d0229f63452f2e148212f221d4
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
