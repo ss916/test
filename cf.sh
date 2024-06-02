@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=107
+sh_ver=108
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -750,7 +750,7 @@ ip=$1
 {
 colo=$(curl -sL -m 5 ${http_tls}://cp.cloudflare.com/cdn-cgi/trace --resolve cp.cloudflare.com:${http_port}:$ip |awk -F= '/^colo/{print $2}')
 if [ ! -z "$colo" ] ; then
-speed=$(curl -s -o /dev/null $url -m 10 --resolve $url_domain:$url_port:$ip -w "%{speed_download}")
+speed=$(curl -sL -o /dev/null $url -m 10 --resolve $url_domain:$url_port:$ip -w "%{speed_download}")
 speed_format=$(echo $speed |sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
 echo -e "IP：\e[1;37m$ip\e[0m  地区：\e[1;37m$colo\e[0m  下载速度：\e[1;37m $speed_format  \e[0m"
 else
