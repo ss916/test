@@ -243,8 +243,6 @@ payload:
 #url
 - DOMAIN-SUFFIX,jsdelivr.net
 - DOMAIN-SUFFIX,workers.dev
-#cloudflare DNS
-- IP-CIDR,1.1.1.1/32,no-resolve
 #adguard
 - DOMAIN-SUFFIX,adguard.com
 - DOMAIN-SUFFIX,adguard.info

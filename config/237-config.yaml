@@ -1,4 +1,4 @@
-# //【2024-06-05 21:13:09】
+# //【2024-06-13 01:21:51】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -223,6 +223,7 @@ dns:
   ipv6: true
   enhanced-mode: redir-host
   #fake-ip-range: 198.18.0.1/16
+  #respect-rules: true
   fake-ip-filter: ["*.lan", "+.msftncsi.com", "+.msftconnecttest.com"]
   proxy-server-nameserver: ["https://208.67.222.222/dns-query", "https://101.101.101.101/dns-query"]
   default-nameserver: ["https://208.67.222.222/dns-query", "https://101.101.101.101/dns-query"]
@@ -237,6 +238,7 @@ dns:
     "geosite:cn": ["https://223.6.6.6/dns-query", "https://1.12.12.12/dns-query"]
   nameserver:
     #- system
+    #- '8.8.8.8#RULES'
     #- tls://8.8.4.4:853
     - https://101.101.101.101/dns-query
     - https://208.67.220.220/dns-query

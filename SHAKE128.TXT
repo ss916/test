@@ -1,12 +1,12 @@
-# //【2024-06-12 00:10:18】
-/SHA1.TXT= ae76ef7f51153e3f511521a536f17423
+# //【2024-06-13 22:54:19】
+/SHA1.TXT= 01329132ef7b01a55c840b8666c57754
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
-/amd64/caddy= 772224b0b6cc2291da4ecdab94882609
-/amd64/clash= 521c3a4c7f31365b4896b7e526f13441
+/amd64/caddy= 8e12fcedcfb3d3c2a0dfaf8ee942b0e0
+/amd64/clash= 9df3fc311e48c0b5623a87d3bf88f2db
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
-/arm64/caddy= a3c77789e266c5abc0ad227d29bcaed9
-/arm64/clash= 7f6c4e211bfa622882d1e98d54eacf19
+/arm64/caddy= fd0878a3e39d894e51e0a2f005f826d9
+/arm64/clash= 62e3a9a19a39231352f5057dc25d0267
 /arm64/hysteria= 596a8a42a398afa4ba695955075671d5
 /arm64/kcptun= c97271af48a02d6d2231dc6d5e7eff7b
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
@@ -22,7 +22,7 @@
 /config/209-config.yaml= 5f0f31803f8b50002b2d65d8a6004c92
 /config/219-config.yaml= 45f53109492b7c78406d489ef4d3649a
 /config/230-config.yaml= a1fdca3e58a5b5428f835a3c23246e28
-/config/237-config.yaml= dbfad1540d11641f163ad0a8ada62484
+/config/237-config.yaml= fc294d0588584b4121f087977c5b14d1
 /hash.sh= 415e1dc2b35588dca56b7934be8461de
 /hysteria.sh= 1fa2e4cde95a62658a9b93d1b578dc6f
 /ipv6.sh= d7a6a42faa0953c706dd0261609fc973
@@ -45,6 +45,8 @@
 /rule/cn_web.txt= 88ba811da8dcf58309ef878f8ded17c4
 /rule/cn_web_bytedance.txt= 5e76510e385397a3d10504441f8c03e8
 /rule/cn_web_other.txt= 4aaffb7374fec00d79cdd9f5126b03af
+/rule/dns_direct.txt= 77c96d2429ca189255a6496b043378ca
+/rule/dns_proxy.txt= a4d0b8a7b729256e2108957dabaed725
 /rule/global_apple.txt= e40176e513120cc3cbd788155cf11180
 /rule/global_ip_cloudflare.txt= 2522dff3193fe8e2ab0a0612f151dd9e
 /rule/global_video.txt= f6c3649f6a52154b8fe875db3bfdf26a
@@ -52,7 +54,7 @@
 /rule/global_video_other.txt= 8a469a97fba79523d3e0d98af842bf7e
 /rule/global_video_porn.txt= a7bbade0b9e6d84e0f5e30f3397789e5
 /rule/global_video_youtube.txt= 682bf6467d0e4d5f80c486d00077e71c
-/rule/global_web.txt= 4b7339a49a0050b2a47a23ce7175ac35
+/rule/global_web.txt= 114939cabf076d2116c8ecbc8e92ec2b
 /rule/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
 /rule/global_web_facebook.txt= 88fedc196ade06e395240351f92ef020
 /rule/global_web_github.txt= 260913314ec188e6c62751d1a11cf688
@@ -60,7 +62,7 @@
 /rule/global_web_line.txt= aa417bf43b0d37ecfc067bb8f6c10754
 /rule/global_web_mega.txt= 3c378db18898fc689fafc48e7a4a3c5f
 /rule/global_web_microsoft.txt= c6f1e612e999f5f86ca1a6d05e953394
-/rule/global_web_other.txt= 5278208a5eb355ad49539359821870c6
+/rule/global_web_other.txt= a7e5ae9707560c50bb3b892564b1498b
 /rule/global_web_protonmail.txt= dbb2239f792e0a191aad29f774ca0007
 /rule/global_web_telegram.txt= 54ffae7c17dc143a101954abd8789159
 /rule/global_web_twitter.txt= 0f975ae104f8807a2593f7de17e99323
@@ -128,14 +130,14 @@
 /t/Country.mmdb.tgz= cf05dfbeb31f741b02d4144896919743
 /t/Country.mmdb.ver= 1ff108546963c911477bb182e1e02a64
 /t/Country.mmdb= ea1118982d06030a7f9686488e958fa9
-/t/caddy.ver= 12af69eaca24213f9c4b04e430ece6b8
+/t/caddy.ver= 2317991258ee2c9ae4e794a43668a934
 /t/caddy1= d91556933dd45b541d0587a957b95d99
-/t/caddy= 607808fd8d3d1f98ebd2a7bbc9705b30
+/t/caddy= 3f13bcd65fda16b14985862c3aa73047
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 26a8bb0f35fee00f02534f9c9c55d38c
-/t/clash= 27b2e15ac291dc6461576ee72ecd57c0
+/t/clash.ver= 37b36a499d2a2606b96cb7d127274c37
+/t/clash= 8be5de9ccc0561d3d4e8e587d652d456
 /t/cnip.txt= 58491320f0fa9f1e1be394e63a5ebd7a
 /t/cnipv6.txt= cc020e6c08813a54c875394160f42546
 /t/delegated-apnic-latest= 92cb08476084314c9307d3bf209e3754
@@ -151,7 +153,7 @@
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 2ae3dcd02ee797a4b40ed95d62ba7f8a
 /t/metacubexd-gh-pages.zip= 66039d5eabf5df6b4088a3e7f34c0cde
-/t/rule.tgz= ff56ff0ad90dcd285dcf2cfeb68bfecf
+/t/rule.tgz= 20e62b374b2715d196c07c14309656bf
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88

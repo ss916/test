@@ -1,12 +1,12 @@
-# //【2024-06-12 00:10:17】
-/SHAKE128.TXT= bf9e20f16b1ea3608ef3f1d34096229352977a4a
+# //【2024-06-13 22:54:18】
+/SHAKE128.TXT= b1ab8a2a3cd00593dc734827a4690c239c442735
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
-/amd64/caddy= 7046a3f1374475bb2c38409267540c4aa36e8188
-/amd64/clash= de375b08aa961d68a7964c6e7ab3c59a4dac5be1
+/amd64/caddy= 4095228d433619d1e2c051c61c963da0be184ffd
+/amd64/clash= b51e7cb61a109244270ebf466a172b798ccc09b7
 /amd64/stun= 2891a621210dc1c3e3d25d25ccd93ef70efe4744
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/caddy= 3a2a638405034942136bee14b63d593e22614597
-/arm64/clash= 4341f55ac15efdfb06a3bb440e7d0a0a314f5b7c
+/arm64/caddy= 5fab99b876226a21e346409571dd53b12ff66b27
+/arm64/clash= 1d3ed6f2434288bf6c653023d2eca52069ebf525
 /arm64/hysteria= dfa361fa38b158dbf3e823500c77a468192fc61c
 /arm64/kcptun= db415633d64ab6739a338ad5d5ab49c5b037cce5
 /arm64/speederv2= ff9d5b8f6e479fd777d9158ab45b39acda14ffdc
@@ -22,7 +22,7 @@
 /config/209-config.yaml= 982e7159607ea352e7efe4a4d948f2a0aefb95cb
 /config/219-config.yaml= 4484fa66e733777eae85033062e6a9e3cc82abc4
 /config/230-config.yaml= 6a244d9d24e54d89468a6f61552405464c4939d6
-/config/237-config.yaml= aefb6f247edb24af720d48c388b146b12cc829ac
+/config/237-config.yaml= 45c708b962947d390e9f9af5286a8333c585503a
 /hash.sh= 818e85d0eeca8c623403c3dc082ddb1e1ccd231e
 /hysteria.sh= 83ae7944107329fbeb9bbd0bcecca4712bebba4e
 /ipv6.sh= 84d0f1a4cc54cdb23e38bc5e198e62f70ce99efa
@@ -45,6 +45,8 @@
 /rule/cn_web.txt= 55f0116d64c4aa0df37b7f7c66863aefbdfbc3d7
 /rule/cn_web_bytedance.txt= 8eb45290f1f583e533806f1dc43d2787d9131f13
 /rule/cn_web_other.txt= d7318b18ccf53d6a459ebb2d940009d0b4cc2521
+/rule/dns_direct.txt= 3735e772d5485852fb8558ce00830e30a1eaf5cb
+/rule/dns_proxy.txt= 65accf302437ae77e5cbea0d7cf9f49410ba03bf
 /rule/global_apple.txt= 9ef1111a5dab75e641571144b3f643b06b3c9767
 /rule/global_ip_cloudflare.txt= cf2cca85537d276e6511c79572bb1f68507b499b
 /rule/global_video.txt= b9999695ae08adfbd72ba2ff735622c88cf1a6a6
@@ -52,7 +54,7 @@
 /rule/global_video_other.txt= 5326d67d49b2b29850ab2c5f646522fff148068c
 /rule/global_video_porn.txt= ae1010e9bcb1934fc324953ed675ff1c22f3d731
 /rule/global_video_youtube.txt= 918f4776765c8a58475c8b056d13a583c6139f42
-/rule/global_web.txt= abad4308af1577b36ebe398de2a6e7188753949e
+/rule/global_web.txt= fecce0540ab5cb06e377b9e2f6dc29cf4abea739
 /rule/global_web_amazon.txt= a7eb47c5fa8357404041b74c5e45e18285cde954
 /rule/global_web_facebook.txt= 00bebba4086e7e9c45a6eb2b05cb740ac8606b23
 /rule/global_web_github.txt= 933c4ad18af08872b67e65e9726beb42e9ff3623
@@ -60,7 +62,7 @@
 /rule/global_web_line.txt= 72193f486afe703e17f2e7290b344fdd7c0aadd5
 /rule/global_web_mega.txt= 467ab4ad3c901bea2e0615f378ebb42f19e85bb5
 /rule/global_web_microsoft.txt= 4c0b38a3b0f6dd5b5596d21db026d08619ee6877
-/rule/global_web_other.txt= 6415efc31335702970e665fbfda86619a0ecfdd5
+/rule/global_web_other.txt= a98cb79c6e8b54f9e9df8ca2b6f8e763bfa988ad
 /rule/global_web_protonmail.txt= abbbfb5553ea29db236fb5008c86b5e00df12c8c
 /rule/global_web_telegram.txt= 5561ebc6a8de19b75ced7a234cf0faaccd655342
 /rule/global_web_twitter.txt= 8cb9de203e4e1aee0fc71cc87dab54fc55a2b511
@@ -128,14 +130,14 @@
 /t/Country.mmdb.tgz= bb4d2b067e900f2171230cc3465b5fdb6ee500ea
 /t/Country.mmdb.ver= 5620688f617ce159b1f0edb744a737627bd8b86f
 /t/Country.mmdb= 56b79e788a0a820fde5d8bc1e3e507ad22d3f52c
-/t/caddy.ver= e128ca1e32f4ad562621dff51d43ba02be206df0
+/t/caddy.ver= 96e6c913b2e28ee24cd00c2932614e230cd443a3
 /t/caddy1= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/caddy= 6b356a0bbd50d8fefd211bc86aec407e62f3df6a
+/t/caddy= 92e81ea8bc184fc273045e62dfc3a28331fd15c3
 /t/clash-dashboard-gh-pages.tgz= 0b93c7a1fbcc7173cb98de606e492111eef5424d
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
-/t/clash.ver= d33e406c46ac847d89999b0bd3a2c9849c61e3ca
-/t/clash= 69fb62aa3db8852e47c39a3fee2867dc64ffc185
+/t/clash.ver= 3bb6d980142f864cc224631293479e768d56f031
+/t/clash= 95eb1fd851f319fd4ca564b18edd419da8ecd5a6
 /t/cnip.txt= 4e71e04b724d0585aae65ba3e5cd7ff83cab892f
 /t/cnipv6.txt= d5281a066694eb86f6240f57f91d0ed4f026d774
 /t/delegated-apnic-latest= 8f860da5d0e3416e8467564812c88ef497974bf8
@@ -151,7 +153,7 @@
 /t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
 /t/metacubexd-gh-pages.tgz= 012ad805afb442d16313bc736ac54523c5494215
 /t/metacubexd-gh-pages.zip= 3644464625fb0c8f3bd1550d6a1a45ce7e76fb03
-/t/rule.tgz= 8f9acd878123bda39f6c6bdcdec4013adfeb4436
+/t/rule.tgz= 067e63058c541f73892c1c1757556d812b0701b7
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
