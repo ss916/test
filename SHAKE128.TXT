@@ -1,5 +1,5 @@
-# //【2024-06-15 02:02:45】
-/SHA1.TXT= 031d9ee126010750a9e3a5a7d221e1b6
+# //【2024-06-15 05:32:28】
+/SHA1.TXT= 899f5a061243026e88a61c1a7501e02d
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 8e12fcedcfb3d3c2a0dfaf8ee942b0e0
 /amd64/clash= 6174ccb0c934bd34d172308f74961bc2
@@ -45,8 +45,8 @@
 /rule/cn_web.txt= 88ba811da8dcf58309ef878f8ded17c4
 /rule/cn_web_bytedance.txt= 5e76510e385397a3d10504441f8c03e8
 /rule/cn_web_other.txt= 4aaffb7374fec00d79cdd9f5126b03af
-/rule/dns_direct.txt= 77c96d2429ca189255a6496b043378ca
-/rule/dns_proxy.txt= a4d0b8a7b729256e2108957dabaed725
+/rule/dns_direct.txt= 039833b9eefa562991f2ee7ecb8aff7a
+/rule/dns_proxy.txt= 6e84a2be8e683198aef0bcad419a2a97
 /rule/global_apple.txt= e40176e513120cc3cbd788155cf11180
 /rule/global_ip_cloudflare.txt= 2522dff3193fe8e2ab0a0612f151dd9e
 /rule/global_video.txt= f6c3649f6a52154b8fe875db3bfdf26a
@@ -153,7 +153,7 @@
 /t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
 /t/metacubexd-gh-pages.tgz= 2ae3dcd02ee797a4b40ed95d62ba7f8a
 /t/metacubexd-gh-pages.zip= 66039d5eabf5df6b4088a3e7f34c0cde
-/t/rule.tgz= fabb6b3ae5d8549783468584e3919289
+/t/rule.tgz= 551b72997f989f6b63a1abc3db5b227d
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
