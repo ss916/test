@@ -1,5 +1,5 @@
-# //【2024-06-15 16:36:53】
-/SHAKE128.TXT= 875d2eee4cc04196025c66da4920a3507df84fab
+# //【2024-06-18 01:33:59】
+/SHAKE128.TXT= e019f95aa19faf74def0aa55b9197c7539ae253b
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= 4095228d433619d1e2c051c61c963da0be184ffd
 /amd64/clash= bac2a205be2c256262a3de0853d6d4182fbd6eaf
@@ -42,8 +42,8 @@
 /rule/cn_domains_china_conf.text.txt= a4622090cab21491a985f9fe912cee3e69b14168
 /rule/cn_domains_china_conf.txt= 342d9cbf25eadcbff4d2bebf551a8903c27617af
 /rule/cn_video.txt= ea2dd4c88071f3dc2f27472734a48c519d27ac3d
-/rule/cn_web.txt= 55f0116d64c4aa0df37b7f7c66863aefbdfbc3d7
-/rule/cn_web_bytedance.txt= 8eb45290f1f583e533806f1dc43d2787d9131f13
+/rule/cn_web.txt= 800d1015ca3d97777135b5e6ffb87bb13ff3bd99
+/rule/cn_web_bytedance.txt= 7a40b4eda1528ea022e9390b59e40999e65c7530
 /rule/cn_web_other.txt= d7318b18ccf53d6a459ebb2d940009d0b4cc2521
 /rule/dns_direct.txt= 39e9c54f9da604c9c33fe6cbbd2c64e75f141be8
 /rule/dns_proxy.txt= c67caf79d3358c9cb7728a037b070c2c3f5a8a9d
@@ -115,7 +115,7 @@
 /s/c7.json= 3c618f5ae9a7e0fbe643bfb7068d6923f8bd183d
 /s/c8.json= 53ca0d5c3dab6deb7753c4e142282d4219ccf5a8
 /s/c9.json= 937979af13e0edac370a57d70c5f3931b43d5fb7
-/s/file1.txt= 14d35418342ff69e6fea57a340bfd452dd9d17a2
+/s/file1.txt= b2ee37dd28927cc99d6beba6bc5e031b3b749d02
 /s/file111.txt= 6e57d7d03a14592eba99a492fd23a35ed4b7661d
 /s/file2.txt= d023c49a823e1f17260b9e9637e85f764bb1e7f8
 /s/file222.txt= e025f1d6da63f89e6d6478e991354ba3b659190b
@@ -151,9 +151,9 @@
 /t/ipset.cnipv6.txt= e79ffcfbe5cdeefbaa23e7836bb93dcbd8cdf613
 /t/kcptun.ver= bbc683bb6e76a914ac90dc7b5167d6e14a2fbbe9
 /t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
-/t/metacubexd-gh-pages.tgz= 012ad805afb442d16313bc736ac54523c5494215
-/t/metacubexd-gh-pages.zip= 3644464625fb0c8f3bd1550d6a1a45ce7e76fb03
-/t/rule.tgz= ae6741e4559814eec551f1e71ec599d8ed239ec9
+/t/metacubexd-gh-pages.tgz= 7b84018f62afd01459a72b40b9265bd7a936c3b4
+/t/metacubexd-gh-pages.zip= 45f616cfbafd850f924f5a8f7d4530cdbdd382ec
+/t/rule.tgz= cbc46718e82ba54c4cf365c171e39bf493a6ddc9
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd

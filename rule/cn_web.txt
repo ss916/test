@@ -37,7 +37,9 @@ payload:
 - DOMAIN-KEYWORD,kuaishou
 - DOMAIN-SUFFIX,adhimalayandi.com
 - DOMAIN-SUFFIX,adkwai.com
+- DOMAIN-SUFFIX,adukwai.com
 #- DOMAIN-SUFFIX,apdcdn.com
+- DOMAIN-SUFFIX,beckwai.com
 - DOMAIN-SUFFIX,bcelive.com
 - DOMAIN-SUFFIX,bsclink.cn
 - DOMAIN-SUFFIX,bytedance.com
@@ -71,6 +73,7 @@ payload:
 - DOMAIN-SUFFIX,live-voip.com
 - DOMAIN-SUFFIX,onethingpcs.com
 - DOMAIN-SUFFIX,p2cdn.com
+- DOMAIN-SUFFIX,shukwai.com
 - DOMAIN-SUFFIX,tcdnvod.com
 - DOMAIN-SUFFIX,viviv.com
 - DOMAIN-SUFFIX,wscdns.com
