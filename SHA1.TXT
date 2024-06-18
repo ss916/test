@@ -1,5 +1,5 @@
-# //【2024-06-18 21:21:41】
-/SHAKE128.TXT= 691c73108b0c678eb3968f17a393dcabe22880d6
+# //【2024-06-18 21:44:05】
+/SHAKE128.TXT= 3bbdc339f6e112c4031cb173618d1b48723e8d3a
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= 4095228d433619d1e2c051c61c963da0be184ffd
 /amd64/clash= bac2a205be2c256262a3de0853d6d4182fbd6eaf
@@ -8,7 +8,7 @@
 /arm64/caddy= 5fab99b876226a21e346409571dd53b12ff66b27
 /arm64/clash= c7ae33879b2d49391397bf75d12c09cf4fdf8fe8
 /arm64/hysteria= dfa361fa38b158dbf3e823500c77a468192fc61c
-/arm64/kcptun= db415633d64ab6739a338ad5d5ab49c5b037cce5
+/arm64/kcptun= da24a68ee68910ad38b29c988509fd2d2bbe714b
 /arm64/speederv2= ff9d5b8f6e479fd777d9158ab45b39acda14ffdc
 /arm64/speedtest= c6b18e2beb4545a00cd8dcde44b3207ae948e02f
 /arm64/stun= 2d42c9dd1c14247c75243e6d31d2124d50342419
@@ -149,8 +149,8 @@
 /t/hysteria= ffb533ff36e52533fa6e0b61bb2705f7ba605660
 /t/ipset.cnip.txt= 3c0e3a021ef97a8f3b101963ff433dbb188a23b4
 /t/ipset.cnipv6.txt= e79ffcfbe5cdeefbaa23e7836bb93dcbd8cdf613
-/t/kcptun.ver= bbc683bb6e76a914ac90dc7b5167d6e14a2fbbe9
-/t/kcptun= 71c3540cda03a547443e26ff775185d7da92059a
+/t/kcptun.ver= dae3e69ea1103bd43be40191ef5ad90ae3d50a51
+/t/kcptun= 988d0eeb3a5a9bf5fa8e5a9674a206b043cb46c7
 /t/metacubexd-gh-pages.tgz= 7b84018f62afd01459a72b40b9265bd7a936c3b4
 /t/metacubexd-gh-pages.zip= 45f616cfbafd850f924f5a8f7d4530cdbdd382ec
 /t/rule.tgz= cbc46718e82ba54c4cf365c171e39bf493a6ddc9

@@ -1,5 +1,5 @@
-# //【2024-06-18 21:21:43】
-/SHA1.TXT= ea23fd47ad636f70decb83862916be1a
+# //【2024-06-18 21:44:06】
+/SHA1.TXT= 73cf98f447b8b82f5cb87e2d4c1aab3c
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 8e12fcedcfb3d3c2a0dfaf8ee942b0e0
 /amd64/clash= 6bebf5328716b0bd70d7e50f65ee4ceb
@@ -8,7 +8,7 @@
 /arm64/caddy= fd0878a3e39d894e51e0a2f005f826d9
 /arm64/clash= 296b0522a901df46923f12da9442e00b
 /arm64/hysteria= 596a8a42a398afa4ba695955075671d5
-/arm64/kcptun= c97271af48a02d6d2231dc6d5e7eff7b
+/arm64/kcptun= 6922bb4e49453079410c1f19ba6aa38b
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
 /arm64/speedtest= ddd7fbff3a3e2a69387398d4733f9da7
 /arm64/stun= 5061c8e34ed30f10418108363d46bcc2
@@ -149,8 +149,8 @@
 /t/hysteria= 2528c232fa72c02c01e4a3b7d0377e0c
 /t/ipset.cnip.txt= d9ecc1ea06fb605541c9a230995fa5fb
 /t/ipset.cnipv6.txt= aa1187e10f9ac95f32727d74ccea2ebf
-/t/kcptun.ver= a07f589689f716ecd6509b85aca5b0d0
-/t/kcptun= 9d9a17faa653a71cde2a0231397c5e5b
+/t/kcptun.ver= fa7e3ef6783653db6b53301a10ab932c
+/t/kcptun= ee61e7783ab603c42bc9a942548198a7
 /t/metacubexd-gh-pages.tgz= edf5680369746adbdee1ac70f6bd17ba
 /t/metacubexd-gh-pages.zip= e7cf1ed2368cbb07277054033b85bdec
 /t/rule.tgz= 8d922cc96dd3b54d83d61483a0fdfdd5
