@@ -1,5 +1,5 @@
-# //【2024-06-21 23:47:10】
-/SHA1.TXT= 22e7a7fd4267d2740c2d3db30aabcb86
+# //【2024-06-26 00:57:59】
+/SHA1.TXT= 32f61813c488596803e0bc9c6d17e0b5
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 8e12fcedcfb3d3c2a0dfaf8ee942b0e0
 /amd64/clash= 6bebf5328716b0bd70d7e50f65ee4ceb
@@ -49,10 +49,10 @@
 /rule/dns_proxy.txt= 6e84a2be8e683198aef0bcad419a2a97
 /rule/global_apple.txt= e40176e513120cc3cbd788155cf11180
 /rule/global_ip_cloudflare.txt= 2522dff3193fe8e2ab0a0612f151dd9e
-/rule/global_video.txt= f6c3649f6a52154b8fe875db3bfdf26a
+/rule/global_video.txt= b171e121752f13984f484afab2f6eeeb
 /rule/global_video_netflix.txt= 7584fe77a756c268e336ad930e6d9c01
 /rule/global_video_other.txt= 8a469a97fba79523d3e0d98af842bf7e
-/rule/global_video_porn.txt= a7bbade0b9e6d84e0f5e30f3397789e5
+/rule/global_video_porn.txt= 334d19fb7a0584c4ddaf4ae66d57eaa6
 /rule/global_video_youtube.txt= 682bf6467d0e4d5f80c486d00077e71c
 /rule/global_web.txt= 114939cabf076d2116c8ecbc8e92ec2b
 /rule/global_web_amazon.txt= 3c5acd14975f0215aba773de7ae78ec2
@@ -115,11 +115,11 @@
 /s/c7.json= f3276c80e3d9922308a70c1bb093b354
 /s/c8.json= 7fff371599a7cadbe2a8294eb5e425a2
 /s/c9.json= 249733605c59ea7b2e8a2e2ad9b53e94
-/s/file1.txt= 598e94a2ed4402ff37115ddd339a67ce
+/s/file1.txt= 8ae7cc1ac26fa384e37d03ad9b1012bb
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 6229d10a0b90247872691b03c5a1e817
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= 4274be71c6046183e93a075c87a1719a
+/s/file3.txt= ee0989b49921857de84ef7dd890aa240
 /s/file4.txt= 1d7ee360d503a1f51b547da84f3cfa54
 /s/file5.txt= 9542cda428125d923ea4430b5fb3fe13
 /s/file6.txt= 4ba098b55673cff9ba0f6776a955cd29
@@ -153,7 +153,7 @@
 /t/kcptun= ee61e7783ab603c42bc9a942548198a7
 /t/metacubexd-gh-pages.tgz= edf5680369746adbdee1ac70f6bd17ba
 /t/metacubexd-gh-pages.zip= e7cf1ed2368cbb07277054033b85bdec
-/t/rule.tgz= 7f4769afb13f1a6e936a853a23f3e100
+/t/rule.tgz= 0c4e50563f987b7b0b8b504380a6dbd5
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
