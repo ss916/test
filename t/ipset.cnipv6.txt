@@ -27,7 +27,6 @@ add cnipv6 2001:dd9::/48
 add cnipv6 2001:df0:1bc0::/48
 add cnipv6 2001:df0:25c0::/48
 add cnipv6 2001:df0:26c0::/48
-add cnipv6 2001:df0:27e::/48
 add cnipv6 2001:df0:2e00::/48
 add cnipv6 2001:df0:2e80::/48
 add cnipv6 2001:df0:423::/48
@@ -582,7 +581,9 @@ add cnipv6 2401:a6e0::/32
 add cnipv6 2401:a720::/32
 add cnipv6 2401:a940::/32
 add cnipv6 2401:a980::/32
+add cnipv6 2401:a9a0::/32
 add cnipv6 2401:aa00::/32
+add cnipv6 2401:aa20::/32
 add cnipv6 2401:aa40::/32
 add cnipv6 2401:ac0::/32
 add cnipv6 2401:acc0::/32
