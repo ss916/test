@@ -1,4 +1,4 @@
-# //【2024-06-13 01:21:51】
+# //【2024-06-26 23:29:07】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -88,91 +88,11 @@ hosts:
   #'+.googlesyndication.com': 127.0.0.1
   #'+.googletagmanager.com': 127.0.0.1
   #'+.google-analytics.com': 127.0.0.1
-  ##mi.com
-  #'+.pandora.mi.com': 127.0.0.1
-  #'a.hl.mi.com': 127.0.0.1
-  #'union.mi.com': 127.0.0.1
-  #'d.g.mi.com': 127.0.0.1
-  #'migc.g.mi.com': 127.0.0.1
-  #'migcreport.g.mi.com': 127.0.0.1
-  #'mis.g.mi.com': 127.0.0.1
-  #'mivideo.g.mi.com': 127.0.0.1
-  #'sg.a.stat.mi.com': 127.0.0.1
-  #'staging.admin.e.mi.com': 127.0.0.1
-  #'ad.mi.com': 127.0.0.1
-  ##xiaomi.net
-  #'+.resolver.msg.xiaomi.net': 127.0.0.1
-  #'app.chat.xiaomi.net': 127.0.0.1
-  #'lxcdn.dl.files.xiaomi.net': 127.0.0.1
-  #'migrate.driveapi.micloud.xiaomi.net': 127.0.0.1
-  #'mlog.search.xiaomi.net': 127.0.0.1
-  #'sec-cdn.static.xiaomi.net': 127.0.0.1
   ##xiaomi.com
-  #'ad.xiaomi.com': 127.0.0.1
-  #'ad1.xiaomi.com': 127.0.0.1
-  #'ad.intl.xiaomi.com': 127.0.0.1
-  #'api.installer.xiaomi.com': 127.0.0.1
-  #'api.ad.xiaomi.com': 127.0.0.1
-  #'o2o.api.xiaomi.com': 127.0.0.1
-  #'dvb.pandora.xiaomi.com': 127.0.0.1
-  #'de.pandora.xiaomi.com': 127.0.0.1
-  #'starfish.pandora.xiaomi.com': 127.0.0.1
-  #'jellyfish.pandora.xiaomi.com': 127.0.0.1
-  #'bss.pandora.xiaomi.com': 127.0.0.1
-  #'stat.pandora.xiaomi.com': 127.0.0.1
-  #'mishop.pandora.xiaomi.com': 127.0.0.1
-  #'misc.pandora.xiaomi.com': 127.0.0.1
-  #'gallery.pandora.xiaomi.com': 127.0.0.1
-  #'mishop.cdn.pandora.xiaomi.com': 127.0.0.1
-  #'notice.game.xiaomi.com': 127.0.0.1
-  #'ppurifier.game.xiaomi.com': 127.0.0.1
-  #'ssp.xiaomi.com': 127.0.0.1
   'tracker.ai.xiaomi.com': 127.0.0.1
   'flash.sec.miui.com': 127.0.0.1
-  #'video.market.xiaomi.com': 127.0.0.1
-  #'a.market.xiaomi.com': 127.0.0.1
-  #'a.stat.xiaomi.com': 127.0.0.1
-  #'data.mistat.xiaomi.com': 127.0.0.1
-  #'storeconfig.mistat.xiaomi.com': 127.0.0.1
-  #'abtest.mistat.xiaomi.com': 127.0.0.1
-  #'wtradv.market.xiaomi.com': 127.0.0.1
-  #'t1.market.xiaomi.com': 127.0.0.1
-  #'shenghuo.xiaomi.com': 127.0.0.1
-  ##miui.com
-  #'ccc.sys.miui.com': 127.0.0.1
-  #'hd.browser.miui.com': 127.0.0.1
-  #'httpdns.browser.miui.com': 127.0.0.1
-  #'logupdate.avlyun.sec.miui.com': 127.0.0.1
-  #'nav.browser.miui.com': 127.0.0.1
-  #'sa.api.intl.miui.com': 127.0.0.1
-  #'adinfo.ra1.xlmc.sec.miui.com': 127.0.0.1
-  #'adv.sec.intl.miui.com': 127.0.0.1
-  #'api.ra2.xlmc.sec.miui.com': 127.0.0.1
-  #'api.xk.miui.com': 127.0.0.1
-  #'calopenupdate.comm.miui.com': 127.0.0.1
-  #'fb.xk.miui.com': 127.0.0.1
-  #'info.sec.miui.com': 127.0.0.1
-  #'proxy.sec.miui.com': 127.0.0.1
-  #'metok.sys.miui.com': 127.0.0.1
-  #'reader.browser.miui.com': 127.0.0.1
-  #'security.browser.miui.com': 127.0.0.1
-  #'hot.browser.intl.miui.com': 127.0.0.1
-  #'activity.browser.intl.miui.com': 127.0.0.1
-  #'api.brs.intl.miui.com': 127.0.0.1
-  #'api.newsfeed.intl.miui.com': 127.0.0.1
-  #'api.tw06.xlmc.sec.miui.com': 127.0.0.1
-  #'etl.xlmc.sec.miui.com': 127.0.0.1
-  #'api.sec.miui.com': 127.0.0.1
-  #'adv.sec.miui.com': 127.0.0.1
   'tracking.miui.com': 127.0.0.1
-  #'r.browser.miui.com': 127.0.0.1
   '+.browser.miui.com': 127.0.0.1
-  ##ad/ads
-  #'+.ads.*.com': 127.0.0.1
-  #'+.ads.*.net': 127.0.0.1
-  #'+.ad.*.com': 127.0.0.1
-  #'+.ad1.*.com': 127.0.0.1
-  #'+.ad.*.net': 127.0.0.1
   ##other
   '+.crashlytics.com': ['127.0.0.1', '::1']
   '+.flurry.com': ['127.0.0.1', '::1']
@@ -223,10 +143,10 @@ dns:
   ipv6: true
   enhanced-mode: redir-host
   #fake-ip-range: 198.18.0.1/16
-  #respect-rules: true
+  respect-rules: true
   fake-ip-filter: ["*.lan", "+.msftncsi.com", "+.msftconnecttest.com"]
-  proxy-server-nameserver: ["https://208.67.222.222/dns-query", "https://101.101.101.101/dns-query"]
-  default-nameserver: ["https://208.67.222.222/dns-query", "https://101.101.101.101/dns-query"]
+  proxy-server-nameserver: ["https://208.67.220.220/dns-query", "https://101.101.101.101/dns-query"]
+  default-nameserver: ["https://208.67.220.220/dns-query", "https://101.101.101.101/dns-query"]
   nameserver-policy:
     #"geosite:category-ads-all": rcode://success
     #"rule-set:block_hosts,block_dnsmasq,block_privacy": rcode://success
@@ -240,9 +160,11 @@ dns:
     #- system
     #- '8.8.8.8#RULES'
     #- tls://8.8.4.4:853
+    #- "udp://1.1.1.1:53#🔍dnsproxy"
     - https://101.101.101.101/dns-query
     - https://208.67.220.220/dns-query
-    - "udp://1.1.1.1:53#🔍dnsproxy"
+    #- "udp://1.1.1.1:53"
+    - https://1.1.1.1/dns-query
 
 
 proxy-providers:
@@ -294,6 +216,9 @@ rule-providers:
   block_dnsmasq: { type: file, behavior: domain, format: text, path: ./rule/block_dnsmasq.text.txt, interval: 30001 } #markadblock
   block_privacy: { type: file, behavior: classical, path: ./rule/block_privacy.txt, interval: 30001 } #markadblock
 
+  dns_proxy: { type: file, behavior: classical, path: ./rule/dns_proxy.txt, interval: 30001 }
+  dns_direct: { type: file, behavior: classical, path: ./rule/dns_direct.txt, interval: 30001 }
+
   chore_1: { type: file, behavior: classical, path: ./rule/chore_1.txt, interval: 30001 }
   chore_2: { type: file, behavior: classical, path: ./rule/chore_2.txt, interval: 30001 }
   chore_3: { type: file, behavior: classical, path: ./rule/chore_3.txt, interval: 30001 }
@@ -320,7 +245,6 @@ rules:
 
 #- OR,((DOMAIN,baidu.com),(NETWORK,UDP)),REJECT
 #- NOT,(DOMAIN,baidu.com),REJECT 
-#- AND,((DST-PORT,443),(OR,((IP-CIDR,208.67.220.220/32),(IP-CIDR,208.67.222.222/32))),(NETWORK,UDP)),屏蔽
 
 #ntp
 #- AND,((NETWORK,UDP),(DST-PORT,123)),直连
@@ -341,6 +265,23 @@ rules:
 - RULE-SET,chore_1,🌿杂项1
 - RULE-SET,chore_2,🌿杂项2
 - RULE-SET,chore_3,🌿杂项3
+
+- RULE-SET,dns_proxy,🔍dnsproxy
+- AND,((IP-CIDR,1.1.1.1/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+- AND,((IP-CIDR,8.8.8.8/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+- AND,((IP-CIDR,208.67.222.222/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+- AND,((IP-CIDR,9.9.9.9/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+
+- RULE-SET,dns_direct,🔎dnsdirect
+- AND,((IP-CIDR,1.0.0.1/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,8.8.4.4/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,208.67.220.220/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,149.112.112.112/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,101.101.101.101/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,223.5.5.5/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,223.6.6.6/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,120.53.53.53/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+- AND,((IP-CIDR,1.12.12.12/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
 
 - RULE-SET,block_hosts,❌hosts #markadblock
 - RULE-SET,block_dnsmasq,❌dnsmasq #markadblock
@@ -412,10 +353,6 @@ rules:
 #- GEOSITE,cn,🀄geosite网站
 - RULE-SET,cn_domains_china_conf,🀄geosite网站
 
-#- DOMAIN,cdn.jsdelivr.net,🌏INNER内部请求
-#- DOMAIN,raw.githubusercontent.com,🌏INNER内部请求
-#- DOMAIN-SUFFIX,ariadl.eu.org,🌏INNER内部请求
-#- DOMAIN-SUFFIX,workers.dev,🌏INNER内部请求
 - IN-TYPE,INNER,🌏INNER内部请求
 
 - GEOIP,CN,🀄IP
@@ -626,13 +563,23 @@ proxy-groups:
   use:
     - test
 
+- name: 🔎dnsdirect
+  type: select
+  proxies:
+    - ➡️直连
+    - 🎯代理
+    - ❎屏蔽
+    - PASS
+  use:
+    - test
+
 - name: 🌏INNER内部请求
   type: select
   proxies:
+    - PASS
     - 🎯代理
     - ➡️直连
     - ❎屏蔽
-    - PASS
   use:
     - test
 
