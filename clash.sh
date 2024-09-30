@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=246
+sh_ver=247
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -146,9 +146,9 @@ if [ ! -z "$diretc" ] ; then
 	if [ "$diretc" != "/tmp/${name}/etc" ] ; then
 		[ ! -d $diretc ] && mkdir -p $diretc
 		size=$(df $diretc | awk '!/Available/{print $4}')
-		if [ "$size" -lt "5120" ] ; then
+		if [ "$size" -lt "15360" ] ; then
 			diretc_new=/tmp/${name}/etc
-			echo "！！检测到$diretc剩余空间$size KB小于5MB，强制将资源文件夹改为 $diretc_new"
+			echo "！！检测到$diretc剩余空间$size KB小于 15 MB，强制将资源文件夹改为 $diretc_new"
 			sed -i '/diretc=/d' $dirconf/settings.txt
 			diretc=$diretc_new
 			echo "diretc=$diretc" >> $dirconf/settings.txt
