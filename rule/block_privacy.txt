@@ -1,0 +1,11 @@
+payload:
+  #❌隐私：block_privacy.txt
+  - DOMAIN-SUFFIX,block_privacy.txt
+  #- DST-PORT,19302
+  #- DST-PORT,19305
+  #- DST-PORT,3478
+  - DOMAIN,a0.app.xiaomi.com
+  - DOMAIN,api.installer.xiaomi.com
+  - DOMAIN,miav-cse.avlyun.com
+  - DOMAIN,miui-fxcse.avlyun.com
+  

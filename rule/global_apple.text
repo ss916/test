@@ -1,0 +1,79 @@
+#text
+  #🍏苹果：global_apple.txt
+  #https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Providers/Ruleset/Apple.yaml
+apple.comscoreresearch.com
++.aaplimg.com
++.akadns.net
++.apple-dns.net
++.apple-cloudkit.com
++.apple-mapkit.com
++.apple.co
++.apple.com
++.apple.com.edgekey.net
++.apple.news
++.appstore.com
++.cdn-apple.com
++.itunes.com
++.me.com
++.mwcname.com
++.mzstatic.com
++.qtlcdn.com
+  #- IP-CIDR,17.0.0.0/8,no-resolve
+  #- IP-CIDR,63.92.224.0/19,no-resolve
+  #- IP-CIDR,65.199.22.0/23,no-resolve
+  #- IP-CIDR,139.178.128.0/18,no-resolve
+  #- IP-CIDR,144.178.0.0/19,no-resolve
+  #- IP-CIDR,144.178.36.0/22,no-resolve
+  #- IP-CIDR,144.178.48.0/20,no-resolve
+  #- IP-CIDR,192.35.50.0/24,no-resolve
+  #- IP-CIDR,198.183.17.0/24,no-resolve
+  #- IP-CIDR,205.180.175.0/24,no-resolve
+  #https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt
++.apple-icloud.cn
++.appleicloud.cn
++.applemx-icloud.com
++.icloud-apple.cn
++.icloud-content.com
++.icloud-isupport.com
++.icloud.ch
++.icloud.com
++.icloud.com.cn
++.icloud.de
++.icloud.ee
++.icloud.fi
++.icloud.fr
++.icloud.hu
++.icloud.ie
++.icloud.is
++.icloud.jp
++.icloud.lv
++.icloud.net.cn
++.icloud.om
++.icloud.org
++.icloud.pt
++.icloud.ro
++.icloud.se
++.icloud.si
++.icloud.sk
++.icloud.vn
++.icloudads.net
++.icloudapple.cn
++.icloudbox.net
++.icloudbrowser.net
++.icloude.com
++.icloudhome.com
++.icloudmail.net
++.icloudmusic.net
++.icloudnet.net
++.icloudo.com
++.icloudo.de
++.icloudo.net
++.icloudos.de
++.icloudos.net
++.icloudpay.net
++.icloudsecure.net
++.icloudsetup.com
++.ios-icloud.com
++.myicloud.net
++.mylcloud.net
++.wwwicloud.com

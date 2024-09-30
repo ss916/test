@@ -1,0 +1,41 @@
+payload:
+  #🌿杂项3 ：chore_3.txt
+  - DOMAIN-KEYWORD,httpdns
+  - DOMAIN-KEYWORD,httpsdns
+  # Alibaba
+  - DOMAIN,httpdns.alicdn.com
+  # Aliyun
+  - DOMAIN,httpdns-api.aliyuncs.com
+  - DOMAIN,httpdns-sc.aliyuncs.com
+  # Baidu
+  - DOMAIN,httpsdns.baidu.com
+  - DOMAIN,httpdns.baidu.com
+  # BaiduBCE
+  - DOMAIN,httpdns.baidubce.com
+  # Bilibili
+  - DOMAIN,httpdns.bilivideo.com
+  # Huawei
+  - DOMAIN,httpdns.c.cdnhwc2.com
+  # JD
+  - DOMAIN,dns.jd.com
+  # JD Cloud
+  # NetEase
+  - DOMAIN,httpdns.n.netease.com
+  - DOMAIN,music.httpdns.c.163.com
+  - DOMAIN,lofter.httpdns.c.163.com
+  # Oppo
+  - DOMAIN,httpdns.push.oppomobile.com
+  # Volcengine
+  - DOMAIN,httpdns.volcengineapi.com
+  # Weibo
+  - DOMAIN,dns.weibo.cn
+  # Weixin
+  - DOMAIN,dns.weixin.qq.com
+  - DOMAIN,dns.weixin.qq.com.cn
+  #kuaishou
+  - DOMAIN,hdns.ksyun.com
+  - DOMAIN,apidns.kwd.inkuai.com
+  - DOMAIN,mon.zijieapi.com.bytedns1.com
+  
+  
+  

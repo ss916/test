@@ -1,0 +1,15 @@
+payload:
+  #🔍dnsdirect ：dns_direct.txt
+  #cloudflare DNS
+  #- IP-CIDR,1.0.0.1/32,no-resolve
+  #google dns
+  #- IP-CIDR,8.8.4.4/32,no-resolve
+  #opendns
+  #- IP-CIDR,208.67.220.220/32,no-resolve
+  #IBM
+  #- IP-CIDR,149.112.112.112/32,no-resolve
+  #adguard
+  - IP-CIDR,94.140.14.14/32,no-resolve
+  
+  
+  

@@ -1,0 +1,709 @@
+# //【2024-09-30 00:03:41】
+# client
+#https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
+
+secret: "123a456"
+
+external-ui: clash-dashboard-gh-pages
+external-controller: 0.0.0.0:8000
+
+#external-ui: Razord-meta-gh-pages
+#external-controller-tls: 0.0.0.0:8000
+#external-controller: 127.0.0.1:8010
+#tls: { certificate: /etc/storage/pdcn/clash/server.crt, private-key: /etc/storage/pdcn/clash/server.key }
+#external-doh-server: /dohserver
+#external-controller-cors: { allow-origins: [ * ], allow-private-network: true }
+
+mode: rule
+port: 8003
+socks-port: 8004
+mixed-port: 8005
+redir-port: 8002
+tproxy-port: 8001
+allow-lan: true
+bind-address: "*"
+log-level: info
+ipv6: true
+routing-mark: 20000
+
+experimental:
+  dialer-ip4p-convert: true
+  #quic-go-disable-gso: true
+  #quic-go-disable-ecn: true
+
+
+#authentication:
+  #- "user1:userpassword1"
+#skip-auth-prefixes:
+  #- '127.0.0.1/8'
+  #- '::1/128'
+  #- '192.168.0.0/16'
+  #- '172.16.0.0/12'
+
+listeners:
+  #- { name: 'socks5-in-1', type: socks, port: '18004', listen: '127.0.0.1', rule: 'rules', udp: true, users: [ { username: u1, password: 12345 } ] }
+  #- { name: 'http-in-1', type: http, port: '18003', listen: '127.0.0.1', rule: 'rules', users: [ { username: u1, password: 12345 } ] }
+  #- { name: 'mixed-in-1', type: mixed, port: '18005', listen: '127.0.0.1', rule: 'rules', udp: true, users: [ ] }
+  #- { name: 'reidr-in-1', type: redir, port: '18002', listen: '0.0.0.0', rule: 'rules' }
+  #- { name: 'tproxy-in-1', type: tproxy, port: '18001', listen: '0.0.0.0', rule: 'rules', udp: true }
+  - { name: 'ss-in-1-ss2022', type: shadowsocks, port: '55561', password: 'ssS2ARJoUezff7KAWAoiAQ==', cipher: '2022-blake3-aes-128-gcm', udp: true, listen: '0.0.0.0', rule: 'rules' }
+  - { name: 'ss-in-2-rc4md5', type: shadowsocks, port: '55560', password: 'ssS2ARJoUezff7KAWAoiAQ==', cipher: 'rc4-md5', udp: true, listen: '0.0.0.0', rule: 'rules' }
+  - { name: 'vmess-in-1', type: vmess, port: '55562', users: [ { username: vmess1, uuid: '265c594b-56c3-4a55-99c5-1bc5460081a8', alterId: 0}, { username: vmess2, uuid: '9d879bb7-3cba-49e4-a4b6-2bbce4b8ce93', alterId: 0} ], listen: '0.0.0.0', rule: 'rules' }
+  - { name: 'vmess-ws-in-1-80', type: vmess, port: '55563', users: [ { username: vmessws1, uuid: '59677400-5cf1-420f-ad0d-3262668ff009', alterId: 0}, { username: vmessws2, uuid: 'b3bbf68b-4988-4af4-bf67-0065e029b3f5', alterId: 0} ], ws-path: '/master.m3u8', listen: '127.0.0.1', rule: 'rules' }
+  - { name: 'vmess-ws-in-2-443', type: vmess, port: '55564', users: [ { username: xvmessws1, uuid: 'd9f7a087-4d1d-4467-8e2b-6947dc891b3d', alterId: 0}, { username: xvmessws2, uuid: '186715c9-61cd-4419-8240-cd09bb592748', alterId: 0} ], ws-path: '/vmess/ws/55564', listen: '127.0.0.1', rule: 'rules' }
+  #- { name: 'vmess-wss-in-1', type: vmess, port: '55565', users: [ { username: vmesswss1, uuid: '7612e926-58fd-4530-a579-86cf05fe0646', alterId: 0}, { username: vmesswss2, uuid: 'f88438f1-afb5-471e-b526-00bcc2968ef5', alterId: 0} ], ws-path: '/vmess/wss/55565', certificate: /usr/local/etc/ssl/server1.crt, private-key: /usr/local/etc/ssl/server1.key, listen: '0.0.0.0', rule: 'rules' }
+  
+  #- { name: 'tuic-in-1', type: tuic,  port: '443', token: [ '1abaefdb967d', '2b394ad2eced', '3c11ga3b62ec' ], users: { '1b8cab15-d828-4bd8-b01d-e2d19c12a48e': '1abaefdb96d', '2b5f694c-1105-4495-8b7a-abe221544228': '2b394ad2ecd' }, congestion-controller: bbr, alpn: [ 'h3' ], certificate: /usr/local/etc/ssl/server1.crt, private-key: /usr/local/etc/ssl/server1.key, max-idle-time: 15000, authentication-timeout: 5000, max-udp-relay-packet-size: 1500, cwnd: 32, listen: '0.0.0.0', rule: 'rules' }
+  #- { name: 'hysteria2-in-1', type: hysteria2,  port: '443', users: { 'p1': 'password1', p2: password2, 'up1': 'user1:password1', up2: 'user2:password2' }, up: 500 mbps, down: 500 mbps, ignore-client-bandwidth: false, masquerade: 'http://127.0.0.1:80', alpn: [ 'h3' ], certificate: /usr/local/etc/ssl/server1.crt, private-key: /usr/local/etc/ssl/server1.key, max-idle-time: 15000, cwnd: 32, listen: '0.0.0.0', rule: 'rules' }
+  
+  #- { name: 'tunnel-in-1', type: tunnel, network: [ tcp, udp ], listen: '0.0.0.0', port: '55570', target: 'target.com', rule: 'rules', proxy: '代理' }
+  - { name: 'warp-tunnel-in-4', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '1701', target: '162.159.193.8:1701', proxy: '📤warp-tunnel-out' }
+  - { name: 'warp-tunnel-in-6', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '4500', target: '[2606:4700:d0::a29f:c010]:4500', proxy: '📤warp-tunnel-out' }
+
+#meta-core
+geodata-mode: true
+tcp-concurrent: true
+find-process-mode: off
+global-client-fingerprint: random
+
+ntp:
+  enable: true
+  server: time.apple.com
+  port: 123
+  interval: 80000
+  #write-to-system: true
+  #dialer-proxy: proxy1
+
+
+#tun:
+  #enable: false
+  #stack: system
+  #device: tun0
+  #dns-hijack:
+    #- 'any:53'
+  #auto-route: false
+  #auto-interface-detect: false
+
+hosts:
+  ##google
+  #'+.doubleclick.net': ['127.0.0.1', '::1']
+  'ad.doubleclick.net': 127.0.0.1
+  '+.googleadservices.com': 127.0.0.1
+  #'+.googlesyndication.com': 127.0.0.1
+  #'+.googletagmanager.com': 127.0.0.1
+  #'+.google-analytics.com': 127.0.0.1
+  ##xiaomi.com
+  'tracker.ai.xiaomi.com': 127.0.0.1
+  'flash.sec.miui.com': 127.0.0.1
+  'tracking.miui.com': 127.0.0.1
+  '+.browser.miui.com': 127.0.0.1
+  ##other
+  '+.crashlytics.com': 127.0.0.1
+  '+.flurry.com': 127.0.0.1
+  '+.realsrv.com': 127.0.0.1
+  '+.cloud.dbankcloud.cn': 127.0.0.1
+  '+.onion': 198.16.1.1
+  #'domain.com': 'domain2.com'
+  '+.pglstatp-toutiao.com': 127.0.0.1
+  '+.pangolin-sdk-toutiao.com': 127.0.0.1
+  '+.ctobsnssdk.com': 127.0.0.1
+  '+.e.qq.com': 127.0.0.1
+  '+.gdt.qq.com': 127.0.0.1
+  'oth.eve.mdt.qq.com': 127.0.0.1
+  '+.umeng.com': 127.0.0.1
+  'a0.app.xiaomi.com': 127.0.0.1
+  'api.installer.xiaomi.com': 127.0.0.1
+  'miav-cse.avlyun.com': 127.0.0.1
+  'miui-fxcse.avlyun.com': 127.0.0.1
+  #other2
+  '+.cyberprotector.online': 127.0.0.1
+  '+.myrc.xyz': 127.0.0.1
+  '+.sebfq.com': 127.0.0.1
+  '+.netnut.io': 127.0.0.1
+  '+.jizztagram.com': 127.0.0.1
+  'checkout.airwallex.com': 127.0.0.1
+
+
+sniffer:
+  enable: true
+  #override-destination: true
+  sniff:
+    HTTP: { ports: [1-442, 444-8442, 8444-65535], override-destination: true }
+    TLS: { ports: [1-79, 81-8079, 8081-65535], override-destination: true }
+    QUIC: { ports: [81-8079, 8081-65535], override-destination: true }
+  #skip-src-address:
+    #- 192.168.1.1/32
+  #skip-dst-address:
+    #- 8.8.8.8/32
+  skip-domain:
+    #Top-level Domain
+    #- '*'
+    #Apple
+    - '+.push.apple.com'
+    #mi
+    - 'Mijia Cloud'
+
+
+dns:
+  enable: true
+  listen: 0.0.0.0:5300
+  use-hosts: true
+  cache-algorithm: arc
+  ipv6: true
+  enhanced-mode: redir-host
+  #fake-ip-filter-mode: blacklist #blacklist、whitelist
+  #fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.arpa"
+    - "+.msftncsi.com"
+    - "+.msftconnecttest.com"
+    - "rule-set:cn_domains_china_conf,cn_web_bytedance,cn_video,cn_web_other"
+    #- "geosite:cn"
+  respect-rules: true
+  proxy-server-nameserver: ["https://208.67.220.220/dns-query", "https://101.101.101.101/dns-query"]
+  default-nameserver: ["https://208.67.220.220/dns-query", "https://101.101.101.101/dns-query"]
+  nameserver-policy:
+    #"geosite:category-ads-all": rcode://success
+    #"rule-set:block_hosts,block_dnsmasq,block_privacy": rcode://success
+    #"geosite:cn": ["https://dns.alidns.com/dns-query#h3=true", "https://doh.pub/dns-query", "quic://dns.alidns.com:853"]
+    "+.google.cn,+.googleapis.cn,+.gkecnapps.cn,+.googlecnapps.cn,+.gstatic.cn,+.gstaticcnapps.cn,+.g.cn,+.fhjasokiwq.com": ["tls://8.8.4.4:853", "https://208.67.220.220/dns-query"]
+    "+.msftconnecttest.com,+.msftncsi.com": ["https://223.6.6.6/dns-query", "https://1.12.12.12/dns-query"]
+    "geosite:apple,microsoft@cn,steam@cn": ["https://223.6.6.6/dns-query", "https://1.12.12.12/dns-query"]
+    "rule-set:cn_domains_china_conf,cn_web_bytedance,cn_video,cn_web_other": ["https://223.5.5.5/dns-query", "https://120.53.53.53/dns-query"]
+    "geosite:cn": ["https://223.6.6.6/dns-query", "https://1.12.12.12/dns-query"]
+  nameserver:
+    #- system
+    #- '8.8.8.8#RULES'
+    #- tls://8.8.4.4:853
+    #- "udp://1.1.1.1:53#🔍dnsproxy"
+    #- https://8.8.8.8/dns-query&ecs=101.200.0.0/15&ecs-override=true
+    - https://101.101.101.101/dns-query
+    - https://208.67.220.220/dns-query
+    #- "udp://1.1.1.1:53"
+    - https://1.1.1.1/dns-query
+
+
+proxy-providers:
+
+  test: { type: file, interval: 30000, path: /etc/storage/pdcn/clash/test.txt, health-check: { enable: true, interval: 300, url: http://cp.cloudflare.com/generate_204 } }
+
+  #在线订阅模板:
+    #type: http
+    #url: http://192.168.1.1:331/link1.txt
+    #interval: 30000
+    #path: ./在线订阅模板.txt
+    #filter: '中转|最快'
+    #health-check:
+      #enable: true
+      #interval: 600
+      #url: http://clients1.google.com/generate_204
+
+  #本地文件模板:
+    #type: file
+    #interval: 30000
+    #path: ./本地文件模板.txt
+    #filter: '中转|最快'
+    #health-check:
+      #enable: true
+      #interval: 600
+      #url: http://clients2.google.com/generate_204
+
+
+rule-providers:
+
+  cn_video: { type: file, behavior: domain, format: mrs, path: ./rule/cn_video.mrs, interval: 30001 }
+  cn_web_bytedance: { type: file, behavior: domain, format: mrs, path: ./rule/cn_web_bytedance.mrs, interval: 30001 }
+  cn_web_other: { type: file, behavior: domain, format: mrs, path: ./rule/cn_web_other.mrs, interval: 30001 }
+  cn_domains_china_conf: { type: file, behavior: domain, format: mrs, path: ./rule/cn_domains_china_conf.mrs, interval: 30001 }
+
+  global_apple: { type: file, behavior: domain, format: mrs, path: ./rule/global_apple.mrs, interval: 30001 }
+
+  global_video_youtube: { type: file, behavior: domain, format: mrs, path: ./rule/global_video_youtube.mrs, interval: 30001 }
+  global_video_netflix: { type: file, behavior: classical, path: ./rule/global_video_netflix.txt, interval: 30001 }
+  global_video_porn: { type: file, behavior: classical, path: ./rule/global_video_porn.txt, interval: 30001 }
+  global_video_other: { type: file, behavior: classical, path: ./rule/global_video_other.txt, interval: 30001 }
+
+  global_web_google: { type: file, behavior: classical, path: ./rule/global_web_google.txt, interval: 30001 }
+  global_web_telegram: { type: file, behavior: classical, path: ./rule/global_web_telegram.txt, interval: 30001 }
+  global_web_microsoft: { type: file, behavior: domain, format: mrs, path: ./rule/global_web_microsoft.mrs, interval: 30001 }
+  global_web_other: { type: file, behavior: domain, format: mrs, path: ./rule/global_web_other.mrs, interval: 30001 }
+
+  block_hosts: { type: file, behavior: domain, format: mrs, path: ./rule/block_hosts.mrs, interval: 30001 } #markadblock
+  block_dnsmasq: { type: file, behavior: domain, format: mrs, path: ./rule/block_dnsmasq.mrs, interval: 30001 } #markadblock
+  block_privacy: { type: file, behavior: classical, path: ./rule/block_privacy.txt, interval: 30001 } #markadblock
+
+  dns_proxy: { type: file, behavior: classical, path: ./rule/dns_proxy.txt, interval: 30001 }
+  dns_direct: { type: file, behavior: classical, path: ./rule/dns_direct.txt, interval: 30001 }
+
+  chore_1: { type: file, behavior: classical, path: ./rule/chore_1.txt, interval: 30001 }
+  chore_2: { type: file, behavior: classical, path: ./rule/chore_2.txt, interval: 30001 }
+  chore_3: { type: file, behavior: classical, path: ./rule/chore_3.txt, interval: 30001 }
+
+  rule1: { type: file, behavior: classical, path: /etc/storage/pdcn/clash/rule1.txt, interval: 30001 }
+  rule2: { type: file, behavior: classical, path: /etc/storage/pdcn/clash/rule2.txt, interval: 30001 }
+  rule3: { type: file, behavior: classical, path: /etc/storage/pdcn/clash/rule3.txt, interval: 30001 }
+
+  #cn_video:
+    #type: http
+    #behavior: domain
+    #format: text #yaml、text
+    #path: ./rule/cn_video.txt
+    #url: https://raw.githubusercontent.com/xxxx/test/main/rule/cn_video.txt
+    #interval: 30001
+#  cn_video: { type: http, behavior: domain, format: text, path: ./rule/cn_video.txt, url: https://raw.githubusercontent.com/xxxx/test/main/rule/cn_video.txt, interval: 30001 }
+
+
+rules:
+  
+  #- DOMAIN-KEYWORD,360,屏蔽
+  #- DOMAIN-SUFFIX,360.com,屏蔽
+  #- DOMAIN,m.360.cn,屏蔽
+  
+  #- OR,((DOMAIN,baidu.com),(NETWORK,UDP)),REJECT
+  #- NOT,(DOMAIN,baidu.com),REJECT 
+  
+  #ntp
+  #- AND,((NETWORK,UDP),(DST-PORT,123)),直连
+  #quic
+  - AND,((NETWORK,UDP),(DST-PORT,443),(GEOSITE,google)),❎屏蔽
+  #p2p
+  - AND,((NETWORK,UDP),(OR,((DOMAIN-KEYWORD,bilibili),(DOMAIN-KEYWORD,biliapi),(DOMAIN-KEYWORD,mcdn),(DOMAIN-KEYWORD,douyu)))),❎屏蔽
+  - AND,((NETWORK,TCP),(DOMAIN-KEYWORD,stun),(OR,((DOMAIN-KEYWORD,bilibili),(DOMAIN-KEYWORD,douyu)))),❎屏蔽
+  - OR,((AND,((DOMAIN-KEYWORD,pcdn),(DOMAIN-KEYWORD,biliapi))),(AND,((DOMAIN-KEYWORD,p2p),(DOMAIN-KEYWORD,bilibili)))),❎屏蔽
+  
+  - DOMAIN-SUFFIX,onion,🌰Tor
+  - IP-CIDR,198.16.1.1/32,🌰Tor,no-resolve
+  
+  - RULE-SET,rule1,🍊本地规则1
+  - RULE-SET,rule2,🍊本地规则2
+  - RULE-SET,rule3,🍊本地规则3
+  
+  - RULE-SET,chore_1,🌿杂项1
+  - RULE-SET,chore_2,🌿杂项2
+  - RULE-SET,chore_3,🌿杂项3
+  
+  - RULE-SET,dns_proxy,🔍dnsproxy
+  - AND,((IP-CIDR,1.1.1.1/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+  - AND,((IP-CIDR,8.8.8.8/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+  - AND,((IP-CIDR,208.67.222.222/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+  - AND,((IP-CIDR,9.9.9.9/32,no-resolve),(IN-TYPE,INNER)),🔍dnsproxy
+  
+  - RULE-SET,dns_direct,🔎dnsdirect
+  - AND,((IP-CIDR,1.0.0.1/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,8.8.4.4/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,208.67.220.220/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,149.112.112.112/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,101.101.101.101/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,223.5.5.5/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,223.6.6.6/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,120.53.53.53/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  - AND,((IP-CIDR,1.12.12.12/32,no-resolve),(IN-TYPE,INNER)),🔎dnsdirect
+  
+  - RULE-SET,block_hosts,❌hosts #markadblock
+  - RULE-SET,block_dnsmasq,❌dnsmasq #markadblock
+  - GEOSITE,category-ads-all,❌geosite广告 #markadblock
+  - RULE-SET,block_privacy,❌隐私 #markadblock
+  
+  - RULE-SET,global_video_youtube,📺YouTube
+  - RULE-SET,global_video_netflix,💻Netflix
+  - RULE-SET,global_video_porn,📽️porn
+  - RULE-SET,global_video_other,🖥️全球影音
+  
+  - RULE-SET,global_web_google,🌾谷歌
+  - RULE-SET,global_web_telegram,✈️电报
+  - RULE-SET,global_web_microsoft,🪟微软
+  
+  - RULE-SET,cn_web_bytedance,🀄字节跳动
+  - RULE-SET,cn_video,🀄影音
+  - RULE-SET,cn_web_other,🀄网站
+  
+  - RULE-SET,global_apple,🍏苹果
+  
+  - RULE-SET,global_web_other,🆓国外网站
+  
+  #♻️局域网IP
+  - IP-CIDR,192.168.96.1/19,♻️局域网IP,no-resolve
+  - IP-CIDR,192.168.128.1/17,♻️局域网IP,no-resolve
+  
+  # ♻️内网IP段
+  - DOMAIN-SUFFIX,local,♻️内网IP,no-resolve
+  - IP-CIDR,0.0.0.0/8,♻️内网IP,no-resolve
+  - IP-CIDR,10.0.0.0/8,♻️内网IP,no-resolve
+  - IP-CIDR,100.64.0.0/10,♻️内网IP,no-resolve
+  - IP-CIDR,127.0.0.0/8,♻️内网IP,no-resolve
+  - IP-CIDR,169.254.0.0/16,♻️内网IP,no-resolve
+  - IP-CIDR,172.16.0.0/12,♻️内网IP,no-resolve
+  - IP-CIDR,192.0.0.0/24,♻️内网IP,no-resolve
+  - IP-CIDR,192.0.2.0/24,♻️内网IP,no-resolve
+  - IP-CIDR,192.88.99.0/24,♻️内网IP,no-resolve
+  - IP-CIDR,192.168.0.0/16,♻️内网IP,no-resolve
+  - IP-CIDR,198.18.0.0/15,♻️内网IP,no-resolve
+  - IP-CIDR,198.51.100.0/24,♻️内网IP,no-resolve
+  - IP-CIDR,203.0.113.0/24,♻️内网IP,no-resolve
+  - IP-CIDR,224.0.0.0/4,♻️内网IP,no-resolve
+  - IP-CIDR,240.0.0.0/4,♻️内网IP,no-resolve
+  - IP-CIDR,255.255.255.255/32,♻️内网IP,no-resolve
+  
+  #optional param "no-resolve" for IP rules (GEOIP IP-CIDR)
+  #- IP-CIDR,202.86.0.0/16,代理,no-resolve
+  
+  #目标端口匹配
+  #- DST-PORT,80,直连
+  
+  #源端口匹配
+  #- SRC-PORT,7777,直连
+  #源IP段
+  #- SRC-IP-CIDR,192.168.1.201/32,直连
+  
+  #入站类型，HTTP HTTPS SOCKS SOCKS4 SOCKS5 REDIR TPROXY TUN INNER
+  #- IN-TYPE,HTTP,DIRECT
+  
+  #入站端口
+  #- IN-PORT,55562,proxy
+  #入站名字
+  #- IN-NAME,vmess-in-1,proxy
+  #入站用户
+  #- IN-USER,vmess1,proxy
+  
+  # cn走直连
+  #- GEOSITE,cn,🀄geosite网站
+  - RULE-SET,cn_domains_china_conf,🀄geosite网站
+  
+  - IN-TYPE,INNER,🌏INNER内部请求
+  
+  - GEOIP,CN,🀄IP
+  
+  #其他UDP流量
+  - NETWORK,UDP,❓其他UDP流量
+  
+  #其余流量走兜底match
+  - MATCH,❓其他流量
+  
+
+#proxies:
+
+
+proxy-groups:
+  - name: 🎯代理
+    type: select
+    proxies:
+      - 故障切换
+      - 延迟最低
+      - 负载均衡
+    use:
+      - test
+  
+  #直连=gfwlist，代理=chinalist，默认直连gfwlist
+  - name: ❓其他流量
+    type: select
+    proxies:
+      - ➡️直连 #markgfwlistorchinalist1
+      - 🎯代理 #markgfwlistorchinalist2
+      - ❎屏蔽
+    use:
+      - test
+  
+  - name: 故障切换
+    type: fallback
+    use: #usemark
+      - test
+  
+  - name: 延迟最低
+    type: url-test
+    #tolerance: 50
+    use: #usemark
+      - test
+  
+  - name: 负载均衡
+    type: load-balance
+    strategy: round-robin #consistent-hashing 默认，同个请求域名走同个节点。round-robin 随机轮询
+    use: #usemark
+      - test
+  
+  #mark_proxy_groups
+  
+  - name: 📺YouTube
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 💻Netflix
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 📽️porn
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 🖥️全球影音
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🌾谷歌
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: ✈️电报
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🪟微软
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🆓国外网站
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🍏苹果
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🀄网站
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🀄geosite网站
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🀄影音
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🀄字节跳动
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🀄IP
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🌰Tor
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🔍dnsproxy
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🔎dnsdirect
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🌏INNER内部请求
+    type: select
+    proxies:
+      - PASS
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+    use:
+      - test
+  
+  - name: 🌿杂项1
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 🌿杂项2
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 🌿杂项3
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 🍊本地规则1
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 🍊本地规则2
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: 🍊本地规则3
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: 📤warp-tunnel-out
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: ♻️局域网IP
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  - name: ♻️内网IP
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+  
+  - name: ❓其他UDP流量
+    type: select
+    proxies:
+      - PASS
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+    use:
+      - test
+  
+  - { name: "❌hosts", type: select, proxies: ["❎屏蔽", "➡️直连", "🎯代理", "PASS"] } #markadblock
+  - { name: "❌dnsmasq", type: select, proxies: ["❎屏蔽", "➡️直连", "🎯代理", "PASS"] } #markadblock
+  - { name: "❌geosite广告", type: select, proxies: ["❎屏蔽", "➡️直连", "🎯代理", "PASS"] } #markadblock
+  - { name: "❌隐私", type: select, proxies: ["❎屏蔽", "➡️直连", "🎯代理", "PASS"] } #markadblock
+  
+  - { name: "❎屏蔽", type: select, proxies: ["REJECT"] }
+  #- { name: "❎丢弃", type: select, proxies: ["REJECT-DROP"] }
+  - { name: "➡️直连", type: select, proxies: ["DIRECT"] }
+  #- { name: "➡️直连", type: select, proxies: ["DIRECT"], ip-version: ipv4-prefer }
+
+
+

@@ -1,0 +1,3 @@
+payload:
+  #🌿杂项2 ：chore_2.txt
+  - DOMAIN,chore_2.txt.com

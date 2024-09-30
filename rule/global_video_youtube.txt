@@ -1,0 +1,13 @@
+payload:
+  #📺YouTube ：global_video_youtube.txt
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,yt.be
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,youtube.com
+  - DOMAIN,youtubei.googleapis.com
+  #vanced/revanced
+  - DOMAIN-SUFFIX,returnyoutubedislikeapi.com
+  - DOMAIN,sponsor.ajay.app
+  - DOMAIN,sponsorblock.hankmccord.dev

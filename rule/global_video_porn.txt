@@ -1,0 +1,148 @@
+payload:
+  #📺porn：global_video_porn.txt
+  #GEOSITE
+  - GEOSITE,category-porn
+  #########
+  #porn
+  - DOMAIN-KEYWORD,porn
+  #beeg
+  - DOMAIN-SUFFIX,beeg.com
+  - DOMAIN-SUFFIX,externulls.com
+  #eporner
+  - DOMAIN-SUFFIX,eporner.com
+  #girlfriendvideos
+  - DOMAIN-SUFFIX,girlfriendvideos.com
+  #homemoviestube
+  - DOMAIN-SUFFIX,homemoviestube.com
+  #mrdeepfakes
+  - DOMAIN-SUFFIX,mrdeepfakes.com
+  - DOMAIN-SUFFIX,hpyjmp.com
+  #pornhd
+  - DOMAIN-SUFFIX,pornhd.com
+  - DOMAIN-SUFFIX,awemdia.com
+  #pornhub
+  - DOMAIN-SUFFIX,adtng.com
+  - DOMAIN-SUFFIX,etahub.com
+  - DOMAIN-SUFFIX,imglnke.com
+  - DOMAIN-SUFFIX,nsimg.net
+  - DOMAIN-SUFFIX,phncdn.com
+  - DOMAIN-SUFFIX,pornhub.com
+  - DOMAIN-SUFFIX,pornhubpremium.com
+  - DOMAIN-SUFFIX,pronstore.com
+  - DOMAIN-SUFFIX,vfgte.com
+  - DOMAIN-SUFFIX,vfthr.com
+  #porntrex
+  - DOMAIN-SUFFIX,cdntrex.com
+  - DOMAIN-SUFFIX,h-cdn.com
+  - DOMAIN-SUFFIX,porntrex.com
+  #redtube
+  - DOMAIN-SUFFIX,redtube.com
+  - DOMAIN-SUFFIX,rdtcdn.com
+  #serviporno
+  - DOMAIN-SUFFIX,serviporno.com
+  #spankbang
+  - DOMAIN-SUFFIX,spankbang.com
+  - DOMAIN-SUFFIX,sb-cd.com
+  #tube8
+  - DOMAIN-SUFFIX,tube8.com
+  - DOMAIN-SUFFIX,t8cdn.com
+  #txxx
+  - DOMAIN-SUFFIX,ahacdn.com
+  - DOMAIN-SUFFIX,ahacdn.me
+  - DOMAIN-SUFFIX,txxx.com
+  - DOMAIN-SUFFIX,txxx.tube
+  #xhamster
+  - DOMAIN-SUFFIX,xhamster.com
+  - DOMAIN-SUFFIX,xhamster15.com
+  - DOMAIN-SUFFIX,xhamsterlive.com
+  - DOMAIN-SUFFIX,ahcdn.com
+  - DOMAIN-SUFFIX,xhcdn.com
+  - DOMAIN-SUFFIX,cdn13.com
+  - DOMAIN-SUFFIX,ktkjmp.com
+  - DOMAIN-SUFFIX,smljmp.com
+  - DOMAIN-SUFFIX,cometmaster.com
+  - DOMAIN-SUFFIX,mdyjmp.com
+  - DOMAIN-SUFFIX,sc-apps.com
+  #xnxx
+  - DOMAIN-SUFFIX,xnxx.com
+  - DOMAIN-SUFFIX,xnxx-cdn.com
+  #xvideos
+  - DOMAIN-SUFFIX,xvideos.com
+  - DOMAIN-SUFFIX,xvideos-cdn.com
+  #youjizz
+  - DOMAIN-SUFFIX,youjizz.com
+  #youporn
+  - DOMAIN-SUFFIX,youporn.com
+  - DOMAIN-SUFFIX,ypncdn.com
+  ##cumtube
+  - DOMAIN-SUFFIX,monedata.io
+  - DOMAIN-SUFFIX,ogury.io
+  - DOMAIN-SUFFIX,ogury.co
+  - DOMAIN-SUFFIX,pinkfire.pw
+  - DOMAIN-SUFFIX,presage.io
+  ##planetpron
+  - DOMAIN-SUFFIX,planetpron.com
+  - DOMAIN-SUFFIX,highwebmedia.com
+  - DOMAIN-SUFFIX,digitaloceanspaces.com
+  ##nishipin
+  - DOMAIN-REGEX,^.*\.nivod[0-9]*?\.(tv|cc|com|vip)$
+  - DOMAIN-SUFFIX,fhjasokiwq.com
+  - DOMAIN-SUFFIX,nivodz.com
+  - DOMAIN-SUFFIX,mudvod.tv
+  - DOMAIN-SUFFIX,newpppp.com
+  - DOMAIN-SUFFIX,biggggg.com
+  - DOMAIN-SUFFIX,olddddd.com
+  - DOMAIN-SUFFIX,doppiocdn.com
+  - DOMAIN-SUFFIX,airwallex.com
+  - DOMAIN-SUFFIX,signifyd.com
+  - DOMAIN-SUFFIX,online-metrix.net
+  - DOMAIN-SUFFIX,hmy.la
+  - DOMAIN-SUFFIX,dplayerstatic.com
+  - DOMAIN-SUFFIX,polyfill.top
+  - DOMAIN-SUFFIX,p8im.com
+  - DOMAIN-SUFFIX,hmrvideo.com
+  - DOMAIN-SUFFIX,r8qgyo0ts.com
+  #BO TV
+  - DOMAIN-SUFFIX,abccdn.me
+  - DOMAIN-SUFFIX,livecdn.me
+  - DOMAIN-SUFFIX,dob1234.com
+  - DOMAIN-SUFFIX,k6ph97v4w2.xyz
+  - DOMAIN-SUFFIX,newtvcdn.com
+  - DOMAIN-SUFFIX,ub6789.com
+  - DOMAIN-SUFFIX,ubtvfans.com
+  - DOMAIN-SUFFIX,unbotvonbye.xyz
+  - DOMAIN-SUFFIX,usplaycdn.com
+  - DOMAIN-SUFFIX,vipub1818.com
+  #91madou
+  - DOMAIN-SUFFIX,fj-ll.com
+  #onlyfans
+  - DOMAIN-SUFFIX,onlyfans.com
+  #hj
+  - DOMAIN-REGEX,^hj2.*\.top$
+  - DOMAIN-SUFFIX,hjpfe1.com
+  - DOMAIN-SUFFIX,haijiao.com
+  - DOMAIN-SUFFIX,hjd878.com
+  - DOMAIN-SUFFIX,hjbd80.top
+  - DOMAIN-SUFFIX,hjbd81.top
+  - DOMAIN-SUFFIX,expresstech.io
+  ##live
+  #chaturbate
+  - DOMAIN-SUFFIX,chaturbate.com
+  - DOMAIN-SUFFIX,mmcdn.com
+  #stripchat
+  - DOMAIN-SUFFIX,stripst.com
+  - DOMAIN-SUFFIX,strpst.com
+  - DOMAIN-SUFFIX,stripcdn.com
+  - DOMAIN-SUFFIX,stripchat.com
+  - DOMAIN-SUFFIX,rmhfrtnd.com
+  - DOMAIN-SUFFIX,doppiocdn.net
+  #camwhoresbay
+  - DOMAIN-SUFFIX,ptx.li
+  ##AIO
+  - DOMAIN-SUFFIX,acscdn.com
+  - DOMAIN-SUFFIX,porn-app.com
+  
+  
+  
+  
+  
