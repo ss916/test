@@ -6227,11 +6227,15 @@ add cnip 158.79.0.0/16
 add cnip 159.226.0.0/16
 add cnip 159.27.0.0/16
 add cnip 159.75.0.0/16
+add cnip 160.187.223.0/24
+add cnip 160.187.252.0/23
+add cnip 160.187.254.0/23
 add cnip 160.19.208.0/22
 add cnip 160.19.212.0/22
 add cnip 160.19.216.0/22
 add cnip 160.19.76.0/23
 add cnip 160.19.82.0/23
+add cnip 160.191.0.0/23
 add cnip 160.20.130.0/23
 add cnip 160.20.16.0/23
 add cnip 160.20.18.0/23
