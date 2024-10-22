@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=2
+sh_ver=3
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -154,6 +154,7 @@ alias timenow=$timenow
 alias version=$version
 
 [ ! -d $diretc ] && mkdir -p $diretc
+[ ! -d $dirtmp ] && mkdir -p $dirtmp
 cd $dirtmp
 
 
