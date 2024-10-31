@@ -405,8 +405,8 @@ blzddist1-a.akamaihd.net
 +.nim-lang-cn.org
 +.nvidia.com
 +.oracle.com
-+.paypal.com
-+.paypalobjects.com
+#  - DOMAIN-SUFFIX,paypal.com
+#  - DOMAIN-SUFFIX,paypalobjects.com
 +.qdaily.com
 +.qidian.com
 +.qyer.com

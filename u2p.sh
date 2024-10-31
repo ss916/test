@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=8
+sh_ver=9
 
 path=${0%/*}
 bashname=${0##*/}
@@ -85,6 +85,7 @@ else
 	echo -e \\n"   \e[1;33m   github安装yt-dlp...\e[0m"\\n
 	echo -e \\n"new：$new\\nold：$old\\nurl：$url"\\n
 	curl -o /usr/local/bin/yt-dlp -L $url
+	[ -s /usr/local/bin/yt-dlp ] && [ ! -x /usr/local/bin/yt-dlp ] && echo ">> 赋予主程序文件/usr/local/bin/yt-dlp执行权限" && chmod +x /usr/local/bin/yt-dlp
 	ver=$(${name} --version)
 	echo -e \\n"\e[1;33m当前版本：\e[1;32m【$ver】\e[0m"\\n
 	sed -i '/ver=/d' ${path}/${name}/settings.txt && echo "ver=$ver" >> ${path}/${name}/settings.txt
