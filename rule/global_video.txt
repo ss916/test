@@ -372,21 +372,6 @@ payload:
   
   
   
-(µ/ý ý â‹(&€	ÏƒžË?€Tðï¾²ï½wK©| {Qø9F7;ª ÛìnI#||Ùtœðo`Ï%¿tIÆ©•ètéÓÆŠ·#ªù]jâ[Tå©-KšÔ…>1m¼Pf+SM9–r>yQ®Ÿ R8~ÌjE¦ŒwåTÕ–ˆbÊïkñ~@É>û$û8»ŽÂF8Çî
- „
-ŒÃ " ! Ã€ 	 ¸Q¤"RâÆ„~%GKk—e5°¼‹ë´L²úY#text
-  #ðŸ“ºYouTube ï¼šglobal_video_youtube.txt
-+.youtu.be
-+.yt.be
-+.ytimg.com
-+.ggpht.com
-+.googlevideo.com
-+.youtube.com
-youtubei.googleapis.com
-  #vanced/revanced
-+.returnyoutubedislikeapi.com
-sponsor.ajay.app
-sponsorblock.hankmccord.dev
   #ðŸ“ºYouTube ï¼šglobal_video_youtube.txt
   - DOMAIN-SUFFIX,youtu.be
   - DOMAIN-SUFFIX,yt.be
