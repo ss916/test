@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=248
+sh_ver=249
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -199,6 +199,7 @@ log_ok='grep -E "TProxy server listening at|TProxy.* proxy listening at" ./${nam
 log_error='grep "TProxy server error" ./${name}_log.txt'
 
 #alias
+[ "$(shopt 2>/dev/null | awk '/expand_aliases/{print $2}')" = "off" ] && shopt -s expand_aliases
 alias pss=$pss
 alias pid=$pid
 alias port=$port

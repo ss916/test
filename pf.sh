@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=95
+sh_ver=96
 
 path=${0%/*}
 bashname=${0##*/}
@@ -33,6 +33,7 @@ for a in $(cat $dirconf/$name/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G
 
 
 #alias
+[ "$(shopt 2>/dev/null | awk '/expand_aliases/{print $2}')" = "off" ] && shopt -s expand_aliases
 alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
 
 [ ! -d $diretc ] && mkdir -p $diretc

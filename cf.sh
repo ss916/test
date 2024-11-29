@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=110
+sh_ver=111
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -17,7 +17,8 @@ else
 	> $diretc/settings.txt
 fi
 
-
+#alias
+[ "$(shopt 2>/dev/null | awk '/expand_aliases/{print $2}')" = "off" ] && shopt -s expand_aliases
 alias timenow='date "+%m-%d_%H:%M:%S"'
 
 [ ! -d $dir ] && mkdir -p $dir

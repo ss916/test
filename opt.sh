@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=43
+sh_ver=44
 
 path=${0%/*}
 bashname=${0##*/}
@@ -20,6 +20,7 @@ file_wan=/etc/storage/post_wan_script.sh
 cd $dirtmp
 
 #alias
+[ "$(shopt 2>/dev/null | awk '/expand_aliases/{print $2}')" = "off" ] && shopt -s expand_aliases
 alias timenow='date "+%Y-%m-%d_%H:%M:%S"'
 
 curl_proxy () {

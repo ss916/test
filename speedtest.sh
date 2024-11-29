@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=62
+sh_ver=63
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -119,6 +119,7 @@ timenow='date "+%Y-%m-%d_%H:%M:%S"'
 #version="$dirtmp/${name} -v | grep -i ${name} | cut -f 3 -d ' ' | sed 's/v//' "
 
 #alias
+[ "$(shopt 2>/dev/null | awk '/expand_aliases/{print $2}')" = "off" ] && shopt -s expand_aliases
 alias pss=$pss
 alias pid=$pid
 alias port=$port
