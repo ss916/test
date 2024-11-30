@@ -1,5 +1,5 @@
-# //【2024-11-30 00:37:21】
-/SHA1.TXT= e113fb30b19210063bf3740a89724d40
+# //【2024-11-30 19:34:22】
+/SHA1.TXT= b0bdb22cde7e785f46a310524ab35d1b
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 03e11dd94c062d0c499e3346898c4ca4
 /amd64/clash= ce39df1d65b41b555f3870d47b337736
@@ -13,8 +13,8 @@
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
 /arm64/speedtest= ddd7fbff3a3e2a69387398d4733f9da7
 /arm64/stun= 5061c8e34ed30f10418108363d46bcc2
-/arm64/v2ray= e4696088a27c84d2e67e4ee31485fdcf
-/arm64/xray= e4696088a27c84d2e67e4ee31485fdcf
+/arm64/v2ray= e79514be27592beb21e3ce889bd4fad4
+/arm64/xray= e79514be27592beb21e3ce889bd4fad4
 /caddy.sh= 25eacb40c6100ea07e47137ec2e0e8f0
 /cf.sh= 5b140f8e4110b6a5aaf6cf0655dfe507
 /clash.sh= f5cf305aa229ab8e84711db3c94fb0da
@@ -171,10 +171,10 @@
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
 /t/stun= dc269c1c2d375905d941b5ce67b71841
 /t/udpspeeder.ver= f07f703e7052d4a51d366012cc2649f7
-/t/v2ray.ver= 035aa5cf78f87c5011115e3684ccac2e
-/t/v2ray= 0676a38a7d8b37dfca209fb925cee4c2
-/t/xray.ver= 035aa5cf78f87c5011115e3684ccac2e
-/t/xray= 0676a38a7d8b37dfca209fb925cee4c2
+/t/v2ray.ver= a0b91ffe4b882572674bf9d4184f564d
+/t/v2ray= 9fef207b4e2a1b92b78593bc04cd2b63
+/t/xray.ver= a0b91ffe4b882572674bf9d4184f564d
+/t/xray= 9fef207b4e2a1b92b78593bc04cd2b63
 /t/yacd-gh-pages.tgz= a0a06ddae466407d9ccfab18eb12e36f
 /t/yacd-gh-pages.zip= 85e6e35e4991b033486f4fb07530f2c7
 /tv/1.json= 114112a3c1fa7d74de942581a701e0b0
