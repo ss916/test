@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=9
+sh_ver=10
 
 path=${0%/*}
 bashname=${0##*/}
@@ -56,16 +56,7 @@ fi
 
 [ ! -d $filedir ] && mkdir -p $filedir
 
-install () {
-if [ "$os" = "debian" ] ; then
-install_ytdlp_github
-else
-echo -e \\n"   \e[1;33m   $package更新...\e[0m"\\n
-$package update
-echo -e \\n"   \e[1;33m   $package安装/更新 yt-dlp、ffmpeg...\e[0m"\\n
-$package_install ffmpeg yt-dlp -y
-fi
-}
+
 install_ytdlp_github () {
 address="https://github.com/yt-dlp/yt-dlp"
 o="yt-dlp_linux"
@@ -89,6 +80,23 @@ else
 	ver=$(${name} --version)
 	echo -e \\n"\e[1;33m当前版本：\e[1;32m【$ver】\e[0m"\\n
 	sed -i '/ver=/d' ${path}/${name}/settings.txt && echo "ver=$ver" >> ${path}/${name}/settings.txt
+fi
+}
+install_ffmpeg () {
+echo -e \\n"   \e[1;33m   $package更新...\e[0m"\\n
+$package update
+echo -e \\n"   \e[1;33m   $package安装/更新 ffmpeg...\e[0m"\\n
+$package_install ffmpeg -y
+}
+install () {
+if [ "$os" = "debian" ] ; then
+install_ytdlp_github
+install_ffmpeg
+else
+echo -e \\n"   \e[1;33m   $package更新...\e[0m"\\n
+$package update
+echo -e \\n"   \e[1;33m   $package安装/更新 yt-dlp、ffmpeg...\e[0m"\\n
+$package_install ffmpeg yt-dlp -y
 fi
 }
 

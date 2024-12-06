@@ -1,11 +1,11 @@
-# //【2024-11-30 19:34:21】
-/SHAKE128.TXT= 3c914b605b65b3c24c6eef51fb748de7606abdac
+# //【2024-12-06 02:46:17】
+/SHAKE128.TXT= d58c26bff3aee90edc9a6382381494ea32571d59
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
-/amd64/caddy= c09a8b2287f0b7b98b10c3c6d01b5f7f7cbe5857
+/amd64/caddy= 7758b4a6fe7131c4cdff8d72b4526d62b2b8b90a
 /amd64/clash= 67004cf1f63131705a8d4342f3a8e7a0cb5b1ef9
 /amd64/stun= 2891a621210dc1c3e3d25d25ccd93ef70efe4744
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/caddy= c05aa16196438a6e658ff320d4a87384d0e767a9
+/arm64/caddy= befae55226b78de7014e455f9f9e6a0fcea4b5dc
 /arm64/clash= 8f65ce5b111f9ea5117c0977a591d7d503db39fd
 /arm64/hysteria= 935a18ec0a4357103e61e18e6954096bd12b7810
 /arm64/kcptun= e9c75065e12d636c12fb82e94d50e298c6e7a34b
@@ -125,7 +125,7 @@
 /s/c7.json= 637869ffe330787a654e5dacffb82e2b4d81bb4b
 /s/c8.json= 2f6d66ece599d8b4b094f4a5f46e1745f555a01b
 /s/c9.json= 72acd8c35521ce14dcb47a30c279438eb444022d
-/s/file1.txt= 43e2f6c8c4ed6935e82054760b26e00031ee28c7
+/s/file1.txt= 816f0de8eb48c57d8fd26809d2aba104a4728ef2
 /s/file111.txt= 6e57d7d03a14592eba99a492fd23a35ed4b7661d
 /s/file2.txt= ef8a5a6f1fe1deb416e50e81b2c81edffae4f485
 /s/file222.txt= e025f1d6da63f89e6d6478e991354ba3b659190b
@@ -140,9 +140,9 @@
 /t/Country.mmdb.tgz= bb4d2b067e900f2171230cc3465b5fdb6ee500ea
 /t/Country.mmdb.ver= 5620688f617ce159b1f0edb744a737627bd8b86f
 /t/Country.mmdb= 56b79e788a0a820fde5d8bc1e3e507ad22d3f52c
-/t/caddy.ver= 679bec9fe7cc5fb378ca89eb602c09016868b62f
+/t/caddy.ver= a806068e32a13d3cd9346ddee5214519563fc259
 /t/caddy1= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/caddy= ff20612d6204e16dad3ba076d6c5d77eeb2fdc66
+/t/caddy= fd9e0ce2722e23896ee511f2c6c25d80058165eb
 /t/clash-dashboard-gh-pages.tgz= 0b93c7a1fbcc7173cb98de606e492111eef5424d
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
@@ -165,7 +165,7 @@
 /t/metacubexd-gh-pages.zip= fad21297830bf36a7e78d7a945ff9764d8d6aabd
 /t/natmap.ver= 8ddbeba8ff79282b4c365452e5d094c5be917fc2
 /t/natmap= 7b1884e5fab1913520bb842ab8b49342fd254e41
-/t/rule.tgz= e4a3a52b3d9486d37b74765a3ea7cc944a227de3
+/t/rule.tgz= 9a67f8e3d86078b0c5366ca10190f6a0f4dde0aa
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
@@ -182,7 +182,7 @@
 /tv/edit/18.json= 9a47da274307dfc294f6643abcc95f69c111895d
 /tv/live1.txt= 945ca16baa7a6b90918d9d30adec96200ce7bab7
 /tv/test.jar= 3b08012ae59f0cc0fcd80b02c4e291ad434d328d
-/u2p.sh= 95eeeee9f9609af89d3580cdd7dac0ea8c093a68
+/u2p.sh= abffc44559ae8c2bbf9c5ede1cee7b5646aa5a72
 /v2ray.sh= 92e23a0e31f0702bba08e8da91f195c5e790c30c
 /warpip.sh= de5cb9db2ea7f4f5e0044fa99afc6f9d64acabac
 /windows/PE_windows_password.exe= 68705e9580e70c98ef4f4fe95ce3336a576d8269

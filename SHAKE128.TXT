@@ -1,11 +1,11 @@
-# //【2024-11-30 19:34:22】
-/SHA1.TXT= b0bdb22cde7e785f46a310524ab35d1b
+# //【2024-12-06 02:46:20】
+/SHA1.TXT= d9e23218f5599508294e59f222addc31
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
-/amd64/caddy= 03e11dd94c062d0c499e3346898c4ca4
+/amd64/caddy= a08a35ff1056f2f4c1fbf5944f96b655
 /amd64/clash= ce39df1d65b41b555f3870d47b337736
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
-/arm64/caddy= d5e484324fa29949477f621e0cdf5118
+/arm64/caddy= 8cb1437d87f9769f11047702c6e5b8d1
 /arm64/clash= 37553a6f81380009e299a4436ebf1135
 /arm64/hysteria= fdf07c3303555e15802d12e89e957231
 /arm64/kcptun= e288942a0c2453c4986465f677911aa2
@@ -125,7 +125,7 @@
 /s/c7.json= 1feb4cf6ad3097cba42ca68f3c7af7f8
 /s/c8.json= 50769bf9d685b1da238ed545d3d9128d
 /s/c9.json= 283ee953fe329a6d00d295cdfb4ef932
-/s/file1.txt= 7a6e47c8fb8c68e1d51527142235a9db
+/s/file1.txt= 5b98ee0aadc64610580b987ca7bbaadf
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 88a126538e219b91d60fe4b3dc3c31cc
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
@@ -140,9 +140,9 @@
 /t/Country.mmdb.tgz= cf05dfbeb31f741b02d4144896919743
 /t/Country.mmdb.ver= 1ff108546963c911477bb182e1e02a64
 /t/Country.mmdb= ea1118982d06030a7f9686488e958fa9
-/t/caddy.ver= da01671f9f133dd68076b34ec79d97dd
+/t/caddy.ver= 04debf6c2f43815698c4ba49e7c3898e
 /t/caddy1= d91556933dd45b541d0587a957b95d99
-/t/caddy= 9d0163b988e640d71c6b35d0d71727a9
+/t/caddy= c1dbcf1b174601833805ee3989117753
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
@@ -165,7 +165,7 @@
 /t/metacubexd-gh-pages.zip= 93fd9b4d3fda42be41bfbffb8dc0ac75
 /t/natmap.ver= f03b47a70a5a922598a17e7e8b487647
 /t/natmap= f4935e2104ef10137dfb9fd01ebfebbe
-/t/rule.tgz= 46f1f499b8ebd507004c2f3f6f234d44
+/t/rule.tgz= 17efa15305c1ec53132b02f4eb6e8c9a
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
@@ -182,7 +182,7 @@
 /tv/edit/18.json= 117371d98e5d6850cef51f0b4618cdae
 /tv/live1.txt= d14ab9d92b1c5089e0937dee2e8da519
 /tv/test.jar= 61ba4a82031d96a189d5274334ad49c4
-/u2p.sh= b4a8ac5d03002fcb26029fa7693cca8d
+/u2p.sh= 462ee2a3072ff0270e3a3ab397786749
 /v2ray.sh= 66c9e3f32d6a2203175d6a3755b0cf8f
 /warpip.sh= 089adff2539d5b70381a95edeac9f61d
 /windows/PE_windows_password.exe= ae1928f2743b4dbea3ca47d6bce0d45d

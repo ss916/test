@@ -1,7 +1,7 @@
 {
 
-"lives": [{"group": "redirect","channels": [{"name": "live","urls": ["proxy://do=live&type=txt&ext=https://rrr.ariadl.eu.org/ss916/test/main/tv/live1.txt"]}]}],
-"spider":"https://rrr.ariadl.eu.org/ss916/test/main/tv/test.jar",
+"lives": [{"group": "redirect","channels": [{"name": "live","urls": ["proxy://do=live&type=txt&ext=https://raw.githubusercontent.com/ss916/test/main/tv/live1.txt"]}]}],
+"spider":"https://raw.githubusercontent.com/ss916/test/main/tv/test.jar",
 
 "sites": [
 {"key":"csp_Dm84","name":"动漫巴士","type":3,"api":"csp_Dm84","searchable":1,"quickSearch":1,"changeable":1},
