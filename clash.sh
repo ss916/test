@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=249
+sh_ver=250
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -723,11 +723,8 @@ fi
 check_cache_file () {
 filename1=.cache
 filename2=cache.db
-if [ -f $dirtmp/$filename2 -o -f $dirconf/$filename2 ] ; then
+[ -f $dirconf/$filename1 ] && rm -f $dirconf/$filename1
 filename=$filename2
-else
-filename=$filename1
-fi
 #
 #内存文件存在、闪存文件存在
 if [ -f $dirtmp/$filename -a -f $dirconf/$filename ] ; then
