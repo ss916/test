@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=43
+sh_ver=44
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -410,7 +410,7 @@ if [ -f need_check_network_1 ] ; then
 			fi
 		fi
 	fi
-	echo -e "\$(timenow) \${name} [\$net] ✔ 检测到当前网络已畅通！" >> ./keep.txt
+	echo -e "\$(timenow	) \${name} [\$net] ✔ 检测到当前网络已畅通！" >> ./keep.txt
 	net=1
 	rm need_check_network_1
 fi
