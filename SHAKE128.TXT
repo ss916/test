@@ -1,15 +1,16 @@
-# //【2024-12-31 21:12:33】
-/SHA1.TXT= f9dc82ad2ebaf91c1e23b915e85bb988
+# //【2025-01-02 01:02:02】
+/SHA1.TXT= deef94ae31574ab93d796141987bbefd
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 4a884703ee28f6ba4854f60b563d30b3
 /amd64/clash= 0c48f6cfc440f4c8d046b008078ff819
+/amd64/natmap= fc9bdc085f60d38c7800365dc9bfde54
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= 5cc4974858ece8ebb06647fd83c43f8d
 /arm64/clash= 2c38eee030785bf8f5fe197de545c05f
 /arm64/hysteria= fdf07c3303555e15802d12e89e957231
 /arm64/kcptun= 123ea49111e5f3c64286ad874bf1a34a
-/arm64/natmap= fef29dfea4a83b6a7cebac7068797503
+/arm64/natmap= 792dc362776f96ae23a24ff8ab5c33b0
 /arm64/speederv2= 763438b42960aa9932e573c240864d45
 /arm64/speedtest= ddd7fbff3a3e2a69387398d4733f9da7
 /arm64/stun= 5061c8e34ed30f10418108363d46bcc2
@@ -163,9 +164,9 @@
 /t/kcptun= b6105e835d26e1045e0c866bc3406a18
 /t/metacubexd-gh-pages.tgz= 3392700127ec9bf5b1096368b3111489
 /t/metacubexd-gh-pages.zip= c856b7cc4ed3f845709d826fd190b315
-/t/natmap.ver= f03b47a70a5a922598a17e7e8b487647
-/t/natmap= f4935e2104ef10137dfb9fd01ebfebbe
-/t/rule.tgz= 28d12fc3a8db055a180fd6629a018294
+/t/natmap.ver= 48ef122cdf6ea312a6a982be0c73c4ec
+/t/natmap= ec8f82a373a7f37b1acc03958484edb7
+/t/rule.tgz= f9b31f7248c78ca43abbdecd093fea2d
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
