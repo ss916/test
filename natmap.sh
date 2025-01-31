@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=4
+sh_ver=13
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -414,10 +414,12 @@ alias psskeep='$psskeep'
 alias timenow='$timenow'
 ##
 mode=\$(cat \$dirconf/settings.txt |awk -F 'mode=' '/^mode=/{print \$2}' |head -n 1)
+check_port=\$(cat \$dirconf/settings.txt |awk -F 'check_port=' '/^check_port=/{print \$2}' |head -n 1)
 log1=1
 net=1
 skip=1
 v=1
+n=1
 cd \$dirtmp
 while true ; do
 #log1：日志文件大于1万条后删除1000条
@@ -465,12 +467,49 @@ if [ "\$pss_status" != "1" -o -z "\$port_status" ] ; then
 else
 	server_port_ok=1
 fi
+#n： check_port
+if [ "\$check_port" = "1" ] ; then
+	if [ ! -z "\$(curl -V)" ] ; then
+		if [ -s /tmp/natmap/natmap_log.txt ] ; then
+			natmap_port=\$(awk '{print \$2}' /tmp/natmap/natmap_log.txt | grep -E '^[0-9]+\$' | tail -n 1)
+			natmap_ip=\$(awk '{print \$1}' /tmp/natmap/natmap_log.txt | grep -E '([0-9]+\.){3}[0-9]+' | tail -n 1)
+			if [ ! -z "\$natmap_port" -a ! -z "\$natmap_ip" ]; then
+				#nmap_status=\$(/opt/bin/nmap -sS -P0 -p \$natmap_port \$natmap_ip | awk '/'\$natmap_port'/{print \$2}')
+				check_port_status=\$(curl -m 2 http://\$natmap_ip:\$natmap_port 2>&1 | grep -i "milliseconds$")
+				if [ ! -z "\$check_port_status" ] ; then
+					check_port_status=\$(curl -m 2 http://\$natmap_ip:\$natmap_port 2>&1 | grep -i "milliseconds$")
+					if [ ! -z "\$check_port_status" ] ; then
+						check_port_status="close，检测端口不通，重启程序！"
+						sh \${path}/\${bashname} 1 >> ./keep.txt 2>&1 &
+						n=0
+					else
+						check_port_status="open2"
+					fi
+				else
+					check_port_status="open"
+				fi
+			else
+				n=0
+				check_port_status="none， 检测/tmp/natmap/natmap_log.txt文件最后一行 端口[\$natmap_port] 或 IP[\$natmap_ip] 不存在，跳过端口测试。"
+			fi
+		else
+			n=0
+			check_port_status="none， 检测/tmp/natmap/natmap_log.txt文件为空，跳过端口测试。"
+		fi
+	else
+		n=0
+		check_port_status="none， 检测curl不存在，跳过端口测试。"
+	fi
+fi
 ##总结
-if [ "\$server_port_ok" = "1" ] ; then
+if [ "\$server_port_ok" = "1" -a "\$check_port" = "1" ] ; then
+	echo -e "\$(timenow) \${name} [\$v] 进程OK，端口OK、[\$n] 公网端口 [\$check_port_status] " >> ./keep.txt
+elif [ "\$server_port_ok" = "1" -a "\$check_port" != "1" ] ; then
 	echo -e "\$(timenow) \${name} [\$v] 进程OK，端口OK" >> ./keep.txt
 fi
 ##+1
 v=\$((v+1))
+n=\$((n+1))
 ##休息
 sleep 120
 done

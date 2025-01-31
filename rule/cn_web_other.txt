@@ -2,6 +2,12 @@ payload:
   #🀄网站：cn_web_other.txt
   #AD white list
   #- DOMAIN,cdn.tsyndicate.com
+  #hikvision
+  - DOMAIN-SUFFIX,gepush.com
+  - DOMAIN-SUFFIX,hikiot.com
+  - DOMAIN-SUFFIX,hikmall.com
+  - DOMAIN-SUFFIX,hikvision.com
+  - DOMAIN-SUFFIX,ys7.com
   #liuhebaodian
   - DOMAIN-SUFFIX,1396ck.com
   - DOMAIN-SUFFIX,20062008.com
