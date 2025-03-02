@@ -1,13 +1,13 @@
-# //【2025-03-01 00:29:21】
-/SHAKE128.TXT= dbf8d9cee4adb85ff095cf98c658366546376f4f
+# //【2025-03-03 00:14:48】
+/SHAKE128.TXT= 6cb913a68f06d3945d3a6bb7b62506d1067c0b6a
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= a76c00ed894ea732da4eacf3dc2b435749374510
-/amd64/clash= 6bc6efbe4c7060c7484d3d3c1a1d290e65c6ee8a
+/amd64/clash= 8d4189bb36050ac740cd43a034e5e981d3599267
 /amd64/natmap= 8efeb5cc6fd04f6c1ee1a95fb6117ba54eee45ae
 /amd64/stun= 2891a621210dc1c3e3d25d25ccd93ef70efe4744
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/caddy= e63e379ee3a72775a07d1d5e943aba03642deda8
-/arm64/clash= 3c4e35ddaa9d8b4f1545dad0ba75b546a380df8c
+/arm64/clash= 550d3760cf0f180a4b4c6cbb70e0c4b94202d352
 /arm64/hysteria= 87139f77d00ff0af29e61681628a6896701e3de9
 /arm64/kcptun= fa8746deb8f5c029fae052f0e7967b7c5238d2e6
 /arm64/natmap= be5640240c85a8ba9836dac0d2945a9b65af934e
@@ -147,15 +147,15 @@
 /t/clash-dashboard-gh-pages.tgz= 0b93c7a1fbcc7173cb98de606e492111eef5424d
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
-/t/clash.ver= 596cbe75db8daac6c0f216f0fd875bdddc4c5060
-/t/clash= 675e3e17c1436f8b6cb5171c35aca7a66f8a118e
+/t/clash.ver= 99855ad298c1e2cd866080a153bf8e1a21518897
+/t/clash= 7d0901cacfdbc2599245f5564e6a2cc27fcf3d4f
 /t/cnip.txt= 586650e7ff6fc574327ac0c14bd5a7151778d027
 /t/cnipv6.txt= 2ac0ab3adac9a2335e909cd72bf6792dc98a2fb0
 /t/delegated-apnic-latest= 9ef23408a3d2e0d179f4475dd3feed807d855d08
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
 /t/geoip.dat= b036e8cc6f7fb932a2a7d1f514e09a8d76848ae9
-/t/geosite-full.dat= b16fefff6917c4b2de3fd45fec972753eb125d56
-/t/geosite.dat= c8b460f203b4efbaa9e7ac4a911723743179865c
+/t/geosite-full.dat= 220d817500020efe62c4da7f6a957d281147a6a9
+/t/geosite.dat= 6d3e73447ecf40974dca3f2e7cd96ff7e982ba47
 /t/hysteria.ver= 204aa5589a21ec70e2d481c75b1b46f6ab2373c9
 /t/hysteria= 2bbab8b1d2b3d267c55383f74b6243e03b5f5002
 /t/ipset.cnip.txt= c88ddc653d36241cbb1d6e72ab3981b91bd60643
@@ -166,7 +166,7 @@
 /t/metacubexd-gh-pages.zip= c69040e9e5201632388a365f51c21c379bedc130
 /t/natmap.ver= 50af7603acf94bc39e8c2ffb805f09289e92ec88
 /t/natmap= e406bd43882eaf5386163a94c8b6ff91bb930478
-/t/rule.tgz= 4bb892760942c0556a1926ff96695bb43dd9ad8e
+/t/rule.tgz= d9e79ee514f93593652a202f67755a39f2c0e116
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
