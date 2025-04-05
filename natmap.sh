@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=13
+sh_ver=14
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -598,12 +598,12 @@ stop_program () {
 start_program () {
 logger -t "【${bashname}】" "▶启动${name}主程序..." && echo -e \\n"\e[1;36m▶启动${name}主程序...\e[0m"
 [ -z "$i" -o -z "$s" -o -z "$h" -o -z "$b" -o -z "$t" -o -z "$p" ] && echo -e "\e[1;31m✖服务器 i:[$i]、s:[$s]、h:[$h]、b:[$b]、t:[$t]、p:[$p]其一参数为空，取消启动。\e[0m" && exit
-[ "$u" = "1" -o "$u" = "true" ] && u='-u' && u=""
+[ "$u" = "1" -o "$u" = "true" ] && mode_udp='-u' || mode_udp=""
 [ -f ./${name}_log.txt ] && mv -f ./${name}_log.txt ./old_${name}_log.txt
 [ ! -s ./${name}_ver.txt ] && echo "▶查询主程序$name 版本号..." && echo "$(version)" | sed '/^ *$/d' > ./${name}_ver.txt
 [ -z "$(grep "$gid$" ${path}/RETURN_UID_GID.TXT 2>/dev/null)" ] && echo "▶add $user_name,$uid,$gid to ${path}/RETURN_UID_GID.TXT" && echo "$user_name,$uid,$gid" >> ${path}/RETURN_UID_GID.TXT
 [ -z "$(grep "$user_name" /etc/passwd)" ] && echo "▶添加用戶$user_name，uid为$uid，gid为$gid" && echo "$user_name:x:$uid:$gid:::" >> /etc/passwd
-su $user_name -c "nohup $dirtmp/${name} -d $u -i $i -s $s -h $h -b $b -t $t -p $p > $dirtmp/${name}_log.txt 2>&1 &"
+su $user_name -c "nohup $dirtmp/${name} -d $mode_udp -i $i -s $s -h $h -b $b -t $t -p $p > $dirtmp/${name}_log.txt 2>&1 &"
 }
 
 #關閉
