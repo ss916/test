@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=14
+sh_ver=16
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -468,6 +468,8 @@ else
 	server_port_ok=1
 fi
 #n： check_port
+#check_port_curl，support tcp only
+check_port_curl () {
 if [ "\$check_port" = "1" ] ; then
 	if [ ! -z "\$(curl -V)" ] ; then
 		if [ -s /tmp/natmap/natmap_log.txt ] ; then
@@ -499,6 +501,46 @@ if [ "\$check_port" = "1" ] ; then
 	else
 		n=0
 		check_port_status="none， 检测curl不存在，跳过端口测试。"
+	fi
+fi
+}
+#check_port_log，support tcp&udp
+if [ "\$check_port" = "1" ] ; then
+	if [ -s /tmp/natmap/natmap_log.txt ] ; then
+		if [ -s /tmp/natmap/old_natmap_log.txt ] ; then
+			eval \$(awk '\$1 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\$/ {ip=\$1; port=\$2} END {printf("natmap_ip=%s;natmap_port=%s;", ip, port)}' /tmp/natmap/natmap_log.txt)
+			#natmap_port=\$(awk '{print \$2}' /tmp/natmap/natmap_log.txt | grep -E '^[0-9]+\$' | tail -n 1)
+			#natmap_ip=\$(awk '{print \$1}' /tmp/natmap/natmap_log.txt | grep -E '([0-9]+\.){3}[0-9]+' | tail -n 1)
+			eval \$(awk '\$1 ~ /^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\$/ {ip=\$1; port=\$2} END {printf("old_natmap_ip=%s;old_natmap_port=%s;", ip, port)}' /tmp/natmap/old_natmap_log.txt)
+			#old_natmap_port=\$(awk '{print \$2}' /tmp/natmap/old_natmap_log.txt | grep -E '^[0-9]+\$' | tail -n 1)
+			#old_natmap_ip=\$(awk '{print \$1}' /tmp/natmap/old_natmap_log.txt | grep -E '([0-9]+\.){3}[0-9]+' | tail -n 1)
+			if [ ! -z "\$natmap_port" -a ! -z "\$natmap_ip" -a ! -z "\$old_natmap_port" -a ! -z "\$old_natmap_ip" ]; then
+				if [ "\$natmap_ip:\$natmap_port" != "\$old_natmap_ip:\$old_natmap_port" ] ; then
+					check_port_status="none4，检测natmap_log.txt日志文件IP端口[\$natmap_ip:\$natmap_port]与old_natmap_log.txt日志文件IP端口[\$old_natmap_ip:\$old_natmap_port]不一致，重启程序！"
+					sh \${path}/\${bashname} 1 >> ./keep.txt 2>&1 &
+					n=0
+				else
+					check_port_status="open"
+				fi
+			else
+				if [ -z "\$old_natmap_port" -a -z "\$old_natmap_ip" ]; then
+					check_port_status="none3，old_natmap_log.txt日志文件IP端口[\$old_natmap_ip:\$old_natmap_port]为空，重启程序！"
+					sh \${path}/\${bashname} 1 >> ./keep.txt 2>&1 &
+					n=0
+				else
+					n=0
+					check_port_status="none3， 检测natmap_log.txt端口[\$natmap_port] 或 IP[\$natmap_ip]为空、 old_natmap_log.txt端口[\$old_natmap_port] 或 IP[\$old_natmap_ip]其一不存在，跳过端口测试。"
+				fi
+			fi
+		else
+			check_port_status="none2，检测old_natmap_log.txt为空，重启程序！"
+			sh \${path}/\${bashname} 1 >> ./keep.txt 2>&1 &
+			n=0
+		fi
+	else
+		check_port_status="none1，检测natmap_log.txt为空，跳过测试！"
+		#sh \${path}/\${bashname} 1 >> ./keep.txt 2>&1 &
+		n=0
 	fi
 fi
 ##总结
