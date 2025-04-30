@@ -1,13 +1,13 @@
-# //【2025-05-01 00:26:35】
-/SHA1.TXT= 72d82b8407a450c280f4e929b90a521c
+# //【2025-05-01 02:54:42】
+/SHA1.TXT= aa6e667bfad1e8e74657693ff6afa62a
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 3405aefa9c3a6cae9d35d296a201d69e
-/amd64/clash= 3bc63ac194ed41199bf658e2dcaa452d
+/amd64/clash= 42cfbeb5bd9defe15eb79205db7f01ef
 /amd64/natmap= a4764a842a3ddbedb62add4b4181b880
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= 47d96f4d2285463bf9070b197cde5edc
-/arm64/clash= 1b3cffb44cc71bc9fe7c4458e334cfb2
+/arm64/clash= 8f1df3ec4859d6d9cdd733c4e91cdac5
 /arm64/hysteria= 2d73e32969c9483eaa2197281aa210fa
 /arm64/kcptun= 53ecef0e29eb32ac000f2b112d6cbf12
 /arm64/natmap= 2cbd05b3f6cc5bb26707d6c0b5cf63a2
@@ -126,14 +126,14 @@
 /s/c7.json= 564468e3fa1114dda73a98f72e654c48
 /s/c8.json= 77bedf37393db8af6a4326794029af4a
 /s/c9.json= 7c4a9f4a8a4a98054cb75bde17403a9a
-/s/file1.txt= e05de3101def9f6ae0b680f4cb646d4b
+/s/file1.txt= 6f00f35263718131a27462ddc241ddd0
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 88a126538e219b91d60fe4b3dc3c31cc
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= ca2a2e8998038ab459a6b3f652330f6c
-/s/file4.txt= d70fdecaabf5faac7d6bd69bf2f95aa8
-/s/file5.txt= 38626a8ff9e7e1703f61a2f9fd38b69d
-/s/file6.txt= 3a3e5700cd2dea901e8f7cf76826fed8
+/s/file3.txt= b4b150b363c7de3dbccd34aae47328ed
+/s/file4.txt= 0c74ac9205dfbac22ccc2dec706da7dc
+/s/file5.txt= 04e171135363e52918d78c2693831ecb
+/s/file6.txt= c7d286e3d6de9d04ffb801028a44e347
 /s/file7.txt= a7e7fef275ad57df46f8623aa8a8d16f
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
 /speederv2.sh= 144e260972838b43372d7f95a3f4cf51
@@ -147,8 +147,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 5e05d8b21c00ed363cdb78a2b228d280
-/t/clash= 2f16d299cd810250064b87ef958f9a76
+/t/clash.ver= 055058c5c10579d8952ca01c150b6ed1
+/t/clash= c8b15fd834fa10fd9273fae2c2c867d3
 /t/cnip.txt= 159d93c5cfc3d098e761155d85e3e80a
 /t/cnipv6.txt= c4e6296c1066e1f52ea12f9a71a9b05f
 /t/delegated-apnic-latest= 501eabb83d5b8354ef1f7807f91a1839
