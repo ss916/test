@@ -1,13 +1,13 @@
-# //【2025-05-01 02:54:40】
-/SHAKE128.TXT= a665ded1be3a2f1b606b90b1ee976ad19f273eff
+# //【2025-05-06 00:28:48】
+/SHAKE128.TXT= 581431c4eabe12f267d430deb734ae30c1404d66
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= 871870b193dfe340aa5df0424b000f5e185c7e6c
-/amd64/clash= d6a5430b2c41040dba2544f1cda9f12a5978e1ee
+/amd64/clash= 3719211d4d923e59ef6b9f1b8cfca24692b76d70
 /amd64/natmap= 8efeb5cc6fd04f6c1ee1a95fb6117ba54eee45ae
 /amd64/stun= 2891a621210dc1c3e3d25d25ccd93ef70efe4744
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
 /arm64/caddy= 7258cf8b6bfc03674fbf7edb63000d04b3ec85cd
-/arm64/clash= 458be13ab8cb9fb102001005cdc60f46d96767f7
+/arm64/clash= c8ddaf14e912725576c37c6b20215ce1295e03e6
 /arm64/hysteria= 87139f77d00ff0af29e61681628a6896701e3de9
 /arm64/kcptun= 9fdd91af30c36e944d5b38dcf0e36ab3fb2d6443
 /arm64/natmap= be5640240c85a8ba9836dac0d2945a9b65af934e
@@ -126,7 +126,7 @@
 /s/c7.json= 9fa3499d16ea2fbc92477b72cee05b561b07c8e2
 /s/c8.json= f992b50b5c139b391c6acf1e87cce66271a3b1a5
 /s/c9.json= 9c2101086b50b82da059e283a141a4491fc956ff
-/s/file1.txt= a3c626056dbad1b9e7ed94c382b73bf78f9fd313
+/s/file1.txt= 63bc4b612b731e40f2f976fc8fe5762ea9d47414
 /s/file111.txt= 6e57d7d03a14592eba99a492fd23a35ed4b7661d
 /s/file2.txt= ef8a5a6f1fe1deb416e50e81b2c81edffae4f485
 /s/file222.txt= e025f1d6da63f89e6d6478e991354ba3b659190b
@@ -147,20 +147,20 @@
 /t/clash-dashboard-gh-pages.tgz= 0b93c7a1fbcc7173cb98de606e492111eef5424d
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
-/t/clash.ver= 34eba011756000b8cdfbbb556e011479783aaa00
-/t/clash= 8832523888d4057d10d53554cac5ab94e8cf7a3b
-/t/cnip.txt= 73c030aada60f18eeb99ea548705ed1b51d3fecb
+/t/clash.ver= 1a18805953573fbe8c1871d87250f8962efa8050
+/t/clash= ddfaaa087645ac35e440f9c112d54edb93740f46
+/t/cnip.txt= 0050b941da18d1cef27b364c5caa64b53ad00245
 /t/cnipv6.txt= b15bbb7602bd48b7434efbcc9e64b88d51d1215c
-/t/delegated-apnic-latest= 9ce2011f65e48b56d6c24b0e848ceb7db5728fa7
+/t/delegated-apnic-latest= 37ba978bfce8656ae6f273f50ec7555629691008
 /t/dig.so.tgz= fecbc905ceb5fd7dc7f4668316a4d55a327623b2
 /t/dig= 4b238636dbaf381a272f42d806c241308c1d6875
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
-/t/geoip.dat= 92fe31a4fb6a514b3a502dc6b9d46d2ff4c9b47a
+/t/geoip.dat= 8a0710e9e69ec44e65bdf264d39ff404a5120f19
 /t/geosite-full.dat= 75be80c44f3c118ace6d7cc1dd94c01e6ea2e02d
 /t/geosite.dat= c262ab3cf97780daa067329f23b23794f248cf39
 /t/hysteria.ver= 204aa5589a21ec70e2d481c75b1b46f6ab2373c9
 /t/hysteria= 2bbab8b1d2b3d267c55383f74b6243e03b5f5002
-/t/ipset.cnip.txt= 658437e37fb826bae0ef128cee44d3e78f014b5b
+/t/ipset.cnip.txt= 8f453a21fdf7f0ab9ed5e44ee32883fcfd3e9043
 /t/ipset.cnipv6.txt= 31e5f5feb7c22603c5b34d240afc7095d27c5cee
 /t/kcptun.ver= 88376bcb83b6e30c7ff3e6d5c93f2e33908c192e
 /t/kcptun= 6e986d2edcf13eedaf7b36a7fd235eb88008e2d2
@@ -168,7 +168,7 @@
 /t/metacubexd-gh-pages.zip= 77224f92c7cd8811e2e30de093a868c275523809
 /t/natmap.ver= 50af7603acf94bc39e8c2ffb805f09289e92ec88
 /t/natmap= e406bd43882eaf5386163a94c8b6ff91bb930478
-/t/rule.tgz= 0d816f85fcbd29fb60f6a52389f10291a6e0005c
+/t/rule.tgz= 944a68441710ce5a8d84cd0e06948c4b34f6efe5
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
