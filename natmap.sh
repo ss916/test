@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=16
+sh_ver=17
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -39,9 +39,9 @@ settings () {
 echo -e \\n"\e[1;36m↓↓ $name初始化设置，請輸入监听网卡 i ，留空或回车则默认使用ppp0↓↓\e[0m"\\n
 read -p "请输入→：" i
 [ -z "$i" ] && i=ppp0
-echo -e \\n"\e[1;36m↓↓ 請输入STUN服务器 s，留空或回车则默认使用turn.cloudflare.com↓↓\e[0m"\\n
+echo -e \\n"\e[1;36m↓↓ 請输入STUN服务器 s，留空或回车则默认使用stun.miwifi.com↓↓\e[0m"\\n
 read -p "请输入→：：" s
-[ -z "$s" ] && s=turn.cloudflare.com
+[ -z "$s" ] && s=stun.miwifi.com
 echo -e \\n"\e[1;36m↓↓ 請输入HTTP服务器 h，留空或回车则默认使用qq.com↓↓\e[0m"\\n
 read -p "请输入→：：" h
 [ -z "$h" ] && h=qq.com
@@ -88,7 +88,8 @@ read_settings () {
 for aa in $(cat $dirconf/settings.txt | grep '=' | grep -Ev '^#' | sed '1!G;h;$!d') ; do nn=$(echo $aa | awk -F= '{print $1}') ; bb=$(echo $aa | sed "s/${nn}=//g") ; eval $nn=$bb ; done
 ##缺省参数补全
 [ -z "$i" ] && i=ppp0 && echo "i=ppp0" >> $dirconf/settings.txt
-[ -z "$s" ] && s=turn.cloudflare.com && echo "s=turn.cloudflare.com" >> $dirconf/settings.txt
+[ -z "$s" ] && s=stun.miwifi.com && echo "s=stun.miwifi.com" >> $dirconf/settings.txt
+#s=turn.cloudflare.com
 [ -z "$h" ] && h=qq.com && echo "h=qq.com" >> $dirconf/settings.txt
 [ -z "$b" ] && b=56666 && echo "b=56666" >> $dirconf/settings.txt
 [ -z "$t" ] && t=127.0.0.1 && echo "t=127.0.0.1" >> $dirconf/settings.txt
