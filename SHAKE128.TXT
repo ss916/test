@@ -1,13 +1,13 @@
-# //【2025-05-23 23:11:07】
-/SHA1.TXT= c502c7e9ccd9d4bd19aff9fbe834478f
+# //【2025-05-27 00:43:13】
+/SHA1.TXT= d866fddec0708700aa366d1d6812d8c9
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 633ca36116f88714db7206050f1ef91e
-/amd64/clash= b68aa913340197fe94067809c12f1d4c
+/amd64/clash= 5cbe352c86a3f993c85fa09f73b1628d
 /amd64/natmap= 9e8512497a421d6be87c6ade484d80d5
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= d4c0d0a7b1730f918f89f9930bfb3cdc
-/arm64/clash= 53f3aae6287c600ee6464a7fc882e7e8
+/arm64/clash= 7664b6fed38441dd27bfd39b9e9bd822
 /arm64/hysteria= 2d73e32969c9483eaa2197281aa210fa
 /arm64/kcptun= 53ecef0e29eb32ac000f2b112d6cbf12
 /arm64/natmap= 57931752bd34069428110114648df841
@@ -43,8 +43,8 @@
 /rule/chore_1.txt= e82bc7e7b6e444b466ee1e549dafb8a5
 /rule/chore_2.txt= e6b2b329f1567f36a5b8b4e35c617c99
 /rule/chore_3.txt= e40aa1396d61fe9f32256d08af061150
-/rule/cn_domains_china_conf.mrs= c0fb574bf7fd47e8b5a16b750285a72d
-/rule/cn_domains_china_conf.text.txt= 6803a4814940e0623058f56588ad183b
+/rule/cn_domains_china_conf.mrs= f0baf9518dfeefd5f9974de711b5caed
+/rule/cn_domains_china_conf.text.txt= 41829ddc1ef7b4441746a89df028bc44
 /rule/cn_video.mrs= 8e16a923650ff79e9ed7d82c15e5c5a6
 /rule/cn_video.text= 437a46be0f9fca8a91804ab030420a10
 /rule/cn_video.txt= 1c617700a32c2fac630a6dee1bdbf600
@@ -126,17 +126,17 @@
 /s/c7.json= 564468e3fa1114dda73a98f72e654c48
 /s/c8.json= 77bedf37393db8af6a4326794029af4a
 /s/c9.json= 7c4a9f4a8a4a98054cb75bde17403a9a
-/s/file1.txt= 270760cc5e7ba4b4eb428ee3161fcac9
-/s/file11.txt= b90745d027c5fb321d5004af6676df84
+/s/file1.txt= f1a99c4afbcde5785e3ea47868afe27c
+/s/file11.txt= 7de5a5b7b153689816bf5f7d324ae0b3
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
-/s/file2.txt= 88a126538e219b91d60fe4b3dc3c31cc
+/s/file2.txt= 570b91c0d698e7fd60ac9505a4c21eb3
 /s/file222.txt= 456805a421648c9679c10fd1a1675495
-/s/file3.txt= b4b150b363c7de3dbccd34aae47328ed
+/s/file3.txt= 53d11aa252aef9f200df0d7966091f37
 /s/file333.txt= abd85c70f48734e13093130245ef01ff
-/s/file4.txt= 0c74ac9205dfbac22ccc2dec706da7dc
-/s/file5.txt= 04e171135363e52918d78c2693831ecb
-/s/file6.txt= 2596acdc84c4d8a674a07f82ebdb15ed
-/s/file7.txt= a7e7fef275ad57df46f8623aa8a8d16f
+/s/file4.txt= f6a90422da8de87bf04c61276c26bf80
+/s/file5.txt= 8cd0210270031701fd0fe4e1c17ba789
+/s/file6.txt= d5ba2c5cd748ceea09f8dd5795efb329
+/s/file7.txt= 5969a3acdade73179d1d241a6609f31d
 /s/file8.txt= bfaf8b4407e9d6ccbb535b125f747904
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
 /speederv2.sh= 144e260972838b43372d7f95a3f4cf51
@@ -150,8 +150,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 203e5e5c241afc0456aa3af147643a89
-/t/clash= e9734f0c27fdc104af516d92382470f1
+/t/clash.ver= bdbecffa631875cac7bf985a7e947def
+/t/clash= 14cb21c6119f7f5699e927619cb0a172
 /t/cnip.txt= 1755b5bc45542e052d36b75ee4b47f9c
 /t/cnipv6.txt= 04be4d612794967f12c06d8876f34034
 /t/delegated-apnic-latest= 867a4993e78014a6399eefcfa5f9ebb1
@@ -159,8 +159,8 @@
 /t/dig= 0e7b60bab7956746f25abe23faf5f751
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
 /t/geoip.dat= b6379d2248b0d5ec9e497e7af2f927e6
-/t/geosite-full.dat= 9d3926c2b7d42cd3e07df30b7fdd7f9c
-/t/geosite.dat= 245506f05322a9cdeca6193db33d1415
+/t/geosite-full.dat= a22a510cf14dc58a0e810d30135dc337
+/t/geosite.dat= 09ab08189d4aeda1cf87e0d4ca8aeb47
 /t/hysteria.ver= e8f09422261eabac4e82a2fc0c137154
 /t/hysteria= 198357b943c852fc9cc54971b6ef4c1e
 /t/ipset.cnip.txt= a912d901bbfdff4b1f41b6a362459875
@@ -171,7 +171,7 @@
 /t/metacubexd-gh-pages.zip= f2faca0af06c5c7cd7d063ca3bb4a965
 /t/natmap.ver= cd31f4a5510492d033afdaa65f047f45
 /t/natmap= 17db032c7b425a4357b848c04d80fd0c
-/t/rule.tgz= 0b031d0969b899dce8785faa9ce930d0
+/t/rule.tgz= 87f4eee1656b212ce8b0b1aa2e47f443
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
