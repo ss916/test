@@ -1,13 +1,13 @@
-# //【2025-05-27 00:43:13】
-/SHA1.TXT= d866fddec0708700aa366d1d6812d8c9
+# //【2025-05-28 11:40:53】
+/SHA1.TXT= e75dd0df5d4372e543e875aedce93268
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 633ca36116f88714db7206050f1ef91e
-/amd64/clash= 5cbe352c86a3f993c85fa09f73b1628d
+/amd64/clash= f97bff6c82dd677121a144e85577c52b
 /amd64/natmap= 9e8512497a421d6be87c6ade484d80d5
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= d4c0d0a7b1730f918f89f9930bfb3cdc
-/arm64/clash= 7664b6fed38441dd27bfd39b9e9bd822
+/arm64/clash= e3455cb0eb753bd34009558edc01bacf
 /arm64/hysteria= 2d73e32969c9483eaa2197281aa210fa
 /arm64/kcptun= 53ecef0e29eb32ac000f2b112d6cbf12
 /arm64/natmap= 57931752bd34069428110114648df841
@@ -126,7 +126,7 @@
 /s/c7.json= 564468e3fa1114dda73a98f72e654c48
 /s/c8.json= 77bedf37393db8af6a4326794029af4a
 /s/c9.json= 7c4a9f4a8a4a98054cb75bde17403a9a
-/s/file1.txt= f1a99c4afbcde5785e3ea47868afe27c
+/s/file1.txt= 02a832da59d3cddfb5fe8f057b09d86c
 /s/file11.txt= 7de5a5b7b153689816bf5f7d324ae0b3
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 570b91c0d698e7fd60ac9505a4c21eb3
@@ -150,8 +150,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= bdbecffa631875cac7bf985a7e947def
-/t/clash= 14cb21c6119f7f5699e927619cb0a172
+/t/clash.ver= 447cde9fa7ed835dd6cbf1d1ee150f62
+/t/clash= e98d16e905d03d9563401a28906cb21a
 /t/cnip.txt= 1755b5bc45542e052d36b75ee4b47f9c
 /t/cnipv6.txt= 04be4d612794967f12c06d8876f34034
 /t/delegated-apnic-latest= 867a4993e78014a6399eefcfa5f9ebb1
@@ -171,7 +171,7 @@
 /t/metacubexd-gh-pages.zip= f2faca0af06c5c7cd7d063ca3bb4a965
 /t/natmap.ver= cd31f4a5510492d033afdaa65f047f45
 /t/natmap= 17db032c7b425a4357b848c04d80fd0c
-/t/rule.tgz= 87f4eee1656b212ce8b0b1aa2e47f443
+/t/rule.tgz= a1e1ce5bb1cb7e5517d4ed02de4a8ed9
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
