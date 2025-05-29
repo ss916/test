@@ -1,13 +1,13 @@
-# //【2025-05-28 11:40:53】
-/SHA1.TXT= e75dd0df5d4372e543e875aedce93268
+# //【2025-05-29 23:07:13】
+/SHA1.TXT= 499813cf80309f7c9165ea9169e6039c
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 633ca36116f88714db7206050f1ef91e
-/amd64/clash= f97bff6c82dd677121a144e85577c52b
+/amd64/clash= e5c84eff23409f2ecaac24def2911573
 /amd64/natmap= 9e8512497a421d6be87c6ade484d80d5
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= d4c0d0a7b1730f918f89f9930bfb3cdc
-/arm64/clash= e3455cb0eb753bd34009558edc01bacf
+/arm64/clash= bb0473b3305245e581192b7691444c73
 /arm64/hysteria= 2d73e32969c9483eaa2197281aa210fa
 /arm64/kcptun= 53ecef0e29eb32ac000f2b112d6cbf12
 /arm64/natmap= 57931752bd34069428110114648df841
@@ -126,7 +126,7 @@
 /s/c7.json= 564468e3fa1114dda73a98f72e654c48
 /s/c8.json= 77bedf37393db8af6a4326794029af4a
 /s/c9.json= 7c4a9f4a8a4a98054cb75bde17403a9a
-/s/file1.txt= 02a832da59d3cddfb5fe8f057b09d86c
+/s/file1.txt= a9f5d74e0d85b75b72d9f54d545854cd
 /s/file11.txt= 7de5a5b7b153689816bf5f7d324ae0b3
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 570b91c0d698e7fd60ac9505a4c21eb3
@@ -150,8 +150,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 447cde9fa7ed835dd6cbf1d1ee150f62
-/t/clash= e98d16e905d03d9563401a28906cb21a
+/t/clash.ver= 38a3d664a9aa836c0c1ff7e5dc7d31b3
+/t/clash= 884d80bc8a4001436f7c006199f16e1b
 /t/cnip.txt= 1755b5bc45542e052d36b75ee4b47f9c
 /t/cnipv6.txt= 04be4d612794967f12c06d8876f34034
 /t/delegated-apnic-latest= 867a4993e78014a6399eefcfa5f9ebb1
@@ -159,8 +159,8 @@
 /t/dig= 0e7b60bab7956746f25abe23faf5f751
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
 /t/geoip.dat= b6379d2248b0d5ec9e497e7af2f927e6
-/t/geosite-full.dat= a22a510cf14dc58a0e810d30135dc337
-/t/geosite.dat= 09ab08189d4aeda1cf87e0d4ca8aeb47
+/t/geosite-full.dat= a49e9b811e9766f282537560534300f1
+/t/geosite.dat= 0e042a34b029c8e4f90ab475f49e524f
 /t/hysteria.ver= e8f09422261eabac4e82a2fc0c137154
 /t/hysteria= 198357b943c852fc9cc54971b6ef4c1e
 /t/ipset.cnip.txt= a912d901bbfdff4b1f41b6a362459875
@@ -171,7 +171,7 @@
 /t/metacubexd-gh-pages.zip= f2faca0af06c5c7cd7d063ca3bb4a965
 /t/natmap.ver= cd31f4a5510492d033afdaa65f047f45
 /t/natmap= 17db032c7b425a4357b848c04d80fd0c
-/t/rule.tgz= a1e1ce5bb1cb7e5517d4ed02de4a8ed9
+/t/rule.tgz= e8682f77389845f8228f3c79cdbda398
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
