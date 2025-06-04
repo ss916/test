@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=44
+sh_ver=45
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -188,8 +188,8 @@ else
 fi
 echo -e \\n"\e[1;44m★[$u/$max_url]『$filename』use URL <$link>$proxy_status is downloading... \e[0m"
 ########
-#检验文件，可选算法SHA1、SHAKE128
-[ ! -z "$(openssl dgst -list 2>&1 | grep -i shake128)" ] && hash=SHAKE128 || hash=SHA1
+#检验文件算法
+[ -z "$hash" ] && hash=SHA1
 hashfile=${hash}.TXT
 #下载次数
 m=5
