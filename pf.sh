@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=97
+sh_ver=99
 
 path=${0%/*}
 bashname=${0##*/}
@@ -226,28 +226,6 @@ done
 }
 
 
-set_path () {
-if [ ! -s /etc/storage/profile -o -z "`grep "storage/pdcn" /etc_ro/profile`" ] ; then
-	echo -e \\n"\e[1;36m■设置环境变量\e[0m"
-	[ ! -z "`grep "storage/pdcn" /etc_ro/profile`" ] && umount /etc_ro/profile
-	oldpath=`cat /etc_ro/profile |awk -F\' '/export PATH/{print $2}'|tail -n 1`
-	newpath="/etc/storage:/etc/storage/pdcn"
-	cp -f /etc_ro/profile /etc/storage/profile
-	sed -i "/export PATH/s@$oldpath@$oldpath:$newpath@g" /etc/storage/profile
-	mount --bind /etc/storage/profile /etc_ro/profile
-	source /etc/profile
-	if [ ! -z "`df -h|grep profile`" ] ; then
-		echo "✔ 环境变量profile挂载成功！" && logger -t "【${bashname}】" "✔ 环境变量profile挂载成功！"
-	else
-		echo "✖ 环境变量profile挂载失败！" && logger -t "【${bashname}】" "✖ 环境变量profile挂载失败！"
-	fi
-fi
-[ -z "$(pidof crond)" ] && echo "▶启动crontab进程crond " && crond
-}
-un_set_path () {
-[ ! -z "`grep "storage/pdcn" /etc_ro/profile`" ] && echo -e \\n"\e[1;36m□还原环境变量\e[0m" && umount /etc_ro/profile && source /etc/profile
-[ -s /etc/storage/profile ] && echo -e \\n"\e[1;36m□删除环境变量文件/etc/storage/profile\e[0m" && rm /etc/storage/profile
-}
 
 
 #开机自启
@@ -353,6 +331,32 @@ sleep $random_mum
 up_pf
 bash ${path}/${bashname} up_and_renew
 }
+
+
+set_path () {
+if [ ! -s /etc/storage/profile -o -z "`grep "storage/pdcn" /etc_ro/profile`" ] ; then
+	echo -e \\n"\e[1;36m■设置环境变量\e[0m"
+	[ ! -z "`grep "storage/pdcn" /etc_ro/profile`" ] && umount /etc_ro/profile
+	oldpath=`cat /etc_ro/profile |awk -F\' '/export PATH/{print $2}'|tail -n 1`
+	newpath="/etc/storage:/etc/storage/pdcn"
+	cp -f /etc_ro/profile /etc/storage/profile
+	sed -i "/export PATH/s@$oldpath@$oldpath:$newpath@g" /etc/storage/profile
+	mount --bind /etc/storage/profile /etc_ro/profile
+	source /etc/profile
+	if [ ! -z "`df -h|grep profile`" ] ; then
+		echo "✔ 环境变量profile挂载成功！" && logger -t "【${bashname}】" "✔ 环境变量profile挂载成功！"
+	else
+		echo "✖ 环境变量profile挂载失败！" && logger -t "【${bashname}】" "✖ 环境变量profile挂载失败！"
+	fi
+fi
+[ -z "$(pidof crond)" ] && echo "▶启动crontab进程crond " && crond
+up_pf &
+}
+un_set_path () {
+[ ! -z "`grep "storage/pdcn" /etc_ro/profile`" ] && echo -e \\n"\e[1;36m□还原环境变量\e[0m" && umount /etc_ro/profile && source /etc/profile
+[ -s /etc/storage/profile ] && echo -e \\n"\e[1;36m□删除环境变量文件/etc/storage/profile\e[0m" && rm /etc/storage/profile
+}
+
 
 stop () {
 stop_cron

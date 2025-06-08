@@ -1,6 +1,6 @@
-# //【2025-06-04 16:26:13】
-/SHA1.TXT= 851a4ffee51e30fc2351c31911975369
-/SHA3-256.TXT= 82e36e3e30bee26cbff8ab2b755ad0b9
+# //【2025-06-08 21:20:03】
+/SHA1.TXT= 335087d58dbd534d991c30c4e8f01613
+/SHA3-256.TXT= 0e9615f135e291f358b0af7e1228148c
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 633ca36116f88714db7206050f1ef91e
 /amd64/clash= 55826dc8dbda6fe72f2ce0677288939f
@@ -33,7 +33,7 @@
 /kcptun.sh= 62651643157051cd30988ebb08c4d5fd
 /natmap.sh= 495004cbe886ffbdc18a0a3dce4fdb98
 /opt.sh= acfbeb38f26e14fd0e2881a35aa7e47f
-/pf.sh= 6d76a682755ac509056117e2bfc4f6c2
+/pf.sh= fb6df417b9bdead45fcf0e0ea1088d20
 /rule/block_dnsmasq.mrs= 38ce67bb363774159ab8a56c9a9807a4
 /rule/block_dnsmasq.text= 7ed492b302186e752b863a9bbd42abb9
 /rule/block_dnsmasq.txt= 953d1dd08db712863acfc6bcdfc19178
@@ -127,7 +127,7 @@
 /s/c7.json= 564468e3fa1114dda73a98f72e654c48
 /s/c8.json= 77bedf37393db8af6a4326794029af4a
 /s/c9.json= 7c4a9f4a8a4a98054cb75bde17403a9a
-/s/file1.txt= a9f5d74e0d85b75b72d9f54d545854cd
+/s/file1.txt= d4480132b64281f9faad75374603c2b8
 /s/file11.txt= 7de5a5b7b153689816bf5f7d324ae0b3
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 570b91c0d698e7fd60ac9505a4c21eb3
@@ -172,7 +172,7 @@
 /t/metacubexd-gh-pages.zip= f2faca0af06c5c7cd7d063ca3bb4a965
 /t/natmap.ver= cd31f4a5510492d033afdaa65f047f45
 /t/natmap= 17db032c7b425a4357b848c04d80fd0c
-/t/rule.tgz= f0cc4e939548cbcefc64d792488a7ead
+/t/rule.tgz= 77fcd89def40a0aeab671ce8465e318e
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
