@@ -1,6 +1,6 @@
-# //【2025-06-08 21:20:03】
-/SHA1.TXT= 335087d58dbd534d991c30c4e8f01613
-/SHA3-256.TXT= 0e9615f135e291f358b0af7e1228148c
+# //【2025-06-09 00:48:38】
+/SHA1.TXT= 22aee352ffc633b8a0a3588a8af7296a
+/SHA3-256.TXT= 36b18f1863b4f9059f216458609026cb
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 633ca36116f88714db7206050f1ef91e
 /amd64/clash= 55826dc8dbda6fe72f2ce0677288939f
@@ -33,7 +33,7 @@
 /kcptun.sh= 62651643157051cd30988ebb08c4d5fd
 /natmap.sh= 495004cbe886ffbdc18a0a3dce4fdb98
 /opt.sh= acfbeb38f26e14fd0e2881a35aa7e47f
-/pf.sh= fb6df417b9bdead45fcf0e0ea1088d20
+/pf.sh= 1942677562905c2dc7e5bd15fb0019e5
 /rule/block_dnsmasq.mrs= 38ce67bb363774159ab8a56c9a9807a4
 /rule/block_dnsmasq.text= 7ed492b302186e752b863a9bbd42abb9
 /rule/block_dnsmasq.txt= 953d1dd08db712863acfc6bcdfc19178

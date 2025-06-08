@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=99
+sh_ver=100
 
 path=${0%/*}
 bashname=${0##*/}
@@ -290,8 +290,8 @@ mtd_storage.sh save &
 up_pf () {
 if [ ! -z "${force_url}" ] ; then
 u=$(set | grep -E "^url${force_url}=" | sed '/"/d' | sed -E "s/'//g;s/^url${force_url}=//g")
-else
-u=$url4
+#else
+#u=$url4
 fi
 s=${name}.sh
 echo -e \\n"\e[1;33m〘$s〙檢查更新文件...$(timenow)...\e[0m"\\n
