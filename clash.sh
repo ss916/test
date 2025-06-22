@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=251
+sh_ver=253
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -32,11 +32,11 @@ dns_port=5300
 
 #资源文件地址前缀
 url1="https://raw.githubusercontent.com/ss916/test/main"
-url2="https://raw.githubusercontents.com/ss916/test/main"
+#url2=""
 url3="https://rrr.ariadl.eu.org/ss916/test/main"
 url4="https://fastly.jsdelivr.net/gh/ss916/test@main"
 url5="https://gcore.jsdelivr.net/gh/ss916/test@main"
-url6="https://testingcf.jsdelivr.net/gh/ss916/test@main"
+#url6="https://testingcf.jsdelivr.net/gh/ss916/test@main"
 url7="https://yyellow.ariadl.eu.org/916"
 #url8="https://originfastly.jsdelivr.net/gh/ss916/test@main"
 
@@ -187,6 +187,8 @@ else
 fi
 
 export SKIP_SAFE_PATH_CHECK=1
+export SAFE_PATHS=/etc/storage/pdcn/clash:/usr/local/etc/ssl
+
 run="$dirtmp/${name} -d $dirtmp"
 
 pss='ps -w |grep -v grep| grep "$run"'

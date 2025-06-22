@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=45
+sh_ver=46
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -25,11 +25,11 @@ gid=20006
 
 #资源文件地址前缀
 url1="https://raw.githubusercontent.com/ss916/test/main"
-url2="https://raw.githubusercontents.com/ss916/test/main"
+#url2=""
 url3="https://rrr.ariadl.eu.org/ss916/test/main"
 url4="https://fastly.jsdelivr.net/gh/ss916/test@main"
 url5="https://gcore.jsdelivr.net/gh/ss916/test@main"
-url6="https://testingcf.jsdelivr.net/gh/ss916/test@main"
+#url6="https://testingcf.jsdelivr.net/gh/ss916/test@main"
 url7="https://yyellow.ariadl.eu.org/916"
 
 [ "${path}" = "sh" -a "${bashname}" = "sh" -o "${path}" = "bash" -a "${bashname}" = "bash" ] && echo -e \\n"❗ \e[1;37m获取不到脚本真实路径path与脚本名字bashname，其值为$path。依赖路径与名字的功能将会失效。请下载脚本到本地再运行。\e[0m❗"\\n
