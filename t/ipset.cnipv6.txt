@@ -316,7 +316,6 @@ add cnipv6 2400:a9a0::/32
 add cnipv6 2400:abc0::/32
 add cnipv6 2400:ae00::/32
 add cnipv6 2400:b200::/32
-add cnipv6 2400:b2c0::/32
 add cnipv6 2400:b500::/32
 add cnipv6 2400:b600::/32
 add cnipv6 2400:b620::/32
@@ -649,7 +648,6 @@ add cnipv6 2401:da00::/32
 add cnipv6 2401:dbe0::/32
 add cnipv6 2401:dd20::/32
 add cnipv6 2401:dd60::/32
-add cnipv6 2401:dde0::/32
 add cnipv6 2401:de00::/32
 add cnipv6 2401:dfe0::/32
 add cnipv6 2401:e00::/32
@@ -682,12 +680,12 @@ add cnipv6 2401:fc60::/32
 add cnipv6 2401:fc80::/32
 add cnipv6 2401:ffc0::/32
 add cnipv6 2402:1000::/32
+add cnipv6 2402:1160::/32
 add cnipv6 2402:1440::/32
 add cnipv6 2402:14c0::/32
 add cnipv6 2402:1600::/32
 add cnipv6 2402:1740::/32
 add cnipv6 2402:19c0::/32
-add cnipv6 2402:1ec0::/32
 add cnipv6 2402:1f80::/32
 add cnipv6 2402:2000::/32
 add cnipv6 2402:2280::/32
@@ -1245,7 +1243,6 @@ add cnipv6 2404:3940::/32
 add cnipv6 2404:3bc0::/32
 add cnipv6 2404:3c40::/32
 add cnipv6 2404:3f40::/32
-add cnipv6 2404:4080::/32
 add cnipv6 2404:41c0::/32
 add cnipv6 2404:440::/32
 add cnipv6 2404:4540::/32
@@ -1566,7 +1563,6 @@ add cnipv6 2405:ce80::/32
 add cnipv6 2405:d280::/32
 add cnipv6 2405:d4c0::/32
 add cnipv6 2405:d700::/32
-add cnipv6 2405:d740::/32
 add cnipv6 2405:d80::/32
 add cnipv6 2405:d900::/32
 add cnipv6 2405:df40::/32
@@ -1755,7 +1751,6 @@ add cnipv6 2406:9480::/32
 add cnipv6 2406:94c0::/32
 add cnipv6 2406:9780::/32
 add cnipv6 2406:9d80::/32
-add cnipv6 2406:9e40::/32
 add cnipv6 2406:9e80::/32
 add cnipv6 2406:9f80::/32
 add cnipv6 2406:a080::/32
