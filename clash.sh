@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=253
+sh_ver=254
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -17,6 +17,7 @@ tmp=/tmp
 file_cron=/etc/storage/cron/crontabs/admin
 #开机自启文件
 file_wan=/etc/storage/post_wan_script.sh
+file_wan2=/etc/storage/post_iptables_script.sh
 
 #iptables设置绕过UID
 #创建系统新用户
@@ -1294,6 +1295,7 @@ ipt0
 }
 
 start_iptables () {
+echo -e \\n"$(timenow) start_iptables..."
 #ipv4 局域网
 pre41=$(iptables -t mangle -vnL PREROUTING --line-numbers | grep -i $name | wc -l)
 #ipv4 局域网DNS
@@ -1371,6 +1373,19 @@ if [ "$(cat ${path}/START_WAN.SH | grep ${bashname} | wc -l)" != "1" ] ; then
 	fi
 fi
 }
+
+stop_wan2 () {
+[ ! -z "$(cat $file_wan2 | grep ${bashname})" ] && echo -e \\n"\e[1;36m□删除开机自启(iptables tproxy) $file_wan2\e[0m" && sed -i "/${bashname}/d" $file_wan2
+}
+start_wan2 () {
+if [ "$mode" = "1" -o "$mode" = "2" ] ; then
+	if [ "$(cat $file_wan2 | grep ${bashname} | wc -l)" != "1" ] ; then
+		stop_wan2
+		echo -e \\n"\e[1;36m▶创建开机自启2(iptables tproxy)...\e[0m" && echo "sh ${path}/${bashname} start_iptables > $tmp/${bashname}_start_wan2_start_iptables.txt 2>&1 &" >> $file_wan2
+	fi
+fi
+}
+
 
 #定时任务
 stop_cron () {
@@ -1738,6 +1753,7 @@ fi
 status_program
 #创建开机自启
 start_wan
+start_wan2
 #创建定时任务
 start_cron
 #检验tproxy端口是否监听
@@ -2066,10 +2082,12 @@ log)
 	;;
 stop_wan_cron)
 	stop_wan
+	stop_wan2
 	stop_cron
 	;;
 start_wan_cron)
 	start_wan
+	start_wan2
 	start_cron
 	;;
 *)
