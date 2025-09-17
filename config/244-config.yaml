@@ -1,4 +1,4 @@
-# //【2025-06-28 19:07:33】
+# //【2025-08-31 11:13:17】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -275,6 +275,7 @@ rules:
   #- DOMAIN-KEYWORD,360,屏蔽
   #- DOMAIN-SUFFIX,360.com,屏蔽
   #- DOMAIN,m.360.cn,屏蔽
+  #- DOMAIN-WILDCARD,test.*.domain.com,ss1
   
   #- OR,((DOMAIN,baidu.com),(NETWORK,UDP)),REJECT
   #- NOT,(DOMAIN,baidu.com),REJECT 

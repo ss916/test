@@ -292,6 +292,8 @@ payload:
   #xnxx
   - DOMAIN-SUFFIX,xnxx.com
   - DOMAIN-SUFFIX,xnxx-cdn.com
+  - DOMAIN-SUFFIX,xn-app1.com
+  - DOMAIN-SUFFIX,orbsrv.com
   #xvideos
   - DOMAIN-SUFFIX,xvideos.com
   - DOMAIN-SUFFIX,xvideos-cdn.com

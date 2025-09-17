@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=45
+sh_ver=46
 
 path=${0%/*}
 bashname=${0##*/}
@@ -43,6 +43,7 @@ echo -e \\n"$(timenow)"\\n
 [ ! -z "$(nvram get opt_force_www | grep 'cdn.jsdelivr.net')" ] && set_opt1 1
 [ -z "$(nvram get opt_force_file)" ] && set_opt2 1
 [ ! -s /opt/bin/opkg -o ! -s /opt/etc/opkg.conf ] && echo "✖未检测到opkg主程序文件/opt/bin/opkg或者/opt/etc/opkg.conf，重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
+curl -V >/dev/null 2>&1 ; [ "$?" = "1" ] && echo "✖检测到curl报错，重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
 curl_proxy
 [ ! -z "$(ls /opt/tmp)" ] && echo ">>清空/opt/tmp..." && rm -rf /opt/tmp/*
 echo -e \\n"\e[1;32m ▶更新opkg列表...\e[0m "
