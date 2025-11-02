@@ -369,6 +369,8 @@ payload:
   #v2fly
   - DOMAIN-SUFFIX,v2fly.org
   - DOMAIN-SUFFIX,v2ray.com
+  #emotn
+  - DOMAIN-SUFFIX,keeflys.com
   #other
   #- DOMAIN-KEYWORD,jav
   #- DOMAIN-KEYWORD,pinterest
