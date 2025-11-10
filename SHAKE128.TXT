@@ -1,14 +1,14 @@
-# //【2025-11-09 22:04:46】
-/SHA1.TXT= 224197fc39cf16c09c510c2e0a6d7b7f
-/SHA3-256.TXT= 68f57801960e0379a7c1f4cfdfa2878e
+# //【2025-11-10 23:57:12】
+/SHA1.TXT= 4b5a0e986695cfdb7ac157c0354d786a
+/SHA3-256.TXT= ce31ca9cdb1529234b252e57e1e812b7
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= af745c50a00ee5f063398270e6d2683b
-/amd64/clash= 472022486b2d0accac43998fdaf528ea
+/amd64/clash= 8060f33f815645527949433648cc5fb4
 /amd64/natmap= 89afedd105f05ad588d342f8467cd467
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= 6d5a442e79c34b9179aa7f4989fdc710
-/arm64/clash= 15b749bdbe1389dd57347d326e54be79
+/arm64/clash= 259ab44f4adcac4564fbfdf73228940d
 /arm64/hysteria= 2f589a656532ac5c33892e98a3b774c8
 /arm64/kcptun= 67850ba774ffab9b364b5e8844f6dec2
 /arm64/natmap= a90c58d71a4965c06b0f0a82afc8456b
@@ -151,8 +151,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= d520dc93c14112130405d87dc9b3774e
-/t/clash= a1b3406e081c82b987d8642155a4f4a9
+/t/clash.ver= 0c3e7090360431668ea30433e3863b8b
+/t/clash= 92dbfaaad5d432d8fd9ca048d2e69c2d
 /t/cnip.txt= 4483b2e37519f1c4da0cb1398cc1ab7e
 /t/cnipv6.txt= 038e8486c7f2ee1cc8ec6d8e3a2e36af
 /t/delegated-apnic-latest= 7b769fc3930b5570045e9498251b0697
@@ -160,19 +160,19 @@
 /t/dig= 0e7b60bab7956746f25abe23faf5f751
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
 /t/geoip.dat= 471393b7357d47db651af733b84caa86
-/t/geosite-full.dat= ef736460641d6140850dbdeba6d59919
-/t/geosite.dat= 87a9673d63d33006658e3b2ba4554a87
+/t/geosite-full.dat= 12b3a37b1587b0a1a1c0e1ee62a28767
+/t/geosite.dat= 0b0b299d8aae2c1a79966467045729aa
 /t/hysteria.ver= 71cf331b51922eec90b4bd92cf4259d0
 /t/hysteria= f41aff6ea9a4e9951a19c970f461c706
 /t/ipset.cnip.txt= 79c88f3d6a6ab8fd4b9157cb694e8d37
 /t/ipset.cnipv6.txt= ba02b8716960b5ca79628bc3c8ee4d07
 /t/kcptun.ver= 66b03268305f7cd3ab6ea5997a8f0fba
 /t/kcptun= ebfb7789e34c3a611a51ee6a1e17a73c
-/t/metacubexd-gh-pages.tgz= 0f83f787b72e5006ef5dc13a3b92549c
-/t/metacubexd-gh-pages.zip= 34fe2384caffaee3c49c49f04fac3886
+/t/metacubexd-gh-pages.tgz= 338b94dd0fe503d17c7bc81612ee0d00
+/t/metacubexd-gh-pages.zip= d9d763b6afba3eac7a79f314b7eded53
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= c6fe0f631e8f3ca4e4f4618892c11f06
+/t/rule.tgz= d0c40bc63b14f428beae8b8e2e76617c
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
