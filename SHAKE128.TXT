@@ -1,14 +1,14 @@
-# //【2025-11-28 10:11:30】
-/SHA1.TXT= 75f2d021e2a4a9aeb9c9c6a748003e50
-/SHA3-256.TXT= 683ffa6bb91203484dcc45bd7a04f66a
+# //【2025-12-01 17:00:05】
+/SHA1.TXT= e1d34780fb463c4dbb82df47058d2345
+/SHA3-256.TXT= 70109b99bf0b9479edce1a53f89447c4
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 070abfc0c1865471921b67b8e67897aa
-/amd64/clash= 2123b5aada5b38370a306d02a3564b44
+/amd64/clash= d3f68834d3b89e325ad802944f6c06d8
 /amd64/natmap= 89afedd105f05ad588d342f8467cd467
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= a69616cb369e55724bb2cd59c8607b37
-/arm64/clash= dbf1e441febf7d7373eff8b914cb65e5
+/arm64/clash= 238bcb6e40c464450879ae295941ae79
 /arm64/hysteria= 2f589a656532ac5c33892e98a3b774c8
 /arm64/kcptun= 67850ba774ffab9b364b5e8844f6dec2
 /arm64/natmap= a90c58d71a4965c06b0f0a82afc8456b
@@ -127,7 +127,7 @@
 /s/c7.json= d268e51744f7b2a9cf9d788013d12a35
 /s/c8.json= 26974772e18bbbb33eb89b76020e67e0
 /s/c9.json= 14638613eb7b70175b64779486936c1d
-/s/file1.txt= d422a33da0c92acfd01abf8460cee8c0
+/s/file1.txt= f0167700ff9c7395fc503c2a3d3e43d8
 /s/file11.txt= a6898d17b0844a8578034c0c706e41bc
 /s/file111.txt= 47e07370c17ef237addb7e9410b8722c
 /s/file2.txt= 570b91c0d698e7fd60ac9505a4c21eb3
@@ -151,8 +151,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= c4b22c546bc9feb6501efe8f0b1e259e
-/t/clash= 6321af99b2026cd119639dd755e1f4a3
+/t/clash.ver= 2832de7f25ebed395cc8cb20bd52faa9
+/t/clash= 55515051d19ce42c221f9b567f284ee0
 /t/cnip.txt= 6fda685e9a666e25242ffb066bbd38fd
 /t/cnipv6.txt= 7f4353a19208984dcc40dca70e7f3f0f
 /t/delegated-apnic-latest= 424f014ee2b6ad8f6522b3e25090d30d
@@ -160,8 +160,8 @@
 /t/dig= 0e7b60bab7956746f25abe23faf5f751
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
 /t/geoip.dat= 7b228acbfd1dfcaba475d6b0dac4a211
-/t/geosite-full.dat= b7271be669a5365a4333eda9cdd8808c
-/t/geosite.dat= 2e9743e58474d228c0d69ea35c5a8866
+/t/geosite-full.dat= 7005a9b79ba8dee5450edae1f35c85e2
+/t/geosite.dat= 18c93366135e82635a10e673d81213d3
 /t/hysteria.ver= 71cf331b51922eec90b4bd92cf4259d0
 /t/hysteria= f41aff6ea9a4e9951a19c970f461c706
 /t/ipset.cnip.txt= 21148db2e71affeb9041389e4ea9f380
@@ -172,7 +172,7 @@
 /t/metacubexd-gh-pages.zip= 1d15c6e7b3c4643094f4b4d6517c6b34
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= 80526ac52ab7909b0cfb39c8e225fed4
+/t/rule.tgz= 2e6ca81bb1de9105c2809f9ae165c73a
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
