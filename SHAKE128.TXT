@@ -1,6 +1,6 @@
-# //【2025-12-23 16:25:02】
-/SHA1.TXT= f7fdd21c8e18e62d005c3a786d52142d
-/SHA3-256.TXT= 19b0c664b4f407f9e755c6a06d299bbd
+# //【2026-01-03 00:11:05】
+/SHA1.TXT= 6938ecb51d32028772d1b08c9eccb456
+/SHA3-256.TXT= 1b52d7b50e241c8b1c24288ee54e3781
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= 68951d7256892c2c5d30505a9453971a
 /amd64/clash= 8664577f38ee7e41cee3e99821d9eb9c
@@ -44,8 +44,8 @@
 /rule/chore_1.txt= e82bc7e7b6e444b466ee1e549dafb8a5
 /rule/chore_2.txt= e6b2b329f1567f36a5b8b4e35c617c99
 /rule/chore_3.txt= e40aa1396d61fe9f32256d08af061150
-/rule/cn_domains_china_conf.mrs= 83c3379d346a61226d1d8f8d98632770
-/rule/cn_domains_china_conf.text.txt= 26a5eebdfb2d6e95dea9b9e44af03f06
+/rule/cn_domains_china_conf.mrs= e502586f0f7e283cf41d0714f5e07b12
+/rule/cn_domains_china_conf.text.txt= ee5d814c30dad2a6935230efd62cbbc7
 /rule/cn_video.mrs= 8e16a923650ff79e9ed7d82c15e5c5a6
 /rule/cn_video.text= 437a46be0f9fca8a91804ab030420a10
 /rule/cn_video.txt= 1c617700a32c2fac630a6dee1bdbf600
@@ -159,20 +159,20 @@
 /t/dig.so.tgz= 8cca112bdacdf4d8d9a4adbda635edbe
 /t/dig= 0e7b60bab7956746f25abe23faf5f751
 /t/geoip-full.dat= 28237bccbbb1813400028668c5dfd585
-/t/geoip.dat= 5f3a3cc4d9b0edc35d8ad678dff7c771
-/t/geosite-full.dat= 056fee5b599740aee981e05b41f17293
-/t/geosite.dat= e245f5f18026ecb19342ff9260cbaed4
+/t/geoip.dat= a9404496c9d4701fac7f2c4d2beca8f5
+/t/geosite-full.dat= dfb955a03e0a395d66a54f6662790a4c
+/t/geosite.dat= cc977f595c8ad63ef3035c6b7b23bc32
 /t/hysteria.ver= 71cf331b51922eec90b4bd92cf4259d0
 /t/hysteria= f41aff6ea9a4e9951a19c970f461c706
 /t/ipset.cnip.txt= 1281dc101b2bd3517df7c6ba1e41b1df
 /t/ipset.cnipv6.txt= 76d38ee1530921d7db9e9261140c16de
 /t/kcptun.ver= 66b03268305f7cd3ab6ea5997a8f0fba
 /t/kcptun= ebfb7789e34c3a611a51ee6a1e17a73c
-/t/metacubexd-gh-pages.tgz= 7eafe1cdc43756657671b5d8cdc145c6
-/t/metacubexd-gh-pages.zip= 0807757f7800238fa7a2612e62b169a7
+/t/metacubexd-gh-pages.tgz= 9afa00e9794395007ba12d69a0a2bb5c
+/t/metacubexd-gh-pages.zip= e46a0c580c2ad71173897e32994b8d20
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= 870b35a25b78230839a7cc2353b21762
+/t/rule.tgz= 7eb72106a62ceddb3086178c6b544e3d
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88

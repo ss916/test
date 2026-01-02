@@ -1,6 +1,6 @@
-# //【2025-12-23 16:24:59】
-/SHA3-256.TXT= ee248dfcefdc66a559be06e353986efe8bdaef1a
-/SHAKE128.TXT= e68cad7c3deb72e7243df756bc21a0d5288868e9
+# //【2026-01-03 00:11:02】
+/SHA3-256.TXT= e8cbd15b0157ba3e3f0a772062c83e06c06537e4
+/SHAKE128.TXT= 1eab69958a4711f5f4348bf1585a0183fa325efe
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
 /amd64/caddy= bb036989dbe0086ca08b29b0fffac4d22080899a
 /amd64/clash= f3bb2761c02350d2eb78a7b4da9a76ef3d68ed35
@@ -44,8 +44,8 @@
 /rule/chore_1.txt= e1fdd27298dff74afa440430695986ac09bb3506
 /rule/chore_2.txt= 825f1de571d56f01b784b60b3a1f13287636fedb
 /rule/chore_3.txt= 5b5fb945dc2cdfc643fa8450af9244756cb73407
-/rule/cn_domains_china_conf.mrs= 6943bfd3fcf692d16e65d0c08dc80d861a1bb505
-/rule/cn_domains_china_conf.text.txt= a38d8910ff011cfa43b943e999b29f20b9a92193
+/rule/cn_domains_china_conf.mrs= e81a8099dc92f4ddebd3cd085719388d3a4c1b95
+/rule/cn_domains_china_conf.text.txt= d1ee44e2f7c7edefee29ed66fe26ce42c9f71204
 /rule/cn_video.mrs= e7576a287582e0019f17ea46693adc78d7ae3122
 /rule/cn_video.text= 2d265cbe508e621e8f332c98b6e3cf55be7f6faf
 /rule/cn_video.txt= 73e1d54d0fb892f68452621718585f1133fc7a99
@@ -159,20 +159,20 @@
 /t/dig.so.tgz= fecbc905ceb5fd7dc7f4668316a4d55a327623b2
 /t/dig= 4b238636dbaf381a272f42d806c241308c1d6875
 /t/geoip-full.dat= 8e1dc0766e62a94e12a70428327f216d6652e666
-/t/geoip.dat= d0c4dc7ef12cf2026a0ef5ebe7a35c5b5ad44408
-/t/geosite-full.dat= a8edb981159d970d8ad9b245b841bdae7c275bf0
-/t/geosite.dat= 211b478cfaf86d41b114f21f428bc040f153154e
+/t/geoip.dat= e64b02eccd78d4a25445fbae1b906bd015500d44
+/t/geosite-full.dat= eed5b8d09ce293efa19068312e65024b4729db3a
+/t/geosite.dat= 1cbf4758299eb08c7a8d6436b2f7e4ec98bab30b
 /t/hysteria.ver= 1f84df74f5d80445316ecf08865993f114eb77d9
 /t/hysteria= 528481d7db8f63f53de63ca1821630a1260d6ed2
 /t/ipset.cnip.txt= 1a8e54071fca69bd8440329e40b64fd0557d9822
 /t/ipset.cnipv6.txt= d93e65f1949e5a3297a6691b66fe12ef02a0af4a
 /t/kcptun.ver= a6cfded0ebc4ccc8bee6845176fad20d8b7cd2b3
 /t/kcptun= c7a084365773e6b42e7eafcac309ba79a2c73236
-/t/metacubexd-gh-pages.tgz= 44f3a7dafa8956c8e1471676db58b7b4a282e50f
-/t/metacubexd-gh-pages.zip= 6e52187644a4e9dc658ebe7547d7e904fa940015
+/t/metacubexd-gh-pages.tgz= 9f00037894aff3693f64f6ce703c72b88c058125
+/t/metacubexd-gh-pages.zip= ae44fea684704c61d6a50f7ae98bab5542521a20
 /t/natmap.ver= 9c9b2e95a00e28df178f6a4a723a07e7dbd7da7a
 /t/natmap= 568cb6bc519ab54f8c4585f0a7692d7745331102
-/t/rule.tgz= b5635fdbe1d30b5453e7196132f2c6ac49a3c2f5
+/t/rule.tgz= e118f23062f26bf74839e68160f5ebb38d9b7254
 /t/speederv2= b5443a7af52279e512f0341040394b8db9d89d14
 /t/speedtest.ver= 1a5c7e0f532b482e46d576742ba6b9db29c751b3
 /t/speedtest= 4866946409aaefa409d84b6479eb72e7c7a322fd
