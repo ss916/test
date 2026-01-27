@@ -388,7 +388,6 @@ add cnipv6 2400:fcc0::/32
 add cnipv6 2400:fe00::/32
 add cnipv6 2401:1000::/32
 add cnipv6 2401:1160::/32
-add cnipv6 2401:11a0::/32
 add cnipv6 2401:11c0::/32
 add cnipv6 2401:1200::/32
 add cnipv6 2401:12c0::/32
@@ -730,6 +729,7 @@ add cnipv6 2402:440::/32
 add cnipv6 2402:4440::/32
 add cnipv6 2402:4500::/32
 add cnipv6 2402:4540::/32
+add cnipv6 2402:4820::/32
 add cnipv6 2402:4a00::/32
 add cnipv6 2402:4a40::/32
 add cnipv6 2402:4a80::/32

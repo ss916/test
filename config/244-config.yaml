@@ -1,4 +1,4 @@
-# //【2025-08-31 11:13:17】
+# //【2026-01-16 22:28:26】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -64,7 +64,7 @@ listeners:
 geodata-mode: true
 tcp-concurrent: true
 find-process-mode: off
-global-client-fingerprint: random
+
 
 ntp:
   enable: true
