@@ -13,7 +13,7 @@ antiserver.kuwo.cn
 api.3g.tudou.com
 api.3g.youku.com
 api.appsdk.soku.com
-api.ip.sb
+  #- DOMAIN,api.ip.sb
 api.itv.letv.com
 api.le.com
 api.letv.com

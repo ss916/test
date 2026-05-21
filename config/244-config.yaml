@@ -1,4 +1,4 @@
-# //【2026-01-16 22:28:26】
+# //【2026-05-14 14:31:02】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -57,8 +57,8 @@ listeners:
   #- { name: 'hysteria2-in-1', type: hysteria2,  port: '443', users: { 'p1': 'password1', p2: password2, 'up1': 'user1:password1', up2: 'user2:password2' }, up: 500 mbps, down: 500 mbps, ignore-client-bandwidth: false, masquerade: 'http://127.0.0.1:80', alpn: [ 'h3' ], certificate: /usr/local/etc/ssl/server1.crt, private-key: /usr/local/etc/ssl/server1.key, max-idle-time: 15000, cwnd: 32, listen: '0.0.0.0', rule: 'rules' }
   
   #- { name: 'tunnel-in-1', type: tunnel, network: [ tcp, udp ], listen: '0.0.0.0', port: '55570', target: 'target.com', rule: 'rules', proxy: '代理' }
-  - { name: 'warp-tunnel-in-4', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '1701', target: '162.159.193.8:1701', proxy: '📤warp-tunnel-out' }
-  - { name: 'warp-tunnel-in-6', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '4500', target: '[2606:4700:d0::a29f:c010]:4500', proxy: '📤warp-tunnel-out' }
+  #- { name: 'warp-tunnel-in-4', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '1701', target: '162.159.193.8:1701', proxy: '📤warp-tunnel-out' }
+  #- { name: 'warp-tunnel-in-6', type: tunnel, network: [ udp ], listen: '127.0.0.1', port: '4500', target: '[2606:4700:d0::a29f:c010]:4500', proxy: '📤warp-tunnel-out' }
 
 #meta-core
 geodata-mode: true
@@ -142,6 +142,8 @@ sniffer:
     - '+.push.apple.com'
     #mi
     - 'Mijia Cloud'
+    #other
+    - 'consumer-masque.cloudflare.com'
 
 
 dns:
@@ -202,7 +204,7 @@ dns:
 
 proxy-providers:
 
-  test: { type: file, interval: 30000, path: /etc/storage/pdcn/clash/test.txt, health-check: { enable: true, interval: 300, url: http://cp.cloudflare.com/generate_204 } }
+  test: { type: file, interval: 30000, path: /etc/storage/pdcn/clash/test.txt, health-check: { enable: true, interval: 300, lazy: false, url: http://cp.cloudflare.com/generate_204 } }
 
   #在线订阅模板:
     #type: http
@@ -689,7 +691,17 @@ proxy-groups:
       - PASS
     use:
       - test
-  
+
+  - name: 📤realm-out
+    type: select
+    proxies:
+      - ➡️直连
+      - 🎯代理
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+
   - name: ♻️局域网IP
     type: select
     proxies:

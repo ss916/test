@@ -13,7 +13,7 @@ payload:
   - DOMAIN,api.3g.tudou.com
   - DOMAIN,api.3g.youku.com
   - DOMAIN,api.appsdk.soku.com
-  - DOMAIN,api.ip.sb
+  #- DOMAIN,api.ip.sb
   - DOMAIN,api.itv.letv.com
   - DOMAIN,api.le.com
   - DOMAIN,api.letv.com

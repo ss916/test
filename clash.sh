@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=254
+sh_ver=255
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -256,9 +256,9 @@ health_check_url=$6
 health_check_interval=$7
 #1，proxy-providers:下面插入订阅
 if [ "$f" = "订阅" ] ; then
-sed -i "/^proxy-providers:$/a\  ${f}${n}:\n    type: http\n    url: $u\n    interval: $update\n    path: $p\n    health-check:\n      enable: true\n      interval: $health_check_interval\n      url: $health_check_url" config.yaml
+sed -i "/^proxy-providers:$/a\  ${f}${n}:\n    type: http\n    url: $u\n    interval: $update\n    path: $p\n    health-check:\n      enable: true\n      interval: $health_check_interval\n      lazy: false\n      url: $health_check_url" config.yaml
 elif [ "$f" = "文件" ] ; then
-sed -i "/^proxy-providers:$/a\  ${f}${n}:\n    type: file\n    interval: $update\n    path: $p\n    health-check:\n      enable: true\n      interval: $health_check_interval\n      url: $health_check_url" config.yaml
+sed -i "/^proxy-providers:$/a\  ${f}${n}:\n    type: file\n    interval: $update\n    path: $p\n    health-check:\n      enable: true\n      interval: $health_check_interval\n      lazy: false\n      url: $health_check_url" config.yaml
 else
 echo "错误，proxy-providers类型不为http与file，结束" && exit
 fi
