@@ -1,4 +1,4 @@
-# //【2026-05-14 14:31:02】
+# //【2026-05-24 22:06:49】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -254,6 +254,8 @@ rule-providers:
   dns_proxy: { type: file, behavior: classical, path: ./rule/dns_proxy.txt, interval: 30001 }
   dns_direct: { type: file, behavior: classical, path: ./rule/dns_direct.txt, interval: 30001 }
 
+  stun: { type: file, behavior: classical, path: ./rule/stun.txt, interval: 30001 }
+
   chore_1: { type: file, behavior: classical, path: ./rule/chore_1.txt, interval: 30001 }
   chore_2: { type: file, behavior: classical, path: ./rule/chore_2.txt, interval: 30001 }
   chore_3: { type: file, behavior: classical, path: ./rule/chore_3.txt, interval: 30001 }
@@ -330,6 +332,8 @@ rules:
   - RULE-SET,block_dnsmasq,❌dnsmasq #markadblock
   - GEOSITE,category-ads-all,❌geosite广告 #markadblock
   - RULE-SET,block_privacy,❌隐私 #markadblock
+  
+  - RULE-SET,stun,🌐stun
   
   - RULE-SET,global_video_youtube,📺YouTube
   - RULE-SET,global_video_netflix,💻Netflix
@@ -625,7 +629,17 @@ proxy-groups:
       - ❎屏蔽
     use:
       - test
-  
+
+  - name: 🌐stun
+    type: select
+    proxies:
+      - 🎯代理
+      - ➡️直连
+      - ❎屏蔽
+      - PASS
+    use:
+      - test
+
   - name: 🌿杂项1
     type: select
     proxies:
