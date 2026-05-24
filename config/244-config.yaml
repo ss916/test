@@ -1,4 +1,4 @@
-# //【2026-05-24 22:06:49】
+# //【2026-05-24 22:23:56】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -661,9 +661,9 @@ proxy-groups:
   - name: 🌿杂项3
     type: select
     proxies:
+      - ❎屏蔽
       - ➡️直连
       - 🎯代理
-      - ❎屏蔽
       - PASS
     use:
       - test
