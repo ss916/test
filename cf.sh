@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=111
+sh_ver=112
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -25,11 +25,8 @@ alias timenow='date "+%m-%d_%H:%M:%S"'
 cd $dir
 
 
+#curl -o /dev/null -H "Referer: https://speed.cloudflare.com/" "https://speed.cloudflare.com/__down?bytes=100000000"
 if [ -z "$url" ] ; then
-#url=http://speedtest-sgp1.digitalocean.com/1gb.test
-#url=http://speedtest-lon1.digitalocean.com/1gb.test
-#url=http://speedtest-sfo2.digitalocean.com/1gb.test
-#url=http://speedtest-fra1.digitalocean.com/1gb.test
 url=http://speed.cloudflare.com/__down?bytes=10000000000
 #url=https://speed.cloudflare.com/__down?bytes=10000000000
 fi
@@ -750,7 +747,7 @@ ip=$1
 {
 colo=$(curl -sL -m 5 ${http_tls}://cp.cloudflare.com/cdn-cgi/trace --resolve cp.cloudflare.com:${http_port}:$ip |awk -F= '/^colo/{print $2}')
 if [ ! -z "$colo" ] ; then
-speed=$(curl -sL -o /dev/null $url -m 10 --resolve $url_domain:$url_port:$ip -w "%{speed_download}")
+speed=$(curl -sL -o /dev/null -H "Referer: https://speed.cloudflare.com/" $url -m 10 --resolve $url_domain:$url_port:$ip -w "%{speed_download}")
 speed_format=$(echo $speed |sed ':a;s/\B[0-9]\{3\}\>/,&/;ta')
 echo -e "IP：\e[1;37m$ip\e[0m  地区：\e[1;37m$colo\e[0m  下载速度：\e[1;37m $speed_format  \e[0m"
 else
