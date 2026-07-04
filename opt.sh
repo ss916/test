@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=46
+sh_ver=53
 
 path=${0%/*}
 bashname=${0##*/}
@@ -30,9 +30,11 @@ if [ ! -z "$(ps -w |grep -v grep| grep "clash -d")" -a ! -z "$(netstat -anp 2>/d
 else
 	echo "* 走直连 *"
 fi
-echo "OLD：$PATH"
-PATH=/etc/storage/bin:/tmp/script:/etc/storage/script:/opt/usr/sbin:/opt/usr/bin:/opt/sbin:/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/etc/storage:/etc/storage/pdcn
-echo "NEW：$PATH"
+echo -e "OLD PATH：$PATH\\nOLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+export PATH=/etc/storage/bin:/tmp/script:/etc/storage/script:/opt/usr/sbin:/opt/usr/bin:/opt/sbin:/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/etc/storage:/etc/storage/pdcn
+export LD_LIBRARY_PATH=/opt/lib:/opt/lib64
+echo -e "NEW PATH：$PATH\\nNEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+#env
 }
 
 
@@ -44,10 +46,11 @@ echo -e \\n"$(timenow)"\\n
 [ -z "$(nvram get opt_force_file)" ] && set_opt2 1
 [ ! -s /opt/bin/opkg -o ! -s /opt/etc/opkg.conf ] && echo "✖未检测到opkg主程序文件/opt/bin/opkg或者/opt/etc/opkg.conf，重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
 curl -V >/dev/null 2>&1 ; [ "$?" = "1" ] && echo "✖检测到curl报错，重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
+wget --help >/dev/null 2>&1 ; [ "$?" = "1" ] && echo "✖检测到wget报错，重置opt文件..." && /etc/storage/script/Sh01_mountopt.sh reopt
 curl_proxy
 [ ! -z "$(ls /opt/tmp)" ] && echo ">>清空/opt/tmp..." && rm -rf /opt/tmp/*
 echo -e \\n"\e[1;32m ▶更新opkg列表...\e[0m "
-opkg update && opkg install wget
+opkg update
 echo -e "\e[1;32m ...更新opkg列表結束...\e[0m "\\n
 }
 upgrade () {
@@ -67,7 +70,15 @@ echo -e \\n"\e[1;33m★更新openssl \e[0m" && opkg install openssl-util libopen
 echo -e \\n"\e[1;33m★安装coreutils split \e[0m" && opkg install coreutils-split && echo -e "\e[1;33m✔安装coreutils split \e[0m"
 echo -e \\n"\e[1;33m★安装coreutils sort \e[0m" && opkg install coreutils-sort && echo -e "\e[1;33m✔安装coreutils sort \e[0m"
 echo -e \\n"\e[1;33m★安装unzip \e[0m" && opkg install unzip && echo -e "\e[1;33m✔安装unzip \e[0m"
-echo -e \\n"\e[1;33m★安装bind-dig \e[0m" && opkg install bind-dig && echo -e "\e[1;33m✔安装bind-dig \e[0m"
+echo -e \\n"\e[1;33m★安装bind-dig \e[0m"
+opkg install bind-dig
+if [ "$?" = "1" ] ; then
+echo "✖检测到opkg安装报错，重置opt文件..."
+/etc/storage/script/Sh01_mountopt.sh reopt
+else
+echo -e "\e[1;33m✔安装bind-dig \e[0m"
+fi
+
 #wait
 echo -e \\n"\e[1;7;36m ...批量安装結束...\e[0m "\\n
 }
@@ -191,7 +202,12 @@ start_cron () {
 [ ! -f ${path}/START_CRON.SH ] && > ${path}/START_CRON.SH
 if [ "$(cat ${path}/START_CRON.SH | grep ${bashname} | wc -l)" != "1" ] ; then
 stop_cron
-echo -e \\n"\e[1;36m▶创建定时任务crontab...\e[0m" && echo "sleep 120 && sh ${path}/${bashname} 2 > $tmp/${bashname}_start_cron2.txt 2>&1 &" >> ${path}/START_CRON.SH
+echo -e \\n"\e[1;36m▶创建定时任务1 crontab...（3 5 * * *）\e[0m" && echo "sleep 120 && sh ${path}/${bashname} 2 > $tmp/${bashname}_start_cron2.txt 2>&1 &" >> ${path}/START_CRON.SH
+fi
+if [ "$(cat $file_cron | grep ${bashname} | wc -l)" != "1" ] ; then
+sed -i "/${bashname}/d" $file_cron
+echo -e \\n"\e[1;36m▶创建定时任务2 crontab...（0 0 * * *）\e[0m" 
+echo "0 0 * * * sh ${path}/${bashname} 2 > $tmp/${bashname}_start_cron2.2.txt 2>&1 &" >> $file_cron
 fi
 }
 
@@ -213,6 +229,7 @@ update && upgrade &
 view_all_logs () {
 log_file=${bashname}_start_wan1.txt && [ -s $tmp/$log_file ] && echo -e "\\n\e[1;37m▼▼▼▼▼▼▼▼ \e[1;36m 查看日志\e[1;32m $log_file \e[1;37m▼▼▼▼▼▼▼▼\e[0m" && cat $tmp/$log_file | grep -v '^ *$' | awk '{print "\e[1;33m第"NR"行\e[0m " $0}' && echo -e "\e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[1;4;32m $log_file \e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[0m\\n"
 log_file=${bashname}_start_cron2.txt && [ -s $tmp/$log_file ] && echo -e "\\n\e[1;37m▼▼▼▼▼▼▼▼ \e[1;36m 查看日志\e[1;32m $log_file \e[1;37m▼▼▼▼▼▼▼▼\e[0m" && cat $tmp/$log_file | grep -v '^ *$' | awk '{print "\e[1;33m第"NR"行\e[0m " $0}' && echo -e "\e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[1;4;32m $log_file \e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[0m\\n"
+log_file=${bashname}_start_cron2.2.txt && [ -s $tmp/$log_file ] && echo -e "\\n\e[1;37m▼▼▼▼▼▼▼▼ \e[1;36m 查看日志\e[1;32m $log_file \e[1;37m▼▼▼▼▼▼▼▼\e[0m" && cat $tmp/$log_file | grep -v '^ *$' | awk '{print "\e[1;33m第"NR"行\e[0m " $0}' && echo -e "\e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[1;4;32m $log_file \e[1;4;37m▲▲▲▲▲▲▲▲▲▲▲▲▲▲\e[0m\\n"
 }
 
 toilet_font () {
