@@ -1,4 +1,4 @@
-# //【2026-06-22 22:05:04】
+# //【2026-07-25 04:00:33】
 # client
 #https://github.com/MetaCubeX/Clash.Meta/blob/Alpha/docs/config.yaml
 
@@ -335,6 +335,8 @@ rules:
   
   - RULE-SET,stun,🌐stun
   
+  - RULE-SET,global_apple,🍏苹果
+  
   - RULE-SET,global_video_youtube,📺YouTube
   - RULE-SET,global_video_netflix,💻Netflix
   - RULE-SET,global_video_porn,📽️porn
@@ -348,7 +350,6 @@ rules:
   - RULE-SET,cn_video,🀄影音
   - RULE-SET,cn_web_other,🀄网站
   
-  - RULE-SET,global_apple,🍏苹果
   
   - RULE-SET,global_web_other,🆓国外网站
   

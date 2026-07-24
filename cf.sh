@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=112
+sh_ver=113
 
 bashpath=${0%/*}
 bashname=${0##*/}
@@ -24,6 +24,8 @@ alias timenow='date "+%m-%d_%H:%M:%S"'
 [ ! -d $dir ] && mkdir -p $dir
 cd $dir
 
+#env
+[ "$LD_LIBRARY_PATH" != "" ] && echo -e "OLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH" && unset LD_LIBRARY_PATH && echo -e "NEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
 #curl -o /dev/null -H "Referer: https://speed.cloudflare.com/" "https://speed.cloudflare.com/__down?bytes=100000000"
 if [ -z "$url" ] ; then

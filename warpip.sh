@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=35
+sh_ver=36
 
 #Github @luoxue-bot
 #Blog https://ty.al
@@ -12,7 +12,6 @@ bashpid=$$
 
 [ "$path" = "$bashname" ] && path=.
 cd $path
-
 
 name=$bashname
 UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"

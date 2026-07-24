@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=255
+sh_ver=256
 #
 path=${0%/*}
 bashname=${0##*/}
@@ -42,6 +42,11 @@ url7="https://yyellow.ariadl.eu.org/916"
 #url8="https://originfastly.jsdelivr.net/gh/ss916/test@main"
 
 [ "${path}" = "sh" -a "${bashname}" = "sh" -o "${path}" = "bash" -a "${bashname}" = "bash" ] && echo -e \\n"❗ \e[1;37m获取不到脚本真实路径path与脚本名字bashname，其值为$path。依赖路径与名字的功能将会失效。请下载脚本到本地再运行。\e[0m❗"\\n
+
+export SKIP_SAFE_PATH_CHECK=1
+export SAFE_PATHS=/etc/storage/pdcn/clash:/usr/local/etc/ssl
+#env
+[ "$LD_LIBRARY_PATH" != "" ] && echo -e "OLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH" && unset LD_LIBRARY_PATH && echo -e "NEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
 #初始化settings.txt
 settings () {
@@ -187,8 +192,6 @@ else
 	fi
 fi
 
-export SKIP_SAFE_PATH_CHECK=1
-export SAFE_PATHS=/etc/storage/pdcn/clash:/usr/local/etc/ssl
 
 run="$dirtmp/${name} -d $dirtmp"
 

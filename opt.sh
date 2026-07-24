@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=53
+sh_ver=54
 
 path=${0%/*}
 bashname=${0##*/}
@@ -14,6 +14,9 @@ file_cron=/etc/storage/cron/crontabs/admin
 file_wan=/etc/storage/post_wan_script.sh
 
 [ "${path}" = "sh" -a "${bashname}" = "sh" -o "${path}" = "bash" -a "${bashname}" = "bash" ] && echo -e \\n"❗ \e[1;37m获取不到脚本真实路径path与脚本名字bashname，其值为$path。依赖路径与名字的功能将会失效。请下载脚本到本地再运行。\e[0m❗"\\n
+
+#env
+[ "$LD_LIBRARY_PATH" != "" ] && echo -e "OLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH" && unset LD_LIBRARY_PATH && echo -e "NEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
 [ ! -d $diretc ] && mkdir -p $diretc
 [ ! -d $dirtmp ] && mkdir -p $dirtmp
@@ -30,11 +33,6 @@ if [ ! -z "$(ps -w |grep -v grep| grep "clash -d")" -a ! -z "$(netstat -anp 2>/d
 else
 	echo "* 走直连 *"
 fi
-echo -e "OLD PATH：$PATH\\nOLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
-export PATH=/etc/storage/bin:/tmp/script:/etc/storage/script:/opt/usr/sbin:/opt/usr/bin:/opt/sbin:/opt/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/etc/storage:/etc/storage/pdcn
-export LD_LIBRARY_PATH=/opt/lib:/opt/lib64
-echo -e "NEW PATH：$PATH\\nNEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
-#env
 }
 
 
