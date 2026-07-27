@@ -1,14 +1,14 @@
-# //【2026-07-26 02:24:23】
-/SHA1.TXT= 461bf03af4d2103178995fd4c0abab9e
-/SHA3-256.TXT= a64d35d469a241dbcedd95d367f22b00
+# //【2026-07-27 14:46:40】
+/SHA1.TXT= 981d7c53805e218630e4544673d554ff
+/SHA3-256.TXT= 8bb77020547efb55433c718c46634f4e
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
-/amd64/caddy= ce8c872ebfd97bbc7a321987fd7f3748
-/amd64/clash= 8e2e6f3187b6fc1baa1659d474cdf4ba
+/amd64/caddy= fa0373bccea043c11954d45cc0a82544
+/amd64/clash= 1c92e7e8358814e62c5e1112f6fde7e9
 /amd64/natmap= 89afedd105f05ad588d342f8467cd467
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
-/arm64/caddy= 7da304742713c787bd79688bb8c59e74
-/arm64/clash= 3103cb8d56ac953f297222c1d7dc802d
+/arm64/caddy= 49c9baee336392b6c804fa2f318184d7
+/arm64/clash= 23b78022527fec0f121fd104c295b191
 /arm64/hysteria= 93fede321a20754ee880e7774209dceb
 /arm64/kcptun= 67850ba774ffab9b364b5e8844f6dec2
 /arm64/natmap= a90c58d71a4965c06b0f0a82afc8456b
@@ -32,7 +32,7 @@
 /ipv6.sh= d7a6a42faa0953c706dd0261609fc973
 /kcptun.sh= f0800b0151520658163d973ebc17775a
 /natmap.sh= 58d62ec179a9aec2940cefd754e082d7
-/opt.sh= 6d7f5ba27371a3d78249a20cda6a6d74
+/opt.sh= 5afdac51b5da0808c50fec7c4f1c9b1b
 /pf.sh= ed99fda5f65d87c440e8107a59b6a69f
 /rule/block_dnsmasq.mrs= 38ce67bb363774159ab8a56c9a9807a4
 /rule/block_dnsmasq.text= 7ed492b302186e752b863a9bbd42abb9
@@ -152,8 +152,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= d9256cc18652de5a8859c924f06abb00
-/t/clash= c62e9ddd1bc377e84a49f03fe3def329
+/t/clash.ver= 669b7364eef21b69b8c8d4ed6f454e64
+/t/clash= 1ff78b7c225270b7577384e8cb393d85
 /t/cnip.txt= 857009ac2b107fcd8f951319acd0b4f1
 /t/cnipv6.txt= 35ecc270ff29a7f77806d251ffdf78e2
 /t/delegated-apnic-latest= c1b7c82047bb2118e03d2723682dde44
@@ -173,7 +173,7 @@
 /t/metacubexd-gh-pages.zip= c60a9578056f2a2ef374799f5f5ae422
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= a1c64fa104787453ed72215b8c2a076f
+/t/rule.tgz= 60c2e9f43a38409f788471f7982c2f13
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88

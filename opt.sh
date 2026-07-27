@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=54
+sh_ver=56
 
 path=${0%/*}
 bashname=${0##*/}
@@ -17,6 +17,9 @@ file_wan=/etc/storage/post_wan_script.sh
 
 #env
 [ "$LD_LIBRARY_PATH" != "" ] && echo -e "OLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH" && unset LD_LIBRARY_PATH && echo -e "NEW LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+#echo -e "OLD LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+#export LD_LIBRARY_PATH=/opt/lib
+
 
 [ ! -d $diretc ] && mkdir -p $diretc
 [ ! -d $dirtmp ] && mkdir -p $dirtmp
@@ -69,14 +72,15 @@ echo -e \\n"\e[1;33m★安装coreutils split \e[0m" && opkg install coreutils-sp
 echo -e \\n"\e[1;33m★安装coreutils sort \e[0m" && opkg install coreutils-sort && echo -e "\e[1;33m✔安装coreutils sort \e[0m"
 echo -e \\n"\e[1;33m★安装unzip \e[0m" && opkg install unzip && echo -e "\e[1;33m✔安装unzip \e[0m"
 echo -e \\n"\e[1;33m★安装bind-dig \e[0m"
-opkg install bind-dig
-if [ "$?" = "1" ] ; then
-echo "✖检测到opkg安装报错，重置opt文件..."
-/etc/storage/script/Sh01_mountopt.sh reopt
+output=$(opkg install bind-dig 2>&1)
+echo "$output"
+if echo "$output" | grep -qE "Collected errors|Checksum or size mismatch"; then
+    echo "✖检测到opkg安装报错，重置opt文件..."
+    /etc/storage/script/Sh01_mountopt.sh reopt
+    opkg update
 else
-echo -e "\e[1;33m✔安装bind-dig \e[0m"
+    echo -e "\e[1;33m✔安装bind-dig \e[0m" 
 fi
-
 #wait
 echo -e \\n"\e[1;7;36m ...批量安装結束...\e[0m "\\n
 }
