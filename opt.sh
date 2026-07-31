@@ -75,11 +75,12 @@ echo -e \\n"\e[1;33m★安装bind-dig \e[0m"
 output=$(opkg install bind-dig 2>&1)
 echo "$output"
 if echo "$output" | grep -qE "Collected errors|Checksum or size mismatch"; then
-    echo "✖检测到opkg安装报错，走直连重置opt文件..."
+    echo "✖检测到opkg安装报错..."
     unset http_proxy ; unset https_proxy
-    /etc/storage/script/Sh01_mountopt.sh reopt
+    #/etc/storage/script/Sh01_mountopt.sh reopt
     opkg update
     opkg upgrade
+    opkg install curl openssl
 else
     echo -e "\e[1;33m✔安装bind-dig \e[0m" 
 fi

@@ -1,6 +1,6 @@
-# //【2026-07-31 23:23:25】
-/SHA1.TXT= 4fc87902112a5b774cdce4af83ffc985
-/SHA3-256.TXT= 06f9a397fbccbf492436098e4dfe8d76
+# //【2026-08-01 00:57:31】
+/SHA1.TXT= 4e02e4eda998063019124d09225cd588
+/SHA3-256.TXT= 9dbc37bd2076d2b750eb40d58540cc5f
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= fa0373bccea043c11954d45cc0a82544
 /amd64/clash= e9fe3350bd27e21c8e1354b401215a27
@@ -32,7 +32,7 @@
 /ipv6.sh= d7a6a42faa0953c706dd0261609fc973
 /kcptun.sh= f0800b0151520658163d973ebc17775a
 /natmap.sh= 58d62ec179a9aec2940cefd754e082d7
-/opt.sh= 75b8a5a830056eb84e4bf4b993074405
+/opt.sh= 4a255492888161e5fcc5cd413f03c0ba
 /pf.sh= ed99fda5f65d87c440e8107a59b6a69f
 /rule/block_dnsmasq.mrs= 38ce67bb363774159ab8a56c9a9807a4
 /rule/block_dnsmasq.text= 7ed492b302186e752b863a9bbd42abb9
@@ -173,7 +173,7 @@
 /t/metacubexd-gh-pages.zip= 5dd574a6bb4ce0498bdb9b99d630912b
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= d33590f8e5714c1a983c53f3df66fb30
+/t/rule.tgz= 08a935597a859b510e7cf4e770ae00ea
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
