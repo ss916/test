@@ -1,5 +1,5 @@
 #!/bin/bash
-sh_ver=56
+sh_ver=57
 
 path=${0%/*}
 bashname=${0##*/}
@@ -75,9 +75,11 @@ echo -e \\n"\e[1;33m★安装bind-dig \e[0m"
 output=$(opkg install bind-dig 2>&1)
 echo "$output"
 if echo "$output" | grep -qE "Collected errors|Checksum or size mismatch"; then
-    echo "✖检测到opkg安装报错，重置opt文件..."
+    echo "✖检测到opkg安装报错，走直连重置opt文件..."
+    unset http_proxy ; unset https_proxy
     /etc/storage/script/Sh01_mountopt.sh reopt
     opkg update
+    opkg upgrade
 else
     echo -e "\e[1;33m✔安装bind-dig \e[0m" 
 fi
