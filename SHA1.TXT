@@ -1,14 +1,14 @@
-# //【2026-08-31 23:27:43】
-/SHA3-256.TXT= 5381a193e22c95be93f010d29e6cb937f2b79536
-/SHAKE128.TXT= a5545cb3fe8cc5db9c8604a4c3d881d450d622aa
+# //【2026-09-03 03:53:03】
+/SHA3-256.TXT= 9a0021b32fbe6dc230c4d2ca0a02a4e58b28ba1f
+/SHAKE128.TXT= 63d38c80f59bd14fda5b0a7182681e26f842b0d6
 /amd64/caddy1= 8652a8d0dd71d2ca993845b55dfb7dfc36c5db91
-/amd64/caddy= 945d9106f34ed882bfff57c48c9251be3053a19c
-/amd64/clash= 8774e9a9c5982fb96bc3b6ff091ae7477e5d5ef6
+/amd64/caddy= 5455ddbd36b42f64b0d90074759571bd82f5b6bb
+/amd64/clash= f27cf256ab71bd868b4b6e26814865bc89f1b6ce
 /amd64/natmap= 1b6d06eccf756c3ecd044fa77585902dd62703b1
 /amd64/stun= 2891a621210dc1c3e3d25d25ccd93ef70efe4744
 /arm64/caddy1= 836483c958f2ab5a83823f908a3f53f518e50106
-/arm64/caddy= 71fa6562a8113958ebf0f545be3ede6ecaf1ba38
-/arm64/clash= e7482eab8c0f7aa3c7a9dd8c8d87183de20b14dd
+/arm64/caddy= 60de5bba5606015cc6cc7c97ccb05c4edd43e05f
+/arm64/clash= 24548681bccb313fa1f0d0b6d76b2838bbb42ea8
 /arm64/hysteria= eb857d4c963d8d5ef9dd9ed9be1ab8175b771782
 /arm64/kcptun= b2157a2f884e81f5e18cc050218d97a4764a60f2
 /arm64/natmap= fe6808b6fd003cdc10f4882360afde4f12b5238f
@@ -146,14 +146,14 @@
 /t/Country.mmdb.tgz= bb4d2b067e900f2171230cc3465b5fdb6ee500ea
 /t/Country.mmdb.ver= 5620688f617ce159b1f0edb744a737627bd8b86f
 /t/Country.mmdb= 56b79e788a0a820fde5d8bc1e3e507ad22d3f52c
-/t/caddy.ver= 6a5a5aed172d370ccdc8a986a92c21319e492509
+/t/caddy.ver= 4fd4b41042cd2b83da2e7d533316f7533a7e1aff
 /t/caddy1= cc415ef8bbc3163f4f49a337f7e733c6e56897ce
-/t/caddy= a749cdad1cc96caaea1ba97094dc1d5593339200
+/t/caddy= 225f5b28be6d7ad986afd0ecb72ee3c24c0a6df0
 /t/clash-dashboard-gh-pages.tgz= 0b93c7a1fbcc7173cb98de606e492111eef5424d
 /t/clash-dashboard-gh-pages.zip= 47d65f037977b91816abc43819fad6a32a453f37
 /t/clash.ver2= 2490e9582adece9d5e869cc189dec865d3c6a6e0
-/t/clash.ver= d72616d4996f2614f1d013817c34e1fe7e6198fa
-/t/clash= a2fee3b21b28a14c86aea2ed2fd4279bd8c17b2c
+/t/clash.ver= c02816de25d83e55f36665bfc14ba5d2d55d4826
+/t/clash= 5d1f8f32237ace60fc6128f6bf58ad9e328b4e55
 /t/cnip.txt= 59d86a71046a03e45320322d8b7e18fedc97d35f
 /t/cnipv6.txt= 2554e08126deaaaf29ca2168dc77fbe1ea73b13b
 /t/delegated-apnic-latest= 10fc4e76ca939123ee5fc78ca85645008c4a052d

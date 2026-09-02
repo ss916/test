@@ -1,14 +1,14 @@
-# //【2026-08-31 23:27:46】
-/SHA1.TXT= afac15a3a996ca0d0859675035299014
-/SHA3-256.TXT= 9dcf3b89a192fcc4d361161f5c5ea320
+# //【2026-09-03 03:53:07】
+/SHA1.TXT= 15543e372574817fe4d896da3f6105e9
+/SHA3-256.TXT= cf90aef1e87788cd036171243e69ad2b
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
-/amd64/caddy= 53c29ae8af51736ace9f78704e45dfc7
-/amd64/clash= 5bf700296149de6545150e93d7071cfd
+/amd64/caddy= d22c49027bb0f09afcf3dd38e44242c5
+/amd64/clash= cdbbb2bfd292b8c259f1ab91511cf701
 /amd64/natmap= 89afedd105f05ad588d342f8467cd467
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
-/arm64/caddy= f3f4da20bc73811b3c91321b6d131979
-/arm64/clash= a37e2d97ab0fabd89f394950aad276e1
+/arm64/caddy= 22fa42a5542430df3f226f8a37e27237
+/arm64/clash= 55887a1bfd9fb501bfb72e5ef7b5c756
 /arm64/hysteria= 93fede321a20754ee880e7774209dceb
 /arm64/kcptun= 67850ba774ffab9b364b5e8844f6dec2
 /arm64/natmap= a90c58d71a4965c06b0f0a82afc8456b
@@ -146,14 +146,14 @@
 /t/Country.mmdb.tgz= cf05dfbeb31f741b02d4144896919743
 /t/Country.mmdb.ver= 1ff108546963c911477bb182e1e02a64
 /t/Country.mmdb= ea1118982d06030a7f9686488e958fa9
-/t/caddy.ver= 0afb61e9c3abe0476441de923821ccd3
+/t/caddy.ver= d6d5f2a9f9f9c97b433de4b05e0d411d
 /t/caddy1= d91556933dd45b541d0587a957b95d99
-/t/caddy= 26cec65efb20bd58b3d066f0115b0681
+/t/caddy= 56abe99056919ce4d70542757d35030c
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= 505a6fdd2fa52e4d2af28aa7c0425f02
-/t/clash= 66295d591055bffc3cf554fb3b7b1634
+/t/clash.ver= 95e3492f32a0b55d8fd30c896a450946
+/t/clash= af44701a90c81ca7b396cce39ead6b38
 /t/cnip.txt= af0cedf39a352e40bc5b7de6fa6eb087
 /t/cnipv6.txt= 102c903ae83e7ab9b83ca4954d063d8a
 /t/delegated-apnic-latest= e753180ca2668af2a1d276a82f25ad8c
