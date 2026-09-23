@@ -1,6 +1,6 @@
-# //【2026-09-22 05:24:10】
-/SHA1.TXT= c98727e6d926ee40f17e277b3caecfc9
-/SHA3-256.TXT= d3ffc1ae182aa8af360abeb097c6c362
+# //【2026-09-23 23:13:59】
+/SHA1.TXT= 017f299518584c1c07e4ee3cd0294d00
+/SHA3-256.TXT= b69cd1a58a77b31fb0749c0b777ae8c2
 /amd64/caddy1= 9a2090890b2ed29b9236cd789044acc9
 /amd64/caddy= d22c49027bb0f09afcf3dd38e44242c5
 /amd64/clash= 74a8e3ade77c44e9092ecb673a4bdd31
@@ -8,7 +8,7 @@
 /amd64/stun= 55e1c79f9a762ad6a4dd2660522266aa
 /arm64/caddy1= f614837b6efcfd51c383c29b29b4f509
 /arm64/caddy= 22fa42a5542430df3f226f8a37e27237
-/arm64/clash= 1ce90b2180a5bfcfceaa0d6db74f9aee
+/arm64/clash= 2e9502c1bad6c84f39cf9c9af84f713a
 /arm64/hysteria= 93fede321a20754ee880e7774209dceb
 /arm64/kcptun= 67850ba774ffab9b364b5e8844f6dec2
 /arm64/natmap= a90c58d71a4965c06b0f0a82afc8456b
@@ -128,16 +128,16 @@
 /s/c7.json= 1efc375fec53b3fc4a3020bdd0f703fb
 /s/c8.json= 600a13b3ede765b66c232145e564414a
 /s/c9.json= 1b59f1539e848c27cb806b87ed868cee
-/s/file1.txt= 8d1bbd09a987f004bbd5a343d8286f51
+/s/file1.txt= 982e0ca56a578d1946f49a4ac80c0792
 /s/file11.txt= 7e7ad486a3a469fde0656d85e6351cc5
 /s/file111.txt= 12221c37a39baa64bd34e1be8d1ac805
 /s/file2.txt= a32c9ba5d28eac47fb757ff7dd4326b6
 /s/file222.txt= 9b874c7ba882ebc318e4ff2304165a5d
-/s/file3.txt= 66fe8682f8e890e98ba18549a70af1df
+/s/file3.txt= 75df1a907411ba5498ac656f5b84f25f
 /s/file333.txt= efae0c4e986e74030d136fbf20d3ba6a
 /s/file4.txt= 20e164263dd150633b58de527b277aa7
 /s/file5.txt= e8e8eaf174d70a1bc562c194b49ca956
-/s/file6.txt= ddc6001c4cf94b5a472f8beafafd9b56
+/s/file6.txt= 6301f73dd3beaaeaa7c525ef1db38bcb
 /s/file7.txt= 47287f8bc9e5708d7eaad46b307571a8
 /s/file8.txt= 6ec51b52b8344adb9d0db082c7716cbb
 /s/file999.txt= 0fb75a3d675199be4e10e3ec49f9772c
@@ -152,8 +152,8 @@
 /t/clash-dashboard-gh-pages.tgz= 53a8e3551eb988ee0904578920d25041
 /t/clash-dashboard-gh-pages.zip= 889e3f4a781122e657a0d6095d11bf9c
 /t/clash.ver2= 997b1cd55965b136597cde88d7c5f75c
-/t/clash.ver= e67768c863dd738895cd93f8385c4a56
-/t/clash= d9f50f3eb26acd969e09526b10f0941f
+/t/clash.ver= 43af263ccd5f4c846f81e9e0f12bbf68
+/t/clash= 05e60d1d38f3b6de56ec2d49247a3a86
 /t/cnip.txt= 2441d040fbe17082fcb2c35630e44a7e
 /t/cnipv6.txt= b918699786360795ca5fbfac9e961a93
 /t/delegated-apnic-latest= af8a6a3fe5bd089faf9445d1918724cf
@@ -173,7 +173,7 @@
 /t/metacubexd-gh-pages.zip= 498619138514ad90983994b713c89188
 /t/natmap.ver= 2b1ef07179b36c0640c1460c652c0b98
 /t/natmap= ee1793e1f3b8e8465e15f908fad97fd3
-/t/rule.tgz= da47811e52ea59c9fcdcfc796f344a10
+/t/rule.tgz= e790b768d94ae43466d60e8977d5200f
 /t/speederv2= cd1dc05eddfc0ede3ccb00a050964374
 /t/speedtest.ver= 0d10d4503b2972e89384d04dc71f6699
 /t/speedtest= 6538c60d0b32139c9a6bd43ab9e83e88
