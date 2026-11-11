@@ -791,7 +791,12 @@ add cnipv6 2402:7740::/32
 add cnipv6 2402:7820::/32
 add cnipv6 2402:7d00::/32
 add cnipv6 2402:7d80::/32
+add cnipv6 2402:7da0::/32
+add cnipv6 2402:7e20::/32
+add cnipv6 2402:7ee0::/32
+add cnipv6 2402:8160::/32
 add cnipv6 2402:8180::/32
+add cnipv6 2402:8260::/32
 add cnipv6 2402:8300::/32
 add cnipv6 2402:8380::/32
 add cnipv6 2402:840::/32
@@ -890,7 +895,6 @@ add cnipv6 2402:e140::/32
 add cnipv6 2402:e2c0::/32
 add cnipv6 2402:e3c0::/32
 add cnipv6 2402:e480::/32
-add cnipv6 2402:e540::/32
 add cnipv6 2402:e680::/32
 add cnipv6 2402:e740::/32
 add cnipv6 2402:e780::/32
